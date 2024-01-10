@@ -77,8 +77,8 @@ struct AnimationData{
 */
 
 // Function to parse the shape attributes from a line
-AnimationShapeAttributes parseShapeAttributes(const std::string& line) {
-    AnimationShapeAttributes attributes;
+Chronos::Animation::AnimationShapeAttributes parseShapeAttributes(const std::string& line) {
+    Chronos::Animation::AnimationShapeAttributes attributes;
     std::istringstream ss(line);
     char dummy; // to consume the leading '#'
     ss >> dummy >> attributes.x >> dummy >> attributes.y >> dummy >> attributes.rotation
@@ -87,8 +87,8 @@ AnimationShapeAttributes parseShapeAttributes(const std::string& line) {
 }
 
 // Function to parse the animation data from the file
-AnimationData parseAnimationData(std::ifstream& file) {
-    AnimationData animationData;
+Chronos::Animation::AnimationData parseAnimationData(std::ifstream& file) {
+    Chronos::Animation::AnimationData animationData;
     std::string line;
 
     // Read the shape name
@@ -100,12 +100,12 @@ AnimationData parseAnimationData(std::ifstream& file) {
         if (line.find("Child:") != std::string::npos) {
             // Read child shapes
             while (std::getline(file, line) && line.find(']') == std::string::npos) {
-                AnimationData childData = parseAnimationData(file);
+                Chronos::Animation::AnimationData childData = parseAnimationData(file);
                 animationData.children.push_back(childData);
             }
         } else if (line.find('#') != std::string::npos) {
             // Read shape attributes
-            AnimationShapeAttributes attributes = parseShapeAttributes(line);
+            Chronos::Animation::AnimationShapeAttributes attributes = parseShapeAttributes(line);
             animationData.shapeAttributes.push_back(attributes);
         }
     }
@@ -113,14 +113,14 @@ AnimationData parseAnimationData(std::ifstream& file) {
     return animationData;
 }
 
-AnimationData loadAnimationData(std::string path){
+Chronos::Animation::AnimationData Chronos::Animation::loadAnimationData(std::string path){
     std::ifstream file(path);
 
     if (!file.is_open()) {
         throw std::runtime_error("Failed to open animation file: " + path);
     }
 
-    AnimationData data = parseAnimationData(file);
+    Chronos::Animation::AnimationData data = parseAnimationData(file);
     file.close();
     return data;
 }

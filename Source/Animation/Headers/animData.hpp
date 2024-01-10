@@ -1,17 +1,21 @@
 #pragma once
 #include "vulkaninit.hpp"
-struct AnimationShapeAttributes{
-    float x;
-    float y;
-    float rotation;
-    float xSize;
-    float ySize;
-    float show;
-};
+namespace Chronos{
+    namespace Animation{
+        struct AnimationShapeAttributes{
+            float x;
+            float y;
+            float rotation;
+            float xSize;
+            float ySize;
+            float show;
+        };
 
-struct AnimationData{
-    std::string name;
-    std::vector<AnimationData> children;
-    std::vector<AnimationShapeAttributes> shapeAttributes;
+        struct AnimationData{
+            std::string name;
+            std::vector<AnimationData> children;
+            std::vector<AnimationShapeAttributes> shapeAttributes;
+        };
+        AnimationData loadAnimationData(std::string path);
+    };
 };
-AnimationData loadAnimationData(std::string path);

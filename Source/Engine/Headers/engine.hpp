@@ -26,8 +26,8 @@ public:
 	float bgColor[3] = { 0.0f, 0.0f, 0.0f };
 	Device device = Device();
 #ifdef DISPLAY_IMGUI
-	Settings settings{};
-	GUIParams guiParams{};
+	Chronos::Editor::Settings settings{};
+	Chronos::Editor::GUIParams guiParams{};
 #endif
 	void initWindow();
 	void initVulkan();
@@ -57,7 +57,7 @@ private:
 	void createSyncObjects();
 
 #ifdef DISPLAY_IMGUI
-	GUI gui;
+	Chronos::Editor::GUI gui;
 #endif
 
 	void showfps() {

@@ -5,8 +5,7 @@
 #include "helper.hpp"
 
 #ifdef DISPLAY_IMGUI
-
-void GUI::config() {
+void Chronos::Editor::GUI::config() {
   char texturePath[100] = "Assets/texture.jpg";
   shapeHeader.resize(params->shapeManager->shapes.size());
 
@@ -127,42 +126,42 @@ void GUI::config() {
     ImGui::Begin("Post Processing");
     {
       ImGui::SliderFloat("Brightness",
-                         &params->settings->postProcessing.brightness, 0.0f,
-                         1.0f);
+                        &params->settings->postProcessing.brightness, 0.0f,
+                        1.0f);
       ImGui::SliderFloat("Saturation",
-                         &params->settings->postProcessing.saturation, 0.0f,
-                         1.0f);
+                        &params->settings->postProcessing.saturation, 0.0f,
+                        1.0f);
       ImGui::SliderFloat("Exposure", &params->settings->postProcessing.exposure,
-                         0.0f, 1.0f);
+                        0.0f, 1.0f);
       ImGui::SliderFloat("Brilliance",
-                         &params->settings->postProcessing.brilliance, 0.0f,
-                         1.0f);
+                        &params->settings->postProcessing.brilliance, 0.0f,
+                        1.0f);
       ImGui::SliderFloat("Highlights",
-                         &params->settings->postProcessing.highlights, 0.0f,
-                         1.0f);
+                        &params->settings->postProcessing.highlights, 0.0f,
+                        1.0f);
       ImGui::SliderFloat("Shadows", &params->settings->postProcessing.shadows,
-                         0.0f, 1.0f);
+                        0.0f, 1.0f);
       ImGui::SliderFloat("Contrast", &params->settings->postProcessing.contrast,
-                         0.0f, 1.0f);
+                        0.0f, 1.0f);
       ImGui::SliderFloat("Black Point",
-                         &params->settings->postProcessing.blackPoint, 0.0f,
-                         1.0f);
+                        &params->settings->postProcessing.blackPoint, 0.0f,
+                        1.0f);
       ImGui::SliderFloat("Vibrancy", &params->settings->postProcessing.vibrancy,
-                         0.0f, 1.0f);
+                        0.0f, 1.0f);
       ImGui::SliderFloat("Warmth", &params->settings->postProcessing.warmth,
-                         0.0f, 1.0f);
+                        0.0f, 1.0f);
       ImGui::SliderFloat("Tint", &params->settings->postProcessing.tint, 0.0f,
-                         1.0f);
+                        1.0f);
       ImGui::SliderFloat(
           "Sharpness", &params->settings->postProcessing.sharpness, 0.0f, 1.0f);
       ImGui::SliderFloat("Vignette", &params->settings->postProcessing.vignette,
-                         0.0f, 1.0f);
+                        0.0f, 1.0f);
     }
     ImGui::End();
   }
 }
 
-void shapeMover(ShapeParams *shapeParams) {
+void Chronos::Editor::shapeMover(ShapeParams *shapeParams) {
   ImGui::DragFloat("X", &shapeParams->x, 0.001f);
   ImGui::DragFloat("Y", &shapeParams->y, 0.001f);
   ImGui::DragFloat("Size X", &shapeParams->xSize, 0.001f);
@@ -170,8 +169,8 @@ void shapeMover(ShapeParams *shapeParams) {
   ImGui::DragFloat("Rotation", &shapeParams->rotation, 1.0f);
 };
 
-void GUI::init(Device *device, GLFWwindow *window, SwapChain *swapChain,
-               VkInstance instance, VkSurfaceKHR surface, GUIParams *params) {
+void Chronos::Editor::GUI::init(Device *device, GLFWwindow *window, SwapChain *swapChain,
+              VkInstance instance, VkSurfaceKHR surface, GUIParams *params) {
   this->device = device;
   this->swapChain = swapChain;
   this->params = params;
@@ -247,12 +246,12 @@ void GUI::init(Device *device, GLFWwindow *window, SwapChain *swapChain,
   allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
   allocInfo.commandBufferCount = static_cast<uint32_t>(commandBuffers.size());
   if (vkAllocateCommandBuffers(device->device, &allocInfo,
-                               commandBuffers.data()) != VK_SUCCESS) {
+                              commandBuffers.data()) != VK_SUCCESS) {
     throw std::runtime_error("failed to allocate command buffers!");
   }
 }
 
-void GUI::destroy() {
+void Chronos::Editor::GUI::destroy() {
   ImGui_ImplVulkan_Shutdown();
   vkDestroyRenderPass(device->device, renderPass, nullptr);
   for (auto framebuffer : framebuffers)
@@ -261,7 +260,7 @@ void GUI::destroy() {
   vkDestroyDescriptorPool(device->device, descriptorPool, nullptr);
 }
 
-void GUI::update() {
+void Chronos::Editor::GUI::update() {
   ImGui_ImplVulkan_NewFrame();
   ImGui_ImplGlfw_NewFrame();
   ImGui::NewFrame();
@@ -316,7 +315,7 @@ void GUI::update() {
   ImGui::Render();
 }
 
-void GUI::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]) {
+void Chronos::Editor::GUI::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]) {
   vkResetCommandBuffer(commandBuffers[currentFrame], 0);
   VkCommandBufferBeginInfo beginInfo{};
   beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
@@ -330,21 +329,20 @@ void GUI::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]) {
   info.clearValueCount = 1;
   info.pClearValues = &clearColor;
   vkCmdBeginRenderPass(commandBuffers[currentFrame], &info,
-                       VK_SUBPASS_CONTENTS_INLINE);
+                      VK_SUBPASS_CONTENTS_INLINE);
   ImGui_ImplVulkan_RenderDrawData(ImGui::GetDrawData(),
                                   commandBuffers[currentFrame]);
   vkCmdEndRenderPass(commandBuffers[currentFrame]);
   vkEndCommandBuffer(commandBuffers[currentFrame]);
 }
 
-void GUI::cleanup() {
+void Chronos::Editor::GUI::cleanup() {
   for (auto framebuffer : framebuffers)
     vkDestroyFramebuffer(device->device, framebuffer, nullptr);
 }
 
-void GUI::recreate() {
+void Chronos::Editor::GUI::recreate() {
   cleanup();
   framebuffers = createFramebuffer(*device, *swapChain, renderPass, false);
 }
-
 #endif

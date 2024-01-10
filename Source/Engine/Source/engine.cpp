@@ -16,7 +16,7 @@ static void framebuffer_size_callback(GLFWwindow *window, int width,
 
 void Engine::run() {
 #ifdef DISPLAY_IMGUI
-		gui = GUI();
+		gui = Chronos::Editor::GUI();
 		guiParams.settings = &settings;
 #endif
 		initWindow();
