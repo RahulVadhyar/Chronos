@@ -1,13 +1,14 @@
 #pragma once
 #include "shape.hpp"
-
+#include "animData.hpp"
 class AnimObject{
 public:
     AnimObject(int shapeNo, int animObjNo, Shape* shape);
+    AnimObject();
     int animObjNo = -1;
     void addChild(AnimObject* child);
     void removeChild(AnimObject* child);
-    int addAnimation(Animation animation);
+    int addAnimation(std::string animationFile);
     void removeAnimation(int animNo);
     void setParent(AnimObject* parent);
 private:    
@@ -17,6 +18,6 @@ private:
     std::vector<AnimObject*> children;
 
     int nextFreeAnimNo = 0;
-    std::map<int, Animation> animations;
+    std::map<int, AnimationData> animations;
     
 };

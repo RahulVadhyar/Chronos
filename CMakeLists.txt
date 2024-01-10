@@ -31,8 +31,12 @@ set(FONTS_DIR ThirdParty/fonts/latin1/consolas)
 #source files
 set(SOURCE_DIR Source/Engine/Source)
 set(API_DIR Source/API/Source)
+set(EDITOR_DIR Source/Editor/Source)
+set(ANIMATION_DIR Source/Animation/Source)
 file(GLOB MAIN ${SOURCE_DIR}/*.cpp)
 file(GLOB API ${API_DIR}/*.cpp)
+file(GLOB EDITOR ${EDITOR_DIR}/*.cpp)
+file(GLOB ANIMATION ${ANIMATION_DIR}/*.cpp)
 file(GLOB IMGUI ${IMGUI_DIR}/*.cpp)
 file(GLOB IM_GUIZMO_CPP ${IMGUI_GUIZMO}/*.cpp)
 file(GLOB IMGUI_NODE_EDITOR_CPP ${IMGUI_NODE_EDITOR_DIR}/*.cpp)
@@ -44,7 +48,7 @@ if(WIN32)
 endif(WIN32)
 
 # linking
-add_library(Chronos ${MAIN} ${API} ${IMGUI} 
+add_library(Chronos ${MAIN} ${API} ${IMGUI} ${EDITOR} ${ANIMATION}
             ${IMGUI_BACKENDS}/imgui_impl_glfw.cpp 
             ${IMGUI_BACKENDS}/imgui_impl_vulkan.cpp
             ${IM_GUIZMO_CPP}
@@ -57,10 +61,12 @@ if(WIN32)
 endif(WIN32) 
 
 #header filesPUBLIC 
-target_include_directories(${PROJECT_NAME} PUBLIC ThirdParty/stb)
 target_include_directories(${PROJECT_NAME} PUBLIC Source/Engine/Headers)
-target_include_directories(${PROJECT_NAME} PUBLIC include)
 target_include_directories(${PROJECT_NAME} PUBLIC Source/API/Headers)
+target_include_directories(${PROJECT_NAME} PUBLIC Source/Editor/Headers)
+target_include_directories(${PROJECT_NAME} PUBLIC Source/Animation/Headers)
+target_include_directories(${PROJECT_NAME} PUBLIC ThirdParty/stb)
+target_include_directories(${PROJECT_NAME} PUBLIC include)
 target_include_directories(${PROJECT_NAME} PUBLIC ${GLFW_DIR})  
 target_include_directories(${PROJECT_NAME} PUBLIC ${IMGUI_DIR})               
 target_include_directories(${PROJECT_NAME} PUBLIC ${IMGUI_BACKENDS})

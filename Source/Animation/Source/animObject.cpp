@@ -1,9 +1,15 @@
 #include "animObject.hpp"
-
+#include "animData.hpp"
 AnimObject::AnimObject(int shapeNo, int animObjNo, Shape* shape){
     this->shapeNo = shapeNo;
     this->animObjNo = animObjNo;
     this->shape = shape;
+}
+
+AnimObject::AnimObject(){
+    shapeNo = -1;
+    animObjNo = -1;
+    shape = nullptr;
 }
 
 void AnimObject::addChild(AnimObject* child){
@@ -21,10 +27,10 @@ void AnimObject::removeChild(AnimObject* child){
     child->setParent(nullptr);
 }   
 
-int AnimObject::addAnimation(Animation animation){
+int AnimObject::addAnimation(std::string animationFile){
     int animNo = nextFreeAnimNo;
     nextFreeAnimNo++;
-    animations[animNo] = animation;
+    animations[animNo] = loadAnimationData(animationFile);
     return animNo;
 }
 
@@ -34,8 +40,6 @@ void AnimObject::removeAnimation(int animNo){
     }
 }
 
-
-
-
-
-
+void AnimObject::setParent(AnimObject* parent){
+    this->parent = parent;
+}

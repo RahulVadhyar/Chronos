@@ -1,5 +1,5 @@
 #pragma once
-
+#include "vulkaninit.hpp"
 struct AnimationShapeAttributes{
     float x;
     float y;
@@ -14,9 +14,4 @@ struct AnimationData{
     std::vector<AnimationData> children;
     std::vector<AnimationShapeAttributes> shapeAttributes;
 };
-
-
-
-class Animation{
-
-};
+AnimationData loadAnimationData(std::string path);

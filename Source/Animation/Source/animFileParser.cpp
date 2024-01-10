@@ -1,8 +1,81 @@
-#include "animFileParser.hpp"
+#include "animData.hpp"
 /*
-We need to load in animation files. It will have the extension ".anim.
-"
+We need to load in animation files. It will have the extension ".anim".
+An example of such a file will be:
+
+shape1{
+    Type:Rectangle
+    Child:[shape2, shape3, shape4]
+    #xValues, yValues, rotation, xSize, ySize, show
+    1:[0, 0, 0, 0.5, 0.5, true]
+    2:[0.1, -0.32, 0, 0.5, 0.5, true]
+    3:[0.1, -0.32, 0, 0.5, 0.5, true]
+    4:[0.1, -0.32, 0, 0.5, 0.5, true]
+}
+
+shape2{
+    Type:Triangle
+    Child:[]
+    #xValues, yValues, rotation, xSize, ySize, show
+    1:[0, 0, 0, 0.5, 0.5, true]
+    2:[0.1, -0.32, 0, 0.5, 0.5, true]
+    3:[0.1, -0.32, 0, 0.5, 0.5, true]
+    4:[0.1, -0.32, 0, 0.5, 0.5, true]
+}
+
+shape3{
+    Type:Triangle
+    Child:[]
+    #xValues, yValues, rotation, xSize, ySize, show
+    1:[0, 0, 0, 0.5, 0.5, true]
+    2:[0.1, -0.32, 0, 0.5, 0.5, true]
+    3:[0.1, -0.32, 0, 0.5, 0.5, true]
+    4:[0.1, -0.32, 0, 0.5, 0.5, true]
+}
+shape4{
+    Type:Triangle
+    Child:[]
+    #xValues, yValues, rotation, xSize, ySize, show
+    1:[0, 0, 0, 0.5, 0.5, true]
+    2:[0.1, -0.32, 0, 0.5, 0.5, true]
+    3:[0.1, -0.32, 0, 0.5, 0.5, true]
+    4:[0.1, -0.32, 0, 0.5, 0.5, true]
+}
+The way this format works is that we have multiple shapes. Each shape has the following details:
+Type: The type of shape. This can be either "Rectangle" or "Triangle"   
+Child: The children of the shape. These are the shapes that are the children of parent. If the parent moves, the children move with it.
+'#' denotes comment
+1:[0, 0, 0, 0.5, 0.5, true]
+This is a frame of animation. The 1 is the frame number.
+In the array has the following values:
+xValues: The x values of the shape
+yValues: The y values of the shape
+rotation: The rotation of the shape
+xSize: The x size of the shape
+ySize: The y size of the shape
+show: Whether the shape is shown or not at that particular time
+**NOTE** The above values are relative. They will be applied relative to the current value of the attribute in question.
+For example:
+suppose that the current xValue of the shape is 0.4. Now if the next frame has value -0.1, then at the next frame the xValue will be 0.3.
+
+As we can see this is a simple format. We will need to parse this file and create a tree of AnimationData objects.
+The structs are
+struct AnimationShapeAttributes{
+    float x;
+    float y;
+    float rotation;
+    float xSize;
+    float ySize;
+    float show;
+};
+
+struct AnimationData{
+    std::string name;
+    std::vector<AnimationData> children;
+    std::vector<AnimationShapeAttributes> shapeAttributes;
+};
 */
+
 // Function to parse the shape attributes from a line
 AnimationShapeAttributes parseShapeAttributes(const std::string& line) {
     AnimationShapeAttributes attributes;
