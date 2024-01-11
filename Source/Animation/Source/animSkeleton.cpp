@@ -43,45 +43,30 @@ AnimSkeleton loadSkeletonData(std::string path){
 
     AnimSkeleton root;
     AnimSkeleton* currentSkeleton = &root;
-    std::string line;
-    while (std::getline(file, line)) {
-        if (line.back() == '{') {
-            // New shape definition
-            currentSkeleton->shape = new Shape(line.substr(0, line.size() - 1));
-        } else if (line.back() == '}') {
-            // End of current shape definition
-            currentSkeleton = &root;
-        } else {
-            // Child shape definition
-            std::istringstream iss(line);
-            std::string childName;
-            float xPos, yPos;
-            iss >> childName >> xPos >> yPos;
-            AnimSkeletonNode node{xPos, yPos, new Shape(childName)};
-            currentSkeleton->childrenNodes.push_back(node);
-            currentSkeleton->childrenSkeleton[node] = AnimSkeleton();
-            currentSkeleton = &currentSkeleton->childrenSkeleton[node];
-        }
-    }
+    // std::string line;
+    // while (std::getline(file, line)) {
+    //     if (line.back() == '{') {
+    //         // New shape definition
+    //         currentSkeleton->shape = new Shape(line.substr(0, line.size() - 1).c_str());
+    //     } else if (line.back() == '}') {
+    //         // End of current shape definition
+    //         currentSkeleton = &root;
+    //     } else {
+    //         // Child shape definition
+    //         std::istringstream iss(line);
+    //         std::string childName;
+    //         float xPos, yPos;
+    //         iss >> childName >> xPos >> yPos;
+    //         AnimSkeletonNode node{xPos, yPos, new Shape(childName.c_str())};
+    //         currentSkeleton->childrenNodes.push_back(node);
+    //         currentSkeleton->childrenSkeleton[node] = AnimSkeleton();
+    //         currentSkeleton = &currentSkeleton->childrenSkeleton[node];
+    //     }
+    // }
 
     return root;
 }
 
 void writeSkeletonData(AnimSkeleton skeleton, std::string path){
-    std::ofstream file(path);
-    if (!file.is_open()) {
-        throw std::runtime_error("Failed to open animation file for writing: " + path);
-    }
-
-    std::function<void(const AnimSkeleton&, const std::string&)> writeSkeleton;
-    writeSkeleton = [&](const AnimSkeleton& skeleton, const std::string& indent) {
-        file << indent << skeleton.shape->name << " {\n";
-        for (const auto& node : skeleton.childrenNodes) {
-            file << indent << "  " << node.shape->name << ":[" << node.xPos << ", " << node.yPos << "]\n";
-            writeSkeleton(skeleton.childrenSkeleton.at(node), indent + "  ");
-        }
-        file << indent << "}\n";
-    };
-
-    writeSkeleton(skeleton, "");
+    throw std::runtime_error("Not implemented yet. Need to implement writeSkeletonData");
 }

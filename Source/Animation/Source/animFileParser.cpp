@@ -143,8 +143,11 @@ void Chronos::Animation::writeAnimationData(const AnimationData& data, const std
         file << "]\n";
     }
 
+    int i = 1;
     for (const auto& attribute : data.shapeAttributes) {
-        file << "# " << attribute.name << " " << attribute.value << "\n";
+        file << "# " << i << " " << attribute.x << attribute.y << 
+        attribute.rotation << attribute.xSize << attribute.ySize << attribute.show << "\n";
+        i++;
     }
 
     file << "}\n";

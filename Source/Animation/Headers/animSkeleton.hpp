@@ -1,7 +1,6 @@
 #include "vulkaninit.hpp"
 #include "shape.hpp"
 
-namespace Chronos
 struct AnimSkeletonNode{
     float xPos;
     float yPos;
