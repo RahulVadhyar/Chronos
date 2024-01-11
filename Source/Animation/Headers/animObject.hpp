@@ -1,6 +1,7 @@
 #pragma once
 #include "shape.hpp"
 #include "animData.hpp"
+#include "animSkeleton.hpp"
 namespace Chronos{
     namespace Animation{
         class AnimObject{
@@ -13,6 +14,7 @@ namespace Chronos{
             int addAnimation(std::string animationFile);
             void removeAnimation(int animNo);
             void setParent(AnimObject* parent);
+            void addSkeleton(std::string skeletonPath);
         private:    
             int shapeNo = -1;
             Shape* shape = nullptr;
@@ -20,8 +22,7 @@ namespace Chronos{
             std::vector<AnimObject*> children;
 
             int nextFreeAnimNo = 0;
-            std::map<int, AnimationData> animations;
-            
+            std::map<int, AnimationData> animations;            
         };
     };
 };

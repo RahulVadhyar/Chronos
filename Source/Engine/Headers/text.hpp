@@ -11,8 +11,8 @@ public:
   uint32_t numLetters;
   float scale = 4.0f;
 
-  const char *vertexShaderPath = "G:/StreetChase/ThirdParty/Chronos/Shaders/textVert.spv";
-  const char *fragmentShaderPath = "G:/StreetChase/ThirdParty/Chronos/Shaders/textFrag.spv";
+  const char *vertexShaderPath = "../ThirdParty/Chronos/Shaders/textVert.spv";
+  const char *fragmentShaderPath = "../ThirdParty/Chronos/Shaders/textFrag.spv";
   Device *device;
   SwapChain *swapChain;
   VkCommandPool commandPool;

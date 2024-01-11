@@ -12,8 +12,8 @@
 
 class Shape {
 public:
-  const char *vertexShaderPath = "G:/StreetChase/ThirdParty/Chronos/Shaders/vert.spv";
-  const char *fragmentShaderPath = "G:/StreetChase/ThirdParty/Chronos/Shaders/frag.spv";
+  const char *vertexShaderPath = "../ThirdParty/Chronos/Shaders/vert.spv";
+  const char *fragmentShaderPath = "../ThirdParty/Chronos/Shaders/frag.spv";
   ShapeParams params;
   std::vector<uint16_t> indices;
   std::vector<Vertex> vertices;

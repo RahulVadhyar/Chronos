@@ -17,5 +17,7 @@ namespace Chronos{
             std::vector<AnimationShapeAttributes> shapeAttributes;
         };
         AnimationData loadAnimationData(std::string path);
+        void writeAnimationData(const AnimationData& data, const std::string& path);
+        
     };
 };

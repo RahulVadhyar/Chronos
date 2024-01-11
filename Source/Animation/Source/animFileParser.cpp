@@ -1,6 +1,6 @@
 #include "animData.hpp"
 /*
-We need to load in animation files. It will have the extension ".anim".
+We need to load and write animation files. It will have the extension ".anim".
 An example of such a file will be:
 
 shape1{
@@ -123,4 +123,32 @@ Chronos::Animation::AnimationData Chronos::Animation::loadAnimationData(std::str
     Chronos::Animation::AnimationData data = parseAnimationData(file);
     file.close();
     return data;
+}
+
+void Chronos::Animation::writeAnimationData(const AnimationData& data, const std::string& path) {
+    // Open the file for writing
+    std::ofstream file(path);
+
+    // Check if the file is open
+    if (!file.is_open()) {
+        throw std::runtime_error("Failed to open animation file for writing: " + path);
+    }
+
+    // Write the animation data to the file
+    file << "Name: " << data.name << " {\n";
+
+    for (const auto& child : data.children) {
+        file << "Child: [\n";
+        writeAnimationData(child, path);
+        file << "]\n";
+    }
+
+    for (const auto& attribute : data.shapeAttributes) {
+        file << "# " << attribute.name << " " << attribute.value << "\n";
+    }
+
+    file << "}\n";
+
+    // Close the file
+    file.close();
 }
