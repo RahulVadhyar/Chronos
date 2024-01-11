@@ -1,7 +1,6 @@
 #pragma once
 #include "engine.hpp"
 #include "structs.hpp"
-#include "animObject.hpp"
 //this is the api for chronos. Any applications will include and link to this file
 
 namespace Chronos{
@@ -37,10 +36,10 @@ namespace Chronos{
             int changeBackgroundColor(float r, float g, float b);
 
             //animation part
-            int createAnimObject(int shapeNo);
-            void deleteAnimObject(int animObjNo);
-            void makeAnimObjectChild(int parentAnimObjNo, int childAnimObjNo);
-            void removeAnimObjectChild(int parentAnimObjNo, int childAnimObjNo);
+            // int createAnimObject(int shapeNo);
+            // void deleteAnimObject(int animObjNo);
+            // void makeAnimObjectChild(int parentAnimObjNo, int childAnimObjNo);
+            // void removeAnimObjectChild(int parentAnimObjNo, int childAnimObjNo);
             // int addAnimation(AnimObjNo, std::string animationFile);
             // void startAnimation(AnimObjNo, AnimNo);
             // void stopAnimation(AnimObjNo, AnimNo);
@@ -51,7 +50,6 @@ namespace Chronos{
             int nextFreeTextNo = 0;
             std::map<int, Text> textMap;
             int nextFreeAnimObjNo = 0;
-            std::map<int, Chronos::Animation::AnimObject> animObjects;
             Engine engine;
         };
     };

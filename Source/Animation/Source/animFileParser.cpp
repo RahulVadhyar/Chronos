@@ -1,157 +1,266 @@
-#include "animData.hpp"
-/*
-We need to load and write animation files. It will have the extension ".anim".
-An example of such a file will be:
+#include "animFileParser.hpp"
 
-shape1{
-    Type:Rectangle
-    Child:[shape2, shape3, shape4]
-    #xValues, yValues, rotation, xSize, ySize, show
-    1:[0, 0, 0, 0.5, 0.5, true]
-    2:[0.1, -0.32, 0, 0.5, 0.5, true]
-    3:[0.1, -0.32, 0, 0.5, 0.5, true]
-    4:[0.1, -0.32, 0, 0.5, 0.5, true]
+/*The AnimTree file will be saved as a .skel file. A sample file of such type will be strictly as follows:
+body{
+Type: Triangle
+TexturePath: "Assets/texture.png"
+[0.1, -0.1, 0.4, 0.6, 0.7, true]
+{
+head:[0.3, 0.2],
+leg1:[0.7, 0.6],
+leg2:[0.1, 0.4],
+}
 }
 
-shape2{
-    Type:Triangle
-    Child:[]
-    #xValues, yValues, rotation, xSize, ySize, show
-    1:[0, 0, 0, 0.5, 0.5, true]
-    2:[0.1, -0.32, 0, 0.5, 0.5, true]
-    3:[0.1, -0.32, 0, 0.5, 0.5, true]
-    4:[0.1, -0.32, 0, 0.5, 0.5, true]
+leg1{
+Type: Rectangle
+TexturePath: "Assets/texture.png"
+[0.2, -0.16, 0.38, 0.12, -0.7, true]
+{
+foot1:[0.3, 0.2],
+foot2:[0.1, 0.4],
+}
 }
 
-shape3{
-    Type:Triangle
-    Child:[]
-    #xValues, yValues, rotation, xSize, ySize, show
-    1:[0, 0, 0, 0.5, 0.5, true]
-    2:[0.1, -0.32, 0, 0.5, 0.5, true]
-    3:[0.1, -0.32, 0, 0.5, 0.5, true]
-    4:[0.1, -0.32, 0, 0.5, 0.5, true]
+head{
+Type: Rectangle
+TexturePath: "Assets/texture.png"
+[0.2, -0.16, 0.38, 0.12, -0.7, true]
 }
-shape4{
-    Type:Triangle
-    Child:[]
-    #xValues, yValues, rotation, xSize, ySize, show
-    1:[0, 0, 0, 0.5, 0.5, true]
-    2:[0.1, -0.32, 0, 0.5, 0.5, true]
-    3:[0.1, -0.32, 0, 0.5, 0.5, true]
-    4:[0.1, -0.32, 0, 0.5, 0.5, true]
+
+foot1{
+Type: Rectangle
+TexturePath: "Assets/texture.png"
+[0.2, -0.16, 0.38, 0.12, -0.7, true]
 }
-The way this format works is that we have multiple shapes. Each shape has the following details:
-Type: The type of shape. This can be either "Rectangle" or "Triangle"   
-Child: The children of the shape. These are the shapes that are the children of parent. If the parent moves, the children move with it.
-'#' denotes comment
-1:[0, 0, 0, 0.5, 0.5, true]
-This is a frame of animation. The 1 is the frame number.
-In the array has the following values:
-xValues: The x values of the shape
-yValues: The y values of the shape
-rotation: The rotation of the shape
-xSize: The x size of the shape
-ySize: The y size of the shape
-show: Whether the shape is shown or not at that particular time
-**NOTE** The above values are relative. They will be applied relative to the current value of the attribute in question.
-For example:
-suppose that the current xValue of the shape is 0.4. Now if the next frame has value -0.1, then at the next frame the xValue will be 0.3.
 
-As we can see this is a simple format. We will need to parse this file and create a tree of AnimationData objects.
-The structs are
-struct AnimationShapeAttributes{
-    float x;
-    float y;
-    float rotation;
-    float xSize;
-    float ySize;
-    float show;
-};
+foot2{
+Type: Rectangle
+TexturePath: "Assets/texture.png"
+[0.2, -0.16, 0.38, 0.12, -0.7, true]
+}
 
-struct AnimationData{
-    std::string name;
-    std::vector<AnimationData> children;
-    std::vector<AnimationShapeAttributes> shapeAttributes;
-};
 */
-
-// Function to parse the shape attributes from a line
-Chronos::Animation::AnimationShapeAttributes parseShapeAttributes(const std::string& line) {
-    Chronos::Animation::AnimationShapeAttributes attributes;
-    std::istringstream ss(line);
-    char dummy; // to consume the leading '#'
-    ss >> dummy >> attributes.x >> dummy >> attributes.y >> dummy >> attributes.rotation
-       >> dummy >> attributes.xSize >> dummy >> attributes.ySize >> dummy >> std::boolalpha >> attributes.show;
-    return attributes;
-}
-
-// Function to parse the animation data from the file
-Chronos::Animation::AnimationData parseAnimationData(std::ifstream& file) {
-    Chronos::Animation::AnimationData animationData;
+Chronos::Animation::AnimNode Chronos::Animation::loadAnimTree(std::string path){
+    std::ifstream file(path);
     std::string line;
 
-    // Read the shape name
-    std::getline(file, line);
-    animationData.name = line.substr(0, line.find('{'));
+    AnimNode* currentNode = nullptr;
+    AnimNode root = AnimNode();
 
-    while (std::getline(file, line) && line.find('}') == std::string::npos) {
-        // Check if the line contains the "Child" field
-        if (line.find("Child:") != std::string::npos) {
-            // Read child shapes
-            while (std::getline(file, line) && line.find(']') == std::string::npos) {
-                Chronos::Animation::AnimationData childData = parseAnimationData(file);
-                animationData.children.push_back(childData);
+    std::map<std::string, AnimNode*> nodeMap; //from name to node
+    bool insideShape = false;
+    bool insideChildren = false;
+    std::string currentShapeName;
+    
+    /*Scan the file line by line, validating and adding the necessary information to the
+    relevant data structures*/
+    while(std::getline(file, line)){
+
+        //line is starting a new shape
+        if(!insideShape && line[line.size() - 1] == '{'){
+            insideShape = true;
+            
+            std::string shapeName = line.substr(0, line.size() - 2);
+            if(nodeMap.count(shapeName) > 0){
+                currentNode = nodeMap[shapeName];
+            } else {
+                if(currentNode == nullptr){
+                    currentNode = &root;
+                } else {
+                    throw std::runtime_error("Invalid file format");
+                }
             }
-        } else if (line.find('#') != std::string::npos) {
-            // Read shape attributes
-            Chronos::Animation::AnimationShapeAttributes attributes = parseShapeAttributes(line);
-            animationData.shapeAttributes.push_back(attributes);
+        
+        //line is type
+        }else if(line.substr(0, 5) == "Type: " && insideShape && !insideChildren){
+            if(line[6] == 'T'){
+                currentNode->polygonType.triangle = true;
+            } else if(line[6] == 'R'){
+                currentNode->polygonType.rectangle = true;
+            } else {
+                throw std::runtime_error("Invalid file format");
+            }
+
+        //line is texture path
+        } else if(line.substr(0, 13) == "TexturePath: " && insideShape && !insideChildren){
+            currentNode->texturePath = line.substr(13, line.size() - 13);
+        
+        //line is shape attributes
+        } else if(line[0] == '[' && line[line.size() - 1] == ']' && insideShape && !insideChildren){
+            std::string shapeAttributes = line.substr(1, line.size() - 2);
+            std::vector<std::string> shapeAttributesVector;
+            std::stringstream ss(shapeAttributes);
+            std::string attribute;
+            while(std::getline(ss, attribute, ',')){
+                shapeAttributesVector.push_back(attribute);
+            }
+            currentNode->defaultShapeParams.x = std::stof(shapeAttributesVector[0]);
+            currentNode->defaultShapeParams.y = std::stof(shapeAttributesVector[1]);
+            currentNode->defaultShapeParams.rotation = std::stof(shapeAttributesVector[2]);
+            currentNode->defaultShapeParams.xSize = std::stof(shapeAttributesVector[3]);
+            currentNode->defaultShapeParams.ySize = std::stof(shapeAttributesVector[4]);
+            currentNode->defaultShapeParams.show = std::stoi(shapeAttributesVector[5]);
+        
+        //line is starting children nodes
+        } else if(line[0] == '{' && insideShape && !insideChildren){
+            insideChildren = true;
+        
+        //line is a child node
+        } else if(line[line.size() - 2] == ']' && line[line.size() - 1] == ',' && insideShape && insideChildren){
+            std::string childName = line.substr(0, line.find('[') - 1);
+            float x = std::stof(line.substr(line.find('[') + 1, line.find(',') - 1));
+            float y = std::stof(line.substr(line.find(',') + 1, line.find(']') - 1));
+            AnimNode childNode = AnimNode();
+            childNode.name = childName;
+            childNode.x_rel = x;
+            childNode.y_rel = y;
+            currentNode->children.push_back(childNode);
+            nodeMap[childName] = &currentNode->children[currentNode->children.size() - 1];
+        
+        //line is ending children nodes
+        } else if(line[0] == '}' && insideShape && insideChildren){
+            insideChildren = false;
+        
+        //line is ending a shape
+        } else if(line[0] == '}' && insideShape && !insideChildren){
+            insideShape = false;
+            nodeMap[currentNode->name] = currentNode;
+
+        //else something has gone wrong
+        } else {
+            throw std::runtime_error("Invalid file format");
         }
     }
-
-    return animationData;
-}
-
-Chronos::Animation::AnimationData Chronos::Animation::loadAnimationData(std::string path){
-    std::ifstream file(path);
-
-    if (!file.is_open()) {
-        throw std::runtime_error("Failed to open animation file: " + path);
-    }
-
-    Chronos::Animation::AnimationData data = parseAnimationData(file);
     file.close();
-    return data;
+
+    return root;
 }
 
-void Chronos::Animation::writeAnimationData(const AnimationData& data, const std::string& path) {
-    // Open the file for writing
-    std::ofstream file(path);
-
-    // Check if the file is open
-    if (!file.is_open()) {
-        throw std::runtime_error("Failed to open animation file for writing: " + path);
+std::string convertAnimNodeToString(Chronos::Animation::AnimNode node){
+    std::string nodeString = "";
+    nodeString += node.name + "{\n";
+    nodeString += "Type: ";
+    if(node.polygonType.triangle){
+        nodeString += "Triangle\n";
+    } else if(node.polygonType.rectangle){
+        nodeString += "Rectangle\n";
+    } else {
+        throw std::runtime_error("Invalid file format");
     }
-
-    // Write the animation data to the file
-    file << "Name: " << data.name << " {\n";
-
-    for (const auto& child : data.children) {
-        file << "Child: [\n";
-        writeAnimationData(child, path);
-        file << "]\n";
+    nodeString += "TexturePath: " + node.texturePath + "\n";
+    nodeString += "[" + std::to_string(node.defaultShapeParams.x) + ", " + std::to_string(node.defaultShapeParams.y) + ", " + std::to_string(node.defaultShapeParams.rotation) + ", " + std::to_string(node.defaultShapeParams.xSize) + ", " + std::to_string(node.defaultShapeParams.ySize) + ", " + std::to_string(node.defaultShapeParams.show) + "]\n";
+    if(node.children.size() > 0){
+        nodeString += "{\n";
+        for(auto child : node.children){
+            nodeString += child.name + "[" + std::to_string(child.x_rel) + ", " + std::to_string(child.y_rel) + "],\n";
+        }
+        nodeString += "}\n";
     }
+    nodeString += "}\n";
+    
+    
+    return nodeString;
 
-    int i = 1;
-    for (const auto& attribute : data.shapeAttributes) {
-        file << "# " << i << " " << attribute.x << attribute.y << 
-        attribute.rotation << attribute.xSize << attribute.ySize << attribute.show << "\n";
-        i++;
+}
+
+void Chronos::Animation::saveAnimTree(Chronos::Animation::AnimNode animTree, std::string path){
+    std::ofstream file;
+    file.open(path);
+
+    AnimNode currentNode = animTree;
+    std::vector<AnimNode> nodeStack;
+    nodeStack.push_back(currentNode);
+    while(nodeStack.size() > 0){
+        currentNode = nodeStack[nodeStack.size() - 1];
+        nodeStack.pop_back();
+        file << convertAnimNodeToString(currentNode);
+        for(auto child : currentNode.children){
+            nodeStack.push_back(child);
+        }
     }
+    file.close();
+}
 
-    file << "}\n";
+/*The animation files will be saved as .anim file. The format shall strictly adhere to such a format
+Head{
+[0, 0, 0, 0.5, 0.5, true]
+[0.1, -0.32, 0, 0.5, 0.5, true]
+[0.1, -0.32, 0, 0.5, 0.5, true]
+[0.1, -0.32, 0, 0.5, 0.5, true]
+}
+Body{
+[0, 0, 0, 0.5, 0.5, true]
+[0.1, -0.32, 0, 0.5, 0.5, true]
+[0.1, -0.32, 0, 0.5, 0.5, true]
+[0.1, -0.32, 0, 0.5, 0.5, true]
+}
+Hand1{
+[0, 0, 0, 0.5, 0.5, true]
+[0.1, -0.32, 0, 0.5, 0.5, true]
+[0.1, -0.32, 0, 0.5, 0.5, true]
+[0.1, -0.32, 0, 0.5, 0.5, true]
+}
+Hand2{
+[0, 0, 0, 0.5, 0.5, true]
+[0.1, -0.32, 0, 0.5, 0.5, true]
+[0.1, -0.32, 0, 0.5, 0.5, true]
+[0.1, -0.32, 0, 0.5, 0.5, true]
+}
+*/
 
-    // Close the file
+std::map<std::string, std::vector<Chronos::Animation::AnimShapeAttributes>> Chronos::Animation::loadAnimFile(std::string path){
+    std::ifstream file(path);
+    std::string line;
+    
+    std::map<std::string, std::vector<AnimShapeAttributes>> animationMap;
+
+    std::string currentShape;
+    bool insideShape = false;
+    /*Scan the file line by line, validating and adding the necessary information to the
+    relevant data structures*/
+    while(std::getline(file, line)){
+        if(!insideShape && line[line.size() - 1] == '{'){
+            insideShape = true;
+            std::string shapeName = line.substr(0, line.size() - 2);
+            animationMap[shapeName] = std::vector<AnimShapeAttributes>();
+            currentShape = shapeName;
+        } else if(insideShape && line[0] == '[' && line[line.size() - 2] == ']'){
+            AnimShapeAttributes shapeAttributes;
+            std::string shapeAttributesString = line.substr(1, line.size() - 2);
+            std::vector<std::string> shapeAttributesVector;
+            std::stringstream ss(shapeAttributesString);
+            std::string attribute;
+            while(std::getline(ss, attribute, ',')){
+                shapeAttributesVector.push_back(attribute);
+            }
+            shapeAttributes.x = std::stof(shapeAttributesVector[0]);
+            shapeAttributes.y = std::stof(shapeAttributesVector[1]);
+            shapeAttributes.rotation = std::stof(shapeAttributesVector[2]);
+            shapeAttributes.xSize = std::stof(shapeAttributesVector[3]);
+            shapeAttributes.ySize = std::stof(shapeAttributesVector[4]);
+            shapeAttributes.show = std::stoi(shapeAttributesVector[5]);
+            animationMap[currentShape].push_back(shapeAttributes);
+        } else if(insideShape && line[0] == '}'){
+            insideShape = false;
+        } else {
+            throw std::runtime_error("Invalid file format");
+        }
+    }
+    file.close();
+    return animationMap;
+}
+
+void Chronos::Animation::saveAnimFile(std::map<std::string, std::vector<Chronos::Animation::AnimShapeAttributes>> animation, std::string path){
+    std::ofstream file;
+    file.open(path);
+
+    for(auto shape : animation){
+        file << shape.first << "{\n";
+        for(auto shapeAttributes : shape.second){
+            file << "[" << shapeAttributes.x << ", " << shapeAttributes.y << ", " << shapeAttributes.rotation << ", " << shapeAttributes.xSize << ", " << shapeAttributes.ySize << ", " << shapeAttributes.show << "]\n";
+        }
+        file << "}\n";
+    }
     file.close();
 }
