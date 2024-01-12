@@ -1,7 +1,9 @@
-# cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.13)
 project(Chronos)
 
-# set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 20)
+
+
 
 #GLFW
 add_subdirectory(ThirdParty/glfw)
@@ -60,7 +62,7 @@ if(WIN32)
     target_include_directories(${PROJECT_NAME} PUBLIC ${VULKAN_SDK_INCLUDE})     
 endif(WIN32) 
 
-#header filesPUBLIC 
+#header files
 target_include_directories(${PROJECT_NAME} PUBLIC Source/Engine/Headers)
 target_include_directories(${PROJECT_NAME} PUBLIC Source/API/Headers)
 target_include_directories(${PROJECT_NAME} PUBLIC Source/Editor/Headers)
@@ -83,5 +85,60 @@ endif(WIN32)
 if(UNIX)
 target_link_libraries(${PROJECT_NAME} vulkan)   
 endif(UNIX)
-
 target_link_libraries(${PROJECT_NAME} glfw)
+
+
+
+#testing time...
+
+#fetch the test files
+file(GLOB ENGINE_TESTS Source/Engine/Tests/*.cpp)
+
+#add google tests
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+add_executable(
+  ChronosTests
+    ${ENGINE_TESTS}
+    ${MAIN} ${API} ${IMGUI} ${EDITOR} ${ANIMATION}
+            ${IMGUI_BACKENDS}/imgui_impl_glfw.cpp 
+            ${IMGUI_BACKENDS}/imgui_impl_vulkan.cpp
+            ${IM_GUIZMO_CPP}
+            ${IMGUI_NODE_EDITOR_CPP}
+)
+target_link_libraries(
+  ChronosTests
+  GTest::gtest_main
+)
+if(WIN32)
+target_link_libraries(ChronosTests vulkan-1) 
+endif(WIN32)
+if(UNIX)
+target_link_libraries(ChronosTests vulkan)   
+endif(UNIX)
+target_link_libraries(ChronosTests glfw)
+target_include_directories(ChronosTests PUBLIC Source/Engine/Headers)
+target_include_directories(ChronosTests PUBLIC Source/API/Headers)
+target_include_directories(ChronosTests PUBLIC Source/Editor/Headers)
+target_include_directories(ChronosTests PUBLIC Source/Animation/Headers)
+target_include_directories(ChronosTests PUBLIC Source/Common)
+target_include_directories(ChronosTests PUBLIC ThirdParty/stb)
+target_include_directories(ChronosTests PUBLIC include)
+target_include_directories(ChronosTests PUBLIC ${GLFW_DIR})  
+target_include_directories(ChronosTests PUBLIC ${IMGUI_DIR})               
+target_include_directories(ChronosTests PUBLIC ${IMGUI_BACKENDS})
+target_include_directories(ChronosTests PUBLIC ${FONTS_DIR})
+target_include_directories(ChronosTests PUBLIC ${IMGUI_GUIZMO})    
+target_include_directories(ChronosTests PUBLIC ${IMGUI_NODE_EDITOR_DIR})
+
+
+include(GoogleTest)
+gtest_discover_tests(ChronosTests)
