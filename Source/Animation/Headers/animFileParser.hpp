@@ -1,13 +1,13 @@
 #pragma once
-#include "stlheader.hpp"
 #include "animTree.hpp"
+#include "stlheader.hpp"
 
-namespace Chronos{
-    namespace Animation{
-        std::map<std::string, std::vector<AnimShapeAttributes>> loadAnimFile(std::string path);
-        void saveAnimFile(std::map<std::string, std::vector<AnimShapeAttributes>> animation, std::string path);
+namespace Chronos {
+namespace Animation {
+    std::map<std::string, std::vector<AnimShapeAttributes>> loadAnimFile(std::string path);
+    void saveAnimFile(std::map<std::string, std::vector<AnimShapeAttributes>> animation, std::string path);
 
-        AnimNode loadAnimTree(std::string path);
-        void saveAnimTree(AnimNode animTree, std::string path);
-    };
+    AnimNode loadAnimTree(std::string path);
+    void saveAnimTree(AnimNode animTree, std::string path);
+};
 };
