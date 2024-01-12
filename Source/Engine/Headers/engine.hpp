@@ -1,5 +1,7 @@
 #pragma once
-#include "vulkaninit.hpp"
+#include "featureMacros.hpp"
+#include "vulkanHeaders.hpp"
+#include "stlheader.hpp"
 #include "device.hpp"
 #include "shape.hpp"
 #include "Vertex.hpp"
