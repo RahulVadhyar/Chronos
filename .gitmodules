@@ -10,3 +10,6 @@
 [submodule "ThirdParty/ImGuizmo"]
 	path = ThirdParty/ImGuizmo
 	url = https://github.com/CedricGuillemet/ImGuizmo.git
+[submodule "ThirdParty/googletest"]
+	path = ThirdParty/googletest
+	url = https://github.com/google/googletest.git
