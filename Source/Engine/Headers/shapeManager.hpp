@@ -7,7 +7,7 @@
 
 class ShapeManager {
 public:
-    Device* device;
+    Chronos::Engine::Device* device;
     SwapChain* swapChain;
     VkCommandPool commandPool;
     int nextFreeShapeNo = 0;
@@ -17,8 +17,7 @@ public:
     VkSampler textureSampler;
     std::vector<VkFramebuffer> framebuffers;
 
-    void init(Device* device, SwapChain* swapChain, VkCommandPool commandPool,
-        VkSampler textureSampler);
+    void init(Chronos::Engine::Device* device, SwapChain* swapChain, VkCommandPool commandPool);
     int addTriangle(ShapeParams shapeParams, std::string texturePath);
     int addRectangle(ShapeParams shapeParams, std::string texturePath);
     void removeShape(int shapeNo);

@@ -16,7 +16,7 @@ public:
     ShapeParams params;
     std::vector<uint16_t> indices;
     std::vector<Vertex> vertices;
-    Device* device;
+    Chronos::Engine::Device* device;
     SwapChain* swapChain;
     VkCommandPool commandPool;
     VkSampler textureSampler;
@@ -31,7 +31,7 @@ public:
     VkPipelineLayout pipelineLayout;
     VkPipeline graphicsPipeline;
     std::vector<UniformBuffer> uniformBuffers;
-    void init(Device* device, VkCommandPool commandPool, SwapChain* swapChain,
+    void init(Chronos::Engine::Device* device, VkCommandPool commandPool, SwapChain* swapChain,
         VkSampler textureSampler, std::string texturePath,
         VkRenderPass* renderPass);
     void createGraphicsPipeline();

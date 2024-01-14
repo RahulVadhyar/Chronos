@@ -15,7 +15,7 @@ public:
 
     const char* vertexShaderPath = "../ThirdParty/Chronos/Shaders/textVert.spv";
     const char* fragmentShaderPath = "../ThirdParty/Chronos/Shaders/textFrag.spv";
-    Device* device;
+    Chronos::Engine::Device* device;
     SwapChain* swapChain;
     VkCommandPool commandPool;
     VkSampler textureSampler;
@@ -34,7 +34,7 @@ public:
     VkDescriptorPool descriptorPool;
     VkPipelineLayout pipelineLayout;
     VkPipeline graphicsPipeline;
-    void init(Device* device, VkCommandPool commandPool, SwapChain* swapChain);
+    void init(Chronos::Engine::Device* device, VkCommandPool commandPool, SwapChain* swapChain);
     void createGraphicsPipeline();
     void createDescriptorPool();
     void createDescriptorSetLayout();

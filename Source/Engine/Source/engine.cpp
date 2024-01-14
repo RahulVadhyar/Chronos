@@ -10,23 +10,32 @@
 static void framebuffer_size_callback(GLFWwindow* window, int width,
     int height)
 {
-    auto app = reinterpret_cast<Engine*>(glfwGetWindowUserPointer(window));
-    app->framebufferResized = true;
+    auto app = reinterpret_cast<Chronos::Engine::Engine*>(glfwGetWindowUserPointer(window));
+    app->resizeFrameBuffer();
 }
-
-void Engine::run()
-{
+Chronos::Engine::Engine::Engine()
+{   
 #ifdef DISPLAY_IMGUI
     gui = Chronos::Editor::GUI();
     guiParams.settings = &settings;
 #endif
+    // initialize the window and vulkan
     initWindow();
     initVulkan();
-    mainLoop();
+}
+
+Chronos::Engine::Engine::~Engine()
+{
+    vkDeviceWaitIdle(device.device);
     cleanup();
 }
 
-void Engine::initWindow()
+void Chronos::Engine::Engine::resizeFrameBuffer()
+{
+    framebufferResized = true;
+}
+
+void Chronos::Engine::Engine::initWindow()
 {
     // initialize glfw with a resizeable window
     glfwInit();
@@ -41,7 +50,7 @@ void Engine::initWindow()
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 }
 
-void Engine::initVulkan()
+void Chronos::Engine::Engine::initVulkan()
 {
     createInstance();
     if (enableValidationLayers) {
@@ -57,9 +66,8 @@ void Engine::initVulkan()
 #endif
 
     swapChain.init(&device, surface, window);
-    createTextureSampler(device, &textureSampler);
     commandPool = createCommandPool(device, swapChain.surface);
-    shapeManager.init(&device, &swapChain, commandPool, textureSampler);
+    shapeManager.init(&device, &swapChain, commandPool);
     textManager.init(&device, commandPool, &swapChain);
     createSyncObjects();
 
@@ -71,22 +79,11 @@ void Engine::initVulkan()
 #endif
 }
 
-void Engine::mainLoop()
-{
-    while (!glfwWindowShouldClose(window)) {
-        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-            glfwSetWindowShouldClose(window, true);
-        }
-        drawFrame();
-    }
-    vkDeviceWaitIdle(device.device);
-}
-
-void Engine::cleanup()
+void Chronos::Engine::Engine::cleanup()
 {
     // after we are done, we need to cleanup all the resources we created
     swapChain.cleanup();
-    vkDestroySampler(device.device, textureSampler, nullptr);
+    
     shapeManager.destroy();
     textManager.destroy();
 #ifdef DISPLAY_IMGUI
@@ -108,7 +105,7 @@ void Engine::cleanup()
     glfwTerminate();
 }
 
-void Engine::drawFrame()
+void Chronos::Engine::Engine::drawFrame()
 {
     // wait for the previous frame to finish
     glfwPollEvents();
@@ -205,7 +202,7 @@ void Engine::drawFrame()
     currentFrame = (currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
 }
 
-void Engine::createInstance()
+void Chronos::Engine::Engine::createInstance()
 {
     VkApplicationInfo appInfo {};
     appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
@@ -252,7 +249,7 @@ void Engine::createInstance()
     }
 }
 
-void Engine::setupDebugMessenger()
+void Chronos::Engine::Engine::setupDebugMessenger()
 {
     if (!enableValidationLayers)
         return;
@@ -265,14 +262,14 @@ void Engine::setupDebugMessenger()
     }
 }
 
-void Engine::createSurface()
+void Chronos::Engine::Engine::createSurface()
 {
     if (glfwCreateWindowSurface(instance, window, nullptr, &surface) != VK_SUCCESS) {
         throw std::runtime_error("Failed to create window surface");
     }
 }
 
-void Engine::createSyncObjects()
+void Chronos::Engine::Engine::createSyncObjects()
 {
     imageAvailableSemaphores.resize(MAX_FRAMES_IN_FLIGHT);
     renderFinishedSemaphores.resize(MAX_FRAMES_IN_FLIGHT);

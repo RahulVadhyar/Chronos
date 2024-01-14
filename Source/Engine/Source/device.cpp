@@ -4,15 +4,15 @@
 #include "helper.hpp"
 #include "validation.hpp"
 
-void Device::init(VkInstance instance, VkSurfaceKHR surface)
+void Chronos::Engine::Device::init(VkInstance instance, VkSurfaceKHR surface)
 {
     pickPhysicalDevice(instance, surface);
     createLogicalDevice(surface);
 }
 
-void Device::destroy() { vkDestroyDevice(device, nullptr); }
+void Chronos::Engine::Device::destroy() { vkDestroyDevice(device, nullptr); }
 
-void Device::pickPhysicalDevice(VkInstance instance, VkSurfaceKHR surface)
+void Chronos::Engine::Device::pickPhysicalDevice(VkInstance instance, VkSurfaceKHR surface)
 {
     // get the number of devices
     uint32_t deviceCount = 0;
@@ -36,7 +36,7 @@ void Device::pickPhysicalDevice(VkInstance instance, VkSurfaceKHR surface)
     }
 }
 
-void Device::createLogicalDevice(VkSurfaceKHR surface)
+void Chronos::Engine::Device::createLogicalDevice(VkSurfaceKHR surface)
 {
     QueueFamilyIndices indices = findQueueFamilies(physicalDevice, surface);
 

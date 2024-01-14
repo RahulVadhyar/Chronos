@@ -98,7 +98,7 @@ SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device,
 
     return details;
 }
-void SwapChain::init(Device* device, VkSurfaceKHR surface, GLFWwindow* window)
+void SwapChain::init(Chronos::Engine::Device* device, VkSurfaceKHR surface, GLFWwindow* window)
 {
     this->device = device;
     this->surface = surface;

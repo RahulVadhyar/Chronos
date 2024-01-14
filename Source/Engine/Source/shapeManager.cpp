@@ -5,13 +5,14 @@
 #include "shapeManager.hpp"
 #include "helper.hpp"
 
-void ShapeManager::init(Device* device, SwapChain* swapChain,
-    VkCommandPool commandPool, VkSampler textureSampler)
+void ShapeManager::init(Chronos::Engine::Device* device, SwapChain* swapChain,
+    VkCommandPool commandPool)
 {
     this->device = device;
     this->swapChain = swapChain;
     this->commandPool = commandPool;
-    this->textureSampler = textureSampler;
+
+    createTextureSampler(*device, &textureSampler);
 
     /*
     For the render pass the formats are as follows:
@@ -30,6 +31,7 @@ void ShapeManager::init(Device* device, SwapChain* swapChain,
 
 void ShapeManager::destroy()
 {
+    vkDestroySampler(device->device, textureSampler, nullptr);
     vkDestroyRenderPass(device->device, renderPass, nullptr);
     for (auto framebuffer : framebuffers)
         vkDestroyFramebuffer(device->device, framebuffer, nullptr);

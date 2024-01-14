@@ -5,7 +5,7 @@
 #include "engine.hpp"
 #include "helper.hpp"
 
-void Shape::init(Device* device, VkCommandPool commandPool,
+void Shape::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     SwapChain* swapChain, VkSampler textureSampler,
     std::string texturePath, VkRenderPass* renderPass)
 {

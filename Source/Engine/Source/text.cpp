@@ -5,7 +5,7 @@
 #include "engine.hpp"
 #include "helper.hpp"
 
-void Text::init(Device* device, VkCommandPool commandPool,
+void Text::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     SwapChain* swapChain)
 {
     this->device = device;

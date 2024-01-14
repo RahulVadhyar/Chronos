@@ -5,7 +5,7 @@
 #include "buffers.hpp"
 #include "helper.hpp"
 
-void Buffer::create(Device device, VkBufferUsageFlags flags,
+void Buffer::create(Chronos::Engine::Device device, VkBufferUsageFlags flags,
     VkMemoryPropertyFlags properties)
 {
     this->device = device;
@@ -35,7 +35,7 @@ void Buffer::destroy()
     vkFreeMemory(device.device, memory, nullptr);
 }
 
-void UniformBuffer::create(Device device)
+void UniformBuffer::create(Chronos::Engine::Device device)
 {
     size = sizeof(UniformBufferObject);
     Buffer::create(device, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,

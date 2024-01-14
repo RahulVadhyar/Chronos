@@ -10,8 +10,6 @@ Manager::Manager::Manager(Chronos::Manager::Initializer initializer)
 {
     engine.width = initializer.WindowWidth;
     engine.height = initializer.WindowHeight;
-    engine.initWindow();
-    engine.initVulkan();
 }
 void Manager::Manager::drawFrame()
 {
@@ -27,12 +25,6 @@ int Manager::Manager::changeBackgroundColor(float r, float g, float b)
     engine.bgColor[1] = g;
     engine.bgColor[2] = b;
     return 0;
-}
-int Manager::Manager::stop()
-{
-    vkDeviceWaitIdle(engine.device.device);
-    engine.cleanup();
-    return 1;
 }
 
 int Manager::Manager::addPolygon(ShapeParams shapeParams, Chronos::Manager::PolygonType polygonType, std::string texturePath)

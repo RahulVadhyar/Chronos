@@ -27,7 +27,6 @@ namespace Chronos{
             Manager(Initializer initializer);
             GLFWwindow* getWindow();
             void drawFrame();
-            int stop();
             int addText(Text text);
             int addPolygon(ShapeParams shapeParams, PolygonType polygonType, std::string texturePath);
             int updatePolygon(int shapeNo, ShapeParams shapeParams);
@@ -50,7 +49,7 @@ namespace Chronos{
             int nextFreeTextNo = 0;
             std::map<int, Text> textMap;
             int nextFreeAnimObjNo = 0;
-            Engine engine;
+            Chronos::Engine::Engine engine;
         };
     };
 };

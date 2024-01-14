@@ -29,7 +29,7 @@ VkCommandBuffer beginSingleTimeCommands(VkCommandPool commandPool,
     return commandBuffer;
 }
 
-void endSingleTimeCommands(VkCommandBuffer* commandBuffer, Device device,
+void endSingleTimeCommands(VkCommandBuffer* commandBuffer, Chronos::Engine::Device device,
     VkCommandPool commandPool)
 {
     vkEndCommandBuffer(*commandBuffer);
@@ -58,7 +58,7 @@ uint32_t findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties,
     throw std::runtime_error("failed to find suitable memory type!");
 }
 
-void createBuffer(Device device, VkDeviceSize size, VkBufferUsageFlags usage,
+void createBuffer(Chronos::Engine::Device device, VkDeviceSize size, VkBufferUsageFlags usage,
     VkMemoryPropertyFlags properties, VkBuffer* buffer,
     VkDeviceMemory* bufferMemory)
 {
@@ -88,7 +88,7 @@ void createBuffer(Device device, VkDeviceSize size, VkBufferUsageFlags usage,
     vkBindBufferMemory(device.device, *buffer, *bufferMemory, 0);
 }
 
-void copyBuffer(Device device, VkBuffer srcBuffer, VkBuffer dstBuffer,
+void copyBuffer(Chronos::Engine::Device device, VkBuffer srcBuffer, VkBuffer dstBuffer,
     VkDeviceSize size, VkCommandPool commandPool)
 {
     // copies data from a buffer to another buffer
@@ -236,7 +236,7 @@ VkSampleCountFlagBits getMaxUsableSampleCount(VkPhysicalDevice physicalDevice)
     return VK_SAMPLE_COUNT_1_BIT;
 }
 
-VkCommandPool createCommandPool(Device device, VkSurfaceKHR surface)
+VkCommandPool createCommandPool(Chronos::Engine::Device device, VkSurfaceKHR surface)
 {
     VkCommandPool commandPool;
     QueueFamilyIndices queueFamilyIndices = findQueueFamilies(device.physicalDevice, surface);
@@ -250,7 +250,7 @@ VkCommandPool createCommandPool(Device device, VkSurfaceKHR surface)
     return commandPool;
 }
 
-VkRenderPass createRenderPass(Device device, SwapChain swapChain,
+VkRenderPass createRenderPass(Chronos::Engine::Device device, SwapChain swapChain,
     VkImageLayout initalLayout,
     VkImageLayout finalLayout,
     VkImageLayout msaaFinalLayout, bool msaa,
@@ -347,7 +347,7 @@ VkRenderPass createRenderPass(Device device, SwapChain swapChain,
     return renderPass;
 }
 
-std::vector<VkFramebuffer> createFramebuffer(Device device, SwapChain swapChain,
+std::vector<VkFramebuffer> createFramebuffer(Chronos::Engine::Device device, SwapChain swapChain,
     VkRenderPass renderPass,
     bool msaa)
 {
@@ -378,7 +378,7 @@ std::vector<VkFramebuffer> createFramebuffer(Device device, SwapChain swapChain,
     return framebuffers;
 }
 
-std::vector<VkCommandBuffer> createCommandBuffer(Device device,
+std::vector<VkCommandBuffer> createCommandBuffer(Chronos::Engine::Device device,
     SwapChain swapChain,
     VkCommandPool commandPool)
 {

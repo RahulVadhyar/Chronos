@@ -6,7 +6,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-void createImage(Device device, uint32_t width, uint32_t height,
+void createImage(Chronos::Engine::Device device, uint32_t width, uint32_t height,
     VkFormat format, VkImageTiling tiling, VkImageUsageFlags usage,
     VkMemoryPropertyFlags properties, VkImage* image,
     VkDeviceMemory* imageMemory,
@@ -46,7 +46,7 @@ void createImage(Device device, uint32_t width, uint32_t height,
 
     vkBindImageMemory(device.device, *image, *imageMemory, 0);
 }
-void Texture::create(Device device, VkCommandPool commandPool,
+void Texture::create(Chronos::Engine::Device device, VkCommandPool commandPool,
     std::string texturePath)
 {
     int texWidth, texHeight, texChannels;
@@ -101,7 +101,7 @@ void Texture::create(Device device, VkCommandPool commandPool,
 
 void transitionImageLayout(VkImage image, VkFormat format,
     VkImageLayout oldLayout, VkImageLayout newLayout,
-    VkCommandPool commandPool, Device device)
+    VkCommandPool commandPool, Chronos::Engine::Device device)
 {
     VkCommandBuffer commandBuffer = beginSingleTimeCommands(commandPool, device.device);
     VkImageMemoryBarrier barrier {};
@@ -142,7 +142,7 @@ void transitionImageLayout(VkImage image, VkFormat format,
 
 void copyBufferToImage(VkBuffer buffer, VkImage image, uint32_t width,
     uint32_t height, VkCommandPool commandPool,
-    Device device)
+    Chronos::Engine::Device device)
 {
     VkCommandBuffer commandBuffer = beginSingleTimeCommands(commandPool, device.device);
     VkBufferImageCopy region {};
@@ -160,7 +160,7 @@ void copyBufferToImage(VkBuffer buffer, VkImage image, uint32_t width,
     endSingleTimeCommands(&commandBuffer, device, commandPool);
 }
 
-VkImageView createImageView(Device device, VkFormat format, VkImage image)
+VkImageView createImageView(Chronos::Engine::Device device, VkFormat format, VkImage image)
 {
     VkImageViewCreateInfo viewInfo {};
     viewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
@@ -181,7 +181,7 @@ VkImageView createImageView(Device device, VkFormat format, VkImage image)
     return imageView;
 }
 
-void createTextureSampler(Device device, VkSampler* textureSampler)
+void createTextureSampler(Chronos::Engine::Device device, VkSampler* textureSampler)
 {
     VkPhysicalDeviceProperties properties {};
     vkGetPhysicalDeviceProperties(device.physicalDevice, &properties);

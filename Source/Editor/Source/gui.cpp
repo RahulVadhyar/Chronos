@@ -172,7 +172,7 @@ void Chronos::Editor::shapeMover(ShapeParams* shapeParams)
     ImGui::DragFloat("Rotation", &shapeParams->rotation, 1.0f);
 };
 
-void Chronos::Editor::GUI::init(Device* device, GLFWwindow* window, SwapChain* swapChain,
+void Chronos::Editor::GUI::init(Chronos::Engine::Device* device, GLFWwindow* window, SwapChain* swapChain,
     VkInstance instance, VkSurfaceKHR surface, GUIParams* params)
 {
     this->device = device;

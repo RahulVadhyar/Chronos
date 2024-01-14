@@ -49,7 +49,7 @@ namespace Editor {
 
     class GUI {
     public:
-        Device* device;
+        Chronos::Engine::Device* device;
         SwapChain* swapChain;
         VkSurfaceKHR surface;
         GLFWwindow* window;
@@ -63,7 +63,7 @@ namespace Editor {
 
         GUIInternal internal {};
         GUIParams* params;
-        void init(Device* device, GLFWwindow* window, SwapChain* swapChain,
+        void init(Chronos::Engine::Device* device, GLFWwindow* window, SwapChain* swapChain,
             VkInstance instance, VkSurfaceKHR surface, GUIParams* params);
         void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]);
         void destroy();

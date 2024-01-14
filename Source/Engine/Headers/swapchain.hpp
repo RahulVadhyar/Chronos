@@ -20,7 +20,7 @@ SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device,
 
 class SwapChain {
 public:
-    Device* device;
+    Chronos::Engine::Device* device;
 
     VkSwapchainKHR swapChain;
     VkFormat swapChainImageFormat;
@@ -33,7 +33,7 @@ public:
     std::vector<VkImage> swapChainImages;
     std::vector<VkImageView> swapChainImageViews;
 
-    void init(Device* device, VkSurfaceKHR surface, GLFWwindow* window);
+    void init(Chronos::Engine::Device* device, VkSurfaceKHR surface, GLFWwindow* window);
     void create();
     void recreate();
     void cleanup();
