@@ -1,12 +1,7 @@
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "device.hpp"
-#include "swapchain.hpp"
 #include "helper.hpp"
 #include "validation.hpp"
-#include "swapchain.hpp"
 
-VkCommandBuffer beginSingleTimeCommands(VkCommandPool commandPool,
+VkCommandBuffer Chronos::Engine::beginSingleTimeCommands(VkCommandPool commandPool,
     VkDevice device)
 {
     // used for staging buffers. We need a temproary command buffer to copy the
@@ -29,7 +24,7 @@ VkCommandBuffer beginSingleTimeCommands(VkCommandPool commandPool,
     return commandBuffer;
 }
 
-void endSingleTimeCommands(VkCommandBuffer* commandBuffer, Chronos::Engine::Device device,
+void Chronos::Engine::endSingleTimeCommands(VkCommandBuffer* commandBuffer, Chronos::Engine::Device device,
     VkCommandPool commandPool)
 {
     vkEndCommandBuffer(*commandBuffer);
@@ -45,7 +40,7 @@ void endSingleTimeCommands(VkCommandBuffer* commandBuffer, Chronos::Engine::Devi
     vkFreeCommandBuffers(device.device, commandPool, 1, commandBuffer);
 }
 
-uint32_t findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties,
+uint32_t Chronos::Engine::findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties,
     VkPhysicalDevice physicalDevice)
 {
     VkPhysicalDeviceMemoryProperties memProperties;
@@ -58,7 +53,7 @@ uint32_t findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties,
     throw std::runtime_error("failed to find suitable memory type!");
 }
 
-void createBuffer(Chronos::Engine::Device device, VkDeviceSize size, VkBufferUsageFlags usage,
+void Chronos::Engine::createBuffer(Chronos::Engine::Device device, VkDeviceSize size, VkBufferUsageFlags usage,
     VkMemoryPropertyFlags properties, VkBuffer* buffer,
     VkDeviceMemory* bufferMemory)
 {
@@ -88,20 +83,20 @@ void createBuffer(Chronos::Engine::Device device, VkDeviceSize size, VkBufferUsa
     vkBindBufferMemory(device.device, *buffer, *bufferMemory, 0);
 }
 
-void copyBuffer(Chronos::Engine::Device device, VkBuffer srcBuffer, VkBuffer dstBuffer,
+void Chronos::Engine::copyBuffer(Chronos::Engine::Device device, VkBuffer srcBuffer, VkBuffer dstBuffer,
     VkDeviceSize size, VkCommandPool commandPool)
 {
     // copies data from a buffer to another buffer
-    VkCommandBuffer commandBuffer = beginSingleTimeCommands(commandPool, device.device);
+    VkCommandBuffer commandBuffer = Chronos::Engine::beginSingleTimeCommands(commandPool, device.device);
     VkBufferCopy copyRegion {};
     copyRegion.srcOffset = 0;
     copyRegion.dstOffset = 0;
     copyRegion.size = size;
     vkCmdCopyBuffer(commandBuffer, srcBuffer, dstBuffer, 1, &copyRegion);
-    endSingleTimeCommands(&commandBuffer, device, commandPool);
+    Chronos::Engine::endSingleTimeCommands(&commandBuffer, device, commandPool);
 }
 
-std::vector<const char*> getRequiredExtensions()
+std::vector<const char*> Chronos::Engine::getRequiredExtensions()
 {
     // here we set the needed extensions. For now it is only debug layer
     uint32_t glfwExtensionCount = 0;
@@ -115,10 +110,10 @@ std::vector<const char*> getRequiredExtensions()
     return extensions;
 }
 
-QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device,
+Chronos::Engine::QueueFamilyIndices Chronos::Engine::findQueueFamilies(VkPhysicalDevice device,
     VkSurfaceKHR surface)
 {
-    QueueFamilyIndices indices;
+    Chronos::Engine::QueueFamilyIndices indices;
     uint32_t queueFamilyCount = 0;
     vkGetPhysicalDeviceQueueFamilyProperties(device, &queueFamilyCount, nullptr);
     // get the queue families
@@ -144,7 +139,7 @@ QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device,
     return indices;
 }
 
-bool checkDeviceExtensionSupport(VkPhysicalDevice device)
+bool Chronos::Engine::checkDeviceExtensionSupport(VkPhysicalDevice device)
 {
     uint32_t extensionCount;
     vkEnumerateDeviceExtensionProperties(device, nullptr, &extensionCount,
@@ -163,15 +158,15 @@ bool checkDeviceExtensionSupport(VkPhysicalDevice device)
 
     return requiredExtensions.empty();
 }
-bool isDeviceSuitable(VkPhysicalDevice device, VkSurfaceKHR surface)
+bool Chronos::Engine::isDeviceSuitable(VkPhysicalDevice device, VkSurfaceKHR surface)
 {
     // check if the device has the required queue families
-    QueueFamilyIndices indices = findQueueFamilies(device, surface);
-    bool extensionsSupported = checkDeviceExtensionSupport(device);
+    Chronos::Engine::QueueFamilyIndices indices = Chronos::Engine::findQueueFamilies(device, surface);
+    bool extensionsSupported = Chronos::Engine::checkDeviceExtensionSupport(device);
 
     bool swapChainAdequate = false;
     if (extensionsSupported) {
-        SwapChainSupportDetails swapChainSupport = querySwapChainSupport(device, surface);
+        SwapChainSupportDetails swapChainSupport = Chronos::Engine::querySwapChainSupport(device, surface);
         swapChainAdequate = !swapChainSupport.formats.empty() && !swapChainSupport.presentModes.empty();
     }
 
@@ -179,7 +174,7 @@ bool isDeviceSuitable(VkPhysicalDevice device, VkSurfaceKHR surface)
     vkGetPhysicalDeviceFeatures(device, &supportedFeatures);
     return indices.isComplete() && extensionsSupported && swapChainAdequate && supportedFeatures.samplerAnisotropy;
 }
-std::vector<char> readFile(const std::string& filename)
+std::vector<char> Chronos::Engine::readFile(const std::string& filename)
 {
     // reads file. Used to read shaders
     std::ifstream file(filename, std::ios::ate | std::ios::binary);
@@ -194,7 +189,7 @@ std::vector<char> readFile(const std::string& filename)
     return buffer;
 }
 
-VkShaderModule createShaderModule(const std::vector<char>& code,
+VkShaderModule Chronos::Engine::createShaderModule(const std::vector<char>& code,
     VkDevice device)
 {
     VkShaderModuleCreateInfo createInfo {};
@@ -208,7 +203,7 @@ VkShaderModule createShaderModule(const std::vector<char>& code,
     return shaderModule;
 }
 
-VkSampleCountFlagBits getMaxUsableSampleCount(VkPhysicalDevice physicalDevice)
+VkSampleCountFlagBits Chronos::Engine::getMaxUsableSampleCount(VkPhysicalDevice physicalDevice)
 {
     // used to get max MSAA count
     VkPhysicalDeviceProperties physicalDeviceProperties;
@@ -236,10 +231,10 @@ VkSampleCountFlagBits getMaxUsableSampleCount(VkPhysicalDevice physicalDevice)
     return VK_SAMPLE_COUNT_1_BIT;
 }
 
-VkCommandPool createCommandPool(Chronos::Engine::Device device, VkSurfaceKHR surface)
+VkCommandPool Chronos::Engine::createCommandPool(Chronos::Engine::Device device, VkSurfaceKHR surface)
 {
     VkCommandPool commandPool;
-    QueueFamilyIndices queueFamilyIndices = findQueueFamilies(device.physicalDevice, surface);
+    QueueFamilyIndices queueFamilyIndices = Chronos::Engine::findQueueFamilies(device.physicalDevice, surface);
     VkCommandPoolCreateInfo poolInfo {};
     poolInfo.sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
     poolInfo.queueFamilyIndex = queueFamilyIndices.graphicsFamily.value();
@@ -250,7 +245,7 @@ VkCommandPool createCommandPool(Chronos::Engine::Device device, VkSurfaceKHR sur
     return commandPool;
 }
 
-VkRenderPass createRenderPass(Chronos::Engine::Device device, SwapChain swapChain,
+VkRenderPass Chronos::Engine::createRenderPass(Chronos::Engine::Device device, SwapChain swapChain,
     VkImageLayout initalLayout,
     VkImageLayout finalLayout,
     VkImageLayout msaaFinalLayout, bool msaa,
@@ -347,7 +342,7 @@ VkRenderPass createRenderPass(Chronos::Engine::Device device, SwapChain swapChai
     return renderPass;
 }
 
-std::vector<VkFramebuffer> createFramebuffer(Chronos::Engine::Device device, SwapChain swapChain,
+std::vector<VkFramebuffer> Chronos::Engine::createFramebuffer(Chronos::Engine::Device device, SwapChain swapChain,
     VkRenderPass renderPass,
     bool msaa)
 {
@@ -378,7 +373,7 @@ std::vector<VkFramebuffer> createFramebuffer(Chronos::Engine::Device device, Swa
     return framebuffers;
 }
 
-std::vector<VkCommandBuffer> createCommandBuffer(Chronos::Engine::Device device,
+std::vector<VkCommandBuffer> Chronos::Engine::createCommandBuffer(Chronos::Engine::Device device,
     SwapChain swapChain,
     VkCommandPool commandPool)
 {
@@ -397,7 +392,7 @@ std::vector<VkCommandBuffer> createCommandBuffer(Chronos::Engine::Device device,
     return commandBuffers;
 }
 
-std::string getAbsolutePath(std::string relativePath)
+std::string Chronos::Engine::getAbsolutePath(std::string relativePath)
 {
     // change the cwd so that VS doesnt go the the wrong directory.
     // this is a total hack and should be fixed.

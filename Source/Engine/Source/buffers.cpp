@@ -1,41 +1,36 @@
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "device.hpp"
 #include "shape.hpp"
-#include "buffers.hpp"
-#include "helper.hpp"
 
-void Buffer::create(Chronos::Engine::Device device, VkBufferUsageFlags flags,
+void Chronos::Engine::Buffer::create(Chronos::Engine::Device device, VkBufferUsageFlags flags,
     VkMemoryPropertyFlags properties)
 {
     this->device = device;
-    createBuffer(this->device, size, flags, properties, &buffer, &memory);
+    Chronos::Engine::createBuffer(this->device, size, flags, properties, &buffer, &memory);
 }
 
-void Buffer::copy(void* inputData, VkCommandPool commandPool)
+void Chronos::Engine::Buffer::copy(void* inputData, VkCommandPool commandPool)
 {
     // copies the data to a staging buffer in order to copy to device buffer
     void* data;
     VkBuffer stagingBuffer;
     VkDeviceMemory stagingBufferMemory;
-    createBuffer(device, size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
+    Chronos::Engine::createBuffer(device, size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
         VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
         &stagingBuffer, &stagingBufferMemory);
     vkMapMemory(device.device, stagingBufferMemory, 0, size, 0, &data);
     memcpy(data, inputData, (size_t)size);
     vkUnmapMemory(device.device, stagingBufferMemory);
-    copyBuffer(device, stagingBuffer, buffer, size, commandPool);
+    Chronos::Engine::copyBuffer(device, stagingBuffer, buffer, size, commandPool);
     vkDestroyBuffer(device.device, stagingBuffer, nullptr);
     vkFreeMemory(device.device, stagingBufferMemory, nullptr);
 }
 
-void Buffer::destroy()
+void Chronos::Engine::Buffer::destroy()
 {
     vkDestroyBuffer(device.device, buffer, nullptr);
     vkFreeMemory(device.device, memory, nullptr);
 }
 
-void UniformBuffer::create(Chronos::Engine::Device device)
+void Chronos::Engine::UniformBuffer::create(Chronos::Engine::Device device)
 {
     size = sizeof(UniformBufferObject);
     Buffer::create(device, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
@@ -43,7 +38,7 @@ void UniformBuffer::create(Chronos::Engine::Device device)
     vkMapMemory(device.device, memory, 0, size, 0, &data);
 }
 
-void UniformBuffer::update(VkExtent2D swapChainExtent, float x, float y,
+void Chronos::Engine::UniformBuffer::update(VkExtent2D swapChainExtent, float x, float y,
     float rotation, float x_size, float y_size)
 {
     // This is where the shape parameters are updated

@@ -28,8 +28,8 @@ namespace Chronos{
             GLFWwindow* getWindow();
             void drawFrame();
             int addText(Text text);
-            int addPolygon(ShapeParams shapeParams, PolygonType polygonType, std::string texturePath);
-            int updatePolygon(int shapeNo, ShapeParams shapeParams);
+            int addPolygon(Chronos::Engine::ShapeParams shapeParams, PolygonType polygonType, std::string texturePath);
+            int updatePolygon(int shapeNo, Chronos::Engine::ShapeParams shapeParams);
             void removePolygon(int shapeNo);
             void removeText(int textNo);
             int changeBackgroundColor(float r, float g, float b);

@@ -1,11 +1,7 @@
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "device.hpp"
 #include "text.hpp"
 #include "engine.hpp"
-#include "helper.hpp"
 
-void Text::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
+void Chronos::Engine::Text::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     SwapChain* swapChain)
 {
     this->device = device;
@@ -21,12 +17,12 @@ void Text::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
 
     // create the vertex buffer
     VkDeviceSize bufferSize = maxTextLength * sizeof(glm::vec4);
-    createBuffer(*device, bufferSize, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT,
+    Chronos::Engine::createBuffer(*device, bufferSize, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT,
         VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
         &vertexBuffer, &vertexBufferMemory);
 
     // create the font texture
-    createImage(*device, fontWidth, fontHeight, VK_FORMAT_R8_UNORM,
+    Chronos::Engine::createImage(*device, fontWidth, fontHeight, VK_FORMAT_R8_UNORM,
         VK_IMAGE_TILING_OPTIMAL,
         VK_IMAGE_USAGE_TRANSFER_DST_BIT | VK_IMAGE_USAGE_SAMPLED_BIT,
         VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, &texture,
@@ -37,7 +33,7 @@ void Text::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     VkDeviceMemory stagingBufferMemory;
     VkMemoryRequirements memRequirements;
     vkGetImageMemoryRequirements(device->device, texture, &memRequirements);
-    createBuffer(*device, memRequirements.size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
+    Chronos::Engine::createBuffer(*device, memRequirements.size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
         VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
         &stagingBuffer, &stagingBufferMemory);
 
@@ -47,12 +43,12 @@ void Text::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     memcpy(data, &fontpixels[0][0], fontWidth * fontHeight);
     vkUnmapMemory(device->device, stagingBufferMemory);
 
-    transitionImageLayout(texture, VK_FORMAT_R8_UNORM, VK_IMAGE_LAYOUT_UNDEFINED,
+    Chronos::Engine::transitionImageLayout(texture, VK_FORMAT_R8_UNORM, VK_IMAGE_LAYOUT_UNDEFINED,
         VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, commandPool,
         *device);
-    copyBufferToImage(stagingBuffer, texture, fontWidth, fontHeight, commandPool,
+    Chronos::Engine::copyBufferToImage(stagingBuffer, texture, fontWidth, fontHeight, commandPool,
         *device);
-    transitionImageLayout(
+    Chronos::Engine::transitionImageLayout(
         texture, VK_FORMAT_R8_UNORM, VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
         VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL, commandPool, *device);
     vkDestroyBuffer(device->device, stagingBuffer, nullptr);
@@ -110,18 +106,18 @@ void Text::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     // create not displaying gui, then we need to change format to SRC_KHR for
     // display
 #ifdef DISPLAY_IMGUI
-    renderPass = createRenderPass(
+    renderPass = Chronos::Engine::createRenderPass(
         *device, *swapChain, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
         VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
         VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL, true, false, true);
 #else
-    renderPass = createRenderPass(
+    renderPass = Chronos::Engine::createRenderPass(
         *device, *swapChain, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
         VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL, VK_IMAGE_LAYOUT_PRESENT_SRC_KHR,
         true, false, true);
 #endif
-    commandBuffers = createCommandBuffer(*device, *swapChain, commandPool);
-    framebuffers = createFramebuffer(*device, *swapChain, renderPass, true);
+    commandBuffers = Chronos::Engine::createCommandBuffer(*device, *swapChain, commandPool);
+    framebuffers = Chronos::Engine::createFramebuffer(*device, *swapChain, renderPass, true);
 
     createDescriptorSetLayout();
     createDescriptorPool();
@@ -129,14 +125,14 @@ void Text::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     createDescriptorSets();
 }
 
-void Text::createGraphicsPipeline()
+void Chronos::Engine::Text::createGraphicsPipeline()
 {
     // load and create the shader modules
-    auto vertShaderCode = readFile(vertexShaderPath);
-    auto fragShaderCode = readFile(fragmentShaderPath);
+    auto vertShaderCode = Chronos::Engine::readFile(vertexShaderPath);
+    auto fragShaderCode = Chronos::Engine::readFile(fragmentShaderPath);
 
-    VkShaderModule vertShaderModule = createShaderModule(vertShaderCode, device->device);
-    VkShaderModule fragShaderModule = createShaderModule(fragShaderCode, device->device);
+    VkShaderModule vertShaderModule = Chronos::Engine::createShaderModule(vertShaderCode, device->device);
+    VkShaderModule fragShaderModule = Chronos::Engine::createShaderModule(fragShaderCode, device->device);
 
     // create a struct to hold information about the shader to send to vulkan
     VkPipelineShaderStageCreateInfo vertShaderStageInfo {};
@@ -292,7 +288,7 @@ void Text::createGraphicsPipeline()
     vkDestroyShaderModule(device->device, vertShaderModule, nullptr);
 }
 
-void Text::destroy()
+void Chronos::Engine::Text::destroy()
 {
     vkDestroyRenderPass(device->device, renderPass, nullptr);
     for (auto framebuffer : framebuffers) {
@@ -310,7 +306,7 @@ void Text::destroy()
     vkDestroyPipelineLayout(device->device, pipelineLayout, nullptr);
 }
 
-void Text::createDescriptorPool()
+void Chronos::Engine::Text::createDescriptorPool()
 {
     std::array<VkDescriptorPoolSize, 1> poolSizes {};
     poolSizes[0].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
@@ -328,7 +324,7 @@ void Text::createDescriptorPool()
     }
 }
 
-void Text::createDescriptorSetLayout()
+void Chronos::Engine::Text::createDescriptorSetLayout()
 {
     VkDescriptorSetLayoutBinding samplerLayoutBinding {};
     samplerLayoutBinding.binding = 0;
@@ -349,7 +345,7 @@ void Text::createDescriptorSetLayout()
     }
 }
 
-void Text::createDescriptorSets()
+void Chronos::Engine::Text::createDescriptorSets()
 {
     std::vector<VkDescriptorSetLayout> layouts(MAX_FRAMES_IN_FLIGHT,
         descriptorSetLayout);
@@ -387,14 +383,14 @@ void Text::createDescriptorSets()
     }
 }
 
-void Text::recreateGraphicsPipeline()
+void Chronos::Engine::Text::recreateGraphicsPipeline()
 {
     vkDestroyPipeline(device->device, graphicsPipeline, nullptr);
     vkDestroyPipelineLayout(device->device, pipelineLayout, nullptr);
     createGraphicsPipeline();
 }
 
-void Text::beginUpdate()
+void Chronos::Engine::Text::beginUpdate()
 {
     if (vkMapMemory(device->device, vertexBufferMemory, 0, VK_WHOLE_SIZE, 0,
             (void**)&mappedMemory)
@@ -404,7 +400,7 @@ void Text::beginUpdate()
     numLetters = 0;
 }
 
-void Text::add(std::string text, float x, float y, TextAlignment alignment)
+void Chronos::Engine::Text::add(std::string text, float x, float y, TextAlignment alignment)
 {
     const uint32_t firstChar = STB_FONT_consolas_24_latin1_FIRST_CHAR;
 
@@ -470,29 +466,29 @@ void Text::add(std::string text, float x, float y, TextAlignment alignment)
     }
 }
 
-void Text::endUpdate()
+void Chronos::Engine::Text::endUpdate()
 {
     vkUnmapMemory(device->device, vertexBufferMemory);
     mappedMemory = nullptr;
 }
 
-void Text::changeMsaa()
+void Chronos::Engine::Text::changeMsaa()
 {
     vkDestroyRenderPass(device->device, renderPass, nullptr);
 #ifdef DISPLAY_IMGUI
-    renderPass = createRenderPass(
+    renderPass = Chronos::Engine::createRenderPass(
         *device, *swapChain, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
         VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
         VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL, true, false, true);
 #else
-    renderPass = createRenderPass(
+    renderPass = Chronos::Engine::createRenderPass(
         *device, *swapChain, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
         VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL, VK_IMAGE_LAYOUT_PRESENT_SRC_KHR,
         true, false, true);
 #endif
 }
 
-void Text::render(uint32_t currentFrame, uint32_t imageIndex,
+void Chronos::Engine::Text::render(uint32_t currentFrame, uint32_t imageIndex,
     float bgColor[3])
 {
     VkCommandBufferBeginInfo beginInfo {};
@@ -549,14 +545,14 @@ void Text::render(uint32_t currentFrame, uint32_t imageIndex,
     }
 }
 
-void Text::cleanup()
+void Chronos::Engine::Text::cleanup()
 {
     for (auto framebuffer : framebuffers)
         vkDestroyFramebuffer(device->device, framebuffer, nullptr);
 }
 
-void Text::recreate()
+void Chronos::Engine::Text::recreate()
 {
     cleanup();
-    framebuffers = createFramebuffer(*device, *swapChain, renderPass, true);
+    framebuffers = Chronos::Engine::createFramebuffer(*device, *swapChain, renderPass, true);
 }

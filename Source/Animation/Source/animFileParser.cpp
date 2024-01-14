@@ -1,46 +1,5 @@
 #include "animFileParser.hpp"
 
-/*The AnimTree file will be saved as a .skel file. A sample file of such type will be strictly as follows:
-body{
-Type: Triangle
-TexturePath: "Assets/texture.png"
-[0.1, -0.1, 0.4, 0.6, 0.7, true]
-{
-head:[0.3, 0.2],
-leg1:[0.7, 0.6],
-leg2:[0.1, 0.4],
-}
-}
-
-leg1{
-Type: Rectangle
-TexturePath: "Assets/texture.png"
-[0.2, -0.16, 0.38, 0.12, -0.7, true]
-{
-foot1:[0.3, 0.2],
-foot2:[0.1, 0.4],
-}
-}
-
-head{
-Type: Rectangle
-TexturePath: "Assets/texture.png"
-[0.2, -0.16, 0.38, 0.12, -0.7, true]
-}
-
-foot1{
-Type: Rectangle
-TexturePath: "Assets/texture.png"
-[0.2, -0.16, 0.38, 0.12, -0.7, true]
-}
-
-foot2{
-Type: Rectangle
-TexturePath: "Assets/texture.png"
-[0.2, -0.16, 0.38, 0.12, -0.7, true]
-}
-
-*/
 Chronos::Animation::AnimNode Chronos::Animation::loadAnimTree(std::string path)
 {
     std::ifstream file(path);
@@ -182,33 +141,6 @@ void Chronos::Animation::saveAnimTree(Chronos::Animation::AnimNode animTree, std
     }
     file.close();
 }
-
-/*The animation files will be saved as .anim file. The format shall strictly adhere to such a format
-Head{
-[0, 0, 0, 0.5, 0.5, true]
-[0.1, -0.32, 0, 0.5, 0.5, true]
-[0.1, -0.32, 0, 0.5, 0.5, true]
-[0.1, -0.32, 0, 0.5, 0.5, true]
-}
-Body{
-[0, 0, 0, 0.5, 0.5, true]
-[0.1, -0.32, 0, 0.5, 0.5, true]
-[0.1, -0.32, 0, 0.5, 0.5, true]
-[0.1, -0.32, 0, 0.5, 0.5, true]
-}
-Hand1{
-[0, 0, 0, 0.5, 0.5, true]
-[0.1, -0.32, 0, 0.5, 0.5, true]
-[0.1, -0.32, 0, 0.5, 0.5, true]
-[0.1, -0.32, 0, 0.5, 0.5, true]
-}
-Hand2{
-[0, 0, 0, 0.5, 0.5, true]
-[0.1, -0.32, 0, 0.5, 0.5, true]
-[0.1, -0.32, 0, 0.5, 0.5, true]
-[0.1, -0.32, 0, 0.5, 0.5, true]
-}
-*/
 
 std::map<std::string, std::vector<Chronos::Animation::AnimShapeAttributes>> Chronos::Animation::loadAnimFile(std::string path)
 {

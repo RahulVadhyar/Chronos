@@ -1,4 +1,3 @@
-#include "animTree.hpp"
 #include "animFileParser.hpp"
 
 Chronos::Animation::AnimTree::AnimTree(std::string path)

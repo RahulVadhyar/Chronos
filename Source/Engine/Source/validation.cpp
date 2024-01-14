@@ -2,7 +2,7 @@
 #include "stlheader.hpp"
 #include "validation.hpp"
 
-bool checkValidationLayerSupport()
+bool Chronos::Engine::checkValidationLayerSupport()
 {
     uint32_t layerCount;
     vkEnumerateInstanceLayerProperties(&layerCount, nullptr);
@@ -26,7 +26,7 @@ bool checkValidationLayerSupport()
     return true;
 }
 static VKAPI_ATTR VkBool32 VKAPI_CALL
-debugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
+Chronos::Engine::debugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
     VkDebugUtilsMessageTypeFlagsEXT messageType,
     const VkDebugUtilsMessengerCallbackDataEXT* pCallbackData,
     void* pUserData)
@@ -68,7 +68,7 @@ debugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
 }
 
 // function to create the debug messenger
-VkResult CreateDebugUtilsMessengerEXT(
+VkResult Chronos::Engine::CreateDebugUtilsMessengerEXT(
     VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,
     const VkAllocationCallbacks* pAllocator,
     VkDebugUtilsMessengerEXT* pDebugMessenger)
@@ -82,7 +82,7 @@ VkResult CreateDebugUtilsMessengerEXT(
 }
 
 // function to destroy the debug messenger
-void DestroyDebugUtilsMessengerEXT(VkInstance instance,
+void Chronos::Engine::DestroyDebugUtilsMessengerEXT(VkInstance instance,
     VkDebugUtilsMessengerEXT debugMessenger,
     const VkAllocationCallbacks* pAllocator)
 {
@@ -92,7 +92,7 @@ void DestroyDebugUtilsMessengerEXT(VkInstance instance,
         func(instance, debugMessenger, pAllocator);
 }
 
-void populateDebugMessengerCreateInfo(
+void Chronos::Engine::populateDebugMessengerCreateInfo(
     VkDebugUtilsMessengerCreateInfoEXT& createInfo)
 {
     createInfo = {};

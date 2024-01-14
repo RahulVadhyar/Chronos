@@ -1,11 +1,6 @@
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "device.hpp"
-#include "shape.hpp"
 #include "engine.hpp"
-#include "helper.hpp"
 
-void Shape::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
+void Chronos::Engine::Shape::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     SwapChain* swapChain, VkSampler textureSampler,
     std::string texturePath, VkRenderPass* renderPass)
 {
@@ -39,13 +34,13 @@ void Shape::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     createDescriptorSets();
 }
 
-void Shape::createGraphicsPipeline()
+void Chronos::Engine::Shape::createGraphicsPipeline()
 {
-    auto vertShaderCode = readFile(vertexShaderPath);
-    auto fragShaderCode = readFile(fragmentShaderPath);
+    auto vertShaderCode = Chronos::Engine::readFile(vertexShaderPath);
+    auto fragShaderCode = Chronos::Engine::readFile(fragmentShaderPath);
 
-    VkShaderModule vertShaderModule = createShaderModule(vertShaderCode, device->device);
-    VkShaderModule fragShaderModule = createShaderModule(fragShaderCode, device->device);
+    VkShaderModule vertShaderModule = Chronos::Engine::createShaderModule(vertShaderCode, device->device);
+    VkShaderModule fragShaderModule = Chronos::Engine::createShaderModule(fragShaderCode, device->device);
 
     VkPipelineShaderStageCreateInfo vertShaderStageInfo {};
     vertShaderStageInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
@@ -191,7 +186,7 @@ void Shape::createGraphicsPipeline()
     vkDestroyShaderModule(device->device, vertShaderModule, nullptr);
 }
 
-void Shape::destroy()
+void Chronos::Engine::Shape::destroy()
 {
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
         uniformBuffers[i].destroy();
@@ -205,7 +200,7 @@ void Shape::destroy()
     vkDestroyPipelineLayout(device->device, pipelineLayout, nullptr);
 }
 
-void Shape::createDescriptorPool()
+void Chronos::Engine::Shape::createDescriptorPool()
 {
     std::array<VkDescriptorPoolSize, 2> poolSizes {};
     // uniform buffer
@@ -228,7 +223,7 @@ void Shape::createDescriptorPool()
     }
 }
 
-void Shape::createDescriptorSetLayout()
+void Chronos::Engine::Shape::createDescriptorSetLayout()
 {
     // uniform buffer
     VkDescriptorSetLayoutBinding uboLayoutBinding {};
@@ -259,7 +254,7 @@ void Shape::createDescriptorSetLayout()
     }
 }
 
-void Shape::createDescriptorSets()
+void Chronos::Engine::Shape::createDescriptorSets()
 {
     std::vector<VkDescriptorSetLayout> layouts(MAX_FRAMES_IN_FLIGHT,
         descriptorSetLayout);
@@ -310,14 +305,14 @@ void Shape::createDescriptorSets()
     }
 }
 
-void Shape::recreateGraphicsPipeline()
+void Chronos::Engine::Shape::recreateGraphicsPipeline()
 {
     vkDestroyPipeline(device->device, graphicsPipeline, nullptr);
     vkDestroyPipelineLayout(device->device, pipelineLayout, nullptr);
     createGraphicsPipeline();
 }
 
-void Shape::update(uint32_t currentFrame)
+void Chronos::Engine::Shape::update(uint32_t currentFrame)
 {
     uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x,
         params.y, params.rotation, params.xSize,

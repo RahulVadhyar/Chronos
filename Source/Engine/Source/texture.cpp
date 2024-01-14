@@ -1,12 +1,9 @@
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "device.hpp"
-#include "texture.hpp"
 #include "helper.hpp"
+#include "texture.hpp"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-void createImage(Chronos::Engine::Device device, uint32_t width, uint32_t height,
+void Chronos::Engine::createImage(Chronos::Engine::Device device, uint32_t width, uint32_t height,
     VkFormat format, VkImageTiling tiling, VkImageUsageFlags usage,
     VkMemoryPropertyFlags properties, VkImage* image,
     VkDeviceMemory* imageMemory,
@@ -37,7 +34,7 @@ void createImage(Chronos::Engine::Device device, uint32_t width, uint32_t height
     VkMemoryAllocateInfo allocInfo {};
     allocInfo.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
     allocInfo.allocationSize = memRequirements.size;
-    allocInfo.memoryTypeIndex = findMemoryType(memRequirements.memoryTypeBits,
+    allocInfo.memoryTypeIndex = Chronos::Engine::findMemoryType(memRequirements.memoryTypeBits,
         properties, device.physicalDevice);
 
     if (vkAllocateMemory(device.device, &allocInfo, nullptr, imageMemory) != VK_SUCCESS) {
@@ -46,7 +43,7 @@ void createImage(Chronos::Engine::Device device, uint32_t width, uint32_t height
 
     vkBindImageMemory(device.device, *image, *imageMemory, 0);
 }
-void Texture::create(Chronos::Engine::Device device, VkCommandPool commandPool,
+void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandPool commandPool,
     std::string texturePath)
 {
     int texWidth, texHeight, texChannels;
@@ -67,7 +64,7 @@ void Texture::create(Chronos::Engine::Device device, VkCommandPool commandPool,
 
     VkBuffer stagingBuffer;
     VkDeviceMemory stagingBufferMemory;
-    createBuffer(device, imageSize, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
+    Chronos::Engine::createBuffer(device, imageSize, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
         VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
         &stagingBuffer, &stagingBufferMemory);
 
@@ -78,19 +75,19 @@ void Texture::create(Chronos::Engine::Device device, VkCommandPool commandPool,
 
     stbi_image_free(pixels);
 
-    createImage(device, texWidth, texHeight, VK_FORMAT_R8G8B8A8_SRGB,
+    Chronos::Engine::createImage(device, texWidth, texHeight, VK_FORMAT_R8G8B8A8_SRGB,
         VK_IMAGE_TILING_OPTIMAL,
         VK_IMAGE_USAGE_TRANSFER_DST_BIT | VK_IMAGE_USAGE_SAMPLED_BIT,
         VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, &textureImage,
         &textureImageMemory, VK_SAMPLE_COUNT_1_BIT);
 
-    transitionImageLayout(
+    Chronos::Engine::transitionImageLayout(
         textureImage, VK_FORMAT_R8G8B8A8_SRGB, VK_IMAGE_LAYOUT_UNDEFINED,
         VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, commandPool, device);
-    copyBufferToImage(stagingBuffer, textureImage,
+    Chronos::Engine::copyBufferToImage(stagingBuffer, textureImage,
         static_cast<uint32_t>(texWidth),
         static_cast<uint32_t>(texHeight), commandPool, device);
-    transitionImageLayout(textureImage, VK_FORMAT_R8G8B8A8_SRGB,
+    Chronos::Engine::transitionImageLayout(textureImage, VK_FORMAT_R8G8B8A8_SRGB,
         VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
         VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL, commandPool,
         device);
@@ -99,11 +96,11 @@ void Texture::create(Chronos::Engine::Device device, VkCommandPool commandPool,
     textureImageView = createImageView(device, VK_FORMAT_R8G8B8A8_SRGB, textureImage);
 }
 
-void transitionImageLayout(VkImage image, VkFormat format,
+void Chronos::Engine::transitionImageLayout(VkImage image, VkFormat format,
     VkImageLayout oldLayout, VkImageLayout newLayout,
     VkCommandPool commandPool, Chronos::Engine::Device device)
 {
-    VkCommandBuffer commandBuffer = beginSingleTimeCommands(commandPool, device.device);
+    VkCommandBuffer commandBuffer = Chronos::Engine::beginSingleTimeCommands(commandPool, device.device);
     VkImageMemoryBarrier barrier {};
     barrier.sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER;
     barrier.oldLayout = oldLayout;
@@ -137,14 +134,14 @@ void transitionImageLayout(VkImage image, VkFormat format,
 
     vkCmdPipelineBarrier(commandBuffer, sourceStage, destinationStage, 0, 0,
         nullptr, 0, nullptr, 1, &barrier);
-    endSingleTimeCommands(&commandBuffer, device, commandPool);
+    Chronos::Engine::endSingleTimeCommands(&commandBuffer, device, commandPool);
 }
 
-void copyBufferToImage(VkBuffer buffer, VkImage image, uint32_t width,
+void Chronos::Engine::copyBufferToImage(VkBuffer buffer, VkImage image, uint32_t width,
     uint32_t height, VkCommandPool commandPool,
     Chronos::Engine::Device device)
 {
-    VkCommandBuffer commandBuffer = beginSingleTimeCommands(commandPool, device.device);
+    VkCommandBuffer commandBuffer = Chronos::Engine::beginSingleTimeCommands(commandPool, device.device);
     VkBufferImageCopy region {};
     region.bufferOffset = 0;
     region.bufferRowLength = 0;
@@ -157,10 +154,10 @@ void copyBufferToImage(VkBuffer buffer, VkImage image, uint32_t width,
     region.imageExtent = { width, height, 1 };
     vkCmdCopyBufferToImage(commandBuffer, buffer, image,
         VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, 1, &region);
-    endSingleTimeCommands(&commandBuffer, device, commandPool);
+    Chronos::Engine::endSingleTimeCommands(&commandBuffer, device, commandPool);
 }
 
-VkImageView createImageView(Chronos::Engine::Device device, VkFormat format, VkImage image)
+VkImageView Chronos::Engine::createImageView(Chronos::Engine::Device device, VkFormat format, VkImage image)
 {
     VkImageViewCreateInfo viewInfo {};
     viewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
@@ -181,7 +178,7 @@ VkImageView createImageView(Chronos::Engine::Device device, VkFormat format, VkI
     return imageView;
 }
 
-void createTextureSampler(Chronos::Engine::Device device, VkSampler* textureSampler)
+void Chronos::Engine::createTextureSampler(Chronos::Engine::Device device, VkSampler* textureSampler)
 {
     VkPhysicalDeviceProperties properties {};
     vkGetPhysicalDeviceProperties(device.physicalDevice, &properties);
@@ -207,7 +204,7 @@ void createTextureSampler(Chronos::Engine::Device device, VkSampler* textureSamp
     }
 }
 
-void Texture::destroy()
+void Chronos::Engine::Texture::destroy()
 {
     vkDestroyImageView(device.device, textureImageView, nullptr);
     vkDestroyImage(device.device, textureImage, nullptr);

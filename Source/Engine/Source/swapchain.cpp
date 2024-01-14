@@ -1,11 +1,7 @@
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "device.hpp"
-#include "swapchain.hpp"
 #include "helper.hpp"
 #include "texture.hpp"
 
-VkSurfaceFormatKHR chooseSwapSurfaceFormat(
+VkSurfaceFormatKHR Chronos::Engine::chooseSwapSurfaceFormat(
     const std::vector<VkSurfaceFormatKHR>& availableFormats)
 {
     for (const auto& availableFormat : availableFormats) {
@@ -17,7 +13,7 @@ VkSurfaceFormatKHR chooseSwapSurfaceFormat(
     return availableFormats[0];
 }
 
-VkPresentModeKHR chooseSwapPresentMode(
+VkPresentModeKHR Chronos::Engine::chooseSwapPresentMode(
     const std::vector<VkPresentModeKHR>& availablePresentModes)
 {
     // The presentation modes available
@@ -49,7 +45,7 @@ VkPresentModeKHR chooseSwapPresentMode(
     return VK_PRESENT_MODE_FIFO_KHR;
 }
 
-VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities,
+VkExtent2D Chronos::Engine::chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities,
     GLFWwindow* window)
 {
     if (capabilities.currentExtent.width != std::numeric_limits<uint32_t>::max()) {
@@ -70,10 +66,10 @@ VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities,
     }
 }
 
-SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device,
+Chronos::Engine::SwapChainSupportDetails Chronos::Engine::querySwapChainSupport(VkPhysicalDevice device,
     VkSurfaceKHR surface)
 {
-    SwapChainSupportDetails details;
+    Chronos::Engine::SwapChainSupportDetails details;
     vkGetPhysicalDeviceSurfaceCapabilitiesKHR(device, surface,
         &details.capabilities);
 
@@ -98,7 +94,7 @@ SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device,
 
     return details;
 }
-void SwapChain::init(Chronos::Engine::Device* device, VkSurfaceKHR surface, GLFWwindow* window)
+void Chronos::Engine::SwapChain::init(Chronos::Engine::Device* device, VkSurfaceKHR surface, GLFWwindow* window)
 {
     this->device = device;
     this->surface = surface;
@@ -108,13 +104,13 @@ void SwapChain::init(Chronos::Engine::Device* device, VkSurfaceKHR surface, GLFW
     createColorResources();
 }
 
-void SwapChain::create()
+void Chronos::Engine::SwapChain::create()
 {
     // create the swapchain
-    SwapChainSupportDetails swapChainSupport = querySwapChainSupport((*device).physicalDevice, surface);
-    VkSurfaceFormatKHR surfaceFormat = chooseSwapSurfaceFormat(swapChainSupport.formats);
-    VkPresentModeKHR presentMode = chooseSwapPresentMode(swapChainSupport.presentModes);
-    VkExtent2D extent = chooseSwapExtent(swapChainSupport.capabilities, window);
+    SwapChainSupportDetails swapChainSupport = Chronos::Engine::querySwapChainSupport((*device).physicalDevice, surface);
+    VkSurfaceFormatKHR surfaceFormat = Chronos::Engine::chooseSwapSurfaceFormat(swapChainSupport.formats);
+    VkPresentModeKHR presentMode = Chronos::Engine::chooseSwapPresentMode(swapChainSupport.presentModes);
+    VkExtent2D extent = Chronos::Engine::chooseSwapExtent(swapChainSupport.capabilities, window);
 
     // set the number of images in the swap chain
     uint32_t imageCount = swapChainSupport.capabilities.minImageCount + 1;
@@ -134,7 +130,7 @@ void SwapChain::create()
     createInfo.imageArrayLayers = 1;
     createInfo.imageUsage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
 
-    QueueFamilyIndices indices = findQueueFamilies(device->physicalDevice, surface);
+    Chronos::Engine::QueueFamilyIndices indices = Chronos::Engine::findQueueFamilies(device->physicalDevice, surface);
     uint32_t queueFamilyIndices[] = { indices.graphicsFamily.value(),
         indices.presentFamily.value() };
 
@@ -164,15 +160,15 @@ void SwapChain::create()
     swapChainExtent = extent;
 }
 
-void SwapChain::createImageViews()
+void Chronos::Engine::SwapChain::createImageViews()
 {
     swapChainImageViews.resize(swapChainImages.size());
     for (size_t i = 0; i < swapChainImages.size(); i++) {
-        swapChainImageViews[i] = createImageView(*device, swapChainImageFormat, swapChainImages[i]);
+        swapChainImageViews[i] = Chronos::Engine::createImageView(*device, swapChainImageFormat, swapChainImages[i]);
     }
 }
 
-void SwapChain::createColorResources()
+void Chronos::Engine::SwapChain::createColorResources()
 {
     VkFormat colorFormat = swapChainImageFormat;
     createImage(*device, swapChainExtent.width, swapChainExtent.height,
@@ -181,10 +177,10 @@ void SwapChain::createColorResources()
         VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, &colorImage,
         &colorImageMemory, device->msaaSamples);
 
-    colorImageView = createImageView(*device, colorFormat, colorImage);
+    colorImageView = Chronos::Engine::createImageView(*device, colorFormat, colorImage);
 }
 
-void SwapChain::cleanup()
+void Chronos::Engine::SwapChain::cleanup()
 {
     vkDestroyImageView(device->device, colorImageView, nullptr);
     vkDestroyImage(device->device, colorImage, nullptr);
@@ -197,7 +193,7 @@ void SwapChain::cleanup()
     vkDestroySwapchainKHR(device->device, swapChain, nullptr);
 }
 
-void SwapChain::recreate()
+void Chronos::Engine::SwapChain::recreate()
 {
     int width = 0, height = 0;
     glfwGetFramebufferSize(window, &width, &height);
@@ -214,7 +210,7 @@ void SwapChain::recreate()
     createColorResources();
 }
 
-void SwapChain::changeMsaa()
+void Chronos::Engine::SwapChain::changeMsaa()
 {
     vkDeviceWaitIdle(device->device);
     cleanup();

@@ -1,11 +1,5 @@
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "device.hpp"
-#include "swapchain.hpp"
 #include "engine.hpp"
 #include "validation.hpp"
-#include "helper.hpp"
-#include "Vertex.hpp"
 
 static void framebuffer_size_callback(GLFWwindow* window, int width,
     int height)
@@ -14,7 +8,7 @@ static void framebuffer_size_callback(GLFWwindow* window, int width,
     app->resizeFrameBuffer();
 }
 Chronos::Engine::Engine::Engine()
-{   
+{
 #ifdef DISPLAY_IMGUI
     gui = Chronos::Editor::GUI();
     guiParams.settings = &settings;
@@ -83,7 +77,7 @@ void Chronos::Engine::Engine::cleanup()
 {
     // after we are done, we need to cleanup all the resources we created
     swapChain.cleanup();
-    
+
     shapeManager.destroy();
     textManager.destroy();
 #ifdef DISPLAY_IMGUI

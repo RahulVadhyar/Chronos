@@ -31,7 +31,7 @@ namespace Editor {
         bool addRectangle;
         bool addTriangle;
         std::string texturePath;
-        ShapeManager* shapeManager;
+        Chronos::Engine::ShapeManager* shapeManager;
         Settings* settings {};
         bool changeMSAA = false;
     };
@@ -45,12 +45,12 @@ namespace Editor {
     };
 
     void gui(GUIParams* gui);
-    void shapeMover(ShapeParams* shapeParams);
+    void shapeMover(Chronos::Engine::ShapeParams* shapeParams);
 
     class GUI {
     public:
         Chronos::Engine::Device* device;
-        SwapChain* swapChain;
+        Chronos::Engine::SwapChain* swapChain;
         VkSurfaceKHR surface;
         GLFWwindow* window;
 
@@ -63,7 +63,7 @@ namespace Editor {
 
         GUIInternal internal {};
         GUIParams* params;
-        void init(Chronos::Engine::Device* device, GLFWwindow* window, SwapChain* swapChain,
+        void init(Chronos::Engine::Device* device, GLFWwindow* window, Chronos::Engine::SwapChain* swapChain,
             VkInstance instance, VkSurfaceKHR surface, GUIParams* params);
         void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]);
         void destroy();

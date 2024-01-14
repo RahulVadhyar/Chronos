@@ -1,18 +1,13 @@
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "device.hpp"
-#include "swapchain.hpp"
 #include "shapeManager.hpp"
-#include "helper.hpp"
 
-void ShapeManager::init(Chronos::Engine::Device* device, SwapChain* swapChain,
+void Chronos::Engine::ShapeManager::init(Chronos::Engine::Device* device, SwapChain* swapChain,
     VkCommandPool commandPool)
 {
     this->device = device;
     this->swapChain = swapChain;
     this->commandPool = commandPool;
 
-    createTextureSampler(*device, &textureSampler);
+    Chronos::Engine::createTextureSampler(*device, &textureSampler);
 
     /*
     For the render pass the formats are as follows:
@@ -21,15 +16,15 @@ void ShapeManager::init(Chronos::Engine::Device* device, SwapChain* swapChain,
     fact that the image going to next renderpass(Text) Also we are clearing the
     framebuffer
     */
-    renderPass = createRenderPass(*device, *swapChain, VK_IMAGE_LAYOUT_UNDEFINED,
+    renderPass = Chronos::Engine::createRenderPass(*device, *swapChain, VK_IMAGE_LAYOUT_UNDEFINED,
         VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
         VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL, true,
         true, false);
-    commandBuffers = createCommandBuffer(*device, *swapChain, commandPool);
-    framebuffers = createFramebuffer(*device, *swapChain, renderPass, true);
+    commandBuffers = Chronos::Engine::createCommandBuffer(*device, *swapChain, commandPool);
+    framebuffers = Chronos::Engine::createFramebuffer(*device, *swapChain, renderPass, true);
 }
 
-void ShapeManager::destroy()
+void Chronos::Engine::ShapeManager::destroy()
 {
     vkDestroySampler(device->device, textureSampler, nullptr);
     vkDestroyRenderPass(device->device, renderPass, nullptr);
@@ -40,14 +35,14 @@ void ShapeManager::destroy()
     }
 }
 
-void ShapeManager::update(uint32_t currentFrame)
+void Chronos::Engine::ShapeManager::update(uint32_t currentFrame)
 {
     for (auto& shapeMap : shapes) {
         shapeMap.second.update(currentFrame);
     }
 }
 
-void ShapeManager::render(uint32_t currentFrame, uint32_t imageIndex,
+void Chronos::Engine::ShapeManager::render(uint32_t currentFrame, uint32_t imageIndex,
     float bgColor[3])
 {
     vkResetCommandBuffer(commandBuffers[currentFrame], 0);
@@ -108,16 +103,16 @@ void ShapeManager::render(uint32_t currentFrame, uint32_t imageIndex,
         throw std::runtime_error("failed to record command buffer!");
     }
 }
-void ShapeManager::changeMsaa()
+void Chronos::Engine::ShapeManager::changeMsaa()
 {
     vkDestroyRenderPass(device->device, renderPass, nullptr);
-    renderPass = createRenderPass(*device, *swapChain, VK_IMAGE_LAYOUT_UNDEFINED,
+    renderPass = Chronos::Engine::createRenderPass(*device, *swapChain, VK_IMAGE_LAYOUT_UNDEFINED,
         VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
         VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL, true,
         true, false);
 }
 
-int ShapeManager::addRectangle(ShapeParams shapeParams,
+int Chronos::Engine::ShapeManager::addRectangle(ShapeParams shapeParams,
     std::string texturePath)
 {
     int shapeNo = shapes.size();
@@ -128,7 +123,7 @@ int ShapeManager::addRectangle(ShapeParams shapeParams,
     return shapeNo;
 }
 
-int ShapeManager::addTriangle(ShapeParams shapeParams,
+int Chronos::Engine::ShapeManager::addTriangle(ShapeParams shapeParams,
     std::string texturePath)
 {
 
@@ -140,19 +135,19 @@ int ShapeManager::addTriangle(ShapeParams shapeParams,
     shapes[shapeNo].params = shapeParams;
     return shapeNo;
 }
-void ShapeManager::removeShape(int shapeNo)
+void Chronos::Engine::ShapeManager::removeShape(int shapeNo)
 {
     shapes[shapeNo].destroy();
     shapes.erase(shapeNo);
 }
 
-void ShapeManager::cleanup()
+void Chronos::Engine::ShapeManager::cleanup()
 {
     for (auto framebuffer : framebuffers)
         vkDestroyFramebuffer(device->device, framebuffer, nullptr);
 }
 
-void ShapeManager::recreate()
+void Chronos::Engine::ShapeManager::recreate()
 {
     cleanup();
     framebuffers = createFramebuffer(*device, *swapChain, renderPass, true);

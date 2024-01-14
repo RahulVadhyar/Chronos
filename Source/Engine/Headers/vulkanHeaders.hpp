@@ -1,3 +1,12 @@
+/** \file vulkanHeaders.hpp
+
+ \brief Contains the common headers for the vulkan API.
+
+More specifically it includes the following packages:
+- GLFW
+- GLM
+- Vulkan(included by GLFW)
+*/
 #pragma once
 
 #define GLFW_INCLUDE_VULKAN

@@ -1,6 +1,3 @@
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "device.hpp"
 #include "helper.hpp"
 #include "validation.hpp"
 

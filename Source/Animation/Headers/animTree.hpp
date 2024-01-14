@@ -1,11 +1,9 @@
 #pragma once
-#include "stlheader.hpp"
-#include "structs.hpp"
 #include "chronos.hpp"
 namespace Chronos {
 namespace Animation {
     struct AnimNode {
-        ShapeParams defaultShapeParams;
+        Chronos::Engine::ShapeParams defaultShapeParams;
         Chronos::Manager::PolygonType polygonType;
         std::string texturePath;
         int shapeNo;

@@ -27,7 +27,7 @@ int Manager::Manager::changeBackgroundColor(float r, float g, float b)
     return 0;
 }
 
-int Manager::Manager::addPolygon(ShapeParams shapeParams, Chronos::Manager::PolygonType polygonType, std::string texturePath)
+int Manager::Manager::addPolygon(Chronos::Engine::ShapeParams shapeParams, Chronos::Manager::PolygonType polygonType, std::string texturePath)
 {
     if (polygonType.triangle) {
         return engine.shapeManager.addTriangle(shapeParams, texturePath);
@@ -36,7 +36,7 @@ int Manager::Manager::addPolygon(ShapeParams shapeParams, Chronos::Manager::Poly
     }
     return 0;
 }
-int Manager::Manager::updatePolygon(int shapeNo, ShapeParams shapeParams)
+int Manager::Manager::updatePolygon(int shapeNo, Chronos::Engine::ShapeParams shapeParams)
 {
     if (engine.shapeManager.shapes.count(shapeNo) == 0) {
         return -1;
@@ -57,7 +57,7 @@ int Manager::Manager::addText(Chronos::Manager::Text text)
     textMap[textNo] = text;
     engine.textManager.beginUpdate();
     for (auto& text : textMap) {
-        engine.textManager.add(text.second.text, text.second.x, text.second.y, Center);
+        engine.textManager.add(text.second.text, text.second.x, text.second.y, Chronos::Engine::Center);
     }
     engine.textManager.endUpdate();
     return textNo;
@@ -69,7 +69,7 @@ void Manager::Manager::removeText(int textNo)
     }
     engine.textManager.beginUpdate();
     for (auto& text : textMap) {
-        engine.textManager.add(text.second.text, text.second.x, text.second.y, Center);
+        engine.textManager.add(text.second.text, text.second.x, text.second.y, Chronos::Engine::Center);
     }
     engine.textManager.endUpdate();
 }

@@ -1,9 +1,6 @@
 #include "guiHeaders.hpp"
-#include "stlheader.hpp"
-#include "shape.hpp"
 #include "gui.hpp"
 #include "engine.hpp"
-#include "helper.hpp"
 
 #ifdef DISPLAY_IMGUI
 void Chronos::Editor::GUI::config()
@@ -163,7 +160,7 @@ void Chronos::Editor::GUI::config()
     }
 }
 
-void Chronos::Editor::shapeMover(ShapeParams* shapeParams)
+void Chronos::Editor::shapeMover(Chronos::Engine::ShapeParams* shapeParams)
 {
     ImGui::DragFloat("X", &shapeParams->x, 0.001f);
     ImGui::DragFloat("Y", &shapeParams->y, 0.001f);
@@ -172,7 +169,7 @@ void Chronos::Editor::shapeMover(ShapeParams* shapeParams)
     ImGui::DragFloat("Rotation", &shapeParams->rotation, 1.0f);
 };
 
-void Chronos::Editor::GUI::init(Chronos::Engine::Device* device, GLFWwindow* window, SwapChain* swapChain,
+void Chronos::Editor::GUI::init(Chronos::Engine::Device* device, GLFWwindow* window, Chronos::Engine::SwapChain* swapChain,
     VkInstance instance, VkSurfaceKHR surface, GUIParams* params)
 {
     this->device = device;
@@ -181,11 +178,11 @@ void Chronos::Editor::GUI::init(Chronos::Engine::Device* device, GLFWwindow* win
     this->surface = surface;
     this->window = window;
 
-    renderPass = createRenderPass(
+    renderPass = Chronos::Engine::createRenderPass(
         *device, *swapChain, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
         VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
         false, false, true);
-    framebuffers = createFramebuffer(*device, *swapChain, renderPass, false);
+    framebuffers = Chronos::Engine::createFramebuffer(*device, *swapChain, renderPass, false);
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
@@ -217,7 +214,7 @@ void Chronos::Editor::GUI::init(Chronos::Engine::Device* device, GLFWwindow* win
     init_info.Instance = instance;
     init_info.PhysicalDevice = device->physicalDevice;
     init_info.Device = device->device;
-    init_info.QueueFamily = findQueueFamilies(device->physicalDevice, surface).graphicsFamily.value();
+    init_info.QueueFamily = Chronos::Engine::findQueueFamilies(device->physicalDevice, surface).graphicsFamily.value();
     init_info.Queue = device->graphicsQueue;
     init_info.PipelineCache = VK_NULL_HANDLE;
     init_info.DescriptorPool = descriptorPool;
@@ -229,7 +226,7 @@ void Chronos::Editor::GUI::init(Chronos::Engine::Device* device, GLFWwindow* win
 
     VkCommandPoolCreateInfo commandPoolCreateInfo = {};
     commandPoolCreateInfo.sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
-    commandPoolCreateInfo.queueFamilyIndex = findQueueFamilies(device->physicalDevice, surface).graphicsFamily.value();
+    commandPoolCreateInfo.queueFamilyIndex = Chronos::Engine::findQueueFamilies(device->physicalDevice, surface).graphicsFamily.value();
     commandPoolCreateInfo.flags = VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT;
 
     if (vkCreateCommandPool(device->device, &commandPoolCreateInfo, nullptr,
@@ -238,9 +235,9 @@ void Chronos::Editor::GUI::init(Chronos::Engine::Device* device, GLFWwindow* win
         throw std::runtime_error("Could not create graphics command pool");
     }
 
-    VkCommandBuffer command_buffer = beginSingleTimeCommands(commandPool, device->device);
+    VkCommandBuffer command_buffer = Chronos::Engine::beginSingleTimeCommands(commandPool, device->device);
     ImGui_ImplVulkan_CreateFontsTexture();
-    endSingleTimeCommands(&command_buffer, *device, commandPool);
+    Chronos::Engine::endSingleTimeCommands(&command_buffer, *device, commandPool);
 
     commandBuffers.resize(swapChain->swapChainImageViews.size());
     VkCommandBufferAllocateInfo allocInfo {};
@@ -298,7 +295,7 @@ void Chronos::Editor::GUI::update()
         params->changeMSAA = false;
     }
     if (params->addRectangle) {
-        ShapeParams shapeParams;
+        Chronos::Engine::ShapeParams shapeParams;
         shapeParams.x = -0.5;
         shapeParams.y = -0.5;
         shapeParams.xSize = 0.5;
@@ -308,7 +305,7 @@ void Chronos::Editor::GUI::update()
         params->addRectangle = false;
     }
     if (params->addTriangle) {
-        ShapeParams shapeParams;
+        Chronos::Engine::ShapeParams shapeParams;
         shapeParams.x = -0.5;
         shapeParams.y = -0.5;
         shapeParams.xSize = 0.5;
@@ -352,6 +349,6 @@ void Chronos::Editor::GUI::cleanup()
 void Chronos::Editor::GUI::recreate()
 {
     cleanup();
-    framebuffers = createFramebuffer(*device, *swapChain, renderPass, false);
+    framebuffers = Chronos::Engine::createFramebuffer(*device, *swapChain, renderPass, false);
 }
 #endif
