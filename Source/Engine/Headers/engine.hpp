@@ -6,13 +6,8 @@
 */
 #pragma once
 #include "featureMacros.hpp"
-#include "shape.hpp"
-#include "Vertex.hpp"
-#include "buffers.hpp"
-#include "swapchain.hpp"
-#include "texture.hpp"
-#include "text.hpp"
 #include "shapeManager.hpp"
+#include "text.hpp"
 #ifdef DISPLAY_IMGUI
 #include "gui.hpp"
 #endif

@@ -7,7 +7,7 @@ GLFWwindow* Manager::Manager::getWindow()
     return engine.window;
 }
 Manager::Manager::Manager(Chronos::Manager::Initializer initializer)
-{
+{   
     engine.width = initializer.WindowWidth;
     engine.height = initializer.WindowHeight;
 }

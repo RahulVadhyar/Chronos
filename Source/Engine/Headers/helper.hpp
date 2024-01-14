@@ -262,14 +262,5 @@ namespace Engine {
     */
     VkSampleCountFlagBits getMaxUsableSampleCount(VkPhysicalDevice physicalDevice);
 
-    /**
-    \brief Converts the relative path to an absolute path.
-
-    @param relativePath The relative path.
-
-    @return The absolute path.
-    */
-    std::string getAbsolutePath(std::string relativePath);
-
 };
 };

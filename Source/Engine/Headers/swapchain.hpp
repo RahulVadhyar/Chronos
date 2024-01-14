@@ -1,3 +1,7 @@
+/** \file guiHeaders.hpp
+
+ \brief Contains the swapChain class along with all the swapChain related functions.
+*/
 #pragma once
 #include "vulkanHeaders.hpp"
 #include "stlheader.hpp"
@@ -21,26 +25,28 @@ namespace Engine {
 
     class SwapChain {
     public:
+        
+        void init(Chronos::Engine::Device* device, VkSurfaceKHR surface, GLFWwindow* window);
+        void recreate();
+        void cleanup();
+        void changeMsaa();
+        VkExtent2D swapChainExtent;
+        VkSwapchainKHR swapChain;
+        VkSurfaceKHR surface;
+        std::vector<VkImageView> swapChainImageViews;
+        VkImageView colorImageView;
+        VkFormat swapChainImageFormat;
+    private:
         Chronos::Engine::Device* device;
 
-        VkSwapchainKHR swapChain;
-        VkFormat swapChainImageFormat;
-        VkExtent2D swapChainExtent;
-        VkSurfaceKHR surface;
         GLFWwindow* window;
         VkImage colorImage;
         VkDeviceMemory colorImageMemory;
-        VkImageView colorImageView;
         std::vector<VkImage> swapChainImages;
-        std::vector<VkImageView> swapChainImageViews;
 
-        void init(Chronos::Engine::Device* device, VkSurfaceKHR surface, GLFWwindow* window);
         void create();
-        void recreate();
-        void cleanup();
         void createImageViews();
         void createColorResources();
-        void changeMsaa();
     };
 };
 };

@@ -1,3 +1,10 @@
+/** \file guiHeaders.hpp
+
+ \brief Contains all the editor headers.
+
+ The Editor uses ImGui for the GUI. This file contains all the ImGui headers.
+ It also contains various other plugins for ImGUI.
+*/
 #pragma once
 #include "featureMacros.hpp"
 

@@ -143,12 +143,12 @@ namespace Engine {
         /**
         \brief The path to the vertex SPIV-V shader file.
         */
-        const char* vertexShaderPath = "../ThirdParty/Chronos/Shaders/vert.spv";
+        const char* vertexShaderPath = "ThirdParty/Chronos/Shaders/vert.spv";
 
         /**
         \brief The path to the fragment SPIV-V shader file.
         */
-        const char* fragmentShaderPath = "../ThirdParty/Chronos/Shaders/frag.spv";
+        const char* fragmentShaderPath = "ThirdParty/Chronos/Shaders/frag.spv";
 
         /**
         \brief The device to create and render the shape on.

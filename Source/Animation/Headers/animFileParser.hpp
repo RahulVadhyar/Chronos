@@ -59,6 +59,7 @@ namespace Animation {
     Hence given this animation tree, we can create the shape, render and animate them.
 
     The AnimTree file will be saved as a .skel file. A sample file of such type will be strictly as follows:
+    
             body{
             Type: Triangle
             TexturePath: "Assets/texture.png"
