@@ -1,5 +1,6 @@
 #include "engine.hpp"
 #include "validation.hpp"
+#include "objectManagerDefs.hpp"
 
 static void framebuffer_size_callback(GLFWwindow* window, int width,
     int height)

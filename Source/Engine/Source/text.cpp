@@ -21,87 +21,14 @@ void Chronos::Engine::Text::init(Chronos::Engine::Device* device, VkCommandPool 
         VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
         &vertexBuffer, &vertexBufferMemory);
 
-    // create the font texture
-    Chronos::Engine::createImage(*device, fontWidth, fontHeight, VK_FORMAT_R8_UNORM,
-        VK_IMAGE_TILING_OPTIMAL,
-        VK_IMAGE_USAGE_TRANSFER_DST_BIT | VK_IMAGE_USAGE_SAMPLED_BIT,
-        VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, &texture,
-        &textureImageMemory, VK_SAMPLE_COUNT_1_BIT);
-
-    // staging
-    VkBuffer stagingBuffer;
-    VkDeviceMemory stagingBufferMemory;
-    VkMemoryRequirements memRequirements;
-    vkGetImageMemoryRequirements(device->device, texture, &memRequirements);
-    Chronos::Engine::createBuffer(*device, memRequirements.size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
-        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
-        &stagingBuffer, &stagingBufferMemory);
-
-    void* data;
-    vkMapMemory(device->device, stagingBufferMemory, 0, memRequirements.size, 0,
-        &data);
-    memcpy(data, &fontpixels[0][0], fontWidth * fontHeight);
-    vkUnmapMemory(device->device, stagingBufferMemory);
-
-    Chronos::Engine::transitionImageLayout(texture, VK_FORMAT_R8_UNORM, VK_IMAGE_LAYOUT_UNDEFINED,
-        VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, commandPool,
-        *device);
-    Chronos::Engine::copyBufferToImage(stagingBuffer, texture, fontWidth, fontHeight, commandPool,
-        *device);
-    Chronos::Engine::transitionImageLayout(
-        texture, VK_FORMAT_R8_UNORM, VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
-        VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL, commandPool, *device);
-    vkDestroyBuffer(device->device, stagingBuffer, nullptr);
-    vkFreeMemory(device->device, stagingBufferMemory, nullptr);
-
-    // create image view
-    VkImageViewCreateInfo viewInfo {};
-    viewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
-    viewInfo.image = texture;
-    viewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
-    viewInfo.format = VK_FORMAT_R8_UNORM;
-    viewInfo.components = { VK_COMPONENT_SWIZZLE_R, VK_COMPONENT_SWIZZLE_G,
-        VK_COMPONENT_SWIZZLE_B, VK_COMPONENT_SWIZZLE_A };
-    viewInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
-    viewInfo.subresourceRange.baseMipLevel = 0;
-    viewInfo.subresourceRange.levelCount = 1;
-    viewInfo.subresourceRange.baseArrayLayer = 0;
-    viewInfo.subresourceRange.layerCount = 1;
-
-    if (vkCreateImageView(device->device, &viewInfo, nullptr,
-            &textureImageView)
-        != VK_SUCCESS) {
-        throw std::runtime_error("failed to create texture image view!");
-    }
+    fontTexture.create(*device, commandPool, (void*)&fontpixels[0][0], static_cast<size_t>(fontWidth),
+     static_cast<size_t>(fontHeight), static_cast<VkDeviceSize>(fontWidth*fontHeight), VK_FORMAT_R8_UNORM);
 
     VkPhysicalDeviceProperties properties {};
     vkGetPhysicalDeviceProperties(device->physicalDevice, &properties);
 
     // create the sampler
-    VkSamplerCreateInfo samplerInfo {};
-
-    samplerInfo.anisotropyEnable = VK_TRUE;
-    samplerInfo.maxAnisotropy = properties.limits.maxSamplerAnisotropy;
-    samplerInfo.unnormalizedCoordinates = VK_FALSE;
-    samplerInfo.compareEnable = VK_FALSE;
-    samplerInfo.maxLod = 0.0f;
-    samplerInfo.compareOp = VK_COMPARE_OP_ALWAYS;
-
-    samplerInfo.sType = VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO;
-    samplerInfo.magFilter = VK_FILTER_LINEAR;
-    samplerInfo.minFilter = VK_FILTER_LINEAR;
-    samplerInfo.mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;
-    samplerInfo.addressModeU = VK_SAMPLER_ADDRESS_MODE_REPEAT;
-    samplerInfo.addressModeV = VK_SAMPLER_ADDRESS_MODE_REPEAT;
-    samplerInfo.addressModeW = VK_SAMPLER_ADDRESS_MODE_REPEAT;
-    samplerInfo.mipLodBias = 0.0f;
-    samplerInfo.compareOp = VK_COMPARE_OP_NEVER;
-    samplerInfo.minLod = 0.0f;
-    samplerInfo.maxLod = 1.0f;
-    samplerInfo.borderColor = VK_BORDER_COLOR_FLOAT_OPAQUE_WHITE;
-    if (vkCreateSampler(device->device, &samplerInfo, nullptr, &textureSampler) != VK_SUCCESS) {
-        throw std::runtime_error("failed to create texture sampler!");
-    }
+    Chronos::Engine::createTextureSampler(*device, &textureSampler);
 
     // create not displaying gui, then we need to change format to SRC_KHR for
     // display
@@ -295,9 +222,7 @@ void Chronos::Engine::Text::destroy()
         vkDestroyFramebuffer(device->device, framebuffer, nullptr);
     }
     vkDestroySampler(device->device, textureSampler, nullptr);
-    vkDestroyImageView(device->device, textureImageView, nullptr);
-    vkDestroyImage(device->device, texture, nullptr);
-    vkFreeMemory(device->device, textureImageMemory, nullptr);
+    fontTexture.destroy();
     vkDestroyBuffer(device->device, vertexBuffer, nullptr);
     vkFreeMemory(device->device, vertexBufferMemory, nullptr);
     vkDestroyDescriptorPool(device->device, descriptorPool, nullptr);
@@ -364,7 +289,7 @@ void Chronos::Engine::Text::createDescriptorSets()
 
         VkDescriptorImageInfo imageInfo {};
         imageInfo.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
-        imageInfo.imageView = textureImageView;
+        imageInfo.imageView = fontTexture.textureImageView;
         imageInfo.sampler = textureSampler;
 
         std::array<VkWriteDescriptorSet, 1> descriptorWrites {};

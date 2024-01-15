@@ -6,7 +6,7 @@
 void Chronos::Editor::GUI::config()
 {
     char texturePath[100] = "Assets/texture.jpg";
-    shapeHeader.resize(params->shapeManager->shapes.size());
+    shapeHeader.resize(params->shapeManager->objects.size());
 
     if (ImGui::BeginMainMenuBar()) {
         ImGui::MenuItem("Add Shape", nullptr, &internal.showAddShapeWindow);
@@ -19,12 +19,12 @@ void Chronos::Editor::GUI::config()
     if (internal.showShapeWindow) {
         ImGui::Begin("Shapes");
         {
-            for (size_t i = 0; i < params->shapeManager->shapes.size(); i++) {
-                if (params->shapeManager->shapes.count(i) > 0) {
+            for (size_t i = 0; i < params->shapeManager->objects.size(); i++) {
+                if (params->shapeManager->objects.count(i) > 0) {
                     shapeHeader[i] = ImGui::CollapsingHeader(
                         ("Shape Params " + std::to_string(i + 1)).c_str(), shapeHeader[i]);
                     if (shapeHeader[i])
-                        shapeMover(&params->shapeManager->shapes[i].params);
+                        shapeMover(&params->shapeManager->objects[i].params);
                 }
             }
         }

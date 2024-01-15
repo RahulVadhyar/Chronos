@@ -112,6 +112,14 @@ namespace Engine {
             std::string texturePath);
 
         /**
+        \brief Create the texture by loading the texture from the given raw data.
+
+        Used in Text Rendering
+        */
+        void create(Chronos::Engine::Device device, VkCommandPool commandPool,
+                void* data, size_t texWidth, size_t texHeight, VkDeviceSize imageSize, VkFormat format);
+
+        /**
         \brief Destroy the texture assets.
         */
         void destroy();

@@ -1,5 +1,6 @@
 #include "chronos.hpp"
 #include "text.hpp"
+#include "objectManagerDefs.hpp"
 
 namespace Chronos {
 GLFWwindow* Manager::Manager::getWindow()
@@ -38,16 +39,16 @@ int Manager::Manager::addPolygon(Chronos::Engine::ShapeParams shapeParams, Chron
 }
 int Manager::Manager::updatePolygon(int shapeNo, Chronos::Engine::ShapeParams shapeParams)
 {
-    if (engine.shapeManager.shapes.count(shapeNo) == 0) {
+    if (engine.shapeManager.objects.count(shapeNo) == 0) {
         return -1;
     }
-    engine.shapeManager.shapes[shapeNo].params = shapeParams;
+    engine.shapeManager.objects[shapeNo].params = shapeParams;
     return 0;
 }
 void Manager::Manager::removePolygon(int shapeNo)
 {
-    if (engine.shapeManager.shapes.count(shapeNo) > 0) {
-        engine.shapeManager.removeShape(shapeNo);
+    if (engine.shapeManager.objects.count(shapeNo) > 0) {
+        engine.shapeManager.remove(shapeNo);
     }
 }
 int Manager::Manager::addText(Chronos::Manager::Text text)
@@ -75,12 +76,12 @@ void Manager::Manager::removeText(int textNo)
 }
 
 // int Manager::Manager::createAnimObject(int shapeNo){
-//     if(engine.shapeManager.shapes.count(shapeNo) == 0){
+//     if(engine.shapeManager.objects.count(shapeNo) == 0){
 //         throw std::runtime_error("Shape does not exist");
 //     }
 //     int animObjNo = nextFreeAnimObjNo;
 //     nextFreeAnimObjNo++;
-//     Shape* shape = &engine.shapeManager.shapes[shapeNo];
+//     Shape* shape = &engine.shapeManager.objects[shapeNo];
 //     Chronos::Animation::AnimObject animObject(shapeNo, animObjNo, shape);
 //     animObject.animObjNo = animObjNo;
 //     animObjects[animObjNo] = animObject;

@@ -96,6 +96,42 @@ void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandP
     textureImageView = createImageView(device, VK_FORMAT_R8G8B8A8_SRGB, textureImage);
 }
 
+void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandPool commandPool,
+                void* data, size_t texWidth, size_t texHeight, VkDeviceSize imageSize, VkFormat format)
+{
+    this->device = device;
+    VkBuffer stagingBuffer;
+    VkDeviceMemory stagingBufferMemory;
+    Chronos::Engine::createBuffer(device, imageSize, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
+        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
+        &stagingBuffer, &stagingBufferMemory);
+
+    void* mappedData;
+    vkMapMemory(device.device, stagingBufferMemory, 0, imageSize, 0, &mappedData);
+    memcpy(mappedData, data, static_cast<size_t>(imageSize));
+    vkUnmapMemory(device.device, stagingBufferMemory);
+
+    Chronos::Engine::createImage(device, texWidth, texHeight, format,
+        VK_IMAGE_TILING_OPTIMAL,
+        VK_IMAGE_USAGE_TRANSFER_DST_BIT | VK_IMAGE_USAGE_SAMPLED_BIT,
+        VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, &textureImage,
+        &textureImageMemory, VK_SAMPLE_COUNT_1_BIT);
+
+    Chronos::Engine::transitionImageLayout(
+        textureImage, format, VK_IMAGE_LAYOUT_UNDEFINED,
+        VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, commandPool, device);
+    Chronos::Engine::copyBufferToImage(stagingBuffer, textureImage,
+        static_cast<uint32_t>(texWidth),
+        static_cast<uint32_t>(texHeight), commandPool, device);
+    Chronos::Engine::transitionImageLayout(textureImage, format,
+        VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
+        VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL, commandPool,
+        device);
+    vkDestroyBuffer(device.device, stagingBuffer, nullptr);
+    vkFreeMemory(device.device, stagingBufferMemory, nullptr);
+    textureImageView = createImageView(device, format, textureImage);
+}
+
 void Chronos::Engine::transitionImageLayout(VkImage image, VkFormat format,
     VkImageLayout oldLayout, VkImageLayout newLayout,
     VkCommandPool commandPool, Chronos::Engine::Device device)

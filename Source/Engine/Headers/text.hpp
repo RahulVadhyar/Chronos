@@ -4,6 +4,8 @@
 */
 #pragma once
 #include "swapchain.hpp"
+#include "texture.hpp"
+
 #include "stb_font_consolas_24_latin1.inl"
 namespace Chronos {
 namespace Engine {
@@ -187,9 +189,10 @@ private:
 
         VkBuffer vertexBuffer;
         VkDeviceMemory vertexBufferMemory;
-        VkImage texture;
-        VkImageView textureImageView;
-        VkDeviceMemory textureImageMemory;
+        // VkImage texture;
+        // VkImageView textureImageView;
+        // VkDeviceMemory textureImageMemory;
+        Chronos::Engine::Texture fontTexture;
         glm::vec4* mappedMemory;
 
         /**
