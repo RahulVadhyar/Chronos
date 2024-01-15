@@ -98,3 +98,49 @@ void Chronos::Engine::Shape::update(uint32_t currentFrame)
         params.y, params.rotation, params.xSize,
         params.ySize);
 }
+
+std::vector<VkDescriptorType> Chronos::Engine::Shape::getDescriptorTypes()
+{
+    return std::vector<VkDescriptorType> { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER,
+        VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER };
+}
+
+std::vector<VkShaderStageFlagBits> Chronos::Engine::Shape::getShaderStages()
+{
+    return std::vector<VkShaderStageFlagBits> { VK_SHADER_STAGE_VERTEX_BIT,
+        VK_SHADER_STAGE_FRAGMENT_BIT };
+}
+
+Chronos::Engine::PipelineAttributes Chronos::Engine::Shape::getPipelineAttributes()
+{
+    PipelineAttributes pipelineAttributes;
+
+    auto bindingDescription = Vertex::getBindingDescription();
+    auto attributeDescriptions = Vertex::getAttributeDescriptions();
+    
+    pipelineAttributes.bindingDescriptions.resize(bindingDescription.size());
+    for (int i = 0; i < 1; i++) {
+        pipelineAttributes.bindingDescriptions[i] = bindingDescription[i];
+    }
+
+    pipelineAttributes.attributeDescriptions.resize(attributeDescriptions.size());
+    for (int i = 0; i < 3; i++) {
+        pipelineAttributes.attributeDescriptions[i] = attributeDescriptions[i];
+    }
+
+    pipelineAttributes.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
+    pipelineAttributes.frontFace = VK_FRONT_FACE_COUNTER_CLOCKWISE;
+
+    pipelineAttributes.colorBlendAttachment.colorWriteMask = VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT;
+    pipelineAttributes.colorBlendAttachment.blendEnable = VK_FALSE;
+    pipelineAttributes.colorBlendAttachment.srcColorBlendFactor = VK_BLEND_FACTOR_ONE;
+    pipelineAttributes.colorBlendAttachment.dstColorBlendFactor = VK_BLEND_FACTOR_ZERO; // Optional
+    pipelineAttributes.colorBlendAttachment.colorBlendOp = VK_BLEND_OP_ADD; // Optional
+    pipelineAttributes.colorBlendAttachment.srcAlphaBlendFactor = VK_BLEND_FACTOR_ONE; // Optional
+    pipelineAttributes.colorBlendAttachment.dstAlphaBlendFactor = VK_BLEND_FACTOR_ZERO; // Optional
+    pipelineAttributes.colorBlendAttachment.alphaBlendOp = VK_BLEND_OP_ADD; // Optional
+
+    
+
+    return pipelineAttributes;
+}

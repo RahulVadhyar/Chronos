@@ -31,6 +31,7 @@ namespace Engine {
 
     protected:
         int addObject(Object object);
+        virtual void createRenderPass() = 0;
         void cleanup();
         Chronos::Engine::Device* device;
         Chronos::Engine::SwapChain* swapChain;

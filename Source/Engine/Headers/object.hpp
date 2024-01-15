@@ -12,6 +12,13 @@
 namespace Chronos {
 namespace Engine {
 
+    struct PipelineAttributes{
+        std::vector<VkVertexInputBindingDescription> bindingDescriptions;
+        std::vector<VkVertexInputAttributeDescription> attributeDescriptions;
+        VkPrimitiveTopology topology;
+        VkFrontFace frontFace;
+        VkPipelineColorBlendAttachmentState colorBlendAttachment;
+    };
     class Object {
 
     public:
@@ -38,6 +45,9 @@ namespace Engine {
         void createDescriptorPool();
         void createDescriptorSetLayout();
         virtual void createDescriptorSets() = 0;
+        virtual std::vector<VkDescriptorType> getDescriptorTypes() = 0;
+        virtual std::vector<VkShaderStageFlagBits> getDescriptorStages() = 0;
+        PipelineAttributes getPipelineAttributes();
     };
 };
 };

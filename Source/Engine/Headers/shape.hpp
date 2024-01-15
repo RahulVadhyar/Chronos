@@ -30,6 +30,7 @@ namespace Engine {
         Chronos::Engine::Buffer vertexBuffer;
         Chronos::Engine::Buffer indexBuffer;
         void createDescriptorSets();
+        std::vector<VkDescriptorType> getDescriptorTypes();
     private:
         std::vector<Chronos::Engine::UniformBuffer> uniformBuffers;
     };

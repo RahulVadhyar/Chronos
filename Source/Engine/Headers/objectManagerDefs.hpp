@@ -9,17 +9,7 @@ void Chronos::Engine::ObjectManager<Object>::init(Chronos::Engine::Device* devic
 
     Chronos::Engine::createTextureSampler(*device, &textureSampler);
 
-    /*
-    For the render pass the formats are as follows:
-            initial - undefined; this is due to the fact that image is cleared
-            final(color and msaa) - color attachment optimal; this is due to the
-    fact that the image going to next renderpass(Text) Also we are clearing the
-    framebuffer
-    */
-    renderPass = Chronos::Engine::createRenderPass(*device, *swapChain, VK_IMAGE_LAYOUT_UNDEFINED,
-        VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
-        VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL, true,
-        true, false);
+    renderPass = createRenderPass();
     commandBuffers = Chronos::Engine::createCommandBuffer(*device, *swapChain, commandPool);
     framebuffers = Chronos::Engine::createFramebuffer(*device, *swapChain, renderPass, true);
 }

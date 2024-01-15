@@ -62,3 +62,17 @@ int Chronos::Engine::ShapeManager::addTriangle(ShapeParams shapeParams,
     objects[shapeNo].params = shapeParams;
     return shapeNo;
 }
+
+void Chronos::Engine::ShapeManager::createRenderPass(){
+     /*
+    For the render pass the formats are as follows:
+            initial - undefined; this is due to the fact that image is cleared
+            final(color and msaa) - color attachment optimal; this is due to the
+    fact that the image going to next renderpass(Text) Also we are clearing the
+    framebuffer
+    */
+    renderPass = Chronos::Engine::createRenderPass(*device, *swapChain, VK_IMAGE_LAYOUT_UNDEFINED,
+        VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
+        VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL, true,
+        true, false);
+}

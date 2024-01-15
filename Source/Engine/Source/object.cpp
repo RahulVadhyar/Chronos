@@ -15,7 +15,9 @@ void Chronos::Engine::Object::init(Chronos::Engine::Device* device, VkCommandPoo
 }
 
 void Chronos::Engine::Object::createGraphicsPipeline()
-{
+{   
+    Chronos::Engine::PipelineAttributes pipelineAttributes = getPipelineAttributes();
+
     auto vertShaderCode = Chronos::Engine::readFile(vertexShaderPath.c_str());
     auto fragShaderCode = Chronos::Engine::readFile(fragmentShaderPath.c_str());
 
@@ -37,8 +39,8 @@ void Chronos::Engine::Object::createGraphicsPipeline()
     VkPipelineShaderStageCreateInfo shaderStages[] = { vertShaderStageInfo,
         fragShaderStageInfo };
 
-    auto bindingDescription = Vertex::getBindingDescription();
-    auto attributeDescriptions = Vertex::getAttributeDescriptions();
+    auto bindingDescription = pipelineAttributes.bindingDescriptions;
+    auto attributeDescriptions = pipelineAttributes.attributeDescriptions;
 
     VkPipelineVertexInputStateCreateInfo vertexInputInfo {};
     vertexInputInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
@@ -49,7 +51,7 @@ void Chronos::Engine::Object::createGraphicsPipeline()
 
     VkPipelineInputAssemblyStateCreateInfo inputAssembly {};
     inputAssembly.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
-    inputAssembly.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST; // we are using indexed rendering so
+    inputAssembly.topology = pipeline.topology; // we are using indexed rendering so
                                                                   // we need to use triangle list
     inputAssembly.primitiveRestartEnable = VK_FALSE;
 
@@ -79,7 +81,7 @@ void Chronos::Engine::Object::createGraphicsPipeline()
     rasterizer.polygonMode = VK_POLYGON_MODE_FILL;
     rasterizer.lineWidth = 1.0f;
     rasterizer.cullMode = VK_CULL_MODE_BACK_BIT;
-    rasterizer.frontFace = VK_FRONT_FACE_COUNTER_CLOCKWISE; // counter clockwuise
+    rasterizer.frontFace = pipelineAttributes.frontFace; // counter clockwuise
     rasterizer.depthBiasEnable = VK_FALSE;
     rasterizer.depthBiasConstantFactor = 0.0f;
     rasterizer.depthBiasClamp = 0.0f;
@@ -95,22 +97,12 @@ void Chronos::Engine::Object::createGraphicsPipeline()
     multisampling.alphaToOneEnable = VK_FALSE;
     multisampling.sampleShadingEnable = VK_TRUE;
 
-    VkPipelineColorBlendAttachmentState colorBlendAttachment {};
-    colorBlendAttachment.colorWriteMask = VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT;
-    colorBlendAttachment.blendEnable = VK_FALSE;
-    colorBlendAttachment.srcColorBlendFactor = VK_BLEND_FACTOR_ONE;
-    colorBlendAttachment.dstColorBlendFactor = VK_BLEND_FACTOR_ZERO; // Optional
-    colorBlendAttachment.colorBlendOp = VK_BLEND_OP_ADD; // Optional
-    colorBlendAttachment.srcAlphaBlendFactor = VK_BLEND_FACTOR_ONE; // Optional
-    colorBlendAttachment.dstAlphaBlendFactor = VK_BLEND_FACTOR_ZERO; // Optional
-    colorBlendAttachment.alphaBlendOp = VK_BLEND_OP_ADD; // Optional
-
     VkPipelineColorBlendStateCreateInfo colorBlending {};
     colorBlending.sType = VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO;
     colorBlending.logicOpEnable = VK_FALSE;
     colorBlending.logicOp = VK_LOGIC_OP_COPY;
     colorBlending.attachmentCount = 1;
-    colorBlending.pAttachments = &colorBlendAttachment;
+    colorBlending.pAttachments = &pipelineAttributes.colorBlendAttachment;
     colorBlending.blendConstants[0] = 0.0f;
     colorBlending.blendConstants[1] = 0.0f;
     colorBlending.blendConstants[2] = 0.0f;
@@ -175,16 +167,15 @@ void Chronos::Engine::Object::destroy()
 }
 
 void Chronos::Engine::Object::createDescriptorPool()
-{
-    std::array<VkDescriptorPoolSize, 2> poolSizes {};
-    // uniform buffer
-    poolSizes[0].type = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
-    poolSizes[0].descriptorCount = static_cast<uint32_t>(MAX_FRAMES_IN_FLIGHT);
+{   
+    std::vector<VkDescriptorType> descriptorTypes = getDescriptorTypes();
 
-    // texture sampler
-    poolSizes[1].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-    poolSizes[1].descriptorCount = static_cast<uint32_t>(MAX_FRAMES_IN_FLIGHT);
-
+    std::array<VkDescriptorPoolSize, descriptorTypes.size()> poolSizes {};
+    
+    for(size_t i = 0; i < descriptorTypes.size(); i++){
+        poolSizes[i].type = descriptorTypes[i];
+        poolSizes[i].descriptorCount = static_cast<uint32_t>(MAX_FRAMES_IN_FLIGHT);
+    }
     VkDescriptorPoolCreateInfo poolInfo {};
     poolInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
     poolInfo.poolSizeCount = static_cast<uint32_t>(poolSizes.size());
@@ -199,24 +190,24 @@ void Chronos::Engine::Object::createDescriptorPool()
 
 void Chronos::Engine::Object::createDescriptorSetLayout()
 {
-    // uniform buffer
-    VkDescriptorSetLayoutBinding uboLayoutBinding {};
-    uboLayoutBinding.binding = 0;
-    uboLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
-    uboLayoutBinding.descriptorCount = 1;
-    uboLayoutBinding.stageFlags = VK_SHADER_STAGE_VERTEX_BIT;
-    uboLayoutBinding.pImmutableSamplers = nullptr;
+    std::vector<VkDescriptorType> descriptorTypes = getDescriptorTypes();
+    std::vector<VkShaderStageFlagBits> descriptorStages = getDescriptorStages();
 
-    // texture sampler
-    VkDescriptorSetLayoutBinding samplerLayoutBinding {};
-    samplerLayoutBinding.binding = 1;
-    samplerLayoutBinding.descriptorCount = 1;
-    samplerLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-    samplerLayoutBinding.pImmutableSamplers = nullptr;
-    samplerLayoutBinding.stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
+    if(descriptorTypes.size() != descriptorStages.size()){
+        throw std::runtime_error("descriptorTypes and descriptorStages must be the same size");
+    }
 
-    std::array<VkDescriptorSetLayoutBinding, 2> bindings = { uboLayoutBinding,
+    std::array<VkDescriptorSetLayoutBinding, descriptorTypes.size()> bindings = { uboLayoutBinding,
         samplerLayoutBinding };
+    
+    for(size_t i = 0; i < descriptorTypes.size(); i++){
+        uboLayoutBinding.binding = i;
+        uboLayoutBinding.descriptorType = descriptorTypes[i];
+        uboLayoutBinding.descriptorCount = 1;
+        uboLayoutBinding.stageFlags = descriptorStages[i];
+        uboLayoutBinding.pImmutableSamplers = nullptr;
+    }
+
     VkDescriptorSetLayoutCreateInfo layoutInfo {};
     layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
     layoutInfo.bindingCount = static_cast<uint32_t>(bindings.size());
