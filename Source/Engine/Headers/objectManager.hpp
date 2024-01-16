@@ -25,11 +25,11 @@ namespace Engine {
         void destroy();
         void update(uint32_t currentFrame);
         virtual void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]);
-        void endRender(uint32_t currentFrame);
         void changeMsaa();
         void recreate();
 
     protected:
+        void endRender(uint32_t currentFrame);
         int addObject(Object object);
         virtual void createRenderPass() = 0;
         void cleanup();

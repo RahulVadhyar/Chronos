@@ -14,20 +14,35 @@ namespace Engine {
 
     This is for use by ```Engine``` only and should not be used for any other purpose.
     Code using Chronos should not use this class directly.
-    Along with managing the shapes, its uniforms(shader variables) and its textures,
-    it also providies the commandPools, commandBuffers, renderPasses, framebuffers and textureSamplers needed for rendering this as a seperate pass.
 
     Generally in order to manage shapes the methods to be used are:
     - ```addTriangle```
     - ```addRectangle```
-    - ```removeShape```
+    - ```remove``
+    
+    Inherits from Object Manager. All the public methods defined in that class is also available. 
+    It includes the following functions for internal use
+    -init
+    -destroy
+    -update
+    -render
+    -changeMsaa
+    -recreate
 
-    The rest of the methods are to be used for rendering with the ```Engine``` class and should not be used directly.
-    This class creates its own renderPass for rendering the shapes.
+    For more details on these functions, please reference the [ObjectManger](Chronos::Engine::ObjectManager) class
+
     */
     class ShapeManager : 
     public Chronos::Engine::ObjectManager<Chronos::Engine::Shape>{
     public:
+
+        /**
+        \brief Adds a triangle to the shape manager. 
+        
+        Necessary shapeParams and texture path must be provided. 
+        Supported textures are .jpg and .png
+        Returns a shapeNo that references the shape for modifying and destroying t.
+        */
         int addTriangle(Chronos::Engine::ShapeParams shapeParams, std::string texturePath);
         int addRectangle(Chronos::Engine::ShapeParams shapeParams, std::string texturePath);
         void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]);
