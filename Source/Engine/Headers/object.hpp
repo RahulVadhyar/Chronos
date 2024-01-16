@@ -1,6 +1,6 @@
-/** \file shape.hpp
+/** \file object.hpp
 
- \brief Contains the class for creating a shape.
+ \brief Contains the class for creating a generic object.
 */
 #pragma once
 #include "structs.hpp"
@@ -12,6 +12,10 @@
 namespace Chronos {
 namespace Engine {
 
+
+    /**
+    
+    */
     struct PipelineAttributes{
         std::vector<VkVertexInputBindingDescription> bindingDescriptions;
         std::vector<VkVertexInputAttributeDescription> attributeDescriptions;

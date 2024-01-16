@@ -39,6 +39,10 @@ namespace Animation {
             [0.1, -0.32, 0, 0.5, 0.5, true]
             [0.1, -0.32, 0, 0.5, 0.5, true]
             }
+        
+        @param path The path to the animation file. Must be a .anim file.
+
+        @returns The loaded animation in the correct format to be applied to the anim tree
 
     */
     std::map<std::string, std::vector<AnimShapeAttributes>> loadAnimFile(std::string path);
@@ -48,6 +52,9 @@ namespace Animation {
 
     The animation file is a .anim file that contains the animation data for each shape in an animation tree.
     For more information, see the loadAnimFile function.
+
+    @param animation The animation to be saved.
+    @param path The path to the file to be saved. Must be a .anim file.
     */
     void saveAnimFile(std::map<std::string, std::vector<AnimShapeAttributes>> animation, std::string path);
 
@@ -99,6 +106,8 @@ namespace Animation {
             [0.2, -0.16, 0.38, 0.12, -0.7, true]
             }
 
+        @param path The path to the animation tree file. Must be a .skel file.
+        @return The loaded animation tree in the correct format.
     */
     AnimNode loadAnimTree(std::string path);
 
@@ -107,6 +116,9 @@ namespace Animation {
 
     An animation tree defines how the shapes are related to each other. It is a tree of shapes.
     For more information, see the loadAnimTree function.
+
+    @param animTree The animation tree to be saved.
+    @param path The path to the file to be saved.    
     */
     void saveAnimTree(AnimNode animTree, std::string path);
 };

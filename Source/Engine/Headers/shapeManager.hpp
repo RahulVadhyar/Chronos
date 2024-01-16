@@ -44,7 +44,25 @@ namespace Engine {
         Returns a shapeNo that references the shape for modifying and destroying t.
         */
         int addTriangle(Chronos::Engine::ShapeParams shapeParams, std::string texturePath);
+
+        /**
+        \brief Adds a rectangle to the shape manager. 
+        
+        Necessary shapeParams and texture path must be provided. 
+        Supported textures are .jpg and .png
+        Returns a shapeNo that references the shape for modifying and destroying t.
+        */
         int addRectangle(Chronos::Engine::ShapeParams shapeParams, std::string texturePath);
+        
+        /**
+        \brief Records the commands needed for rendering the shapes.
+
+        When this function is called, it records the commands that are needed for rendering all the shapes stored in this class.
+
+        @param currentFrame The current frame to render to.
+        @param imageIndex The index of the framebuffer associated with the current frame
+        @param bgColor The background color to set during rendering 
+        */
         void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]);
     };
 };
