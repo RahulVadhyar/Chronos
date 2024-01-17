@@ -7,7 +7,8 @@
 #pragma once
 #include "featureMacros.hpp"
 #include "shapeManager.hpp"
-#include "text.hpp"
+#include "textManager.hpp"
+// #include "text.hpp"
 #ifdef DISPLAY_IMGUI
 #include "gui.hpp"
 #endif
@@ -81,7 +82,8 @@ For more on handling inputs, please see the GLFW documentation.
         To render text to the window, one may call the necessary methods in this class.
         */
 
-        Chronos::Engine::Text textManager;
+        // Chronos::Engine::Text textManager;
+        Chronos::Engine::TextManager textManager;
 
         /**
         \brief This is the main function that is used to add, remove and modify shapes to the engine.

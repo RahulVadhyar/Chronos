@@ -20,6 +20,7 @@ namespace Engine {
         std::map<int, Object> objects;
         std::vector<VkCommandBuffer> commandBuffers;
 
+
         void remove(int objectNo);
         void init(Chronos::Engine::Device* device, Chronos::Engine::SwapChain* swapChain, VkCommandPool commandPool);
         void destroy();

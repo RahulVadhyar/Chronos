@@ -51,7 +51,7 @@ namespace Engine {
         virtual void createDescriptorSets() = 0;
         virtual std::vector<VkDescriptorType> getDescriptorTypes() = 0;
         virtual std::vector<VkShaderStageFlagBits> getDescriptorStages() = 0;
-        PipelineAttributes getPipelineAttributes();
+        virtual PipelineAttributes getPipelineAttributes() = 0;
     };
 };
 };

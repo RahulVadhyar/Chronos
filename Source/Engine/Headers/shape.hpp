@@ -31,7 +31,10 @@ namespace Engine {
         Chronos::Engine::Buffer indexBuffer;
         void createDescriptorSets();
         std::vector<VkDescriptorType> getDescriptorTypes();
+        std::vector<VkShaderStageFlagBits> getDescriptorStages();
+        std::vector<VkShaderStageFlagBits> getShaderStages();
     private:
+        PipelineAttributes getPipelineAttributes() override;
         std::vector<Chronos::Engine::UniformBuffer> uniformBuffers;
     };
 

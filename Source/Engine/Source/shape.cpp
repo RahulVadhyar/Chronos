@@ -1,5 +1,5 @@
 #include "engine.hpp"
-
+#include "object.hpp"
 void Chronos::Engine::Shape::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     SwapChain* swapChain, VkSampler textureSampler,
     std::string texturePath, VkRenderPass* renderPass)
@@ -105,7 +105,7 @@ std::vector<VkDescriptorType> Chronos::Engine::Shape::getDescriptorTypes()
         VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER };
 }
 
-std::vector<VkShaderStageFlagBits> Chronos::Engine::Shape::getShaderStages()
+std::vector<VkShaderStageFlagBits> Chronos::Engine::Shape::getDescriptorStages()
 {
     return std::vector<VkShaderStageFlagBits> { VK_SHADER_STAGE_VERTEX_BIT,
         VK_SHADER_STAGE_FRAGMENT_BIT };
@@ -113,17 +113,15 @@ std::vector<VkShaderStageFlagBits> Chronos::Engine::Shape::getShaderStages()
 
 Chronos::Engine::PipelineAttributes Chronos::Engine::Shape::getPipelineAttributes()
 {
-    PipelineAttributes pipelineAttributes;
+    Chronos::Engine::PipelineAttributes pipelineAttributes;
 
     auto bindingDescription = Vertex::getBindingDescription();
     auto attributeDescriptions = Vertex::getAttributeDescriptions();
     
-    pipelineAttributes.bindingDescriptions.resize(bindingDescription.size());
-    for (int i = 0; i < 1; i++) {
-        pipelineAttributes.bindingDescriptions[i] = bindingDescription[i];
-    }
+    pipelineAttributes.bindingDescriptions.resize(1);
+    pipelineAttributes.bindingDescriptions[0] = bindingDescription;
 
-    pipelineAttributes.attributeDescriptions.resize(attributeDescriptions.size());
+    pipelineAttributes.attributeDescriptions.resize(3);
     for (int i = 0; i < 3; i++) {
         pipelineAttributes.attributeDescriptions[i] = attributeDescriptions[i];
     }

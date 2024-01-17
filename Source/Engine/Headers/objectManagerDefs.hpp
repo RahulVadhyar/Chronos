@@ -1,6 +1,6 @@
+#pragma once
 #include "objectManager.hpp"
-template <Chronos::Engine::ObjectLike Object> 
-void Chronos::Engine::ObjectManager<Object>::init(Chronos::Engine::Device* device, SwapChain* swapChain,
+template <Chronos::Engine::ObjectLike Object> void Chronos::Engine::ObjectManager<Object>::init(Chronos::Engine::Device* device, SwapChain* swapChain,
     VkCommandPool commandPool)
 {
     this->device = device;
@@ -9,7 +9,7 @@ void Chronos::Engine::ObjectManager<Object>::init(Chronos::Engine::Device* devic
 
     Chronos::Engine::createTextureSampler(*device, &textureSampler);
 
-    renderPass = createRenderPass();
+    createRenderPass();
     commandBuffers = Chronos::Engine::createCommandBuffer(*device, *swapChain, commandPool);
     framebuffers = Chronos::Engine::createFramebuffer(*device, *swapChain, renderPass, true);
 }

@@ -1,6 +1,8 @@
 #include "chronos.hpp"
-#include "text.hpp"
+// #include "text.hpp"
+#include "object.hpp"
 #include "objectManagerDefs.hpp"
+
 
 namespace Chronos {
 GLFWwindow* Manager::Manager::getWindow()
@@ -53,26 +55,20 @@ void Manager::Manager::removePolygon(int shapeNo)
 }
 int Manager::Manager::addText(Chronos::Manager::Text text)
 {
-    int textNo = nextFreeTextNo;
-    nextFreeTextNo++;
-    textMap[textNo] = text;
-    engine.textManager.beginUpdate();
-    for (auto& text : textMap) {
-        engine.textManager.add(text.second.text, text.second.x, text.second.y, Chronos::Engine::Center);
-    }
-    engine.textManager.endUpdate();
-    return textNo;
+    int fontNo = engine.textManager.addFont(Chronos::Engine::Font());
+    engine.textManager.objects[fontNo].addText(text.text, text.x, text.y);
+    return fontNo;
 }
 void Manager::Manager::removeText(int textNo)
 {
     if (textMap.count(textNo) > 0) {
         textMap.erase(textNo);
     }
-    engine.textManager.beginUpdate();
-    for (auto& text : textMap) {
-        engine.textManager.add(text.second.text, text.second.x, text.second.y, Chronos::Engine::Center);
-    }
-    engine.textManager.endUpdate();
+    // engine.textManager.beginUpdate();
+    // for (auto& text : textMap) {
+    //     engine.textManager.add(text.second.text, text.second.x, text.second.y, Chronos::Engine::Center);
+    // }
+    // engine.textManager.endUpdate();
 }
 
 // int Manager::Manager::createAnimObject(int shapeNo){

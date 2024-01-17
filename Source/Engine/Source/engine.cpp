@@ -63,7 +63,8 @@ void Chronos::Engine::Engine::initVulkan()
     swapChain.init(&device, surface, window);
     commandPool = createCommandPool(device, swapChain.surface);
     shapeManager.init(&device, &swapChain, commandPool);
-    textManager.init(&device, commandPool, &swapChain);
+    // textManager.init(&device, commandPool, &swapChain);
+    textManager.init(&device, &swapChain, commandPool);
     createSyncObjects();
 
 #ifdef DISPLAY_IMGUI

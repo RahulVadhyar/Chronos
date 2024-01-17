@@ -1,5 +1,7 @@
 #include "engine.hpp"
 #include "object.hpp"
+#include "objectManagerDefs.hpp"
+
 void Chronos::Engine::Object::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     SwapChain* swapChain, VkSampler textureSampler, VkRenderPass* renderPass)
 {
@@ -44,14 +46,14 @@ void Chronos::Engine::Object::createGraphicsPipeline()
 
     VkPipelineVertexInputStateCreateInfo vertexInputInfo {};
     vertexInputInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
-    vertexInputInfo.vertexBindingDescriptionCount = 1;
+    vertexInputInfo.vertexBindingDescriptionCount = static_cast<uint32_t>(bindingDescription.size());
     vertexInputInfo.vertexAttributeDescriptionCount = static_cast<uint32_t>(attributeDescriptions.size());
-    vertexInputInfo.pVertexBindingDescriptions = &bindingDescription;
+    vertexInputInfo.pVertexBindingDescriptions = bindingDescription.data();
     vertexInputInfo.pVertexAttributeDescriptions = attributeDescriptions.data();
 
     VkPipelineInputAssemblyStateCreateInfo inputAssembly {};
     inputAssembly.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
-    inputAssembly.topology = pipeline.topology; // we are using indexed rendering so
+    inputAssembly.topology = pipelineAttributes.topology; // we are using indexed rendering so
                                                                   // we need to use triangle list
     inputAssembly.primitiveRestartEnable = VK_FALSE;
 
@@ -170,7 +172,7 @@ void Chronos::Engine::Object::createDescriptorPool()
 {   
     std::vector<VkDescriptorType> descriptorTypes = getDescriptorTypes();
 
-    std::array<VkDescriptorPoolSize, descriptorTypes.size()> poolSizes {};
+    std::vector<VkDescriptorPoolSize> poolSizes {descriptorTypes.size()};
     
     for(size_t i = 0; i < descriptorTypes.size(); i++){
         poolSizes[i].type = descriptorTypes[i];
@@ -197,15 +199,14 @@ void Chronos::Engine::Object::createDescriptorSetLayout()
         throw std::runtime_error("descriptorTypes and descriptorStages must be the same size");
     }
 
-    std::array<VkDescriptorSetLayoutBinding, descriptorTypes.size()> bindings = { uboLayoutBinding,
-        samplerLayoutBinding };
+    std::vector<VkDescriptorSetLayoutBinding> bindings {descriptorTypes.size()};
     
     for(size_t i = 0; i < descriptorTypes.size(); i++){
-        uboLayoutBinding.binding = i;
-        uboLayoutBinding.descriptorType = descriptorTypes[i];
-        uboLayoutBinding.descriptorCount = 1;
-        uboLayoutBinding.stageFlags = descriptorStages[i];
-        uboLayoutBinding.pImmutableSamplers = nullptr;
+        bindings[i].binding = i;
+        bindings[i].descriptorType = descriptorTypes[i];
+        bindings[i].descriptorCount = 1;
+        bindings[i].stageFlags = descriptorStages[i];
+        bindings[i].pImmutableSamplers = nullptr;
     }
 
     VkDescriptorSetLayoutCreateInfo layoutInfo {};

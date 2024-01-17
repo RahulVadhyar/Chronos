@@ -1,7 +1,8 @@
+#include "engine.hpp"
 #include "font.hpp"
-#include "stb_font_consolas_24_latin1.inl"
 
-Chronos::Engine::Font::init(){
+void Chronos::Engine::Font::init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
+            VkSampler textureSampler, VkRenderPass* renderPass){
     vertexShaderPath = "ThirdParty/Chronos/Shaders/textVert.spv";
     fragmentShaderPath = "ThirdParty/Chronos/Shaders/textFrag.spv";
 
@@ -77,7 +78,7 @@ void Chronos::Engine::Font::createDescriptorSets(){
 Chronos::Engine::PipelineAttributes Chronos::Engine::Font::getPipelineAttributes()
 {
     PipelineAttributes pipelineAttributes;
-    pipelineAttributes.bindingDescriptions = std::vector<VkVertexInputBindingDescription> [2];
+    pipelineAttributes.bindingDescriptions = std::vector<VkVertexInputBindingDescription> {2};
     pipelineAttributes.bindingDescriptions[0].binding = 0;
     pipelineAttributes.bindingDescriptions[0].stride = sizeof(glm::vec4);
     pipelineAttributes.bindingDescriptions[0].inputRate = VK_VERTEX_INPUT_RATE_VERTEX;
@@ -86,7 +87,7 @@ Chronos::Engine::PipelineAttributes Chronos::Engine::Font::getPipelineAttributes
     pipelineAttributes.bindingDescriptions[1].stride = sizeof(glm::vec4);
     pipelineAttributes.bindingDescriptions[1].inputRate = VK_VERTEX_INPUT_RATE_VERTEX;
 
-    pipelineAttributes.attributeDescriptions = std::vector<VkVertexInputAttributeDescription> [2];
+    pipelineAttributes.attributeDescriptions = std::vector<VkVertexInputAttributeDescription> {2};
     pipelineAttributes.attributeDescriptions[0].binding = 0;
     pipelineAttributes.attributeDescriptions[0].location = 0;
     pipelineAttributes.attributeDescriptions[0].format = VK_FORMAT_R32G32_SFLOAT;
@@ -95,7 +96,7 @@ Chronos::Engine::PipelineAttributes Chronos::Engine::Font::getPipelineAttributes
     pipelineAttributes.attributeDescriptions[1].binding = 1;
     pipelineAttributes.attributeDescriptions[1].location = 1;
     pipelineAttributes.attributeDescriptions[1].format = VK_FORMAT_R32G32_SFLOAT;
-    pipelineAttributes.attributeDescriptions[1].offset = 0;
+    pipelineAttributes.attributeDescriptions[1].offset = sizeof(glm::vec2);
 
     pipelineAttributes.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_STRIP;
     pipelineAttributes.frontFace = VK_FRONT_FACE_CLOCKWISE;
@@ -117,4 +118,95 @@ void Chronos::Engine::Font::destroy(){
     vkDestroyBuffer(device->device, vertexBuffer, nullptr);
     vkFreeMemory(device->device, vertexBufferMemory, nullptr);
     fontTexture.destroy();
+}
+
+void Chronos::Engine::Font::addText(std::string text, float x, float y){
+    this->text = text;
+    this->x = x;
+    this->y = y;
+    if (vkMapMemory(device->device, vertexBufferMemory, 0, VK_WHOLE_SIZE, 0,
+            (void**)&mappedMemory)
+        != VK_SUCCESS) {
+        throw std::runtime_error("failed to map memory!");
+    }
+    numLetters = 0;
+
+    const uint32_t firstChar = STB_FONT_consolas_24_latin1_FIRST_CHAR;
+
+    assert(mappedMemory != nullptr);
+
+    const float charW = 1.5f * scale / swapChain->swapChainExtent.width;
+    const float charH = 1.5f * scale / swapChain->swapChainExtent.height;
+
+    float fbW = (float)swapChain->swapChainExtent.width;
+    float fbH = (float)swapChain->swapChainExtent.height;
+    x = (x / fbW * 2.0f);
+    y = (y / fbH * 2.0f);
+
+    // Calculate text width
+    float textWidth = 0;
+    for (auto letter : text) {
+        stb_fontchar* charData = &stbFontData[(uint32_t)letter - firstChar];
+        textWidth += charData->advance * charW;
+    }
+
+    // switch (alignment) {
+    // case Right:
+    //     x -= textWidth;
+    //     break;
+    // case Center:
+        x -= textWidth / 2.0f;
+    //     break;
+    // case Left:
+    //     break;
+    // }
+
+    // Generate a uv mapped quad per char in the new text
+    for (auto letter : text) {
+        stb_fontchar* charData = &stbFontData[(uint32_t)letter - firstChar];
+
+        mappedMemory->x = (x + (float)charData->x0 * charW);
+        mappedMemory->y = (y + (float)charData->y0 * charH);
+        mappedMemory->z = charData->s0;
+        mappedMemory->w = charData->t0;
+        mappedMemory++;
+
+        mappedMemory->x = (x + (float)charData->x1 * charW);
+        mappedMemory->y = (y + (float)charData->y0 * charH);
+        mappedMemory->z = charData->s1;
+        mappedMemory->w = charData->t0;
+        mappedMemory++;
+
+        mappedMemory->x = (x + (float)charData->x0 * charW);
+        mappedMemory->y = (y + (float)charData->y1 * charH);
+        mappedMemory->z = charData->s0;
+        mappedMemory->w = charData->t1;
+        mappedMemory++;
+
+        mappedMemory->x = (x + (float)charData->x1 * charW);
+        mappedMemory->y = (y + (float)charData->y1 * charH);
+        mappedMemory->z = charData->s1;
+        mappedMemory->w = charData->t1;
+        mappedMemory++;
+
+        x += charData->advance * charW;
+
+        numLetters++;
+    }
+
+    vkUnmapMemory(device->device, vertexBufferMemory);
+    mappedMemory = nullptr;
+}
+
+void Chronos::Engine::Font::clear(){
+    if (vkMapMemory(device->device, vertexBufferMemory, 0, VK_WHOLE_SIZE, 0,
+            (void**)&mappedMemory)
+        != VK_SUCCESS) {
+        throw std::runtime_error("failed to map memory!");
+    }
+    numLetters = 0;
+    mappedMemory = nullptr;
+
+    vkUnmapMemory(device->device, vertexBufferMemory);
+    mappedMemory = nullptr;
 }

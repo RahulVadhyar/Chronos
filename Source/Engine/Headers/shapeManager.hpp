@@ -1,7 +1,7 @@
 #pragma once
 #include "shape.hpp"
 #include "objectManager.hpp"
-
+#include "objectManagerDefs.hpp"
 /** \file shapeManager.hpp
 
  \brief Contains the class for managing shapes.
@@ -64,6 +64,13 @@ namespace Engine {
         @param bgColor The background color to set during rendering 
         */
         void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]);
+    private:
+        /**
+        \brief Creates the render pass for the shapes.
+
+        This function is called by the ```init``` function. It creates the render pass for the shapes.
+        */
+        void createRenderPass();
     };
 };
 };
