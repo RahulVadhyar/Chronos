@@ -219,7 +219,7 @@ void Chronos::Editor::GUI::init(Chronos::Engine::Device* device, GLFWwindow* win
     init_info.PipelineCache = VK_NULL_HANDLE;
     init_info.DescriptorPool = descriptorPool;
     init_info.Allocator = nullptr;
-    init_info.MinImageCount = 2;
+    init_info.MinImageCount = MAX_FRAMES_IN_FLIGHT;
     init_info.ImageCount = MAX_FRAMES_IN_FLIGHT;
     init_info.CheckVkResultFn = nullptr; // add a fucntion to this
     ImGui_ImplVulkan_Init(&init_info, renderPass);

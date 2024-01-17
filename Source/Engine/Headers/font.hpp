@@ -24,7 +24,7 @@ namespace Engine{
         float x, y;
         uint32_t maxTextLength = 2048;
         stb_fontchar stbFontData[STB_FONT_consolas_24_latin1_NUM_CHARS];
-        float scale = 4.0f;
+        float scale = 1.0f;
 
         VkDeviceMemory vertexBufferMemory;
 
