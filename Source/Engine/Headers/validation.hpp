@@ -17,7 +17,7 @@ namespace Engine {
 /**
 \brief Flag to enable validation layers.
 */
-#ifdef NDEBUG
+#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
     const bool enableValidationLayers = false;
 #else
     const bool enableValidationLayers = true;

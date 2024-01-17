@@ -29,11 +29,14 @@ namespace Chronos{
 
         @param x The x coordinate of the text position
         @param y The y coordiante of the text position
+        @param rotation The rotation of the text(Degrees)
         @param text The text to be displayed
         */
         struct Text{
             float x = 0.0;
             float y = 0.0;
+            float rotation = 0.0;
+            float scale = 1.0;
             std::string text;
         };
         /**
@@ -98,8 +101,10 @@ namespace Chronos{
             @param text The necessary parameters needed for rendering text
             @return The textNo, for the text instance. =
             */
-            int addText(Text text);
+            int addText(Text text, int fontNo);
 
+            int addFont(std::string font);
+            
             /**
             \brief Adds a polygon(triangle or rectangle) to the window
 
@@ -139,6 +144,8 @@ namespace Chronos{
             */
             void removePolygon(int shapeNo);
 
+            void removeFont(int fontNo);
+
             /**
             \brief Removes the text from the window
 
@@ -169,16 +176,6 @@ namespace Chronos{
             
 
         private:
-
-            /**
-            \brief The next free text slot in the ```textMap``.
-            */
-            int nextFreeTextNo = 0;
-
-            /**
-            \brief Maps textNo to text
-            */
-            std::map<int, Text> textMap;
             int nextFreeAnimObjNo = 0;
 
             /**

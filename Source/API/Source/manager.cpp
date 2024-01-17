@@ -61,14 +61,7 @@ int Manager::Manager::addText(Chronos::Manager::Text text)
 }
 void Manager::Manager::removeText(int textNo)
 {
-    if (textMap.count(textNo) > 0) {
-        textMap.erase(textNo);
-    }
-    // engine.textManager.beginUpdate();
-    // for (auto& text : textMap) {
-    //     engine.textManager.add(text.second.text, text.second.x, text.second.y, Chronos::Engine::Center);
-    // }
-    // engine.textManager.endUpdate();
+    
 }
 
 // int Manager::Manager::createAnimObject(int shapeNo){

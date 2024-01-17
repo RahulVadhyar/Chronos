@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 project(Chronos)
-
 set(CMAKE_CXX_STANDARD 20)
-
+# set(CMAKE_BUILD_TYPE Debug)
 
 #GLFW
 add_subdirectory(ThirdParty/glfw)
@@ -74,6 +73,7 @@ function(IncludeDirectories projectName)
     target_link_libraries(${projectName} glfw)
 
     target_compile_definitions(${projectName} PUBLIC ENABLE_EDITOR)
+    target_compile_definitions(${projectName} PUBLIC ENABLE_VULKAN_VALIDATION_LAYERS)
 endfunction()
 
 
