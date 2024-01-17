@@ -10,9 +10,15 @@ void Chronos::Engine::Object::init(Chronos::Engine::Device* device, VkCommandPoo
     this->commandPool = commandPool;
     this->textureSampler = textureSampler;
     this->renderPass = renderPass;
+    
+    uniformBuffers.resize(MAX_FRAMES_IN_FLIGHT);
+    for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
+        uniformBuffers[i].create(*device);
+    }
 
-    createDescriptorSetLayout();
     createDescriptorPool();
+    createDescriptorSetLayout();
+    createDescriptorSets();
     createGraphicsPipeline();
 }
 
@@ -162,6 +168,9 @@ void Chronos::Engine::Object::createGraphicsPipeline()
 
 void Chronos::Engine::Object::destroy()
 {
+    for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
+        uniformBuffers[i].destroy();
+    }
     vkDestroyDescriptorPool(device->device, descriptorPool, nullptr);
     vkDestroyDescriptorSetLayout(device->device, descriptorSetLayout, nullptr);
     vkDestroyPipeline(device->device, graphicsPipeline, nullptr);

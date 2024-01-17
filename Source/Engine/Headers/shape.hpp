@@ -35,7 +35,7 @@ namespace Engine {
         std::vector<VkShaderStageFlagBits> getShaderStages();
     private:
         PipelineAttributes getPipelineAttributes() override;
-        std::vector<Chronos::Engine::UniformBuffer> uniformBuffers;
+        
     };
 
     /**

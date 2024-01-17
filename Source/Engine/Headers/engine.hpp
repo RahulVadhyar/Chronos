@@ -5,11 +5,10 @@
  This is the heart of the renderer. It is responsible for managing the window, the vulkan API and the objects that are used by the API.
 */
 #pragma once
-#include "featureMacros.hpp"
 #include "shapeManager.hpp"
 #include "textManager.hpp"
 // #include "text.hpp"
-#ifdef DISPLAY_IMGUI
+#ifdef ENABLE_EDITOR
 #include "gui.hpp"
 #endif
 
@@ -299,9 +298,7 @@ For more on handling inputs, please see the GLFW documentation.
         */
         void createSyncObjects();
 
-#ifdef DISPLAY_IMGUI
-        Chronos::Editor::Settings settings {};
-        Chronos::Editor::GUIParams guiParams {};
+#ifdef ENABLE_EDITOR
         Chronos::Editor::GUI gui = Chronos::Editor::GUI();
 #endif
 

@@ -52,6 +52,7 @@ namespace Engine {
         virtual std::vector<VkDescriptorType> getDescriptorTypes() = 0;
         virtual std::vector<VkShaderStageFlagBits> getDescriptorStages() = 0;
         virtual PipelineAttributes getPipelineAttributes() = 0;
+        std::vector<Chronos::Engine::UniformBuffer> uniformBuffers;
     };
 };
 };

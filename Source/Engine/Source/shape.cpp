@@ -6,6 +6,8 @@ void Chronos::Engine::Shape::init(Chronos::Engine::Device* device, VkCommandPool
 {
     this->vertexShaderPath = "ThirdParty/Chronos/Shaders/vert.spv";
     this->fragmentShaderPath = "ThirdParty/Chronos/Shaders/frag.spv";
+
+    texture.create(*device, commandPool, texturePath);
     Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
 
     // create the vertex and index buffers and copy the data
@@ -21,19 +23,11 @@ void Chronos::Engine::Shape::init(Chronos::Engine::Device* device, VkCommandPool
         VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     indexBuffer.copy(indices.data(), commandPool);
 
-    texture.create(*device, commandPool, texturePath);
-    uniformBuffers.resize(MAX_FRAMES_IN_FLIGHT);
-    for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
-        uniformBuffers[i].create(*device);
-    }
-    createDescriptorSets();
+    
 }
 
 void Chronos::Engine::Shape::destroy()
 {
-    for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
-        uniformBuffers[i].destroy();
-    }
     texture.destroy();
     vertexBuffer.destroy();
     indexBuffer.destroy();

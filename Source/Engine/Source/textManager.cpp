@@ -1,10 +1,9 @@
 #include "textManager.hpp"
 #include "objectManagerDefs.hpp"
 #include "font.hpp"
-#include "featureMacros.hpp"
 
 void Chronos::Engine::TextManager::createRenderPass(){
-#ifdef DISPLAY_IMGUI
+#ifdef ENABLE_EDITOR
     renderPass = Chronos::Engine::createRenderPass(
         *device, *swapChain, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
         VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,

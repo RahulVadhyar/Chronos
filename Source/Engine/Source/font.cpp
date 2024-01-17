@@ -6,14 +6,17 @@ void Chronos::Engine::Font::init(Chronos::Engine::Device* device, VkCommandPool 
     vertexShaderPath = "ThirdParty/Chronos/Shaders/textVert.spv";
     fragmentShaderPath = "ThirdParty/Chronos/Shaders/textFrag.spv";
 
-    Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
 
     // initalize the font
     const uint32_t fontWidth = STB_FONT_consolas_24_latin1_BITMAP_WIDTH;
     const uint32_t fontHeight = STB_FONT_consolas_24_latin1_BITMAP_HEIGHT;
 
     static unsigned char fontpixels[fontHeight][fontWidth];
+
     stb_font_consolas_24_latin1(stbFontData, fontpixels, fontHeight);
+
+    fontTexture.create(*device, commandPool, (void*)&fontpixels[0][0], static_cast<size_t>(fontWidth),
+     static_cast<size_t>(fontHeight), static_cast<VkDeviceSize>(fontWidth*fontHeight), VK_FORMAT_R8_UNORM);
 
     // create the vertex buffer
     VkDeviceSize bufferSize = maxTextLength * sizeof(glm::vec4);
@@ -21,20 +24,20 @@ void Chronos::Engine::Font::init(Chronos::Engine::Device* device, VkCommandPool 
         VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
         &vertexBuffer, &vertexBufferMemory);
 
-    fontTexture.create(*device, commandPool, (void*)&fontpixels[0][0], static_cast<size_t>(fontWidth),
-     static_cast<size_t>(fontHeight), static_cast<VkDeviceSize>(fontWidth*fontHeight), VK_FORMAT_R8_UNORM);
 
-createDescriptorSets();
+    Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
 }
 
 std::vector<VkDescriptorType> Chronos::Engine::Font::getDescriptorTypes()
 {
-    return std::vector<VkDescriptorType> {VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER };
+    return std::vector<VkDescriptorType> {VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER,
+        VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER };
 }
 
 std::vector<VkShaderStageFlagBits> Chronos::Engine::Font::getDescriptorStages()
 {
-    return std::vector<VkShaderStageFlagBits> {VK_SHADER_STAGE_FRAGMENT_BIT};
+    return std::vector<VkShaderStageFlagBits> {VK_SHADER_STAGE_FRAGMENT_BIT,
+        VK_SHADER_STAGE_VERTEX_BIT};
 }
 
 void Chronos::Engine::Font::createDescriptorSets(){
@@ -58,7 +61,13 @@ void Chronos::Engine::Font::createDescriptorSets(){
         imageInfo.imageView = fontTexture.textureImageView;
         imageInfo.sampler = textureSampler;
 
-        std::array<VkWriteDescriptorSet, 1> descriptorWrites {};
+        VkDescriptorBufferInfo bufferInfo {};
+        bufferInfo.buffer = uniformBuffers[i].buffer;
+        bufferInfo.offset = 0;
+        bufferInfo.range = sizeof(UniformBufferObject);
+        VkWriteDescriptorSet descriptorWrite {};
+
+        std::array<VkWriteDescriptorSet, 2> descriptorWrites {};
 
         descriptorWrites[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
         descriptorWrites[0].dstSet = descriptorSets[i];
@@ -67,6 +76,14 @@ void Chronos::Engine::Font::createDescriptorSets(){
         descriptorWrites[0].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
         descriptorWrites[0].descriptorCount = 1;
         descriptorWrites[0].pImageInfo = &imageInfo;
+
+        descriptorWrites[1].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+        descriptorWrites[1].dstSet = descriptorSets[i];
+        descriptorWrites[1].dstBinding = 1;
+        descriptorWrites[1].dstArrayElement = 0;
+        descriptorWrites[1].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+        descriptorWrites[1].descriptorCount = 1;
+        descriptorWrites[1].pBufferInfo = &bufferInfo;
 
         vkUpdateDescriptorSets(device->device,
             static_cast<uint32_t>(descriptorWrites.size()),
@@ -209,4 +226,8 @@ void Chronos::Engine::Font::clear(){
 
     vkUnmapMemory(device->device, vertexBufferMemory);
     mappedMemory = nullptr;
+}
+
+void Chronos::Engine::Font::update(uint32_t currentFrame){
+    uniformBuffers[currentFrame].update(swapChain->swapChainExtent, x, y, rotation - 90, 1.0f, -1.0f);
 }

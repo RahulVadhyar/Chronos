@@ -3,15 +3,16 @@ project(Chronos)
 
 set(CMAKE_CXX_STANDARD 20)
 
+
 #GLFW
 add_subdirectory(ThirdParty/glfw)
 set(GLFW_DIR ThirdParty/glfw/include)
 
 #vulkan sdk if using windows
 if (WIN32)
-set(VULKAN_SDK_DIR $ENV{VULKAN_SDK})        
-set(VULKAN_SDK_LIB ${VULKAN_SDK_DIR}/Lib/)                  
-set(VULKAN_SDK_INCLUDE ${VULKAN_SDK_DIR}/Include) 
+    set(VULKAN_SDK_DIR $ENV{VULKAN_SDK})        
+    set(VULKAN_SDK_LIB ${VULKAN_SDK_DIR}/Lib/)                  
+    set(VULKAN_SDK_INCLUDE ${VULKAN_SDK_DIR}/Include) 
 endif (WIN32)
 
 #imgui
@@ -50,28 +51,31 @@ ${IMGUI_NODE_EDITOR_CPP})
 
 #create a fucntion to include all the directories, also link vulkan and glfw
 function(IncludeDirectories projectName)
-  target_include_directories(${projectName} PUBLIC Source/Engine/Headers)
-  target_include_directories(${projectName} PUBLIC Source/API/Headers)
-  target_include_directories(${projectName} PUBLIC Source/Editor/Headers)
-  target_include_directories(${projectName} PUBLIC Source/Animation/Headers)
-  target_include_directories(${projectName} PUBLIC Source/Common)
-  target_include_directories(${projectName} PUBLIC ThirdParty/stb)
-  target_include_directories(${projectName} PUBLIC include)
-  target_include_directories(${projectName} PUBLIC ${GLFW_DIR})  
-  target_include_directories(${projectName} PUBLIC ${IMGUI_DIR})               
-  target_include_directories(${projectName} PUBLIC ${IMGUI_BACKENDS})
-  target_include_directories(${projectName} PUBLIC ${FONTS_DIR})
-  target_include_directories(${projectName} PUBLIC ${IMGUI_GUIZMO})    
-  target_include_directories(${projectName} PUBLIC ${IMGUI_NODE_EDITOR_DIR})
-
-  if(WIN32)
-    target_link_libraries(${projectName} vulkan-1) 
+    target_include_directories(${projectName} PUBLIC Source/Engine/Headers)
+    target_include_directories(${projectName} PUBLIC Source/API/Headers)
+    target_include_directories(${projectName} PUBLIC Source/Editor/Headers)
+    target_include_directories(${projectName} PUBLIC Source/Animation/Headers)
+    target_include_directories(${projectName} PUBLIC Source/Common)
+    target_include_directories(${projectName} PUBLIC ThirdParty/stb)
+    target_include_directories(${projectName} PUBLIC include)
+    target_include_directories(${projectName} PUBLIC ${GLFW_DIR})  
+    target_include_directories(${projectName} PUBLIC ${IMGUI_DIR})               
+    target_include_directories(${projectName} PUBLIC ${IMGUI_BACKENDS})
+    target_include_directories(${projectName} PUBLIC ${FONTS_DIR})
+    target_include_directories(${projectName} PUBLIC ${IMGUI_GUIZMO})    
+    target_include_directories(${projectName} PUBLIC ${IMGUI_NODE_EDITOR_DIR})
+    
+    if(WIN32)
+        target_link_libraries(${projectName} vulkan-1) 
     endif(WIN32)
     if(UNIX)
-    target_link_libraries(${projectName} vulkan)   
+        target_link_libraries(${projectName} vulkan)   
     endif(UNIX)
     target_link_libraries(${projectName} glfw)
+
+    target_compile_definitions(${projectName} PUBLIC ENABLE_EDITOR)
 endfunction()
+
 
 
 #build the executable

@@ -10,9 +10,8 @@ static void framebuffer_size_callback(GLFWwindow* window, int width,
 }
 Chronos::Engine::Engine::Engine()
 {
-#ifdef DISPLAY_IMGUI
+#ifdef ENABLE_EDITOR
     gui = Chronos::Editor::GUI();
-    guiParams.settings = &settings;
 #endif
     // initialize the window and vulkan
     initWindow();
@@ -54,12 +53,6 @@ void Chronos::Engine::Engine::initVulkan()
     createSurface();
     device.init(instance, surface);
 
-    // sync the msaa settings with gui
-#ifdef DISPLAY_IMGUI
-    settings.maxMsaaSamples = device.msaaSamples;
-    settings.msaaSamples = device.msaaSamples;
-#endif
-
     swapChain.init(&device, surface, window);
     commandPool = createCommandPool(device, swapChain.surface);
     shapeManager.init(&device, &swapChain, commandPool);
@@ -67,11 +60,8 @@ void Chronos::Engine::Engine::initVulkan()
     textManager.init(&device, &swapChain, commandPool);
     createSyncObjects();
 
-#ifdef DISPLAY_IMGUI
-    gui.init(&device, window, &swapChain, instance, surface, &guiParams);
-    guiParams.bgColor = bgColor;
-    guiParams.settings = &settings;
-    guiParams.shapeManager = &shapeManager;
+#ifdef ENABLE_EDITOR
+    gui.init(&device, window, &swapChain, instance, surface);
 #endif
 }
 
@@ -82,7 +72,7 @@ void Chronos::Engine::Engine::cleanup()
 
     shapeManager.destroy();
     textManager.destroy();
-#ifdef DISPLAY_IMGUI
+#ifdef ENABLE_EDITOR
     gui.destroy();
 #endif
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
@@ -119,7 +109,7 @@ void Chronos::Engine::Engine::drawFrame()
         swapChain.recreate();
         shapeManager.recreate();
         textManager.recreate();
-#ifdef DISPLAY_IMGUI
+#ifdef ENABLE_EDITOR
         gui.recreate();
 #endif
         return;
@@ -128,7 +118,10 @@ void Chronos::Engine::Engine::drawFrame()
     }
     // update the shapes and text
     shapeManager.update(currentFrame);
+    textManager.update(currentFrame);
+    #ifdef ENABLE_EDITOR
     gui.update();
+    #endif
 
     // reset the fences
     vkResetFences(device.device, 1, &inFlightFences[currentFrame]);
@@ -136,7 +129,7 @@ void Chronos::Engine::Engine::drawFrame()
     // record the command buffers
     shapeManager.render(currentFrame, imageIndex, bgColor);
     textManager.render(currentFrame, imageIndex, bgColor);
-#ifdef DISPLAY_IMGUI
+#ifdef ENABLE_EDITOR
     gui.render(currentFrame, imageIndex, bgColor);
 #endif
 
@@ -152,7 +145,7 @@ void Chronos::Engine::Engine::drawFrame()
     submitCommandBuffers.push_back(shapeManager.commandBuffers[currentFrame]);
     submitCommandBuffers.push_back(textManager.commandBuffers[currentFrame]);
 
-#ifdef DISPLAY_IMGUI
+#ifdef ENABLE_EDITOR
     submitCommandBuffers.push_back(gui.commandBuffers[currentFrame]);
 #endif
     VkSubmitInfo submitInfo {};
@@ -187,7 +180,7 @@ void Chronos::Engine::Engine::drawFrame()
         swapChain.recreate();
         shapeManager.recreate();
         textManager.recreate();
-#ifdef DISPLAY_IMGUI
+#ifdef ENABLE_EDITOR
         gui.recreate();
 #endif
     } else if (result != VK_SUCCESS) {

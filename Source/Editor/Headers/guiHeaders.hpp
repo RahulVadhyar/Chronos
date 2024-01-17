@@ -6,9 +6,8 @@
  It also contains various other plugins for ImGUI.
 */
 #pragma once
-#include "featureMacros.hpp"
 
-#ifdef DISPLAY_IMGUI
+#ifdef ENABLE_EDITOR
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_vulkan.h"
