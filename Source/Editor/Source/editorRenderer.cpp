@@ -1,10 +1,10 @@
 #ifdef ENABLE_EDITOR
-#include "guiHeaders.hpp"
-#include "gui.hpp"
+#include "editorHeaders.hpp"
+#include "editorRenderer.hpp"
 #include "engine.hpp"
+#include "editorElements.hpp"
 
-
-void Chronos::Editor::GUI::init(Chronos::Engine::Device* device, GLFWwindow* window, Chronos::Engine::SwapChain* swapChain,
+void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFWwindow* window, Chronos::Engine::SwapChain* swapChain,
     VkInstance instance, VkSurfaceKHR surface)
 {
     this->device = device;
@@ -86,7 +86,7 @@ void Chronos::Editor::GUI::init(Chronos::Engine::Device* device, GLFWwindow* win
     }
 }
 
-void Chronos::Editor::GUI::destroy()
+void Chronos::Editor::EditorRenderer::destroy()
 {
     ImGui_ImplVulkan_Shutdown();
     vkDestroyRenderPass(device->device, renderPass, nullptr);
@@ -96,16 +96,16 @@ void Chronos::Editor::GUI::destroy()
     vkDestroyDescriptorPool(device->device, descriptorPool, nullptr);
 }
 
-void Chronos::Editor::GUI::update()
+void Chronos::Editor::EditorRenderer::update()
 {
     ImGui_ImplVulkan_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
-
+    Chronos::Editor::addElements();
     ImGui::Render();
 }
 
-void Chronos::Editor::GUI::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])
+void Chronos::Editor::EditorRenderer::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])
 {
     vkResetCommandBuffer(commandBuffers[currentFrame], 0);
     VkCommandBufferBeginInfo beginInfo {};
@@ -127,13 +127,13 @@ void Chronos::Editor::GUI::render(uint32_t currentFrame, uint32_t imageIndex, fl
     vkEndCommandBuffer(commandBuffers[currentFrame]);
 }
 
-void Chronos::Editor::GUI::cleanup()
+void Chronos::Editor::EditorRenderer::cleanup()
 {
     for (auto framebuffer : framebuffers)
         vkDestroyFramebuffer(device->device, framebuffer, nullptr);
 }
 
-void Chronos::Editor::GUI::recreate()
+void Chronos::Editor::EditorRenderer::recreate()
 {
     cleanup();
     framebuffers = Chronos::Engine::createFramebuffer(*device, *swapChain, renderPass, false);

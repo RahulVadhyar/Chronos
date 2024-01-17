@@ -9,7 +9,7 @@
 #include "textManager.hpp"
 // #include "text.hpp"
 #ifdef ENABLE_EDITOR
-#include "gui.hpp"
+#include "editorRenderer.hpp"
 #endif
 
 /**
@@ -68,7 +68,7 @@ For more on handling inputs, please see the GLFW documentation.
         No other function needs to be called to initialize the engine.
         During initialization the following occurs:
 
-        * If the editor is enabled, then the editor(GUI) settings are initialized
+        * If the editor is enabled, then the editor(EditorRenderer) settings are initialized
         * The window is created
         * The vulkan API is initialized along with all the necessary objects.
 
@@ -299,7 +299,7 @@ For more on handling inputs, please see the GLFW documentation.
         void createSyncObjects();
 
 #ifdef ENABLE_EDITOR
-        Chronos::Editor::GUI gui = Chronos::Editor::GUI();
+        Chronos::Editor::EditorRenderer gui = Chronos::Editor::EditorRenderer();
 #endif
 
         /**

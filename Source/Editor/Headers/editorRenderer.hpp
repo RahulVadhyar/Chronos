@@ -3,7 +3,7 @@
 namespace Chronos {
 namespace Editor {
 
-    class GUI {
+    class EditorRenderer {
     public:
         Chronos::Engine::Device* device;
         Chronos::Engine::SwapChain* swapChain;

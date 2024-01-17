@@ -11,7 +11,7 @@ static void framebuffer_size_callback(GLFWwindow* window, int width,
 Chronos::Engine::Engine::Engine()
 {
 #ifdef ENABLE_EDITOR
-    gui = Chronos::Editor::GUI();
+    gui = Chronos::Editor::EditorRenderer();
 #endif
     // initialize the window and vulkan
     initWindow();
