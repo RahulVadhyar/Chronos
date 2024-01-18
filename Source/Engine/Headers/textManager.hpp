@@ -1,4 +1,4 @@
-#include "ObjectManager.hpp"
+#include "objectManager.hpp"
 #include "font.hpp"
 
 namespace Chronos {

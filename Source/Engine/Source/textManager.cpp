@@ -56,3 +56,7 @@ int Chronos::Engine::TextManager::addFont(Chronos::Engine::Font font){
     font.init(device, commandPool, swapChain, textureSampler, &renderPass);
     return Chronos::Engine::ObjectManager<Chronos::Engine::Font>::addObject(font);
 }
+
+void Chronos::Engine::TextManager::remove(int fontNo){
+    Chronos::Engine::ObjectManager<Chronos::Engine::Font>::remove(fontNo);
+}

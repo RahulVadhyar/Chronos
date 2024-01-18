@@ -137,32 +137,31 @@ void Chronos::Engine::Font::destroy(){
     fontTexture.destroy();
 }
 
-void Chronos::Engine::Font::addText(std::string text, float x, float y){
-    this->text = text;
-    this->x = x;
-    this->y = y;
-    if (vkMapMemory(device->device, vertexBufferMemory, 0, VK_WHOLE_SIZE, 0,
+
+void Chronos::Engine::Font::updateBuffer(){
+if (vkMapMemory(device->device, vertexBufferMemory, 0, VK_WHOLE_SIZE, 0,
             (void**)&mappedMemory)
         != VK_SUCCESS) {
         throw std::runtime_error("failed to map memory!");
     }
-    numLetters = 0;
+
+        numLetters = 0;
 
     const uint32_t firstChar = STB_FONT_consolas_24_latin1_FIRST_CHAR;
 
     assert(mappedMemory != nullptr);
 
-    const float charW = 1.5f * scale / swapChain->swapChainExtent.width;
-    const float charH = 1.5f * scale / swapChain->swapChainExtent.height;
+    const float charW = 1.5f * params.scale / swapChain->swapChainExtent.width;
+    const float charH = 1.5f * params.scale / swapChain->swapChainExtent.height;
 
     float fbW = (float)swapChain->swapChainExtent.width;
     float fbH = (float)swapChain->swapChainExtent.height;
-    x = (x / fbW * 2.0f);
-    y = (y / fbH * 2.0f);
+    int x = (params.x / fbW * 2.0f);
+    int y = (params.y / fbH * 2.0f);
 
     // Calculate text width
     float textWidth = 0;
-    for (auto letter : text) {
+    for (auto letter : params.text) {
         stb_fontchar* charData = &stbFontData[(uint32_t)letter - firstChar];
         textWidth += charData->advance * charW;
     }
@@ -179,7 +178,7 @@ void Chronos::Engine::Font::addText(std::string text, float x, float y){
     // }
 
     // Generate a uv mapped quad per char in the new text
-    for (auto letter : text) {
+    for (auto letter : params.text) {
         stb_fontchar* charData = &stbFontData[(uint32_t)letter - firstChar];
 
         mappedMemory->x = (x + (float)charData->x0 * charW);
@@ -209,8 +208,9 @@ void Chronos::Engine::Font::addText(std::string text, float x, float y){
         x += charData->advance * charW;
 
         numLetters++;
-    }
 
+    }
+    
     vkUnmapMemory(device->device, vertexBufferMemory);
     mappedMemory = nullptr;
 }
@@ -229,5 +229,6 @@ void Chronos::Engine::Font::clear(){
 }
 
 void Chronos::Engine::Font::update(uint32_t currentFrame){
-    uniformBuffers[currentFrame].update(swapChain->swapChainExtent, x, y, rotation - 90, 1.0f, -1.0f);
+    updateBuffer();
+    uniformBuffers[currentFrame].update(swapChain->swapChainExtent, 0, 0, params.rotation - 90, 1.0f, -1.0f);
 }

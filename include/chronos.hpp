@@ -86,7 +86,7 @@ namespace Chronos{
             This must called every frame during the game loop.
             
             This function updates all the attributes of the objects defined by the user and submitted to chronos.
-            It then submits the necessary information to the GPU to render the frame.
+            It then submits sthe necessary information to the GPU to render the frame.
             */
             void drawFrame();
 
@@ -101,9 +101,9 @@ namespace Chronos{
             @param text The necessary parameters needed for rendering text
             @return The textNo, for the text instance. =
             */
-            int addText(Text text, int fontNo);
+            int addText(Chronos::Engine::TextParams params);
 
-            int addFont(std::string font);
+
             
             /**
             \brief Adds a polygon(triangle or rectangle) to the window
@@ -143,8 +143,6 @@ namespace Chronos{
             @param shapeNo The reference to the shape
             */
             void removePolygon(int shapeNo);
-
-            void removeFont(int fontNo);
 
             /**
             \brief Removes the text from the window

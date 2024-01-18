@@ -53,15 +53,17 @@ void Manager::Manager::removePolygon(int shapeNo)
         engine.shapeManager.remove(shapeNo);
     }
 }
-int Manager::Manager::addText(Chronos::Manager::Text text)
+int Manager::Manager::addText(Chronos::Engine::TextParams params)
 {
-    int fontNo = engine.textManager.addFont(Chronos::Engine::Font());
-    engine.textManager.objects[fontNo].addText(text.text, text.x, text.y);
-    return fontNo;
+    Chronos::Engine::Font font;
+    font.params = params;
+    return engine.textManager.addFont(font);
 }
+
 void Manager::Manager::removeText(int textNo)
 {
     
+    engine.textManager.remove(textNo);
 }
 
 // int Manager::Manager::createAnimObject(int shapeNo){

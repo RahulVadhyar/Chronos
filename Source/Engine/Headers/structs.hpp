@@ -33,6 +33,13 @@ namespace Engine {
         bool show = true;
     };
 
+    struct TextParams{
+        std::string text;
+        float x = 0;
+        float y = 0;
+        float rotation = 0;
+        float scale = 1.0f;
+    };
     /**
     \brief Uniform struct passed to shader
 
