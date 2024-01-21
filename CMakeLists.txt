@@ -72,8 +72,7 @@ function(IncludeDirectories projectName)
     endif(UNIX)
     target_link_libraries(${projectName} glfw)
 
-    target_compile_definitions(${projectName} PUBLIC ENABLE_EDITOR)
-    target_compile_definitions(${projectName} PUBLIC ENABLE_VULKAN_VALIDATION_LAYERS)
+    
 endfunction()
 
 
@@ -92,6 +91,8 @@ if(WIN32)
     target_include_directories(${PROJECT_NAME} PUBLIC ${VULKAN_SDK_INCLUDE})     
 endif(WIN32) 
 
+target_compile_definitions(${PROJECT_NAME} PUBLIC ENABLE_EDITOR)
+target_compile_definitions(${PROJECT_NAME} PUBLIC ENABLE_VULKAN_VALIDATION_LAYERS)
 #header files
 IncludeDirectories(${PROJECT_NAME})
 
@@ -99,22 +100,32 @@ IncludeDirectories(${PROJECT_NAME})
 #fetch the test files
 file(GLOB ENGINE_TESTS 
 Source/Engine/Tests/*.cpp)
+file(GLOB TEST_MAIN Source/Common/Tests/*.cpp)
 
-# #add google tests
-# include(FetchContent)
-# FetchContent_Declare(googletest URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip)
+#add google tests
 
-# # For Windows: Prevent overriding the parent project's compiler/linker settings
-# set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-# FetchContent_MakeAvailable(googletest)
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG        v1.14.0
+)
 
-# enable_testing()
-# add_executable(ChronosTests ${ENGINE_TESTS} ${CHRONOS_CPP})
-# target_link_libraries(
-#   ChronosTests
-#   GTest::gtest_main
-# )
-# IncludeDirectories(ChronosTests)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
 
-# include(GoogleTest)
-# gtest_discover_tests(ChronosTests)
+set(BUILD_GMOCK OFF CACHE BOOL "" FORCE)
+set(BUILD_GTEST ON CACHE BOOL "" FORCE)
+
+enable_testing()
+add_executable(ChronosTests ${ENGINE_TESTS} ${CHRONOS_CPP} ${TEST_MAIN})
+
+target_link_libraries(
+  ChronosTests
+  GTest::gtest_main
+)
+IncludeDirectories(ChronosTests)
+
+include(GoogleTest)
+gtest_discover_tests(ChronosTests)

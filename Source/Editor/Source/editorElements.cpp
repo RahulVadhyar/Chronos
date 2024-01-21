@@ -1,3 +1,4 @@
+#ifdef ENABLE_EDITOR
 #include "editorElements.hpp"
 
 void Chronos::Editor::addElements(){
@@ -22,3 +23,4 @@ void Chronos::Editor::addElements(){
     ImGui::EndChild();
     ImGui::End();
 }
+#endif
