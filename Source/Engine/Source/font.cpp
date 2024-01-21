@@ -156,8 +156,8 @@ if (vkMapMemory(device->device, vertexBufferMemory, 0, VK_WHOLE_SIZE, 0,
 
     float fbW = (float)swapChain->swapChainExtent.width;
     float fbH = (float)swapChain->swapChainExtent.height;
-    int x = (params.x / fbW * 2.0f);
-    int y = (params.y / fbH * 2.0f);
+    float x = (0 / fbW * 2.0f);
+    float y = (0 / fbH * 2.0f);
 
     // Calculate text width
     float textWidth = 0;
@@ -165,7 +165,6 @@ if (vkMapMemory(device->device, vertexBufferMemory, 0, VK_WHOLE_SIZE, 0,
         stb_fontchar* charData = &stbFontData[(uint32_t)letter - firstChar];
         textWidth += charData->advance * charW;
     }
-
     // switch (alignment) {
     // case Right:
     //     x -= textWidth;
@@ -206,7 +205,6 @@ if (vkMapMemory(device->device, vertexBufferMemory, 0, VK_WHOLE_SIZE, 0,
         mappedMemory++;
 
         x += charData->advance * charW;
-
         numLetters++;
 
     }
@@ -230,5 +228,5 @@ void Chronos::Engine::Font::clear(){
 
 void Chronos::Engine::Font::update(uint32_t currentFrame){
     updateBuffer();
-    uniformBuffers[currentFrame].update(swapChain->swapChainExtent, 0, 0, params.rotation - 90, 1.0f, -1.0f);
+    uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x, params.y, params.rotation - 90, 1.0f, -1.0f);
 }
