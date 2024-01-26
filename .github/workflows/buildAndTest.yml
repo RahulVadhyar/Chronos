@@ -34,7 +34,7 @@ jobs:
   
       - name: Test
         working-directory: build
-  #       run: ctest
+        run: ctest
       
   # build-linux-ninja:
   #   name: Linux (Ninja)
