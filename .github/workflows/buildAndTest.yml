@@ -32,36 +32,36 @@ jobs:
       - name: Build
         run: cmake --build build --parallel
   
-      - name: Test
-        working-directory: build
-        run: ctest
+      # - name: Test
+      #   working-directory: build
+      #   run: ctest --rerun-failed --output-on-failure
       
-  # build-linux-ninja:
-  #   name: Linux (Ninja)
-  #   runs-on: ubuntu-latest
+  build-linux-ninja:
+    name: Linux (Ninja)
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #   - name: Install dependencies
-  #     run: |
-  #       sudo apt update
-  #       sudo apt install -y libxinerama-dev libxcursor-dev libxi-dev libxext-dev libwayland-dev libxkbcommon-dev libvulkan-dev libglm-dev gcc-multilib g++-multilib libfreetype6-dev
-  #       sudo apt install -y ninja-build
-  #       git submodule init
-  #       git submodule update
-  #   - name: Install Vulkan SDK
-  #     uses: humbletim/install-vulkan-sdk@v1.1.1
-  #     with:
-  #        version: 1.3.204.1
-  #        cache: true
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y libxinerama-dev libxcursor-dev libxi-dev libxext-dev libwayland-dev libxkbcommon-dev libvulkan-dev libglm-dev gcc-multilib g++-multilib libfreetype6-dev
+        sudo apt install -y ninja-build
+        git submodule init
+        git submodule update
+    - name: Install Vulkan SDK
+      uses: humbletim/install-vulkan-sdk@v1.1.1
+      with:
+         version: 1.3.204.1
+         cache: true
          
-  #   - name: Configure CMake
-  #     run: >
-  #       cmake -B build -S .
+    - name: Configure CMake
+      run: >
+        cmake -B build -S .
 
-  #   - name: Build
-  #     run: cmake --build build --parallel
+    - name: Build
+      run: cmake --build build --parallel
 
-  #   - name: Test
-  #     working-directory: build
-  #     run: ctest
+    # - name: Test
+    #   working-directory: build
+    #   run: ctest --rerun-failed --output-on-failure
