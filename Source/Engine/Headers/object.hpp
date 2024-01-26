@@ -26,7 +26,7 @@ namespace Engine {
     class Object {
 
     public:
-        void init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain, 
+        virtual void init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain, 
         VkSampler textureSampler, VkRenderPass* renderPass);
         virtual void update(uint32_t currentFrame) = 0;
         virtual void destroy() = 0;

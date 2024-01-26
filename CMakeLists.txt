@@ -108,7 +108,7 @@ IncludeDirectories(${PROJECT_NAME})
 file(GLOB ENGINE_TESTS 
 Source/Engine/Tests/*.cpp)
 file(GLOB TEST_MAIN Source/Common/Tests/*.cpp)
-
+file(GLOB API_TESTS Source/API/Tests/*.cpp)
 #add google tests
 
 include(FetchContent)
@@ -126,7 +126,7 @@ set(BUILD_GMOCK OFF CACHE BOOL "" FORCE)
 set(BUILD_GTEST ON CACHE BOOL "" FORCE)
 
 enable_testing()
-add_executable(ChronosTests ${ENGINE_TESTS} ${CHRONOS_CPP} ${TEST_MAIN})
+add_executable(ChronosTests ${ENGINE_TESTS} ${CHRONOS_CPP} ${TEST_MAIN} ${API_TESTS})
 
 target_link_libraries(
   ChronosTests

@@ -11,6 +11,21 @@ GLFWwindow* Manager::Manager::getWindow()
 }
 Manager::Manager::Manager(Chronos::Manager::Initializer initializer)
 {   
+    if(initializer.BackgroundColor[0] < 0 ||
+     initializer.BackgroundColor[0] > 1 || 
+     initializer.BackgroundColor[1] < 0 || 
+     initializer.BackgroundColor[1] > 1 || 
+     initializer.BackgroundColor[2] < 0 || 
+     initializer.BackgroundColor[2] > 1){
+        throw std::runtime_error("Invalid background color");
+    }
+    engine.bgColor[0] = initializer.BackgroundColor[0];
+    engine.bgColor[1] = initializer.BackgroundColor[1];
+    engine.bgColor[2] = initializer.BackgroundColor[2];
+
+    if (initializer.WindowWidth <= 0 || initializer.WindowHeight <= 0) {
+        throw std::runtime_error("Invalid window size");
+    }
     engine.width = initializer.WindowWidth;
     engine.height = initializer.WindowHeight;
 }
@@ -22,7 +37,7 @@ void Manager::Manager::drawFrame()
 int Manager::Manager::changeBackgroundColor(float r, float g, float b)
 {
     if (r < 0 || r > 1 || g < 0 || g > 1 || b < 0 || b > 1) {
-        return -1;
+        throw std::runtime_error("Invalid background color");
     }
     engine.bgColor[0] = r;
     engine.bgColor[1] = g;
@@ -36,25 +51,31 @@ int Manager::Manager::addPolygon(Chronos::Engine::ShapeParams shapeParams, Chron
         return engine.shapeManager.addTriangle(shapeParams, texturePath);
     } else if (polygonType.rectangle) {
         return engine.shapeManager.addRectangle(shapeParams, texturePath);
+    } else {
+        throw std::runtime_error("Polygon type not supported");
     }
-    return 0;
 }
-int Manager::Manager::updatePolygon(int shapeNo, Chronos::Engine::ShapeParams shapeParams)
+void Manager::Manager::updatePolygon(int shapeNo, Chronos::Engine::ShapeParams shapeParams)
 {
     if (engine.shapeManager.objects.count(shapeNo) == 0) {
-        return -1;
+        throw std::runtime_error("Shape does not exist");
     }
     engine.shapeManager.objects[shapeNo].params = shapeParams;
-    return 0;
 }
 void Manager::Manager::removePolygon(int shapeNo)
 {
     if (engine.shapeManager.objects.count(shapeNo) > 0) {
         engine.shapeManager.remove(shapeNo);
+    } else{
+        throw std::runtime_error("Shape does not exist");
+    
     }
 }
 int Manager::Manager::addText(Chronos::Engine::TextParams params)
-{
+{   
+    if (params.text == "") {
+        throw std::runtime_error("Text cannot be empty");
+    }
     Chronos::Engine::Font font;
     font.params = params;
     return engine.textManager.addFont(font);

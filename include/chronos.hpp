@@ -133,7 +133,7 @@ namespace Chronos{
             @param shapeNo The shapeNo reference to the shape. Generated during ```addPolygon()`` call.
             @param shapeParams The updated shape parameters to update the shape with.
             */
-            int updatePolygon(int shapeNo, Chronos::Engine::ShapeParams shapeParams);
+            void updatePolygon(int shapeNo, Chronos::Engine::ShapeParams shapeParams);
 
             /**
             \brief Removes the polygon from the window

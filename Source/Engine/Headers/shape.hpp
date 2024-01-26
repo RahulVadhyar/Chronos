@@ -21,17 +21,17 @@ namespace Engine {
             VkSampler textureSampler, std::string texturePath,
             VkRenderPass* renderPass);
 
-        void update(uint32_t currentFrame);
+        void update(uint32_t currentFrame) override;
 
-        void destroy();
+        void destroy() override;
         std::vector<uint16_t> indices;
         Chronos::Engine::Texture texture;
         std::vector<Vertex> vertices;
         Chronos::Engine::Buffer vertexBuffer;
         Chronos::Engine::Buffer indexBuffer;
-        void createDescriptorSets();
-        std::vector<VkDescriptorType> getDescriptorTypes();
-        std::vector<VkShaderStageFlagBits> getDescriptorStages();
+        void createDescriptorSets() override;
+        std::vector<VkDescriptorType> getDescriptorTypes() override;
+        std::vector<VkShaderStageFlagBits> getDescriptorStages() override;
         std::vector<VkShaderStageFlagBits> getShaderStages();
     private:
         PipelineAttributes getPipelineAttributes() override;
