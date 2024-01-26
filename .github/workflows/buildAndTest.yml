@@ -16,6 +16,8 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update
+          git submodule init
+          git submodule update
       - name: Install Vulkan SDK
         uses: humbletim/install-vulkan-sdk@v1.1.1
         with:
@@ -43,6 +45,8 @@ jobs:
       run: |
         sudo apt update
         sudo apt install -y ninja-build
+        git submodule init
+        git submodule update
     - name: Install Vulkan SDK
       uses: humbletim/install-vulkan-sdk@v1.1.1
       with:
