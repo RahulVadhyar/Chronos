@@ -1,0 +1,5 @@
+<map id="Chronos::Engine::chooseSwapSurfaceFormat" name="Chronos::Engine::chooseSwapSurfaceFormat">
+<area shape="rect" id="node1" title="Chooses the best present mode among the supported modes." alt="" coords="515,5,731,47"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5" title="Creates the swapchain image resources and chooses the optimal settings for given hardware." alt="" coords="260,5,467,47"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe" title="Initilize the swapchain." alt="" coords="5,5,212,47"/>
+</map>

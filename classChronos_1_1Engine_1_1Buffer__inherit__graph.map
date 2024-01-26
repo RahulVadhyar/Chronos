@@ -1,0 +1,4 @@
+<map id="Chronos::Engine::Buffer" name="Chronos::Engine::Buffer">
+<area shape="rect" id="node1" title="Used to store buffers in GPU." alt="" coords="12,5,187,32"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1UniformBuffer.html" title=" " alt="" coords="5,80,193,121"/>
+</map>

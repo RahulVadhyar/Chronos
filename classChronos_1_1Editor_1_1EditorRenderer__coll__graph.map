@@ -1,0 +1,5 @@
+<map id="Chronos::Editor::EditorRenderer" name="Chronos::Editor::EditorRenderer">
+<area shape="rect" id="node1" title=" " alt="" coords="5,184,232,211"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="29,5,209,32"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="170,95,377,121"/>
+</map>

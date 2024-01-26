@@ -1,0 +1,4 @@
+<map id="Chronos::Engine::createBuffer" name="Chronos::Engine::createBuffer">
+<area shape="rect" id="node1" title="Creates a buffer of a given size, usage and properties." alt="" coords="5,5,220,32"/>
+<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="268,5,511,32"/>
+</map>

@@ -1,0 +1,21 @@
+<map id="Chronos::Engine::TextManager::addFont" name="Chronos::Engine::TextManager::addFont">
+<area shape="rect" id="node1" title=" " alt="" coords="5,67,224,109"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1ObjectManager.html#ab41e9ab71459a6c7301cc31cff6e7ae3" title=" " alt="" coords="272,34,507,75"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Font.html#a13070e7a8e19d94a2889f11788214104" title=" " alt="" coords="308,99,471,141"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="555,99,737,141"/>
+<area shape="rect" id="node8" href="$namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a" title="Creates a buffer of a given size, usage and properties." alt="" coords="803,5,1017,32"/>
+<area shape="rect" id="node13" href="$classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e" title=" " alt="" coords="557,354,735,395"/>
+<area shape="rect" id="node5" href="$namespaceChronos_1_1Engine.html#a72a6333d7a23ef16daa4ee34bd6cab5f" title="Copy data from a buffer to an image." alt="" coords="807,223,1013,265"/>
+<area shape="rect" id="node10" href="$namespaceChronos_1_1Engine.html#a7018d1eaf2dfaf4c373269fcaa344a46" title="For a given image dimensons, it creates a VkImage and VkDeviceMemory for the image." alt="" coords="801,56,1019,83"/>
+<area shape="rect" id="node11" href="$namespaceChronos_1_1Engine.html#a34457a6d2cac8f2770ffbaf52b3b2ee3" title="Create a VkImageView for a given VkImage." alt="" coords="785,107,1035,133"/>
+<area shape="rect" id="node12" href="$namespaceChronos_1_1Engine.html#a486e04f821153409c6c7d0ab3b3e89b4" title="Transiton a VkImage from one layout to another." alt="" coords="811,158,1009,199"/>
+<area shape="rect" id="node6" href="$namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="1099,158,1309,199"/>
+<area shape="rect" id="node7" href="$namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c" title="Ends recording of single time command buffer and destroys it." alt="" coords="1105,223,1303,265"/>
+<area shape="rect" id="node9" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="1083,31,1325,57"/>
+<area shape="rect" id="node14" href="$classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e" title=" " alt="" coords="821,485,999,526"/>
+<area shape="rect" id="node15" href="$classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e" title=" " alt="" coords="809,289,1011,330"/>
+<area shape="rect" id="node16" href="$classChronos_1_1Engine_1_1Object.html#adf7e359418ad5653b9590645282aee1e" title=" " alt="" coords="821,354,999,395"/>
+<area shape="rect" id="node17" href="$classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c" title=" " alt="" coords="820,419,1000,461"/>
+<area shape="rect" id="node18" href="$namespaceChronos_1_1Engine.html#a78d48217937b348633f1184b862e0312" title="Creates a shader module from given shader(SPIV) code." alt="" coords="1093,449,1315,490"/>
+<area shape="rect" id="node19" href="$namespaceChronos_1_1Engine.html#af002a6ceca11bcbaf38e8df34b47b966" title="Returns the content of a shader file." alt="" coords="1111,397,1297,424"/>
+</map>

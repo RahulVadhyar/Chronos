@@ -1,0 +1,5 @@
+<map id="Chronos::Engine::copyBufferToImage" name="Chronos::Engine::copyBufferToImage">
+<area shape="rect" id="node1" title="Copy data from a buffer to an image." alt="" coords="5,39,211,80"/>
+<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="259,5,469,47"/>
+<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c" title="Ends recording of single time command buffer and destroys it." alt="" coords="265,71,463,112"/>
+</map>

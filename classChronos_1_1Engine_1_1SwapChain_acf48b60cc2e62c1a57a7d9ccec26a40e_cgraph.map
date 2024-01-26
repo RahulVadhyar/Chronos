@@ -1,0 +1,6 @@
+<map id="Chronos::Engine::SwapChain::createColorResources" name="Chronos::Engine::SwapChain::createColorResources">
+<area shape="rect" id="node1" title="Creates the color images along with the associated objects." alt="" coords="5,23,212,65"/>
+<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a7018d1eaf2dfaf4c373269fcaa344a46" title="For a given image dimensons, it creates a VkImage and VkDeviceMemory for the image." alt="" coords="276,5,493,32"/>
+<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a34457a6d2cac8f2770ffbaf52b3b2ee3" title="Create a VkImageView for a given VkImage." alt="" coords="260,56,509,83"/>
+<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="557,5,800,32"/>
+</map>

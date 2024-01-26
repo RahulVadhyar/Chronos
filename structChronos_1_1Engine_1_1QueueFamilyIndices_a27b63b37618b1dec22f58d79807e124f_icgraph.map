@@ -1,0 +1,13 @@
+<map id="Chronos::Engine::QueueFamilyIndices::isComplete" name="Chronos::Engine::QueueFamilyIndices::isComplete">
+<area shape="rect" id="node1" title=" " alt="" coords="1056,161,1276,203"/>
+<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="807,132,1008,173"/>
+<area shape="rect" id="node10" href="$namespaceChronos_1_1Engine.html#a5d1bdae6108eaaf072fe2619be7123d8" title="Checks if the physical device that we provide it is suitable for our needs." alt="" coords="528,191,719,232"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5" title="Creates the swapchain image resources and chooses the optimal settings for given hardware." alt="" coords="520,9,727,51"/>
+<area shape="rect" id="node5" href="$namespaceChronos_1_1Engine.html#ae9065643643c464231ba47b6ed3f8a8a" title="Creates a command pool for a given device and surface." alt="" coords="488,82,759,109"/>
+<area shape="rect" id="node8" href="$classChronos_1_1Engine_1_1Device.html#ad0d1809c3c17ada51ed37695fdee5fe0" title="This creates the logical device." alt="" coords="247,136,427,177"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe" title="Initilize the swapchain." alt="" coords="233,5,440,47"/>
+<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1Engine.html#a087a97e8ab427e73745b6fe7bb449340" title="The complicated process of initalizing the vulkan API is done here." alt="" coords="247,71,426,112"/>
+<area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1Engine.html#a66c6b72176c3e93affdb0018eb137801" title="Initlizes the engine." alt="" coords="6,71,185,112"/>
+<area shape="rect" id="node9" href="$classChronos_1_1Engine_1_1Device.html#a66e307ea98c1eb761c90b4acd9c3752a" title="This is the function that initializes the devices and queues." alt="" coords="5,168,185,209"/>
+<area shape="rect" id="node11" href="$classChronos_1_1Engine_1_1Device.html#a50c43c6576d56f35473f2240d2f3bf59" title="This is the function that picks the best device based on the requirements and features that we requir..." alt="" coords="247,201,427,243"/>
+</map>

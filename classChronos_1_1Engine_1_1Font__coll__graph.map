@@ -1,0 +1,8 @@
+<map id="Chronos::Engine::Font" name="Chronos::Engine::Font">
+<area shape="rect" id="node1" title=" " alt="" coords="218,285,380,312"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Object.html" title=" " alt="" coords="54,196,232,223"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="86,5,266,32"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="73,95,280,121"/>
+<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1Texture.html" title="This class holds the Vulkan data and objects needed for a texture." alt="" coords="226,145,409,172"/>
+<area shape="rect" id="node6" href="$structChronos_1_1Engine_1_1TextParams.html" title=" " alt="" coords="402,196,612,223"/>
+</map>

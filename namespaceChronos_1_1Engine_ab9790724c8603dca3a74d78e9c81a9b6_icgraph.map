@@ -1,0 +1,4 @@
+<map id="Chronos::Engine::DestroyDebugUtilsMessengerEXT" name="Chronos::Engine::DestroyDebugUtilsMessengerEXT">
+<area shape="rect" id="node1" title="Destroys the debug messenger." alt="" coords="232,5,423,47"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Engine.html#a3f1da8f7cab1fcd9f9c3b6ea565252a3" title="Cleans up vulkan objects." alt="" coords="5,5,184,47"/>
+</map>

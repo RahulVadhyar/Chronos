@@ -1,0 +1,4 @@
+<map id="Chronos::Engine::CreateDebugUtilsMessengerEXT" name="Chronos::Engine::CreateDebugUtilsMessengerEXT">
+<area shape="rect" id="node1" title="Creates the debug messenger." alt="" coords="232,5,452,47"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Engine.html#a86f7c7a90e1f60daac987ab985acaa34" title="Sets up the vulkan validation layers." alt="" coords="5,5,184,47"/>
+</map>

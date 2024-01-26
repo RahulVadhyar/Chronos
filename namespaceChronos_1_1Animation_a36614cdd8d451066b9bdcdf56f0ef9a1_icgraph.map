@@ -1,0 +1,4 @@
+<map id="Chronos::Animation::saveAnimTree" name="Chronos::Animation::saveAnimTree">
+<area shape="rect" id="node1" title="Saves an animation tree to a .skel file in given file." alt="" coords="211,5,361,47"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Animation_1_1AnimTree.html#a2ed420b6a1de04f903acefb2dda83b53" title="Saves the animation tree to file." alt="" coords="5,5,163,47"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Chronos::Animation::AnimNode" name="Chronos::Animation::AnimNode">
+<area shape="rect" id="node1" title="Node for animation tree." alt="" coords="171,95,321,136"/>
+<area shape="rect" id="node2" href="$structChronos_1_1Manager_1_1PolygonType.html" title="Selects the polygon type to be used." alt="" coords="5,5,236,32"/>
+<area shape="rect" id="node3" href="$structChronos_1_1Engine_1_1ShapeParams.html" title="Parameters for creating a shape." alt="" coords="260,5,483,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Chronos::Engine::createImage" name="Chronos::Engine::createImage">
+<area shape="rect" id="node1" title="For a given image dimensons, it creates a VkImage and VkDeviceMemory for the image." alt="" coords="5,5,223,32"/>
+<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="271,5,513,32"/>
+</map>

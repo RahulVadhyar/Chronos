@@ -1,0 +1,5 @@
+<map id="Chronos::Engine::Shape::getPipelineAttributes" name="Chronos::Engine::Shape::getPipelineAttributes">
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,180,80"/>
+<area shape="rect" id="node2" href="$structChronos_1_1Engine_1_1Vertex.html#afb3d935087c4dc946aa1ed42e84848e0" title="Generates the VkVertexInputAttributeDescription for the vertex based on attributes(pos,..." alt="" coords="228,5,417,47"/>
+<area shape="rect" id="node3" href="$structChronos_1_1Engine_1_1Vertex.html#a9d9238ce68ceb4bd4feef0e1c8afcb98" title="Creates a VkVertexInputBindingDescription for the vertex based on the size of the vertex." alt="" coords="234,71,411,112"/>
+</map>

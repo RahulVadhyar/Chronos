@@ -1,0 +1,11 @@
+<map id="Chronos::Engine::Texture::create" name="Chronos::Engine::Texture::create">
+<area shape="rect" id="node1" title="Create the texture by loading the texture from the given raw data." alt="" coords="5,129,188,171"/>
+<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a72a6333d7a23ef16daa4ee34bd6cab5f" title="Copy data from a buffer to an image." alt="" coords="258,71,463,112"/>
+<area shape="rect" id="node5" href="$namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a" title="Creates a buffer of a given size, usage and properties." alt="" coords="253,187,468,214"/>
+<area shape="rect" id="node7" href="$namespaceChronos_1_1Engine.html#a7018d1eaf2dfaf4c373269fcaa344a46" title="For a given image dimensons, it creates a VkImage and VkDeviceMemory for the image." alt="" coords="252,137,469,163"/>
+<area shape="rect" id="node8" href="$namespaceChronos_1_1Engine.html#a34457a6d2cac8f2770ffbaf52b3b2ee3" title="Create a VkImageView for a given VkImage." alt="" coords="236,238,485,265"/>
+<area shape="rect" id="node9" href="$namespaceChronos_1_1Engine.html#a486e04f821153409c6c7d0ab3b3e89b4" title="Transiton a VkImage from one layout to another." alt="" coords="262,5,459,47"/>
+<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="549,71,760,112"/>
+<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c" title="Ends recording of single time command buffer and destroys it." alt="" coords="555,5,754,47"/>
+<area shape="rect" id="node6" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="533,162,776,189"/>
+</map>

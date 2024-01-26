@@ -1,0 +1,10 @@
+<map id="Chronos::Engine::Engine::Engine" name="Chronos::Engine::Engine::Engine">
+<area shape="rect" id="node1" title="Initlizes the engine." alt="" coords="5,39,184,80"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Engine.html#a087a97e8ab427e73745b6fe7bb449340" title="The complicated process of initalizing the vulkan API is done here." alt="" coords="232,5,411,47"/>
+<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1Engine.html#a3be23c5c76ba6d586a0fb29433f37771" title="This function initializes the GLFW window." alt="" coords="232,71,411,112"/>
+<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#ae9065643643c464231ba47b6ed3f8a8a" title="Creates a command pool for a given device and surface." alt="" coords="459,13,729,39"/>
+<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="777,5,979,47"/>
+<area shape="rect" id="node5" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="1027,5,1247,47"/>
+<area shape="rect" id="node7" href="$engine_8cpp.html#ad93fffd8512961d3c6e7fc0bf9cec3e1" title=" " alt="" coords="497,78,691,105"/>
+<area shape="rect" id="node8" href="$classChronos_1_1Engine_1_1Engine.html#a2afd596420fea9c9b273a1a600f19a92" title="Tells the engine that the window has to be resized. This is called by GLFW." alt="" coords="789,71,967,112"/>
+</map>
