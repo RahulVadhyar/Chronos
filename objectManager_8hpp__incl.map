@@ -1,5 +1,5 @@
 <map id="Source/Engine/Headers/objectManager.hpp" name="Source/Engine/Headers/objectManager.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="620,5,792,47"/>
+<area shape="rect" id="node1" title="Defines the ObjectManager class for managing objects in the Chronos::Engine namespace." alt="" coords="620,5,792,47"/>
 <area shape="rect" id="node2" href="$shape_8hpp.html" title="Contains the class for creating a shape." alt="" coords="661,95,751,121"/>
 <area shape="rect" id="node3" href="$structs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="407,244,501,271"/>
 <area shape="rect" id="node10" href="$helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="526,244,617,271"/>

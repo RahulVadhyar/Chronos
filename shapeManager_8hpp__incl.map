@@ -1,7 +1,7 @@
 <map id="Source/Engine/Headers/shapeManager.hpp" name="Source/Engine/Headers/shapeManager.hpp">
 <area shape="rect" id="node1" title="Contains the class for managing shapes." alt="" coords="684,5,856,47"/>
 <area shape="rect" id="node2" href="$shape_8hpp.html" title="Contains the class for creating a shape." alt="" coords="661,244,751,271"/>
-<area shape="rect" id="node33" href="$objectManager_8hpp.html" title=" " alt="" coords="697,169,843,196"/>
+<area shape="rect" id="node33" href="$objectManager_8hpp.html" title="Defines the ObjectManager class for managing objects in the Chronos::Engine namespace." alt="" coords="697,169,843,196"/>
 <area shape="rect" id="node34" href="$objectManagerDefs_8hpp.html" title=" " alt="" coords="681,95,859,121"/>
 <area shape="rect" id="node3" href="$structs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="407,393,501,420"/>
 <area shape="rect" id="node10" href="$helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="526,393,617,420"/>

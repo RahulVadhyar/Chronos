@@ -1,4 +1,4 @@
 <map id="Chronos::Engine::ObjectManager::endRender" name="Chronos::Engine::ObjectManager::endRender">
-<area shape="rect" id="node1" title=" " alt="" coords="272,5,507,47"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1TextManager.html#a394c61ace78db87785baae88de717191" title=" " alt="" coords="5,5,224,47"/>
+<area shape="rect" id="node1" title="Ends the rendering process for the specified frame." alt="" coords="272,5,507,47"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1TextManager.html#a394c61ace78db87785baae88de717191" title="Records the commands needed for rendering the text." alt="" coords="5,5,224,47"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="Chronos::Manager::Manager" name="Chronos::Manager::Manager">
 <area shape="rect" id="node1" title="The main manager of chronos." alt="" coords="993,82,1199,109"/>
 <area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Engine.html" title="This is the main vulkan backend for Chronos. This is for use by the API only and should not be used f..." alt="" coords="717,82,896,109"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1TextManager.html" title=" " alt="" coords="343,13,561,39"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1TextManager.html" title="This is the text manager for Chronos. It handles creation, modification, updating and desrtuction of ..." alt="" coords="343,13,561,39"/>
 <area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1ObjectManager.html" title=" " alt="" coords="5,5,240,47"/>
 <area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="33,94,213,121"/>
 <area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="349,126,555,153"/>

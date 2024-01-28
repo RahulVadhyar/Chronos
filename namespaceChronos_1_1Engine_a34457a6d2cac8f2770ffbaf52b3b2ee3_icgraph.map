@@ -3,8 +3,8 @@
 <area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="539,37,721,79"/>
 <area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e" title="Creates the color images along with the associated objects." alt="" coords="527,103,733,144"/>
 <area shape="rect" id="node8" href="$classChronos_1_1Engine_1_1SwapChain.html#a0155650381f813352c42eb2cf2e30e84" title="Creates the image views of the swapchain images." alt="" coords="527,168,733,209"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Shape.html#ac46ccb54f90b8cb45740b826d3100089" title=" " alt="" coords="288,5,463,47"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Font.html#a13070e7a8e19d94a2889f11788214104" title=" " alt="" coords="294,71,457,112"/>
-<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1TextManager.html#a9c8b1c21c5ad43f535d18e4bf9d5489a" title=" " alt="" coords="5,71,224,112"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Shape.html#ac46ccb54f90b8cb45740b826d3100089" title="Initializes the shape object and creates the necessary objects." alt="" coords="288,5,463,47"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Font.html#a13070e7a8e19d94a2889f11788214104" title="Initializes the font object and creates the necessary objects." alt="" coords="294,71,457,112"/>
+<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1TextManager.html#a9c8b1c21c5ad43f535d18e4bf9d5489a" title="Adds a font to the text manager." alt="" coords="5,71,224,112"/>
 <area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe" title="Initilize the swapchain." alt="" coords="272,152,479,193"/>
 </map>

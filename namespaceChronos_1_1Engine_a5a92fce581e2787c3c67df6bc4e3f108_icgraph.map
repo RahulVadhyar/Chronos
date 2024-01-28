@@ -1,7 +1,7 @@
 <map id="Chronos::Engine::createRenderPass" name="Chronos::Engine::createRenderPass">
 <area shape="rect" id="node1" title="Creates a render pass." alt="" coords="288,111,539,138"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1ObjectManager.html#aafdd014e19818b13f38886700f522631" title=" " alt="" coords="5,5,240,47"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1ObjectManager.html#aafdd014e19818b13f38886700f522631" title="Changes the multisampling settings for rendering." alt="" coords="5,5,240,47"/>
 <area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1ShapeManager.html#af10a96246b75f5ca34591ba0d4d39044" title="Creates the render pass for the shapes." alt="" coords="7,71,239,112"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1TextManager.html#a4f25e8069dc1faf66f0d6cd249a4d30b" title=" " alt="" coords="13,136,232,177"/>
-<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1ObjectManager.html#a0ba9500496ff88214ea2343c48c477cc" title=" " alt="" coords="5,201,240,243"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1TextManager.html#a4f25e8069dc1faf66f0d6cd249a4d30b" title="Creates the render pass needed for rendering the text." alt="" coords="13,136,232,177"/>
+<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1ObjectManager.html#a0ba9500496ff88214ea2343c48c477cc" title="Initializes the ObjectManager." alt="" coords="5,201,240,243"/>
 </map>

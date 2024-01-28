@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['height_139',['height',['../classChronos_1_1Engine_1_1Engine.html#a73a8aefde9c16bbe8b4bbd770cba5981',1,'Chronos::Engine::Engine']]],
-  ['helper_2ecpp_140',['helper.cpp',['../helper_8cpp.html',1,'']]],
-  ['helper_2ehpp_141',['helper.hpp',['../helper_8hpp.html',1,'']]],
-  ['helpertests_2ecpp_142',['helperTests.cpp',['../helperTests_8cpp.html',1,'']]]
+  ['height_119',['height',['../classChronos_1_1Engine_1_1Engine.html#a73a8aefde9c16bbe8b4bbd770cba5981',1,'Chronos::Engine::Engine']]],
+  ['helper_2ecpp_120',['helper.cpp',['../helper_8cpp.html',1,'']]],
+  ['helper_2ehpp_121',['helper.hpp',['../helper_8hpp.html',1,'']]]
 ];

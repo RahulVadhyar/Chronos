@@ -105,7 +105,7 @@ Collaboration diagram for Chronos::Engine::Engine:</div>
 <div class="center"><img src="classChronos_1_1Engine_1_1Engine__coll__graph.png" border="0" usemap="#aChronos_1_1Engine_1_1Engine_coll__map" alt="Collaboration graph"/></div>
 <map name="aChronos_1_1Engine_1_1Engine_coll__map" id="aChronos_1_1Engine_1_1Engine_coll__map">
 <area shape="rect" title="This is the main vulkan backend for Chronos. This is for use by the API only and should not be used f..." alt="" coords="717,82,896,109"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html" title=" " alt="" coords="343,13,561,39"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html" title="This is the text manager for Chronos. It handles creation, modification, updating and desrtuction of ..." alt="" coords="343,13,561,39"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1ObjectManager.html" title=" " alt="" coords="5,5,240,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="33,94,213,121"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="349,126,555,153"/>
@@ -132,7 +132,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:af3189f4b7e39b19c522579fb0d4cc4e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChronos_1_1Engine_1_1TextManager.html">Chronos::Engine::TextManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a></td></tr>
-<tr class="memdesc:af3189f4b7e39b19c522579fb0d4cc4e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main function that is used to add and remove text to the engine.  <a href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">More...</a><br /></td></tr>
+<tr class="memdesc:af3189f4b7e39b19c522579fb0d4cc4e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main function that is used to add, update and remove text to the engine.  <a href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">More...</a><br /></td></tr>
 <tr class="separator:af3189f4b7e39b19c522579fb0d4cc4e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc2c611ff13cc66c62219d65ab2f24a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChronos_1_1Engine_1_1ShapeManager.html">Chronos::Engine::ShapeManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Engine.html#afc2c611ff13cc66c62219d65ab2f24a1">shapeManager</a></td></tr>
 <tr class="memdesc:afc2c611ff13cc66c62219d65ab2f24a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main function that is used to add, remove and modify shapes to the engine.  <a href="classChronos_1_1Engine_1_1Engine.html#afc2c611ff13cc66c62219d65ab2f24a1">More...</a><br /></td></tr>
@@ -217,10 +217,10 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>This is the main vulkan backend for <a class="el" href="namespaceChronos.html">Chronos</a>. This is for use by the API only and should not be used for any other purpose. </p>
 <p>This is resposible for managing the object and shapes that related to vulkan. It is also in charge of drawing frames and managing the window. It automatically handles window resizing, creation and destruction of necessary objects. Any shapes or text to be created is to be done throught the shapeManager and textManager respectively.</p>
 <p>In order to draw a frame, create a loop and call the drawFrame.</p>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Important</h2>
 <p>drawFrame will not handle inputs. It will also draw only one frame per call. Hence the inputs must be managed by the main loop. This is done to allow flexibility in inputs and management of the frame drawing.</p>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 drawFrame() example</h2>
 <p>Suppose <a class="el" href="classChronos_1_1Engine_1_1Engine.html" title="This is the main vulkan backend for Chronos. This is for use by the API only and should not be used f...">Engine</a> class is initialized as engine The following code snippet is an example of a basic rendering loop. It also includes functionaility to close the window either when the escape key is pressed or when the window is closed. For more on handling inputs, please see the GLFW documentation.</p>
 <div class="fragment"><div class="line"><span class="keywordflow">while</span> (!glfwWindowShouldClose(engine.window)) {</div>
@@ -309,7 +309,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a3f1da8f7cab1fcd9f9c3b6ea565252a3">cleanup</a>();</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00020">device.hpp:20</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a006da4ea696843d084076e82ef16a147"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">Chronos::Engine::Engine::device</a></div><div class="ttdeci">Chronos::Engine::Device device</div><div class="ttdoc">This is the object that manages the device.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00159">engine.hpp:159</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a006da4ea696843d084076e82ef16a147"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">Chronos::Engine::Engine::device</a></div><div class="ttdeci">Chronos::Engine::Device device</div><div class="ttdoc">This is the object that manages the device.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00157">engine.hpp:157</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a3f1da8f7cab1fcd9f9c3b6ea565252a3"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a3f1da8f7cab1fcd9f9c3b6ea565252a3">Chronos::Engine::Engine::cleanup</a></div><div class="ttdeci">void cleanup()</div><div class="ttdoc">Cleans up vulkan objects.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00068">engine.cpp:68</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -375,18 +375,18 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    glfwTerminate();</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a2c581e7cb6a00ef53003a9b8913e5396"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a2c581e7cb6a00ef53003a9b8913e5396">Chronos::Engine::Device::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">This is the function that destroys the device.</div><div class="ttdef"><b>Definition:</b> <a href="device_8cpp_source.html#l00010">device.cpp:10</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a0576a084f0980ed2dbbebf7335c0c119"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a0576a084f0980ed2dbbebf7335c0c119">Chronos::Engine::Engine::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdoc">The command Pool.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00224">engine.hpp:224</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a0ef741eacc3bb47a8dcd4aab0b530c2e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a0ef741eacc3bb47a8dcd4aab0b530c2e">Chronos::Engine::Engine::imageAvailableSemaphores</a></div><div class="ttdeci">std::vector&lt; VkSemaphore &gt; imageAvailableSemaphores</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00226">engine.hpp:226</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a14231fd3132dee3c7c675b8d1bfd10b9"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a14231fd3132dee3c7c675b8d1bfd10b9">Chronos::Engine::Engine::instance</a></div><div class="ttdeci">VkInstance instance</div><div class="ttdoc">The Vulkan instance.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00200">engine.hpp:200</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a2d025f55b44d3a56d01f2320bf1de742"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a2d025f55b44d3a56d01f2320bf1de742">Chronos::Engine::Engine::renderFinishedSemaphores</a></div><div class="ttdeci">std::vector&lt; VkSemaphore &gt; renderFinishedSemaphores</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00227">engine.hpp:227</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a2d8968ac621e29f56e7955d9ee320fb5"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">Chronos::Engine::Engine::inFlightFences</a></div><div class="ttdeci">std::vector&lt; VkFence &gt; inFlightFences</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00228">engine.hpp:228</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a489c5250f3c8e92c72e3c2240586e642"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642">Chronos::Engine::Engine::window</a></div><div class="ttdeci">GLFWwindow * window</div><div class="ttdoc">This is the GLFW window reference that is used by the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00107">engine.hpp:107</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ad42c17cac82b1f6d2be9e86a059c4a16"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ad42c17cac82b1f6d2be9e86a059c4a16">Chronos::Engine::Engine::debugMessenger</a></div><div class="ttdeci">VkDebugUtilsMessengerEXT debugMessenger</div><div class="ttdoc">The debug messenger.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00209">engine.hpp:209</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ae12d40d93a89fb61496d452203fb0a9c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ae12d40d93a89fb61496d452203fb0a9c">Chronos::Engine::Engine::surface</a></div><div class="ttdeci">VkSurfaceKHR surface</div><div class="ttdoc">The surface to render to.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00216">engine.hpp:216</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_af3189f4b7e39b19c522579fb0d4cc4e8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">Chronos::Engine::Engine::textManager</a></div><div class="ttdeci">Chronos::Engine::TextManager textManager</div><div class="ttdoc">Main function that is used to add and remove text to the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00085">engine.hpp:85</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_af877a78d497b0d86b4254960fcf84f1a"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">Chronos::Engine::Engine::swapChain</a></div><div class="ttdeci">Chronos::Engine::SwapChain swapChain</div><div class="ttdoc">This is the object that manages the swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00167">engine.hpp:167</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_afc2c611ff13cc66c62219d65ab2f24a1"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#afc2c611ff13cc66c62219d65ab2f24a1">Chronos::Engine::Engine::shapeManager</a></div><div class="ttdeci">Chronos::Engine::ShapeManager shapeManager</div><div class="ttdoc">This is the main function that is used to add, remove and modify shapes to the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00092">engine.hpp:92</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_af1099ec61ecc8cc16b606d526e981709"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#af1099ec61ecc8cc16b606d526e981709">Chronos::Engine::ObjectManager::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdef"><b>Definition:</b> <a href="objectManagerDefs_8hpp_source.html#l00017">objectManagerDefs.hpp:17</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a0576a084f0980ed2dbbebf7335c0c119"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a0576a084f0980ed2dbbebf7335c0c119">Chronos::Engine::Engine::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdoc">The command Pool.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00222">engine.hpp:222</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a0ef741eacc3bb47a8dcd4aab0b530c2e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a0ef741eacc3bb47a8dcd4aab0b530c2e">Chronos::Engine::Engine::imageAvailableSemaphores</a></div><div class="ttdeci">std::vector&lt; VkSemaphore &gt; imageAvailableSemaphores</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00224">engine.hpp:224</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a14231fd3132dee3c7c675b8d1bfd10b9"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a14231fd3132dee3c7c675b8d1bfd10b9">Chronos::Engine::Engine::instance</a></div><div class="ttdeci">VkInstance instance</div><div class="ttdoc">The Vulkan instance.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00198">engine.hpp:198</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a2d025f55b44d3a56d01f2320bf1de742"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a2d025f55b44d3a56d01f2320bf1de742">Chronos::Engine::Engine::renderFinishedSemaphores</a></div><div class="ttdeci">std::vector&lt; VkSemaphore &gt; renderFinishedSemaphores</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00225">engine.hpp:225</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a2d8968ac621e29f56e7955d9ee320fb5"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">Chronos::Engine::Engine::inFlightFences</a></div><div class="ttdeci">std::vector&lt; VkFence &gt; inFlightFences</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00226">engine.hpp:226</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a489c5250f3c8e92c72e3c2240586e642"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642">Chronos::Engine::Engine::window</a></div><div class="ttdeci">GLFWwindow * window</div><div class="ttdoc">This is the GLFW window reference that is used by the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00105">engine.hpp:105</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ad42c17cac82b1f6d2be9e86a059c4a16"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ad42c17cac82b1f6d2be9e86a059c4a16">Chronos::Engine::Engine::debugMessenger</a></div><div class="ttdeci">VkDebugUtilsMessengerEXT debugMessenger</div><div class="ttdoc">The debug messenger.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00207">engine.hpp:207</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ae12d40d93a89fb61496d452203fb0a9c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ae12d40d93a89fb61496d452203fb0a9c">Chronos::Engine::Engine::surface</a></div><div class="ttdeci">VkSurfaceKHR surface</div><div class="ttdoc">The surface to render to.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00214">engine.hpp:214</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_af3189f4b7e39b19c522579fb0d4cc4e8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">Chronos::Engine::Engine::textManager</a></div><div class="ttdeci">Chronos::Engine::TextManager textManager</div><div class="ttdoc">Main function that is used to add, update and remove text to the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00083">engine.hpp:83</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_af877a78d497b0d86b4254960fcf84f1a"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">Chronos::Engine::Engine::swapChain</a></div><div class="ttdeci">Chronos::Engine::SwapChain swapChain</div><div class="ttdoc">This is the object that manages the swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00165">engine.hpp:165</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_afc2c611ff13cc66c62219d65ab2f24a1"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#afc2c611ff13cc66c62219d65ab2f24a1">Chronos::Engine::Engine::shapeManager</a></div><div class="ttdeci">Chronos::Engine::ShapeManager shapeManager</div><div class="ttdoc">This is the main function that is used to add, remove and modify shapes to the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00090">engine.hpp:90</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_af1099ec61ecc8cc16b606d526e981709"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#af1099ec61ecc8cc16b606d526e981709">Chronos::Engine::ObjectManager::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">Destroys resources associated with the ObjectManager.</div><div class="ttdef"><b>Definition:</b> <a href="objectManagerDefs_8hpp_source.html#l00017">objectManagerDefs.hpp:17</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_aa8c764800b9a61a91a1e5e40e497bc03"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#aa8c764800b9a61a91a1e5e40e497bc03">Chronos::Engine::SwapChain::cleanup</a></div><div class="ttdeci">void cleanup()</div><div class="ttdoc">Cleans up the assets that are rendered invalid during MSAA changes or swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8cpp_source.html#l00183">swapchain.cpp:183</a></div></div>
 <div class="ttc" id="aengine_8hpp_html_a7302e21aaabe341f71d799a7dd3f274f"><div class="ttname"><a href="engine_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a></div><div class="ttdeci">const int MAX_FRAMES_IN_FLIGHT</div><div class="ttdoc">The number of frames in flight.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00023">engine.hpp:23</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_a84a0ca17f8376dbc4daa6f798c9bc24e"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a84a0ca17f8376dbc4daa6f798c9bc24e">Chronos::Engine::enableValidationLayers</a></div><div class="ttdeci">const bool enableValidationLayers</div><div class="ttdoc">Flag to enable validation layers.</div><div class="ttdef"><b>Definition:</b> <a href="validation_8hpp_source.html#l00023">validation.hpp:23</a></div></div>
@@ -722,16 +722,16 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a671f38eeab8280bd4b878bc9c04544a2"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a671f38eeab8280bd4b878bc9c04544a2">Chronos::Engine::Device::presentQueue</a></div><div class="ttdeci">VkQueue presentQueue</div><div class="ttdoc">This is the queue that is used for presentation of the rendered frames.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00038">device.hpp:38</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_ac2609e8515d57e873e3da13599452cf9"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#ac2609e8515d57e873e3da13599452cf9">Chronos::Engine::Device::graphicsQueue</a></div><div class="ttdeci">VkQueue graphicsQueue</div><div class="ttdoc">This is the queue that is used for graphics rendering.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00033">device.hpp:33</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a00087dabb9938a55399e2c8b58ba7f7c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">Chronos::Engine::Engine::currentFrame</a></div><div class="ttdeci">uint32_t currentFrame</div><div class="ttdoc">The current frame to be rendered to.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00192">engine.hpp:192</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a50165316b5c0c709684961a5ca60011e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">Chronos::Engine::Engine::bgColor</a></div><div class="ttdeci">float bgColor[3]</div><div class="ttdoc">This is the background color of the window.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00115">engine.hpp:115</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ab7bdcb4c424429687b9a6b27a852a7d3"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ab7bdcb4c424429687b9a6b27a852a7d3">Chronos::Engine::Engine::framebufferResized</a></div><div class="ttdeci">bool framebufferResized</div><div class="ttdoc">Does the framebuffer need to be resized?</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00185">engine.hpp:185</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a144958b63850e3ac41c4f875aed17956"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a144958b63850e3ac41c4f875aed17956">Chronos::Engine::ObjectManager::recreate</a></div><div class="ttdeci">void recreate()</div><div class="ttdef"><b>Definition:</b> <a href="objectManagerDefs_8hpp_source.html#l00076">objectManagerDefs.hpp:76</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a3cf7995633555faa52870bcdd745a70e"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">Chronos::Engine::ObjectManager::commandBuffers</a></div><div class="ttdeci">std::vector&lt; VkCommandBuffer &gt; commandBuffers</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00021">objectManager.hpp:21</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_ab6d2da00f56ad678931da06cb4d0e7ac"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#ab6d2da00f56ad678931da06cb4d0e7ac">Chronos::Engine::ObjectManager::update</a></div><div class="ttdeci">void update(uint32_t currentFrame)</div><div class="ttdef"><b>Definition:</b> <a href="objectManagerDefs_8hpp_source.html#l00096">objectManagerDefs.hpp:96</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a00087dabb9938a55399e2c8b58ba7f7c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">Chronos::Engine::Engine::currentFrame</a></div><div class="ttdeci">uint32_t currentFrame</div><div class="ttdoc">The current frame to be rendered to.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00190">engine.hpp:190</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a50165316b5c0c709684961a5ca60011e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">Chronos::Engine::Engine::bgColor</a></div><div class="ttdeci">float bgColor[3]</div><div class="ttdoc">This is the background color of the window.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00113">engine.hpp:113</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ab7bdcb4c424429687b9a6b27a852a7d3"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ab7bdcb4c424429687b9a6b27a852a7d3">Chronos::Engine::Engine::framebufferResized</a></div><div class="ttdeci">bool framebufferResized</div><div class="ttdoc">Does the framebuffer need to be resized?</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00183">engine.hpp:183</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a144958b63850e3ac41c4f875aed17956"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a144958b63850e3ac41c4f875aed17956">Chronos::Engine::ObjectManager::recreate</a></div><div class="ttdeci">void recreate()</div><div class="ttdoc">Recreates resources for rendering.</div><div class="ttdef"><b>Definition:</b> <a href="objectManagerDefs_8hpp_source.html#l00076">objectManagerDefs.hpp:76</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a3cf7995633555faa52870bcdd745a70e"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">Chronos::Engine::ObjectManager::commandBuffers</a></div><div class="ttdeci">std::vector&lt; VkCommandBuffer &gt; commandBuffers</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00035">objectManager.hpp:35</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_ab6d2da00f56ad678931da06cb4d0e7ac"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#ab6d2da00f56ad678931da06cb4d0e7ac">Chronos::Engine::ObjectManager::update</a></div><div class="ttdeci">void update(uint32_t currentFrame)</div><div class="ttdoc">Updates the objects managed by the ObjectManager.</div><div class="ttdef"><b>Definition:</b> <a href="objectManagerDefs_8hpp_source.html#l00096">objectManagerDefs.hpp:96</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ShapeManager_html_a17ffc730da93e327f20a053ed2473c6f"><div class="ttname"><a href="classChronos_1_1Engine_1_1ShapeManager.html#a17ffc730da93e327f20a053ed2473c6f">Chronos::Engine::ShapeManager::render</a></div><div class="ttdeci">void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])</div><div class="ttdoc">Records the commands needed for rendering the shapes.</div><div class="ttdef"><b>Definition:</b> <a href="shapeManager_8cpp_source.html#l00007">shapeManager.cpp:7</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_ab50ec3eb6293b1e2d52553ed5eeb7ec6"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#ab50ec3eb6293b1e2d52553ed5eeb7ec6">Chronos::Engine::SwapChain::swapChain</a></div><div class="ttdeci">VkSwapchainKHR swapChain</div><div class="ttdoc">Vulkan swapchain object.</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8hpp_source.html#l00138">swapchain.hpp:138</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_ab62945a629a540f51adf21f82780fd7c"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#ab62945a629a540f51adf21f82780fd7c">Chronos::Engine::SwapChain::recreate</a></div><div class="ttdeci">void recreate()</div><div class="ttdoc">When the swapchain is rendered invalid, recreate it.</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8cpp_source.html#l00196">swapchain.cpp:196</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1TextManager_html_a394c61ace78db87785baae88de717191"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextManager.html#a394c61ace78db87785baae88de717191">Chronos::Engine::TextManager::render</a></div><div class="ttdeci">void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])</div><div class="ttdef"><b>Definition:</b> <a href="textManager_8cpp_source.html#l00019">textManager.cpp:19</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1TextManager_html_a394c61ace78db87785baae88de717191"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextManager.html#a394c61ace78db87785baae88de717191">Chronos::Engine::TextManager::render</a></div><div class="ttdeci">void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])</div><div class="ttdoc">Records the commands needed for rendering the text.</div><div class="ttdef"><b>Definition:</b> <a href="textManager_8cpp_source.html#l00019">textManager.cpp:19</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="engine_8hpp_source.html#l00023">MAX_FRAMES_IN_FLIGHT</a>.</p>
 
@@ -797,7 +797,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a45c7769114afb2cf3c9a10c049368fe6"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a45c7769114afb2cf3c9a10c049368fe6">Chronos::Engine::Engine::createSyncObjects</a></div><div class="ttdeci">void createSyncObjects()</div><div class="ttdoc">Creates sync objects for rendering.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00261">engine.cpp:261</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a4be8d1abd5f346749a04f0c82510965a"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a4be8d1abd5f346749a04f0c82510965a">Chronos::Engine::Engine::createInstance</a></div><div class="ttdeci">void createInstance()</div><div class="ttdoc">Creates a vulkan instance.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00194">engine.cpp:194</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a86f7c7a90e1f60daac987ab985acaa34"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a86f7c7a90e1f60daac987ab985acaa34">Chronos::Engine::Engine::setupDebugMessenger</a></div><div class="ttdeci">void setupDebugMessenger()</div><div class="ttdoc">Sets up the vulkan validation layers.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00241">engine.cpp:241</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a0ba9500496ff88214ea2343c48c477cc"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a0ba9500496ff88214ea2343c48c477cc">Chronos::Engine::ObjectManager::init</a></div><div class="ttdeci">void init(Chronos::Engine::Device *device, Chronos::Engine::SwapChain *swapChain, VkCommandPool commandPool)</div><div class="ttdef"><b>Definition:</b> <a href="objectManagerDefs_8hpp_source.html#l00003">objectManagerDefs.hpp:3</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a0ba9500496ff88214ea2343c48c477cc"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a0ba9500496ff88214ea2343c48c477cc">Chronos::Engine::ObjectManager::init</a></div><div class="ttdeci">void init(Chronos::Engine::Device *device, Chronos::Engine::SwapChain *swapChain, VkCommandPool commandPool)</div><div class="ttdoc">Initializes the ObjectManager.</div><div class="ttdef"><b>Definition:</b> <a href="objectManagerDefs_8hpp_source.html#l00003">objectManagerDefs.hpp:3</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_a29872992a178cb1b2fd1c89fa141dfe4"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#a29872992a178cb1b2fd1c89fa141dfe4">Chronos::Engine::SwapChain::surface</a></div><div class="ttdeci">VkSurfaceKHR surface</div><div class="ttdoc">Surface to which we need to present the swapchain images.</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8hpp_source.html#l00143">swapchain.hpp:143</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_ace1a08ad6430f336d2560ad737e60fbe"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe">Chronos::Engine::SwapChain::init</a></div><div class="ttdeci">void init(Chronos::Engine::Device *device, VkSurfaceKHR surface, GLFWwindow *window)</div><div class="ttdoc">Initilize the swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8cpp_source.html#l00097">swapchain.cpp:97</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_ae9065643643c464231ba47b6ed3f8a8a"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#ae9065643643c464231ba47b6ed3f8a8a">Chronos::Engine::createCommandPool</a></div><div class="ttdeci">VkCommandPool createCommandPool(Chronos::Engine::Device device, VkSurfaceKHR surface)</div><div class="ttdoc">Creates a command pool for a given device and surface.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00234">helper.cpp:234</a></div></div>
@@ -866,8 +866,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    glfwSetWindowUserPointer(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642">window</a>, <span class="keyword">this</span>);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    glfwSetFramebufferSizeCallback(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642">window</a>, <a class="code" href="engine_8cpp.html#ad93fffd8512961d3c6e7fc0bf9cec3e1">framebuffer_size_callback</a>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a73a8aefde9c16bbe8b4bbd770cba5981"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a73a8aefde9c16bbe8b4bbd770cba5981">Chronos::Engine::Engine::height</a></div><div class="ttdeci">int height</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00102">engine.hpp:102</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ae79484eb3130b4251c2fc43179fac68c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ae79484eb3130b4251c2fc43179fac68c">Chronos::Engine::Engine::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00097">engine.hpp:97</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a73a8aefde9c16bbe8b4bbd770cba5981"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a73a8aefde9c16bbe8b4bbd770cba5981">Chronos::Engine::Engine::height</a></div><div class="ttdeci">int height</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00100">engine.hpp:100</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ae79484eb3130b4251c2fc43179fac68c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ae79484eb3130b4251c2fc43179fac68c">Chronos::Engine::Engine::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00095">engine.hpp:95</a></div></div>
 <div class="ttc" id="aengine_8cpp_html_ad93fffd8512961d3c6e7fc0bf9cec3e1"><div class="ttname"><a href="engine_8cpp.html#ad93fffd8512961d3c6e7fc0bf9cec3e1">framebuffer_size_callback</a></div><div class="ttdeci">static void framebuffer_size_callback(GLFWwindow *window, int width, int height)</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00005">engine.cpp:5</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="engine_8cpp_source.html#l00005">framebuffer_size_callback()</a>.</p>
@@ -1011,16 +1011,16 @@ Here is the call graph for this function:</div>
 <p>Displays the FPS to the console. </p>
 <p>This is a helper function that prints the FPS to the console. This is useful to monitor the performance of the application. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00311">311</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        {</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            <span class="keywordtype">float</span> current_time = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(glfwGetTime());</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            <span class="keywordtype">float</span> fps = 1.0f / (current_time - <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a470065034b51af8fb9bd6c4958df2f60">prev_time</a>);</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a470065034b51af8fb9bd6c4958df2f60">prev_time</a> = current_time;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;FPS: &quot;</span> &lt;&lt; fps &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        }</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a470065034b51af8fb9bd6c4958df2f60"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a470065034b51af8fb9bd6c4958df2f60">Chronos::Engine::Engine::prev_time</a></div><div class="ttdeci">float prev_time</div><div class="ttdoc">This is used to store the absolute previous time by the showFPS function.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00175">engine.hpp:175</a></div></div>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00309">309</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            <span class="keywordtype">float</span> current_time = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(glfwGetTime());</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="keywordtype">float</span> fps = 1.0f / (current_time - <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a470065034b51af8fb9bd6c4958df2f60">prev_time</a>);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a470065034b51af8fb9bd6c4958df2f60">prev_time</a> = current_time;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;FPS: &quot;</span> &lt;&lt; fps &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        }</div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a470065034b51af8fb9bd6c4958df2f60"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a470065034b51af8fb9bd6c4958df2f60">Chronos::Engine::Engine::prev_time</a></div><div class="ttdeci">float prev_time</div><div class="ttdoc">This is used to store the absolute previous time by the showFPS function.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00173">engine.hpp:173</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="engine_8hpp_source.html#l00175">prev_time</a>.</p>
+<p class="reference">References <a class="el" href="engine_8hpp_source.html#l00173">prev_time</a>.</p>
 
 </div>
 </div>
@@ -1040,7 +1040,7 @@ Here is the call graph for this function:</div>
 <p>This is the background color of the window. </p>
 <p>It can be changed by changing the values inside this float. The values should be in the range of 0 to 1. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00115">115</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00113">113</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1067,7 +1067,7 @@ Here is the call graph for this function:</div>
 <p>The command Pool. </p>
 <p>All command buffers are allocated from a command pool. This is where the command pool is stored. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00224">224</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00222">222</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1094,7 +1094,7 @@ Here is the call graph for this function:</div>
 <p>The current frame to be rendered to. </p>
 <p>Since there will be multiple frames in flight, we need to keep track of which frame is currently being rendered. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00192">192</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00190">190</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1121,7 +1121,7 @@ Here is the call graph for this function:</div>
 <p>The debug messenger. </p>
 <p>For using the vulkan validation layers, we need to create a debug messenger. this gives us the ability to print debug messages to the console given to use by the validation layers. That wat we can debug our application and ensure that it conforms to the Vulkan standards. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00209">209</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00207">207</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1148,7 +1148,7 @@ Here is the call graph for this function:</div>
 <p>This is the object that manages the device. </p>
 <p>This is due to the fact that device initialization and management is a complicated process. Also there are multiple variables that are needed for this. Hence for simplicity, a class was created for this purpose. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00159">159</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00157">157</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1175,7 +1175,7 @@ Here is the call graph for this function:</div>
 <p>Does the framebuffer need to be resized? </p>
 <p>When the window is resized, or minimized, the swapchain needs to be recreated. GLFW will tell us that this needs to happen, and when it does, this flag is set to true. The next time the drawFrame function is called, the swapchain will be recreated. During that time, this flag will be set to false. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00185">185</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00183">183</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1193,7 +1193,7 @@ Here is the call graph for this function:</div>
 
 <p>This is the initial width of the window. It can be changed later just by changing this directly. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00102">102</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00100">100</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1217,7 +1217,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00226">226</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00224">224</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1241,7 +1241,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00228">228</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00226">226</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1268,7 +1268,7 @@ Here is the call graph for this function:</div>
 <p>The Vulkan instance. </p>
 <p>When initializing Vulkan, the first thing we create is an instance. This is where is it stored. We need this during cleanup </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00200">200</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00198">198</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1295,7 +1295,7 @@ Here is the call graph for this function:</div>
 <p>This is used to store the absolute previous time by the showFPS function. </p>
 <p>The showFPS function is used to print the FPS to the console. This needs the previous time to calculate the FPS. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00175">175</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00173">173</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1319,7 +1319,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00227">227</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00225">225</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1338,7 +1338,7 @@ Here is the call graph for this function:</div>
 <p>This is the main function that is used to add, remove and modify shapes to the engine. </p>
 <p>To render shapes to the window, one may call the necessary methods in this class. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00092">92</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00090">90</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1365,7 +1365,7 @@ Here is the call graph for this function:</div>
 <p>The surface to render to. </p>
 <p>For rendering to the window from the Vulkan framebuffer, we need a surface. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00216">216</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00214">214</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1392,7 +1392,7 @@ Here is the call graph for this function:</div>
 <p>This is the object that manages the swapchain. </p>
 <p>All the swapchain related functions are handled by this object. This is due to the fact that swapChain needs to be constantly mananged and recreated due to various conditions. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00167">167</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00165">165</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1408,10 +1408,10 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Main function that is used to add and remove text to the engine. </p>
+<p>Main function that is used to add, update and remove text to the engine. </p>
 <p>To render text to the window, one may call the necessary methods in this class. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00085">85</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00083">83</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1429,7 +1429,7 @@ Here is the call graph for this function:</div>
 
 <p>This is the initial width of the window. It can be changed later just by changing this directly. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00097">97</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00095">95</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1447,7 +1447,7 @@ Here is the call graph for this function:</div>
 
 <p>This is the GLFW window reference that is used by the engine. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00107">107</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00105">105</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>

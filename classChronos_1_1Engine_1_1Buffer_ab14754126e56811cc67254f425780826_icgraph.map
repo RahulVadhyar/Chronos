@@ -1,5 +1,5 @@
 <map id="Chronos::Engine::Buffer::create" name="Chronos::Engine::Buffer::create">
 <area shape="rect" id="node1" title="This is used to initialize the buffer." alt="" coords="241,39,416,80"/>
 <area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1UniformBuffer.html#a4c14b97754025d584f9fbf73ac26d8c2" title="Creates the buffer and maps the memory." alt="" coords="5,5,193,47"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Shape.html#ac46ccb54f90b8cb45740b826d3100089" title=" " alt="" coords="12,71,187,112"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Shape.html#ac46ccb54f90b8cb45740b826d3100089" title="Initializes the shape object and creates the necessary objects." alt="" coords="12,71,187,112"/>
 </map>

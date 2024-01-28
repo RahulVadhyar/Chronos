@@ -1,5 +1,5 @@
 <map id="Chronos::Engine::ObjectManager&lt; Object &gt;" name="Chronos::Engine::ObjectManager&lt; Object &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="5,184,240,225"/>
+<area shape="rect" id="node1" title="Manages objects within the Chronos::Engine namespace." alt="" coords="5,184,240,225"/>
 <area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="33,5,213,32"/>
 <area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="174,95,381,121"/>
 </map>

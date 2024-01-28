@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" title=" " alt="" coords="1297,5,1459,47"/>
 <area shape="rect" id="node2" href="$shapeManager_8hpp.html" title="Contains the class for managing shapes." alt="" coords="1124,95,1269,121"/>
 <area shape="rect" id="node33" href="$object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="1321,393,1411,420"/>
-<area shape="rect" id="node34" href="$objectManager_8hpp.html" title=" " alt="" coords="1210,244,1357,271"/>
+<area shape="rect" id="node34" href="$objectManager_8hpp.html" title="Defines the ObjectManager class for managing objects in the Chronos::Engine namespace." alt="" coords="1210,244,1357,271"/>
 <area shape="rect" id="node35" href="$objectManagerDefs_8hpp.html" title=" " alt="" coords="1195,169,1372,196"/>
 <area shape="rect" id="node3" href="$shape_8hpp.html" title="Contains the class for creating a shape." alt="" coords="1239,319,1328,345"/>
 <area shape="rect" id="node4" href="$structs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="1057,468,1152,495"/>

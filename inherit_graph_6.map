@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classChronos_1_1Engine_1_1Engine.html" title="This is the main vulkan backend for Chronos. This is for use by the API only and should not be used f..." alt="" coords="5,5,184,32"/>
+<area shape="rect" id="node1" href="$classChronos_1_1Engine_1_1ObjectManager.html" title=" " alt="" coords="5,5,240,47"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1ShapeManager.html" title="This is the shape manager for Chronos. It handles creation, modification, updating and desrtuction of..." alt="" coords="288,13,520,39"/>
 </map>

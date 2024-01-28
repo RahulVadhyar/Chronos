@@ -1,7 +1,7 @@
 <map id="Source/Engine/Headers/textManager.hpp" name="Source/Engine/Headers/textManager.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="1257,5,1429,47"/>
-<area shape="rect" id="node2" href="$objectManager_8hpp.html" title=" " alt="" coords="1202,95,1349,121"/>
-<area shape="rect" id="node34" href="$font_8hpp.html" title=" " alt="" coords="1380,95,1456,121"/>
+<area shape="rect" id="node1" title="Contains the class for managing text in the Chronos::Engine namespace." alt="" coords="1257,5,1429,47"/>
+<area shape="rect" id="node2" href="$objectManager_8hpp.html" title="Defines the ObjectManager class for managing objects in the Chronos::Engine namespace." alt="" coords="1202,95,1349,121"/>
+<area shape="rect" id="node34" href="$font_8hpp.html" title="Contains the class for creating a font object for rendering text." alt="" coords="1380,95,1456,121"/>
 <area shape="rect" id="node3" href="$shape_8hpp.html" title="Contains the class for creating a shape." alt="" coords="1223,177,1312,203"/>
 <area shape="rect" id="node4" href="$structs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="1275,333,1369,360"/>
 <area shape="rect" id="node11" href="$helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="1159,333,1250,360"/>

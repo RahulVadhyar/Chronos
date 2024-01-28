@@ -94,16 +94,19 @@ $(document).ready(function(){initNavTree('classChronos_1_1Engine_1_1Shape.html',
 </div><!--header-->
 <div class="contents">
 
+<p>Class for creating a shape(triangle, rectangle, etc.).  
+ <a href="classChronos_1_1Engine_1_1Shape.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="shape_8hpp_source.html">shape.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Chronos::Engine::Shape:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1Shape__inherit__graph.png" border="0" usemap="#aChronos_1_1Engine_1_1Shape_inherit__map" alt="Inheritance graph"/></div>
 <map name="aChronos_1_1Engine_1_1Shape_inherit__map" id="aChronos_1_1Engine_1_1Shape_inherit__map">
-<area shape="rect" title=" " alt="" coords="126,80,301,107"/>
+<area shape="rect" title="Class for creating a shape(triangle, rectangle, etc.)." alt="" coords="126,80,301,107"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Rectangle.html" title="Class for creating a rectangle." alt="" coords="5,155,205,181"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Triangle.html" title="Class for creating a triangle." alt="" coords="229,155,416,181"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html" title=" " alt="" coords="125,5,302,32"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects." alt="" coords="125,5,302,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -111,8 +114,8 @@ Collaboration diagram for Chronos::Engine::Shape:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1Shape__coll__graph.png" border="0" usemap="#aChronos_1_1Engine_1_1Shape_coll__map" alt="Collaboration graph"/></div>
 <map name="aChronos_1_1Engine_1_1Shape_coll__map" id="aChronos_1_1Engine_1_1Shape_coll__map">
-<area shape="rect" title=" " alt="" coords="1043,113,1217,140"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html" title=" " alt="" coords="741,23,919,49"/>
+<area shape="rect" title="Class for creating a shape(triangle, rectangle, etc.)." alt="" coords="1043,113,1217,140"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects." alt="" coords="741,23,919,49"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="5,76,185,103"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="281,51,488,77"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Texture.html" title="This class holds the Vulkan data and objects needed for a texture." alt="" coords="512,88,695,115"/>
@@ -124,10 +127,13 @@ Collaboration diagram for Chronos::Engine::Shape:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac46ccb54f90b8cb45740b826d3100089"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#ac46ccb54f90b8cb45740b826d3100089">init</a> (<a class="el" href="classChronos_1_1Engine_1_1Device.html">Chronos::Engine::Device</a> *<a class="el" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>, VkCommandPool <a class="el" href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">commandPool</a>, <a class="el" href="classChronos_1_1Engine_1_1SwapChain.html">Chronos::Engine::SwapChain</a> *<a class="el" href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">swapChain</a>, VkSampler <a class="el" href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">textureSampler</a>, std::string texturePath, VkRenderPass *<a class="el" href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">renderPass</a>)</td></tr>
+<tr class="memdesc:ac46ccb54f90b8cb45740b826d3100089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the shape object and creates the necessary objects.  <a href="classChronos_1_1Engine_1_1Shape.html#ac46ccb54f90b8cb45740b826d3100089">More...</a><br /></td></tr>
 <tr class="separator:ac46ccb54f90b8cb45740b826d3100089"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aa39bffdf1f3590825a977fde4ed968"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#a6aa39bffdf1f3590825a977fde4ed968">update</a> (uint32_t currentFrame) override</td></tr>
+<tr class="memdesc:a6aa39bffdf1f3590825a977fde4ed968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the shape object for the current frame.  <a href="classChronos_1_1Engine_1_1Shape.html#a6aa39bffdf1f3590825a977fde4ed968">More...</a><br /></td></tr>
 <tr class="separator:a6aa39bffdf1f3590825a977fde4ed968"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3572cf7a8e38b5d774c997ccb9cfb629"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#a3572cf7a8e38b5d774c997ccb9cfb629">destroy</a> () override</td></tr>
+<tr class="memdesc:a3572cf7a8e38b5d774c997ccb9cfb629"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the shape object and frees the memory.  <a href="classChronos_1_1Engine_1_1Shape.html#a3572cf7a8e38b5d774c997ccb9cfb629">More...</a><br /></td></tr>
 <tr class="separator:a3572cf7a8e38b5d774c997ccb9cfb629"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08882657c43f97dd7fa17032e101b644"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#a08882657c43f97dd7fa17032e101b644">createDescriptorSets</a> () override</td></tr>
 <tr class="separator:a08882657c43f97dd7fa17032e101b644"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,23 +145,31 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9be6e8439bd5d1f87258a24f423f4665"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classChronos_1_1Engine_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classChronos_1_1Engine_1_1Object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classChronos_1_1Engine_1_1Object.html">Chronos::Engine::Object</a></td></tr>
 <tr class="memitem:a2ff58729143a63b536fcd06e890b514e inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e">init</a> (<a class="el" href="classChronos_1_1Engine_1_1Device.html">Chronos::Engine::Device</a> *<a class="el" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>, VkCommandPool <a class="el" href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">commandPool</a>, <a class="el" href="classChronos_1_1Engine_1_1SwapChain.html">Chronos::Engine::SwapChain</a> *<a class="el" href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">swapChain</a>, VkSampler <a class="el" href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">textureSampler</a>, VkRenderPass *<a class="el" href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">renderPass</a>)</td></tr>
+<tr class="memdesc:a2ff58729143a63b536fcd06e890b514e inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the object.  <a href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e">More...</a><br /></td></tr>
 <tr class="separator:a2ff58729143a63b536fcd06e890b514e inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e1df40f2eb42af5d40225bd9583f3ce inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#a8e1df40f2eb42af5d40225bd9583f3ce">recreateGraphicsPipeline</a> ()</td></tr>
+<tr class="memdesc:a8e1df40f2eb42af5d40225bd9583f3ce inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recreates the graphics pipeline for the object.  <a href="classChronos_1_1Engine_1_1Object.html#a8e1df40f2eb42af5d40225bd9583f3ce">More...</a><br /></td></tr>
 <tr class="separator:a8e1df40f2eb42af5d40225bd9583f3ce inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ad56d1d3878c6893ffc8205dc8b2ef59e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structChronos_1_1Engine_1_1ShapeParams.html">Chronos::Engine::ShapeParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">params</a></td></tr>
+<tr class="memdesc:ad56d1d3878c6893ffc8205dc8b2ef59e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The parameters that are associated with the shape.  <a href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">More...</a><br /></td></tr>
 <tr class="separator:ad56d1d3878c6893ffc8205dc8b2ef59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb02ef60580acabf980869118658b75f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#afb02ef60580acabf980869118658b75f">indices</a></td></tr>
+<tr class="memdesc:afb02ef60580acabf980869118658b75f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The indices that is used to specify the order of vertices to render.  <a href="classChronos_1_1Engine_1_1Shape.html#afb02ef60580acabf980869118658b75f">More...</a><br /></td></tr>
 <tr class="separator:afb02ef60580acabf980869118658b75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addde6df404d0df0c26463c6a2632f11d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChronos_1_1Engine_1_1Texture.html">Chronos::Engine::Texture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#addde6df404d0df0c26463c6a2632f11d">texture</a></td></tr>
+<tr class="memdesc:addde6df404d0df0c26463c6a2632f11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The texture that is to be used.  <a href="classChronos_1_1Engine_1_1Shape.html#addde6df404d0df0c26463c6a2632f11d">More...</a><br /></td></tr>
 <tr class="separator:addde6df404d0df0c26463c6a2632f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c6adaa961de469fab86fbcd4b723f51"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structChronos_1_1Engine_1_1Vertex.html">Vertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#a1c6adaa961de469fab86fbcd4b723f51">vertices</a></td></tr>
+<tr class="memdesc:a1c6adaa961de469fab86fbcd4b723f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vertices that is used to render the shape.  <a href="classChronos_1_1Engine_1_1Shape.html#a1c6adaa961de469fab86fbcd4b723f51">More...</a><br /></td></tr>
 <tr class="separator:a1c6adaa961de469fab86fbcd4b723f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36e4871f62769b57c89ed654d9cd6e5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChronos_1_1Engine_1_1Buffer.html">Chronos::Engine::Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#a36e4871f62769b57c89ed654d9cd6e5c">vertexBuffer</a></td></tr>
+<tr class="memdesc:a36e4871f62769b57c89ed654d9cd6e5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vertex buffer that is used to store the vertices.  <a href="classChronos_1_1Engine_1_1Shape.html#a36e4871f62769b57c89ed654d9cd6e5c">More...</a><br /></td></tr>
 <tr class="separator:a36e4871f62769b57c89ed654d9cd6e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1bbfbe3423af7f9a23dcf9ccafa2196"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChronos_1_1Engine_1_1Buffer.html">Chronos::Engine::Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#ab1bbfbe3423af7f9a23dcf9ccafa2196">indexBuffer</a></td></tr>
+<tr class="memdesc:ab1bbfbe3423af7f9a23dcf9ccafa2196"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index buffer that is used to store the indices.  <a href="classChronos_1_1Engine_1_1Shape.html#ab1bbfbe3423af7f9a23dcf9ccafa2196">More...</a><br /></td></tr>
 <tr class="separator:ab1bbfbe3423af7f9a23dcf9ccafa2196"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classChronos_1_1Engine_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classChronos_1_1Engine_1_1Object')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classChronos_1_1Engine_1_1Object.html">Chronos::Engine::Object</a></td></tr>
 <tr class="memitem:adb6e0cf994046b58b10f95d59eeef3c3 inherit pub_attribs_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">VkPipeline&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#adb6e0cf994046b58b10f95d59eeef3c3">graphicsPipeline</a></td></tr>
@@ -174,10 +188,13 @@ Private Member Functions</h2></td></tr>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classChronos_1_1Engine_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classChronos_1_1Engine_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classChronos_1_1Engine_1_1Object.html">Chronos::Engine::Object</a></td></tr>
 <tr class="memitem:ac48f4e368fabf6b6f63ef252d600289c inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c">createGraphicsPipeline</a> ()</td></tr>
+<tr class="memdesc:ac48f4e368fabf6b6f63ef252d600289c inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the graphics pipeline for the object.  <a href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c">More...</a><br /></td></tr>
 <tr class="separator:ac48f4e368fabf6b6f63ef252d600289c inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18de9cac248202e004fd97a6628ed14e inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e">createDescriptorPool</a> ()</td></tr>
+<tr class="memdesc:a18de9cac248202e004fd97a6628ed14e inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the Vulkan descriptor pool for the object.  <a href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e">More...</a><br /></td></tr>
 <tr class="separator:a18de9cac248202e004fd97a6628ed14e inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd29a485b52b9004557055f1fe64049e inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e">createDescriptorSetLayout</a> ()</td></tr>
+<tr class="memdesc:abd29a485b52b9004557055f1fe64049e inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the Vulkan descriptor set layout for the object.  <a href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e">More...</a><br /></td></tr>
 <tr class="separator:abd29a485b52b9004557055f1fe64049e inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classChronos_1_1Engine_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classChronos_1_1Engine_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classChronos_1_1Engine_1_1Object.html">Chronos::Engine::Object</a></td></tr>
 <tr class="memitem:a6323a6f9a4c9fefff3d27c34f51f2f59 inherit pro_attribs_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59">vertexShaderPath</a></td></tr>
@@ -202,8 +219,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aa107fe2bc0ae441c79ec522df3a8a16c inherit pro_attribs_classChronos_1_1Engine_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00016">16</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<div class="textblock"><p>Class for creating a shape(triangle, rectangle, etc.). </p>
+<p>This class is used to create a shape(triangle, rectangle, etc.). It is a child of the <a class="el" href="classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects.">Object</a> class. It handles all the vulkan objects needed for rendering the shape. </p>
+
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00021">21</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a08882657c43f97dd7fa17032e101b644"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a08882657c43f97dd7fa17032e101b644">&#9670;&nbsp;</a></span>createDescriptorSets()</h2>
@@ -281,13 +300,13 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00020">device.hpp:20</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a004f17b08fbd33cbcab795376a9ef8a1"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a004f17b08fbd33cbcab795376a9ef8a1">Chronos::Engine::Object::descriptorSetLayout</a></div><div class="ttdeci">VkDescriptorSetLayout descriptorSetLayout</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00046">object.hpp:46</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a203a494524c8c74d52e5d692a2845f8b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">Chronos::Engine::Object::textureSampler</a></div><div class="ttdeci">VkSampler textureSampler</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00044">object.hpp:44</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a5587465d9740b74dbece2415df63fb9f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">Chronos::Engine::Object::descriptorSets</a></div><div class="ttdeci">std::vector&lt; VkDescriptorSet &gt; descriptorSets</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00036">object.hpp:36</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a8bcbdc312c4e8afcd1eb382a530b9fd7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a8bcbdc312c4e8afcd1eb382a530b9fd7">Chronos::Engine::Object::descriptorPool</a></div><div class="ttdeci">VkDescriptorPool descriptorPool</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00047">object.hpp:47</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a9ec42d04a85645aaffe162580da68a29"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">Chronos::Engine::Object::device</a></div><div class="ttdeci">Chronos::Engine::Device * device</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00041">object.hpp:41</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_aa107fe2bc0ae441c79ec522df3a8a16c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">Chronos::Engine::Object::uniformBuffers</a></div><div class="ttdeci">std::vector&lt; Chronos::Engine::UniformBuffer &gt; uniformBuffers</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00055">object.hpp:55</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Shape_html_addde6df404d0df0c26463c6a2632f11d"><div class="ttname"><a href="classChronos_1_1Engine_1_1Shape.html#addde6df404d0df0c26463c6a2632f11d">Chronos::Engine::Shape::texture</a></div><div class="ttdeci">Chronos::Engine::Texture texture</div><div class="ttdef"><b>Definition:</b> <a href="shape_8hpp_source.html#l00028">shape.hpp:28</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a004f17b08fbd33cbcab795376a9ef8a1"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a004f17b08fbd33cbcab795376a9ef8a1">Chronos::Engine::Object::descriptorSetLayout</a></div><div class="ttdeci">VkDescriptorSetLayout descriptorSetLayout</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00097">object.hpp:97</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a203a494524c8c74d52e5d692a2845f8b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">Chronos::Engine::Object::textureSampler</a></div><div class="ttdeci">VkSampler textureSampler</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00095">object.hpp:95</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a5587465d9740b74dbece2415df63fb9f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">Chronos::Engine::Object::descriptorSets</a></div><div class="ttdeci">std::vector&lt; VkDescriptorSet &gt; descriptorSets</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00086">object.hpp:86</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a8bcbdc312c4e8afcd1eb382a530b9fd7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a8bcbdc312c4e8afcd1eb382a530b9fd7">Chronos::Engine::Object::descriptorPool</a></div><div class="ttdeci">VkDescriptorPool descriptorPool</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00098">object.hpp:98</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a9ec42d04a85645aaffe162580da68a29"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">Chronos::Engine::Object::device</a></div><div class="ttdeci">Chronos::Engine::Device * device</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00092">object.hpp:92</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_aa107fe2bc0ae441c79ec522df3a8a16c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">Chronos::Engine::Object::uniformBuffers</a></div><div class="ttdeci">std::vector&lt; Chronos::Engine::UniformBuffer &gt; uniformBuffers</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00124">object.hpp:124</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Shape_html_addde6df404d0df0c26463c6a2632f11d"><div class="ttname"><a href="classChronos_1_1Engine_1_1Shape.html#addde6df404d0df0c26463c6a2632f11d">Chronos::Engine::Shape::texture</a></div><div class="ttdeci">Chronos::Engine::Texture texture</div><div class="ttdoc">The texture that is to be used.</div><div class="ttdef"><b>Definition:</b> <a href="shape_8hpp_source.html#l00071">shape.hpp:71</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_a4e9fa6072f861955b04b663d63eede66"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#a4e9fa6072f861955b04b663d63eede66">Chronos::Engine::Texture::textureImageView</a></div><div class="ttdeci">VkImageView textureImageView</div><div class="ttdoc">The image view for the texture.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8hpp_source.html#l00106">texture.hpp:106</a></div></div>
 <div class="ttc" id="aengine_8hpp_html_a7302e21aaabe341f71d799a7dd3f274f"><div class="ttname"><a href="engine_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a></div><div class="ttdeci">const int MAX_FRAMES_IN_FLIGHT</div><div class="ttdoc">The number of frames in flight.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00023">engine.hpp:23</a></div></div>
 </div><!-- fragment -->
@@ -318,6 +337,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Destroys the shape object and frees the memory. </p>
+<p>This destroys all the vulkan related objects related to this class and frees memory. </p>
+
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="shape_8cpp_source.html#l00029">29</a> of file <a class="el" href="shape_8cpp_source.html">shape.cpp</a>.</p>
@@ -328,9 +350,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a>();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a96c16eb443ecac4400e67d6172effff1"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a96c16eb443ecac4400e67d6172effff1">Chronos::Engine::Buffer::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">Destroys the buffer and frees the memory.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8cpp_source.html#l00027">buffers.cpp:27</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2bdcd3b34fd075835e2a395bd39b09d7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a></div><div class="ttdeci">virtual void destroy()=0</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00169">object.cpp:169</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Shape_html_a36e4871f62769b57c89ed654d9cd6e5c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Shape.html#a36e4871f62769b57c89ed654d9cd6e5c">Chronos::Engine::Shape::vertexBuffer</a></div><div class="ttdeci">Chronos::Engine::Buffer vertexBuffer</div><div class="ttdef"><b>Definition:</b> <a href="shape_8hpp_source.html#l00030">shape.hpp:30</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Shape_html_ab1bbfbe3423af7f9a23dcf9ccafa2196"><div class="ttname"><a href="classChronos_1_1Engine_1_1Shape.html#ab1bbfbe3423af7f9a23dcf9ccafa2196">Chronos::Engine::Shape::indexBuffer</a></div><div class="ttdeci">Chronos::Engine::Buffer indexBuffer</div><div class="ttdef"><b>Definition:</b> <a href="shape_8hpp_source.html#l00031">shape.hpp:31</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2bdcd3b34fd075835e2a395bd39b09d7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a></div><div class="ttdeci">virtual void destroy()=0</div><div class="ttdoc">Destroys the object and releases associated resources.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00169">object.cpp:169</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Shape_html_a36e4871f62769b57c89ed654d9cd6e5c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Shape.html#a36e4871f62769b57c89ed654d9cd6e5c">Chronos::Engine::Shape::vertexBuffer</a></div><div class="ttdeci">Chronos::Engine::Buffer vertexBuffer</div><div class="ttdoc">The vertex buffer that is used to store the vertices.</div><div class="ttdef"><b>Definition:</b> <a href="shape_8hpp_source.html#l00081">shape.hpp:81</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Shape_html_ab1bbfbe3423af7f9a23dcf9ccafa2196"><div class="ttname"><a href="classChronos_1_1Engine_1_1Shape.html#ab1bbfbe3423af7f9a23dcf9ccafa2196">Chronos::Engine::Shape::indexBuffer</a></div><div class="ttdeci">Chronos::Engine::Buffer indexBuffer</div><div class="ttdoc">The index buffer that is used to store the indices.</div><div class="ttdef"><b>Definition:</b> <a href="shape_8hpp_source.html#l00086">shape.hpp:86</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_abea74b812d9b2dacfddfe9b4e51b1a83"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#abea74b812d9b2dacfddfe9b4e51b1a83">Chronos::Engine::Texture::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">Destroy the texture assets.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8cpp_source.html#l00243">texture.cpp:243</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="object_8cpp_source.html#l00169">Chronos::Engine::Object::destroy()</a>.</p>
@@ -339,8 +361,8 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1Shape_a3572cf7a8e38b5d774c997ccb9cfb629_cgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1Shape_a3572cf7a8e38b5d774c997ccb9cfb629_cgraph" alt=""/></div>
 <map name="aclassChronos_1_1Engine_1_1Shape_a3572cf7a8e38b5d774c997ccb9cfb629_cgraph" id="aclassChronos_1_1Engine_1_1Shape_a3572cf7a8e38b5d774c997ccb9cfb629_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,180,47"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7" title=" " alt="" coords="228,5,405,47"/>
+<area shape="rect" title="Destroys the shape object and frees the memory." alt="" coords="5,5,180,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7" title="Destroys the object and releases associated resources." alt="" coords="228,5,405,47"/>
 </map>
 </div>
 
@@ -468,16 +490,16 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span> pipelineAttributes;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html">Chronos::Engine::PipelineAttributes</a></div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00019">object.hpp:19</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a14e0f95045ac8e59a01daab9fbda2b6c"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a14e0f95045ac8e59a01daab9fbda2b6c">Chronos::Engine::PipelineAttributes::topology</a></div><div class="ttdeci">VkPrimitiveTopology topology</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00022">object.hpp:22</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a41fb73c4ce11e598e3bc04701dcf7513"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">Chronos::Engine::PipelineAttributes::colorBlendAttachment</a></div><div class="ttdeci">VkPipelineColorBlendAttachmentState colorBlendAttachment</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00024">object.hpp:24</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a6449ea448af9b4ce79281ff243f9b1cd"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a6449ea448af9b4ce79281ff243f9b1cd">Chronos::Engine::PipelineAttributes::bindingDescriptions</a></div><div class="ttdeci">std::vector&lt; VkVertexInputBindingDescription &gt; bindingDescriptions</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00020">object.hpp:20</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a81aa188b04f6c9af8ea5321e22ebf225"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225">Chronos::Engine::PipelineAttributes::attributeDescriptions</a></div><div class="ttdeci">std::vector&lt; VkVertexInputAttributeDescription &gt; attributeDescriptions</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00021">object.hpp:21</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_aeda2f1f1bedbeca2694b16154ce8bd3d"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#aeda2f1f1bedbeca2694b16154ce8bd3d">Chronos::Engine::PipelineAttributes::frontFace</a></div><div class="ttdeci">VkFrontFace frontFace</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00023">object.hpp:23</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html">Chronos::Engine::PipelineAttributes</a></div><div class="ttdoc">Structure defining attributes required for creating a graphics pipeline.</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00024">object.hpp:24</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a14e0f95045ac8e59a01daab9fbda2b6c"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a14e0f95045ac8e59a01daab9fbda2b6c">Chronos::Engine::PipelineAttributes::topology</a></div><div class="ttdeci">VkPrimitiveTopology topology</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00027">object.hpp:27</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a41fb73c4ce11e598e3bc04701dcf7513"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">Chronos::Engine::PipelineAttributes::colorBlendAttachment</a></div><div class="ttdeci">VkPipelineColorBlendAttachmentState colorBlendAttachment</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00029">object.hpp:29</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a6449ea448af9b4ce79281ff243f9b1cd"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a6449ea448af9b4ce79281ff243f9b1cd">Chronos::Engine::PipelineAttributes::bindingDescriptions</a></div><div class="ttdeci">std::vector&lt; VkVertexInputBindingDescription &gt; bindingDescriptions</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00025">object.hpp:25</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a81aa188b04f6c9af8ea5321e22ebf225"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225">Chronos::Engine::PipelineAttributes::attributeDescriptions</a></div><div class="ttdeci">std::vector&lt; VkVertexInputAttributeDescription &gt; attributeDescriptions</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00026">object.hpp:26</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_aeda2f1f1bedbeca2694b16154ce8bd3d"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#aeda2f1f1bedbeca2694b16154ce8bd3d">Chronos::Engine::PipelineAttributes::frontFace</a></div><div class="ttdeci">VkFrontFace frontFace</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00028">object.hpp:28</a></div></div>
 <div class="ttc" id="astructChronos_1_1Engine_1_1Vertex_html_a9d9238ce68ceb4bd4feef0e1c8afcb98"><div class="ttname"><a href="structChronos_1_1Engine_1_1Vertex.html#a9d9238ce68ceb4bd4feef0e1c8afcb98">Chronos::Engine::Vertex::getBindingDescription</a></div><div class="ttdeci">static VkVertexInputBindingDescription getBindingDescription()</div><div class="ttdoc">Creates a VkVertexInputBindingDescription for the vertex based on the size of the vertex.</div><div class="ttdef"><b>Definition:</b> <a href="Vertex_8hpp_source.html#l00022">Vertex.hpp:22</a></div></div>
 <div class="ttc" id="astructChronos_1_1Engine_1_1Vertex_html_afb3d935087c4dc946aa1ed42e84848e0"><div class="ttname"><a href="structChronos_1_1Engine_1_1Vertex.html#afb3d935087c4dc946aa1ed42e84848e0">Chronos::Engine::Vertex::getAttributeDescriptions</a></div><div class="ttdeci">static std::array&lt; VkVertexInputAttributeDescription, 3 &gt; getAttributeDescriptions()</div><div class="ttdoc">Generates the VkVertexInputAttributeDescription for the vertex based on attributes(pos,...</div><div class="ttdef"><b>Definition:</b> <a href="Vertex_8hpp_source.html#l00036">Vertex.hpp:36</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="object_8hpp_source.html#l00021">Chronos::Engine::PipelineAttributes::attributeDescriptions</a>, <a class="el" href="object_8hpp_source.html#l00020">Chronos::Engine::PipelineAttributes::bindingDescriptions</a>, <a class="el" href="object_8hpp_source.html#l00024">Chronos::Engine::PipelineAttributes::colorBlendAttachment</a>, <a class="el" href="object_8hpp_source.html#l00023">Chronos::Engine::PipelineAttributes::frontFace</a>, <a class="el" href="Vertex_8hpp_source.html#l00036">Chronos::Engine::Vertex::getAttributeDescriptions()</a>, <a class="el" href="Vertex_8hpp_source.html#l00022">Chronos::Engine::Vertex::getBindingDescription()</a>, and <a class="el" href="object_8hpp_source.html#l00022">Chronos::Engine::PipelineAttributes::topology</a>.</p>
+<p class="reference">References <a class="el" href="object_8hpp_source.html#l00026">Chronos::Engine::PipelineAttributes::attributeDescriptions</a>, <a class="el" href="object_8hpp_source.html#l00025">Chronos::Engine::PipelineAttributes::bindingDescriptions</a>, <a class="el" href="object_8hpp_source.html#l00029">Chronos::Engine::PipelineAttributes::colorBlendAttachment</a>, <a class="el" href="object_8hpp_source.html#l00028">Chronos::Engine::PipelineAttributes::frontFace</a>, <a class="el" href="Vertex_8hpp_source.html#l00036">Chronos::Engine::Vertex::getAttributeDescriptions()</a>, <a class="el" href="Vertex_8hpp_source.html#l00022">Chronos::Engine::Vertex::getBindingDescription()</a>, and <a class="el" href="object_8hpp_source.html#l00027">Chronos::Engine::PipelineAttributes::topology</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -558,6 +580,19 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Initializes the shape object and creates the necessary objects. </p>
+<p>Used to create the shape object and create the necessary vulkan objects for rendering the shape.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>The device to use for creating the objects. </td></tr>
+    <tr><td class="paramname">commandPool</td><td>The command pool to create the command buffer on </td></tr>
+    <tr><td class="paramname">swapChain</td><td>The swapchain that is used </td></tr>
+    <tr><td class="paramname">textureSampler</td><td>The texture sampler to use </td></tr>
+    <tr><td class="paramname">texturePath</td><td>The path to the texture(png and jpg supported) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="shape_8cpp_source.html#l00003">3</a> of file <a class="el" href="shape_8cpp_source.html">shape.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59">vertexShaderPath</a> = <span class="stringliteral">&quot;ThirdParty/Chronos/Shaders/vert.spv&quot;</span>;</div>
@@ -584,27 +619,27 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a45958dc37af9a03b85b94445f8f25e0f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">Chronos::Engine::Buffer::size</a></div><div class="ttdeci">VkDeviceSize size</div><div class="ttdoc">The size of the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00053">buffers.hpp:53</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_aa7fa451f423cc9c6f53219258bb8a33d"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d">Chronos::Engine::Buffer::copy</a></div><div class="ttdeci">void copy(void *data, VkCommandPool commandPool)</div><div class="ttdoc">Copies the data to the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8cpp_source.html#l00010">buffers.cpp:10</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_ab14754126e56811cc67254f425780826"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826">Chronos::Engine::Buffer::create</a></div><div class="ttdeci">void create(Chronos::Engine::Device device, VkBufferUsageFlags flags, VkMemoryPropertyFlags properties)</div><div class="ttdoc">This is used to initialize the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8cpp_source.html#l00003">buffers.cpp:3</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2ff58729143a63b536fcd06e890b514e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e">Chronos::Engine::Object::init</a></div><div class="ttdeci">virtual void init(Chronos::Engine::Device *device, VkCommandPool commandPool, Chronos::Engine::SwapChain *swapChain, VkSampler textureSampler, VkRenderPass *renderPass)</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00005">object.cpp:5</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a300ba4549a4e0119cf2fcf0fad24569b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">Chronos::Engine::Object::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00043">object.hpp:43</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a6323a6f9a4c9fefff3d27c34f51f2f59"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59">Chronos::Engine::Object::vertexShaderPath</a></div><div class="ttdeci">std::string vertexShaderPath</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00039">object.hpp:39</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a7cfcd07115e8e58783c5cc40e4575bd8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">Chronos::Engine::Object::swapChain</a></div><div class="ttdeci">Chronos::Engine::SwapChain * swapChain</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00042">object.hpp:42</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_ad017c20cbe79d573325a66621de9963e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#ad017c20cbe79d573325a66621de9963e">Chronos::Engine::Object::fragmentShaderPath</a></div><div class="ttdeci">std::string fragmentShaderPath</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00040">object.hpp:40</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_af8b89f8ed5191515b60219682efba376"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">Chronos::Engine::Object::renderPass</a></div><div class="ttdeci">VkRenderPass * renderPass</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00045">object.hpp:45</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Shape_html_a1c6adaa961de469fab86fbcd4b723f51"><div class="ttname"><a href="classChronos_1_1Engine_1_1Shape.html#a1c6adaa961de469fab86fbcd4b723f51">Chronos::Engine::Shape::vertices</a></div><div class="ttdeci">std::vector&lt; Vertex &gt; vertices</div><div class="ttdef"><b>Definition:</b> <a href="shape_8hpp_source.html#l00029">shape.hpp:29</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Shape_html_afb02ef60580acabf980869118658b75f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Shape.html#afb02ef60580acabf980869118658b75f">Chronos::Engine::Shape::indices</a></div><div class="ttdeci">std::vector&lt; uint16_t &gt; indices</div><div class="ttdef"><b>Definition:</b> <a href="shape_8hpp_source.html#l00027">shape.hpp:27</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2ff58729143a63b536fcd06e890b514e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e">Chronos::Engine::Object::init</a></div><div class="ttdeci">virtual void init(Chronos::Engine::Device *device, VkCommandPool commandPool, Chronos::Engine::SwapChain *swapChain, VkSampler textureSampler, VkRenderPass *renderPass)</div><div class="ttdoc">Initializes the object.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00005">object.cpp:5</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a300ba4549a4e0119cf2fcf0fad24569b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">Chronos::Engine::Object::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00094">object.hpp:94</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a6323a6f9a4c9fefff3d27c34f51f2f59"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59">Chronos::Engine::Object::vertexShaderPath</a></div><div class="ttdeci">std::string vertexShaderPath</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00090">object.hpp:90</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a7cfcd07115e8e58783c5cc40e4575bd8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">Chronos::Engine::Object::swapChain</a></div><div class="ttdeci">Chronos::Engine::SwapChain * swapChain</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00093">object.hpp:93</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_ad017c20cbe79d573325a66621de9963e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#ad017c20cbe79d573325a66621de9963e">Chronos::Engine::Object::fragmentShaderPath</a></div><div class="ttdeci">std::string fragmentShaderPath</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00091">object.hpp:91</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_af8b89f8ed5191515b60219682efba376"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">Chronos::Engine::Object::renderPass</a></div><div class="ttdeci">VkRenderPass * renderPass</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00096">object.hpp:96</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Shape_html_a1c6adaa961de469fab86fbcd4b723f51"><div class="ttname"><a href="classChronos_1_1Engine_1_1Shape.html#a1c6adaa961de469fab86fbcd4b723f51">Chronos::Engine::Shape::vertices</a></div><div class="ttdeci">std::vector&lt; Vertex &gt; vertices</div><div class="ttdoc">The vertices that is used to render the shape.</div><div class="ttdef"><b>Definition:</b> <a href="shape_8hpp_source.html#l00076">shape.hpp:76</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Shape_html_afb02ef60580acabf980869118658b75f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Shape.html#afb02ef60580acabf980869118658b75f">Chronos::Engine::Shape::indices</a></div><div class="ttdeci">std::vector&lt; uint16_t &gt; indices</div><div class="ttdoc">The indices that is used to specify the order of vertices to render.</div><div class="ttdef"><b>Definition:</b> <a href="shape_8hpp_source.html#l00066">shape.hpp:66</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_a116603930df574fe8ae4844e23b54ae4"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4">Chronos::Engine::Texture::create</a></div><div class="ttdeci">void create(Chronos::Engine::Device device, VkCommandPool commandPool, std::string texturePath)</div><div class="ttdoc">Create the texture by loading the texture from the given path. Only supports jpg and png images.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8cpp_source.html#l00046">texture.cpp:46</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="object_8hpp_source.html#l00043">Chronos::Engine::Object::commandPool</a>, <a class="el" href="buffers_8cpp_source.html#l00010">Chronos::Engine::Buffer::copy()</a>, <a class="el" href="buffers_8cpp_source.html#l00003">Chronos::Engine::Buffer::create()</a>, <a class="el" href="texture_8cpp_source.html#l00046">Chronos::Engine::Texture::create()</a>, <a class="el" href="object_8hpp_source.html#l00041">Chronos::Engine::Object::device</a>, <a class="el" href="object_8hpp_source.html#l00040">Chronos::Engine::Object::fragmentShaderPath</a>, <a class="el" href="shape_8hpp_source.html#l00031">indexBuffer</a>, <a class="el" href="shape_8hpp_source.html#l00027">indices</a>, <a class="el" href="object_8cpp_source.html#l00005">Chronos::Engine::Object::init()</a>, <a class="el" href="object_8hpp_source.html#l00045">Chronos::Engine::Object::renderPass</a>, <a class="el" href="buffers_8hpp_source.html#l00053">Chronos::Engine::Buffer::size</a>, <a class="el" href="object_8hpp_source.html#l00042">Chronos::Engine::Object::swapChain</a>, <a class="el" href="shape_8hpp_source.html#l00028">texture</a>, <a class="el" href="object_8hpp_source.html#l00044">Chronos::Engine::Object::textureSampler</a>, <a class="el" href="shape_8hpp_source.html#l00030">vertexBuffer</a>, <a class="el" href="object_8hpp_source.html#l00039">Chronos::Engine::Object::vertexShaderPath</a>, and <a class="el" href="shape_8hpp_source.html#l00029">vertices</a>.</p>
+<p class="reference">References <a class="el" href="object_8hpp_source.html#l00094">Chronos::Engine::Object::commandPool</a>, <a class="el" href="buffers_8cpp_source.html#l00010">Chronos::Engine::Buffer::copy()</a>, <a class="el" href="buffers_8cpp_source.html#l00003">Chronos::Engine::Buffer::create()</a>, <a class="el" href="texture_8cpp_source.html#l00046">Chronos::Engine::Texture::create()</a>, <a class="el" href="object_8hpp_source.html#l00092">Chronos::Engine::Object::device</a>, <a class="el" href="object_8hpp_source.html#l00091">Chronos::Engine::Object::fragmentShaderPath</a>, <a class="el" href="shape_8hpp_source.html#l00086">indexBuffer</a>, <a class="el" href="shape_8hpp_source.html#l00066">indices</a>, <a class="el" href="object_8cpp_source.html#l00005">Chronos::Engine::Object::init()</a>, <a class="el" href="object_8hpp_source.html#l00096">Chronos::Engine::Object::renderPass</a>, <a class="el" href="buffers_8hpp_source.html#l00053">Chronos::Engine::Buffer::size</a>, <a class="el" href="object_8hpp_source.html#l00093">Chronos::Engine::Object::swapChain</a>, <a class="el" href="shape_8hpp_source.html#l00071">texture</a>, <a class="el" href="object_8hpp_source.html#l00095">Chronos::Engine::Object::textureSampler</a>, <a class="el" href="shape_8hpp_source.html#l00081">vertexBuffer</a>, <a class="el" href="object_8hpp_source.html#l00090">Chronos::Engine::Object::vertexShaderPath</a>, and <a class="el" href="shape_8hpp_source.html#l00076">vertices</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1Shape_ac46ccb54f90b8cb45740b826d3100089_cgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1Shape_ac46ccb54f90b8cb45740b826d3100089_cgraph" alt=""/></div>
 <map name="aclassChronos_1_1Engine_1_1Shape_ac46ccb54f90b8cb45740b826d3100089_cgraph" id="aclassChronos_1_1Engine_1_1Shape_ac46ccb54f90b8cb45740b826d3100089_cgraph">
-<area shape="rect" title=" " alt="" coords="5,214,180,255"/>
+<area shape="rect" title="Initializes the shape object and creates the necessary objects." alt="" coords="5,214,180,255"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="232,115,407,157"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826" title="This is used to initialize the buffer." alt="" coords="232,246,407,287"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="228,181,411,222"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e" title=" " alt="" coords="231,406,408,447"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e" title="Initializes the object." alt="" coords="231,406,408,447"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675" title="Copies data from one buffer to another." alt="" coords="481,5,686,32"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a" title="Creates a buffer of a given size, usage and properties." alt="" coords="476,239,691,265"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="772,93,983,134"/>
@@ -614,10 +649,10 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a7018d1eaf2dfaf4c373269fcaa344a46" title="For a given image dimensons, it creates a VkImage and VkDeviceMemory for the image." alt="" coords="475,188,692,215"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a34457a6d2cac8f2770ffbaf52b3b2ee3" title="Create a VkImageView for a given VkImage." alt="" coords="459,289,708,316"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a486e04f821153409c6c7d0ab3b3e89b4" title="Transiton a VkImage from one layout to another." alt="" coords="485,57,682,98"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e" title=" " alt="" coords="495,471,672,513"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e" title=" " alt="" coords="482,537,685,578"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e" title="Creates the Vulkan descriptor pool for the object." alt="" coords="495,471,672,513"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e" title="Creates the Vulkan descriptor set layout for the object." alt="" coords="482,537,685,578"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Object.html#adf7e359418ad5653b9590645282aee1e" title=" " alt="" coords="495,341,672,382"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c" title=" " alt="" coords="493,406,673,447"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c" title="Creates the graphics pipeline for the object." alt="" coords="493,406,673,447"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a78d48217937b348633f1184b862e0312" title="Creates a shader module from given shader(SPIV) code." alt="" coords="767,435,988,477"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#af002a6ceca11bcbaf38e8df34b47b966" title="Returns the content of a shader file." alt="" coords="784,384,971,411"/>
 </map>
@@ -649,6 +684,15 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Updates the shape object for the current frame. </p>
+<p>This function is used to update the shape object for the current frame. It is called by the <code><a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html" title="Manages objects within the Chronos::Engine namespace.">ObjectManager</a></code> class. It does this by updating the uniform buffer.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentFrame</td><td>The current frame number to render to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#aa32fe5592512c1fa8534aed8cb2797ef">Chronos::Engine::Object</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="shape_8cpp_source.html#l00089">89</a> of file <a class="el" href="shape_8cpp_source.html">shape.cpp</a>.</p>
@@ -657,7 +701,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">params</a>.<a class="code" href="structChronos_1_1Engine_1_1ShapeParams.html#a4da73b3bb2728f4cf1a92c9fa7636d9e">y</a>, <a class="code" href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">params</a>.<a class="code" href="structChronos_1_1Engine_1_1ShapeParams.html#afb1a433eba12e787210ac28115f8039b">rotation</a>, <a class="code" href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">params</a>.<a class="code" href="structChronos_1_1Engine_1_1ShapeParams.html#a16905d63f7a7f9aa2227bff9a54850d5">xSize</a>,</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">params</a>.<a class="code" href="structChronos_1_1Engine_1_1ShapeParams.html#af1266198e3a2d704d6fa646ce3f43e85">ySize</a>);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Shape_html_ad56d1d3878c6893ffc8205dc8b2ef59e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">Chronos::Engine::Shape::params</a></div><div class="ttdeci">Chronos::Engine::ShapeParams params</div><div class="ttdef"><b>Definition:</b> <a href="shape_8hpp_source.html#l00019">shape.hpp:19</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Shape_html_ad56d1d3878c6893ffc8205dc8b2ef59e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">Chronos::Engine::Shape::params</a></div><div class="ttdeci">Chronos::Engine::ShapeParams params</div><div class="ttdoc">The parameters that are associated with the shape.</div><div class="ttdef"><b>Definition:</b> <a href="shape_8hpp_source.html#l00028">shape.hpp:28</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_a10893a5577243552e6d64875e1167a63"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">Chronos::Engine::SwapChain::swapChainExtent</a></div><div class="ttdeci">VkExtent2D swapChainExtent</div><div class="ttdoc">Dimenisons of the current swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8hpp_source.html#l00133">swapchain.hpp:133</a></div></div>
 <div class="ttc" id="astructChronos_1_1Engine_1_1ShapeParams_html_a16905d63f7a7f9aa2227bff9a54850d5"><div class="ttname"><a href="structChronos_1_1Engine_1_1ShapeParams.html#a16905d63f7a7f9aa2227bff9a54850d5">Chronos::Engine::ShapeParams::xSize</a></div><div class="ttdeci">float xSize</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00031">structs.hpp:31</a></div></div>
 <div class="ttc" id="astructChronos_1_1Engine_1_1ShapeParams_html_a4da73b3bb2728f4cf1a92c9fa7636d9e"><div class="ttname"><a href="structChronos_1_1Engine_1_1ShapeParams.html#a4da73b3bb2728f4cf1a92c9fa7636d9e">Chronos::Engine::ShapeParams::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00029">structs.hpp:29</a></div></div>
@@ -680,7 +724,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00031">31</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<p>The index buffer that is used to store the indices. </p>
+
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00086">86</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
 
 </div>
 </div>
@@ -696,7 +742,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00027">27</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<p>The indices that is used to specify the order of vertices to render. </p>
+
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00066">66</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
 
 </div>
 </div>
@@ -712,7 +760,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00019">19</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<p>The parameters that are associated with the shape. </p>
+
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00028">28</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
 
 </div>
 </div>
@@ -728,7 +778,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00028">28</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<p>The texture that is to be used. </p>
+
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00071">71</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
 
 </div>
 </div>
@@ -744,7 +796,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00030">30</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<p>The vertex buffer that is used to store the vertices. </p>
+
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00081">81</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
 
 </div>
 </div>
@@ -760,7 +814,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00029">29</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<p>The vertices that is used to render the shape. </p>
+
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00076">76</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
 
 </div>
 </div>

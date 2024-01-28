@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['loadanimfile_465',['loadAnimFile',['../namespaceChronos_1_1Animation.html#a219b081ea9a377c5df6149b2158100f0',1,'Chronos::Animation']]],
-  ['loadanimtree_466',['loadAnimTree',['../namespaceChronos_1_1Animation.html#a2832080f1e4d54f456fd11d9765f8a1f',1,'Chronos::Animation']]]
+  ['manager_399',['Manager',['../classChronos_1_1Manager_1_1Manager.html#a0a100e214d7647f355e7c313b23674c2',1,'Chronos::Manager::Manager']]]
 ];

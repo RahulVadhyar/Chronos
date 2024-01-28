@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['pickphysicaldevice_469',['pickPhysicalDevice',['../classChronos_1_1Engine_1_1Device.html#a50c43c6576d56f35473f2240d2f3bf59',1,'Chronos::Engine::Device']]],
-  ['populatedebugmessengercreateinfo_470',['populateDebugMessengerCreateInfo',['../namespaceChronos_1_1Engine.html#a68f7436439ca126c4a4d8a639c8ffdf1',1,'Chronos::Engine']]]
+  ['queryswapchainsupport_402',['querySwapChainSupport',['../namespaceChronos_1_1Engine.html#a76f8a7e2a71632ea17aacab0fb642fba',1,'Chronos::Engine']]]
 ];

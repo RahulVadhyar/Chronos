@@ -1,8 +1,5 @@
 var hierarchy =
 [
-    [ "Chronos::Animation::AnimNode", "structChronos_1_1Animation_1_1AnimNode.html", null ],
-    [ "Chronos::Animation::AnimShapeAttributes", "structChronos_1_1Animation_1_1AnimShapeAttributes.html", null ],
-    [ "Chronos::Animation::AnimTree", "classChronos_1_1Animation_1_1AnimTree.html", null ],
     [ "Chronos::Engine::Buffer", "classChronos_1_1Engine_1_1Buffer.html", [
       [ "Chronos::Engine::UniformBuffer", "classChronos_1_1Engine_1_1UniformBuffer.html", null ]
     ] ],
@@ -31,11 +28,6 @@ var hierarchy =
     [ "Chronos::Engine::ShapeParams", "structChronos_1_1Engine_1_1ShapeParams.html", null ],
     [ "Chronos::Engine::SwapChain", "classChronos_1_1Engine_1_1SwapChain.html", null ],
     [ "Chronos::Engine::SwapChainSupportDetails", "structChronos_1_1Engine_1_1SwapChainSupportDetails.html", null ],
-    [ "testing::Test", null, [
-      [ "GeneralAPITest", "classGeneralAPITest.html", null ],
-      [ "ShapeAPITest", "classShapeAPITest.html", null ],
-      [ "TextAPITest", "classTextAPITest.html", null ]
-    ] ],
     [ "Chronos::Manager::Text", "structChronos_1_1Manager_1_1Text.html", null ],
     [ "Chronos::Engine::TextParams", "structChronos_1_1Engine_1_1TextParams.html", null ],
     [ "Chronos::Engine::Texture", "classChronos_1_1Engine_1_1Texture.html", null ],

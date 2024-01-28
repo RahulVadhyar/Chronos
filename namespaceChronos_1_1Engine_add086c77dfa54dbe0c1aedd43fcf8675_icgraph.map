@@ -1,5 +1,5 @@
 <map id="Chronos::Engine::copyBuffer" name="Chronos::Engine::copyBuffer">
 <area shape="rect" id="node1" title="Copies data from one buffer to another." alt="" coords="451,13,656,39"/>
 <area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="228,5,403,47"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Shape.html#ac46ccb54f90b8cb45740b826d3100089" title=" " alt="" coords="5,5,180,47"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Shape.html#ac46ccb54f90b8cb45740b826d3100089" title="Initializes the shape object and creates the necessary objects." alt="" coords="5,5,180,47"/>
 </map>

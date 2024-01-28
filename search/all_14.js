@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['width_293',['width',['../classChronos_1_1Engine_1_1Engine.html#ae79484eb3130b4251c2fc43179fac68c',1,'Chronos::Engine::Engine']]],
-  ['window_294',['window',['../classChronos_1_1Editor_1_1EditorRenderer.html#adde0f6b4557e706d7dbf4c3b7ecc099e',1,'Chronos::Editor::EditorRenderer::window()'],['../classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642',1,'Chronos::Engine::Engine::window()'],['../classChronos_1_1Engine_1_1SwapChain.html#ab319157d8020fdce9f8f4d5640be3786',1,'Chronos::Engine::SwapChain::window()']]],
-  ['windowheight_295',['WindowHeight',['../structChronos_1_1Manager_1_1Initializer.html#a5b4aae219fd3a1074b7fc164a5eb084e',1,'Chronos::Manager::Initializer']]],
-  ['windowwidth_296',['WindowWidth',['../structChronos_1_1Manager_1_1Initializer.html#a6e5b05085029f176abc15e6338217dbc',1,'Chronos::Manager::Initializer']]],
-  ['working_2emd_297',['Working.md',['../Working_8md.html',1,'']]]
+  ['x_256',['x',['../structChronos_1_1Manager_1_1Text.html#ab867e22960ef531c03cd9dda1a5686c2',1,'Chronos::Manager::Text::x()'],['../structChronos_1_1Engine_1_1ShapeParams.html#ab9efbf466f91ebfc7882b222fa728a36',1,'Chronos::Engine::ShapeParams::x()'],['../structChronos_1_1Engine_1_1TextParams.html#a20ab8cb7e56adb78d8e8c38a0ae8ce9b',1,'Chronos::Engine::TextParams::x()']]],
+  ['xsize_257',['xSize',['../structChronos_1_1Engine_1_1ShapeParams.html#a16905d63f7a7f9aa2227bff9a54850d5',1,'Chronos::Engine::ShapeParams']]]
 ];

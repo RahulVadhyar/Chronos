@@ -95,14 +95,17 @@ $(document).ready(function(){initNavTree('classChronos_1_1Engine_1_1Font.html','
 </div><!--header-->
 <div class="contents">
 
+<p>Class for creating a font object for rendering text.  
+ <a href="classChronos_1_1Engine_1_1Font.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="font_8hpp_source.html">font.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Chronos::Engine::Font:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1Font__inherit__graph.png" border="0" usemap="#aChronos_1_1Engine_1_1Font_inherit__map" alt="Inheritance graph"/></div>
 <map name="aChronos_1_1Engine_1_1Font_inherit__map" id="aChronos_1_1Engine_1_1Font_inherit__map">
-<area shape="rect" title=" " alt="" coords="13,80,175,107"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html" title=" " alt="" coords="5,5,183,32"/>
+<area shape="rect" title="Class for creating a font object for rendering text." alt="" coords="13,80,175,107"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects." alt="" coords="5,5,183,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -110,38 +113,47 @@ Collaboration diagram for Chronos::Engine::Font:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1Font__coll__graph.png" border="0" usemap="#aChronos_1_1Engine_1_1Font_coll__map" alt="Collaboration graph"/></div>
 <map name="aChronos_1_1Engine_1_1Font_coll__map" id="aChronos_1_1Engine_1_1Font_coll__map">
-<area shape="rect" title=" " alt="" coords="218,285,380,312"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html" title=" " alt="" coords="54,196,232,223"/>
+<area shape="rect" title="Class for creating a font object for rendering text." alt="" coords="218,285,380,312"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects." alt="" coords="54,196,232,223"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="86,5,266,32"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="73,95,280,121"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Texture.html" title="This class holds the Vulkan data and objects needed for a texture." alt="" coords="226,145,409,172"/>
-<area shape="rect" href="structChronos_1_1Engine_1_1TextParams.html" title=" " alt="" coords="402,196,612,223"/>
+<area shape="rect" href="structChronos_1_1Engine_1_1TextParams.html" title="Parameters for rendering text." alt="" coords="402,196,612,223"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a13070e7a8e19d94a2889f11788214104"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#a13070e7a8e19d94a2889f11788214104">init</a> (<a class="el" href="classChronos_1_1Engine_1_1Device.html">Chronos::Engine::Device</a> *<a class="el" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>, VkCommandPool <a class="el" href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">commandPool</a>, <a class="el" href="classChronos_1_1Engine_1_1SwapChain.html">Chronos::Engine::SwapChain</a> *<a class="el" href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">swapChain</a>, VkSampler <a class="el" href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">textureSampler</a>, VkRenderPass *<a class="el" href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">renderPass</a>)</td></tr>
+<tr class="memdesc:a13070e7a8e19d94a2889f11788214104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the font object and creates the necessary objects.  <a href="classChronos_1_1Engine_1_1Font.html#a13070e7a8e19d94a2889f11788214104">More...</a><br /></td></tr>
 <tr class="separator:a13070e7a8e19d94a2889f11788214104"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a622f4d89d292be4c0d1c034c54a937b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#a622f4d89d292be4c0d1c034c54a937b5">destroy</a> ()</td></tr>
+<tr class="memdesc:a622f4d89d292be4c0d1c034c54a937b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the font object and frees the memory.  <a href="classChronos_1_1Engine_1_1Font.html#a622f4d89d292be4c0d1c034c54a937b5">More...</a><br /></td></tr>
 <tr class="separator:a622f4d89d292be4c0d1c034c54a937b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31883509de2c5cc2c94fcbd2dfb73bbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#a31883509de2c5cc2c94fcbd2dfb73bbc">clear</a> ()</td></tr>
+<tr class="memdesc:a31883509de2c5cc2c94fcbd2dfb73bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the text stored in the font object.  <a href="classChronos_1_1Engine_1_1Font.html#a31883509de2c5cc2c94fcbd2dfb73bbc">More...</a><br /></td></tr>
 <tr class="separator:a31883509de2c5cc2c94fcbd2dfb73bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7150338ed658472405c600aa6662cfe8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#a7150338ed658472405c600aa6662cfe8">render</a> (uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])</td></tr>
+<tr class="memdesc:a7150338ed658472405c600aa6662cfe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Records the commands needed for rendering the text .  <a href="classChronos_1_1Engine_1_1Font.html#a7150338ed658472405c600aa6662cfe8">More...</a><br /></td></tr>
 <tr class="separator:a7150338ed658472405c600aa6662cfe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afce2967d505a38748aefead513a4cf07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#afce2967d505a38748aefead513a4cf07">update</a> (uint32_t currentFrame)</td></tr>
+<tr class="memdesc:afce2967d505a38748aefead513a4cf07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the attributes(like position, color, etc) of the text.  <a href="classChronos_1_1Engine_1_1Font.html#afce2967d505a38748aefead513a4cf07">More...</a><br /></td></tr>
 <tr class="separator:afce2967d505a38748aefead513a4cf07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classChronos_1_1Engine_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classChronos_1_1Engine_1_1Object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classChronos_1_1Engine_1_1Object.html">Chronos::Engine::Object</a></td></tr>
 <tr class="memitem:a8e1df40f2eb42af5d40225bd9583f3ce inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#a8e1df40f2eb42af5d40225bd9583f3ce">recreateGraphicsPipeline</a> ()</td></tr>
+<tr class="memdesc:a8e1df40f2eb42af5d40225bd9583f3ce inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recreates the graphics pipeline for the object.  <a href="classChronos_1_1Engine_1_1Object.html#a8e1df40f2eb42af5d40225bd9583f3ce">More...</a><br /></td></tr>
 <tr class="separator:a8e1df40f2eb42af5d40225bd9583f3ce inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a47e461992339512491429026b5072e9c"><td class="memItemLeft" align="right" valign="top">VkBuffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#a47e461992339512491429026b5072e9c">vertexBuffer</a></td></tr>
+<tr class="memdesc:a47e461992339512491429026b5072e9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vertices of each character used for rendering.  <a href="classChronos_1_1Engine_1_1Font.html#a47e461992339512491429026b5072e9c">More...</a><br /></td></tr>
 <tr class="separator:a47e461992339512491429026b5072e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad60cb1b2c30dddeefead2e041724b461"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#ad60cb1b2c30dddeefead2e041724b461">numLetters</a></td></tr>
+<tr class="memdesc:ad60cb1b2c30dddeefead2e041724b461"><td class="mdescLeft">&#160;</td><td class="mdescRight">The total number of letters to render.  <a href="classChronos_1_1Engine_1_1Font.html#ad60cb1b2c30dddeefead2e041724b461">More...</a><br /></td></tr>
 <tr class="separator:ad60cb1b2c30dddeefead2e041724b461"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8731cc4d9297305f98b501a3b1cb104b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structChronos_1_1Engine_1_1TextParams.html">Chronos::Engine::TextParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#a8731cc4d9297305f98b501a3b1cb104b">params</a></td></tr>
+<tr class="memdesc:a8731cc4d9297305f98b501a3b1cb104b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Various parameters of the text that are set by the user.  <a href="classChronos_1_1Engine_1_1Font.html#a8731cc4d9297305f98b501a3b1cb104b">More...</a><br /></td></tr>
 <tr class="separator:a8731cc4d9297305f98b501a3b1cb104b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classChronos_1_1Engine_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classChronos_1_1Engine_1_1Object')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classChronos_1_1Engine_1_1Object.html">Chronos::Engine::Object</a></td></tr>
 <tr class="memitem:adb6e0cf994046b58b10f95d59eeef3c3 inherit pub_attribs_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">VkPipeline&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#adb6e0cf994046b58b10f95d59eeef3c3">graphicsPipeline</a></td></tr>
@@ -154,23 +166,31 @@ Public Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aaec3c08f035d89ae915d45c16f046585"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#aaec3c08f035d89ae915d45c16f046585">createDescriptorSets</a> ()</td></tr>
+<tr class="memdesc:aaec3c08f035d89ae915d45c16f046585"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the descriptor sets needed for rendering the text.  <a href="classChronos_1_1Engine_1_1Font.html#aaec3c08f035d89ae915d45c16f046585">More...</a><br /></td></tr>
 <tr class="separator:aaec3c08f035d89ae915d45c16f046585"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d4d6589be67da775cc985fb9a1e3e90"><td class="memItemLeft" align="right" valign="top">std::vector&lt; VkDescriptorType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#a9d4d6589be67da775cc985fb9a1e3e90">getDescriptorTypes</a> ()</td></tr>
+<tr class="memdesc:a9d4d6589be67da775cc985fb9a1e3e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the descriptor types needed for rendering the text.  <a href="classChronos_1_1Engine_1_1Font.html#a9d4d6589be67da775cc985fb9a1e3e90">More...</a><br /></td></tr>
 <tr class="separator:a9d4d6589be67da775cc985fb9a1e3e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f7ededdff2aa9c1d40cb8b65d469270"><td class="memItemLeft" align="right" valign="top">std::vector&lt; VkShaderStageFlagBits &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#a8f7ededdff2aa9c1d40cb8b65d469270">getDescriptorStages</a> ()</td></tr>
+<tr class="memdesc:a8f7ededdff2aa9c1d40cb8b65d469270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the descriptor stages in which the descriptor sets are used.  <a href="classChronos_1_1Engine_1_1Font.html#a8f7ededdff2aa9c1d40cb8b65d469270">More...</a><br /></td></tr>
 <tr class="separator:a8f7ededdff2aa9c1d40cb8b65d469270"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32ccfec5709b34c441662debbaa6716f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structChronos_1_1Engine_1_1PipelineAttributes.html">PipelineAttributes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#a32ccfec5709b34c441662debbaa6716f">getPipelineAttributes</a> ()</td></tr>
+<tr class="memdesc:a32ccfec5709b34c441662debbaa6716f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the pipeline attributes that are set for the graphics pipeline.  <a href="classChronos_1_1Engine_1_1Font.html#a32ccfec5709b34c441662debbaa6716f">More...</a><br /></td></tr>
 <tr class="separator:a32ccfec5709b34c441662debbaa6716f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac768671cd27c3b549f585a8d1b763e5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#ac768671cd27c3b549f585a8d1b763e5a">updateBuffer</a> ()</td></tr>
+<tr class="memdesc:ac768671cd27c3b549f585a8d1b763e5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the buffer with the new text.  <a href="classChronos_1_1Engine_1_1Font.html#ac768671cd27c3b549f585a8d1b763e5a">More...</a><br /></td></tr>
 <tr class="separator:ac768671cd27c3b549f585a8d1b763e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aa35ecc6659a00191b7dc78d5d250d458"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#aa35ecc6659a00191b7dc78d5d250d458">maxTextLength</a> = 2048</td></tr>
+<tr class="memdesc:aa35ecc6659a00191b7dc78d5d250d458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of characters that can be rendered.  <a href="classChronos_1_1Engine_1_1Font.html#aa35ecc6659a00191b7dc78d5d250d458">More...</a><br /></td></tr>
 <tr class="separator:aa35ecc6659a00191b7dc78d5d250d458"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a811e3f2a63a14c264c5f2d1503cd0e87"><td class="memItemLeft" align="right" valign="top">stb_fontchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#a811e3f2a63a14c264c5f2d1503cd0e87">stbFontData</a> [STB_FONT_consolas_24_latin1_NUM_CHARS]</td></tr>
+<tr class="memdesc:a811e3f2a63a14c264c5f2d1503cd0e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">The texture atlas that contains all the characters in the font.  <a href="classChronos_1_1Engine_1_1Font.html#a811e3f2a63a14c264c5f2d1503cd0e87">More...</a><br /></td></tr>
 <tr class="separator:a811e3f2a63a14c264c5f2d1503cd0e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b0a5af9ac45847c26338e56e48adc24"><td class="memItemLeft" align="right" valign="top">VkDeviceMemory&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#a0b0a5af9ac45847c26338e56e48adc24">vertexBufferMemory</a></td></tr>
+<tr class="memdesc:a0b0a5af9ac45847c26338e56e48adc24"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vertex buffer memory.  <a href="classChronos_1_1Engine_1_1Font.html#a0b0a5af9ac45847c26338e56e48adc24">More...</a><br /></td></tr>
 <tr class="separator:a0b0a5af9ac45847c26338e56e48adc24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a646db66702a5893cbb1d7f0e10dec221"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChronos_1_1Engine_1_1Texture.html">Chronos::Engine::Texture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Font.html#a646db66702a5893cbb1d7f0e10dec221">fontTexture</a></td></tr>
 <tr class="separator:a646db66702a5893cbb1d7f0e10dec221"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,10 +201,13 @@ Private Attributes</h2></td></tr>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classChronos_1_1Engine_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classChronos_1_1Engine_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classChronos_1_1Engine_1_1Object.html">Chronos::Engine::Object</a></td></tr>
 <tr class="memitem:ac48f4e368fabf6b6f63ef252d600289c inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c">createGraphicsPipeline</a> ()</td></tr>
+<tr class="memdesc:ac48f4e368fabf6b6f63ef252d600289c inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the graphics pipeline for the object.  <a href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c">More...</a><br /></td></tr>
 <tr class="separator:ac48f4e368fabf6b6f63ef252d600289c inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18de9cac248202e004fd97a6628ed14e inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e">createDescriptorPool</a> ()</td></tr>
+<tr class="memdesc:a18de9cac248202e004fd97a6628ed14e inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the Vulkan descriptor pool for the object.  <a href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e">More...</a><br /></td></tr>
 <tr class="separator:a18de9cac248202e004fd97a6628ed14e inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd29a485b52b9004557055f1fe64049e inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e">createDescriptorSetLayout</a> ()</td></tr>
+<tr class="memdesc:abd29a485b52b9004557055f1fe64049e inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the Vulkan descriptor set layout for the object.  <a href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e">More...</a><br /></td></tr>
 <tr class="separator:abd29a485b52b9004557055f1fe64049e inherit pro_methods_classChronos_1_1Engine_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classChronos_1_1Engine_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classChronos_1_1Engine_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classChronos_1_1Engine_1_1Object.html">Chronos::Engine::Object</a></td></tr>
 <tr class="memitem:a6323a6f9a4c9fefff3d27c34f51f2f59 inherit pro_attribs_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59">vertexShaderPath</a></td></tr>
@@ -209,8 +232,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aa107fe2bc0ae441c79ec522df3a8a16c inherit pro_attribs_classChronos_1_1Engine_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00006">6</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
+<div class="textblock"><p>Class for creating a font object for rendering text. </p>
+<p>For rendering text in vulkan, we need a bunch of setup and objects. It is also a very complex process. This class handles this process and abstracts this complex process into a simple class with simple methods that can be used for rendering text.</p>
+<p>The way the test is rendered is by creating a texture atlas. This is a texture that contains all the characters in the font. This texture is then used to render the text. The text is rendered by creating a rectangle for each character and then rendering it.</p>
+<p>This class is not meant to be directly used, but instead to be used by the <code>FontManager</code> class. That will handle the creation and destruction of the font object, along with any updates needed. </p>
+
+<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00022">22</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a31883509de2c5cc2c94fcbd2dfb73bbc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a31883509de2c5cc2c94fcbd2dfb73bbc">&#9670;&nbsp;</a></span>clear()</h2>
@@ -227,6 +254,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Clears the text stored in the font object. </p>
+<p>Used for resetting the text stored in the font object. </p>
+
 <p class="definition">Definition at line <a class="el" href="font_8cpp_source.html#l00216">216</a> of file <a class="el" href="font_8cpp_source.html">font.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                             {</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">if</span> (vkMapMemory(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Font.html#a0b0a5af9ac45847c26338e56e48adc24">vertexBufferMemory</a>, 0, VK_WHOLE_SIZE, 0,</div>
@@ -241,10 +271,10 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Font.html#a4c4db1b13a2c986f433d115a839b4081">mappedMemory</a> = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00020">device.hpp:20</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_a0b0a5af9ac45847c26338e56e48adc24"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#a0b0a5af9ac45847c26338e56e48adc24">Chronos::Engine::Font::vertexBufferMemory</a></div><div class="ttdeci">VkDeviceMemory vertexBufferMemory</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00026">font.hpp:26</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_a4c4db1b13a2c986f433d115a839b4081"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#a4c4db1b13a2c986f433d115a839b4081">Chronos::Engine::Font::mappedMemory</a></div><div class="ttdeci">glm::vec4 * mappedMemory</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00029">font.hpp:29</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_ad60cb1b2c30dddeefead2e041724b461"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#ad60cb1b2c30dddeefead2e041724b461">Chronos::Engine::Font::numLetters</a></div><div class="ttdeci">uint32_t numLetters</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00015">font.hpp:15</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a9ec42d04a85645aaffe162580da68a29"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">Chronos::Engine::Object::device</a></div><div class="ttdeci">Chronos::Engine::Device * device</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00041">object.hpp:41</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_a0b0a5af9ac45847c26338e56e48adc24"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#a0b0a5af9ac45847c26338e56e48adc24">Chronos::Engine::Font::vertexBufferMemory</a></div><div class="ttdeci">VkDeviceMemory vertexBufferMemory</div><div class="ttdoc">The vertex buffer memory.</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00127">font.hpp:127</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_a4c4db1b13a2c986f433d115a839b4081"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#a4c4db1b13a2c986f433d115a839b4081">Chronos::Engine::Font::mappedMemory</a></div><div class="ttdeci">glm::vec4 * mappedMemory</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00137">font.hpp:137</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_ad60cb1b2c30dddeefead2e041724b461"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#ad60cb1b2c30dddeefead2e041724b461">Chronos::Engine::Font::numLetters</a></div><div class="ttdeci">uint32_t numLetters</div><div class="ttdoc">The total number of letters to render.</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00079">font.hpp:79</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a9ec42d04a85645aaffe162580da68a29"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">Chronos::Engine::Object::device</a></div><div class="ttdeci">Chronos::Engine::Device * device</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00092">object.hpp:92</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -270,6 +300,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates the descriptor sets needed for rendering the text. </p>
+<p>This function is used to create the descriptor sets needed for rendering the text. The descriptor sets contain information about the texture sampler and the uniform buffer. </p>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#adf7e359418ad5653b9590645282aee1e">Chronos::Engine::Object</a>.</p>
 
@@ -325,12 +358,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_a646db66702a5893cbb1d7f0e10dec221"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#a646db66702a5893cbb1d7f0e10dec221">Chronos::Engine::Font::fontTexture</a></div><div class="ttdeci">Chronos::Engine::Texture fontTexture</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00028">font.hpp:28</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a004f17b08fbd33cbcab795376a9ef8a1"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a004f17b08fbd33cbcab795376a9ef8a1">Chronos::Engine::Object::descriptorSetLayout</a></div><div class="ttdeci">VkDescriptorSetLayout descriptorSetLayout</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00046">object.hpp:46</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a203a494524c8c74d52e5d692a2845f8b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">Chronos::Engine::Object::textureSampler</a></div><div class="ttdeci">VkSampler textureSampler</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00044">object.hpp:44</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a5587465d9740b74dbece2415df63fb9f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">Chronos::Engine::Object::descriptorSets</a></div><div class="ttdeci">std::vector&lt; VkDescriptorSet &gt; descriptorSets</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00036">object.hpp:36</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a8bcbdc312c4e8afcd1eb382a530b9fd7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a8bcbdc312c4e8afcd1eb382a530b9fd7">Chronos::Engine::Object::descriptorPool</a></div><div class="ttdeci">VkDescriptorPool descriptorPool</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00047">object.hpp:47</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_aa107fe2bc0ae441c79ec522df3a8a16c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">Chronos::Engine::Object::uniformBuffers</a></div><div class="ttdeci">std::vector&lt; Chronos::Engine::UniformBuffer &gt; uniformBuffers</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00055">object.hpp:55</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_a646db66702a5893cbb1d7f0e10dec221"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#a646db66702a5893cbb1d7f0e10dec221">Chronos::Engine::Font::fontTexture</a></div><div class="ttdeci">Chronos::Engine::Texture fontTexture</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00132">font.hpp:132</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a004f17b08fbd33cbcab795376a9ef8a1"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a004f17b08fbd33cbcab795376a9ef8a1">Chronos::Engine::Object::descriptorSetLayout</a></div><div class="ttdeci">VkDescriptorSetLayout descriptorSetLayout</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00097">object.hpp:97</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a203a494524c8c74d52e5d692a2845f8b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">Chronos::Engine::Object::textureSampler</a></div><div class="ttdeci">VkSampler textureSampler</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00095">object.hpp:95</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a5587465d9740b74dbece2415df63fb9f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">Chronos::Engine::Object::descriptorSets</a></div><div class="ttdeci">std::vector&lt; VkDescriptorSet &gt; descriptorSets</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00086">object.hpp:86</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a8bcbdc312c4e8afcd1eb382a530b9fd7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a8bcbdc312c4e8afcd1eb382a530b9fd7">Chronos::Engine::Object::descriptorPool</a></div><div class="ttdeci">VkDescriptorPool descriptorPool</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00098">object.hpp:98</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_aa107fe2bc0ae441c79ec522df3a8a16c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">Chronos::Engine::Object::uniformBuffers</a></div><div class="ttdeci">std::vector&lt; Chronos::Engine::UniformBuffer &gt; uniformBuffers</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00124">object.hpp:124</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_a4e9fa6072f861955b04b663d63eede66"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#a4e9fa6072f861955b04b663d63eede66">Chronos::Engine::Texture::textureImageView</a></div><div class="ttdeci">VkImageView textureImageView</div><div class="ttdoc">The image view for the texture.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8hpp_source.html#l00106">texture.hpp:106</a></div></div>
 <div class="ttc" id="aengine_8hpp_html_a7302e21aaabe341f71d799a7dd3f274f"><div class="ttname"><a href="engine_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a></div><div class="ttdeci">const int MAX_FRAMES_IN_FLIGHT</div><div class="ttdoc">The number of frames in flight.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00023">engine.hpp:23</a></div></div>
 </div><!-- fragment -->
@@ -361,6 +394,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Destroys the font object and frees the memory. </p>
+<p>This destroys all the vulkan related objects related to this class and frees memory. </p>
+
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="font_8cpp_source.html#l00133">133</a> of file <a class="el" href="font_8cpp_source.html">font.cpp</a>.</p>
@@ -370,8 +406,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    vkFreeMemory(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Font.html#a0b0a5af9ac45847c26338e56e48adc24">vertexBufferMemory</a>, <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Font.html#a646db66702a5893cbb1d7f0e10dec221">fontTexture</a>.<a class="code" href="classChronos_1_1Engine_1_1Texture.html#abea74b812d9b2dacfddfe9b4e51b1a83">destroy</a>();</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_a47e461992339512491429026b5072e9c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#a47e461992339512491429026b5072e9c">Chronos::Engine::Font::vertexBuffer</a></div><div class="ttdeci">VkBuffer vertexBuffer</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00014">font.hpp:14</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2bdcd3b34fd075835e2a395bd39b09d7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a></div><div class="ttdeci">virtual void destroy()=0</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00169">object.cpp:169</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_a47e461992339512491429026b5072e9c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#a47e461992339512491429026b5072e9c">Chronos::Engine::Font::vertexBuffer</a></div><div class="ttdeci">VkBuffer vertexBuffer</div><div class="ttdoc">The vertices of each character used for rendering.</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00074">font.hpp:74</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2bdcd3b34fd075835e2a395bd39b09d7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a></div><div class="ttdeci">virtual void destroy()=0</div><div class="ttdoc">Destroys the object and releases associated resources.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00169">object.cpp:169</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_abea74b812d9b2dacfddfe9b4e51b1a83"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#abea74b812d9b2dacfddfe9b4e51b1a83">Chronos::Engine::Texture::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">Destroy the texture assets.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8cpp_source.html#l00243">texture.cpp:243</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="object_8cpp_source.html#l00169">Chronos::Engine::Object::destroy()</a>.</p>
@@ -380,8 +416,8 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1Font_a622f4d89d292be4c0d1c034c54a937b5_cgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1Font_a622f4d89d292be4c0d1c034c54a937b5_cgraph" alt=""/></div>
 <map name="aclassChronos_1_1Engine_1_1Font_a622f4d89d292be4c0d1c034c54a937b5_cgraph" id="aclassChronos_1_1Engine_1_1Font_a622f4d89d292be4c0d1c034c54a937b5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,168,47"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7" title=" " alt="" coords="216,5,393,47"/>
+<area shape="rect" title="Destroys the font object and frees the memory." alt="" coords="5,5,168,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7" title="Destroys the object and releases associated resources." alt="" coords="216,5,393,47"/>
 </map>
 </div>
 
@@ -409,6 +445,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets the descriptor stages in which the descriptor sets are used. </p>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a747d67af4581cd3476d2348b5d0889e9">Chronos::Engine::Object</a>.</p>
 
@@ -443,6 +481,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Gets the descriptor types needed for rendering the text. </p>
+
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a6e7f4a4b4c1707146b44ec5d7c695c9c">Chronos::Engine::Object</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="font_8cpp_source.html#l00031">31</a> of file <a class="el" href="font_8cpp_source.html">font.cpp</a>.</p>
@@ -475,6 +515,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the pipeline attributes that are set for the graphics pipeline. </p>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a329ee54c7e407fe640b7cf858b26b65d">Chronos::Engine::Object</a>.</p>
 
@@ -516,7 +558,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">return</span> pipelineAttributes;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="object_8hpp_source.html#l00021">Chronos::Engine::PipelineAttributes::attributeDescriptions</a>, <a class="el" href="object_8hpp_source.html#l00020">Chronos::Engine::PipelineAttributes::bindingDescriptions</a>, <a class="el" href="object_8hpp_source.html#l00024">Chronos::Engine::PipelineAttributes::colorBlendAttachment</a>, <a class="el" href="object_8hpp_source.html#l00023">Chronos::Engine::PipelineAttributes::frontFace</a>, and <a class="el" href="object_8hpp_source.html#l00022">Chronos::Engine::PipelineAttributes::topology</a>.</p>
+<p class="reference">References <a class="el" href="object_8hpp_source.html#l00026">Chronos::Engine::PipelineAttributes::attributeDescriptions</a>, <a class="el" href="object_8hpp_source.html#l00025">Chronos::Engine::PipelineAttributes::bindingDescriptions</a>, <a class="el" href="object_8hpp_source.html#l00029">Chronos::Engine::PipelineAttributes::colorBlendAttachment</a>, <a class="el" href="object_8hpp_source.html#l00028">Chronos::Engine::PipelineAttributes::frontFace</a>, and <a class="el" href="object_8hpp_source.html#l00027">Chronos::Engine::PipelineAttributes::topology</a>.</p>
 
 </div>
 </div>
@@ -572,6 +614,18 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Initializes the font object and creates the necessary objects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>The device to use for creating the objects. </td></tr>
+    <tr><td class="paramname">commandPool</td><td>The command pool to use for rendering </td></tr>
+    <tr><td class="paramname">swapChain</td><td>The swapchain to use for rendering </td></tr>
+    <tr><td class="paramname">textureSampler</td><td>The texture sampler to use for fonts </td></tr>
+    <tr><td class="paramname">renderPass</td><td>The renderpass to use for rendering </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Reimplemented from <a class="el" href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e">Chronos::Engine::Object</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="font_8cpp_source.html#l00004">4</a> of file <a class="el" href="font_8cpp_source.html">font.cpp</a>.</p>
@@ -600,27 +654,27 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e">Chronos::Engine::Object::init</a>(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">commandPool</a>, <a class="code" href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">swapChain</a>, <a class="code" href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">textureSampler</a>, <a class="code" href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">renderPass</a>);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_a811e3f2a63a14c264c5f2d1503cd0e87"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#a811e3f2a63a14c264c5f2d1503cd0e87">Chronos::Engine::Font::stbFontData</a></div><div class="ttdeci">stb_fontchar stbFontData[STB_FONT_consolas_24_latin1_NUM_CHARS]</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00024">font.hpp:24</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_aa35ecc6659a00191b7dc78d5d250d458"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#aa35ecc6659a00191b7dc78d5d250d458">Chronos::Engine::Font::maxTextLength</a></div><div class="ttdeci">uint32_t maxTextLength</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00023">font.hpp:23</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2ff58729143a63b536fcd06e890b514e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e">Chronos::Engine::Object::init</a></div><div class="ttdeci">virtual void init(Chronos::Engine::Device *device, VkCommandPool commandPool, Chronos::Engine::SwapChain *swapChain, VkSampler textureSampler, VkRenderPass *renderPass)</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00005">object.cpp:5</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a300ba4549a4e0119cf2fcf0fad24569b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">Chronos::Engine::Object::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00043">object.hpp:43</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a6323a6f9a4c9fefff3d27c34f51f2f59"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59">Chronos::Engine::Object::vertexShaderPath</a></div><div class="ttdeci">std::string vertexShaderPath</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00039">object.hpp:39</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a7cfcd07115e8e58783c5cc40e4575bd8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">Chronos::Engine::Object::swapChain</a></div><div class="ttdeci">Chronos::Engine::SwapChain * swapChain</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00042">object.hpp:42</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_ad017c20cbe79d573325a66621de9963e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#ad017c20cbe79d573325a66621de9963e">Chronos::Engine::Object::fragmentShaderPath</a></div><div class="ttdeci">std::string fragmentShaderPath</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00040">object.hpp:40</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_af8b89f8ed5191515b60219682efba376"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">Chronos::Engine::Object::renderPass</a></div><div class="ttdeci">VkRenderPass * renderPass</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00045">object.hpp:45</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_a811e3f2a63a14c264c5f2d1503cd0e87"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#a811e3f2a63a14c264c5f2d1503cd0e87">Chronos::Engine::Font::stbFontData</a></div><div class="ttdeci">stb_fontchar stbFontData[STB_FONT_consolas_24_latin1_NUM_CHARS]</div><div class="ttdoc">The texture atlas that contains all the characters in the font.</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00122">font.hpp:122</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_aa35ecc6659a00191b7dc78d5d250d458"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#aa35ecc6659a00191b7dc78d5d250d458">Chronos::Engine::Font::maxTextLength</a></div><div class="ttdeci">uint32_t maxTextLength</div><div class="ttdoc">Maximum number of characters that can be rendered.</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00117">font.hpp:117</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2ff58729143a63b536fcd06e890b514e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e">Chronos::Engine::Object::init</a></div><div class="ttdeci">virtual void init(Chronos::Engine::Device *device, VkCommandPool commandPool, Chronos::Engine::SwapChain *swapChain, VkSampler textureSampler, VkRenderPass *renderPass)</div><div class="ttdoc">Initializes the object.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00005">object.cpp:5</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a300ba4549a4e0119cf2fcf0fad24569b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">Chronos::Engine::Object::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00094">object.hpp:94</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a6323a6f9a4c9fefff3d27c34f51f2f59"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59">Chronos::Engine::Object::vertexShaderPath</a></div><div class="ttdeci">std::string vertexShaderPath</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00090">object.hpp:90</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a7cfcd07115e8e58783c5cc40e4575bd8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">Chronos::Engine::Object::swapChain</a></div><div class="ttdeci">Chronos::Engine::SwapChain * swapChain</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00093">object.hpp:93</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_ad017c20cbe79d573325a66621de9963e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#ad017c20cbe79d573325a66621de9963e">Chronos::Engine::Object::fragmentShaderPath</a></div><div class="ttdeci">std::string fragmentShaderPath</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00091">object.hpp:91</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_af8b89f8ed5191515b60219682efba376"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">Chronos::Engine::Object::renderPass</a></div><div class="ttdeci">VkRenderPass * renderPass</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00096">object.hpp:96</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_a116603930df574fe8ae4844e23b54ae4"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4">Chronos::Engine::Texture::create</a></div><div class="ttdeci">void create(Chronos::Engine::Device device, VkCommandPool commandPool, std::string texturePath)</div><div class="ttdoc">Create the texture by loading the texture from the given path. Only supports jpg and png images.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8cpp_source.html#l00046">texture.cpp:46</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_aa86983b2d3f7d09e250b31c3209d207a"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a">Chronos::Engine::createBuffer</a></div><div class="ttdeci">void createBuffer(Chronos::Engine::Device device, VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer *buffer, VkDeviceMemory *bufferMemory)</div><div class="ttdoc">Creates a buffer of a given size, usage and properties.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00056">helper.cpp:56</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="object_8hpp_source.html#l00043">Chronos::Engine::Object::commandPool</a>, <a class="el" href="texture_8cpp_source.html#l00046">Chronos::Engine::Texture::create()</a>, <a class="el" href="helper_8cpp_source.html#l00056">Chronos::Engine::createBuffer()</a>, <a class="el" href="object_8hpp_source.html#l00041">Chronos::Engine::Object::device</a>, <a class="el" href="font_8hpp_source.html#l00028">fontTexture</a>, <a class="el" href="object_8hpp_source.html#l00040">Chronos::Engine::Object::fragmentShaderPath</a>, <a class="el" href="object_8cpp_source.html#l00005">Chronos::Engine::Object::init()</a>, <a class="el" href="font_8hpp_source.html#l00023">maxTextLength</a>, <a class="el" href="object_8hpp_source.html#l00045">Chronos::Engine::Object::renderPass</a>, <a class="el" href="font_8hpp_source.html#l00024">stbFontData</a>, <a class="el" href="object_8hpp_source.html#l00042">Chronos::Engine::Object::swapChain</a>, <a class="el" href="object_8hpp_source.html#l00044">Chronos::Engine::Object::textureSampler</a>, <a class="el" href="font_8hpp_source.html#l00014">vertexBuffer</a>, <a class="el" href="font_8hpp_source.html#l00026">vertexBufferMemory</a>, and <a class="el" href="object_8hpp_source.html#l00039">Chronos::Engine::Object::vertexShaderPath</a>.</p>
+<p class="reference">References <a class="el" href="object_8hpp_source.html#l00094">Chronos::Engine::Object::commandPool</a>, <a class="el" href="texture_8cpp_source.html#l00046">Chronos::Engine::Texture::create()</a>, <a class="el" href="helper_8cpp_source.html#l00056">Chronos::Engine::createBuffer()</a>, <a class="el" href="object_8hpp_source.html#l00092">Chronos::Engine::Object::device</a>, <a class="el" href="font_8hpp_source.html#l00132">fontTexture</a>, <a class="el" href="object_8hpp_source.html#l00091">Chronos::Engine::Object::fragmentShaderPath</a>, <a class="el" href="object_8cpp_source.html#l00005">Chronos::Engine::Object::init()</a>, <a class="el" href="font_8hpp_source.html#l00117">maxTextLength</a>, <a class="el" href="object_8hpp_source.html#l00096">Chronos::Engine::Object::renderPass</a>, <a class="el" href="font_8hpp_source.html#l00122">stbFontData</a>, <a class="el" href="object_8hpp_source.html#l00093">Chronos::Engine::Object::swapChain</a>, <a class="el" href="object_8hpp_source.html#l00095">Chronos::Engine::Object::textureSampler</a>, <a class="el" href="font_8hpp_source.html#l00074">vertexBuffer</a>, <a class="el" href="font_8hpp_source.html#l00127">vertexBufferMemory</a>, and <a class="el" href="object_8hpp_source.html#l00090">Chronos::Engine::Object::vertexShaderPath</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1Font_a13070e7a8e19d94a2889f11788214104_cgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1Font_a13070e7a8e19d94a2889f11788214104_cgraph" alt=""/></div>
 <map name="aclassChronos_1_1Engine_1_1Font_a13070e7a8e19d94a2889f11788214104_cgraph" id="aclassChronos_1_1Engine_1_1Font_a13070e7a8e19d94a2889f11788214104_cgraph">
-<area shape="rect" title=" " alt="" coords="5,99,168,141"/>
+<area shape="rect" title="Initializes the font object and creates the necessary objects." alt="" coords="5,99,168,141"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="216,99,399,141"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a" title="Creates a buffer of a given size, usage and properties." alt="" coords="464,5,679,32"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e" title=" " alt="" coords="219,354,396,395"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e" title="Initializes the object." alt="" coords="219,354,396,395"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a72a6333d7a23ef16daa4ee34bd6cab5f" title="Copy data from a buffer to an image." alt="" coords="469,223,674,265"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a7018d1eaf2dfaf4c373269fcaa344a46" title="For a given image dimensons, it creates a VkImage and VkDeviceMemory for the image." alt="" coords="463,56,680,83"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a34457a6d2cac8f2770ffbaf52b3b2ee3" title="Create a VkImageView for a given VkImage." alt="" coords="447,107,696,133"/>
@@ -628,10 +682,10 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="760,158,971,199"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c" title="Ends recording of single time command buffer and destroys it." alt="" coords="766,223,965,265"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="744,31,987,57"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e" title=" " alt="" coords="483,485,660,526"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e" title=" " alt="" coords="470,289,673,330"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e" title="Creates the Vulkan descriptor pool for the object." alt="" coords="483,485,660,526"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e" title="Creates the Vulkan descriptor set layout for the object." alt="" coords="470,289,673,330"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Object.html#adf7e359418ad5653b9590645282aee1e" title=" " alt="" coords="483,354,660,395"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c" title=" " alt="" coords="481,419,661,461"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c" title="Creates the graphics pipeline for the object." alt="" coords="481,419,661,461"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a78d48217937b348633f1184b862e0312" title="Creates a shader module from given shader(SPIV) code." alt="" coords="755,449,976,490"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#af002a6ceca11bcbaf38e8df34b47b966" title="Returns the content of a shader file." alt="" coords="772,397,959,424"/>
 </map>
@@ -641,8 +695,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1Font_a13070e7a8e19d94a2889f11788214104_icgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1Font_a13070e7a8e19d94a2889f11788214104_icgraph" alt=""/></div>
 <map name="aclassChronos_1_1Engine_1_1Font_a13070e7a8e19d94a2889f11788214104_icgraph" id="aclassChronos_1_1Engine_1_1Font_a13070e7a8e19d94a2889f11788214104_icgraph">
-<area shape="rect" title=" " alt="" coords="272,5,435,47"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html#a9c8b1c21c5ad43f535d18e4bf9d5489a" title=" " alt="" coords="5,5,224,47"/>
+<area shape="rect" title="Initializes the font object and creates the necessary objects." alt="" coords="272,5,435,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html#a9c8b1c21c5ad43f535d18e4bf9d5489a" title="Adds a font to the text manager." alt="" coords="5,5,224,47"/>
 </map>
 </div>
 
@@ -680,6 +734,17 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Records the commands needed for rendering the text . </p>
+<p>When this function is called, it records the commands that are needed for rendering the text stored in this class.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentFrame</td><td>The current frame number to render to. </td></tr>
+    <tr><td class="paramname">imageIndex</td><td>The index of the framebuffer associated with the current frame </td></tr>
+    <tr><td class="paramname">bgColor</td><td>The background color to use for rendering the text. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="afce2967d505a38748aefead513a4cf07"></a>
@@ -706,6 +771,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Updates the attributes(like position, color, etc) of the text. </p>
+<p>This function is used to update the attributes of the text. It is called by the <code>FontManager</code> class. It does this by updating the uniform buffer. </p>
+
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#aa32fe5592512c1fa8534aed8cb2797ef">Chronos::Engine::Object</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="font_8cpp_source.html#l00229">229</a> of file <a class="el" href="font_8cpp_source.html">font.cpp</a>.</p>
@@ -713,12 +781,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Font.html#ac768671cd27c3b549f585a8d1b763e5a">updateBuffer</a>();</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">uniformBuffers</a>[currentFrame].update(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">swapChain</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">swapChainExtent</a>, <a class="code" href="classChronos_1_1Engine_1_1Font.html#a8731cc4d9297305f98b501a3b1cb104b">params</a>.<a class="code" href="structChronos_1_1Engine_1_1TextParams.html#a20ab8cb7e56adb78d8e8c38a0ae8ce9b">x</a>, <a class="code" href="classChronos_1_1Engine_1_1Font.html#a8731cc4d9297305f98b501a3b1cb104b">params</a>.<a class="code" href="structChronos_1_1Engine_1_1TextParams.html#a64d04c5961e99caa9d0987622cd14d02">y</a>, <a class="code" href="classChronos_1_1Engine_1_1Font.html#a8731cc4d9297305f98b501a3b1cb104b">params</a>.<a class="code" href="structChronos_1_1Engine_1_1TextParams.html#a6b4b4427a2313e05aad0d4e3604afbe2">rotation</a> - 90, 1.0f, -1.0f);</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_a8731cc4d9297305f98b501a3b1cb104b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#a8731cc4d9297305f98b501a3b1cb104b">Chronos::Engine::Font::params</a></div><div class="ttdeci">Chronos::Engine::TextParams params</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00016">font.hpp:16</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_ac768671cd27c3b549f585a8d1b763e5a"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#ac768671cd27c3b549f585a8d1b763e5a">Chronos::Engine::Font::updateBuffer</a></div><div class="ttdeci">void updateBuffer()</div><div class="ttdef"><b>Definition:</b> <a href="font_8cpp_source.html#l00141">font.cpp:141</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_a8731cc4d9297305f98b501a3b1cb104b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#a8731cc4d9297305f98b501a3b1cb104b">Chronos::Engine::Font::params</a></div><div class="ttdeci">Chronos::Engine::TextParams params</div><div class="ttdoc">Various parameters of the text that are set by the user.</div><div class="ttdef"><b>Definition:</b> <a href="font_8hpp_source.html#l00084">font.hpp:84</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Font_html_ac768671cd27c3b549f585a8d1b763e5a"><div class="ttname"><a href="classChronos_1_1Engine_1_1Font.html#ac768671cd27c3b549f585a8d1b763e5a">Chronos::Engine::Font::updateBuffer</a></div><div class="ttdeci">void updateBuffer()</div><div class="ttdoc">Updates the buffer with the new text.</div><div class="ttdef"><b>Definition:</b> <a href="font_8cpp_source.html#l00141">font.cpp:141</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_a10893a5577243552e6d64875e1167a63"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">Chronos::Engine::SwapChain::swapChainExtent</a></div><div class="ttdeci">VkExtent2D swapChainExtent</div><div class="ttdoc">Dimenisons of the current swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8hpp_source.html#l00133">swapchain.hpp:133</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1TextParams_html_a20ab8cb7e56adb78d8e8c38a0ae8ce9b"><div class="ttname"><a href="structChronos_1_1Engine_1_1TextParams.html#a20ab8cb7e56adb78d8e8c38a0ae8ce9b">Chronos::Engine::TextParams::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00038">structs.hpp:38</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1TextParams_html_a64d04c5961e99caa9d0987622cd14d02"><div class="ttname"><a href="structChronos_1_1Engine_1_1TextParams.html#a64d04c5961e99caa9d0987622cd14d02">Chronos::Engine::TextParams::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00039">structs.hpp:39</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1TextParams_html_a6b4b4427a2313e05aad0d4e3604afbe2"><div class="ttname"><a href="structChronos_1_1Engine_1_1TextParams.html#a6b4b4427a2313e05aad0d4e3604afbe2">Chronos::Engine::TextParams::rotation</a></div><div class="ttdeci">float rotation</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00040">structs.hpp:40</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1TextParams_html_a20ab8cb7e56adb78d8e8c38a0ae8ce9b"><div class="ttname"><a href="structChronos_1_1Engine_1_1TextParams.html#a20ab8cb7e56adb78d8e8c38a0ae8ce9b">Chronos::Engine::TextParams::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00054">structs.hpp:54</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1TextParams_html_a64d04c5961e99caa9d0987622cd14d02"><div class="ttname"><a href="structChronos_1_1Engine_1_1TextParams.html#a64d04c5961e99caa9d0987622cd14d02">Chronos::Engine::TextParams::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00055">structs.hpp:55</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1TextParams_html_a6b4b4427a2313e05aad0d4e3604afbe2"><div class="ttname"><a href="structChronos_1_1Engine_1_1TextParams.html#a6b4b4427a2313e05aad0d4e3604afbe2">Chronos::Engine::TextParams::rotation</a></div><div class="ttdeci">float rotation</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00056">structs.hpp:56</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -744,6 +812,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Updates the buffer with the new text. </p>
 
 <p class="definition">Definition at line <a class="el" href="font_8cpp_source.html#l00141">141</a> of file <a class="el" href="font_8cpp_source.html">font.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                                    {</div>
@@ -820,8 +890,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    vkUnmapMemory(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Font.html#a0b0a5af9ac45847c26338e56e48adc24">vertexBufferMemory</a>);</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Font.html#a4c4db1b13a2c986f433d115a839b4081">mappedMemory</a> = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;}</div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1TextParams_html_a4bdc8b0f25afbd1d4b1e150e3b4672ba"><div class="ttname"><a href="structChronos_1_1Engine_1_1TextParams.html#a4bdc8b0f25afbd1d4b1e150e3b4672ba">Chronos::Engine::TextParams::scale</a></div><div class="ttdeci">float scale</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00041">structs.hpp:41</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1TextParams_html_a59928aa0d36b41e82d968c6c7ef33602"><div class="ttname"><a href="structChronos_1_1Engine_1_1TextParams.html#a59928aa0d36b41e82d968c6c7ef33602">Chronos::Engine::TextParams::text</a></div><div class="ttdeci">std::string text</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00037">structs.hpp:37</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1TextParams_html_a4bdc8b0f25afbd1d4b1e150e3b4672ba"><div class="ttname"><a href="structChronos_1_1Engine_1_1TextParams.html#a4bdc8b0f25afbd1d4b1e150e3b4672ba">Chronos::Engine::TextParams::scale</a></div><div class="ttdeci">float scale</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00057">structs.hpp:57</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1TextParams_html_a59928aa0d36b41e82d968c6c7ef33602"><div class="ttname"><a href="structChronos_1_1Engine_1_1TextParams.html#a59928aa0d36b41e82d968c6c7ef33602">Chronos::Engine::TextParams::text</a></div><div class="ttdeci">std::string text</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00053">structs.hpp:53</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -845,8 +915,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>The font texture </p>
 
-<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00028">28</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00132">132</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
 
 </div>
 </div>
@@ -869,8 +940,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>The mapped memory to the vertex buffer </p>
 
-<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00029">29</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00137">137</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
 
 </div>
 </div>
@@ -894,7 +966,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00023">23</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
+<p>Maximum number of characters that can be rendered. </p>
+
+<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00117">117</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
 
 </div>
 </div>
@@ -910,7 +984,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00015">15</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
+<p>The total number of letters to render. </p>
+
+<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00079">79</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
 
 </div>
 </div>
@@ -926,7 +1002,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00016">16</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
+<p>Various parameters of the text that are set by the user. </p>
+
+<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00084">84</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
 
 </div>
 </div>
@@ -950,7 +1028,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00024">24</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
+<p>The texture atlas that contains all the characters in the font. </p>
+
+<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00122">122</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
 
 </div>
 </div>
@@ -966,7 +1046,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00014">14</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
+<p>The vertices of each character used for rendering. </p>
+
+<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00074">74</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
 
 </div>
 </div>
@@ -990,7 +1072,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00026">26</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
+<p>The vertex buffer memory. </p>
+
+<p class="definition">Definition at line <a class="el" href="font_8hpp_source.html#l00127">127</a> of file <a class="el" href="font_8hpp_source.html">font.hpp</a>.</p>
 
 </div>
 </div>

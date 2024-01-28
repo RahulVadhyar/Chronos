@@ -1,4 +1,4 @@
 <map id="Chronos::Engine::ObjectManager::changeMsaa" name="Chronos::Engine::ObjectManager::changeMsaa">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,240,47"/>
+<area shape="rect" id="node1" title="Changes the multisampling settings for rendering." alt="" coords="5,5,240,47"/>
 <area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a5a92fce581e2787c3c67df6bc4e3f108" title="Creates a render pass." alt="" coords="288,13,539,39"/>
 </map>

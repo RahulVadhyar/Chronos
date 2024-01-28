@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['generalapitest_313',['GeneralAPITest',['../classGeneralAPITest.html',1,'']]]
+  ['manager_267',['Manager',['../classChronos_1_1Manager_1_1Manager.html',1,'Chronos::Manager']]]
 ];

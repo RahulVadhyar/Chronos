@@ -1,11 +1,6 @@
 var annotated_dup =
 [
     [ "Chronos", "namespaceChronos.html", [
-      [ "Animation", "namespaceChronos_1_1Animation.html", [
-        [ "AnimNode", "structChronos_1_1Animation_1_1AnimNode.html", "structChronos_1_1Animation_1_1AnimNode" ],
-        [ "AnimShapeAttributes", "structChronos_1_1Animation_1_1AnimShapeAttributes.html", "structChronos_1_1Animation_1_1AnimShapeAttributes" ],
-        [ "AnimTree", "classChronos_1_1Animation_1_1AnimTree.html", "classChronos_1_1Animation_1_1AnimTree" ]
-      ] ],
       [ "Editor", "namespaceChronos_1_1Editor.html", [
         [ "EditorRenderer", "classChronos_1_1Editor_1_1EditorRenderer.html", "classChronos_1_1Editor_1_1EditorRenderer" ]
       ] ],
@@ -38,8 +33,5 @@ var annotated_dup =
         [ "PolygonType", "structChronos_1_1Manager_1_1PolygonType.html", "structChronos_1_1Manager_1_1PolygonType" ],
         [ "Manager", "classChronos_1_1Manager_1_1Manager.html", "classChronos_1_1Manager_1_1Manager" ]
       ] ]
-    ] ],
-    [ "GeneralAPITest", "classGeneralAPITest.html", "classGeneralAPITest" ],
-    [ "ShapeAPITest", "classShapeAPITest.html", "classShapeAPITest" ],
-    [ "TextAPITest", "classTextAPITest.html", "classTextAPITest" ]
+    ] ]
 ];
