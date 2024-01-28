@@ -99,7 +99,7 @@ namespace Chronos{
             The necessary functions must be defined in the struct. For the options, please refer to the [Text](#Chronos::Manager::Text) struct
             
             @param text The necessary parameters needed for rendering text
-            @return The textNo, for the text instance. =
+            @return The textNo, for the text instance. 
             */
             int addText(Chronos::Engine::TextParams params);
 

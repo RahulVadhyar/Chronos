@@ -12,9 +12,6 @@ namespace Engine {
     /**
     \brief This is the shape manager for Chronos. It handles creation, modification, updating and desrtuction of shapes.
 
-    This is for use by ```Engine``` only and should not be used for any other purpose.
-    Code using Chronos should not use this class directly.
-
     Generally in order to manage shapes the methods to be used are:
     - ```addTriangle```
     - ```addRectangle```

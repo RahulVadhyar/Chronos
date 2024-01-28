@@ -1053,7 +1053,12 @@ EXCLUDE                = Assets \
                          .* \
                          CMakeSettings.json \
                          imgui.ini \
-                         renderdocSettings.cap
+                         renderdocSettings.cap \
+                         Source/Engine/Tests \
+                         Source/Common/Tests \
+                         Source/Common/Tests \
+                         Source/API/Tests \
+                         Source/Animation
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded

@@ -76,12 +76,10 @@ For more on handling inputs, please see the GLFW documentation.
         Engine();
 
         /**
-        \brief Main function that is used to add and remove text to the engine.
+        \brief Main function that is used to add, update and remove text to the engine.
 
         To render text to the window, one may call the necessary methods in this class.
         */
-
-        // Chronos::Engine::Text textManager;
         Chronos::Engine::TextManager textManager;
 
         /**

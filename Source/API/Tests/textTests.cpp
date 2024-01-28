@@ -107,6 +107,16 @@ TEST_F(TextAPITest, removeText){
     manager->drawFrame();
 }
 
+TEST_F(TextAPITest, removeTextNegative){
+    EXPECT_THROW(manager->removeText(-1);, std::runtime_error);
+    manager->drawFrame();
+}
+
+TEST_F(TextAPITest, removeTextTooHigh){
+    EXPECT_THROW(manager->removeText(1);, std::runtime_error);
+    manager->drawFrame();
+}
+
 TEST_F(TextAPITest, addBlankText){
     Chronos::Engine::TextParams textParams;
     textParams.x = 0.0f;

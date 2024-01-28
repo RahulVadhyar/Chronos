@@ -58,5 +58,8 @@ int Chronos::Engine::TextManager::addFont(Chronos::Engine::Font font){
 }
 
 void Chronos::Engine::TextManager::remove(int fontNo){
+    if(objects.count(fontNo) == 0){
+        throw std::runtime_error("Font does not exist");
+    }
     Chronos::Engine::ObjectManager<Chronos::Engine::Font>::remove(fontNo);
 }

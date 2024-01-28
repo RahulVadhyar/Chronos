@@ -19,7 +19,7 @@ namespace Engine {
 
     @param x x coordinate of the shape(Range : 0 and 1).
     @param y y coordinate of the shape(Range : 0 and 1).
-    @param rotation Rotation of the shape in radians(Range: any float).
+    @param rotation Rotation of the shape in degrees(Range: any float).
     @param xSize x scale of the shape(Range : 0 and 1).
     @param ySize y scale of the shape(Range : 0 and 1).
     @param show Show or hide the shape.
@@ -33,6 +33,22 @@ namespace Engine {
         bool show = true;
     };
 
+    /**
+    \brief Parameters for rendering text
+
+    This is the struct for the parameters of a ```Font```.
+    This is needed to create and modify a ```Font```.
+
+    ## Note:
+    In Vulkan y axis is inverted. So the y axis of the shape is inverted.
+    This means that -1 is the top of the screen and 1 is the bottom of the screen.
+
+    @param x x coordinate of the text(Range : 0 and 1).
+    @param y y coordinate of the text(Range : 0 and 1).
+    @param rotation Rotation of the text in degrees(Range: any float).
+    @param scale Scale of the text(Range : any float).
+    @param text The text to render.
+    */
     struct TextParams{
         std::string text;
         float x = 0;

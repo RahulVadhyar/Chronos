@@ -44,8 +44,14 @@ This project uses GLM, GLFW, Vulkan Validation Layers. It also compiles GLFW fro
   sudo dnf install glm-devel vulkan-validation-layers glfw glfw-devel
   sudo dnf builddep glfw glfw-devel
   ```
+
++ #### For Ubuntu and similar platforms: ####
+  The following commands will install the dependencies needed to build this project
+  ```bash
+  sudo apt install libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libxext-dev libwayland-dev libxkbcommon-dev libvulkan-dev libglm-dev gcc-multilib g++-multilib libfreetype6-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev
+  ```
 + #### For Other Linux and Unix-Like platforms: ####
-  Due to the fact that this project is still in early development, I haven't tested this on anything other than Fedora Linux.
+  Due to the fact that this project is still in early development, I haven't tested this on anything other than Fedora Linux and Ubuntu Linux.
 However the needed dependencies are given above and can be installed using your package manager.
   
 
@@ -64,7 +70,7 @@ However the needed dependencies are given above and can be installed using your 
   target_link_libraries(YourProject Chronos)
   ```
 ## API Documentation ##
-The documentation for this library is under the docs section.
+The documentation for this library can be found [here](https://rahulvadhyar.github.io/Chronos/).
 
 ## How to file an issue ##
 As this is early stages of development, issues are not taken right now. However they will be soon open.
@@ -107,16 +113,13 @@ As this project is still under development and does not have a stable release, I
   and SDL. After evaluating all the options it was clear that Vulkan was the way to go.
 
 * ### Is Wayland and/or X11 supported? ###
-  Yes. Since this project uses GLFW that is compiled from scratch, it supports both Wayland and X11 platforms. However this is built for X11 by default. This can be changed by setting the GLFW flag. For more information on this, see [compiling GLFW].(https://www.glfw.org/docs/3.3/compile.html)
+  Yes. Since this project uses GLFW that is compiled from scratch, it supports both Wayland and X11 platforms. The flags are set such that they are built for both by default.
 
 * ### Which platforms are supported? ###
   As of right now, Windows and Linux(includes unix-like OSes) are supported. MacOS is not supported. See below for reason.
 
 * ### Why is MacOS not supported? ###
-  There is nothing about this project that makes it incompatible with macs. You can get vulkan to run on MacOS via MoltenVK.
-  However I currently do not have access to a mac that I can test on, as due to the CI/CD system, I need to be able to compile this project on a
-  regular basis. Hence for now, there is no macOS support. However if there is anything missing that prevents macOS support, please let me know and
-  I will incorporte those changes.
+  While Vulkan applications can be run on a mac via moltenVK, this library uses Vulkan 1.30, which is not supported by moltenVK. Once the support has come and is stable, this can run on macs. If you really want, you can try it yourself, this is open source and free after all.
   
 * ### Why just not use Unreal Engine or Unity or similar engine? ###
   Well there are mainly two reasons for this. One is that when I started this project I wanted to learn to write C++ and learn software development
