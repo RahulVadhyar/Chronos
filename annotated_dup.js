@@ -9,6 +9,8 @@ var annotated_dup =
         [ "UniformBuffer", "classChronos_1_1Engine_1_1UniformBuffer.html", "classChronos_1_1Engine_1_1UniformBuffer" ],
         [ "Device", "classChronos_1_1Engine_1_1Device.html", "classChronos_1_1Engine_1_1Device" ],
         [ "Engine", "classChronos_1_1Engine_1_1Engine.html", "classChronos_1_1Engine_1_1Engine" ],
+        [ "TextParams", "structChronos_1_1Engine_1_1TextParams.html", "structChronos_1_1Engine_1_1TextParams" ],
+        [ "UniformBufferObject", "structChronos_1_1Engine_1_1UniformBufferObject.html", "structChronos_1_1Engine_1_1UniformBufferObject" ],
         [ "Font", "classChronos_1_1Engine_1_1Font.html", "classChronos_1_1Engine_1_1Font" ],
         [ "QueueFamilyIndices", "structChronos_1_1Engine_1_1QueueFamilyIndices.html", "structChronos_1_1Engine_1_1QueueFamilyIndices" ],
         [ "PipelineAttributes", "structChronos_1_1Engine_1_1PipelineAttributes.html", "structChronos_1_1Engine_1_1PipelineAttributes" ],
@@ -18,9 +20,6 @@ var annotated_dup =
         [ "Rectangle", "classChronos_1_1Engine_1_1Rectangle.html", "classChronos_1_1Engine_1_1Rectangle" ],
         [ "Triangle", "classChronos_1_1Engine_1_1Triangle.html", "classChronos_1_1Engine_1_1Triangle" ],
         [ "ShapeManager", "classChronos_1_1Engine_1_1ShapeManager.html", "classChronos_1_1Engine_1_1ShapeManager" ],
-        [ "ShapeParams", "structChronos_1_1Engine_1_1ShapeParams.html", "structChronos_1_1Engine_1_1ShapeParams" ],
-        [ "TextParams", "structChronos_1_1Engine_1_1TextParams.html", "structChronos_1_1Engine_1_1TextParams" ],
-        [ "UniformBufferObject", "structChronos_1_1Engine_1_1UniformBufferObject.html", "structChronos_1_1Engine_1_1UniformBufferObject" ],
         [ "SwapChainSupportDetails", "structChronos_1_1Engine_1_1SwapChainSupportDetails.html", "structChronos_1_1Engine_1_1SwapChainSupportDetails" ],
         [ "SwapChain", "classChronos_1_1Engine_1_1SwapChain.html", "classChronos_1_1Engine_1_1SwapChain" ],
         [ "TextManager", "classChronos_1_1Engine_1_1TextManager.html", "classChronos_1_1Engine_1_1TextManager" ],
@@ -31,7 +30,8 @@ var annotated_dup =
         [ "Initializer", "structChronos_1_1Manager_1_1Initializer.html", "structChronos_1_1Manager_1_1Initializer" ],
         [ "Text", "structChronos_1_1Manager_1_1Text.html", "structChronos_1_1Manager_1_1Text" ],
         [ "PolygonType", "structChronos_1_1Manager_1_1PolygonType.html", "structChronos_1_1Manager_1_1PolygonType" ],
-        [ "Manager", "classChronos_1_1Manager_1_1Manager.html", "classChronos_1_1Manager_1_1Manager" ]
+        [ "Manager", "classChronos_1_1Manager_1_1Manager.html", "classChronos_1_1Manager_1_1Manager" ],
+        [ "ShapeParams", "structChronos_1_1Manager_1_1ShapeParams.html", "structChronos_1_1Manager_1_1ShapeParams" ]
       ] ]
     ] ]
 ];

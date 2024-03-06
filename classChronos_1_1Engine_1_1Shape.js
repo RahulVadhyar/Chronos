@@ -10,7 +10,7 @@ var classChronos_1_1Engine_1_1Shape =
     [ "update", "classChronos_1_1Engine_1_1Shape.html#a6aa39bffdf1f3590825a977fde4ed968", null ],
     [ "indexBuffer", "classChronos_1_1Engine_1_1Shape.html#ab1bbfbe3423af7f9a23dcf9ccafa2196", null ],
     [ "indices", "classChronos_1_1Engine_1_1Shape.html#afb02ef60580acabf980869118658b75f", null ],
-    [ "params", "classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e", null ],
+    [ "params", "classChronos_1_1Engine_1_1Shape.html#adaa5406193c63f6e6ab3cbe52292b452", null ],
     [ "texture", "classChronos_1_1Engine_1_1Shape.html#addde6df404d0df0c26463c6a2632f11d", null ],
     [ "vertexBuffer", "classChronos_1_1Engine_1_1Shape.html#a36e4871f62769b57c89ed654d9cd6e5c", null ],
     [ "vertices", "classChronos_1_1Engine_1_1Shape.html#a1c6adaa961de469fab86fbcd4b723f51", null ]

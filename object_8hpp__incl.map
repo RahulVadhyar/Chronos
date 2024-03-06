@@ -1,17 +1,17 @@
 <map id="Source/Engine/Headers/object.hpp" name="Source/Engine/Headers/object.hpp">
-<area shape="rect" id="node1" title="Contains the class for creating a generic object." alt="" coords="1060,5,1232,47"/>
-<area shape="rect" id="node2" href="$structs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="864,169,959,196"/>
-<area shape="rect" id="node9" href="$helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="985,95,1075,121"/>
-<area shape="rect" id="node28" href="$Vertex_8hpp.html" title="This file includes the structure of a vertex." alt="" coords="1100,95,1192,121"/>
-<area shape="rect" id="node29" href="$buffers_8hpp.html" title="Contains the Buffer and UniformBuffer class." alt="" coords="1216,95,1311,121"/>
-<area shape="rect" id="node30" href="$texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="1335,95,1432,121"/>
+<area shape="rect" id="node1" title="Contains the class for creating a generic object." alt="" coords="873,5,1045,47"/>
+<area shape="rect" id="node2" href="$engineStructs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="639,169,778,196"/>
+<area shape="rect" id="node9" href="$helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="798,95,889,121"/>
+<area shape="rect" id="node28" href="$Vertex_8hpp.html" title="This file includes the structure of a vertex." alt="" coords="913,95,1005,121"/>
+<area shape="rect" id="node29" href="$buffers_8hpp.html" title="Contains the Buffer and UniformBuffer class." alt="" coords="1029,95,1124,121"/>
+<area shape="rect" id="node30" href="$texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="1148,95,1245,121"/>
 <area shape="rect" id="node3" href="$vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="442,244,589,271"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,319,116,345"/>
 <area shape="rect" id="node5" title=" " alt="" coords="140,319,240,345"/>
 <area shape="rect" id="node6" title=" " alt="" coords="264,319,439,345"/>
 <area shape="rect" id="node7" title=" " alt="" coords="463,319,567,345"/>
 <area shape="rect" id="node8" title=" " alt="" coords="592,319,809,345"/>
-<area shape="rect" id="node10" href="$swapchain_8hpp.html" title="Contains the swapChain class along with all the swapChain related functions." alt="" coords="1181,169,1300,196"/>
+<area shape="rect" id="node10" href="$swapchain_8hpp.html" title="Contains the swapChain class along with all the swapChain related functions." alt="" coords="1188,169,1307,196"/>
 <area shape="rect" id="node11" href="$stlheader_8hpp.html" title="Contains all the standard library headers used in the project." alt="" coords="1384,244,1495,271"/>
 <area shape="rect" id="node27" href="$device_8hpp.html" title="Contains the Device class." alt="" coords="1519,244,1613,271"/>
 <area shape="rect" id="node12" title=" " alt="" coords="834,319,919,345"/>

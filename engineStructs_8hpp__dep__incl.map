@@ -1,4 +1,4 @@
-<map id="Source/Engine/Headers/structs.hpp" name="Source/Engine/Headers/structs.hpp">
+<map id="Source/Engine/Headers/engineStructs.hpp" name="Source/Engine/Headers/engineStructs.hpp">
 <area shape="rect" id="node1" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="541,5,713,47"/>
 <area shape="rect" id="node2" href="$chronos_8hpp.html" title="Main API for chronos. Any applications should include this file." alt="" coords="792,638,944,665"/>
 <area shape="rect" id="node4" href="$object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="220,95,392,136"/>

@@ -8,6 +8,10 @@ var dir_44542fd570ad861746cbfb64a34f5ae8 =
       [ "Device", "classChronos_1_1Engine_1_1Device.html", "classChronos_1_1Engine_1_1Device" ]
     ] ],
     [ "engine.hpp", "engine_8hpp.html", "engine_8hpp" ],
+    [ "engineStructs.hpp", "engineStructs_8hpp.html", [
+      [ "TextParams", "structChronos_1_1Engine_1_1TextParams.html", "structChronos_1_1Engine_1_1TextParams" ],
+      [ "UniformBufferObject", "structChronos_1_1Engine_1_1UniformBufferObject.html", "structChronos_1_1Engine_1_1UniformBufferObject" ]
+    ] ],
     [ "font.hpp", "font_8hpp.html", [
       [ "Font", "classChronos_1_1Engine_1_1Font.html", "classChronos_1_1Engine_1_1Font" ]
     ] ],
@@ -25,11 +29,6 @@ var dir_44542fd570ad861746cbfb64a34f5ae8 =
     ] ],
     [ "shapeManager.hpp", "shapeManager_8hpp.html", [
       [ "ShapeManager", "classChronos_1_1Engine_1_1ShapeManager.html", "classChronos_1_1Engine_1_1ShapeManager" ]
-    ] ],
-    [ "structs.hpp", "structs_8hpp.html", [
-      [ "ShapeParams", "structChronos_1_1Engine_1_1ShapeParams.html", "structChronos_1_1Engine_1_1ShapeParams" ],
-      [ "TextParams", "structChronos_1_1Engine_1_1TextParams.html", "structChronos_1_1Engine_1_1TextParams" ],
-      [ "UniformBufferObject", "structChronos_1_1Engine_1_1UniformBufferObject.html", "structChronos_1_1Engine_1_1UniformBufferObject" ]
     ] ],
     [ "swapchain.hpp", "swapchain_8hpp.html", "swapchain_8hpp" ],
     [ "textManager.hpp", "textManager_8hpp.html", [

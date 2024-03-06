@@ -114,13 +114,13 @@ Collaboration diagram for Chronos::Engine::Shape:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1Shape__coll__graph.png" border="0" usemap="#aChronos_1_1Engine_1_1Shape_coll__map" alt="Collaboration graph"/></div>
 <map name="aChronos_1_1Engine_1_1Shape_coll__map" id="aChronos_1_1Engine_1_1Shape_coll__map">
-<area shape="rect" title="Class for creating a shape(triangle, rectangle, etc.)." alt="" coords="1043,113,1217,140"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects." alt="" coords="741,23,919,49"/>
+<area shape="rect" title="Class for creating a shape(triangle, rectangle, etc.)." alt="" coords="1056,113,1231,140"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects." alt="" coords="748,23,925,49"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="5,76,185,103"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="281,51,488,77"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Texture.html" title="This class holds the Vulkan data and objects needed for a texture." alt="" coords="512,88,695,115"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html" title="Used to store buffers in GPU." alt="" coords="516,152,691,179"/>
-<area shape="rect" href="structChronos_1_1Engine_1_1ShapeParams.html" title="Parameters for creating a shape." alt="" coords="719,213,941,240"/>
+<area shape="rect" href="structChronos_1_1Manager_1_1ShapeParams.html" title="Parameters for creating a shape." alt="" coords="719,213,955,240"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -153,9 +153,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ad56d1d3878c6893ffc8205dc8b2ef59e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structChronos_1_1Engine_1_1ShapeParams.html">Chronos::Engine::ShapeParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">params</a></td></tr>
-<tr class="memdesc:ad56d1d3878c6893ffc8205dc8b2ef59e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The parameters that are associated with the shape.  <a href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">More...</a><br /></td></tr>
-<tr class="separator:ad56d1d3878c6893ffc8205dc8b2ef59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaa5406193c63f6e6ab3cbe52292b452"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#adaa5406193c63f6e6ab3cbe52292b452">params</a></td></tr>
+<tr class="memdesc:adaa5406193c63f6e6ab3cbe52292b452"><td class="mdescLeft">&#160;</td><td class="mdescRight">The parameters that are associated with the shape.  <a href="classChronos_1_1Engine_1_1Shape.html#adaa5406193c63f6e6ab3cbe52292b452">More...</a><br /></td></tr>
+<tr class="separator:adaa5406193c63f6e6ab3cbe52292b452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb02ef60580acabf980869118658b75f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#afb02ef60580acabf980869118658b75f">indices</a></td></tr>
 <tr class="memdesc:afb02ef60580acabf980869118658b75f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The indices that is used to specify the order of vertices to render.  <a href="classChronos_1_1Engine_1_1Shape.html#afb02ef60580acabf980869118658b75f">More...</a><br /></td></tr>
 <tr class="separator:afb02ef60580acabf980869118658b75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -697,17 +697,17 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="shape_8cpp_source.html#l00089">89</a> of file <a class="el" href="shape_8cpp_source.html">shape.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">uniformBuffers</a>[currentFrame].update(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">swapChain</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">swapChainExtent</a>, <a class="code" href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">params</a>.<a class="code" href="structChronos_1_1Engine_1_1ShapeParams.html#ab9efbf466f91ebfc7882b222fa728a36">x</a>,</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">params</a>.<a class="code" href="structChronos_1_1Engine_1_1ShapeParams.html#a4da73b3bb2728f4cf1a92c9fa7636d9e">y</a>, <a class="code" href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">params</a>.<a class="code" href="structChronos_1_1Engine_1_1ShapeParams.html#afb1a433eba12e787210ac28115f8039b">rotation</a>, <a class="code" href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">params</a>.<a class="code" href="structChronos_1_1Engine_1_1ShapeParams.html#a16905d63f7a7f9aa2227bff9a54850d5">xSize</a>,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">params</a>.<a class="code" href="structChronos_1_1Engine_1_1ShapeParams.html#af1266198e3a2d704d6fa646ce3f43e85">ySize</a>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">uniformBuffers</a>[currentFrame].update(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">swapChain</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">swapChainExtent</a>, <a class="code" href="classChronos_1_1Engine_1_1Shape.html#adaa5406193c63f6e6ab3cbe52292b452">params</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#ac19f647202f97d09446a1f0aaba3f57e">x</a>,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Shape.html#adaa5406193c63f6e6ab3cbe52292b452">params</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a57af8e9f2161df8083f206cfbb34502e">y</a>, <a class="code" href="classChronos_1_1Engine_1_1Shape.html#adaa5406193c63f6e6ab3cbe52292b452">params</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a436f2ec9fd7dd6c7f535965c6f3fa6b1">rotation</a>, <a class="code" href="classChronos_1_1Engine_1_1Shape.html#adaa5406193c63f6e6ab3cbe52292b452">params</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a5e3bb516b908ca90775cad71d8370f03">xSize</a>,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Shape.html#adaa5406193c63f6e6ab3cbe52292b452">params</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a70bb93d5f5427be148c67c4811cb9b3b">ySize</a>);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Shape_html_ad56d1d3878c6893ffc8205dc8b2ef59e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Shape.html#ad56d1d3878c6893ffc8205dc8b2ef59e">Chronos::Engine::Shape::params</a></div><div class="ttdeci">Chronos::Engine::ShapeParams params</div><div class="ttdoc">The parameters that are associated with the shape.</div><div class="ttdef"><b>Definition:</b> <a href="shape_8hpp_source.html#l00028">shape.hpp:28</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Shape_html_adaa5406193c63f6e6ab3cbe52292b452"><div class="ttname"><a href="classChronos_1_1Engine_1_1Shape.html#adaa5406193c63f6e6ab3cbe52292b452">Chronos::Engine::Shape::params</a></div><div class="ttdeci">Chronos::Manager::ShapeParams params</div><div class="ttdoc">The parameters that are associated with the shape.</div><div class="ttdef"><b>Definition:</b> <a href="shape_8hpp_source.html#l00028">shape.hpp:28</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_a10893a5577243552e6d64875e1167a63"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">Chronos::Engine::SwapChain::swapChainExtent</a></div><div class="ttdeci">VkExtent2D swapChainExtent</div><div class="ttdoc">Dimenisons of the current swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8hpp_source.html#l00133">swapchain.hpp:133</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1ShapeParams_html_a16905d63f7a7f9aa2227bff9a54850d5"><div class="ttname"><a href="structChronos_1_1Engine_1_1ShapeParams.html#a16905d63f7a7f9aa2227bff9a54850d5">Chronos::Engine::ShapeParams::xSize</a></div><div class="ttdeci">float xSize</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00031">structs.hpp:31</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1ShapeParams_html_a4da73b3bb2728f4cf1a92c9fa7636d9e"><div class="ttname"><a href="structChronos_1_1Engine_1_1ShapeParams.html#a4da73b3bb2728f4cf1a92c9fa7636d9e">Chronos::Engine::ShapeParams::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00029">structs.hpp:29</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1ShapeParams_html_ab9efbf466f91ebfc7882b222fa728a36"><div class="ttname"><a href="structChronos_1_1Engine_1_1ShapeParams.html#ab9efbf466f91ebfc7882b222fa728a36">Chronos::Engine::ShapeParams::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00028">structs.hpp:28</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1ShapeParams_html_af1266198e3a2d704d6fa646ce3f43e85"><div class="ttname"><a href="structChronos_1_1Engine_1_1ShapeParams.html#af1266198e3a2d704d6fa646ce3f43e85">Chronos::Engine::ShapeParams::ySize</a></div><div class="ttdeci">float ySize</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00032">structs.hpp:32</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1ShapeParams_html_afb1a433eba12e787210ac28115f8039b"><div class="ttname"><a href="structChronos_1_1Engine_1_1ShapeParams.html#afb1a433eba12e787210ac28115f8039b">Chronos::Engine::ShapeParams::rotation</a></div><div class="ttdeci">float rotation</div><div class="ttdef"><b>Definition:</b> <a href="structs_8hpp_source.html#l00030">structs.hpp:30</a></div></div>
+<div class="ttc" id="astructChronos_1_1Manager_1_1ShapeParams_html_a436f2ec9fd7dd6c7f535965c6f3fa6b1"><div class="ttname"><a href="structChronos_1_1Manager_1_1ShapeParams.html#a436f2ec9fd7dd6c7f535965c6f3fa6b1">Chronos::Manager::ShapeParams::rotation</a></div><div class="ttdeci">float rotation</div><div class="ttdef"><b>Definition:</b> <a href="commonStructs_8hpp_source.html#l00025">commonStructs.hpp:25</a></div></div>
+<div class="ttc" id="astructChronos_1_1Manager_1_1ShapeParams_html_a57af8e9f2161df8083f206cfbb34502e"><div class="ttname"><a href="structChronos_1_1Manager_1_1ShapeParams.html#a57af8e9f2161df8083f206cfbb34502e">Chronos::Manager::ShapeParams::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition:</b> <a href="commonStructs_8hpp_source.html#l00024">commonStructs.hpp:24</a></div></div>
+<div class="ttc" id="astructChronos_1_1Manager_1_1ShapeParams_html_a5e3bb516b908ca90775cad71d8370f03"><div class="ttname"><a href="structChronos_1_1Manager_1_1ShapeParams.html#a5e3bb516b908ca90775cad71d8370f03">Chronos::Manager::ShapeParams::xSize</a></div><div class="ttdeci">float xSize</div><div class="ttdef"><b>Definition:</b> <a href="commonStructs_8hpp_source.html#l00026">commonStructs.hpp:26</a></div></div>
+<div class="ttc" id="astructChronos_1_1Manager_1_1ShapeParams_html_a70bb93d5f5427be148c67c4811cb9b3b"><div class="ttname"><a href="structChronos_1_1Manager_1_1ShapeParams.html#a70bb93d5f5427be148c67c4811cb9b3b">Chronos::Manager::ShapeParams::ySize</a></div><div class="ttdeci">float ySize</div><div class="ttdef"><b>Definition:</b> <a href="commonStructs_8hpp_source.html#l00027">commonStructs.hpp:27</a></div></div>
+<div class="ttc" id="astructChronos_1_1Manager_1_1ShapeParams_html_ac19f647202f97d09446a1f0aaba3f57e"><div class="ttname"><a href="structChronos_1_1Manager_1_1ShapeParams.html#ac19f647202f97d09446a1f0aaba3f57e">Chronos::Manager::ShapeParams::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> <a href="commonStructs_8hpp_source.html#l00023">commonStructs.hpp:23</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -748,14 +748,14 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ad56d1d3878c6893ffc8205dc8b2ef59e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad56d1d3878c6893ffc8205dc8b2ef59e">&#9670;&nbsp;</a></span>params</h2>
+<a id="adaa5406193c63f6e6ab3cbe52292b452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaa5406193c63f6e6ab3cbe52292b452">&#9670;&nbsp;</a></span>params</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structChronos_1_1Engine_1_1ShapeParams.html">Chronos::Engine::ShapeParams</a> Chronos::Engine::Shape::params</td>
+          <td class="memname"><a class="el" href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a> Chronos::Engine::Shape::params</td>
         </tr>
       </table>
 </div><div class="memdoc">

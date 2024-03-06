@@ -25,7 +25,7 @@ var hierarchy =
     [ "Chronos::Engine::PipelineAttributes", "structChronos_1_1Engine_1_1PipelineAttributes.html", null ],
     [ "Chronos::Manager::PolygonType", "structChronos_1_1Manager_1_1PolygonType.html", null ],
     [ "Chronos::Engine::QueueFamilyIndices", "structChronos_1_1Engine_1_1QueueFamilyIndices.html", null ],
-    [ "Chronos::Engine::ShapeParams", "structChronos_1_1Engine_1_1ShapeParams.html", null ],
+    [ "Chronos::Manager::ShapeParams", "structChronos_1_1Manager_1_1ShapeParams.html", null ],
     [ "Chronos::Engine::SwapChain", "classChronos_1_1Engine_1_1SwapChain.html", null ],
     [ "Chronos::Engine::SwapChainSupportDetails", "structChronos_1_1Engine_1_1SwapChainSupportDetails.html", null ],
     [ "Chronos::Manager::Text", "structChronos_1_1Manager_1_1Text.html", null ],
