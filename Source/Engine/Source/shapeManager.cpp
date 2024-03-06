@@ -3,7 +3,6 @@
 #include "objectManagerDefs.hpp"
 #include "object.hpp"
 
-
 void Chronos::Engine::ShapeManager::render(uint32_t currentFrame, uint32_t imageIndex,
     float bgColor[3])
 {
@@ -43,7 +42,7 @@ void Chronos::Engine::ShapeManager::render(uint32_t currentFrame, uint32_t image
     endRender(currentFrame);
 }
 
-int Chronos::Engine::ShapeManager::addRectangle(ShapeParams shapeParams,
+int Chronos::Engine::ShapeManager::addRectangle(Chronos::Manager::ShapeParams shapeParams,
     std::string texturePath)
 {
     int shapeNo = Chronos::Engine::ObjectManager<Chronos::Engine::Shape>::addObject(Rectangle());
@@ -53,7 +52,7 @@ int Chronos::Engine::ShapeManager::addRectangle(ShapeParams shapeParams,
     return shapeNo;
 }
 
-int Chronos::Engine::ShapeManager::addTriangle(ShapeParams shapeParams,
+int Chronos::Engine::ShapeManager::addTriangle(Chronos::Manager::ShapeParams shapeParams,
     std::string texturePath)
 {
     int shapeNo = Chronos::Engine::ObjectManager<Chronos::Engine::Shape>::addObject(Triangle());

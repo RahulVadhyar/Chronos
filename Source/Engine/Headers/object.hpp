@@ -3,7 +3,7 @@
  \brief Contains the class for creating a generic object.
 */
 #pragma once
-#include "structs.hpp"
+#include "engineStructs.hpp"
 #include "helper.hpp"
 #include "Vertex.hpp"
 #include "buffers.hpp"

@@ -4,7 +4,7 @@
  \brief Main API for chronos. Any applications should include this file.
 */
 #include "engine.hpp"
-#include "structs.hpp"
+#include "engineStructs.hpp"
 //this is the api for chronos. Any applications will include and link to this file
 
 namespace Chronos{
@@ -50,7 +50,7 @@ namespace Chronos{
             bool triangle = false;
             bool rectangle = false;
         };
-
+        
         /**
         \brief The main manager of chronos. 
         
@@ -109,7 +109,7 @@ namespace Chronos{
             \brief Adds a polygon(triangle or rectangle) to the window
 
             Use this to add a polyon(triangle or rectangle) to the window.
-            Options for the shape are defined in the [ShapeParams](#Chronos::Engine::ShapeParams) struct. 
+            Options for the shape are defined in the [ShapeParams](#Chronos::Manager::ShapeParams) struct. 
             For options related to the shape, please refer the struct. 
             In order to choose between triangle and rectangle, the option must be set in ```polygonType```
             A texture path must be selected
@@ -121,7 +121,7 @@ namespace Chronos{
 
             @return Returns the shapeNo that can be used for referencing this shape later.
             */
-            int addPolygon(Chronos::Engine::ShapeParams shapeParams, PolygonType polygonType, std::string texturePath);
+            int addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType, std::string texturePath);
             
             /**
             \brief Updates the polygon with the new parameters.
@@ -133,7 +133,7 @@ namespace Chronos{
             @param shapeNo The shapeNo reference to the shape. Generated during ```addPolygon()`` call.
             @param shapeParams The updated shape parameters to update the shape with.
             */
-            void updatePolygon(int shapeNo, Chronos::Engine::ShapeParams shapeParams);
+            void updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams);
 
             /**
             \brief Removes the polygon from the window

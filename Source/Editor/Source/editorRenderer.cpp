@@ -52,11 +52,12 @@ void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFW
     init_info.Queue = device->graphicsQueue;
     init_info.PipelineCache = VK_NULL_HANDLE;
     init_info.DescriptorPool = descriptorPool;
+    init_info.RenderPass = renderPass;
     init_info.Allocator = nullptr;
     init_info.MinImageCount = MAX_FRAMES_IN_FLIGHT;
     init_info.ImageCount = MAX_FRAMES_IN_FLIGHT;
     init_info.CheckVkResultFn = nullptr; // add a fucntion to this
-    ImGui_ImplVulkan_Init(&init_info, renderPass);
+    ImGui_ImplVulkan_Init(&init_info);
 
     VkCommandPoolCreateInfo commandPoolCreateInfo = {};
     commandPoolCreateInfo.sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;

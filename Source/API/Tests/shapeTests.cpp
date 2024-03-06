@@ -17,7 +17,7 @@ protected:
 
 TEST_F(ShapeAPITest, isWorking){
 
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -28,7 +28,7 @@ TEST_F(ShapeAPITest, isWorking){
     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
     EXPECT_EQ(triangle, 0);
 
-    Chronos::Engine::ShapeParams rectangleParams;
+    Chronos::Manager::ShapeParams rectangleParams;
     rectangleParams.x = -0.5;
     rectangleParams.y = -0.5;
     rectangleParams.xSize = 0.5;
@@ -42,7 +42,7 @@ TEST_F(ShapeAPITest, isWorking){
 
 TEST_F(ShapeAPITest, multipleShapesDifferentType){
 
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -53,7 +53,7 @@ TEST_F(ShapeAPITest, multipleShapesDifferentType){
     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
     EXPECT_EQ(triangle, 0);
 
-    Chronos::Engine::ShapeParams rectangleParams;
+    Chronos::Manager::ShapeParams rectangleParams;
     rectangleParams.x = -0.5;
     rectangleParams.y = -0.5;
     rectangleParams.xSize = 0.5;
@@ -81,7 +81,7 @@ TEST_F(ShapeAPITest, multipleShapesDifferentType){
 }
 
 TEST_F(ShapeAPITest, multipleShapesSameTypeTriangle){
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -114,7 +114,7 @@ TEST_F(ShapeAPITest, multipleShapesSameTypeTriangle){
 }
 TEST_F(ShapeAPITest, multipleShapeSameTypeRectangle){
 
-    Chronos::Engine::ShapeParams rectangleParams;
+    Chronos::Manager::ShapeParams rectangleParams;
     rectangleParams.x = -0.5;
     rectangleParams.y = -0.5;
     rectangleParams.xSize = 0.5;
@@ -149,7 +149,7 @@ TEST_F(ShapeAPITest, multipleShapeSameTypeRectangle){
 
 TEST_F(ShapeAPITest, incompatibleTextureType1){
     cleanup = false;
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -162,7 +162,7 @@ TEST_F(ShapeAPITest, incompatibleTextureType1){
 
 TEST_F(ShapeAPITest, incompatibleTextureType2){
     cleanup = false;
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -175,7 +175,7 @@ TEST_F(ShapeAPITest, incompatibleTextureType2){
 
 TEST_F(ShapeAPITest, incompatibleTextureType3){
     cleanup = false;
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -188,7 +188,7 @@ TEST_F(ShapeAPITest, incompatibleTextureType3){
 
 TEST_F(ShapeAPITest, incompatibleTextureType4){
     cleanup = false;
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -202,7 +202,7 @@ TEST_F(ShapeAPITest, incompatibleTextureType4){
 
 TEST_F(ShapeAPITest, incompatibleTextureType5){
     cleanup = false;
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -215,7 +215,7 @@ TEST_F(ShapeAPITest, incompatibleTextureType5){
 
 TEST_F(ShapeAPITest, incompatibleTextureType6){
     cleanup = false;
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -228,7 +228,7 @@ TEST_F(ShapeAPITest, incompatibleTextureType6){
 
 TEST_F(ShapeAPITest, incompatibleTextureType7){
     cleanup = false;
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -241,7 +241,7 @@ TEST_F(ShapeAPITest, incompatibleTextureType7){
 
 TEST_F(ShapeAPITest, incompatibleTextureType8){
     cleanup = false;
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -254,7 +254,7 @@ TEST_F(ShapeAPITest, incompatibleTextureType8){
 
 TEST_F(ShapeAPITest, incompatibleTextureType9){
     cleanup = false;
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -267,7 +267,7 @@ TEST_F(ShapeAPITest, incompatibleTextureType9){
 
 TEST_F(ShapeAPITest, incompatibleTextureType11){
     cleanup = false;
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -279,7 +279,7 @@ TEST_F(ShapeAPITest, incompatibleTextureType11){
 }
 
 TEST_F(ShapeAPITest, multipleShapesDifferentTypeDifferentTexture){
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -290,7 +290,7 @@ TEST_F(ShapeAPITest, multipleShapesDifferentTypeDifferentTexture){
     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
     EXPECT_EQ(triangle, 0);
 
-    Chronos::Engine::ShapeParams rectangleParams;
+    Chronos::Manager::ShapeParams rectangleParams;
     rectangleParams.x = -0.5;
     rectangleParams.y = -0.5;
     rectangleParams.xSize = 0.5;
@@ -320,13 +320,13 @@ TEST_F(ShapeAPITest, multipleShapesDifferentTypeDifferentTexture){
 TEST_F(ShapeAPITest, paramsIsNull){
     Chronos::Manager::PolygonType triangleType;
     triangleType.triangle = true;
-    Chronos::Engine::ShapeParams triangleParams = (Chronos::Engine::ShapeParams)NULL;
-    EXPECT_EQ(manager->addPolygon((Chronos::Engine::ShapeParams)NULL, triangleType, "Assets/texture3.png"), 0);
+    Chronos::Manager::ShapeParams triangleParams = (Chronos::Manager::ShapeParams)NULL;
+    EXPECT_EQ(manager->addPolygon((Chronos::Manager::ShapeParams)NULL, triangleType, "Assets/texture3.png"), 0);
 }
 
 TEST_F(ShapeAPITest, polygonTypeIsNotSet){
     cleanup = false;
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -338,16 +338,16 @@ TEST_F(ShapeAPITest, polygonTypeIsNotSet){
 
 TEST_F(ShapeAPITest, bothParamsAndPolygonTypeIsNotSet){
     cleanup = false;
-    EXPECT_THROW(manager->addPolygon((Chronos::Engine::ShapeParams)NULL, (Chronos::Manager::PolygonType)NULL, "Assets/texture3.png"), std::runtime_error);
+    EXPECT_THROW(manager->addPolygon((Chronos::Manager::ShapeParams)NULL, (Chronos::Manager::PolygonType)NULL, "Assets/texture3.png"), std::runtime_error);
 }
 
 TEST_F(ShapeAPITest, allArgsIsNullptr){
     cleanup = false;
-    EXPECT_THROW(manager->addPolygon((Chronos::Engine::ShapeParams)NULL, (Chronos::Manager::PolygonType)NULL, ""), std::runtime_error);
+    EXPECT_THROW(manager->addPolygon((Chronos::Manager::ShapeParams)NULL, (Chronos::Manager::PolygonType)NULL, ""), std::runtime_error);
 }
 
 TEST_F(ShapeAPITest, removeShape){
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -363,7 +363,7 @@ TEST_F(ShapeAPITest, removeShape){
 }
 TEST_F(ShapeAPITest, removeShapeWrongIndex){
     cleanup = false;
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -379,7 +379,7 @@ TEST_F(ShapeAPITest, removeShapeWrongIndex){
 }
 TEST_F(ShapeAPITest, removeShapeAfterUpdate){
     cleanup = false;
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 1.0;
@@ -391,7 +391,7 @@ TEST_F(ShapeAPITest, removeShapeAfterUpdate){
     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
     EXPECT_EQ(triangle, 0);
 
-    Chronos::Engine::ShapeParams triangleParams2;
+    Chronos::Manager::ShapeParams triangleParams2;
     triangleParams2.x = 0.5;
     triangleParams2.y = 0.5;
     triangleParams2.xSize = 0.5;
@@ -403,7 +403,7 @@ TEST_F(ShapeAPITest, removeShapeAfterUpdate){
 }
 TEST_F(ShapeAPITest, removeShapeAfterRemove){
     cleanup = false;
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 1.0;
@@ -415,7 +415,7 @@ TEST_F(ShapeAPITest, removeShapeAfterRemove){
     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
     EXPECT_EQ(triangle, 0);
 
-    Chronos::Engine::ShapeParams triangleParams2;
+    Chronos::Manager::ShapeParams triangleParams2;
     triangleParams2.x = 0.5;
     triangleParams2.y = 0.5;
     triangleParams2.xSize = 0.5;
@@ -431,7 +431,7 @@ TEST_F(ShapeAPITest, removeShapeAsNullptr){
 }
 
 TEST_F(ShapeAPITest, multipleAddRemove){
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 1.0;
@@ -443,7 +443,7 @@ TEST_F(ShapeAPITest, multipleAddRemove){
     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
     EXPECT_EQ(triangle, 0);
 
-    Chronos::Engine::ShapeParams triangleParams2;
+    Chronos::Manager::ShapeParams triangleParams2;
     triangleParams2.x = 0.5;
     triangleParams2.y = 0.5;
     triangleParams2.xSize = 0.5;
@@ -458,7 +458,7 @@ TEST_F(ShapeAPITest, multipleAddRemove){
 }
 
 TEST_F(ShapeAPITest, updateShape) {
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 1.0;
@@ -470,7 +470,7 @@ TEST_F(ShapeAPITest, updateShape) {
     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
     EXPECT_EQ(triangle, 0);
 
-    Chronos::Engine::ShapeParams params2;
+    Chronos::Manager::ShapeParams params2;
     params2.x = 0.1;
     params2.y = 0.4;
     params2.rotation = 0.0;
@@ -483,7 +483,7 @@ TEST_F(ShapeAPITest, updateShape) {
 
 TEST_F(ShapeAPITest, updateShapeWrongIndex) {
     cleanup = false;
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 1.0;
@@ -495,7 +495,7 @@ TEST_F(ShapeAPITest, updateShapeWrongIndex) {
     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
     EXPECT_EQ(triangle, 0);
 
-    Chronos::Engine::ShapeParams params2;
+    Chronos::Manager::ShapeParams params2;
     params2.x = 0.1;
     params2.y = 0.4;
     params2.rotation = 0.0;
@@ -506,7 +506,7 @@ TEST_F(ShapeAPITest, updateShapeWrongIndex) {
 }
 
 TEST_F(ShapeAPITest, updateShapeAfterUpdate) {
-    Chronos::Engine::ShapeParams params;
+    Chronos::Manager::ShapeParams params;
     params.x = 0.5;
     params.y = 0.5;
     params.rotation = 0.0;
@@ -519,7 +519,7 @@ TEST_F(ShapeAPITest, updateShapeAfterUpdate) {
     int shapeIndex = manager->addPolygon(params, triangleType, "Assets/texture.jpg");
     EXPECT_NO_THROW(manager->updatePolygon(shapeIndex, params));
 
-    Chronos::Engine::ShapeParams params2;
+    Chronos::Manager::ShapeParams params2;
     params2.x = 0.1;
     params2.y = 0.4;
     params2.rotation = 0.0;
@@ -530,7 +530,7 @@ TEST_F(ShapeAPITest, updateShapeAfterUpdate) {
 
 TEST_F(ShapeAPITest, updateShapeNoAsNullptr) {
     cleanup = false;
-    Chronos::Engine::ShapeParams params;
+    Chronos::Manager::ShapeParams params;
     params.x = 0.5;
     params.y = 0.5;
     params.rotation = 0.0;
@@ -547,7 +547,7 @@ TEST_F(ShapeAPITest, updateShapeNoAsNullptr) {
 
     manager->removePolygon(shapeIndex);
 
-    Chronos::Engine::ShapeParams params2;
+    Chronos::Manager::ShapeParams params2;
     params2.x = 0.1;
     params2.y = 0.4;
     params2.rotation = 0.0;
@@ -559,7 +559,7 @@ TEST_F(ShapeAPITest, updateShapeNoAsNullptr) {
 
 
 TEST_F(ShapeAPITest, updateShapeParamsAsNull) {
-    Chronos::Engine::ShapeParams params;
+    Chronos::Manager::ShapeParams params;
     params.x = 0.5;
     params.y = 0.5;
     params.rotation = 0.0;
@@ -570,12 +570,12 @@ TEST_F(ShapeAPITest, updateShapeParamsAsNull) {
     triangleType.triangle = true;
 
     int shapeIndex = manager->addPolygon(params, triangleType, "Assets/texture.jpg");
-    EXPECT_NO_THROW(manager->updatePolygon(shapeIndex, (Chronos::Engine::ShapeParams)NULL));
+    EXPECT_NO_THROW(manager->updatePolygon(shapeIndex, (Chronos::Manager::ShapeParams)NULL));
 }
 
 TEST_F(ShapeAPITest, updateShapeAfterRemove) {
     cleanup = false;
-    Chronos::Engine::ShapeParams params;
+    Chronos::Manager::ShapeParams params;
     params.x = 0.5;
     params.y = 0.5;
     params.rotation = 0.0;
@@ -588,7 +588,7 @@ TEST_F(ShapeAPITest, updateShapeAfterRemove) {
     int shapeIndex = manager->addPolygon(params, triangleType, "Assets/texture.jpg");
     manager->removePolygon(shapeIndex);
 
-    Chronos::Engine::ShapeParams params2;
+    Chronos::Manager::ShapeParams params2;
     params2.x = 0.1;
     params2.y = 0.4;
     params2.rotation = 0.0;
@@ -598,14 +598,14 @@ TEST_F(ShapeAPITest, updateShapeAfterRemove) {
 }
 
 TEST_F(ShapeAPITest, extremeMultipleShapesSameType){
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
     triangleParams.ySize = 0.5;
     triangleParams.rotation = 0;
 
-    Chronos::Engine::ShapeParams triangleParams2;
+    Chronos::Manager::ShapeParams triangleParams2;
     triangleParams2.x = -0.2;
     triangleParams2.y = 0.9;
     triangleParams2.xSize = 0.4;
@@ -627,14 +627,14 @@ TEST_F(ShapeAPITest, extremeMultipleShapesSameType){
 }
 
 TEST_F(ShapeAPITest, multipleShapesSameType2){
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
     triangleParams.ySize = 0.5;
     triangleParams.rotation = 0;
 
-    Chronos::Engine::ShapeParams triangleParams2;
+    Chronos::Manager::ShapeParams triangleParams2;
     triangleParams2.x = -0.2;
     triangleParams2.y = 0.9;
     triangleParams2.xSize = 0.4;
@@ -656,14 +656,14 @@ TEST_F(ShapeAPITest, multipleShapesSameType2){
 
 
 TEST_F(ShapeAPITest, extremeShapesUpdates){
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
     triangleParams.ySize = 0.5;
     triangleParams.rotation = 0;
 
-    Chronos::Engine::ShapeParams triangleParams2;
+    Chronos::Manager::ShapeParams triangleParams2;
     triangleParams2.x = -0.2;
     triangleParams2.y = 0.9;
     triangleParams2.xSize = 0.4;
@@ -687,14 +687,14 @@ TEST_F(ShapeAPITest, extremeShapesUpdates){
 }
 
 TEST_F(ShapeAPITest, extremeParamsTest1){
-   Chronos::Engine::ShapeParams triangleParams;
+   Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
     triangleParams.ySize = 0.5;
     triangleParams.rotation = 0;
 
-    Chronos::Engine::ShapeParams triangleParams2;
+    Chronos::Manager::ShapeParams triangleParams2;
     triangleParams2.x = 0;
     triangleParams2.y = 0;
     triangleParams2.xSize = 0;
@@ -718,14 +718,14 @@ TEST_F(ShapeAPITest, extremeParamsTest1){
 }
 
 TEST_F(ShapeAPITest, extremeParamsTest2){
-   Chronos::Engine::ShapeParams triangleParams;
+   Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
     triangleParams.ySize = 0.5;
     triangleParams.rotation = 0;
 
-    Chronos::Engine::ShapeParams triangleParams2;
+    Chronos::Manager::ShapeParams triangleParams2;
     triangleParams2.x = 0;
     triangleParams2.y = 0;
     triangleParams2.xSize = 0;

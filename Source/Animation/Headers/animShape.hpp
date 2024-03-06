@@ -1,7 +1,9 @@
 #pragma once
 #include "animObject.hpp"
-#include "structs.hpp"
+#include "engineStructs.hpp"
 #include "stlheader.hpp"
+#include "commonStructs.hpp"
+
 namespace Chronos {
 namespace Animation {
     /**
@@ -23,7 +25,7 @@ namespace Animation {
     void changeAnimation();
     
     private:
-    std::vector<Chronos::Engine::ShapeParams> animFrames;
+    std::vector<Chronos::Manager::ShapeParams> animFrames;
     
     };
 }

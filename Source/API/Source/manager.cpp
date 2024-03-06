@@ -45,7 +45,7 @@ int Manager::Manager::changeBackgroundColor(float r, float g, float b)
     return 0;
 }
 
-int Manager::Manager::addPolygon(Chronos::Engine::ShapeParams shapeParams, Chronos::Manager::PolygonType polygonType, std::string texturePath)
+int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, Chronos::Manager::PolygonType polygonType, std::string texturePath)
 {
     if (polygonType.triangle) {
         return engine.shapeManager.addTriangle(shapeParams, texturePath);
@@ -55,7 +55,7 @@ int Manager::Manager::addPolygon(Chronos::Engine::ShapeParams shapeParams, Chron
         throw std::runtime_error("Polygon type not supported");
     }
 }
-void Manager::Manager::updatePolygon(int shapeNo, Chronos::Engine::ShapeParams shapeParams)
+void Manager::Manager::updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams)
 {
     if (engine.shapeManager.objects.count(shapeNo) == 0) {
         throw std::runtime_error("Shape does not exist");

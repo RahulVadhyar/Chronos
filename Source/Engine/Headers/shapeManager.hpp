@@ -40,7 +40,7 @@ namespace Engine {
         Supported textures are .jpg and .png
         Returns a shapeNo that references the shape for modifying and destroying t.
         */
-        int addTriangle(Chronos::Engine::ShapeParams shapeParams, std::string texturePath);
+        int addTriangle(Chronos::Manager::ShapeParams shapeParams, std::string texturePath);
 
         /**
         \brief Adds a rectangle to the shape manager. 
@@ -49,7 +49,7 @@ namespace Engine {
         Supported textures are .jpg and .png
         Returns a shapeNo that references the shape for modifying and destroying t.
         */
-        int addRectangle(Chronos::Engine::ShapeParams shapeParams, std::string texturePath);
+        int addRectangle(Chronos::Manager::ShapeParams shapeParams, std::string texturePath);
         
         /**
         \brief Records the commands needed for rendering the shapes.

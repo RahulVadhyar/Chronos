@@ -16,7 +16,7 @@ protected:
 
 TEST_F(GeneralAPITest, isWorking){
 
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -27,7 +27,7 @@ TEST_F(GeneralAPITest, isWorking){
     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
     EXPECT_EQ(triangle, 0);
 
-    Chronos::Engine::ShapeParams rectangleParams;
+    Chronos::Manager::ShapeParams rectangleParams;
     rectangleParams.x = -0.5;
     rectangleParams.y = -0.5;
     rectangleParams.xSize = 0.5;
@@ -52,7 +52,7 @@ TEST_F(GeneralAPITest, isWorking){
 
 TEST_F(GeneralAPITest, renderFrames){
 
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -63,7 +63,7 @@ TEST_F(GeneralAPITest, renderFrames){
     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
     EXPECT_EQ(triangle, 0);
 
-    Chronos::Engine::ShapeParams rectangleParams;
+    Chronos::Manager::ShapeParams rectangleParams;
     rectangleParams.x = -0.5;
     rectangleParams.y = -0.5;
     rectangleParams.xSize = 0.5;
@@ -89,7 +89,7 @@ TEST_F(GeneralAPITest, renderFrames){
 
 TEST_F(GeneralAPITest, updateShapeAndText){
 
-    Chronos::Engine::ShapeParams triangleParams;
+    Chronos::Manager::ShapeParams triangleParams;
     triangleParams.x = 0.5;
     triangleParams.y = 0.5;
     triangleParams.xSize = 0.5;
@@ -100,7 +100,7 @@ TEST_F(GeneralAPITest, updateShapeAndText){
     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
     EXPECT_EQ(triangle, 0);
 
-    Chronos::Engine::ShapeParams rectangleParams;
+    Chronos::Manager::ShapeParams rectangleParams;
     rectangleParams.x = -0.5;
     rectangleParams.y = -0.5;
     rectangleParams.xSize = 0.5;

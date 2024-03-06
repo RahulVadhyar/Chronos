@@ -3,13 +3,13 @@
  \brief Contains the class for creating a shape.
 */
 #pragma once
-#include "structs.hpp"
+#include "engineStructs.hpp"
 #include "helper.hpp"
 #include "Vertex.hpp"
 #include "buffers.hpp"
 #include "texture.hpp"
 #include "object.hpp"
-
+#include "commonStructs.hpp"
 namespace Chronos {
 namespace Engine {
     /**
@@ -25,7 +25,7 @@ namespace Engine {
         /**
         \brief The parameters that are associated with the shape.
         */
-        Chronos::Engine::ShapeParams params;
+        Chronos::Manager::ShapeParams params;
 
         /**
         \brief Initializes the shape object and creates the necessary objects.
