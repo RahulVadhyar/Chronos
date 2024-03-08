@@ -7,7 +7,9 @@ var dir_44542fd570ad861746cbfb64a34f5ae8 =
     [ "device.hpp", "device_8hpp.html", [
       [ "Device", "classChronos_1_1Engine_1_1Device.html", "classChronos_1_1Engine_1_1Device" ]
     ] ],
-    [ "engine.hpp", "engine_8hpp.html", "engine_8hpp" ],
+    [ "engine.hpp", "engine_8hpp.html", [
+      [ "Engine", "classChronos_1_1Engine_1_1Engine.html", "classChronos_1_1Engine_1_1Engine" ]
+    ] ],
     [ "engineStructs.hpp", "engineStructs_8hpp.html", [
       [ "TextParams", "structChronos_1_1Engine_1_1TextParams.html", "structChronos_1_1Engine_1_1TextParams" ],
       [ "UniformBufferObject", "structChronos_1_1Engine_1_1UniformBufferObject.html", "structChronos_1_1Engine_1_1UniformBufferObject" ]
@@ -21,12 +23,7 @@ var dir_44542fd570ad861746cbfb64a34f5ae8 =
       [ "Object", "classChronos_1_1Engine_1_1Object.html", "classChronos_1_1Engine_1_1Object" ]
     ] ],
     [ "objectManager.hpp", "objectManager_8hpp.html", "objectManager_8hpp" ],
-    [ "objectManagerDefs.hpp", "objectManagerDefs_8hpp.html", null ],
-    [ "shape.hpp", "shape_8hpp.html", [
-      [ "Shape", "classChronos_1_1Engine_1_1Shape.html", "classChronos_1_1Engine_1_1Shape" ],
-      [ "Rectangle", "classChronos_1_1Engine_1_1Rectangle.html", "classChronos_1_1Engine_1_1Rectangle" ],
-      [ "Triangle", "classChronos_1_1Engine_1_1Triangle.html", "classChronos_1_1Engine_1_1Triangle" ]
-    ] ],
+    [ "shape.hpp", "shape_8hpp.html", "shape_8hpp" ],
     [ "shapeManager.hpp", "shapeManager_8hpp.html", [
       [ "ShapeManager", "classChronos_1_1Engine_1_1ShapeManager.html", "classChronos_1_1Engine_1_1ShapeManager" ]
     ] ],
@@ -37,7 +34,9 @@ var dir_44542fd570ad861746cbfb64a34f5ae8 =
     [ "texture.hpp", "texture_8hpp.html", "texture_8hpp" ],
     [ "validation.hpp", "validation_8hpp.html", "validation_8hpp" ],
     [ "Vertex.hpp", "Vertex_8hpp.html", [
-      [ "Vertex", "structChronos_1_1Engine_1_1Vertex.html", "structChronos_1_1Engine_1_1Vertex" ]
+      [ "Vertex", "structChronos_1_1Engine_1_1Vertex.html", "structChronos_1_1Engine_1_1Vertex" ],
+      [ "ColorVertex", "structChronos_1_1Engine_1_1ColorVertex.html", "structChronos_1_1Engine_1_1ColorVertex" ],
+      [ "TexturedVertex", "structChronos_1_1Engine_1_1TexturedVertex.html", "structChronos_1_1Engine_1_1TexturedVertex" ]
     ] ],
     [ "vulkanHeaders.hpp", "vulkanHeaders_8hpp.html", "vulkanHeaders_8hpp" ]
 ];

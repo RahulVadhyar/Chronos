@@ -189,30 +189,30 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="buffers_8cpp_source.html#l00010">10</a> of file <a class="el" href="buffers_8cpp_source.html">buffers.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">// copies the data to a staging buffer in order to copy to device buffer</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">void</span>* data;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    VkBuffer stagingBuffer;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    VkDeviceMemory stagingBufferMemory;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a">Chronos::Engine::createBuffer</a>(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        &amp;stagingBuffer, &amp;stagingBufferMemory);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    vkMapMemory(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, stagingBufferMemory, 0, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>, 0, &amp;data);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    memcpy(data, inputData, (<span class="keywordtype">size_t</span>)<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    vkUnmapMemory(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, stagingBufferMemory);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675">Chronos::Engine::copyBuffer</a>(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>, stagingBuffer, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">buffer</a>, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>, commandPool);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    vkDestroyBuffer(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, stagingBuffer, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    vkFreeMemory(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, stagingBufferMemory, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="buffers_8cpp_source.html#l00021">21</a> of file <a class="el" href="buffers_8cpp_source.html">buffers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// copies the data to a staging buffer in order to copy to device buffer</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span>* data;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    VkBuffer stagingBuffer;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    VkDeviceMemory stagingBufferMemory;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a">Chronos::Engine::createBuffer</a>(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        &amp;stagingBuffer, &amp;stagingBufferMemory);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    vkMapMemory(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, stagingBufferMemory, 0, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>, 0, &amp;data);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    memcpy(data, inputData, (<span class="keywordtype">size_t</span>)<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    vkUnmapMemory(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, stagingBufferMemory);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675">Chronos::Engine::copyBuffer</a>(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>, stagingBuffer, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">buffer</a>, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>, commandPool);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    vkDestroyBuffer(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, stagingBuffer, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    vkFreeMemory(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, stagingBufferMemory, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a4422d6437ce743cd0645372cfe63300e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">Chronos::Engine::Buffer::buffer</a></div><div class="ttdeci">VkBuffer buffer</div><div class="ttdoc">The buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00048">buffers.hpp:48</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a45958dc37af9a03b85b94445f8f25e0f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">Chronos::Engine::Buffer::size</a></div><div class="ttdeci">VkDeviceSize size</div><div class="ttdoc">The size of the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00053">buffers.hpp:53</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_adb83b0443d3a24404bf414686d27f590"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">Chronos::Engine::Buffer::device</a></div><div class="ttdeci">Chronos::Engine::Device device</div><div class="ttdoc">The device on which the buffer is stored.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00064">buffers.hpp:64</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00020">device.hpp:20</a></div></div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_aa86983b2d3f7d09e250b31c3209d207a"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a">Chronos::Engine::createBuffer</a></div><div class="ttdeci">void createBuffer(Chronos::Engine::Device device, VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer *buffer, VkDeviceMemory *bufferMemory)</div><div class="ttdoc">Creates a buffer of a given size, usage and properties.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00056">helper.cpp:56</a></div></div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_add086c77dfa54dbe0c1aedd43fcf8675"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675">Chronos::Engine::copyBuffer</a></div><div class="ttdeci">void copyBuffer(Chronos::Engine::Device device, VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size, VkCommandPool commandPool)</div><div class="ttdoc">Copies data from one buffer to another.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00086">helper.cpp:86</a></div></div>
+<div class="ttc" id="anamespaceChronos_1_1Engine_html_aa86983b2d3f7d09e250b31c3209d207a"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a">Chronos::Engine::createBuffer</a></div><div class="ttdeci">void createBuffer(Chronos::Engine::Device device, VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer *buffer, VkDeviceMemory *bufferMemory)</div><div class="ttdoc">Creates a buffer of a given size, usage and properties.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00060">helper.cpp:60</a></div></div>
+<div class="ttc" id="anamespaceChronos_1_1Engine_html_add086c77dfa54dbe0c1aedd43fcf8675"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675">Chronos::Engine::copyBuffer</a></div><div class="ttdeci">void copyBuffer(Chronos::Engine::Device device, VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size, VkCommandPool commandPool)</div><div class="ttdoc">Copies data from one buffer to another.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00090">helper.cpp:90</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="helper_8cpp_source.html#l00086">Chronos::Engine::copyBuffer()</a>, and <a class="el" href="helper_8cpp_source.html#l00056">Chronos::Engine::createBuffer()</a>.</p>
+<p class="reference">References <a class="el" href="helper_8cpp_source.html#l00090">Chronos::Engine::copyBuffer()</a>, and <a class="el" href="helper_8cpp_source.html#l00060">Chronos::Engine::createBuffer()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -224,15 +224,6 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="507,5,717,47"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c" title="Ends recording of single time command buffer and destroys it." alt="" coords="513,71,711,112"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="491,137,733,163"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classChronos_1_1Engine_1_1Buffer_aa7fa451f423cc9c6f53219258bb8a33d_icgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1Buffer_aa7fa451f423cc9c6f53219258bb8a33d_icgraph" alt=""/></div>
-<map name="aclassChronos_1_1Engine_1_1Buffer_aa7fa451f423cc9c6f53219258bb8a33d_icgraph" id="aclassChronos_1_1Engine_1_1Buffer_aa7fa451f423cc9c6f53219258bb8a33d_icgraph">
-<area shape="rect" title="Copies the data to the buffer." alt="" coords="228,5,403,47"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Shape.html#ac46ccb54f90b8cb45740b826d3100089" title="Initializes the shape object and creates the necessary objects." alt="" coords="5,5,180,47"/>
 </map>
 </div>
 
@@ -280,14 +271,14 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="buffers_8cpp_source.html#l00003">3</a> of file <a class="el" href="buffers_8cpp_source.html">buffers.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    this-&gt;device = <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a">Chronos::Engine::createBuffer</a>(this-&gt;device, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>, flags, properties, &amp;<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">buffer</a>, &amp;<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="buffers_8cpp_source.html#l00014">14</a> of file <a class="el" href="buffers_8cpp_source.html">buffers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    this-&gt;device = <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a">Chronos::Engine::createBuffer</a>(this-&gt;device, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>, flags, properties, &amp;<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">buffer</a>, &amp;<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_ad4f872dd55a1a2d78f6094bd545c9861"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">Chronos::Engine::Buffer::memory</a></div><div class="ttdeci">VkDeviceMemory memory</div><div class="ttdoc">The device memory of the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00058">buffers.hpp:58</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="buffers_8hpp_source.html#l00048">buffer</a>, <a class="el" href="helper_8cpp_source.html#l00056">Chronos::Engine::createBuffer()</a>, <a class="el" href="buffers_8hpp_source.html#l00064">device</a>, <a class="el" href="buffers_8hpp_source.html#l00058">memory</a>, and <a class="el" href="buffers_8hpp_source.html#l00053">size</a>.</p>
+<p class="reference">References <a class="el" href="buffers_8hpp_source.html#l00048">buffer</a>, <a class="el" href="helper_8cpp_source.html#l00060">Chronos::Engine::createBuffer()</a>, <a class="el" href="buffers_8hpp_source.html#l00064">device</a>, <a class="el" href="buffers_8hpp_source.html#l00058">memory</a>, and <a class="el" href="buffers_8hpp_source.html#l00053">size</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -303,9 +294,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1Buffer_ab14754126e56811cc67254f425780826_icgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1Buffer_ab14754126e56811cc67254f425780826_icgraph" alt=""/></div>
 <map name="aclassChronos_1_1Engine_1_1Buffer_ab14754126e56811cc67254f425780826_icgraph" id="aclassChronos_1_1Engine_1_1Buffer_ab14754126e56811cc67254f425780826_icgraph">
-<area shape="rect" title="This is used to initialize the buffer." alt="" coords="241,39,416,80"/>
+<area shape="rect" title="This is used to initialize the buffer." alt="" coords="241,5,416,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1UniformBuffer.html#a4c14b97754025d584f9fbf73ac26d8c2" title="Creates the buffer and maps the memory." alt="" coords="5,5,193,47"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Shape.html#ac46ccb54f90b8cb45740b826d3100089" title="Initializes the shape object and creates the necessary objects." alt="" coords="12,71,187,112"/>
 </map>
 </div>
 
@@ -328,11 +318,11 @@ Here is the caller graph for this function:</div>
 
 <p>Destroys the buffer and frees the memory. </p>
 
-<p class="definition">Definition at line <a class="el" href="buffers_8cpp_source.html#l00027">27</a> of file <a class="el" href="buffers_8cpp_source.html">buffers.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    vkDestroyBuffer(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">buffer</a>, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    vkFreeMemory(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="buffers_8cpp_source.html#l00038">38</a> of file <a class="el" href="buffers_8cpp_source.html">buffers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    vkDestroyBuffer(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">buffer</a>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    vkFreeMemory(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

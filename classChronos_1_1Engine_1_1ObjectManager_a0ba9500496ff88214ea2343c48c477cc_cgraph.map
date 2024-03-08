@@ -1,7 +1,0 @@
-<map id="Chronos::Engine::ObjectManager::init" name="Chronos::Engine::ObjectManager::init">
-<area shape="rect" id="node1" title="Initializes the ObjectManager." alt="" coords="5,89,240,131"/>
-<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a518ca04e28b0aa0558dd8b8f1e51449d" title="Creates a set of command buffers for use." alt="" coords="294,5,537,47"/>
-<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a43d4bb056580340f1df4d5ca610a213e" title="Creates a set of framebuffers for use." alt="" coords="288,71,543,98"/>
-<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a5a92fce581e2787c3c67df6bc4e3f108" title="Creates a render pass." alt="" coords="290,122,541,149"/>
-<area shape="rect" id="node5" href="$namespaceChronos_1_1Engine.html#a26311add90c663bbb6da7406c8726ae1" title="Creates a VkSampler" alt="" coords="303,173,527,215"/>
-</map>

@@ -1,9 +1,8 @@
 <map id="Chronos::Engine::createImage" name="Chronos::Engine::createImage">
-<area shape="rect" id="node1" title="For a given image dimensons, it creates a VkImage and VkDeviceMemory for the image." alt="" coords="781,111,999,138"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="539,71,721,112"/>
-<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e" title="Creates the color images along with the associated objects." alt="" coords="527,136,733,177"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Shape.html#ac46ccb54f90b8cb45740b826d3100089" title="Initializes the shape object and creates the necessary objects." alt="" coords="288,5,463,47"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Font.html#a13070e7a8e19d94a2889f11788214104" title="Initializes the font object and creates the necessary objects." alt="" coords="294,71,457,112"/>
-<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1TextManager.html#a9c8b1c21c5ad43f535d18e4bf9d5489a" title="Adds a font to the text manager." alt="" coords="5,71,224,112"/>
-<area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe" title="Initilize the swapchain." alt="" coords="272,136,479,177"/>
+<area shape="rect" id="node1" title="For a given image dimensons, it creates a VkImage and VkDeviceMemory for the image." alt="" coords="781,46,999,73"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="539,5,721,47"/>
+<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e" title="Creates the color images along with the associated objects." alt="" coords="527,71,733,112"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Font.html#a13070e7a8e19d94a2889f11788214104" title="Initializes the font object and creates the necessary objects." alt="" coords="294,5,457,47"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1TextManager.html#a9c8b1c21c5ad43f535d18e4bf9d5489a" title="Adds a font to the text manager." alt="" coords="5,5,224,47"/>
+<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe" title="Initilize the swapchain." alt="" coords="272,71,479,112"/>
 </map>

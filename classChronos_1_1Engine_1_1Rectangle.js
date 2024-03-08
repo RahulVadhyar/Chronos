@@ -1,4 +1,5 @@
 var classChronos_1_1Engine_1_1Rectangle =
 [
-    [ "Rectangle", "classChronos_1_1Engine_1_1Rectangle.html#a02aa86a8af5a1716f1912108a18232c7", null ]
+    [ "Rectangle", "classChronos_1_1Engine_1_1Rectangle.html#a60b8096e34d3d96ab5f0cfffea59bc0b", null ],
+    [ "Rectangle", "classChronos_1_1Engine_1_1Rectangle.html#a60b8096e34d3d96ab5f0cfffea59bc0b", null ]
 ];

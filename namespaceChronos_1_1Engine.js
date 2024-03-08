@@ -20,6 +20,8 @@ var namespaceChronos_1_1Engine =
     [ "TextManager", "classChronos_1_1Engine_1_1TextManager.html", "classChronos_1_1Engine_1_1TextManager" ],
     [ "Texture", "classChronos_1_1Engine_1_1Texture.html", "classChronos_1_1Engine_1_1Texture" ],
     [ "Vertex", "structChronos_1_1Engine_1_1Vertex.html", "structChronos_1_1Engine_1_1Vertex" ],
+    [ "ColorVertex", "structChronos_1_1Engine_1_1ColorVertex.html", "structChronos_1_1Engine_1_1ColorVertex" ],
+    [ "TexturedVertex", "structChronos_1_1Engine_1_1TexturedVertex.html", "structChronos_1_1Engine_1_1TexturedVertex" ],
     [ "beginSingleTimeCommands", "namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733", null ],
     [ "checkDeviceExtensionSupport", "namespaceChronos_1_1Engine.html#a984181461b9c5fcc9a52c817deb01ed8", null ],
     [ "checkValidationLayerSupport", "namespaceChronos_1_1Engine.html#ae343c6be067a32c5c92c47a8d0dca6f9", null ],
@@ -53,5 +55,6 @@ var namespaceChronos_1_1Engine =
     [ "deviceExtensions", "namespaceChronos_1_1Engine.html#ab7df1e3f4b276d9c7e368398da1b86ca", null ],
     [ "enableValidationLayers", "namespaceChronos_1_1Engine.html#a84a0ca17f8376dbc4daa6f798c9bc24e", null ],
     [ "ObjectLike", "namespaceChronos_1_1Engine.html#ae7424bca06d7525a9f71e63c7aa6d7b3", null ],
-    [ "validationLayers", "namespaceChronos_1_1Engine.html#af3568125b76ff39839d82ca9a7d525bc", null ]
+    [ "validationLayers", "namespaceChronos_1_1Engine.html#af3568125b76ff39839d82ca9a7d525bc", null ],
+    [ "VertexLike", "namespaceChronos_1_1Engine.html#af7a56fb3a3d915d1c327e171a40922b7", null ]
 ];

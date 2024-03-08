@@ -1,12 +1,8 @@
 <map id="Source/Engine/Headers/font.hpp" name="Source/Engine/Headers/font.hpp">
-<area shape="rect" id="node1" title="Contains the class for creating a font object for rendering text." alt="" coords="677,5,849,47"/>
-<area shape="rect" id="node2" href="$textManager_8hpp.html" title="Contains the class for managing text in the Chronos::Engine namespace." alt="" coords="553,95,725,136"/>
-<area shape="rect" id="node7" href="$font_8cpp.html" title=" " alt="" coords="779,273,941,315"/>
-<area shape="rect" id="node10" href="$textManager_8cpp.html" title=" " alt="" coords="644,184,807,225"/>
-<area shape="rect" id="node3" href="$engine_8hpp.html" title="Contains the Engine class." alt="" coords="431,184,603,225"/>
-<area shape="rect" id="node4" href="$chronos_8hpp.html" title="Main API for chronos. Any applications should include this file." alt="" coords="43,281,195,307"/>
-<area shape="rect" id="node6" href="$engine_8cpp.html" title=" " alt="" coords="219,273,381,315"/>
-<area shape="rect" id="node8" href="$object_8cpp.html" title=" " alt="" coords="405,273,568,315"/>
-<area shape="rect" id="node9" href="$shape_8cpp.html" title=" " alt="" coords="592,273,755,315"/>
-<area shape="rect" id="node5" href="$manager_8cpp.html" title=" " alt="" coords="5,363,232,389"/>
+<area shape="rect" id="node1" title="Contains the class for creating a font object for rendering text." alt="" coords="307,5,479,47"/>
+<area shape="rect" id="node2" href="$chronos_8hpp.html" title="Main API for chronos. Any applications should include this file." alt="" coords="43,102,195,129"/>
+<area shape="rect" id="node4" href="$engine_8cpp.html" title=" " alt="" coords="219,95,381,136"/>
+<area shape="rect" id="node5" href="$font_8cpp.html" title=" " alt="" coords="405,95,568,136"/>
+<area shape="rect" id="node6" href="$textManager_8cpp.html" title=" " alt="" coords="592,95,755,136"/>
+<area shape="rect" id="node3" href="$manager_8cpp.html" title=" " alt="" coords="5,184,232,211"/>
 </map>

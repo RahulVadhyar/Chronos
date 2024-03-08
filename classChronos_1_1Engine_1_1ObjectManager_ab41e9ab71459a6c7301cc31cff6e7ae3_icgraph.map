@@ -1,6 +1,4 @@
 <map id="Chronos::Engine::ObjectManager::addObject" name="Chronos::Engine::ObjectManager::addObject">
-<area shape="rect" id="node1" title="Adds an object to the ObjectManager." alt="" coords="285,71,520,112"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1TextManager.html#a9c8b1c21c5ad43f535d18e4bf9d5489a" title="Adds a font to the text manager." alt="" coords="12,5,231,47"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1ShapeManager.html#ab283cd0d82c1339d06ba328a683c1b2e" title="Adds a rectangle to the shape manager." alt="" coords="5,71,237,112"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1ShapeManager.html#a951dfa42103f97bcdc1d57d71d307024" title="Adds a triangle to the shape manager." alt="" coords="5,136,237,177"/>
+<area shape="rect" id="node1" title="Adds an object to the ObjectManager." alt="" coords="272,5,507,47"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1TextManager.html#a9c8b1c21c5ad43f535d18e4bf9d5489a" title="Adds a font to the text manager." alt="" coords="5,5,224,47"/>
 </map>

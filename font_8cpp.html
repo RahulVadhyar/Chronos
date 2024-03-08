@@ -88,53 +88,54 @@ $(document).ready(function(){initNavTree('font_8cpp.html',''); initResizable(); 
 <div class="title">font.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="engine_8hpp_source.html">engine.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="vulkanHeaders_8hpp_source.html">vulkanHeaders.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stlheader_8hpp_source.html">stlheader.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="device_8hpp_source.html">device.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="swapchain_8hpp_source.html">swapchain.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="helper_8hpp_source.html">helper.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="buffers_8hpp_source.html">buffers.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="object_8hpp_source.html">object.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="engineStructs_8hpp_source.html">engineStructs.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="texture_8hpp_source.html">texture.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="font_8hpp_source.html">font.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for font.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="font_8cpp__incl.png" border="0" usemap="#aSource_2Engine_2Source_2font_8cpp" alt=""/></div>
 <map name="aSource_2Engine_2Source_2font_8cpp" id="aSource_2Engine_2Source_2font_8cpp">
-<area shape="rect" title=" " alt="" coords="1085,5,1247,47"/>
-<area shape="rect" href="engine_8hpp.html" title="Contains the Engine class." alt="" coords="1067,95,1161,121"/>
-<area shape="rect" href="font_8hpp.html" title="Contains the class for creating a font object for rendering text." alt="" coords="1168,244,1244,271"/>
-<area shape="rect" href="shapeManager_8hpp.html" title="Contains the class for managing shapes." alt="" coords="875,169,1020,196"/>
-<area shape="rect" href="textManager_8hpp.html" title="Contains the class for managing text in the Chronos::Engine namespace." alt="" coords="1048,169,1180,196"/>
-<area shape="rect" href="shape_8hpp.html" title="Contains the class for creating a shape." alt="" coords="945,408,1035,435"/>
-<area shape="rect" href="objectManager_8hpp.html" title="Defines the ObjectManager class for managing objects in the Chronos::Engine namespace." alt="" coords="917,326,1063,353"/>
-<area shape="rect" href="objectManagerDefs_8hpp.html" title=" " alt="" coords="852,244,1029,271"/>
-<area shape="rect" href="engineStructs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="1261,557,1399,584"/>
-<area shape="rect" href="helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="1146,557,1237,584"/>
-<area shape="rect" href="Vertex_8hpp.html" title="This file includes the structure of a vertex." alt="" coords="788,557,880,584"/>
-<area shape="rect" href="buffers_8hpp.html" title="Contains the Buffer and UniformBuffer class." alt="" coords="905,557,1000,584"/>
-<area shape="rect" href="texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="1024,557,1121,584"/>
-<area shape="rect" href="object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="1147,483,1238,509"/>
-<area shape="rect" href="commonStructs_8hpp.html" title=" " alt="" coords="971,483,1123,509"/>
-<area shape="rect" href="vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="1501,707,1647,733"/>
-<area shape="rect" title=" " alt="" coords="1389,781,1500,808"/>
-<area shape="rect" title=" " alt="" coords="1524,781,1624,808"/>
-<area shape="rect" title=" " alt="" coords="1648,781,1823,808"/>
-<area shape="rect" title=" " alt="" coords="1847,781,1951,808"/>
-<area shape="rect" title=" " alt="" coords="1976,781,2193,808"/>
-<area shape="rect" href="swapchain_8hpp.html" title="Contains the swapChain class along with all the swapChain related functions." alt="" coords="1051,632,1169,659"/>
-<area shape="rect" href="stlheader_8hpp.html" title="Contains all the standard library headers used in the project." alt="" coords="731,707,841,733"/>
-<area shape="rect" href="device_8hpp.html" title="Contains the Device class." alt="" coords="613,707,706,733"/>
-<area shape="rect" title=" " alt="" coords="927,781,1013,808"/>
-<area shape="rect" title=" " alt="" coords="1037,781,1093,808"/>
-<area shape="rect" title=" " alt="" coords="1117,781,1183,808"/>
-<area shape="rect" title=" " alt="" coords="1208,781,1273,808"/>
-<area shape="rect" title=" " alt="" coords="1298,781,1365,808"/>
-<area shape="rect" title=" " alt="" coords="5,781,79,808"/>
-<area shape="rect" title=" " alt="" coords="103,781,194,808"/>
-<area shape="rect" title=" " alt="" coords="218,781,298,808"/>
-<area shape="rect" title=" " alt="" coords="322,781,381,808"/>
-<area shape="rect" title=" " alt="" coords="405,781,455,808"/>
-<area shape="rect" title=" " alt="" coords="479,781,554,808"/>
-<area shape="rect" title=" " alt="" coords="578,781,621,808"/>
-<area shape="rect" title=" " alt="" coords="645,781,732,808"/>
-<area shape="rect" title=" " alt="" coords="757,781,815,808"/>
-<area shape="rect" title=" " alt="" coords="840,781,903,808"/>
-<area shape="rect" title=" " alt="" coords="1087,319,1250,360"/>
+<area shape="rect" title=" " alt="" coords="1913,5,2075,47"/>
+<area shape="rect" href="vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="361,95,507,121"/>
+<area shape="rect" href="stlheader_8hpp.html" title="Contains all the standard library headers used in the project." alt="" coords="1493,95,1604,121"/>
+<area shape="rect" href="device_8hpp.html" title="Contains the Device class." alt="" coords="1629,95,1722,121"/>
+<area shape="rect" href="swapchain_8hpp.html" title="Contains the swapChain class along with all the swapChain related functions." alt="" coords="1747,95,1865,121"/>
+<area shape="rect" href="helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="1890,95,1981,121"/>
+<area shape="rect" href="buffers_8hpp.html" title="Contains the Buffer and UniformBuffer class." alt="" coords="2005,95,2100,121"/>
+<area shape="rect" href="object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="2125,95,2215,121"/>
+<area shape="rect" href="engineStructs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="2239,95,2378,121"/>
+<area shape="rect" href="texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="2403,95,2500,121"/>
+<area shape="rect" href="font_8hpp.html" title="Contains the class for creating a font object for rendering text." alt="" coords="2524,95,2600,121"/>
+<area shape="rect" title=" " alt="" coords="5,177,116,203"/>
+<area shape="rect" title=" " alt="" coords="140,177,240,203"/>
+<area shape="rect" title=" " alt="" coords="264,177,439,203"/>
+<area shape="rect" title=" " alt="" coords="463,177,567,203"/>
+<area shape="rect" title=" " alt="" coords="592,177,809,203"/>
+<area shape="rect" title=" " alt="" coords="834,177,919,203"/>
+<area shape="rect" title=" " alt="" coords="943,177,999,203"/>
+<area shape="rect" title=" " alt="" coords="1023,177,1090,203"/>
+<area shape="rect" title=" " alt="" coords="1115,177,1180,203"/>
+<area shape="rect" title=" " alt="" coords="1205,177,1271,203"/>
+<area shape="rect" title=" " alt="" coords="1296,177,1369,203"/>
+<area shape="rect" title=" " alt="" coords="1394,177,1485,203"/>
+<area shape="rect" title=" " alt="" coords="1509,177,1589,203"/>
+<area shape="rect" title=" " alt="" coords="1613,177,1671,203"/>
+<area shape="rect" title=" " alt="" coords="1695,177,1746,203"/>
+<area shape="rect" title=" " alt="" coords="1770,177,1845,203"/>
+<area shape="rect" title=" " alt="" coords="1869,177,1911,203"/>
+<area shape="rect" title=" " alt="" coords="1936,177,2023,203"/>
+<area shape="rect" title=" " alt="" coords="2047,177,2106,203"/>
+<area shape="rect" title=" " alt="" coords="2131,177,2193,203"/>
+<area shape="rect" title=" " alt="" coords="2217,177,2309,203"/>
+<area shape="rect" title=" " alt="" coords="2481,169,2643,211"/>
 </map>
 </div>
 </div>

@@ -1,9 +1,0 @@
-<map id="Source/Engine/Headers/engineStructs.hpp" name="Source/Engine/Headers/engineStructs.hpp">
-<area shape="rect" id="node1" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="265,5,437,47"/>
-<area shape="rect" id="node2" href="$vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="278,95,425,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,169,116,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="140,169,240,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="264,169,439,196"/>
-<area shape="rect" id="node6" title=" " alt="" coords="463,169,567,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="592,169,809,196"/>
-</map>

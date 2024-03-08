@@ -1,4 +1,0 @@
-<map id="Chronos::Engine::Vertex::getBindingDescription" name="Chronos::Engine::Vertex::getBindingDescription">
-<area shape="rect" id="node1" title="Creates a VkVertexInputBindingDescription for the vertex based on the size of the vertex." alt="" coords="228,5,405,47"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Shape.html#aa2630a33a605a67f4f271f2b3f438b71" title=" " alt="" coords="5,5,180,47"/>
-</map>

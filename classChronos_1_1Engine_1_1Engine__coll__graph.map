@@ -1,9 +1,9 @@
 <map id="Chronos::Engine::Engine" name="Chronos::Engine::Engine">
-<area shape="rect" id="node1" title="This is the main vulkan backend for Chronos. This is for use by the API only and should not be used f..." alt="" coords="717,82,896,109"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1TextManager.html" title="This is the text manager for Chronos. It handles creation, modification, updating and desrtuction of ..." alt="" coords="343,13,561,39"/>
+<area shape="rect" id="node1" title=" " alt="" coords="748,82,927,109"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1TextManager.html" title="This is the text manager for Chronos. It handles creation, modification, updating and desrtuction of ..." alt="" coords="358,13,577,39"/>
 <area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1ObjectManager.html" title=" " alt="" coords="5,5,240,47"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="33,94,213,121"/>
-<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="349,126,555,153"/>
-<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1ShapeManager.html" title="This is the shape manager for Chronos. It handles creation, modification, updating and desrtuction of..." alt="" coords="336,177,568,203"/>
-<area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1ObjectManager.html" title=" " alt="" coords="5,169,240,211"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="33,95,213,122"/>
+<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="364,126,571,153"/>
+<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1ShapeManager.html" title=" " alt="" coords="336,177,599,219"/>
+<area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1ObjectManager.html" title=" " alt="" coords="5,170,240,226"/>
 </map>

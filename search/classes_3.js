@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['font_266',['Font',['../classChronos_1_1Engine_1_1Font.html',1,'Chronos::Engine']]]
+  ['editorrenderer_266',['EditorRenderer',['../classChronos_1_1Editor_1_1EditorRenderer.html',1,'Chronos::Editor']]],
+  ['engine_267',['Engine',['../classChronos_1_1Engine_1_1Engine.html',1,'Chronos::Engine']]]
 ];

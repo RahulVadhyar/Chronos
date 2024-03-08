@@ -24,7 +24,7 @@ var classChronos_1_1Engine_1_1Engine =
     [ "instance", "classChronos_1_1Engine_1_1Engine.html#a14231fd3132dee3c7c675b8d1bfd10b9", null ],
     [ "prev_time", "classChronos_1_1Engine_1_1Engine.html#a470065034b51af8fb9bd6c4958df2f60", null ],
     [ "renderFinishedSemaphores", "classChronos_1_1Engine_1_1Engine.html#a2d025f55b44d3a56d01f2320bf1de742", null ],
-    [ "shapeManager", "classChronos_1_1Engine_1_1Engine.html#afc2c611ff13cc66c62219d65ab2f24a1", null ],
+    [ "shapeManager", "classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd", null ],
     [ "surface", "classChronos_1_1Engine_1_1Engine.html#ae12d40d93a89fb61496d452203fb0a9c", null ],
     [ "swapChain", "classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a", null ],
     [ "textManager", "classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8", null ],

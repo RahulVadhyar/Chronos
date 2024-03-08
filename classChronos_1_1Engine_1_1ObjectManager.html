@@ -124,9 +124,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab6d2da00f56ad678931da06cb4d0e7ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html#ab6d2da00f56ad678931da06cb4d0e7ac">update</a> (uint32_t currentFrame)</td></tr>
 <tr class="memdesc:ab6d2da00f56ad678931da06cb4d0e7ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the objects managed by the <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html" title="Manages objects within the Chronos::Engine namespace.">ObjectManager</a>.  <a href="classChronos_1_1Engine_1_1ObjectManager.html#ab6d2da00f56ad678931da06cb4d0e7ac">More...</a><br /></td></tr>
 <tr class="separator:ab6d2da00f56ad678931da06cb4d0e7ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a656336440542446c945dc93ead5c1b5f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html#a656336440542446c945dc93ead5c1b5f">render</a> (uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])</td></tr>
-<tr class="memdesc:a656336440542446c945dc93ead5c1b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the objects managed by the <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html" title="Manages objects within the Chronos::Engine namespace.">ObjectManager</a>.  <a href="classChronos_1_1Engine_1_1ObjectManager.html#a656336440542446c945dc93ead5c1b5f">More...</a><br /></td></tr>
-<tr class="separator:a656336440542446c945dc93ead5c1b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e7fdc4a12f926bbd0d34cc4cde100b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html#ab3e7fdc4a12f926bbd0d34cc4cde100b">render</a> (uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])</td></tr>
+<tr class="memdesc:ab3e7fdc4a12f926bbd0d34cc4cde100b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the objects managed by the <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html" title="Manages objects within the Chronos::Engine namespace.">ObjectManager</a>.  <a href="classChronos_1_1Engine_1_1ObjectManager.html#ab3e7fdc4a12f926bbd0d34cc4cde100b">More...</a><br /></td></tr>
+<tr class="separator:ab3e7fdc4a12f926bbd0d34cc4cde100b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafdd014e19818b13f38886700f522631"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html#aafdd014e19818b13f38886700f522631">changeMsaa</a> ()</td></tr>
 <tr class="memdesc:aafdd014e19818b13f38886700f522631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the multisampling settings for rendering.  <a href="classChronos_1_1Engine_1_1ObjectManager.html#aafdd014e19818b13f38886700f522631">More...</a><br /></td></tr>
 <tr class="separator:aafdd014e19818b13f38886700f522631"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -186,7 +186,7 @@ class Chronos::Engine::ObjectManager&lt; Object &gt;</h3>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00031">31</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00029">29</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab41e9ab71459a6c7301cc31cff6e7ae3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab41e9ab71459a6c7301cc31cff6e7ae3">&#9670;&nbsp;</a></span>addObject()</h2>
@@ -194,7 +194,7 @@ class Chronos::Engine::ObjectManager&lt; Object &gt;</h3>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
+template&lt;ObjectLike Object&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -223,25 +223,13 @@ template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The index assigned to the added object. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="objectManagerDefs_8hpp_source.html#l00082">82</a> of file <a class="el" href="objectManagerDefs_8hpp_source.html">objectManagerDefs.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">int</span> objectNo = <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#aee7f95d9a104bd82067cc13b10c83256">nextFreeObjectNo</a>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#aee7f95d9a104bd82067cc13b10c83256">nextFreeObjectNo</a>++;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">objects</a>[objectNo] = object;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> objectNo;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_aee7f95d9a104bd82067cc13b10c83256"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#aee7f95d9a104bd82067cc13b10c83256">Chronos::Engine::ObjectManager::nextFreeObjectNo</a></div><div class="ttdeci">int nextFreeObjectNo</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00033">objectManager.hpp:33</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_afcf543c17706586fa4cad24fbdaf9491"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">Chronos::Engine::ObjectManager::objects</a></div><div class="ttdeci">std::map&lt; int, Object &gt; objects</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00034">objectManager.hpp:34</a></div></div>
-</div><!-- fragment --><div class="dynheader">
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1ObjectManager_ab41e9ab71459a6c7301cc31cff6e7ae3_icgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1ObjectManager_ab41e9ab71459a6c7301cc31cff6e7ae3_icgraph" alt=""/></div>
 <map name="aclassChronos_1_1Engine_1_1ObjectManager_ab41e9ab71459a6c7301cc31cff6e7ae3_icgraph" id="aclassChronos_1_1Engine_1_1ObjectManager_ab41e9ab71459a6c7301cc31cff6e7ae3_icgraph">
-<area shape="rect" title="Adds an object to the ObjectManager." alt="" coords="285,71,520,112"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html#a9c8b1c21c5ad43f535d18e4bf9d5489a" title="Adds a font to the text manager." alt="" coords="12,5,231,47"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1ShapeManager.html#ab283cd0d82c1339d06ba328a683c1b2e" title="Adds a rectangle to the shape manager." alt="" coords="5,71,237,112"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1ShapeManager.html#a951dfa42103f97bcdc1d57d71d307024" title="Adds a triangle to the shape manager." alt="" coords="5,136,237,177"/>
+<area shape="rect" title="Adds an object to the ObjectManager." alt="" coords="272,5,507,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html#a9c8b1c21c5ad43f535d18e4bf9d5489a" title="Adds a font to the text manager." alt="" coords="5,5,224,47"/>
 </map>
 </div>
 
@@ -253,41 +241,19 @@ Here is the caller graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
+template&lt;ObjectLike Object&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt; <a class="el" href="classChronos_1_1Engine_1_1Object.html">Object</a> &gt;::changeMsaa</td>
+          <td class="memname">void <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt; <a class="el" href="classChronos_1_1Engine_1_1Object.html">Object</a> &gt;::changeMsaa </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Changes the multisampling settings for rendering. </p>
 <p>This function changes the multisampling settings, recreating the Vulkan render pass accordingly. </p>
-
-<p class="definition">Definition at line <a class="el" href="objectManagerDefs_8hpp_source.html#l00061">61</a> of file <a class="el" href="objectManagerDefs_8hpp_source.html">objectManagerDefs.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    vkDestroyRenderPass(<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#acccf6d4782b9ded6e1ac188e1777ee72">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a36d12af7af4f858732ec7ffd280a0b41">renderPass</a>, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a36d12af7af4f858732ec7ffd280a0b41">renderPass</a> = <a class="code" href="namespaceChronos_1_1Engine.html#a5a92fce581e2787c3c67df6bc4e3f108">Chronos::Engine::createRenderPass</a>(*<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#acccf6d4782b9ded6e1ac188e1777ee72">device</a>, *<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a09186962fa6a42ed4b3231cdf2e73ce6">swapChain</a>, VK_IMAGE_LAYOUT_UNDEFINED,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL, <span class="keyword">true</span>,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00020">device.hpp:20</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a09186962fa6a42ed4b3231cdf2e73ce6"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a09186962fa6a42ed4b3231cdf2e73ce6">Chronos::Engine::ObjectManager::swapChain</a></div><div class="ttdeci">Chronos::Engine::SwapChain * swapChain</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00139">objectManager.hpp:139</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a36d12af7af4f858732ec7ffd280a0b41"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a36d12af7af4f858732ec7ffd280a0b41">Chronos::Engine::ObjectManager::renderPass</a></div><div class="ttdeci">VkRenderPass renderPass</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00141">objectManager.hpp:141</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_acccf6d4782b9ded6e1ac188e1777ee72"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#acccf6d4782b9ded6e1ac188e1777ee72">Chronos::Engine::ObjectManager::device</a></div><div class="ttdeci">Chronos::Engine::Device * device</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00138">objectManager.hpp:138</a></div></div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_a5a92fce581e2787c3c67df6bc4e3f108"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a5a92fce581e2787c3c67df6bc4e3f108">Chronos::Engine::createRenderPass</a></div><div class="ttdeci">VkRenderPass createRenderPass(Chronos::Engine::Device device, Chronos::Engine::SwapChain swapChain, VkImageLayout initalLayout, VkImageLayout finalLayout, VkImageLayout msaaFinalLayout, bool msaa, bool clearFramebuffer, bool dependency)</div><div class="ttdoc">Creates a render pass.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00248">helper.cpp:248</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="helper_8cpp_source.html#l00248">Chronos::Engine::createRenderPass()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classChronos_1_1Engine_1_1ObjectManager_aafdd014e19818b13f38886700f522631_cgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1ObjectManager_aafdd014e19818b13f38886700f522631_cgraph" alt=""/></div>
-<map name="aclassChronos_1_1Engine_1_1ObjectManager_aafdd014e19818b13f38886700f522631_cgraph" id="aclassChronos_1_1Engine_1_1ObjectManager_aafdd014e19818b13f38886700f522631_cgraph">
-<area shape="rect" title="Changes the multisampling settings for rendering." alt="" coords="5,5,240,47"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#a5a92fce581e2787c3c67df6bc4e3f108" title="Creates a render pass." alt="" coords="288,13,539,39"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -297,13 +263,16 @@ Here is the call graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
+template&lt;ObjectLike Object&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt; <a class="el" href="classChronos_1_1Engine_1_1Object.html">Object</a> &gt;::cleanup</td>
+          <td class="memname">void <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt; <a class="el" href="classChronos_1_1Engine_1_1Object.html">Object</a> &gt;::cleanup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -316,13 +285,6 @@ template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
 <p>Cleans up resources associated with rendering. </p>
 <p>This function cleans up Vulkan framebuffers. This is called when swap chain is recreated. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManagerDefs_8hpp_source.html#l00070">70</a> of file <a class="el" href="objectManagerDefs_8hpp_source.html">objectManagerDefs.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> framebuffer : <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a846cce51cad6f1ce3eed3863ec57546d">framebuffers</a>)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        vkDestroyFramebuffer(<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#acccf6d4782b9ded6e1ac188e1777ee72">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, framebuffer, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a846cce51cad6f1ce3eed3863ec57546d"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a846cce51cad6f1ce3eed3863ec57546d">Chronos::Engine::ObjectManager::framebuffers</a></div><div class="ttdeci">std::vector&lt; VkFramebuffer &gt; framebuffers</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00143">objectManager.hpp:143</a></div></div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="a3b271f1a2ffd76bbac59dff3836ba784"></a>
@@ -353,7 +315,7 @@ template&lt;ObjectLike Object&gt; </div>
 <p>Creates the render pass used for rendering. </p>
 <p>This pure virtual function needs to be implemented by derived classes to create the Vulkan render pass. </p>
 
-<p>Implemented in <a class="el" href="classChronos_1_1Engine_1_1TextManager.html#a4f25e8069dc1faf66f0d6cd249a4d30b">Chronos::Engine::TextManager</a>, and <a class="el" href="classChronos_1_1Engine_1_1ShapeManager.html#af10a96246b75f5ca34591ba0d4d39044">Chronos::Engine::ShapeManager</a>.</p>
+<p>Implemented in <a class="el" href="classChronos_1_1Engine_1_1TextManager.html#a4f25e8069dc1faf66f0d6cd249a4d30b">Chronos::Engine::TextManager</a>, <a class="el" href="classChronos_1_1Engine_1_1ShapeManager.html#a279e1e6ce6f5111f38df530cebd00b20">Chronos::Engine::ShapeManager&lt; VertexStruct &gt;</a>, and <a class="el" href="classChronos_1_1Engine_1_1ShapeManager.html#a279e1e6ce6f5111f38df530cebd00b20">Chronos::Engine::ShapeManager&lt; Chronos::Engine::TexturedVertex &gt;</a>.</p>
 
 </div>
 </div>
@@ -363,10 +325,13 @@ template&lt;ObjectLike Object&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
+template&lt;ObjectLike Object&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt; <a class="el" href="classChronos_1_1Engine_1_1Object.html">Object</a> &gt;::destroy</td>
+          <td class="memname">void <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt; <a class="el" href="classChronos_1_1Engine_1_1Object.html">Object</a> &gt;::destroy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -374,18 +339,6 @@ template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
 <p>Destroys resources associated with the <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html" title="Manages objects within the Chronos::Engine namespace.">ObjectManager</a>. </p>
 <p>This function cleans up all Vulkan resources and destroys objects managed by the <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html" title="Manages objects within the Chronos::Engine namespace.">ObjectManager</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManagerDefs_8hpp_source.html#l00017">17</a> of file <a class="el" href="objectManagerDefs_8hpp_source.html">objectManagerDefs.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    vkDestroySampler(<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#acccf6d4782b9ded6e1ac188e1777ee72">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a5d4dcec12f74b5a15dd5c3521efac5e6">textureSampler</a>, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    vkDestroyRenderPass(<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#acccf6d4782b9ded6e1ac188e1777ee72">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a36d12af7af4f858732ec7ffd280a0b41">renderPass</a>, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> framebuffer : <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a846cce51cad6f1ce3eed3863ec57546d">framebuffers</a>)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        vkDestroyFramebuffer(<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#acccf6d4782b9ded6e1ac188e1777ee72">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, framebuffer, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; objectMap : <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">objects</a>) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        objectMap.second.destroy();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a5d4dcec12f74b5a15dd5c3521efac5e6"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a5d4dcec12f74b5a15dd5c3521efac5e6">Chronos::Engine::ObjectManager::textureSampler</a></div><div class="ttdeci">VkSampler textureSampler</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00142">objectManager.hpp:142</a></div></div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="a77f6c739ae9749aae03eb708f3aa3852"></a>
@@ -394,7 +347,7 @@ template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
+template&lt;ObjectLike Object&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -422,17 +375,7 @@ template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="objectManagerDefs_8hpp_source.html#l00054">54</a> of file <a class="el" href="objectManagerDefs_8hpp_source.html">objectManagerDefs.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                                                                                                 {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    vkCmdEndRenderPass(<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">commandBuffers</a>[currentFrame]);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (vkEndCommandBuffer(<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">commandBuffers</a>[currentFrame]) != VK_SUCCESS) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to record command buffer!&quot;</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a3cf7995633555faa52870bcdd745a70e"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">Chronos::Engine::ObjectManager::commandBuffers</a></div><div class="ttdeci">std::vector&lt; VkCommandBuffer &gt; commandBuffers</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00035">objectManager.hpp:35</a></div></div>
-</div><!-- fragment --><div class="dynheader">
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1ObjectManager_a77f6c739ae9749aae03eb708f3aa3852_icgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1ObjectManager_a77f6c739ae9749aae03eb708f3aa3852_icgraph" alt=""/></div>
@@ -450,7 +393,7 @@ Here is the caller graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
+template&lt;ObjectLike Object&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt; <a class="el" href="classChronos_1_1Engine_1_1Object.html">Object</a> &gt;::init </td>
@@ -489,38 +432,6 @@ template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="objectManagerDefs_8hpp_source.html#l00003">3</a> of file <a class="el" href="objectManagerDefs_8hpp_source.html">objectManagerDefs.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    this-&gt;device = <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#acccf6d4782b9ded6e1ac188e1777ee72">device</a>;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    this-&gt;swapChain = <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a09186962fa6a42ed4b3231cdf2e73ce6">swapChain</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    this-&gt;<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a6fc03408466f1ce47bbf560e22354ec8">commandPool</a> = <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a6fc03408466f1ce47bbf560e22354ec8">commandPool</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="namespaceChronos_1_1Engine.html#a26311add90c663bbb6da7406c8726ae1">Chronos::Engine::createTextureSampler</a>(*device, &amp;<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a5d4dcec12f74b5a15dd5c3521efac5e6">textureSampler</a>);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3b271f1a2ffd76bbac59dff3836ba784">createRenderPass</a>();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">commandBuffers</a> = <a class="code" href="namespaceChronos_1_1Engine.html#a518ca04e28b0aa0558dd8b8f1e51449d">Chronos::Engine::createCommandBuffer</a>(*<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#acccf6d4782b9ded6e1ac188e1777ee72">device</a>, *<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a09186962fa6a42ed4b3231cdf2e73ce6">swapChain</a>, <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a6fc03408466f1ce47bbf560e22354ec8">commandPool</a>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a846cce51cad6f1ce3eed3863ec57546d">framebuffers</a> = <a class="code" href="namespaceChronos_1_1Engine.html#a43d4bb056580340f1df4d5ca610a213e">Chronos::Engine::createFramebuffer</a>(*<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#acccf6d4782b9ded6e1ac188e1777ee72">device</a>, *<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a09186962fa6a42ed4b3231cdf2e73ce6">swapChain</a>, <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a36d12af7af4f858732ec7ffd280a0b41">renderPass</a>, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a3b271f1a2ffd76bbac59dff3836ba784"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a3b271f1a2ffd76bbac59dff3836ba784">Chronos::Engine::ObjectManager::createRenderPass</a></div><div class="ttdeci">virtual void createRenderPass()=0</div><div class="ttdoc">Creates the render pass used for rendering.</div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a6fc03408466f1ce47bbf560e22354ec8"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a6fc03408466f1ce47bbf560e22354ec8">Chronos::Engine::ObjectManager::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00140">objectManager.hpp:140</a></div></div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_a26311add90c663bbb6da7406c8726ae1"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a26311add90c663bbb6da7406c8726ae1">Chronos::Engine::createTextureSampler</a></div><div class="ttdeci">void createTextureSampler(Chronos::Engine::Device device, VkSampler *textureSampler)</div><div class="ttdoc">Creates a VkSampler</div><div class="ttdef"><b>Definition:</b> <a href="texture_8cpp_source.html#l00217">texture.cpp:217</a></div></div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_a43d4bb056580340f1df4d5ca610a213e"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a43d4bb056580340f1df4d5ca610a213e">Chronos::Engine::createFramebuffer</a></div><div class="ttdeci">std::vector&lt; VkFramebuffer &gt; createFramebuffer(Chronos::Engine::Device device, Chronos::Engine::SwapChain swapChain, VkRenderPass renderPass, bool msaa)</div><div class="ttdoc">Creates a set of framebuffers for use.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00345">helper.cpp:345</a></div></div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_a518ca04e28b0aa0558dd8b8f1e51449d"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a518ca04e28b0aa0558dd8b8f1e51449d">Chronos::Engine::createCommandBuffer</a></div><div class="ttdeci">std::vector&lt; VkCommandBuffer &gt; createCommandBuffer(Chronos::Engine::Device device, Chronos::Engine::SwapChain swapChain, VkCommandPool commandPool)</div><div class="ttdoc">Creates a set of command buffers for use.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00376">helper.cpp:376</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="helper_8cpp_source.html#l00376">Chronos::Engine::createCommandBuffer()</a>, <a class="el" href="helper_8cpp_source.html#l00345">Chronos::Engine::createFramebuffer()</a>, <a class="el" href="helper_8cpp_source.html#l00248">Chronos::Engine::createRenderPass()</a>, and <a class="el" href="texture_8cpp_source.html#l00217">Chronos::Engine::createTextureSampler()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classChronos_1_1Engine_1_1ObjectManager_a0ba9500496ff88214ea2343c48c477cc_cgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1ObjectManager_a0ba9500496ff88214ea2343c48c477cc_cgraph" alt=""/></div>
-<map name="aclassChronos_1_1Engine_1_1ObjectManager_a0ba9500496ff88214ea2343c48c477cc_cgraph" id="aclassChronos_1_1Engine_1_1ObjectManager_a0ba9500496ff88214ea2343c48c477cc_cgraph">
-<area shape="rect" title="Initializes the ObjectManager." alt="" coords="5,89,240,131"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#a518ca04e28b0aa0558dd8b8f1e51449d" title="Creates a set of command buffers for use." alt="" coords="294,5,537,47"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#a43d4bb056580340f1df4d5ca610a213e" title="Creates a set of framebuffers for use." alt="" coords="288,71,543,98"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#a5a92fce581e2787c3c67df6bc4e3f108" title="Creates a render pass." alt="" coords="290,122,541,149"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#a26311add90c663bbb6da7406c8726ae1" title="Creates a VkSampler" alt="" coords="303,173,527,215"/>
-</map>
-</div>
-
 </div>
 </div>
 <a id="a144958b63850e3ac41c4f875aed17956"></a>
@@ -529,34 +440,19 @@ Here is the call graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
+template&lt;ObjectLike Object&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt; <a class="el" href="classChronos_1_1Engine_1_1Object.html">Object</a> &gt;::recreate</td>
+          <td class="memname">void <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt; <a class="el" href="classChronos_1_1Engine_1_1Object.html">Object</a> &gt;::recreate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Recreates resources for rendering. </p>
 <p>This function recreates Vulkan framebuffers after cleaning up the existing ones during swapchain recreation. </p>
-
-<p class="definition">Definition at line <a class="el" href="objectManagerDefs_8hpp_source.html#l00076">76</a> of file <a class="el" href="objectManagerDefs_8hpp_source.html">objectManagerDefs.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a6bfb168080b70feb69cb1add24401b41">cleanup</a>();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a846cce51cad6f1ce3eed3863ec57546d">framebuffers</a> = <a class="code" href="namespaceChronos_1_1Engine.html#a43d4bb056580340f1df4d5ca610a213e">createFramebuffer</a>(*<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#acccf6d4782b9ded6e1ac188e1777ee72">device</a>, *<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a09186962fa6a42ed4b3231cdf2e73ce6">swapChain</a>, <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a36d12af7af4f858732ec7ffd280a0b41">renderPass</a>, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a6bfb168080b70feb69cb1add24401b41"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a6bfb168080b70feb69cb1add24401b41">Chronos::Engine::ObjectManager::cleanup</a></div><div class="ttdeci">void cleanup()</div><div class="ttdoc">Cleans up resources associated with rendering.</div><div class="ttdef"><b>Definition:</b> <a href="objectManagerDefs_8hpp_source.html#l00070">objectManagerDefs.hpp:70</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="helper_8cpp_source.html#l00345">Chronos::Engine::createFramebuffer()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classChronos_1_1Engine_1_1ObjectManager_a144958b63850e3ac41c4f875aed17956_cgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1ObjectManager_a144958b63850e3ac41c4f875aed17956_cgraph" alt=""/></div>
-<map name="aclassChronos_1_1Engine_1_1ObjectManager_a144958b63850e3ac41c4f875aed17956_cgraph" id="aclassChronos_1_1Engine_1_1ObjectManager_a144958b63850e3ac41c4f875aed17956_cgraph">
-<area shape="rect" title="Recreates resources for rendering." alt="" coords="5,5,240,47"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#a43d4bb056580340f1df4d5ca610a213e" title="Creates a set of framebuffers for use." alt="" coords="288,13,543,39"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -566,7 +462,7 @@ Here is the call graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
+template&lt;ObjectLike Object&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt; <a class="el" href="classChronos_1_1Engine_1_1Object.html">Object</a> &gt;::remove </td>
@@ -586,13 +482,7 @@ template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="objectManagerDefs_8hpp_source.html#l00090">90</a> of file <a class="el" href="objectManagerDefs_8hpp_source.html">objectManagerDefs.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">objects</a>[objectNo].destroy();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">objects</a>.erase(objectNo);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-</div><!-- fragment --><div class="dynheader">
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1ObjectManager_a9135fff41460d62ffb3b248320e5adfe_icgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1ObjectManager_a9135fff41460d62ffb3b248320e5adfe_icgraph" alt=""/></div>
@@ -604,19 +494,19 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a656336440542446c945dc93ead5c1b5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a656336440542446c945dc93ead5c1b5f">&#9670;&nbsp;</a></span>render()</h2>
+<a id="ab3e7fdc4a12f926bbd0d34cc4cde100b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e7fdc4a12f926bbd0d34cc4cde100b">&#9670;&nbsp;</a></span>render()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
+template&lt;ObjectLike Object&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt; <a class="el" href="classChronos_1_1Engine_1_1Object.html">Object</a> &gt;::render </td>
+          <td class="memname">virtual void <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt; <a class="el" href="classChronos_1_1Engine_1_1Object.html">Object</a> &gt;::render </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>currentFrame</em>, </td>
@@ -657,40 +547,14 @@ template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classChronos_1_1Engine_1_1TextManager.html#a394c61ace78db87785baae88de717191">Chronos::Engine::TextManager</a>, and <a class="el" href="classChronos_1_1Engine_1_1ShapeManager.html#a17ffc730da93e327f20a053ed2473c6f">Chronos::Engine::ShapeManager</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="objectManagerDefs_8hpp_source.html#l00029">29</a> of file <a class="el" href="objectManagerDefs_8hpp_source.html">objectManagerDefs.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    vkResetCommandBuffer(<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">commandBuffers</a>[currentFrame], 0);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    VkCommandBufferBeginInfo beginInfo {};</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (vkBeginCommandBuffer(<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">commandBuffers</a>[currentFrame], &amp;beginInfo) != VK_SUCCESS) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to begin recording command buffer!&quot;</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    VkRenderPassBeginInfo renderPassInfo {};</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    renderPassInfo.renderPass = <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a36d12af7af4f858732ec7ffd280a0b41">renderPass</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    renderPassInfo.framebuffer = <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a846cce51cad6f1ce3eed3863ec57546d">framebuffers</a>[imageIndex];</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    renderPassInfo.renderArea.offset = { 0, 0 };</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    renderPassInfo.renderArea.extent = <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a09186962fa6a42ed4b3231cdf2e73ce6">swapChain</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">swapChainExtent</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    VkClearValue clearColor = { bgColor[0], bgColor[1], bgColor[2],</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        1.0f }; <span class="comment">// bg color</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    renderPassInfo.clearValueCount = 1;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    renderPassInfo.pClearValues = &amp;clearColor;    </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    vkCmdBeginRenderPass(<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">commandBuffers</a>[currentFrame], &amp;renderPassInfo,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        VK_SUBPASS_CONTENTS_INLINE);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_a10893a5577243552e6d64875e1167a63"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">Chronos::Engine::SwapChain::swapChainExtent</a></div><div class="ttdeci">VkExtent2D swapChainExtent</div><div class="ttdoc">Dimenisons of the current swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8hpp_source.html#l00133">swapchain.hpp:133</a></div></div>
-</div><!-- fragment --><div class="dynheader">
+<p>Reimplemented in <a class="el" href="classChronos_1_1Engine_1_1TextManager.html#a394c61ace78db87785baae88de717191">Chronos::Engine::TextManager</a>, <a class="el" href="classChronos_1_1Engine_1_1ShapeManager.html#a4094980cd72b5eacec47f2fea9adeb0f">Chronos::Engine::ShapeManager&lt; VertexStruct &gt;</a>, and <a class="el" href="classChronos_1_1Engine_1_1ShapeManager.html#a4094980cd72b5eacec47f2fea9adeb0f">Chronos::Engine::ShapeManager&lt; Chronos::Engine::TexturedVertex &gt;</a>.</p>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classChronos_1_1Engine_1_1ObjectManager_a656336440542446c945dc93ead5c1b5f_icgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1ObjectManager_a656336440542446c945dc93ead5c1b5f_icgraph" alt=""/></div>
-<map name="aclassChronos_1_1Engine_1_1ObjectManager_a656336440542446c945dc93ead5c1b5f_icgraph" id="aclassChronos_1_1Engine_1_1ObjectManager_a656336440542446c945dc93ead5c1b5f_icgraph">
-<area shape="rect" title="Renders the objects managed by the ObjectManager." alt="" coords="285,39,520,80"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1ShapeManager.html#a17ffc730da93e327f20a053ed2473c6f" title="Records the commands needed for rendering the shapes." alt="" coords="5,5,237,47"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html#a394c61ace78db87785baae88de717191" title="Records the commands needed for rendering the text." alt="" coords="12,71,231,112"/>
+<div class="center"><img src="classChronos_1_1Engine_1_1ObjectManager_ab3e7fdc4a12f926bbd0d34cc4cde100b_icgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1ObjectManager_ab3e7fdc4a12f926bbd0d34cc4cde100b_icgraph" alt=""/></div>
+<map name="aclassChronos_1_1Engine_1_1ObjectManager_ab3e7fdc4a12f926bbd0d34cc4cde100b_icgraph" id="aclassChronos_1_1Engine_1_1ObjectManager_ab3e7fdc4a12f926bbd0d34cc4cde100b_icgraph">
+<area shape="rect" title="Renders the objects managed by the ObjectManager." alt="" coords="272,5,507,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html#a394c61ace78db87785baae88de717191" title="Records the commands needed for rendering the text." alt="" coords="5,5,224,47"/>
 </map>
 </div>
 
@@ -702,7 +566,7 @@ Here is the caller graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
+template&lt;ObjectLike Object&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt; <a class="el" href="classChronos_1_1Engine_1_1Object.html">Object</a> &gt;::update </td>
@@ -723,13 +587,6 @@ template&lt;Chronos::Engine::ObjectLike Object&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="objectManagerDefs_8hpp_source.html#l00096">96</a> of file <a class="el" href="objectManagerDefs_8hpp_source.html">objectManagerDefs.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; objectMap : <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">objects</a>) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        objectMap.second.update(currentFrame);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
-</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -748,7 +605,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>Vector of Vulkan command buffers. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00035">35</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00033">33</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -775,7 +632,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>Vulkan command pool used for rendering. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00140">140</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00137">137</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -802,7 +659,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>Pointer to the <a class="el" href="classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU).">Chronos::Engine::Device</a> used for rendering. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00138">138</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00135">135</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -829,7 +686,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>Vector of Vulkan framebuffers. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00143">143</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00140">140</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -848,7 +705,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>The index for the next free object. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00033">33</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00031">31</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -867,7 +724,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>A map of object indices to their corresponding objects. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00034">34</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00032">32</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -894,7 +751,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>Vulkan render pass used for rendering. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00141">141</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00138">138</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -921,7 +778,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>Pointer to the <a class="el" href="classChronos_1_1Engine_1_1SwapChain.html">Chronos::Engine::SwapChain</a> used for rendering. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00139">139</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00136">136</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -948,13 +805,12 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>Vulkan sampler for textures. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00142">142</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00139">139</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>Source/Engine/Headers/<a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a></li>
-<li>Source/Engine/Headers/<a class="el" href="objectManagerDefs_8hpp_source.html">objectManagerDefs.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

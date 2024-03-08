@@ -9,7 +9,7 @@ var classChronos_1_1Engine_1_1ObjectManager =
     [ "init", "classChronos_1_1Engine_1_1ObjectManager.html#a0ba9500496ff88214ea2343c48c477cc", null ],
     [ "recreate", "classChronos_1_1Engine_1_1ObjectManager.html#a144958b63850e3ac41c4f875aed17956", null ],
     [ "remove", "classChronos_1_1Engine_1_1ObjectManager.html#a9135fff41460d62ffb3b248320e5adfe", null ],
-    [ "render", "classChronos_1_1Engine_1_1ObjectManager.html#a656336440542446c945dc93ead5c1b5f", null ],
+    [ "render", "classChronos_1_1Engine_1_1ObjectManager.html#ab3e7fdc4a12f926bbd0d34cc4cde100b", null ],
     [ "update", "classChronos_1_1Engine_1_1ObjectManager.html#ab6d2da00f56ad678931da06cb4d0e7ac", null ],
     [ "commandBuffers", "classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e", null ],
     [ "commandPool", "classChronos_1_1Engine_1_1ObjectManager.html#a6fc03408466f1ce47bbf560e22354ec8", null ],

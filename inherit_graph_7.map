@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classChronos_1_1Engine_1_1ObjectManager.html" title="Manages objects within the Chronos::Engine namespace." alt="" coords="5,5,240,47"/>
+<area shape="rect" id="node1" href="$classChronos_1_1Engine_1_1ObjectManager.html" title=" " alt="" coords="5,31,240,87"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1ShapeManager.html" title=" " alt="" coords="288,5,551,47"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1ShapeManager.html" title="This is the shape manager for Chronos. It handles creation, modification, updating and desrtuction of..." alt="" coords="303,71,535,112"/>
 </map>

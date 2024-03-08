@@ -1,5 +1,5 @@
-<map id="Chronos::Engine::Shape" name="Chronos::Engine::Shape">
-<area shape="rect" id="node1" title="Class for creating a shape(triangle, rectangle, etc.)." alt="" coords="1056,113,1231,140"/>
+<map id="Chronos::Engine::Shape&lt; VertexStruct &gt;" name="Chronos::Engine::Shape&lt; VertexStruct &gt;">
+<area shape="rect" id="node1" title="Class for creating a shape(triangle, rectangle, etc.)." alt="" coords="1056,106,1231,147"/>
 <area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects." alt="" coords="748,23,925,49"/>
 <area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="5,76,185,103"/>
 <area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="281,51,488,77"/>

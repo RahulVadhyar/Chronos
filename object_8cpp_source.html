@@ -88,270 +88,278 @@ $(document).ready(function(){initNavTree('object_8cpp_source.html',''); initResi
 <div class="title">object.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="object_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="engine_8hpp.html">engine.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="object_8hpp.html">object.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="objectManagerDefs_8hpp.html">objectManagerDefs.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e">    5</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e">Chronos::Engine::Object::init</a>(<a class="code" href="classChronos_1_1Engine_1_1Device.html">Chronos::Engine::Device</a>* device, VkCommandPool commandPool,</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1SwapChain.html">SwapChain</a>* swapChain, VkSampler textureSampler, VkRenderPass* renderPass)</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    this-&gt;device = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    this-&gt;swapChain = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">swapChain</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    this-&gt;commandPool = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">commandPool</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    this-&gt;textureSampler = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">textureSampler</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    this-&gt;renderPass = <a class="code" href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">renderPass</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">uniformBuffers</a>.resize(<a class="code" href="engine_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="engine_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">uniformBuffers</a>[i].create(*<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e">createDescriptorPool</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e">createDescriptorSetLayout</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#adf7e359418ad5653b9590645282aee1e">createDescriptorSets</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c">createGraphicsPipeline</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c">Chronos::Engine::Object::createGraphicsPipeline</a>()</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{   </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html">Chronos::Engine::PipelineAttributes</a> pipelineAttributes = getPipelineAttributes();</div>
+<a href="object_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vulkanHeaders_8hpp.html">vulkanHeaders.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="stlheader_8hpp.html">stlheader.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="device_8hpp.html">device.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="swapchain_8hpp.html">swapchain.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helper_8hpp.html">helper.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="buffers_8hpp.html">buffers.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="object_8hpp.html">object.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e">    9</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e">Chronos::Engine::Object::init</a>(<a class="code" href="classChronos_1_1Engine_1_1Device.html">Chronos::Engine::Device</a>* device, VkCommandPool commandPool,</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1SwapChain.html">SwapChain</a>* swapChain, VkSampler textureSampler, VkRenderPass* renderPass)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    this-&gt;device = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    this-&gt;swapChain = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">swapChain</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    this-&gt;commandPool = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">commandPool</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    this-&gt;textureSampler = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">textureSampler</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    this-&gt;renderPass = <a class="code" href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">renderPass</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">uniformBuffers</a>.resize(<a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">uniformBuffers</a>[i].create(*<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e">createDescriptorPool</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e">createDescriptorSetLayout</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#adf7e359418ad5653b9590645282aee1e">createDescriptorSets</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c">createGraphicsPipeline</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">auto</span> vertShaderCode = <a class="code" href="namespaceChronos_1_1Engine.html#af002a6ceca11bcbaf38e8df34b47b966">Chronos::Engine::readFile</a>(vertexShaderPath.c_str());</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">auto</span> fragShaderCode = <a class="code" href="namespaceChronos_1_1Engine.html#af002a6ceca11bcbaf38e8df34b47b966">Chronos::Engine::readFile</a>(fragmentShaderPath.c_str());</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    VkShaderModule vertShaderModule = <a class="code" href="namespaceChronos_1_1Engine.html#a78d48217937b348633f1184b862e0312">Chronos::Engine::createShaderModule</a>(vertShaderCode, device-&gt;device);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    VkShaderModule fragShaderModule = <a class="code" href="namespaceChronos_1_1Engine.html#a78d48217937b348633f1184b862e0312">Chronos::Engine::createShaderModule</a>(fragShaderCode, device-&gt;device);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    VkPipelineShaderStageCreateInfo vertShaderStageInfo {};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    vertShaderStageInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    vertShaderStageInfo.stage = VK_SHADER_STAGE_VERTEX_BIT;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    vertShaderStageInfo.module = vertShaderModule;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    vertShaderStageInfo.pName = <span class="stringliteral">&quot;main&quot;</span>; <span class="comment">// start from main(vulkan can start from elsewhere also)</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    VkPipelineShaderStageCreateInfo fragShaderStageInfo {};</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    fragShaderStageInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    fragShaderStageInfo.stage = VK_SHADER_STAGE_FRAGMENT_BIT;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    fragShaderStageInfo.module = fragShaderModule;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    fragShaderStageInfo.pName = <span class="stringliteral">&quot;main&quot;</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    VkPipelineShaderStageCreateInfo shaderStages[] = { vertShaderStageInfo,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        fragShaderStageInfo };</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">auto</span> bindingDescription = pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a6449ea448af9b4ce79281ff243f9b1cd">bindingDescriptions</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">auto</span> attributeDescriptions = pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225">attributeDescriptions</a>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    VkPipelineVertexInputStateCreateInfo vertexInputInfo {};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    vertexInputInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    vertexInputInfo.vertexBindingDescriptionCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(bindingDescription.size());</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    vertexInputInfo.vertexAttributeDescriptionCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(attributeDescriptions.size());</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    vertexInputInfo.pVertexBindingDescriptions = bindingDescription.data();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    vertexInputInfo.pVertexAttributeDescriptions = attributeDescriptions.data();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    VkPipelineInputAssemblyStateCreateInfo inputAssembly {};</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    inputAssembly.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    inputAssembly.topology = pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a14e0f95045ac8e59a01daab9fbda2b6c">topology</a>; <span class="comment">// we are using indexed rendering so</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                                                  <span class="comment">// we need to use triangle list</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    inputAssembly.primitiveRestartEnable = VK_FALSE;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    VkViewport viewport {};</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    viewport.x = 0.0f;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    viewport.y = 0.0f;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    viewport.width = (float)(*swapChain).swapChainExtent.width;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    viewport.height = (<span class="keywordtype">float</span>)(*swapChain).swapChainExtent.height;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    viewport.minDepth = 0.0f;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    viewport.maxDepth = 1.0f;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    VkRect2D scissor {};</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    scissor.offset = { 0, 0 };</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    scissor.extent = (*swapChain).swapChainExtent;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c">   29</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c">Chronos::Engine::Object::createGraphicsPipeline</a>()</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html">Chronos::Engine::PipelineAttributes</a> pipelineAttributes = getPipelineAttributes();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">auto</span> vertShaderCode = <a class="code" href="namespaceChronos_1_1Engine.html#af002a6ceca11bcbaf38e8df34b47b966">Chronos::Engine::readFile</a>(vertexShaderPath.c_str());</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">auto</span> fragShaderCode = <a class="code" href="namespaceChronos_1_1Engine.html#af002a6ceca11bcbaf38e8df34b47b966">Chronos::Engine::readFile</a>(fragmentShaderPath.c_str());</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    VkShaderModule vertShaderModule = <a class="code" href="namespaceChronos_1_1Engine.html#a78d48217937b348633f1184b862e0312">Chronos::Engine::createShaderModule</a>(vertShaderCode, device-&gt;device);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    VkShaderModule fragShaderModule = <a class="code" href="namespaceChronos_1_1Engine.html#a78d48217937b348633f1184b862e0312">Chronos::Engine::createShaderModule</a>(fragShaderCode, device-&gt;device);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    VkPipelineShaderStageCreateInfo vertShaderStageInfo {};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    vertShaderStageInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    vertShaderStageInfo.stage = VK_SHADER_STAGE_VERTEX_BIT;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    vertShaderStageInfo.module = vertShaderModule;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    vertShaderStageInfo.pName = <span class="stringliteral">&quot;main&quot;</span>; <span class="comment">// start from main(vulkan can start from elsewhere also)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    VkPipelineShaderStageCreateInfo fragShaderStageInfo {};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    fragShaderStageInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    fragShaderStageInfo.stage = VK_SHADER_STAGE_FRAGMENT_BIT;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    fragShaderStageInfo.module = fragShaderModule;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    fragShaderStageInfo.pName = <span class="stringliteral">&quot;main&quot;</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    VkPipelineShaderStageCreateInfo shaderStages[] = { vertShaderStageInfo,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        fragShaderStageInfo };</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">auto</span> bindingDescription = pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a6449ea448af9b4ce79281ff243f9b1cd">bindingDescriptions</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">auto</span> attributeDescriptions = pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225">attributeDescriptions</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    VkPipelineVertexInputStateCreateInfo vertexInputInfo {};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    vertexInputInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    vertexInputInfo.vertexBindingDescriptionCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(bindingDescription.size());</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    vertexInputInfo.vertexAttributeDescriptionCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(attributeDescriptions.size());</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    vertexInputInfo.pVertexBindingDescriptions = bindingDescription.data();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    vertexInputInfo.pVertexAttributeDescriptions = attributeDescriptions.data();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    VkPipelineInputAssemblyStateCreateInfo inputAssembly {};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    inputAssembly.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    inputAssembly.topology = pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a14e0f95045ac8e59a01daab9fbda2b6c">topology</a>; <span class="comment">// we are using indexed rendering so</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                                          <span class="comment">// we need to use triangle list</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    inputAssembly.primitiveRestartEnable = VK_FALSE;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    VkViewport viewport {};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    viewport.x = 0.0f;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    viewport.y = 0.0f;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    viewport.width = (float)(*swapChain).swapChainExtent.width;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    viewport.height = (<span class="keywordtype">float</span>)(*swapChain).swapChainExtent.height;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    viewport.minDepth = 0.0f;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    viewport.maxDepth = 1.0f;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    VkPipelineViewportStateCreateInfo viewportState {};</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    viewportState.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    viewportState.viewportCount = 1;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    viewportState.pViewports = &amp;viewport;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    viewportState.scissorCount = 1;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    viewportState.pScissors = &amp;scissor;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    VkPipelineRasterizationStateCreateInfo rasterizer {};</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    rasterizer.sType = VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    rasterizer.depthClampEnable = VK_FALSE;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    rasterizer.rasterizerDiscardEnable = VK_FALSE;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    rasterizer.polygonMode = VK_POLYGON_MODE_FILL;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    rasterizer.lineWidth = 1.0f;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    rasterizer.cullMode = VK_CULL_MODE_BACK_BIT;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    rasterizer.frontFace = pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#aeda2f1f1bedbeca2694b16154ce8bd3d">frontFace</a>; <span class="comment">// counter clockwuise</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    rasterizer.depthBiasEnable = VK_FALSE;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    rasterizer.depthBiasConstantFactor = 0.0f;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    rasterizer.depthBiasClamp = 0.0f;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    rasterizer.depthBiasSlopeFactor = 0.0f;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    VkPipelineMultisampleStateCreateInfo multisampling {};</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    multisampling.sType = VK_STRUCTURE_TYPE_PIPELINE_MULTISAMPLE_STATE_CREATE_INFO;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    multisampling.sampleShadingEnable = VK_FALSE;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    multisampling.rasterizationSamples = device-&gt;msaaSamples;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    multisampling.minSampleShading = 1.0f; <span class="comment">// Optional</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    multisampling.pSampleMask = <span class="keyword">nullptr</span>; <span class="comment">// Optional</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    multisampling.alphaToCoverageEnable = VK_FALSE; <span class="comment">// Optional</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    multisampling.alphaToOneEnable = VK_FALSE;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    multisampling.sampleShadingEnable = VK_TRUE;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    VkPipelineColorBlendStateCreateInfo colorBlending {};</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    colorBlending.sType = VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    colorBlending.logicOpEnable = VK_FALSE;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    colorBlending.logicOp = VK_LOGIC_OP_COPY;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    colorBlending.attachmentCount = 1;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    colorBlending.pAttachments = &amp;pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    colorBlending.blendConstants[0] = 0.0f;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    colorBlending.blendConstants[1] = 0.0f;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    colorBlending.blendConstants[2] = 0.0f;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    colorBlending.blendConstants[3] = 0.0f;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    std::vector&lt;VkDynamicState&gt; dynamicStates = { VK_DYNAMIC_STATE_VIEWPORT,</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        VK_DYNAMIC_STATE_SCISSOR };</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    VkPipelineDynamicStateCreateInfo dynamicState {};</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    dynamicState.sType = VK_STRUCTURE_TYPE_PIPELINE_DYNAMIC_STATE_CREATE_INFO;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    dynamicState.dynamicStateCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(dynamicStates.size());</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    dynamicState.pDynamicStates = dynamicStates.data();</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    VkPipelineLayoutCreateInfo pipelineLayoutInfo {};</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    pipelineLayoutInfo.setLayoutCount = 1; <span class="comment">// Optional</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    pipelineLayoutInfo.pSetLayouts = &amp;descriptorSetLayout; <span class="comment">// Optional</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    pipelineLayoutInfo.pushConstantRangeCount = 0; <span class="comment">// Optional</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    pipelineLayoutInfo.pPushConstantRanges = <span class="keyword">nullptr</span>; <span class="comment">// Optional</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">if</span> (vkCreatePipelineLayout(device-&gt;device, &amp;pipelineLayoutInfo, <span class="keyword">nullptr</span>,</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            &amp;pipelineLayout)</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        != VK_SUCCESS) {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to create pipeline layout!&quot;</span>);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    VkGraphicsPipelineCreateInfo pipelineInfo {};</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    pipelineInfo.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    pipelineInfo.stageCount = 2;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    pipelineInfo.pStages = shaderStages;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    pipelineInfo.pVertexInputState = &amp;vertexInputInfo;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    pipelineInfo.pInputAssemblyState = &amp;inputAssembly;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    pipelineInfo.pViewportState = &amp;viewportState;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    pipelineInfo.pRasterizationState = &amp;rasterizer;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    pipelineInfo.pMultisampleState = &amp;multisampling;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    pipelineInfo.pDepthStencilState = <span class="keyword">nullptr</span>; <span class="comment">// Optional</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    pipelineInfo.pColorBlendState = &amp;colorBlending;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    pipelineInfo.pDynamicState = &amp;dynamicState;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    pipelineInfo.layout = pipelineLayout;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    pipelineInfo.renderPass = *renderPass;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    pipelineInfo.subpass = 0;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    pipelineInfo.basePipelineHandle = VK_NULL_HANDLE; <span class="comment">// Optional</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    pipelineInfo.basePipelineIndex = -1;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">if</span> (vkCreateGraphicsPipelines(device-&gt;device, VK_NULL_HANDLE, 1,</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            &amp;pipelineInfo, <span class="keyword">nullptr</span>,</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            &amp;graphicsPipeline)</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        != VK_SUCCESS) {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to create graphics pipeline!&quot;</span>);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="comment">// destory the shader modules</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    vkDestroyShaderModule(device-&gt;device, fragShaderModule, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    vkDestroyShaderModule(device-&gt;device, vertShaderModule, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">  169</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a>()</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="engine_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        uniformBuffers[i].destroy();</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    vkDestroyDescriptorPool(device-&gt;device, descriptorPool, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    vkDestroyDescriptorSetLayout(device-&gt;device, descriptorSetLayout, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    vkDestroyPipeline(device-&gt;device, graphicsPipeline, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    vkDestroyPipelineLayout(device-&gt;device, pipelineLayout, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e">  180</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e">Chronos::Engine::Object::createDescriptorPool</a>()</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{   </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    std::vector&lt;VkDescriptorType&gt; descriptorTypes = getDescriptorTypes();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    VkRect2D scissor {};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    scissor.offset = { 0, 0 };</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    scissor.extent = (*swapChain).swapChainExtent;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    VkPipelineViewportStateCreateInfo viewportState {};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    viewportState.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    viewportState.viewportCount = 1;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    viewportState.pViewports = &amp;viewport;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    viewportState.scissorCount = 1;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    viewportState.pScissors = &amp;scissor;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    VkPipelineRasterizationStateCreateInfo rasterizer {};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    rasterizer.sType = VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    rasterizer.depthClampEnable = VK_FALSE;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    rasterizer.rasterizerDiscardEnable = VK_FALSE;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    rasterizer.polygonMode = VK_POLYGON_MODE_FILL;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    rasterizer.lineWidth = 1.0f;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    rasterizer.cullMode = VK_CULL_MODE_BACK_BIT;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    rasterizer.frontFace = pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#aeda2f1f1bedbeca2694b16154ce8bd3d">frontFace</a>; <span class="comment">// counter clockwuise</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    rasterizer.depthBiasEnable = VK_FALSE;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    rasterizer.depthBiasConstantFactor = 0.0f;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    rasterizer.depthBiasClamp = 0.0f;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    rasterizer.depthBiasSlopeFactor = 0.0f;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    VkPipelineMultisampleStateCreateInfo multisampling {};</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    multisampling.sType = VK_STRUCTURE_TYPE_PIPELINE_MULTISAMPLE_STATE_CREATE_INFO;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    multisampling.sampleShadingEnable = VK_FALSE;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    multisampling.rasterizationSamples = device-&gt;msaaSamples;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    multisampling.minSampleShading = 1.0f; <span class="comment">// Optional</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    multisampling.pSampleMask = <span class="keyword">nullptr</span>; <span class="comment">// Optional</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    multisampling.alphaToCoverageEnable = VK_FALSE; <span class="comment">// Optional</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    multisampling.alphaToOneEnable = VK_FALSE;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    multisampling.sampleShadingEnable = VK_TRUE;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    VkPipelineColorBlendStateCreateInfo colorBlending {};</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    colorBlending.sType = VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    colorBlending.logicOpEnable = VK_FALSE;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    colorBlending.logicOp = VK_LOGIC_OP_COPY;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    colorBlending.attachmentCount = 1;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    colorBlending.pAttachments = &amp;pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    colorBlending.blendConstants[0] = 0.0f;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    colorBlending.blendConstants[1] = 0.0f;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    colorBlending.blendConstants[2] = 0.0f;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    colorBlending.blendConstants[3] = 0.0f;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    std::vector&lt;VkDynamicState&gt; dynamicStates = { VK_DYNAMIC_STATE_VIEWPORT,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        VK_DYNAMIC_STATE_SCISSOR };</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    VkPipelineDynamicStateCreateInfo dynamicState {};</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    dynamicState.sType = VK_STRUCTURE_TYPE_PIPELINE_DYNAMIC_STATE_CREATE_INFO;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    dynamicState.dynamicStateCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(dynamicStates.size());</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    dynamicState.pDynamicStates = dynamicStates.data();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    VkPipelineLayoutCreateInfo pipelineLayoutInfo {};</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    pipelineLayoutInfo.setLayoutCount = 1; <span class="comment">// Optional</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    pipelineLayoutInfo.pSetLayouts = &amp;descriptorSetLayout; <span class="comment">// Optional</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    pipelineLayoutInfo.pushConstantRangeCount = 0; <span class="comment">// Optional</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    pipelineLayoutInfo.pPushConstantRanges = <span class="keyword">nullptr</span>; <span class="comment">// Optional</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">if</span> (vkCreatePipelineLayout(device-&gt;device, &amp;pipelineLayoutInfo, <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            &amp;pipelineLayout)</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        != VK_SUCCESS) {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to create pipeline layout!&quot;</span>);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    VkGraphicsPipelineCreateInfo pipelineInfo {};</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    pipelineInfo.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    pipelineInfo.stageCount = 2;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    pipelineInfo.pStages = shaderStages;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    pipelineInfo.pVertexInputState = &amp;vertexInputInfo;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    pipelineInfo.pInputAssemblyState = &amp;inputAssembly;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    pipelineInfo.pViewportState = &amp;viewportState;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    pipelineInfo.pRasterizationState = &amp;rasterizer;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    pipelineInfo.pMultisampleState = &amp;multisampling;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    pipelineInfo.pDepthStencilState = <span class="keyword">nullptr</span>; <span class="comment">// Optional</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    pipelineInfo.pColorBlendState = &amp;colorBlending;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    pipelineInfo.pDynamicState = &amp;dynamicState;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    pipelineInfo.layout = pipelineLayout;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    pipelineInfo.renderPass = *renderPass;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    pipelineInfo.subpass = 0;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    pipelineInfo.basePipelineHandle = VK_NULL_HANDLE; <span class="comment">// Optional</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    pipelineInfo.basePipelineIndex = -1;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">if</span> (vkCreateGraphicsPipelines(device-&gt;device, VK_NULL_HANDLE, 1,</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            &amp;pipelineInfo, <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            &amp;graphicsPipeline)</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        != VK_SUCCESS) {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to create graphics pipeline!&quot;</span>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">// destory the shader modules</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    vkDestroyShaderModule(device-&gt;device, fragShaderModule, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    vkDestroyShaderModule(device-&gt;device, vertShaderModule, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">  173</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a>()</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        uniformBuffers[i].destroy();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    vkDestroyDescriptorPool(device-&gt;device, descriptorPool, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    vkDestroyDescriptorSetLayout(device-&gt;device, descriptorSetLayout, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    vkDestroyPipeline(device-&gt;device, graphicsPipeline, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    vkDestroyPipelineLayout(device-&gt;device, pipelineLayout, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    std::vector&lt;VkDescriptorPoolSize&gt; poolSizes {descriptorTypes.size()};</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; descriptorTypes.size(); i++){</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        poolSizes[i].type = descriptorTypes[i];</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        poolSizes[i].descriptorCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code" href="engine_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    VkDescriptorPoolCreateInfo poolInfo {};</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    poolInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    poolInfo.poolSizeCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(poolSizes.size());</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    poolInfo.pPoolSizes = poolSizes.data();</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    poolInfo.maxSets = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code" href="engine_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">if</span> (vkCreateDescriptorPool(device-&gt;device, &amp;poolInfo, <span class="keyword">nullptr</span>,</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            &amp;descriptorPool)</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        != VK_SUCCESS) {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to create descriptor pool!&quot;</span>);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e">  202</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e">Chronos::Engine::Object::createDescriptorSetLayout</a>()</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    std::vector&lt;VkDescriptorType&gt; descriptorTypes = getDescriptorTypes();</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    std::vector&lt;VkShaderStageFlagBits&gt; descriptorStages = getDescriptorStages();</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">if</span>(descriptorTypes.size() != descriptorStages.size()){</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;descriptorTypes and descriptorStages must be the same size&quot;</span>);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e">  184</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e">Chronos::Engine::Object::createDescriptorPool</a>()</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;{</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    std::vector&lt;VkDescriptorType&gt; descriptorTypes = getDescriptorTypes();</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    std::vector&lt;VkDescriptorPoolSize&gt; poolSizes { descriptorTypes.size() };</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; descriptorTypes.size(); i++) {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        poolSizes[i].type = descriptorTypes[i];</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        poolSizes[i].descriptorCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    VkDescriptorPoolCreateInfo poolInfo {};</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    poolInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    poolInfo.poolSizeCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(poolSizes.size());</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    poolInfo.pPoolSizes = poolSizes.data();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    poolInfo.maxSets = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">if</span> (vkCreateDescriptorPool(device-&gt;device, &amp;poolInfo, <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            &amp;descriptorPool)</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        != VK_SUCCESS) {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to create descriptor pool!&quot;</span>);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e">  206</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e">Chronos::Engine::Object::createDescriptorSetLayout</a>()</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;{</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    std::vector&lt;VkDescriptorType&gt; descriptorTypes = getDescriptorTypes();</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    std::vector&lt;VkShaderStageFlagBits&gt; descriptorStages = getDescriptorStages();</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    std::vector&lt;VkDescriptorSetLayoutBinding&gt; bindings {descriptorTypes.size()};</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; descriptorTypes.size(); i++){</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        bindings[i].binding = i;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        bindings[i].descriptorType = descriptorTypes[i];</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        bindings[i].descriptorCount = 1;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        bindings[i].stageFlags = descriptorStages[i];</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        bindings[i].pImmutableSamplers = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    VkDescriptorSetLayoutCreateInfo layoutInfo {};</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    layoutInfo.bindingCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(bindings.size());</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    layoutInfo.pBindings = bindings.data();</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">if</span> (vkCreateDescriptorSetLayout(device-&gt;device, &amp;layoutInfo, <span class="keyword">nullptr</span>,</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            &amp;descriptorSetLayout)</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        != VK_SUCCESS) {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to create descriptor set layout!&quot;</span>);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    }</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Object.html#a8e1df40f2eb42af5d40225bd9583f3ce">  232</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Object.html#a8e1df40f2eb42af5d40225bd9583f3ce">Chronos::Engine::Object::recreateGraphicsPipeline</a>()</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;{</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    vkDestroyPipeline(device-&gt;device, graphicsPipeline, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    vkDestroyPipelineLayout(device-&gt;device, pipelineLayout, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    createGraphicsPipeline();</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;}</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">if</span> (descriptorTypes.size() != descriptorStages.size()) {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;descriptorTypes and descriptorStages must be the same size&quot;</span>);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    std::vector&lt;VkDescriptorSetLayoutBinding&gt; bindings { descriptorTypes.size() };</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; descriptorTypes.size(); i++) {</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        bindings[i].binding = i;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        bindings[i].descriptorType = descriptorTypes[i];</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        bindings[i].descriptorCount = 1;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        bindings[i].stageFlags = descriptorStages[i];</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        bindings[i].pImmutableSamplers = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    VkDescriptorSetLayoutCreateInfo layoutInfo {};</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    layoutInfo.bindingCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(bindings.size());</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    layoutInfo.pBindings = bindings.data();</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">if</span> (vkCreateDescriptorSetLayout(device-&gt;device, &amp;layoutInfo, <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            &amp;descriptorSetLayout)</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        != VK_SUCCESS) {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to create descriptor set layout!&quot;</span>);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    }</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;}</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Object.html#a8e1df40f2eb42af5d40225bd9583f3ce">  236</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Object.html#a8e1df40f2eb42af5d40225bd9583f3ce">Chronos::Engine::Object::recreateGraphicsPipeline</a>()</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;{</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    vkDestroyPipeline(device-&gt;device, graphicsPipeline, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    vkDestroyPipelineLayout(device-&gt;device, pipelineLayout, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    createGraphicsPipeline();</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;}</div>
+<div class="ttc" id="abuffers_8hpp_html"><div class="ttname"><a href="buffers_8hpp.html">buffers.hpp</a></div><div class="ttdoc">Contains the Buffer and UniformBuffer class.</div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html">Chronos::Engine::Device</a></div><div class="ttdoc">This initializes, manages and destroys the logical and physical devices(GPU).</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00015">device.hpp:15</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a18de9cac248202e004fd97a6628ed14e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e">Chronos::Engine::Object::createDescriptorPool</a></div><div class="ttdeci">void createDescriptorPool()</div><div class="ttdoc">Creates the Vulkan descriptor pool for the object.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00180">object.cpp:180</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a203a494524c8c74d52e5d692a2845f8b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">Chronos::Engine::Object::textureSampler</a></div><div class="ttdeci">VkSampler textureSampler</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00095">object.hpp:95</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2bdcd3b34fd075835e2a395bd39b09d7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a></div><div class="ttdeci">virtual void destroy()=0</div><div class="ttdoc">Destroys the object and releases associated resources.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00169">object.cpp:169</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2ff58729143a63b536fcd06e890b514e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e">Chronos::Engine::Object::init</a></div><div class="ttdeci">virtual void init(Chronos::Engine::Device *device, VkCommandPool commandPool, Chronos::Engine::SwapChain *swapChain, VkSampler textureSampler, VkRenderPass *renderPass)</div><div class="ttdoc">Initializes the object.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00005">object.cpp:5</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a300ba4549a4e0119cf2fcf0fad24569b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">Chronos::Engine::Object::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00094">object.hpp:94</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a7cfcd07115e8e58783c5cc40e4575bd8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">Chronos::Engine::Object::swapChain</a></div><div class="ttdeci">Chronos::Engine::SwapChain * swapChain</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00093">object.hpp:93</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a8e1df40f2eb42af5d40225bd9583f3ce"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a8e1df40f2eb42af5d40225bd9583f3ce">Chronos::Engine::Object::recreateGraphicsPipeline</a></div><div class="ttdeci">void recreateGraphicsPipeline()</div><div class="ttdoc">Recreates the graphics pipeline for the object.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00232">object.cpp:232</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a9ec42d04a85645aaffe162580da68a29"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">Chronos::Engine::Object::device</a></div><div class="ttdeci">Chronos::Engine::Device * device</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00092">object.hpp:92</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_aa107fe2bc0ae441c79ec522df3a8a16c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">Chronos::Engine::Object::uniformBuffers</a></div><div class="ttdeci">std::vector&lt; Chronos::Engine::UniformBuffer &gt; uniformBuffers</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00124">object.hpp:124</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_abd29a485b52b9004557055f1fe64049e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e">Chronos::Engine::Object::createDescriptorSetLayout</a></div><div class="ttdeci">void createDescriptorSetLayout()</div><div class="ttdoc">Creates the Vulkan descriptor set layout for the object.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00202">object.cpp:202</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_ac48f4e368fabf6b6f63ef252d600289c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c">Chronos::Engine::Object::createGraphicsPipeline</a></div><div class="ttdeci">void createGraphicsPipeline()</div><div class="ttdoc">Creates the graphics pipeline for the object.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00025">object.cpp:25</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a18de9cac248202e004fd97a6628ed14e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e">Chronos::Engine::Object::createDescriptorPool</a></div><div class="ttdeci">void createDescriptorPool()</div><div class="ttdoc">Creates the Vulkan descriptor pool for the object.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00184">object.cpp:184</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a203a494524c8c74d52e5d692a2845f8b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">Chronos::Engine::Object::textureSampler</a></div><div class="ttdeci">VkSampler textureSampler</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00088">object.hpp:88</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2bdcd3b34fd075835e2a395bd39b09d7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a></div><div class="ttdeci">virtual void destroy()=0</div><div class="ttdoc">Destroys the object and releases associated resources.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00173">object.cpp:173</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2ff58729143a63b536fcd06e890b514e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e">Chronos::Engine::Object::init</a></div><div class="ttdeci">virtual void init(Chronos::Engine::Device *device, VkCommandPool commandPool, Chronos::Engine::SwapChain *swapChain, VkSampler textureSampler, VkRenderPass *renderPass)</div><div class="ttdoc">Initializes the object.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00009">object.cpp:9</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a300ba4549a4e0119cf2fcf0fad24569b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">Chronos::Engine::Object::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00087">object.hpp:87</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a7cfcd07115e8e58783c5cc40e4575bd8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">Chronos::Engine::Object::swapChain</a></div><div class="ttdeci">Chronos::Engine::SwapChain * swapChain</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00086">object.hpp:86</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a8e1df40f2eb42af5d40225bd9583f3ce"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a8e1df40f2eb42af5d40225bd9583f3ce">Chronos::Engine::Object::recreateGraphicsPipeline</a></div><div class="ttdeci">void recreateGraphicsPipeline()</div><div class="ttdoc">Recreates the graphics pipeline for the object.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00236">object.cpp:236</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a9ec42d04a85645aaffe162580da68a29"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">Chronos::Engine::Object::device</a></div><div class="ttdeci">Chronos::Engine::Device * device</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00085">object.hpp:85</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_aa107fe2bc0ae441c79ec522df3a8a16c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">Chronos::Engine::Object::uniformBuffers</a></div><div class="ttdeci">std::vector&lt; Chronos::Engine::UniformBuffer &gt; uniformBuffers</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00117">object.hpp:117</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_abd29a485b52b9004557055f1fe64049e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e">Chronos::Engine::Object::createDescriptorSetLayout</a></div><div class="ttdeci">void createDescriptorSetLayout()</div><div class="ttdoc">Creates the Vulkan descriptor set layout for the object.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00206">object.cpp:206</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_ac48f4e368fabf6b6f63ef252d600289c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c">Chronos::Engine::Object::createGraphicsPipeline</a></div><div class="ttdeci">void createGraphicsPipeline()</div><div class="ttdoc">Creates the graphics pipeline for the object.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00029">object.cpp:29</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_adf7e359418ad5653b9590645282aee1e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#adf7e359418ad5653b9590645282aee1e">Chronos::Engine::Object::createDescriptorSets</a></div><div class="ttdeci">virtual void createDescriptorSets()=0</div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_af8b89f8ed5191515b60219682efba376"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">Chronos::Engine::Object::renderPass</a></div><div class="ttdeci">VkRenderPass * renderPass</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00096">object.hpp:96</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html">Chronos::Engine::SwapChain</a></div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8hpp_source.html#l00094">swapchain.hpp:94</a></div></div>
-<div class="ttc" id="aengine_8hpp_html"><div class="ttname"><a href="engine_8hpp.html">engine.hpp</a></div><div class="ttdoc">Contains the Engine class.</div></div>
-<div class="ttc" id="aengine_8hpp_html_a7302e21aaabe341f71d799a7dd3f274f"><div class="ttname"><a href="engine_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a></div><div class="ttdeci">const int MAX_FRAMES_IN_FLIGHT</div><div class="ttdoc">The number of frames in flight.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00023">engine.hpp:23</a></div></div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_a78d48217937b348633f1184b862e0312"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a78d48217937b348633f1184b862e0312">Chronos::Engine::createShaderModule</a></div><div class="ttdeci">VkShaderModule createShaderModule(const std::vector&lt; char &gt; &amp;code, VkDevice device)</div><div class="ttdoc">Creates a shader module from given shader(SPIV) code.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00192">helper.cpp:192</a></div></div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_af002a6ceca11bcbaf38e8df34b47b966"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#af002a6ceca11bcbaf38e8df34b47b966">Chronos::Engine::readFile</a></div><div class="ttdeci">std::vector&lt; char &gt; readFile(const std::string &amp;filename)</div><div class="ttdoc">Returns the content of a shader file.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00177">helper.cpp:177</a></div></div>
-<div class="ttc" id="aobjectManagerDefs_8hpp_html"><div class="ttname"><a href="objectManagerDefs_8hpp.html">objectManagerDefs.hpp</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_af8b89f8ed5191515b60219682efba376"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">Chronos::Engine::Object::renderPass</a></div><div class="ttdeci">VkRenderPass * renderPass</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00089">object.hpp:89</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html">Chronos::Engine::SwapChain</a></div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8hpp_source.html#l00090">swapchain.hpp:90</a></div></div>
+<div class="ttc" id="adevice_8hpp_html"><div class="ttname"><a href="device_8hpp.html">device.hpp</a></div><div class="ttdoc">Contains the Device class.</div></div>
+<div class="ttc" id="ahelper_8hpp_html"><div class="ttname"><a href="helper_8hpp.html">helper.hpp</a></div><div class="ttdoc">Contains various common functions used by other classes in the Engine namespace.</div></div>
+<div class="ttc" id="anamespaceChronos_1_1Engine_html_a78d48217937b348633f1184b862e0312"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a78d48217937b348633f1184b862e0312">Chronos::Engine::createShaderModule</a></div><div class="ttdeci">VkShaderModule createShaderModule(const std::vector&lt; char &gt; &amp;code, VkDevice device)</div><div class="ttdoc">Creates a shader module from given shader(SPIV) code.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00196">helper.cpp:196</a></div></div>
+<div class="ttc" id="anamespaceChronos_1_1Engine_html_af002a6ceca11bcbaf38e8df34b47b966"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#af002a6ceca11bcbaf38e8df34b47b966">Chronos::Engine::readFile</a></div><div class="ttdeci">std::vector&lt; char &gt; readFile(const std::string &amp;filename)</div><div class="ttdoc">Returns the content of a shader file.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00181">helper.cpp:181</a></div></div>
 <div class="ttc" id="aobject_8hpp_html"><div class="ttname"><a href="object_8hpp.html">object.hpp</a></div><div class="ttdoc">Contains the class for creating a generic object.</div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html">Chronos::Engine::PipelineAttributes</a></div><div class="ttdoc">Structure defining attributes required for creating a graphics pipeline.</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00024">object.hpp:24</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a14e0f95045ac8e59a01daab9fbda2b6c"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a14e0f95045ac8e59a01daab9fbda2b6c">Chronos::Engine::PipelineAttributes::topology</a></div><div class="ttdeci">VkPrimitiveTopology topology</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00027">object.hpp:27</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a41fb73c4ce11e598e3bc04701dcf7513"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">Chronos::Engine::PipelineAttributes::colorBlendAttachment</a></div><div class="ttdeci">VkPipelineColorBlendAttachmentState colorBlendAttachment</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00029">object.hpp:29</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a6449ea448af9b4ce79281ff243f9b1cd"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a6449ea448af9b4ce79281ff243f9b1cd">Chronos::Engine::PipelineAttributes::bindingDescriptions</a></div><div class="ttdeci">std::vector&lt; VkVertexInputBindingDescription &gt; bindingDescriptions</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00025">object.hpp:25</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a81aa188b04f6c9af8ea5321e22ebf225"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225">Chronos::Engine::PipelineAttributes::attributeDescriptions</a></div><div class="ttdeci">std::vector&lt; VkVertexInputAttributeDescription &gt; attributeDescriptions</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00026">object.hpp:26</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_aeda2f1f1bedbeca2694b16154ce8bd3d"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#aeda2f1f1bedbeca2694b16154ce8bd3d">Chronos::Engine::PipelineAttributes::frontFace</a></div><div class="ttdeci">VkFrontFace frontFace</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00028">object.hpp:28</a></div></div>
+<div class="ttc" id="astlheader_8hpp_html"><div class="ttname"><a href="stlheader_8hpp.html">stlheader.hpp</a></div><div class="ttdoc">Contains all the standard library headers used in the project.</div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html">Chronos::Engine::PipelineAttributes</a></div><div class="ttdoc">Structure defining attributes required for creating a graphics pipeline.</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00017">object.hpp:17</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a14e0f95045ac8e59a01daab9fbda2b6c"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a14e0f95045ac8e59a01daab9fbda2b6c">Chronos::Engine::PipelineAttributes::topology</a></div><div class="ttdeci">VkPrimitiveTopology topology</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00020">object.hpp:20</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a41fb73c4ce11e598e3bc04701dcf7513"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">Chronos::Engine::PipelineAttributes::colorBlendAttachment</a></div><div class="ttdeci">VkPipelineColorBlendAttachmentState colorBlendAttachment</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00022">object.hpp:22</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a6449ea448af9b4ce79281ff243f9b1cd"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a6449ea448af9b4ce79281ff243f9b1cd">Chronos::Engine::PipelineAttributes::bindingDescriptions</a></div><div class="ttdeci">std::vector&lt; VkVertexInputBindingDescription &gt; bindingDescriptions</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00018">object.hpp:18</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a81aa188b04f6c9af8ea5321e22ebf225"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225">Chronos::Engine::PipelineAttributes::attributeDescriptions</a></div><div class="ttdeci">std::vector&lt; VkVertexInputAttributeDescription &gt; attributeDescriptions</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00019">object.hpp:19</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_aeda2f1f1bedbeca2694b16154ce8bd3d"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#aeda2f1f1bedbeca2694b16154ce8bd3d">Chronos::Engine::PipelineAttributes::frontFace</a></div><div class="ttdeci">VkFrontFace frontFace</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00021">object.hpp:21</a></div></div>
+<div class="ttc" id="aswapchain_8hpp_html"><div class="ttname"><a href="swapchain_8hpp.html">swapchain.hpp</a></div><div class="ttdoc">Contains the swapChain class along with all the swapChain related functions.</div></div>
+<div class="ttc" id="avulkanHeaders_8hpp_html"><div class="ttname"><a href="vulkanHeaders_8hpp.html">vulkanHeaders.hpp</a></div><div class="ttdoc">Contains the common headers for the vulkan API.</div></div>
+<div class="ttc" id="avulkanHeaders_8hpp_html_a7302e21aaabe341f71d799a7dd3f274f"><div class="ttname"><a href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a></div><div class="ttdeci">const int MAX_FRAMES_IN_FLIGHT</div><div class="ttdef"><b>Definition:</b> <a href="vulkanHeaders_8hpp_source.html#l00021">vulkanHeaders.hpp:21</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

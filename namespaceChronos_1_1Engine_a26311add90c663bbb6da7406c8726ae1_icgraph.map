@@ -1,4 +1,0 @@
-<map id="Chronos::Engine::createTextureSampler" name="Chronos::Engine::createTextureSampler">
-<area shape="rect" id="node1" title="Creates a VkSampler" alt="" coords="288,5,512,47"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1ObjectManager.html#a0ba9500496ff88214ea2343c48c477cc" title="Initializes the ObjectManager." alt="" coords="5,5,240,47"/>
-</map>
