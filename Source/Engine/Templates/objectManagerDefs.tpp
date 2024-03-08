@@ -1,6 +1,6 @@
 #pragma once
-#include "objectManager.hpp"
-template <Chronos::Engine::ObjectLike Object> void Chronos::Engine::ObjectManager<Object>::init(Chronos::Engine::Device* device, SwapChain* swapChain,
+template <Chronos::Engine::ObjectLike Object>
+void Chronos::Engine::ObjectManager<Object>::init(Chronos::Engine::Device* device, SwapChain* swapChain,
     VkCommandPool commandPool)
 {
     this->device = device;
@@ -14,7 +14,8 @@ template <Chronos::Engine::ObjectLike Object> void Chronos::Engine::ObjectManage
     framebuffers = Chronos::Engine::createFramebuffer(*device, *swapChain, renderPass, true);
 }
 
-template <Chronos::Engine::ObjectLike Object> void Chronos::Engine::ObjectManager<Object>::destroy()
+template <Chronos::Engine::ObjectLike Object>
+void Chronos::Engine::ObjectManager<Object>::destroy()
 {
     vkDestroySampler(device->device, textureSampler, nullptr);
     vkDestroyRenderPass(device->device, renderPass, nullptr);
@@ -25,8 +26,8 @@ template <Chronos::Engine::ObjectLike Object> void Chronos::Engine::ObjectManage
     }
 }
 
-
-template <Chronos::Engine::ObjectLike Object> void Chronos::Engine::ObjectManager<Object>::render(uint32_t currentFrame, uint32_t imageIndex,
+template <Chronos::Engine::ObjectLike Object>
+void Chronos::Engine::ObjectManager<Object>::render(uint32_t currentFrame, uint32_t imageIndex,
     float bgColor[3])
 {
     vkResetCommandBuffer(commandBuffers[currentFrame], 0);
@@ -45,20 +46,23 @@ template <Chronos::Engine::ObjectLike Object> void Chronos::Engine::ObjectManage
     VkClearValue clearColor = { bgColor[0], bgColor[1], bgColor[2],
         1.0f }; // bg color
     renderPassInfo.clearValueCount = 1;
-    renderPassInfo.pClearValues = &clearColor;    
+    renderPassInfo.pClearValues = &clearColor;
 
     vkCmdBeginRenderPass(commandBuffers[currentFrame], &renderPassInfo,
         VK_SUBPASS_CONTENTS_INLINE);
 }
 
-template <Chronos::Engine::ObjectLike Object> void Chronos::Engine::ObjectManager<Object>::endRender(uint32_t currentFrame){
+template <Chronos::Engine::ObjectLike Object>
+void Chronos::Engine::ObjectManager<Object>::endRender(uint32_t currentFrame)
+{
     vkCmdEndRenderPass(commandBuffers[currentFrame]);
 
     if (vkEndCommandBuffer(commandBuffers[currentFrame]) != VK_SUCCESS) {
         throw std::runtime_error("failed to record command buffer!");
     }
 }
-template <Chronos::Engine::ObjectLike Object> void Chronos::Engine::ObjectManager<Object>::changeMsaa()
+template <Chronos::Engine::ObjectLike Object>
+void Chronos::Engine::ObjectManager<Object>::changeMsaa()
 {
     vkDestroyRenderPass(device->device, renderPass, nullptr);
     renderPass = Chronos::Engine::createRenderPass(*device, *swapChain, VK_IMAGE_LAYOUT_UNDEFINED,
@@ -67,19 +71,22 @@ template <Chronos::Engine::ObjectLike Object> void Chronos::Engine::ObjectManage
         true, false);
 }
 
-template <Chronos::Engine::ObjectLike Object> void Chronos::Engine::ObjectManager<Object>::cleanup()
+template <Chronos::Engine::ObjectLike Object>
+void Chronos::Engine::ObjectManager<Object>::cleanup()
 {
     for (auto framebuffer : framebuffers)
         vkDestroyFramebuffer(device->device, framebuffer, nullptr);
 }
 
-template <Chronos::Engine::ObjectLike Object> void Chronos::Engine::ObjectManager<Object>::recreate()
+template <Chronos::Engine::ObjectLike Object>
+void Chronos::Engine::ObjectManager<Object>::recreate()
 {
     cleanup();
     framebuffers = createFramebuffer(*device, *swapChain, renderPass, true);
 }
 
-template <Chronos::Engine::ObjectLike Object> int Chronos::Engine::ObjectManager<Object>::addObject(Object object)
+template <Chronos::Engine::ObjectLike Object>
+int Chronos::Engine::ObjectManager<Object>::addObject(Object object)
 {
     int objectNo = nextFreeObjectNo;
     nextFreeObjectNo++;
@@ -87,13 +94,15 @@ template <Chronos::Engine::ObjectLike Object> int Chronos::Engine::ObjectManager
     return objectNo;
 }
 
-template <Chronos::Engine::ObjectLike Object> void Chronos::Engine::ObjectManager<Object>::remove(int objectNo)
+template <Chronos::Engine::ObjectLike Object>
+void Chronos::Engine::ObjectManager<Object>::remove(int objectNo)
 {
     objects[objectNo].destroy();
     objects.erase(objectNo);
 }
 
-template <Chronos::Engine::ObjectLike Object> void Chronos::Engine::ObjectManager<Object>::update(uint32_t currentFrame)
+template <Chronos::Engine::ObjectLike Object>
+void Chronos::Engine::ObjectManager<Object>::update(uint32_t currentFrame)
 {
     for (auto& objectMap : objects) {
         objectMap.second.update(currentFrame);

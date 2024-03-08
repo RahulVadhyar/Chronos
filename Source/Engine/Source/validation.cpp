@@ -1,5 +1,6 @@
 #include "vulkanHeaders.hpp"
 #include "stlheader.hpp"
+#include "device.hpp"
 #include "validation.hpp"
 
 bool Chronos::Engine::checkValidationLayerSupport()

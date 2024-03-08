@@ -58,6 +58,7 @@ ${IMGUI_NODE_EDITOR_CPP})
 #create a fucntion to include all the directories, also link vulkan and glfw
 function(IncludeDirectories projectName)
     target_include_directories(${projectName} PUBLIC Source/Engine/Headers)
+    target_include_directories(${projectName} PUBLIC Source/Engine/Templates)
     target_include_directories(${projectName} PUBLIC Source/API/Headers)
     target_include_directories(${projectName} PUBLIC Source/Editor/Headers)
     target_include_directories(${projectName} PUBLIC Source/Animation/Headers)

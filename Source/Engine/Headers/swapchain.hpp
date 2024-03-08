@@ -3,9 +3,6 @@
  \brief Contains the swapChain class along with all the swapChain related functions.
 */
 #pragma once
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "device.hpp"
 namespace Chronos {
 namespace Engine {
 
@@ -38,20 +35,20 @@ namespace Engine {
 
     Some of the presentation modes available are:
     - ```VK_PRESENT_MODE_IMMEDIATE_KHR```: Images submitted by your application are transferred to the screen right away, which may result in tearing.
-    - ```VK_PRESENT_MODE_FIFO_KHR``` : The swap chain is a queue where the display takes an image from the front of the queue when the display is refreshed and the program inserts rendered images at the back of the queue.If the queue is full then the program has to wait. This is most similar to vertical sync as found in modern games.The moment that the display is refreshed is known as "vertical blank".  
+    - ```VK_PRESENT_MODE_FIFO_KHR``` : The swap chain is a queue where the display takes an image from the front of the queue when the display is refreshed and the program inserts rendered images at the back of the queue.If the queue is full then the program has to wait. This is most similar to vertical sync as found in modern games.The moment that the display is refreshed is known as "vertical blank".
     - ```VK_PRESENT_MODE_FIFO_RELAXED_KHR``` : This mode only differs from the previous one if the application is late and the queue was empty at the last vertical
-    blank. Instead of waiting for the next vertical blank, the image is transferred right away when it 	finally arrives.This may result in visible tearing. 
+    blank. Instead of waiting for the next vertical blank, the image is transferred right away when it 	finally arrives.This may result in visible tearing.
     - ```VK_PRESENT_MODE_MAILBOX_KHR``` : This is another variation of the
     second mode.Instead of blocking the application when the queue is full, the
     images 	that are already queued are simply replaced with the newer ones.This
     mode can be used to render frames as fast as possible while still avoiding
     tearing, resulting in fewer latency issues than standard vertical sync.This
-    is commonly known as "triple buffering", although the existence of three buffers alone does not necessarily mean that the framerate 
+    is commonly known as "triple buffering", although the existence of three buffers alone does not necessarily mean that the framerate
 
     @param availablePresentModes The available present modes to choose from.
 
-    @return The best present mode based on availability and preference.	
-    
+    @return The best present mode based on availability and preference.
+
     */
     VkPresentModeKHR chooseSwapPresentMode(
         const std::vector<VkPresentModeKHR>& availablePresentModes);
@@ -82,23 +79,21 @@ namespace Engine {
     SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device,
         VkSurfaceKHR surface);
 
-
     /**
     /brief Responsible for initializing, managing, recreating and presenting the
     swapchain images.
 
-    In Vulkan, we render to images(texture). These images are then present to the GLFW window. 
+    In Vulkan, we render to images(texture). These images are then present to the GLFW window.
     Since there will be multiple images in flight, along with multiple other assets for
     this, we need to manage these assets.
     */
     class SwapChain {
     public:
-        
         /**
         \brief Initilize the swapchain
 
         The swapchain is an insanely complicated process to setup.
-        We need to create multiple textures, along with their memory and 
+        We need to create multiple textures, along with their memory and
         views. We also need to select the format to render to. Along with that we need the color rendering texture attachment, which has its own texture, memory and view.
 
         @param device The device to create the swapchain on
@@ -111,7 +106,7 @@ namespace Engine {
         \brief When the swapchain is rendered invalid, recreate it.
 
         Due to various user activities such as window resizing and minimization, the swapchain can become invalid.
-        At that point, we need to recreate the assets based on the new dimensions. 
+        At that point, we need to recreate the assets based on the new dimensions.
         */
         void recreate();
 
@@ -122,7 +117,7 @@ namespace Engine {
 
         /**
         \brief Changes the MSAA count of the swapchain images
-        
+
         When the user decides to change the MSAA, we need to recreate the swapchain. This does it.
         */
         void changeMsaa();

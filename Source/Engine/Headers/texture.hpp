@@ -117,7 +117,7 @@ namespace Engine {
         Used in Text Rendering
         */
         void create(Chronos::Engine::Device device, VkCommandPool commandPool,
-                void* data, size_t texWidth, size_t texHeight, VkDeviceSize imageSize, VkFormat format);
+            void* data, size_t texWidth, size_t texHeight, VkDeviceSize imageSize, VkFormat format);
 
         /**
         \brief Destroy the texture assets.

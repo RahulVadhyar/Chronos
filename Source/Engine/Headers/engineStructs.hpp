@@ -1,5 +1,4 @@
 #pragma once
-#include "vulkanHeaders.hpp"
 /** \file engineStructs.hpp
 
  \brief Contains ShapeParams and UniformBufferObject structs.
@@ -22,7 +21,7 @@ namespace Engine {
     @param scale Scale of the text(Range : any float).
     @param text The text to render.
     */
-    struct TextParams{
+    struct TextParams {
         std::string text;
         float x = 0;
         float y = 0;

@@ -3,18 +3,15 @@
 
 \brief Contains the class for managing text in the Chronos::Engine namespace.
 */
-#include "objectManager.hpp"
-#include "font.hpp"
 
 namespace Chronos {
-namespace Engine{
+namespace Engine {
 
     /**
     \brief This is the text manager for Chronos. It handles creation, modification, updating and desrtuction of text.
     */
-    class TextManager: public Chronos::Engine::ObjectManager<Chronos::Engine::Font> {
+    class TextManager : public Chronos::Engine::ObjectManager<Chronos::Engine::Font> {
     public:
-
         /**
         \brief Adds a font to the text manager.
 
@@ -41,12 +38,10 @@ namespace Engine{
         void remove(int fontNo);
 
     private:
-
         /**
         \brief Creates the render pass needed for rendering the text.
         */
         void createRenderPass();
-
     };
 };
 };

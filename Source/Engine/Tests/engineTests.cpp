@@ -1,4 +1,7 @@
 #include "gtest/gtest.h"
+#include "vulkanHeaders.hpp"
+#include "device.hpp"
+#include "swapchain.hpp"
 #include "helper.hpp"
 
 // TEST(isWorking, EngineTest){

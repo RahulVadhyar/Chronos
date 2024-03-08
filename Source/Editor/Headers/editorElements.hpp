@@ -1,8 +1,7 @@
 #pragma once
-#include "editorHeaders.hpp"
 
 namespace Chronos {
-    namespace Editor{
-        void addElements();
-    };
+namespace Editor {
+    void addElements();
+};
 };

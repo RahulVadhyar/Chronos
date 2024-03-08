@@ -3,25 +3,22 @@
  \brief Contains the class for creating a shape.
 */
 #pragma once
-#include "engineStructs.hpp"
-#include "helper.hpp"
-#include "Vertex.hpp"
-#include "buffers.hpp"
-#include "texture.hpp"
-#include "object.hpp"
-#include "commonStructs.hpp"
 namespace Chronos {
 namespace Engine {
+
+    template <typename T>
+    concept VertexLike = std::is_base_of<Chronos::Engine::ColorVertex, T>::value || std::is_base_of<Chronos::Engine::TexturedVertex, T>::value;
+
     /**
     \brief Class for creating a shape(triangle, rectangle, etc.).
 
     This class is used to create a shape(triangle, rectangle, etc.). It is a child of the Object class.
     It handles all the vulkan objects needed for rendering the shape.
     */
-    class Shape : public Object{
+    template <VertexLike VertexStruct>
+    class Shape : public Object {
 
     public:
-
         /**
         \brief The parameters that are associated with the shape.
         */
@@ -42,7 +39,6 @@ namespace Engine {
             VkSampler textureSampler, std::string texturePath,
             VkRenderPass* renderPass);
 
-
         /**
         \brief Updates the shape object for the current frame.
 
@@ -59,7 +55,7 @@ namespace Engine {
         This destroys all the vulkan related objects related to this class and frees memory.
         */
         void destroy() override;
-        
+
         /**
         \brief The indices that is used to specify the order of vertices to render.
         */
@@ -73,7 +69,7 @@ namespace Engine {
         /**
         \brief The vertices that is used to render the shape.
         */
-        std::vector<Vertex> vertices;
+        std::vector<VertexStruct> vertices;
 
         /**
         \brief The vertex buffer that is used to store the vertices.
@@ -84,15 +80,16 @@ namespace Engine {
         \brief The index buffer that is used to store the indices.
         */
         Chronos::Engine::Buffer indexBuffer;
-        
+
         void createDescriptorSets() override;
         std::vector<VkDescriptorType> getDescriptorTypes() override;
         std::vector<VkShaderStageFlagBits> getDescriptorStages() override;
         std::vector<VkShaderStageFlagBits> getShaderStages();
+
     private:
         PipelineAttributes getPipelineAttributes() override;
-        
     };
+#include "shapeDefs.tpp"
 
     /**
     \brief Class for creating a rectangle.
@@ -100,15 +97,27 @@ namespace Engine {
     This class is used to create a rectangle. It is a child of the Shape class.
     For more details about the functions, see the Shape class.
     */
-    class Rectangle : public Shape {
+    template <VertexLike VertexStruct>
+    class Rectangle : public Shape<VertexStruct> {
     public:
         Rectangle()
+            requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
         {
-            indices = std::vector<uint16_t> { 0, 1, 2, 2, 3, 0 };
-            vertices = std::vector<Vertex> { { { -0.5f, -0.5f }, { 1.0f, 0.0f, 0.0f }, { 1.0f, 0.0f } },
-                { { 0.5f, -0.5f }, { 0.0f, 1.0f, 0.0f }, { 0.0f, 0.0f } },
-                { { 0.5f, 0.5f }, { 0.0f, 0.0f, 1.0f }, { 0.0f, 1.0f } },
-                { { -0.5f, 0.5f }, { 0.5f, 1.0f, 0.5f }, { 1.0f, 1.0f } } };
+            Rectangle<VertexStruct>::indices = std::vector<uint16_t> { 0, 1, 2, 2, 3, 0 };
+            Rectangle<VertexStruct>::vertices = std::vector<VertexStruct> { { { -0.5f, -0.5f }, { 1.0f, 0.0f, 0.0f } },
+                { { 0.5f, -0.5f }, { 0.0f, 1.0f, 0.0f } },
+                { { 0.5f, 0.5f }, { 0.0f, 0.0f, 1.0f } },
+                { { -0.5f, 0.5f }, { 0.5f, 1.0f, 0.5f } } };
+        }
+
+        Rectangle()
+            requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
+        {
+            Rectangle<VertexStruct>::indices = std::vector<uint16_t> { 0, 1, 2, 2, 3, 0 };
+            Rectangle<VertexStruct>::vertices = std::vector<VertexStruct> { { { -0.5f, -0.5f }, { 1.0f, 0.0f } },
+                { { 0.5f, -0.5f }, { 0.0f, 0.0f } },
+                { { 0.5f, 0.5f }, { 0.0f, 1.0f } },
+                { { -0.5f, 0.5f }, { 1.0f, 1.0f } } };
         }
     };
 
@@ -118,14 +127,25 @@ namespace Engine {
     This class is used to create a triangle. It is a child of the Shape class.
     For more details about the functions, see the Shape class.
     */
-    class Triangle : public Shape {
+    template <VertexLike VertexStruct>
+    class Triangle : public Shape<VertexStruct> {
     public:
         Triangle()
+            requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
         {
-            indices = std::vector<uint16_t> { 0, 1, 2 };
-            vertices = std::vector<Vertex> { { { 0.0f, -0.5f }, { 1.0f, 0.0f, 0.0f }, { 1.0f, 0.0f } },
-                { { 0.5f, 0.5f }, { 0.0f, 1.0f, 0.0f }, { 0.0f, 0.0f } },
-                { { -0.5f, 0.5f }, { 0.0f, 0.0f, 1.0f }, { 0.0f, 1.0f } } };
+            Triangle<VertexStruct>::indices = std::vector<uint16_t> { 0, 1, 2 };
+            Triangle<VertexStruct>::vertices = std::vector<VertexStruct> { { { 0.0f, -0.5f }, { 1.0f, 0.0f } },
+                { { 0.5f, 0.5f }, { 0.0f, 0.0f } },
+                { { -0.5f, 0.5f }, { 0.0f, 1.0f } } };
+        }
+
+        Triangle()
+            requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
+        {
+            Triangle<VertexStruct>::indices = std::vector<uint16_t> { 0, 1, 2 };
+            Triangle<VertexStruct>::vertices = std::vector<VertexStruct> { { { 0.0f, -0.5f }, { 1.0f, 0.0f, 0.0f } },
+                { { 0.5f, 0.5f }, { 0.0f, 1.0f, 0.0f } },
+                { { -0.5f, 0.5f }, { 0.0f, 0.0f, 1.0f } } };
         }
     };
 };

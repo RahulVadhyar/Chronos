@@ -5,9 +5,7 @@
  This is the heart of the renderer. It is responsible for managing the window, the vulkan API and the objects that are used by the API.
 */
 #pragma once
-#include "shapeManager.hpp"
-#include "textManager.hpp"
-// #include "text.hpp"
+
 #ifdef ENABLE_EDITOR
 #include "editorRenderer.hpp"
 #endif
@@ -20,45 +18,44 @@ This ensures that the GPU and CPU are busy at the same time and not waiting for 
 Hence we create multiple frames and while one is rendering, the other is being prepared.
 This ensures maximum performance.
 */
-const int MAX_FRAMES_IN_FLIGHT = 2;
 
 namespace Chronos {
 namespace Engine {
 
-/**
-\brief This is the main vulkan backend for Chronos.
-This is for use by the API only and should not be used for any other purpose.
+    /**
+    \brief This is the main vulkan backend for Chronos.
+    This is for use by the API only and should not be used for any other purpose.
 
-This is resposible for managing the object and shapes that related to vulkan.
-It is also in charge of drawing frames and managing the window.
-It automatically handles window resizing, creation and destruction of necessary objects.
-Any shapes or text to be created is to be done throught the shapeManager and textManager respectively.
+    This is resposible for managing the object and shapes that related to vulkan.
+    It is also in charge of drawing frames and managing the window.
+    It automatically handles window resizing, creation and destruction of necessary objects.
+    Any shapes or text to be created is to be done throught the shapeManager and textManager respectively.
 
-In order to draw a frame, create a loop and call the drawFrame.
+    In order to draw a frame, create a loop and call the drawFrame.
 
-##Important
-drawFrame will not handle inputs.
-It will also draw only one frame per call.
-Hence the inputs must be managed by the main loop.
-This is done to allow flexibility in inputs and management of the frame drawing.
+    ##Important
+    drawFrame will not handle inputs.
+    It will also draw only one frame per call.
+    Hence the inputs must be managed by the main loop.
+    This is done to allow flexibility in inputs and management of the frame drawing.
 
-## drawFrame() example
-Suppose Engine class is initialized as engine
-The following code snippet is an example of a basic rendering loop.
-It also includes functionaility to close the window either when the escape key is pressed or when the window is closed.
-For more on handling inputs, please see the GLFW documentation.
+    ## drawFrame() example
+    Suppose Engine class is initialized as engine
+    The following code snippet is an example of a basic rendering loop.
+    It also includes functionaility to close the window either when the escape key is pressed or when the window is closed.
+    For more on handling inputs, please see the GLFW documentation.
 
-~~~~~~~~~~~~~~~{.cpp}
-            while (!glfwWindowShouldClose(engine.window)) {
-                //if esc is pressed, then ask GLFW to close the window
-                if (glfwGetKey(engine.window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-                    glfwSetWindowShouldClose(engine.window, true);
+    ~~~~~~~~~~~~~~~{.cpp}
+                while (!glfwWindowShouldClose(engine.window)) {
+                    //if esc is pressed, then ask GLFW to close the window
+                    if (glfwGetKey(engine.window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+                        glfwSetWindowShouldClose(engine.window, true);
+                    }
+                    //draw the frame
+                    engine.drawFrame();
                 }
-                //draw the frame
-                engine.drawFrame();
-            }
-~~~~~~~~~~~~~~~
-*/
+    ~~~~~~~~~~~~~~~
+    */
     class Engine {
     public:
         /**
@@ -87,7 +84,7 @@ For more on handling inputs, please see the GLFW documentation.
 
         To render shapes to the window, one may call the necessary methods in this class.
         */
-        Chronos::Engine::ShapeManager shapeManager;
+        Chronos::Engine::ShapeManager<TexturedVertex> shapeManager;
 
         /**
         \brief This is the initial width of the window. It can be changed later just by changing this directly.

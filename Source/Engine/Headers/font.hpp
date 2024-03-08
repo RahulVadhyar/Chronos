@@ -3,10 +3,9 @@
  \brief Contains the class for creating a font object for rendering text.
 */
 #pragma once
-#include "object.hpp"
 #include "stb_font_consolas_24_latin1.inl"
 namespace Chronos {
-namespace Engine{
+namespace Engine {
     /**
     \brief Class for creating a font object for rendering text.
 
@@ -21,7 +20,6 @@ namespace Engine{
     */
     class Font : public Chronos::Engine::Object {
     public:
-
         /**
         \brief Initializes the font object and creates the necessary objects.
 
@@ -59,7 +57,7 @@ namespace Engine{
         @param bgColor The background color to use for rendering the text.
         */
         void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]);
-        
+
         /**
         \brief Updates the attributes(like position, color, etc) of the text.
 
@@ -79,9 +77,10 @@ namespace Engine{
         uint32_t numLetters;
 
         /**
-        \brief Various parameters of the text that are set by the user. 
+        \brief Various parameters of the text that are set by the user.
         */
         Chronos::Engine::TextParams params;
+
     private:
         /**
         \brief Creates the descriptor sets needed for rendering the text.
@@ -115,7 +114,7 @@ namespace Engine{
         \brief Maximum number of characters that can be rendered.
         */
         uint32_t maxTextLength = 2048;
-        
+
         /**
         \brief The texture atlas that contains all the characters in the font.
         */
@@ -125,12 +124,12 @@ namespace Engine{
         \brief The vertex buffer memory.
         */
         VkDeviceMemory vertexBufferMemory;
-        
+
         /**
         The font texture
         */
         Chronos::Engine::Texture fontTexture;
-        
+
         /**
         The mapped memory to the vertex buffer
         */

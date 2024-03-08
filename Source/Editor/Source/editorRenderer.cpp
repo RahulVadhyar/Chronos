@@ -1,8 +1,13 @@
 #ifdef ENABLE_EDITOR
+#include "stlheader.hpp"
 #include "editorHeaders.hpp"
-#include "editorRenderer.hpp"
-#include "engine.hpp"
 #include "editorElements.hpp"
+
+#include "vulkanHeaders.hpp"
+#include "device.hpp"
+#include "swapchain.hpp"
+#include "helper.hpp"
+#include "editorRenderer.hpp"
 
 void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFWwindow* window, Chronos::Engine::SwapChain* swapChain,
     VkInstance instance, VkSurfaceKHR surface)

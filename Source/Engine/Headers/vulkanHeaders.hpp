@@ -17,3 +17,5 @@ More specifically it includes the following packages:
 #include "glm/gtx/string_cast.hpp"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+
+const int MAX_FRAMES_IN_FLIGHT = 2;

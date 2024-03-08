@@ -1,6 +1,21 @@
-#include "engine.hpp"
+#include "vulkanHeaders.hpp"
+#include "stlheader.hpp"
+#include "device.hpp"
+#include "swapchain.hpp"
 #include "validation.hpp"
-#include "objectManagerDefs.hpp"
+#include "engineStructs.hpp"
+#include "Vertex.hpp"
+#include "helper.hpp"
+#include "buffers.hpp"
+#include "texture.hpp"
+#include "object.hpp"
+#include "font.hpp"
+#include "objectManager.hpp"
+#include "textManager.hpp"
+#include "commonStructs.hpp"
+#include "shape.hpp"
+#include "shapeManager.hpp"
+#include "engine.hpp"
 
 static void framebuffer_size_callback(GLFWwindow* window, int width,
     int height)
@@ -119,9 +134,9 @@ void Chronos::Engine::Engine::drawFrame()
     // update the shapes and text
     shapeManager.update(currentFrame);
     textManager.update(currentFrame);
-    #ifdef ENABLE_EDITOR
+#ifdef ENABLE_EDITOR
     gui.update();
-    #endif
+#endif
 
     // reset the fences
     vkResetFences(device.device, 1, &inFlightFences[currentFrame]);

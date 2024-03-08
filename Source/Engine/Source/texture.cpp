@@ -1,3 +1,7 @@
+#include "vulkanHeaders.hpp"
+#include "stlheader.hpp"
+#include "device.hpp"
+#include "swapchain.hpp"
 #include "helper.hpp"
 #include "texture.hpp"
 #define STB_IMAGE_IMPLEMENTATION
@@ -97,7 +101,7 @@ void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandP
 }
 
 void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandPool commandPool,
-                void* data, size_t texWidth, size_t texHeight, VkDeviceSize imageSize, VkFormat format)
+    void* data, size_t texWidth, size_t texHeight, VkDeviceSize imageSize, VkFormat format)
 {
     this->device = device;
     VkBuffer stagingBuffer;

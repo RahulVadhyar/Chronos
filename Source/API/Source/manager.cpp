@@ -1,8 +1,6 @@
 #include "chronos.hpp"
 // #include "text.hpp"
 #include "object.hpp"
-#include "objectManagerDefs.hpp"
-
 
 namespace Chronos {
 GLFWwindow* Manager::Manager::getWindow()
@@ -10,13 +8,8 @@ GLFWwindow* Manager::Manager::getWindow()
     return engine.window;
 }
 Manager::Manager::Manager(Chronos::Manager::Initializer initializer)
-{   
-    if(initializer.BackgroundColor[0] < 0 ||
-     initializer.BackgroundColor[0] > 1 || 
-     initializer.BackgroundColor[1] < 0 || 
-     initializer.BackgroundColor[1] > 1 || 
-     initializer.BackgroundColor[2] < 0 || 
-     initializer.BackgroundColor[2] > 1){
+{
+    if (initializer.BackgroundColor[0] < 0 || initializer.BackgroundColor[0] > 1 || initializer.BackgroundColor[1] < 0 || initializer.BackgroundColor[1] > 1 || initializer.BackgroundColor[2] < 0 || initializer.BackgroundColor[2] > 1) {
         throw std::runtime_error("Invalid background color");
     }
     engine.bgColor[0] = initializer.BackgroundColor[0];
@@ -66,13 +59,12 @@ void Manager::Manager::removePolygon(int shapeNo)
 {
     if (engine.shapeManager.objects.count(shapeNo) > 0) {
         engine.shapeManager.remove(shapeNo);
-    } else{
+    } else {
         throw std::runtime_error("Shape does not exist");
-    
     }
 }
 int Manager::Manager::addText(Chronos::Engine::TextParams params)
-{   
+{
     if (params.text == "") {
         throw std::runtime_error("Text cannot be empty");
     }
@@ -83,7 +75,7 @@ int Manager::Manager::addText(Chronos::Engine::TextParams params)
 
 void Manager::Manager::removeText(int textNo)
 {
-    
+
     engine.textManager.remove(textNo);
 }
 

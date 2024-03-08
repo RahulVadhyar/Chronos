@@ -4,7 +4,6 @@
  \brief Contains various common functions used by other classes in the Engine namespace.
 
 */
-#include "swapchain.hpp"
 namespace Chronos {
 namespace Engine {
 

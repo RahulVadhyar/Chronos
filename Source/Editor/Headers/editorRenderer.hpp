@@ -1,5 +1,4 @@
 #pragma once
-#include "shapeManager.hpp"
 namespace Chronos {
 namespace Editor {
 

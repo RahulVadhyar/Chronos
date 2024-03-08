@@ -1,6 +1,6 @@
-#include "engine.hpp"
-#include "object.hpp"
-void Chronos::Engine::Shape::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
+#pragma once
+template <Chronos::Engine::VertexLike VertexStruct>
+void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     SwapChain* swapChain, VkSampler textureSampler,
     std::string texturePath, VkRenderPass* renderPass)
 {
@@ -22,11 +22,10 @@ void Chronos::Engine::Shape::init(Chronos::Engine::Device* device, VkCommandPool
         VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_INDEX_BUFFER_BIT,
         VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     indexBuffer.copy(indices.data(), commandPool);
-
-    
 }
 
-void Chronos::Engine::Shape::destroy()
+template <Chronos::Engine::VertexLike VertexStruct>
+void Chronos::Engine::Shape<VertexStruct>::destroy()
 {
     texture.destroy();
     vertexBuffer.destroy();
@@ -34,8 +33,8 @@ void Chronos::Engine::Shape::destroy()
     Chronos::Engine::Object::destroy();
 }
 
-
-void Chronos::Engine::Shape::createDescriptorSets()
+template <Chronos::Engine::VertexLike VertexStruct>
+void Chronos::Engine::Shape<VertexStruct>::createDescriptorSets()
 {
     std::vector<VkDescriptorSetLayout> layouts(MAX_FRAMES_IN_FLIGHT,
         descriptorSetLayout);
@@ -86,37 +85,41 @@ void Chronos::Engine::Shape::createDescriptorSets()
     }
 }
 
-void Chronos::Engine::Shape::update(uint32_t currentFrame)
+template <Chronos::Engine::VertexLike VertexStruct>
+void Chronos::Engine::Shape<VertexStruct>::update(uint32_t currentFrame)
 {
     uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x,
         params.y, params.rotation, params.xSize,
         params.ySize);
 }
 
-std::vector<VkDescriptorType> Chronos::Engine::Shape::getDescriptorTypes()
+template <Chronos::Engine::VertexLike VertexStruct>
+std::vector<VkDescriptorType> Chronos::Engine::Shape<VertexStruct>::getDescriptorTypes()
 {
     return std::vector<VkDescriptorType> { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER,
         VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER };
 }
 
-std::vector<VkShaderStageFlagBits> Chronos::Engine::Shape::getDescriptorStages()
+template <Chronos::Engine::VertexLike VertexStruct>
+std::vector<VkShaderStageFlagBits> Chronos::Engine::Shape<VertexStruct>::getDescriptorStages()
 {
     return std::vector<VkShaderStageFlagBits> { VK_SHADER_STAGE_VERTEX_BIT,
         VK_SHADER_STAGE_FRAGMENT_BIT };
 }
 
-Chronos::Engine::PipelineAttributes Chronos::Engine::Shape::getPipelineAttributes()
+template <Chronos::Engine::VertexLike VertexStruct>
+Chronos::Engine::PipelineAttributes Chronos::Engine::Shape<VertexStruct>::getPipelineAttributes()
 {
     Chronos::Engine::PipelineAttributes pipelineAttributes;
 
-    auto bindingDescription = Vertex::getBindingDescription();
-    auto attributeDescriptions = Vertex::getAttributeDescriptions();
-    
+    auto bindingDescription = VertexStruct::getBindingDescription();
+    auto attributeDescriptions = VertexStruct::getAttributeDescriptions();
+
     pipelineAttributes.bindingDescriptions.resize(1);
     pipelineAttributes.bindingDescriptions[0] = bindingDescription;
 
-    pipelineAttributes.attributeDescriptions.resize(3);
-    for (int i = 0; i < 3; i++) {
+    pipelineAttributes.attributeDescriptions.resize(2);
+    for (int i = 0; i < 2; i++) {
         pipelineAttributes.attributeDescriptions[i] = attributeDescriptions[i];
     }
 
@@ -131,8 +134,6 @@ Chronos::Engine::PipelineAttributes Chronos::Engine::Shape::getPipelineAttribute
     pipelineAttributes.colorBlendAttachment.srcAlphaBlendFactor = VK_BLEND_FACTOR_ONE; // Optional
     pipelineAttributes.colorBlendAttachment.dstAlphaBlendFactor = VK_BLEND_FACTOR_ZERO; // Optional
     pipelineAttributes.colorBlendAttachment.alphaBlendOp = VK_BLEND_OP_ADD; // Optional
-
-    
 
     return pipelineAttributes;
 }

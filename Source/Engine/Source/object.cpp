@@ -1,6 +1,10 @@
-#include "engine.hpp"
+#include "vulkanHeaders.hpp"
+#include "stlheader.hpp"
+#include "device.hpp"
+#include "swapchain.hpp"
+#include "helper.hpp"
+#include "buffers.hpp"
 #include "object.hpp"
-#include "objectManagerDefs.hpp"
 
 void Chronos::Engine::Object::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     SwapChain* swapChain, VkSampler textureSampler, VkRenderPass* renderPass)
@@ -10,7 +14,7 @@ void Chronos::Engine::Object::init(Chronos::Engine::Device* device, VkCommandPoo
     this->commandPool = commandPool;
     this->textureSampler = textureSampler;
     this->renderPass = renderPass;
-    
+
     uniformBuffers.resize(MAX_FRAMES_IN_FLIGHT);
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
         uniformBuffers[i].create(*device);
@@ -23,7 +27,7 @@ void Chronos::Engine::Object::init(Chronos::Engine::Device* device, VkCommandPoo
 }
 
 void Chronos::Engine::Object::createGraphicsPipeline()
-{   
+{
     Chronos::Engine::PipelineAttributes pipelineAttributes = getPipelineAttributes();
 
     auto vertShaderCode = Chronos::Engine::readFile(vertexShaderPath.c_str());
@@ -60,7 +64,7 @@ void Chronos::Engine::Object::createGraphicsPipeline()
     VkPipelineInputAssemblyStateCreateInfo inputAssembly {};
     inputAssembly.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
     inputAssembly.topology = pipelineAttributes.topology; // we are using indexed rendering so
-                                                                  // we need to use triangle list
+                                                          // we need to use triangle list
     inputAssembly.primitiveRestartEnable = VK_FALSE;
 
     VkViewport viewport {};
@@ -178,12 +182,12 @@ void Chronos::Engine::Object::destroy()
 }
 
 void Chronos::Engine::Object::createDescriptorPool()
-{   
+{
     std::vector<VkDescriptorType> descriptorTypes = getDescriptorTypes();
 
-    std::vector<VkDescriptorPoolSize> poolSizes {descriptorTypes.size()};
-    
-    for(size_t i = 0; i < descriptorTypes.size(); i++){
+    std::vector<VkDescriptorPoolSize> poolSizes { descriptorTypes.size() };
+
+    for (size_t i = 0; i < descriptorTypes.size(); i++) {
         poolSizes[i].type = descriptorTypes[i];
         poolSizes[i].descriptorCount = static_cast<uint32_t>(MAX_FRAMES_IN_FLIGHT);
     }
@@ -204,13 +208,13 @@ void Chronos::Engine::Object::createDescriptorSetLayout()
     std::vector<VkDescriptorType> descriptorTypes = getDescriptorTypes();
     std::vector<VkShaderStageFlagBits> descriptorStages = getDescriptorStages();
 
-    if(descriptorTypes.size() != descriptorStages.size()){
+    if (descriptorTypes.size() != descriptorStages.size()) {
         throw std::runtime_error("descriptorTypes and descriptorStages must be the same size");
     }
 
-    std::vector<VkDescriptorSetLayoutBinding> bindings {descriptorTypes.size()};
-    
-    for(size_t i = 0; i < descriptorTypes.size(); i++){
+    std::vector<VkDescriptorSetLayoutBinding> bindings { descriptorTypes.size() };
+
+    for (size_t i = 0; i < descriptorTypes.size(); i++) {
         bindings[i].binding = i;
         bindings[i].descriptorType = descriptorTypes[i];
         bindings[i].descriptorCount = 1;

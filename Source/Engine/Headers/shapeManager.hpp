@@ -1,7 +1,4 @@
 #pragma once
-#include "shape.hpp"
-#include "objectManager.hpp"
-#include "objectManagerDefs.hpp"
 /** \file shapeManager.hpp
 
  \brief Contains the class for managing shapes.
@@ -16,8 +13,8 @@ namespace Engine {
     - ```addTriangle```
     - ```addRectangle```
     - ```remove``
-    
-    Inherits from Object Manager. All the public methods defined in that class is also available. 
+
+    Inherits from Object Manager. All the public methods defined in that class is also available.
     It includes the following functions for internal use
     -init
     -destroy
@@ -29,28 +26,27 @@ namespace Engine {
     For more details on these functions, please reference the [ObjectManger](Chronos::Engine::ObjectManager) class
 
     */
-    class ShapeManager : 
-    public Chronos::Engine::ObjectManager<Chronos::Engine::Shape>{
+    template <VertexLike VertexStruct>
+    class ShapeManager : public Chronos::Engine::ObjectManager<Chronos::Engine::Shape<VertexStruct>> {
     public:
-
         /**
-        \brief Adds a triangle to the shape manager. 
-        
-        Necessary shapeParams and texture path must be provided. 
+        \brief Adds a triangle to the shape manager.
+
+        Necessary shapeParams and texture path must be provided.
         Supported textures are .jpg and .png
         Returns a shapeNo that references the shape for modifying and destroying t.
         */
         int addTriangle(Chronos::Manager::ShapeParams shapeParams, std::string texturePath);
 
         /**
-        \brief Adds a rectangle to the shape manager. 
-        
-        Necessary shapeParams and texture path must be provided. 
+        \brief Adds a rectangle to the shape manager.
+
+        Necessary shapeParams and texture path must be provided.
         Supported textures are .jpg and .png
         Returns a shapeNo that references the shape for modifying and destroying t.
         */
         int addRectangle(Chronos::Manager::ShapeParams shapeParams, std::string texturePath);
-        
+
         /**
         \brief Records the commands needed for rendering the shapes.
 
@@ -58,9 +54,10 @@ namespace Engine {
 
         @param currentFrame The current frame to render to.
         @param imageIndex The index of the framebuffer associated with the current frame
-        @param bgColor The background color to set during rendering 
+        @param bgColor The background color to set during rendering
         */
         void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]);
+
     private:
         /**
         \brief Creates the render pass for the shapes.
@@ -69,5 +66,6 @@ namespace Engine {
         */
         void createRenderPass();
     };
+#include "shapeManagerDefs.tpp"
 };
 };

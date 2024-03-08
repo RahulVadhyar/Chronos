@@ -1,3 +1,14 @@
+#include "vulkanHeaders.hpp"
+#include "stlheader.hpp"
+#include "device.hpp"
+#include "swapchain.hpp"
+#include "helper.hpp"
+#include "buffers.hpp"
+#include "object.hpp"
+#include "Vertex.hpp"
+#include "engineStructs.hpp"
+#include "commonStructs.hpp"
+#include "texture.hpp"
 #include "shape.hpp"
 
 void Chronos::Engine::Buffer::create(Chronos::Engine::Device device, VkBufferUsageFlags flags,

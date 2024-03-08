@@ -1,8 +1,19 @@
-#include "textManager.hpp"
-#include "objectManagerDefs.hpp"
+#include "vulkanHeaders.hpp"
+#include "stlheader.hpp"
+#include "device.hpp"
+#include "swapchain.hpp"
+#include "buffers.hpp"
+#include "helper.hpp"
+#include "texture.hpp"
+#include "object.hpp"
+#include "objectManager.hpp"
+#include "commonStructs.hpp"
+#include "engineStructs.hpp"
 #include "font.hpp"
+#include "textManager.hpp"
 
-void Chronos::Engine::TextManager::createRenderPass(){
+void Chronos::Engine::TextManager::createRenderPass()
+{
 #ifdef ENABLE_EDITOR
     renderPass = Chronos::Engine::createRenderPass(
         *device, *swapChain, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
@@ -16,9 +27,10 @@ void Chronos::Engine::TextManager::createRenderPass(){
 #endif
 }
 
-void Chronos::Engine::TextManager::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]){
+void Chronos::Engine::TextManager::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])
+{
     Chronos::Engine::ObjectManager<Chronos::Engine::Font>::render(currentFrame, imageIndex, bgColor);
-    
+
     VkViewport viewport {};
     viewport.x = 0.0f;
     viewport.y = 0.0f;
@@ -49,16 +61,17 @@ void Chronos::Engine::TextManager::render(uint32_t currentFrame, uint32_t imageI
         }
     }
     Chronos::Engine::ObjectManager<Chronos::Engine::Font>::endRender(currentFrame);
-
 }
 
-int Chronos::Engine::TextManager::addFont(Chronos::Engine::Font font){
+int Chronos::Engine::TextManager::addFont(Chronos::Engine::Font font)
+{
     font.init(device, commandPool, swapChain, textureSampler, &renderPass);
     return Chronos::Engine::ObjectManager<Chronos::Engine::Font>::addObject(font);
 }
 
-void Chronos::Engine::TextManager::remove(int fontNo){
-    if(objects.count(fontNo) == 0){
+void Chronos::Engine::TextManager::remove(int fontNo)
+{
+    if (objects.count(fontNo) == 0) {
         throw std::runtime_error("Font does not exist");
     }
     Chronos::Engine::ObjectManager<Chronos::Engine::Font>::remove(fontNo);
