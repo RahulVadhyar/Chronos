@@ -19,7 +19,6 @@ var namespaceChronos_1_1Engine =
     [ "SwapChain", "classChronos_1_1Engine_1_1SwapChain.html", "classChronos_1_1Engine_1_1SwapChain" ],
     [ "TextManager", "classChronos_1_1Engine_1_1TextManager.html", "classChronos_1_1Engine_1_1TextManager" ],
     [ "Texture", "classChronos_1_1Engine_1_1Texture.html", "classChronos_1_1Engine_1_1Texture" ],
-    [ "Vertex", "structChronos_1_1Engine_1_1Vertex.html", "structChronos_1_1Engine_1_1Vertex" ],
     [ "ColorVertex", "structChronos_1_1Engine_1_1ColorVertex.html", "structChronos_1_1Engine_1_1ColorVertex" ],
     [ "TexturedVertex", "structChronos_1_1Engine_1_1TexturedVertex.html", "structChronos_1_1Engine_1_1TexturedVertex" ],
     [ "beginSingleTimeCommands", "namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733", null ],

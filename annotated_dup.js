@@ -24,7 +24,6 @@ var annotated_dup =
         [ "SwapChain", "classChronos_1_1Engine_1_1SwapChain.html", "classChronos_1_1Engine_1_1SwapChain" ],
         [ "TextManager", "classChronos_1_1Engine_1_1TextManager.html", "classChronos_1_1Engine_1_1TextManager" ],
         [ "Texture", "classChronos_1_1Engine_1_1Texture.html", "classChronos_1_1Engine_1_1Texture" ],
-        [ "Vertex", "structChronos_1_1Engine_1_1Vertex.html", "structChronos_1_1Engine_1_1Vertex" ],
         [ "ColorVertex", "structChronos_1_1Engine_1_1ColorVertex.html", "structChronos_1_1Engine_1_1ColorVertex" ],
         [ "TexturedVertex", "structChronos_1_1Engine_1_1TexturedVertex.html", "structChronos_1_1Engine_1_1TexturedVertex" ]
       ] ],
@@ -35,5 +34,6 @@ var annotated_dup =
         [ "Manager", "classChronos_1_1Manager_1_1Manager.html", "classChronos_1_1Manager_1_1Manager" ],
         [ "ShapeParams", "structChronos_1_1Manager_1_1ShapeParams.html", "structChronos_1_1Manager_1_1ShapeParams" ]
       ] ]
-    ] ]
+    ] ],
+    [ "Empty", "structEmpty.html", null ]
 ];

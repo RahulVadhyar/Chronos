@@ -34,7 +34,6 @@ var dir_44542fd570ad861746cbfb64a34f5ae8 =
     [ "texture.hpp", "texture_8hpp.html", "texture_8hpp" ],
     [ "validation.hpp", "validation_8hpp.html", "validation_8hpp" ],
     [ "Vertex.hpp", "Vertex_8hpp.html", [
-      [ "Vertex", "structChronos_1_1Engine_1_1Vertex.html", "structChronos_1_1Engine_1_1Vertex" ],
       [ "ColorVertex", "structChronos_1_1Engine_1_1ColorVertex.html", "structChronos_1_1Engine_1_1ColorVertex" ],
       [ "TexturedVertex", "structChronos_1_1Engine_1_1TexturedVertex.html", "structChronos_1_1Engine_1_1TexturedVertex" ]
     ] ],

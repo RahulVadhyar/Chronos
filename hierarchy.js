@@ -6,6 +6,7 @@ var hierarchy =
     [ "Chronos::Engine::ColorVertex", "structChronos_1_1Engine_1_1ColorVertex.html", null ],
     [ "Chronos::Engine::Device", "classChronos_1_1Engine_1_1Device.html", null ],
     [ "Chronos::Editor::EditorRenderer", "classChronos_1_1Editor_1_1EditorRenderer.html", null ],
+    [ "Empty", "structEmpty.html", null ],
     [ "Chronos::Engine::Engine", "classChronos_1_1Engine_1_1Engine.html", null ],
     [ "Chronos::Manager::Initializer", "structChronos_1_1Manager_1_1Initializer.html", null ],
     [ "Chronos::Manager::Manager", "classChronos_1_1Manager_1_1Manager.html", null ],
@@ -21,6 +22,7 @@ var hierarchy =
       [ "Chronos::Engine::TextManager", "classChronos_1_1Engine_1_1TextManager.html", null ]
     ] ],
     [ "Chronos::Engine::ObjectManager< Chronos::Engine::Shape< VertexStruct > >", "classChronos_1_1Engine_1_1ObjectManager.html", [
+      [ "Chronos::Engine::ShapeManager< Chronos::Engine::ColorVertex >", "classChronos_1_1Engine_1_1ShapeManager.html", null ],
       [ "Chronos::Engine::ShapeManager< Chronos::Engine::TexturedVertex >", "classChronos_1_1Engine_1_1ShapeManager.html", null ],
       [ "Chronos::Engine::ShapeManager< VertexStruct >", "classChronos_1_1Engine_1_1ShapeManager.html", null ]
     ] ],
@@ -34,6 +36,5 @@ var hierarchy =
     [ "Chronos::Engine::TextParams", "structChronos_1_1Engine_1_1TextParams.html", null ],
     [ "Chronos::Engine::Texture", "classChronos_1_1Engine_1_1Texture.html", null ],
     [ "Chronos::Engine::TexturedVertex", "structChronos_1_1Engine_1_1TexturedVertex.html", null ],
-    [ "Chronos::Engine::UniformBufferObject", "structChronos_1_1Engine_1_1UniformBufferObject.html", null ],
-    [ "Chronos::Engine::Vertex", "structChronos_1_1Engine_1_1Vertex.html", null ]
+    [ "Chronos::Engine::UniformBufferObject", "structChronos_1_1Engine_1_1UniformBufferObject.html", null ]
 ];

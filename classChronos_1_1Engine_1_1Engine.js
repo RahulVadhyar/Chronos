@@ -13,6 +13,7 @@ var classChronos_1_1Engine_1_1Engine =
     [ "setupDebugMessenger", "classChronos_1_1Engine_1_1Engine.html#a86f7c7a90e1f60daac987ab985acaa34", null ],
     [ "showfps", "classChronos_1_1Engine_1_1Engine.html#a1668ffbea544bc8c886b475af7f28b0f", null ],
     [ "bgColor", "classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e", null ],
+    [ "colorShapeManager", "classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583", null ],
     [ "commandPool", "classChronos_1_1Engine_1_1Engine.html#a0576a084f0980ed2dbbebf7335c0c119", null ],
     [ "currentFrame", "classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c", null ],
     [ "debugMessenger", "classChronos_1_1Engine_1_1Engine.html#ad42c17cac82b1f6d2be9e86a059c4a16", null ],

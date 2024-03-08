@@ -100,9 +100,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a1af5a2440cc959788e2b44e5266884d8"><td class="memItemLeft" align="right" valign="top">static VkVertexInputBindingDescription&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structChronos_1_1Engine_1_1TexturedVertex.html#a1af5a2440cc959788e2b44e5266884d8">getBindingDescription</a> ()</td></tr>
 <tr class="memdesc:a1af5a2440cc959788e2b44e5266884d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <code>VkVertexInputBindingDescription</code> for the vertex based on the size of the vertex.  <a href="structChronos_1_1Engine_1_1TexturedVertex.html#a1af5a2440cc959788e2b44e5266884d8">More...</a><br /></td></tr>
 <tr class="separator:a1af5a2440cc959788e2b44e5266884d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7558de9f6ad4fa4e1fda460117aca4f"><td class="memItemLeft" align="right" valign="top">static std::array&lt; VkVertexInputAttributeDescription, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structChronos_1_1Engine_1_1TexturedVertex.html#ab7558de9f6ad4fa4e1fda460117aca4f">getAttributeDescriptions</a> ()</td></tr>
-<tr class="memdesc:ab7558de9f6ad4fa4e1fda460117aca4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the <code>VkVertexInputAttributeDescription</code> for the vertex based on attributes(pos, color, texCoord) of the vertex.  <a href="structChronos_1_1Engine_1_1TexturedVertex.html#ab7558de9f6ad4fa4e1fda460117aca4f">More...</a><br /></td></tr>
-<tr class="separator:ab7558de9f6ad4fa4e1fda460117aca4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15af4a3d1e89209fcab3d0007c867641"><td class="memItemLeft" align="right" valign="top">static std::array&lt; VkVertexInputAttributeDescription, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structChronos_1_1Engine_1_1TexturedVertex.html#a15af4a3d1e89209fcab3d0007c867641">getAttributeDescriptions</a> ()</td></tr>
+<tr class="memdesc:a15af4a3d1e89209fcab3d0007c867641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the <code>VkVertexInputAttributeDescription</code> for the vertex based on attributes(pos, color, texCoord) of the vertex.  <a href="structChronos_1_1Engine_1_1TexturedVertex.html#a15af4a3d1e89209fcab3d0007c867641">More...</a><br /></td></tr>
+<tr class="separator:a15af4a3d1e89209fcab3d0007c867641"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -113,10 +113,10 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00098">98</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00046">46</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab7558de9f6ad4fa4e1fda460117aca4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7558de9f6ad4fa4e1fda460117aca4f">&#9670;&nbsp;</a></span>getAttributeDescriptions()</h2>
+<a id="a15af4a3d1e89209fcab3d0007c867641"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15af4a3d1e89209fcab3d0007c867641">&#9670;&nbsp;</a></span>getAttributeDescriptions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,7 +125,7 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::array&lt;VkVertexInputAttributeDescription, 3&gt; Chronos::Engine::TexturedVertex::getAttributeDescriptions </td>
+          <td class="memname">static std::array&lt;VkVertexInputAttributeDescription, 2&gt; Chronos::Engine::TexturedVertex::getAttributeDescriptions </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -140,26 +140,26 @@ Public Attributes</h2></td></tr>
 
 <p>Generates the <code>VkVertexInputAttributeDescription</code> for the vertex based on attributes(pos, color, texCoord) of the vertex. </p>
 
-<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00119">119</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            std::array&lt;VkVertexInputAttributeDescription, 3&gt; attributeDescriptions {};</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            attributeDescriptions[0].binding = 0;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            attributeDescriptions[0].location = 0;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            attributeDescriptions[0].format = VK_FORMAT_R32G32_SFLOAT;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            attributeDescriptions[0].offset = offsetof(Vertex, <a class="code" href="structChronos_1_1Engine_1_1TexturedVertex.html#ae5d741932652a2435bee7a99203e9f25">pos</a>);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            attributeDescriptions[2].binding = 0;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            attributeDescriptions[2].location = 1;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            attributeDescriptions[2].format = VK_FORMAT_R32G32_SFLOAT;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            attributeDescriptions[2].offset = offsetof(Vertex, <a class="code" href="structChronos_1_1Engine_1_1TexturedVertex.html#aabdb83ac2cad25c9bdf056c7251d1eb5">texCoord</a>);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">return</span> attributeDescriptions;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        }</div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1TexturedVertex_html_aabdb83ac2cad25c9bdf056c7251d1eb5"><div class="ttname"><a href="structChronos_1_1Engine_1_1TexturedVertex.html#aabdb83ac2cad25c9bdf056c7251d1eb5">Chronos::Engine::TexturedVertex::texCoord</a></div><div class="ttdeci">glm::vec2 texCoord</div><div class="ttdef"><b>Definition:</b> <a href="Vertex_8hpp_source.html#l00100">Vertex.hpp:100</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1TexturedVertex_html_ae5d741932652a2435bee7a99203e9f25"><div class="ttname"><a href="structChronos_1_1Engine_1_1TexturedVertex.html#ae5d741932652a2435bee7a99203e9f25">Chronos::Engine::TexturedVertex::pos</a></div><div class="ttdeci">glm::vec2 pos</div><div class="ttdef"><b>Definition:</b> <a href="Vertex_8hpp_source.html#l00099">Vertex.hpp:99</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00067">67</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            std::array&lt;VkVertexInputAttributeDescription, 2&gt; attributeDescriptions {};</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            attributeDescriptions[0].binding = 0;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            attributeDescriptions[0].location = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            attributeDescriptions[0].format = VK_FORMAT_R32G32_SFLOAT;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            attributeDescriptions[0].offset = offsetof(TexturedVertex, <a class="code" href="structChronos_1_1Engine_1_1TexturedVertex.html#ae5d741932652a2435bee7a99203e9f25">pos</a>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            attributeDescriptions[1].binding = 0;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            attributeDescriptions[1].location = 1;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            attributeDescriptions[1].format = VK_FORMAT_R32G32_SFLOAT;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            attributeDescriptions[1].offset = offsetof(TexturedVertex, <a class="code" href="structChronos_1_1Engine_1_1TexturedVertex.html#aabdb83ac2cad25c9bdf056c7251d1eb5">texCoord</a>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">return</span> attributeDescriptions;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1TexturedVertex_html_aabdb83ac2cad25c9bdf056c7251d1eb5"><div class="ttname"><a href="structChronos_1_1Engine_1_1TexturedVertex.html#aabdb83ac2cad25c9bdf056c7251d1eb5">Chronos::Engine::TexturedVertex::texCoord</a></div><div class="ttdeci">glm::vec2 texCoord</div><div class="ttdef"><b>Definition:</b> <a href="Vertex_8hpp_source.html#l00048">Vertex.hpp:48</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1TexturedVertex_html_ae5d741932652a2435bee7a99203e9f25"><div class="ttname"><a href="structChronos_1_1Engine_1_1TexturedVertex.html#ae5d741932652a2435bee7a99203e9f25">Chronos::Engine::TexturedVertex::pos</a></div><div class="ttdeci">glm::vec2 pos</div><div class="ttdef"><b>Definition:</b> <a href="Vertex_8hpp_source.html#l00047">Vertex.hpp:47</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Vertex_8hpp_source.html#l00099">pos</a>, and <a class="el" href="Vertex_8hpp_source.html#l00100">texCoord</a>.</p>
+<p class="reference">References <a class="el" href="Vertex_8hpp_source.html#l00047">pos</a>, and <a class="el" href="Vertex_8hpp_source.html#l00048">texCoord</a>.</p>
 
 </div>
 </div>
@@ -188,15 +188,15 @@ Public Attributes</h2></td></tr>
 
 <p>Creates a <code>VkVertexInputBindingDescription</code> for the vertex based on the size of the vertex. </p>
 
-<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00105">105</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            VkVertexInputBindingDescription bindingDescription {};</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            bindingDescription.binding = 0;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            bindingDescription.stride = <span class="keyword">sizeof</span>(Vertex);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            bindingDescription.inputRate = VK_VERTEX_INPUT_RATE_VERTEX;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">return</span> bindingDescription;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00053">53</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            VkVertexInputBindingDescription bindingDescription {};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            bindingDescription.binding = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            bindingDescription.stride = <span class="keyword">sizeof</span>(TexturedVertex);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            bindingDescription.inputRate = VK_VERTEX_INPUT_RATE_VERTEX;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">return</span> bindingDescription;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -213,7 +213,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00099">99</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00047">47</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
 </div>
 </div>
@@ -229,7 +229,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00100">100</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00048">48</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
 </div>
 </div>
