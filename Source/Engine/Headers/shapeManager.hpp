@@ -36,7 +36,8 @@ namespace Engine {
         Supported textures are .jpg and .png
         Returns a shapeNo that references the shape for modifying and destroying t.
         */
-        int addTriangle(Chronos::Manager::ShapeParams shapeParams, std::string texturePath);
+        int addTriangle(Chronos::Manager::ShapeParams shapeParams, std::string texturePath) requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
+        int addTriangle(Chronos::Manager::ShapeParams shapeParams, std::array<float, 3> color) requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value);
 
         /**
         \brief Adds a rectangle to the shape manager.
@@ -45,7 +46,9 @@ namespace Engine {
         Supported textures are .jpg and .png
         Returns a shapeNo that references the shape for modifying and destroying t.
         */
-        int addRectangle(Chronos::Manager::ShapeParams shapeParams, std::string texturePath);
+        int addRectangle(Chronos::Manager::ShapeParams shapeParams, std::string texturePath) requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
+        int addRectangle(Chronos::Manager::ShapeParams shapeParams, std::array<float, 3> color) requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value);
+
 
         /**
         \brief Records the commands needed for rendering the shapes.
@@ -65,6 +68,7 @@ namespace Engine {
         This function is called by the ```init``` function. It creates the render pass for the shapes.
         */
         void createRenderPass();
+
     };
 #include "shapeManagerDefs.tpp"
 };

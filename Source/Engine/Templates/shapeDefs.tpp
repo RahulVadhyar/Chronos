@@ -2,11 +2,10 @@
 template <Chronos::Engine::VertexLike VertexStruct>
 void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     SwapChain* swapChain, VkSampler textureSampler,
-    std::string texturePath, VkRenderPass* renderPass)
+    std::string texturePath, VkRenderPass* renderPass) requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
-    this->vertexShaderPath = "ThirdParty/Chronos/Shaders/vert.spv";
-    this->fragmentShaderPath = "ThirdParty/Chronos/Shaders/frag.spv";
-
+    this->vertexShaderPath = "ThirdParty/Chronos/Shaders/textureVert.spv";
+    this->fragmentShaderPath = "ThirdParty/Chronos/Shaders/textureFrag.spv";
     texture.create(*device, commandPool, texturePath);
     Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
 
@@ -25,7 +24,32 @@ void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device,
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
-void Chronos::Engine::Shape<VertexStruct>::destroy()
+void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain, VkSampler textureSampler,
+            std::array<float, 3> color,
+            VkRenderPass* renderPass) requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
+{   
+
+    throw std::runtime_error("ColorVertex not supported yet");
+    this->vertexShaderPath = "ThirdParty/Chronos/Shaders/colorVert.spv";
+    this->fragmentShaderPath = "ThirdParty/Chronos/Shaders/colorFrag.spv";
+    Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
+
+    // create the vertex and index buffers and copy the data
+    vertexBuffer.size = sizeof(vertices[0]) * vertices.size();
+    vertexBuffer.create(*device,
+        VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_VERTEX_BUFFER_BIT,
+        VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    vertexBuffer.copy(vertices.data(), commandPool);
+
+    indexBuffer.size = sizeof(indices[0]) * indices.size();
+    indexBuffer.create(*device,
+        VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_INDEX_BUFFER_BIT,
+        VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    indexBuffer.copy(indices.data(), commandPool);
+}
+
+template <Chronos::Engine::VertexLike VertexStruct>
+void Chronos::Engine::Shape<VertexStruct>::tempDestroy() requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     texture.destroy();
     vertexBuffer.destroy();
@@ -33,8 +57,18 @@ void Chronos::Engine::Shape<VertexStruct>::destroy()
     Chronos::Engine::Object::destroy();
 }
 
+
 template <Chronos::Engine::VertexLike VertexStruct>
-void Chronos::Engine::Shape<VertexStruct>::createDescriptorSets()
+void Chronos::Engine::Shape<VertexStruct>::tempDestroy() requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
+{
+    vertexBuffer.destroy();
+    indexBuffer.destroy();
+    Chronos::Engine::Object::destroy();
+}
+
+
+template <Chronos::Engine::VertexLike VertexStruct>
+void Chronos::Engine::Shape<VertexStruct>::tempCreateDescriptorSets() requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     std::vector<VkDescriptorSetLayout> layouts(MAX_FRAMES_IN_FLIGHT,
         descriptorSetLayout);
@@ -86,6 +120,46 @@ void Chronos::Engine::Shape<VertexStruct>::createDescriptorSets()
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
+void Chronos::Engine::Shape<VertexStruct>::tempCreateDescriptorSets() requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
+{
+    std::vector<VkDescriptorSetLayout> layouts(MAX_FRAMES_IN_FLIGHT,
+        descriptorSetLayout);
+    VkDescriptorSetAllocateInfo allocInfo {};
+    allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
+    allocInfo.descriptorPool = descriptorPool;
+    allocInfo.descriptorSetCount = static_cast<uint32_t>(MAX_FRAMES_IN_FLIGHT);
+    allocInfo.pSetLayouts = layouts.data();
+    descriptorSets.resize(MAX_FRAMES_IN_FLIGHT);
+    if (vkAllocateDescriptorSets(device->device, &allocInfo,
+            descriptorSets.data())
+        != VK_SUCCESS) {
+        throw std::runtime_error("failed to allocate descriptor sets!");
+    }
+    for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
+        VkDescriptorBufferInfo bufferInfo {};
+        bufferInfo.buffer = uniformBuffers[i].buffer;
+        bufferInfo.offset = 0;
+        bufferInfo.range = sizeof(UniformBufferObject);
+        VkWriteDescriptorSet descriptorWrite {};
+
+        std::array<VkWriteDescriptorSet, 1> descriptorWrites {};
+
+        descriptorWrites[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+        descriptorWrites[0].dstSet = descriptorSets[i];
+        descriptorWrites[0].dstBinding = 0;
+        descriptorWrites[0].dstArrayElement = 0;
+        descriptorWrites[0].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+        descriptorWrites[0].descriptorCount = 1;
+        descriptorWrites[0].pBufferInfo = &bufferInfo;
+
+        vkUpdateDescriptorSets(device->device,
+            static_cast<uint32_t>(descriptorWrites.size()),
+            descriptorWrites.data(), 0, nullptr);
+    }
+}
+
+
+template <Chronos::Engine::VertexLike VertexStruct>
 void Chronos::Engine::Shape<VertexStruct>::update(uint32_t currentFrame)
 {
     uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x,
@@ -94,17 +168,29 @@ void Chronos::Engine::Shape<VertexStruct>::update(uint32_t currentFrame)
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
-std::vector<VkDescriptorType> Chronos::Engine::Shape<VertexStruct>::getDescriptorTypes()
+std::vector<VkDescriptorType> Chronos::Engine::Shape<VertexStruct>::tempGetDescriptorTypes() requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     return std::vector<VkDescriptorType> { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER,
         VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER };
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
-std::vector<VkShaderStageFlagBits> Chronos::Engine::Shape<VertexStruct>::getDescriptorStages()
+std::vector<VkDescriptorType> Chronos::Engine::Shape<VertexStruct>::tempGetDescriptorTypes() requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
+{
+    return std::vector<VkDescriptorType> { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER};
+}
+
+template <Chronos::Engine::VertexLike VertexStruct>
+std::vector<VkShaderStageFlagBits> Chronos::Engine::Shape<VertexStruct>::tempGetDescriptorStages() requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     return std::vector<VkShaderStageFlagBits> { VK_SHADER_STAGE_VERTEX_BIT,
         VK_SHADER_STAGE_FRAGMENT_BIT };
+}
+
+template <Chronos::Engine::VertexLike VertexStruct>
+std::vector<VkShaderStageFlagBits> Chronos::Engine::Shape<VertexStruct>::tempGetDescriptorStages() requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
+{
+    return std::vector<VkShaderStageFlagBits> { VK_SHADER_STAGE_VERTEX_BIT};
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
@@ -118,8 +204,8 @@ Chronos::Engine::PipelineAttributes Chronos::Engine::Shape<VertexStruct>::getPip
     pipelineAttributes.bindingDescriptions.resize(1);
     pipelineAttributes.bindingDescriptions[0] = bindingDescription;
 
-    pipelineAttributes.attributeDescriptions.resize(2);
-    for (int i = 0; i < 2; i++) {
+    pipelineAttributes.attributeDescriptions.resize(attributeDescriptions.size());
+    for (int i = 0; i < attributeDescriptions.size(); i++) {
         pipelineAttributes.attributeDescriptions[i] = attributeDescriptions[i];
     }
 

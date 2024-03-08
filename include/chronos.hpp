@@ -136,6 +136,8 @@ namespace Manager {
         @return Returns the shapeNo that can be used for referencing this shape later.
         */
         int addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType, std::string texturePath);
+        int addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType, std::array<float, 3> color);
+
 
         /**
         \brief Updates the polygon with the new parameters.

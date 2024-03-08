@@ -71,6 +71,7 @@ void Chronos::Engine::Engine::initVulkan()
     swapChain.init(&device, surface, window);
     commandPool = createCommandPool(device, swapChain.surface);
     shapeManager.init(&device, &swapChain, commandPool);
+    colorShapeManager.init(&device, &swapChain, commandPool);
     // textManager.init(&device, commandPool, &swapChain);
     textManager.init(&device, &swapChain, commandPool);
     createSyncObjects();
@@ -86,6 +87,7 @@ void Chronos::Engine::Engine::cleanup()
     swapChain.cleanup();
 
     shapeManager.destroy();
+    colorShapeManager.destroy();
     textManager.destroy();
 #ifdef ENABLE_EDITOR
     gui.destroy();
@@ -123,6 +125,7 @@ void Chronos::Engine::Engine::drawFrame()
     if (result == VK_ERROR_OUT_OF_DATE_KHR) {
         swapChain.recreate();
         shapeManager.recreate();
+        colorShapeManager.recreate();
         textManager.recreate();
 #ifdef ENABLE_EDITOR
         gui.recreate();
@@ -133,6 +136,7 @@ void Chronos::Engine::Engine::drawFrame()
     }
     // update the shapes and text
     shapeManager.update(currentFrame);
+    colorShapeManager.update(currentFrame);
     textManager.update(currentFrame);
 #ifdef ENABLE_EDITOR
     gui.update();
@@ -143,6 +147,7 @@ void Chronos::Engine::Engine::drawFrame()
 
     // record the command buffers
     shapeManager.render(currentFrame, imageIndex, bgColor);
+    colorShapeManager.render(currentFrame, imageIndex, bgColor);
     textManager.render(currentFrame, imageIndex, bgColor);
 #ifdef ENABLE_EDITOR
     gui.render(currentFrame, imageIndex, bgColor);
@@ -158,6 +163,7 @@ void Chronos::Engine::Engine::drawFrame()
     // submit the command buffers
     std::vector<VkCommandBuffer> submitCommandBuffers;
     submitCommandBuffers.push_back(shapeManager.commandBuffers[currentFrame]);
+    submitCommandBuffers.push_back(colorShapeManager.commandBuffers[currentFrame]);
     submitCommandBuffers.push_back(textManager.commandBuffers[currentFrame]);
 
 #ifdef ENABLE_EDITOR

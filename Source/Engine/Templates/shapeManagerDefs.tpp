@@ -41,7 +41,7 @@ void Chronos::Engine::ShapeManager<VertexStruct>::render(uint32_t currentFrame, 
 
 template <Chronos::Engine::VertexLike VertexStruct>
 int Chronos::Engine::ShapeManager<VertexStruct>::addRectangle(Chronos::Manager::ShapeParams shapeParams,
-    std::string texturePath)
+    std::string texturePath) requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     int shapeNo = Chronos::Engine::ObjectManager<Chronos::Engine::Shape<VertexStruct>>::addObject(Rectangle<Chronos::Engine::TexturedVertex>());
     Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].init(Chronos::Engine::ShapeManager<VertexStruct>::device, Chronos::Engine::ShapeManager<VertexStruct>::commandPool, Chronos::Engine::ShapeManager<VertexStruct>::swapChain, Chronos::Engine::ShapeManager<VertexStruct>::textureSampler,
@@ -51,12 +51,34 @@ int Chronos::Engine::ShapeManager<VertexStruct>::addRectangle(Chronos::Manager::
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
+int Chronos::Engine::ShapeManager<VertexStruct>::addRectangle(Chronos::Manager::ShapeParams shapeParams,
+    std::array<float, 3> color) requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
+{
+    int shapeNo = Chronos::Engine::ObjectManager<Chronos::Engine::Shape<VertexStruct>>::addObject(Rectangle<Chronos::Engine::ColorVertex>());
+    Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].init(Chronos::Engine::ShapeManager<VertexStruct>::device, Chronos::Engine::ShapeManager<VertexStruct>::commandPool, Chronos::Engine::ShapeManager<VertexStruct>::swapChain, Chronos::Engine::ShapeManager<VertexStruct>::textureSampler, color,
+        &(Chronos::Engine::ShapeManager<VertexStruct>::renderPass));
+    Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].params = shapeParams;
+    return shapeNo;
+}
+
+template <Chronos::Engine::VertexLike VertexStruct>
 int Chronos::Engine::ShapeManager<VertexStruct>::addTriangle(Chronos::Manager::ShapeParams shapeParams,
-    std::string texturePath)
+    std::string texturePath) requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     int shapeNo = Chronos::Engine::ObjectManager<Chronos::Engine::Shape<VertexStruct>>::addObject(Triangle<Chronos::Engine::TexturedVertex>());
     Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].init(Chronos::Engine::ShapeManager<VertexStruct>::device, Chronos::Engine::ShapeManager<VertexStruct>::commandPool, Chronos::Engine::ShapeManager<VertexStruct>::swapChain, Chronos::Engine::ShapeManager<VertexStruct>::textureSampler,
         texturePath, &(Chronos::Engine::ShapeManager<VertexStruct>::renderPass));
+    Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].params = shapeParams;
+    return shapeNo;
+}
+
+template <Chronos::Engine::VertexLike VertexStruct>
+int Chronos::Engine::ShapeManager<VertexStruct>::addTriangle(Chronos::Manager::ShapeParams shapeParams,
+    std::array<float, 3> color) requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
+{
+    int shapeNo = Chronos::Engine::ObjectManager<Chronos::Engine::Shape<VertexStruct>>::addObject(Triangle<Chronos::Engine::ColorVertex>());
+    Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].init(Chronos::Engine::ShapeManager<VertexStruct>::device, Chronos::Engine::ShapeManager<VertexStruct>::commandPool, Chronos::Engine::ShapeManager<VertexStruct>::swapChain, Chronos::Engine::ShapeManager<VertexStruct>::textureSampler, color,
+        &(Chronos::Engine::ShapeManager<VertexStruct>::renderPass));
     Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].params = shapeParams;
     return shapeNo;
 }
@@ -71,8 +93,14 @@ void Chronos::Engine::ShapeManager<VertexStruct>::createRenderPass()
    fact that the image going to next renderpass(Text) Also we are clearing the
    framebuffer
    */
-    Chronos::Engine::ShapeManager<VertexStruct>::renderPass = Chronos::Engine::createRenderPass(*Chronos::Engine::ShapeManager<VertexStruct>::device, *Chronos::Engine::ShapeManager<VertexStruct>::swapChain, VK_IMAGE_LAYOUT_UNDEFINED,
+    VkImageLayout initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+    if (std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value){
+        initialLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
+    }
+    Chronos::Engine::ShapeManager<VertexStruct>::renderPass = Chronos::Engine::createRenderPass(*Chronos::Engine::ShapeManager<VertexStruct>::device, *Chronos::Engine::ShapeManager<VertexStruct>::swapChain, 
+        initialLayout,
         VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
         VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL, true,
-        true, false);
+        std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value, false);
 }
+

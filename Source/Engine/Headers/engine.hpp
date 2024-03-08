@@ -85,6 +85,7 @@ namespace Engine {
         To render shapes to the window, one may call the necessary methods in this class.
         */
         Chronos::Engine::ShapeManager<TexturedVertex> shapeManager;
+        Chronos::Engine::ShapeManager<ColorVertex> colorShapeManager;
 
         /**
         \brief This is the initial width of the window. It can be changed later just by changing this directly.

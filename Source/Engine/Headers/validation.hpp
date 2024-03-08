@@ -18,7 +18,7 @@ namespace Engine {
 \brief Flag to enable validation layers.
 */
 #ifdef ENABLE_VULKAN_VALIDATION_LAYERS
-    const bool enableValidationLayers = false;
+    const bool enableValidationLayers = true;
 #else
     const bool enableValidationLayers = true;
 #endif

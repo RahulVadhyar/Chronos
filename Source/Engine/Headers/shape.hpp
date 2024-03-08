@@ -3,6 +3,9 @@
  \brief Contains the class for creating a shape.
 */
 #pragma once
+
+struct Empty {};
+
 namespace Chronos {
 namespace Engine {
 
@@ -37,7 +40,12 @@ namespace Engine {
         */
         void init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
             VkSampler textureSampler, std::string texturePath,
-            VkRenderPass* renderPass);
+            VkRenderPass* renderPass) requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
+
+        void init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
+            VkSampler textureSampler,
+            std::array<float, 3> color,
+            VkRenderPass* renderPass) requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value);
 
         /**
         \brief Updates the shape object for the current frame.
@@ -54,7 +62,13 @@ namespace Engine {
 
         This destroys all the vulkan related objects related to this class and frees memory.
         */
-        void destroy() override;
+        void destroy() override {
+            return tempDestroy();
+        
+        };
+        void tempDestroy() requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
+        void tempDestroy() requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value);
+
 
         /**
         \brief The indices that is used to specify the order of vertices to render.
@@ -64,7 +78,7 @@ namespace Engine {
         /**
         \brief The texture that is to be used
         */
-        Chronos::Engine::Texture texture;
+        std::conditional_t<std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value, Chronos::Engine::Texture, Empty> texture ;
 
         /**
         \brief The vertices that is used to render the shape.
@@ -81,9 +95,22 @@ namespace Engine {
         */
         Chronos::Engine::Buffer indexBuffer;
 
-        void createDescriptorSets() override;
-        std::vector<VkDescriptorType> getDescriptorTypes() override;
-        std::vector<VkShaderStageFlagBits> getDescriptorStages() override;
+        void createDescriptorSets() override {
+            return tempCreateDescriptorSets();
+        };
+        std::vector<VkDescriptorType> getDescriptorTypes() override {
+            return tempGetDescriptorTypes();
+        };
+        std::vector<VkShaderStageFlagBits> getDescriptorStages() override {
+            return tempGetDescriptorStages();
+        };
+        void tempCreateDescriptorSets() requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
+        std::vector<VkDescriptorType> tempGetDescriptorTypes() requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
+        std::vector<VkShaderStageFlagBits> tempGetDescriptorStages() requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
+
+        void tempCreateDescriptorSets() requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value);
+        std::vector<VkDescriptorType> tempGetDescriptorTypes() requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value);
+        std::vector<VkShaderStageFlagBits> tempGetDescriptorStages() requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value);
         std::vector<VkShaderStageFlagBits> getShaderStages();
 
     private:
@@ -104,10 +131,10 @@ namespace Engine {
             requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
         {
             Rectangle<VertexStruct>::indices = std::vector<uint16_t> { 0, 1, 2, 2, 3, 0 };
-            Rectangle<VertexStruct>::vertices = std::vector<VertexStruct> { { { -0.5f, -0.5f }, { 1.0f, 0.0f, 0.0f } },
-                { { 0.5f, -0.5f }, { 0.0f, 1.0f, 0.0f } },
-                { { 0.5f, 0.5f }, { 0.0f, 0.0f, 1.0f } },
-                { { -0.5f, 0.5f }, { 0.5f, 1.0f, 0.5f } } };
+            Rectangle<VertexStruct>::vertices = std::vector<VertexStruct> { { { -0.5f, -0.5f }},
+                { { 0.5f, -0.5f }},
+                { { 0.5f, 0.5f }},
+                { { -0.5f, 0.5f }} };
         }
 
         Rectangle()
@@ -143,9 +170,9 @@ namespace Engine {
             requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
         {
             Triangle<VertexStruct>::indices = std::vector<uint16_t> { 0, 1, 2 };
-            Triangle<VertexStruct>::vertices = std::vector<VertexStruct> { { { 0.0f, -0.5f }, { 1.0f, 0.0f, 0.0f } },
-                { { 0.5f, 0.5f }, { 0.0f, 1.0f, 0.0f } },
-                { { -0.5f, 0.5f }, { 0.0f, 0.0f, 1.0f } } };
+            Triangle<VertexStruct>::vertices = std::vector<VertexStruct> { { { 0.0f, -0.5f }},
+                { { 0.5f, 0.5f }},
+                { { -0.5f, 0.5f }} };
         }
     };
 };
