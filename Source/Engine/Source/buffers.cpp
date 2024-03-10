@@ -67,3 +67,18 @@ void Chronos::Engine::UniformBuffer::update(VkExtent2D swapChainExtent, float x,
     ubo.proj[1][1] *= -1;
     memcpy(data, &ubo, sizeof(ubo));
 }
+
+void Chronos::Engine::ColorBuffer::create(Chronos::Engine::Device device)
+{
+    size = sizeof(UniformColorBufferObject);
+    Buffer::create(device, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
+        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT);
+    vkMapMemory(device.device, memory, 0, size, 0, &data);
+}
+
+void Chronos::Engine::ColorBuffer::update(glm::vec3 color)
+{
+    UniformColorBufferObject ubo {};
+    ubo.color = color;
+    memcpy(data, &ubo, sizeof(ubo));
+}

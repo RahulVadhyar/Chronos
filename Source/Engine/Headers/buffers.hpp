@@ -106,5 +106,13 @@ namespace Engine {
         */
         void* data;
     };
+
+    class ColorBuffer : public Buffer {
+    public:
+        void create(Chronos::Engine::Device device);
+        void update(glm::vec3 color);
+    private:
+        void* data;
+    };
 }; // namespace Engine
 }; // namespace Chronos

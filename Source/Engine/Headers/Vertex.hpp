@@ -30,10 +30,10 @@ namespace Engine {
         /**
         \brief Generates the ```VkVertexInputAttributeDescription``` for the vertex based on attributes(pos, color, texCoord) of the vertex.
         */
-        static std::array<VkVertexInputAttributeDescription, 2>
+        static std::array<VkVertexInputAttributeDescription, 1>
         getAttributeDescriptions()
         {
-            std::array<VkVertexInputAttributeDescription, 2> attributeDescriptions {};
+            std::array<VkVertexInputAttributeDescription, 1> attributeDescriptions {};
 
             attributeDescriptions[0].binding = 0;
             attributeDescriptions[0].location = 0;

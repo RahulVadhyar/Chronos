@@ -7,6 +7,7 @@ void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device,
     this->vertexShaderPath = "ThirdParty/Chronos/Shaders/textureVert.spv";
     this->fragmentShaderPath = "ThirdParty/Chronos/Shaders/textureFrag.spv";
     texture.create(*device, commandPool, texturePath);
+
     Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
 
     // create the vertex and index buffers and copy the data
@@ -29,9 +30,16 @@ void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device,
             VkRenderPass* renderPass) requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
 {   
 
-    throw std::runtime_error("ColorVertex not supported yet");
+    // throw std::runtime_error("ColorVertex not supported yet");
     this->vertexShaderPath = "ThirdParty/Chronos/Shaders/colorVert.spv";
     this->fragmentShaderPath = "ThirdParty/Chronos/Shaders/colorFrag.spv";
+
+    colorBuffers.resize(MAX_FRAMES_IN_FLIGHT);
+    for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
+        colorBuffers[i].create(*device);
+    }
+
+
     Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
 
     // create the vertex and index buffers and copy the data
@@ -63,9 +71,11 @@ void Chronos::Engine::Shape<VertexStruct>::tempDestroy() requires(std::is_same<C
 {
     vertexBuffer.destroy();
     indexBuffer.destroy();
+    for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
+        colorBuffers[i].destroy();
+    }
     Chronos::Engine::Object::destroy();
 }
-
 
 template <Chronos::Engine::VertexLike VertexStruct>
 void Chronos::Engine::Shape<VertexStruct>::tempCreateDescriptorSets() requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
@@ -140,9 +150,13 @@ void Chronos::Engine::Shape<VertexStruct>::tempCreateDescriptorSets() requires(s
         bufferInfo.buffer = uniformBuffers[i].buffer;
         bufferInfo.offset = 0;
         bufferInfo.range = sizeof(UniformBufferObject);
-        VkWriteDescriptorSet descriptorWrite {};
 
-        std::array<VkWriteDescriptorSet, 1> descriptorWrites {};
+        VkDescriptorBufferInfo bufferInfo2 {};
+        bufferInfo2.buffer = colorBuffers[i].buffer;
+        bufferInfo2.offset = 0;
+        bufferInfo2.range = sizeof(UniformColorBufferObject);
+
+        std::array<VkWriteDescriptorSet, 2> descriptorWrites {};
 
         descriptorWrites[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
         descriptorWrites[0].dstSet = descriptorSets[i];
@@ -152,6 +166,14 @@ void Chronos::Engine::Shape<VertexStruct>::tempCreateDescriptorSets() requires(s
         descriptorWrites[0].descriptorCount = 1;
         descriptorWrites[0].pBufferInfo = &bufferInfo;
 
+        descriptorWrites[1].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+        descriptorWrites[1].dstSet = descriptorSets[i];
+        descriptorWrites[1].dstBinding = 1;
+        descriptorWrites[1].dstArrayElement = 0;
+        descriptorWrites[1].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+        descriptorWrites[1].descriptorCount = 1;
+        descriptorWrites[1].pBufferInfo = &bufferInfo2;
+
         vkUpdateDescriptorSets(device->device,
             static_cast<uint32_t>(descriptorWrites.size()),
             descriptorWrites.data(), 0, nullptr);
@@ -160,11 +182,21 @@ void Chronos::Engine::Shape<VertexStruct>::tempCreateDescriptorSets() requires(s
 
 
 template <Chronos::Engine::VertexLike VertexStruct>
-void Chronos::Engine::Shape<VertexStruct>::update(uint32_t currentFrame)
+void Chronos::Engine::Shape<VertexStruct>::tempUpdate(uint32_t currentFrame) requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x,
         params.y, params.rotation, params.xSize,
         params.ySize);
+}
+
+
+template <Chronos::Engine::VertexLike VertexStruct>
+void Chronos::Engine::Shape<VertexStruct>::tempUpdate(uint32_t currentFrame) requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
+{
+    uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x,
+        params.y, params.rotation, params.xSize,
+        params.ySize);
+    colorBuffers[currentFrame].update({1.0, 0.0, 0.0});
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
@@ -177,7 +209,7 @@ std::vector<VkDescriptorType> Chronos::Engine::Shape<VertexStruct>::tempGetDescr
 template <Chronos::Engine::VertexLike VertexStruct>
 std::vector<VkDescriptorType> Chronos::Engine::Shape<VertexStruct>::tempGetDescriptorTypes() requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
 {
-    return std::vector<VkDescriptorType> { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER};
+    return std::vector<VkDescriptorType> { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER};
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
@@ -190,7 +222,7 @@ std::vector<VkShaderStageFlagBits> Chronos::Engine::Shape<VertexStruct>::tempGet
 template <Chronos::Engine::VertexLike VertexStruct>
 std::vector<VkShaderStageFlagBits> Chronos::Engine::Shape<VertexStruct>::tempGetDescriptorStages() requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
 {
-    return std::vector<VkShaderStageFlagBits> { VK_SHADER_STAGE_VERTEX_BIT};
+    return std::vector<VkShaderStageFlagBits> { VK_SHADER_STAGE_VERTEX_BIT, VK_SHADER_STAGE_FRAGMENT_BIT};
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>

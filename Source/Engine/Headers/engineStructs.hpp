@@ -38,5 +38,9 @@ namespace Engine {
         glm::mat4 view;
         glm::mat4 proj;
     };
+
+    struct UniformColorBufferObject {
+        glm::vec3 color;
+    };
 };
 };

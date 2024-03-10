@@ -4,7 +4,11 @@
 */
 #pragma once
 
-struct Empty {};
+#include "buffers.hpp"
+struct Empty {
+    Empty() = default;
+
+};
 
 namespace Chronos {
 namespace Engine {
@@ -55,7 +59,12 @@ namespace Engine {
 
         @param currentFrame The current frame number to render to.
         */
-        void update(uint32_t currentFrame) override;
+        void update(uint32_t currentFrame) override{
+            tempUpdate(currentFrame);
+        }
+
+        void tempUpdate(uint32_t currentFrame) requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
+        void tempUpdate(uint32_t currentFrame) requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value);
 
         /**
         \brief Destroys the shape object and frees the memory.
@@ -78,7 +87,7 @@ namespace Engine {
         /**
         \brief The texture that is to be used
         */
-        std::conditional_t<std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value, Chronos::Engine::Texture, Empty> texture ;
+        [[no_unique_address]] std::conditional_t<std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value, Chronos::Engine::Texture, Empty> texture ;
 
         /**
         \brief The vertices that is used to render the shape.
@@ -114,6 +123,7 @@ namespace Engine {
         std::vector<VkShaderStageFlagBits> getShaderStages();
 
     private:
+        [[no_unique_address]] std::conditional_t<std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value, std::vector<Chronos::Engine::ColorBuffer>, Empty> colorBuffers;
         PipelineAttributes getPipelineAttributes() override;
     };
 #include "shapeDefs.tpp"

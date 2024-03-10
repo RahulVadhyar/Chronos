@@ -200,6 +200,7 @@ void Chronos::Engine::Engine::drawFrame()
         framebufferResized = false;
         swapChain.recreate();
         shapeManager.recreate();
+        colorShapeManager.recreate();
         textManager.recreate();
 #ifdef ENABLE_EDITOR
         gui.recreate();
