@@ -1,6 +1,7 @@
 var hierarchy =
 [
     [ "Chronos::Engine::Buffer", "classChronos_1_1Engine_1_1Buffer.html", [
+      [ "Chronos::Engine::ColorBuffer", "classChronos_1_1Engine_1_1ColorBuffer.html", null ],
       [ "Chronos::Engine::UniformBuffer", "classChronos_1_1Engine_1_1UniformBuffer.html", null ]
     ] ],
     [ "Chronos::Engine::ColorVertex", "structChronos_1_1Engine_1_1ColorVertex.html", null ],
@@ -36,5 +37,6 @@ var hierarchy =
     [ "Chronos::Engine::TextParams", "structChronos_1_1Engine_1_1TextParams.html", null ],
     [ "Chronos::Engine::Texture", "classChronos_1_1Engine_1_1Texture.html", null ],
     [ "Chronos::Engine::TexturedVertex", "structChronos_1_1Engine_1_1TexturedVertex.html", null ],
-    [ "Chronos::Engine::UniformBufferObject", "structChronos_1_1Engine_1_1UniformBufferObject.html", null ]
+    [ "Chronos::Engine::UniformBufferObject", "structChronos_1_1Engine_1_1UniformBufferObject.html", null ],
+    [ "Chronos::Engine::UniformColorBufferObject", "structChronos_1_1Engine_1_1UniformColorBufferObject.html", null ]
 ];

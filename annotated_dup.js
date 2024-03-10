@@ -7,10 +7,12 @@ var annotated_dup =
       [ "Engine", "namespaceChronos_1_1Engine.html", [
         [ "Buffer", "classChronos_1_1Engine_1_1Buffer.html", "classChronos_1_1Engine_1_1Buffer" ],
         [ "UniformBuffer", "classChronos_1_1Engine_1_1UniformBuffer.html", "classChronos_1_1Engine_1_1UniformBuffer" ],
+        [ "ColorBuffer", "classChronos_1_1Engine_1_1ColorBuffer.html", "classChronos_1_1Engine_1_1ColorBuffer" ],
         [ "Device", "classChronos_1_1Engine_1_1Device.html", "classChronos_1_1Engine_1_1Device" ],
         [ "Engine", "classChronos_1_1Engine_1_1Engine.html", "classChronos_1_1Engine_1_1Engine" ],
         [ "TextParams", "structChronos_1_1Engine_1_1TextParams.html", "structChronos_1_1Engine_1_1TextParams" ],
         [ "UniformBufferObject", "structChronos_1_1Engine_1_1UniformBufferObject.html", "structChronos_1_1Engine_1_1UniformBufferObject" ],
+        [ "UniformColorBufferObject", "structChronos_1_1Engine_1_1UniformColorBufferObject.html", "structChronos_1_1Engine_1_1UniformColorBufferObject" ],
         [ "Font", "classChronos_1_1Engine_1_1Font.html", "classChronos_1_1Engine_1_1Font" ],
         [ "QueueFamilyIndices", "structChronos_1_1Engine_1_1QueueFamilyIndices.html", "structChronos_1_1Engine_1_1QueueFamilyIndices" ],
         [ "PipelineAttributes", "structChronos_1_1Engine_1_1PipelineAttributes.html", "structChronos_1_1Engine_1_1PipelineAttributes" ],
@@ -35,5 +37,5 @@ var annotated_dup =
         [ "ShapeParams", "structChronos_1_1Manager_1_1ShapeParams.html", "structChronos_1_1Manager_1_1ShapeParams" ]
       ] ]
     ] ],
-    [ "Empty", "structEmpty.html", null ]
+    [ "Empty", "structEmpty.html", "structEmpty" ]
 ];

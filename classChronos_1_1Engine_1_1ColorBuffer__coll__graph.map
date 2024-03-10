@@ -1,0 +1,5 @@
+<map id="Chronos::Engine::ColorBuffer" name="Chronos::Engine::ColorBuffer">
+<area shape="rect" id="node1" title=" " alt="" coords="5,171,213,197"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Buffer.html" title="Used to store buffers in GPU." alt="" coords="22,95,197,121"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="19,5,199,32"/>
+</map>

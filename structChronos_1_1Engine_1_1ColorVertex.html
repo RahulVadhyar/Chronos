@@ -103,9 +103,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a277ad5b19e98cccc2a7af28cad3ea5cd"><td class="memItemLeft" align="right" valign="top">static VkVertexInputBindingDescription&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structChronos_1_1Engine_1_1ColorVertex.html#a277ad5b19e98cccc2a7af28cad3ea5cd">getBindingDescription</a> ()</td></tr>
 <tr class="memdesc:a277ad5b19e98cccc2a7af28cad3ea5cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <code>VkVertexInputBindingDescription</code> for the vertex based on the size of the vertex.  <a href="structChronos_1_1Engine_1_1ColorVertex.html#a277ad5b19e98cccc2a7af28cad3ea5cd">More...</a><br /></td></tr>
 <tr class="separator:a277ad5b19e98cccc2a7af28cad3ea5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e5515c0090706e065175a821837c9fb"><td class="memItemLeft" align="right" valign="top">static std::array&lt; VkVertexInputAttributeDescription, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structChronos_1_1Engine_1_1ColorVertex.html#a4e5515c0090706e065175a821837c9fb">getAttributeDescriptions</a> ()</td></tr>
-<tr class="memdesc:a4e5515c0090706e065175a821837c9fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the <code>VkVertexInputAttributeDescription</code> for the vertex based on attributes(pos, color, texCoord) of the vertex.  <a href="structChronos_1_1Engine_1_1ColorVertex.html#a4e5515c0090706e065175a821837c9fb">More...</a><br /></td></tr>
-<tr class="separator:a4e5515c0090706e065175a821837c9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef9f9754806969d46d380e143b69feaa"><td class="memItemLeft" align="right" valign="top">static std::array&lt; VkVertexInputAttributeDescription, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structChronos_1_1Engine_1_1ColorVertex.html#aef9f9754806969d46d380e143b69feaa">getAttributeDescriptions</a> ()</td></tr>
+<tr class="memdesc:aef9f9754806969d46d380e143b69feaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the <code>VkVertexInputAttributeDescription</code> for the vertex based on attributes(pos, color, texCoord) of the vertex.  <a href="structChronos_1_1Engine_1_1ColorVertex.html#aef9f9754806969d46d380e143b69feaa">More...</a><br /></td></tr>
+<tr class="separator:aef9f9754806969d46d380e143b69feaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -117,8 +117,8 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00014">14</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4e5515c0090706e065175a821837c9fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e5515c0090706e065175a821837c9fb">&#9670;&nbsp;</a></span>getAttributeDescriptions()</h2>
+<a id="aef9f9754806969d46d380e143b69feaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef9f9754806969d46d380e143b69feaa">&#9670;&nbsp;</a></span>getAttributeDescriptions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +127,7 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::array&lt;VkVertexInputAttributeDescription, 2&gt; Chronos::Engine::ColorVertex::getAttributeDescriptions </td>
+          <td class="memname">static std::array&lt;VkVertexInputAttributeDescription, 1&gt; Chronos::Engine::ColorVertex::getAttributeDescriptions </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -144,7 +144,7 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00034">34</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            std::array&lt;VkVertexInputAttributeDescription, 2&gt; attributeDescriptions {};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            std::array&lt;VkVertexInputAttributeDescription, 1&gt; attributeDescriptions {};</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            attributeDescriptions[0].binding = 0;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            attributeDescriptions[0].location = 0;</div>

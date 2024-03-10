@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('classChronos_1_1Engine_1_1Shape.html',
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classChronos_1_1Engine_1_1Shape-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Chronos::Engine::Shape&lt; VertexStruct &gt; Class Template Reference</div>  </div>
@@ -125,9 +126,6 @@ Collaboration diagram for Chronos::Engine::Shape&lt; VertexStruct &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad65a5bd7dad0337cbf7a94da24ad2216"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#ad65a5bd7dad0337cbf7a94da24ad2216">destroy</a> () override</td></tr>
-<tr class="memdesc:ad65a5bd7dad0337cbf7a94da24ad2216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the shape object and frees the memory.  <a href="classChronos_1_1Engine_1_1Shape.html#ad65a5bd7dad0337cbf7a94da24ad2216">More...</a><br /></td></tr>
-<tr class="separator:ad65a5bd7dad0337cbf7a94da24ad2216"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71ceacf25eaccd1561d66b418bf0bb14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#a71ceacf25eaccd1561d66b418bf0bb14">createDescriptorSets</a> () override</td></tr>
 <tr class="separator:a71ceacf25eaccd1561d66b418bf0bb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ddcf41420db923c409607d571badba4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; VkDescriptorType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#a4ddcf41420db923c409607d571badba4">getDescriptorTypes</a> () override</td></tr>
@@ -141,6 +139,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa32fe5592512c1fa8534aed8cb2797ef inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#aa32fe5592512c1fa8534aed8cb2797ef">update</a> (uint32_t currentFrame)=0</td></tr>
 <tr class="memdesc:aa32fe5592512c1fa8534aed8cb2797ef inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the object for the current frame.  <a href="classChronos_1_1Engine_1_1Object.html#aa32fe5592512c1fa8534aed8cb2797ef">More...</a><br /></td></tr>
 <tr class="separator:aa32fe5592512c1fa8534aed8cb2797ef inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bdcd3b34fd075835e2a395bd39b09d7 inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">destroy</a> ()=0</td></tr>
+<tr class="memdesc:a2bdcd3b34fd075835e2a395bd39b09d7 inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the object and releases associated resources.  <a href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">More...</a><br /></td></tr>
+<tr class="separator:a2bdcd3b34fd075835e2a395bd39b09d7 inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e1df40f2eb42af5d40225bd9583f3ce inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#a8e1df40f2eb42af5d40225bd9583f3ce">recreateGraphicsPipeline</a> ()</td></tr>
 <tr class="memdesc:a8e1df40f2eb42af5d40225bd9583f3ce inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recreates the graphics pipeline for the object.  <a href="classChronos_1_1Engine_1_1Object.html#a8e1df40f2eb42af5d40225bd9583f3ce">More...</a><br /></td></tr>
 <tr class="separator:a8e1df40f2eb42af5d40225bd9583f3ce inherit pub_methods_classChronos_1_1Engine_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,6 +181,11 @@ Public Attributes</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a290cea82595f29d582fa0f50a52c6cdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structChronos_1_1Engine_1_1PipelineAttributes.html">PipelineAttributes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#a290cea82595f29d582fa0f50a52c6cdc">getPipelineAttributes</a> () override</td></tr>
 <tr class="separator:a290cea82595f29d582fa0f50a52c6cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a85ea164e447eb7b6651745d7fca9bdc5"><td class="memItemLeft" align="right" valign="top">std::conditional_t&lt; std::is_same&lt; <a class="el" href="structChronos_1_1Engine_1_1ColorVertex.html">Chronos::Engine::ColorVertex</a>, VertexStruct &gt;::value, std::vector&lt; <a class="el" href="classChronos_1_1Engine_1_1ColorBuffer.html">Chronos::Engine::ColorBuffer</a> &gt;, <a class="el" href="structEmpty.html">Empty</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Shape.html#a85ea164e447eb7b6651745d7fca9bdc5">colorBuffers</a></td></tr>
+<tr class="separator:a85ea164e447eb7b6651745d7fca9bdc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -222,7 +228,7 @@ class Chronos::Engine::Shape&lt; VertexStruct &gt;</h3>
 <p>Class for creating a shape(triangle, rectangle, etc.). </p>
 <p>This class is used to create a shape(triangle, rectangle, etc.). It is a child of the <a class="el" href="classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects.">Object</a> class. It handles all the vulkan objects needed for rendering the shape. </p>
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00022">22</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00026">26</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a71ceacf25eaccd1561d66b418bf0bb14"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a71ceacf25eaccd1561d66b418bf0bb14">&#9670;&nbsp;</a></span>createDescriptorSets()</h2>
@@ -251,48 +257,10 @@ template&lt;VertexLike VertexStruct&gt; </div>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#adf7e359418ad5653b9590645282aee1e">Chronos::Engine::Object</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00098">98</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                             {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">return</span> tempCreateDescriptorSets();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        };</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ad65a5bd7dad0337cbf7a94da24ad2216"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad65a5bd7dad0337cbf7a94da24ad2216">&#9670;&nbsp;</a></span>destroy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;VertexLike VertexStruct&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classChronos_1_1Engine_1_1Shape.html">Chronos::Engine::Shape</a>&lt; VertexStruct &gt;::destroy </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Destroys the shape object and frees the memory. </p>
-<p>This destroys all the vulkan related objects related to this class and frees memory. </p>
-
-<p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00065">65</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">return</span> tempDestroy();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        };</div>
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00107">107</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                             {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">return</span> tempCreateDescriptorSets();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -323,10 +291,10 @@ template&lt;VertexLike VertexStruct&gt; </div>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a747d67af4581cd3476d2348b5d0889e9">Chronos::Engine::Object</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00104">104</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                                                        {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">return</span> tempGetDescriptorStages();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        };</div>
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00113">113</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                                                        {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">return</span> tempGetDescriptorStages();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -357,10 +325,10 @@ template&lt;VertexLike VertexStruct&gt; </div>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a6e7f4a4b4c1707146b44ec5d7c695c9c">Chronos::Engine::Object</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00101">101</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                                                  {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">return</span> tempGetDescriptorTypes();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        };</div>
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00110">110</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                                                  {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">return</span> tempGetDescriptorTypes();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -394,6 +362,32 @@ template&lt;VertexLike VertexStruct&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a85ea164e447eb7b6651745d7fca9bdc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85ea164e447eb7b6651745d7fca9bdc5">&#9670;&nbsp;</a></span>colorBuffers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;VertexLike VertexStruct&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::conditional_t&lt;std::is_same&lt;<a class="el" href="structChronos_1_1Engine_1_1ColorVertex.html">Chronos::Engine::ColorVertex</a>, VertexStruct&gt;::value, std::vector&lt;<a class="el" href="classChronos_1_1Engine_1_1ColorBuffer.html">Chronos::Engine::ColorBuffer</a>&gt;, <a class="el" href="structEmpty.html">Empty</a>&gt; <a class="el" href="classChronos_1_1Engine_1_1Shape.html">Chronos::Engine::Shape</a>&lt; VertexStruct &gt;::colorBuffers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00126">126</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+
+</div>
+</div>
 <a id="aec5b864443b585a866abbafd0b2da6b4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aec5b864443b585a866abbafd0b2da6b4">&#9670;&nbsp;</a></span>indexBuffer</h2>
 
@@ -410,7 +404,7 @@ template&lt;VertexLike VertexStruct&gt; </div>
 
 <p>The index buffer that is used to store the indices. </p>
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00096">96</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00105">105</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
 
 </div>
 </div>
@@ -430,7 +424,7 @@ template&lt;VertexLike VertexStruct&gt; </div>
 
 <p>The indices that is used to specify the order of vertices to render. </p>
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00076">76</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00085">85</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
 
 </div>
 </div>
@@ -450,7 +444,7 @@ template&lt;VertexLike VertexStruct&gt; </div>
 
 <p>The parameters that are associated with the shape. </p>
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00028">28</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00032">32</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
 
 </div>
 </div>
@@ -470,7 +464,7 @@ template&lt;VertexLike VertexStruct&gt; </div>
 
 <p>The texture that is to be used. </p>
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00081">81</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00090">90</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
 
 </div>
 </div>
@@ -491,7 +485,7 @@ template&lt;VertexLike VertexStruct&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -517,8 +511,11 @@ template&lt;VertexLike VertexStruct&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00058">58</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00062">62</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                                   {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            tempUpdate(currentFrame);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad894665aca6b42aa8a75c030c926f9e8"></a>
@@ -537,7 +534,7 @@ template&lt;VertexLike VertexStruct&gt; </div>
 
 <p>The vertex buffer that is used to store the vertices. </p>
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00091">91</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00100">100</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
 
 </div>
 </div>
@@ -557,7 +554,7 @@ template&lt;VertexLike VertexStruct&gt; </div>
 
 <p>The vertices that is used to render the shape. </p>
 
-<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00086">86</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shape_8hpp_source.html#l00095">95</a> of file <a class="el" href="shape_8hpp_source.html">shape.hpp</a>.</p>
 
 </div>
 </div>

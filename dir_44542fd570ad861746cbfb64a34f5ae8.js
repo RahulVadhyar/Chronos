@@ -2,7 +2,8 @@ var dir_44542fd570ad861746cbfb64a34f5ae8 =
 [
     [ "buffers.hpp", "buffers_8hpp.html", [
       [ "Buffer", "classChronos_1_1Engine_1_1Buffer.html", "classChronos_1_1Engine_1_1Buffer" ],
-      [ "UniformBuffer", "classChronos_1_1Engine_1_1UniformBuffer.html", "classChronos_1_1Engine_1_1UniformBuffer" ]
+      [ "UniformBuffer", "classChronos_1_1Engine_1_1UniformBuffer.html", "classChronos_1_1Engine_1_1UniformBuffer" ],
+      [ "ColorBuffer", "classChronos_1_1Engine_1_1ColorBuffer.html", "classChronos_1_1Engine_1_1ColorBuffer" ]
     ] ],
     [ "device.hpp", "device_8hpp.html", [
       [ "Device", "classChronos_1_1Engine_1_1Device.html", "classChronos_1_1Engine_1_1Device" ]
@@ -12,7 +13,8 @@ var dir_44542fd570ad861746cbfb64a34f5ae8 =
     ] ],
     [ "engineStructs.hpp", "engineStructs_8hpp.html", [
       [ "TextParams", "structChronos_1_1Engine_1_1TextParams.html", "structChronos_1_1Engine_1_1TextParams" ],
-      [ "UniformBufferObject", "structChronos_1_1Engine_1_1UniformBufferObject.html", "structChronos_1_1Engine_1_1UniformBufferObject" ]
+      [ "UniformBufferObject", "structChronos_1_1Engine_1_1UniformBufferObject.html", "structChronos_1_1Engine_1_1UniformBufferObject" ],
+      [ "UniformColorBufferObject", "structChronos_1_1Engine_1_1UniformColorBufferObject.html", "structChronos_1_1Engine_1_1UniformColorBufferObject" ]
     ] ],
     [ "font.hpp", "font_8hpp.html", [
       [ "Font", "classChronos_1_1Engine_1_1Font.html", "classChronos_1_1Engine_1_1Font" ]
