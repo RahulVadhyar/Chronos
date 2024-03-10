@@ -111,6 +111,7 @@ namespace Engine {
     public:
         void create(Chronos::Engine::Device device);
         void update(glm::vec3 color);
+
     private:
         void* data;
     };

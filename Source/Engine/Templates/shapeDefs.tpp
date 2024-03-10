@@ -2,7 +2,8 @@
 template <Chronos::Engine::VertexLike VertexStruct>
 void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     SwapChain* swapChain, VkSampler textureSampler,
-    std::string texturePath, VkRenderPass* renderPass) requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
+    std::string texturePath, VkRenderPass* renderPass)
+    requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     this->vertexShaderPath = "ThirdParty/Chronos/Shaders/textureVert.spv";
     this->fragmentShaderPath = "ThirdParty/Chronos/Shaders/textureFrag.spv";
@@ -26,9 +27,10 @@ void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device,
 
 template <Chronos::Engine::VertexLike VertexStruct>
 void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain, VkSampler textureSampler,
-            std::array<float, 3> color,
-            VkRenderPass* renderPass) requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
-{   
+    std::array<float, 3> color,
+    VkRenderPass* renderPass)
+    requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
+{
 
     // throw std::runtime_error("ColorVertex not supported yet");
     this->vertexShaderPath = "ThirdParty/Chronos/Shaders/colorVert.spv";
@@ -38,7 +40,6 @@ void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device,
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
         colorBuffers[i].create(*device);
     }
-
 
     Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
 
@@ -57,7 +58,8 @@ void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device,
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
-void Chronos::Engine::Shape<VertexStruct>::tempDestroy() requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
+void Chronos::Engine::Shape<VertexStruct>::tempDestroy()
+    requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     texture.destroy();
     vertexBuffer.destroy();
@@ -65,9 +67,9 @@ void Chronos::Engine::Shape<VertexStruct>::tempDestroy() requires(std::is_same<C
     Chronos::Engine::Object::destroy();
 }
 
-
 template <Chronos::Engine::VertexLike VertexStruct>
-void Chronos::Engine::Shape<VertexStruct>::tempDestroy() requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
+void Chronos::Engine::Shape<VertexStruct>::tempDestroy()
+    requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
 {
     vertexBuffer.destroy();
     indexBuffer.destroy();
@@ -78,7 +80,8 @@ void Chronos::Engine::Shape<VertexStruct>::tempDestroy() requires(std::is_same<C
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
-void Chronos::Engine::Shape<VertexStruct>::tempCreateDescriptorSets() requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
+void Chronos::Engine::Shape<VertexStruct>::tempCreateDescriptorSets()
+    requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     std::vector<VkDescriptorSetLayout> layouts(MAX_FRAMES_IN_FLIGHT,
         descriptorSetLayout);
@@ -130,7 +133,8 @@ void Chronos::Engine::Shape<VertexStruct>::tempCreateDescriptorSets() requires(s
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
-void Chronos::Engine::Shape<VertexStruct>::tempCreateDescriptorSets() requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
+void Chronos::Engine::Shape<VertexStruct>::tempCreateDescriptorSets()
+    requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
 {
     std::vector<VkDescriptorSetLayout> layouts(MAX_FRAMES_IN_FLIGHT,
         descriptorSetLayout);
@@ -180,49 +184,53 @@ void Chronos::Engine::Shape<VertexStruct>::tempCreateDescriptorSets() requires(s
     }
 }
 
-
 template <Chronos::Engine::VertexLike VertexStruct>
-void Chronos::Engine::Shape<VertexStruct>::tempUpdate(uint32_t currentFrame) requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
+void Chronos::Engine::Shape<VertexStruct>::tempUpdate(uint32_t currentFrame)
+    requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x,
         params.y, params.rotation, params.xSize,
         params.ySize);
 }
 
-
 template <Chronos::Engine::VertexLike VertexStruct>
-void Chronos::Engine::Shape<VertexStruct>::tempUpdate(uint32_t currentFrame) requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
+void Chronos::Engine::Shape<VertexStruct>::tempUpdate(uint32_t currentFrame)
+    requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
 {
     uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x,
         params.y, params.rotation, params.xSize,
         params.ySize);
-    colorBuffers[currentFrame].update({1.0, 0.0, 0.0});
+    colorBuffers[currentFrame].update({ 1.0, 0.0, 0.0 });
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
-std::vector<VkDescriptorType> Chronos::Engine::Shape<VertexStruct>::tempGetDescriptorTypes() requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
+std::vector<VkDescriptorType> Chronos::Engine::Shape<VertexStruct>::tempGetDescriptorTypes()
+    requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     return std::vector<VkDescriptorType> { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER,
         VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER };
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
-std::vector<VkDescriptorType> Chronos::Engine::Shape<VertexStruct>::tempGetDescriptorTypes() requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
+std::vector<VkDescriptorType> Chronos::Engine::Shape<VertexStruct>::tempGetDescriptorTypes()
+    requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
 {
-    return std::vector<VkDescriptorType> { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER};
+    return std::vector<VkDescriptorType> { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER };
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
-std::vector<VkShaderStageFlagBits> Chronos::Engine::Shape<VertexStruct>::tempGetDescriptorStages() requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
+std::vector<VkShaderStageFlagBits> Chronos::Engine::Shape<VertexStruct>::tempGetDescriptorStages()
+    requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     return std::vector<VkShaderStageFlagBits> { VK_SHADER_STAGE_VERTEX_BIT,
         VK_SHADER_STAGE_FRAGMENT_BIT };
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
-std::vector<VkShaderStageFlagBits> Chronos::Engine::Shape<VertexStruct>::tempGetDescriptorStages() requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
+std::vector<VkShaderStageFlagBits> Chronos::Engine::Shape<VertexStruct>::tempGetDescriptorStages()
+    requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
 {
-    return std::vector<VkShaderStageFlagBits> { VK_SHADER_STAGE_VERTEX_BIT, VK_SHADER_STAGE_FRAGMENT_BIT};
+    return std::vector<VkShaderStageFlagBits> { VK_SHADER_STAGE_VERTEX_BIT, VK_SHADER_STAGE_FRAGMENT_BIT };
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>

@@ -49,7 +49,8 @@ int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, Chro
     }
 }
 
-int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType, std::array<float, 3> color){
+int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType, std::array<float, 3> color)
+{
     if (polygonType.triangle) {
         return engine.colorShapeManager.addTriangle(shapeParams, color);
     } else if (polygonType.rectangle) {
@@ -57,7 +58,6 @@ int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, Poly
     } else {
         throw std::runtime_error("Polygon type not supported");
     }
-
 }
 void Manager::Manager::updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams)
 {
