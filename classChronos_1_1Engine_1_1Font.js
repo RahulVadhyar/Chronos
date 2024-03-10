@@ -10,6 +10,7 @@ var classChronos_1_1Engine_1_1Font =
     [ "render", "classChronos_1_1Engine_1_1Font.html#a7150338ed658472405c600aa6662cfe8", null ],
     [ "update", "classChronos_1_1Engine_1_1Font.html#afce2967d505a38748aefead513a4cf07", null ],
     [ "updateBuffer", "classChronos_1_1Engine_1_1Font.html#ac768671cd27c3b549f585a8d1b763e5a", null ],
+    [ "colorBuffers", "classChronos_1_1Engine_1_1Font.html#a7567235aa7fb28a1d89089d9872a7577", null ],
     [ "fontTexture", "classChronos_1_1Engine_1_1Font.html#a646db66702a5893cbb1d7f0e10dec221", null ],
     [ "mappedMemory", "classChronos_1_1Engine_1_1Font.html#a4c4db1b13a2c986f433d115a839b4081", null ],
     [ "maxTextLength", "classChronos_1_1Engine_1_1Font.html#aa35ecc6659a00191b7dc78d5d250d458", null ],

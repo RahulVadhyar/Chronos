@@ -81,7 +81,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Examples.html",
-"editorRenderer_8hpp_source.html"
+"editorRenderer_8hpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
