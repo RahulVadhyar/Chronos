@@ -99,8 +99,8 @@ if(WIN32)
     target_include_directories(${PROJECT_NAME} PUBLIC ${VULKAN_SDK_INCLUDE})     
 endif(WIN32) 
 
-target_compile_definitions(${PROJECT_NAME} PUBLIC ENABLE_EDITOR)
-target_compile_definitions(${PROJECT_NAME} PUBLIC ENABLE_VULKAN_VALIDATION_LAYERS)
+target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC ENABLE_EDITOR)
+target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC ENABLE_VULKAN_VALIDATION_LAYERS)
 #header files
 IncludeDirectories(${PROJECT_NAME})
 

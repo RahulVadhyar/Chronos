@@ -5,8 +5,8 @@ void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device,
     std::string texturePath, VkRenderPass* renderPass)
     requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
-    this->vertexShaderPath = "ThirdParty/Chronos/Shaders/textureVert.spv";
-    this->fragmentShaderPath = "ThirdParty/Chronos/Shaders/textureFrag.spv";
+    this->vertexShaderPath = SPIV_SHADER_PATH"/textureVert.spv";
+    this->fragmentShaderPath = SPIV_SHADER_PATH"/textureFrag.spv";
     texture.create(*device, commandPool, texturePath);
 
     Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
@@ -33,8 +33,8 @@ void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device,
 {
 
     // throw std::runtime_error("ColorVertex not supported yet");
-    this->vertexShaderPath = "ThirdParty/Chronos/Shaders/colorVert.spv";
-    this->fragmentShaderPath = "ThirdParty/Chronos/Shaders/colorFrag.spv";
+    this->vertexShaderPath = SPIV_SHADER_PATH"/colorVert.spv";
+    this->fragmentShaderPath = SPIV_SHADER_PATH"/colorFrag.spv";
 
     colorBuffers.resize(MAX_FRAMES_IN_FLIGHT);
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {

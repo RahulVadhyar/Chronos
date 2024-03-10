@@ -134,6 +134,8 @@ namespace Engine {
         The mapped memory to the vertex buffer
         */
         glm::vec4* mappedMemory;
+
+        std::vector<Chronos::Engine::ColorBuffer> colorBuffers;
     };
 };
 };

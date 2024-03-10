@@ -12,8 +12,8 @@
 void Chronos::Engine::Font::init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
     VkSampler textureSampler, VkRenderPass* renderPass)
 {
-    vertexShaderPath = "ThirdParty/Chronos/Shaders/textVert.spv";
-    fragmentShaderPath = "ThirdParty/Chronos/Shaders/textFrag.spv";
+    vertexShaderPath = SPIV_SHADER_PATH"/textVert.spv";
+    fragmentShaderPath = SPIV_SHADER_PATH"/textFrag.spv";
 
     // initalize the font
     const uint32_t fontWidth = STB_FONT_consolas_24_latin1_BITMAP_WIDTH;
@@ -32,19 +32,24 @@ void Chronos::Engine::Font::init(Chronos::Engine::Device* device, VkCommandPool 
         VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
         &vertexBuffer, &vertexBufferMemory);
 
+    colorBuffers.resize(MAX_FRAMES_IN_FLIGHT);
+    for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
+        colorBuffers[i].create(*device);
+    }
+
     Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
 }
 
 std::vector<VkDescriptorType> Chronos::Engine::Font::getDescriptorTypes()
 {
     return std::vector<VkDescriptorType> { VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER,
-        VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER };
+        VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER};
 }
 
 std::vector<VkShaderStageFlagBits> Chronos::Engine::Font::getDescriptorStages()
 {
     return std::vector<VkShaderStageFlagBits> { VK_SHADER_STAGE_FRAGMENT_BIT,
-        VK_SHADER_STAGE_VERTEX_BIT };
+        VK_SHADER_STAGE_VERTEX_BIT, VK_SHADER_STAGE_FRAGMENT_BIT };
 }
 
 void Chronos::Engine::Font::createDescriptorSets()
@@ -73,9 +78,15 @@ void Chronos::Engine::Font::createDescriptorSets()
         bufferInfo.buffer = uniformBuffers[i].buffer;
         bufferInfo.offset = 0;
         bufferInfo.range = sizeof(UniformBufferObject);
+
+        VkDescriptorBufferInfo bufferInfo2 {};
+        bufferInfo2.buffer = colorBuffers[i].buffer;
+        bufferInfo2.offset = 0;
+        bufferInfo2.range = sizeof(UniformColorBufferObject);
+
         VkWriteDescriptorSet descriptorWrite {};
 
-        std::array<VkWriteDescriptorSet, 2> descriptorWrites {};
+        std::array<VkWriteDescriptorSet, 3> descriptorWrites {};
 
         descriptorWrites[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
         descriptorWrites[0].dstSet = descriptorSets[i];
@@ -92,6 +103,14 @@ void Chronos::Engine::Font::createDescriptorSets()
         descriptorWrites[1].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
         descriptorWrites[1].descriptorCount = 1;
         descriptorWrites[1].pBufferInfo = &bufferInfo;
+
+        descriptorWrites[2].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+        descriptorWrites[2].dstSet = descriptorSets[i];
+        descriptorWrites[2].dstBinding = 2;
+        descriptorWrites[2].dstArrayElement = 0;
+        descriptorWrites[2].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+        descriptorWrites[2].descriptorCount = 1;
+        descriptorWrites[2].pBufferInfo = &bufferInfo2;
 
         vkUpdateDescriptorSets(device->device,
             static_cast<uint32_t>(descriptorWrites.size()),
@@ -142,6 +161,9 @@ void Chronos::Engine::Font::destroy()
     Chronos::Engine::Object::destroy();
     vkDestroyBuffer(device->device, vertexBuffer, nullptr);
     vkFreeMemory(device->device, vertexBufferMemory, nullptr);
+    for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
+        colorBuffers[i].destroy();
+    }
     fontTexture.destroy();
 }
 
@@ -238,4 +260,5 @@ void Chronos::Engine::Font::update(uint32_t currentFrame)
 {
     updateBuffer();
     uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x, params.y, params.rotation - 90, 1.0f, -1.0f);
+    colorBuffers[currentFrame].update({params.color[0], params.color[1], params.color[2]});
 }

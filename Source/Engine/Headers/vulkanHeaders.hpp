@@ -19,3 +19,4 @@ More specifically it includes the following packages:
 #include <glm/gtc/matrix_transform.hpp>
 
 const int MAX_FRAMES_IN_FLIGHT = 2;
+#define SPIV_SHADER_PATH "ThirdParty/Chronos/Shaders/SPIV"
