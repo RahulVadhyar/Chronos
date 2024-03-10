@@ -237,15 +237,14 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00052">52</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                                                                                      {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (polygonType.triangle) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.addTriangle(shapeParams, color);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (polygonType.rectangle) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.addRectangle(shapeParams, color);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Polygon type not supported&quot;</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (polygonType.triangle) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.addTriangle(shapeParams, color);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (polygonType.rectangle) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.addRectangle(shapeParams, color);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Polygon type not supported&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a443de04f089d9814259caf3a4ea1c583"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">Chronos::Engine::Engine::colorShapeManager</a></div><div class="ttdeci">Chronos::Engine::ShapeManager&lt; ColorVertex &gt; colorShapeManager</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00088">engine.hpp:88</a></div></div>
 </div><!-- fragment -->
