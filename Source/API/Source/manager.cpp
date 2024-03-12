@@ -1,6 +1,7 @@
 #include "chronos.hpp"
 // #include "text.hpp"
 #include "object.hpp"
+#include "fontTypes.hpp"
 
 namespace Chronos {
 GLFWwindow* Manager::Manager::getWindow()
@@ -79,9 +80,11 @@ int Manager::Manager::addText(Chronos::Engine::TextParams params)
     if (params.text == "") {
         throw std::runtime_error("Text cannot be empty");
     }
-    Chronos::Engine::Font font;
+    // Chronos::Engine::Text font;
+    Chronos::Engine::Text font;
     font.params = params;
-    return engine.textManager.addFont(font);
+    Chronos::Engine::FontTypes fontStyle = Chronos::Engine::FontStructs::consolas_24;
+    return engine.textManager.addFont(font, fontStyle);
 }
 
 void Manager::Manager::removeText(int textNo)

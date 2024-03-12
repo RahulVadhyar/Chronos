@@ -7,21 +7,22 @@
 #include "object.hpp"
 #include "engineStructs.hpp"
 #include "texture.hpp"
-#include "font.hpp"
+#include "text.hpp"
 
-void Chronos::Engine::Font::init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
-    VkSampler textureSampler, VkRenderPass* renderPass)
-{
+void Chronos::Engine::Text::init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
+    VkSampler textureSampler, VkRenderPass* renderPass, Chronos::Engine::FontTypes fontStyle){
     vertexShaderPath = SPIV_SHADER_PATH"/textVert.spv";
     fragmentShaderPath = SPIV_SHADER_PATH"/textFrag.spv";
 
+    this->fontStyle = fontStyle;
     // initalize the font
-    const uint32_t fontWidth = STB_FONT_consolas_24_latin1_BITMAP_WIDTH;
-    const uint32_t fontHeight = STB_FONT_consolas_24_latin1_BITMAP_HEIGHT;
+    const uint32_t fontWidth = fontStyle.fontWidth;
+    const uint32_t fontHeight = fontStyle.fontHeight;
+    firstChar = fontStyle.firstChar;
 
-    static unsigned char fontpixels[fontHeight][fontWidth];
+    unsigned char fontpixels[fontHeight][256];
 
-    stb_font_consolas_24_latin1(stbFontData, fontpixels, fontHeight);
+    fontStyle.getFontData(stbFontData, fontpixels, fontHeight);
 
     fontTexture.create(*device, commandPool, (void*)&fontpixels[0][0], static_cast<size_t>(fontWidth),
         static_cast<size_t>(fontHeight), static_cast<VkDeviceSize>(fontWidth * fontHeight), VK_FORMAT_R8_UNORM);
@@ -40,19 +41,20 @@ void Chronos::Engine::Font::init(Chronos::Engine::Device* device, VkCommandPool 
     Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
 }
 
-std::vector<VkDescriptorType> Chronos::Engine::Font::getDescriptorTypes()
+
+std::vector<VkDescriptorType> Chronos::Engine::Text::getDescriptorTypes()
 {
     return std::vector<VkDescriptorType> { VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER,
         VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER};
 }
 
-std::vector<VkShaderStageFlagBits> Chronos::Engine::Font::getDescriptorStages()
+std::vector<VkShaderStageFlagBits> Chronos::Engine::Text::getDescriptorStages()
 {
     return std::vector<VkShaderStageFlagBits> { VK_SHADER_STAGE_FRAGMENT_BIT,
         VK_SHADER_STAGE_VERTEX_BIT, VK_SHADER_STAGE_FRAGMENT_BIT };
 }
 
-void Chronos::Engine::Font::createDescriptorSets()
+void Chronos::Engine::Text::createDescriptorSets()
 {
     std::vector<VkDescriptorSetLayout> layouts(MAX_FRAMES_IN_FLIGHT,
         descriptorSetLayout);
@@ -118,7 +120,7 @@ void Chronos::Engine::Font::createDescriptorSets()
     }
 };
 
-Chronos::Engine::PipelineAttributes Chronos::Engine::Font::getPipelineAttributes()
+Chronos::Engine::PipelineAttributes Chronos::Engine::Text::getPipelineAttributes()
 {
     PipelineAttributes pipelineAttributes;
     pipelineAttributes.bindingDescriptions = std::vector<VkVertexInputBindingDescription> { 2 };
@@ -156,7 +158,7 @@ Chronos::Engine::PipelineAttributes Chronos::Engine::Font::getPipelineAttributes
     return pipelineAttributes;
 }
 
-void Chronos::Engine::Font::destroy()
+void Chronos::Engine::Text::destroy()
 {
     Chronos::Engine::Object::destroy();
     vkDestroyBuffer(device->device, vertexBuffer, nullptr);
@@ -167,7 +169,7 @@ void Chronos::Engine::Font::destroy()
     fontTexture.destroy();
 }
 
-void Chronos::Engine::Font::updateBuffer()
+void Chronos::Engine::Text::updateBuffer()
 {
     if (vkMapMemory(device->device, vertexBufferMemory, 0, VK_WHOLE_SIZE, 0,
             (void**)&mappedMemory)
@@ -176,8 +178,6 @@ void Chronos::Engine::Font::updateBuffer()
     }
 
     numLetters = 0;
-
-    const uint32_t firstChar = STB_FONT_consolas_24_latin1_FIRST_CHAR;
 
     assert(mappedMemory != nullptr);
 
@@ -242,7 +242,7 @@ void Chronos::Engine::Font::updateBuffer()
     mappedMemory = nullptr;
 }
 
-void Chronos::Engine::Font::clear()
+void Chronos::Engine::Text::clear()
 {
     if (vkMapMemory(device->device, vertexBufferMemory, 0, VK_WHOLE_SIZE, 0,
             (void**)&mappedMemory)
@@ -256,7 +256,7 @@ void Chronos::Engine::Font::clear()
     mappedMemory = nullptr;
 }
 
-void Chronos::Engine::Font::update(uint32_t currentFrame)
+void Chronos::Engine::Text::update(uint32_t currentFrame)
 {
     updateBuffer();
     uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x, params.y, params.rotation - 90, 1.0f, -1.0f);

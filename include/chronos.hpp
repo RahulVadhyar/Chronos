@@ -14,7 +14,7 @@
 #include "buffers.hpp"
 #include "texture.hpp"
 #include "object.hpp"
-#include "font.hpp"
+#include "text.hpp"
 #include "objectManager.hpp"
 #include "textManager.hpp"
 #include "commonStructs.hpp"

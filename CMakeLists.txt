@@ -32,8 +32,8 @@ set(IMGUI_GUIZMO ThirdParty/ImGuizmo)
 set(IMGUI_NODE_EDITOR_DIR ThirdParty/imgui-node-editor)
 
 #fonts
-set(FONTS_DIR ThirdParty/fonts/usascii/arial)
-set(FONTS_DIR ThirdParty/fonts/latin1/consolas)
+
+file(GLOB FONTS_DIR ThirdParty/fonts/latin1/*)
 
 #source files
 set(SOURCE_DIR Source/Engine/Source)

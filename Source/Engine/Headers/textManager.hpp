@@ -10,14 +10,14 @@ namespace Engine {
     /**
     \brief This is the text manager for Chronos. It handles creation, modification, updating and desrtuction of text.
     */
-    class TextManager : public Chronos::Engine::ObjectManager<Chronos::Engine::Font> {
+    class TextManager : public Chronos::Engine::ObjectManager<Chronos::Engine::Text> {
     public:
         /**
         \brief Adds a font to the text manager.
 
         @param font The font to add.
         */
-        int addFont(Chronos::Engine::Font font);
+        int addFont(Chronos::Engine::Text font, Chronos::Engine::FontTypes fontStyle);
 
         /**
         \brief Records the commands needed for rendering the text.

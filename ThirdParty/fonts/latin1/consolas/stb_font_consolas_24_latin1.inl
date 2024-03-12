@@ -60,7 +60,7 @@ static void draw_string_float(float x, float y, char *str) // draw with top-left
     glEnd();
 }
 */
-
+#pragma once
 #ifndef STB_FONTCHAR__TYPEDEF
 #define STB_FONTCHAR__TYPEDEF
 typedef struct

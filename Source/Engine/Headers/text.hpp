@@ -6,6 +6,15 @@
 #include "stb_font_consolas_24_latin1.inl"
 namespace Chronos {
 namespace Engine {
+
+    struct FontTypes{
+        uint32_t fontWidth;
+        uint32_t fontHeight;
+        void (*getFontData)(stb_fontchar *, unsigned char[][256],  int);
+        uint32_t firstChar;
+        int numChars;
+    };
+
     /**
     \brief Class for creating a font object for rendering text.
 
@@ -18,7 +27,8 @@ namespace Engine {
     This class is not meant to be directly used, but instead to be used by the ```FontManager``` class.
     That will handle the creation and destruction of the font object, along with any updates needed.
     */
-    class Font : public Chronos::Engine::Object {
+
+    class Text : public Chronos::Engine::Object {
     public:
         /**
         \brief Initializes the font object and creates the necessary objects.
@@ -31,7 +41,7 @@ namespace Engine {
 
         */
         void init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
-            VkSampler textureSampler, VkRenderPass* renderPass);
+            VkSampler textureSampler, VkRenderPass* renderPass, Chronos::Engine::FontTypes fontStyle);
 
         /**
         \brief Destroys the font object and frees the memory.
@@ -82,6 +92,26 @@ namespace Engine {
         Chronos::Engine::TextParams params;
 
     private:
+        stb_fontchar stbFontData[STB_FONT_consolas_24_latin1_NUM_CHARS];
+        /**
+        \brief Maximum number of characters that can be rendered.
+        */
+        uint32_t maxTextLength = 2048;
+        /**
+        \brief The vertex buffer memory.
+        */
+        VkDeviceMemory vertexBufferMemory;
+        /**
+        The font texture
+        */
+        Chronos::Engine::Texture fontTexture;
+
+        std::vector<Chronos::Engine::ColorBuffer> colorBuffers;
+
+        uint32_t firstChar = 'a';
+    
+        FontTypes fontStyle;
+
         /**
         \brief Creates the descriptor sets needed for rendering the text.
 
@@ -110,32 +140,15 @@ namespace Engine {
         */
         void updateBuffer();
 
-        /**
-        \brief Maximum number of characters that can be rendered.
-        */
-        uint32_t maxTextLength = 2048;
-
-        /**
-        \brief The texture atlas that contains all the characters in the font.
-        */
-        stb_fontchar stbFontData[STB_FONT_consolas_24_latin1_NUM_CHARS];
-
-        /**
-        \brief The vertex buffer memory.
-        */
-        VkDeviceMemory vertexBufferMemory;
-
-        /**
-        The font texture
-        */
-        Chronos::Engine::Texture fontTexture;
 
         /**
         The mapped memory to the vertex buffer
         */
         glm::vec4* mappedMemory;
 
-        std::vector<Chronos::Engine::ColorBuffer> colorBuffers;
+
     };
+
+    
 };
 };

@@ -9,7 +9,7 @@
 #include "objectManager.hpp"
 #include "commonStructs.hpp"
 #include "engineStructs.hpp"
-#include "font.hpp"
+#include "text.hpp"
 #include "textManager.hpp"
 
 void Chronos::Engine::TextManager::createRenderPass()
@@ -29,7 +29,7 @@ void Chronos::Engine::TextManager::createRenderPass()
 
 void Chronos::Engine::TextManager::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])
 {
-    Chronos::Engine::ObjectManager<Chronos::Engine::Font>::render(currentFrame, imageIndex, bgColor);
+    Chronos::Engine::ObjectManager<Chronos::Engine::Text>::render(currentFrame, imageIndex, bgColor);
 
     VkViewport viewport {};
     viewport.x = 0.0f;
@@ -60,13 +60,13 @@ void Chronos::Engine::TextManager::render(uint32_t currentFrame, uint32_t imageI
             vkCmdDraw(commandBuffers[currentFrame], 4, 1, j * 4, 0);
         }
     }
-    Chronos::Engine::ObjectManager<Chronos::Engine::Font>::endRender(currentFrame);
+    Chronos::Engine::ObjectManager<Chronos::Engine::Text>::endRender(currentFrame);
 }
 
-int Chronos::Engine::TextManager::addFont(Chronos::Engine::Font font)
+int Chronos::Engine::TextManager::addFont(Chronos::Engine::Text font, Chronos::Engine::FontTypes fontStyle)
 {
-    font.init(device, commandPool, swapChain, textureSampler, &renderPass);
-    return Chronos::Engine::ObjectManager<Chronos::Engine::Font>::addObject(font);
+    font.init(device, commandPool, swapChain, textureSampler, &renderPass, fontStyle);
+    return Chronos::Engine::ObjectManager<Chronos::Engine::Text>::addObject(font);
 }
 
 void Chronos::Engine::TextManager::remove(int fontNo)
@@ -74,5 +74,5 @@ void Chronos::Engine::TextManager::remove(int fontNo)
     if (objects.count(fontNo) == 0) {
         throw std::runtime_error("Font does not exist");
     }
-    Chronos::Engine::ObjectManager<Chronos::Engine::Font>::remove(fontNo);
+    Chronos::Engine::ObjectManager<Chronos::Engine::Text>::remove(fontNo);
 }
