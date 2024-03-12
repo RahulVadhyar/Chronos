@@ -5,10 +5,10 @@
 <area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="544,5,719,47"/>
 <area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826" title="This is used to initialize the buffer." alt="" coords="544,71,719,112"/>
 <area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="540,188,723,229"/>
-<area shape="rect" id="node8" href="$classChronos_1_1Engine_1_1Font.html#a13070e7a8e19d94a2889f11788214104" title="Initializes the font object and creates the necessary objects." alt="" coords="295,163,457,204"/>
+<area shape="rect" id="node8" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="295,163,457,204"/>
 <area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1UniformBuffer.html#a4c14b97754025d584f9fbf73ac26d8c2" title="Creates the buffer and maps the memory." alt="" coords="282,19,470,60"/>
 <area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1ColorBuffer.html#a315b2e206d85861cf5f6b99ac0a35aed" title=" " alt="" coords="272,84,480,125"/>
-<area shape="rect" id="node9" href="$classChronos_1_1Engine_1_1TextManager.html#a9c8b1c21c5ad43f535d18e4bf9d5489a" title="Adds a font to the text manager." alt="" coords="5,163,224,204"/>
+<area shape="rect" id="node9" href="$classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="5,163,224,204"/>
 <area shape="rect" id="node11" href="$classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e" title="Creates the color images along with the associated objects." alt="" coords="528,253,735,295"/>
 <area shape="rect" id="node12" href="$classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe" title="Initilize the swapchain." alt="" coords="273,253,479,295"/>
 </map>

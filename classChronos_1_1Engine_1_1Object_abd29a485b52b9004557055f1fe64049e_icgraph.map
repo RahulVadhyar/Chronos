@@ -1,6 +1,6 @@
 <map id="Chronos::Engine::Object::createDescriptorSetLayout" name="Chronos::Engine::Object::createDescriptorSetLayout">
 <area shape="rect" id="node1" title="Creates the Vulkan descriptor set layout for the object." alt="" coords="708,5,911,47"/>
 <area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e" title="Initializes the object." alt="" coords="483,5,660,47"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Font.html#a13070e7a8e19d94a2889f11788214104" title="Initializes the font object and creates the necessary objects." alt="" coords="272,5,435,47"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1TextManager.html#a9c8b1c21c5ad43f535d18e4bf9d5489a" title="Adds a font to the text manager." alt="" coords="5,5,224,47"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="272,5,435,47"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="5,5,224,47"/>
 </map>

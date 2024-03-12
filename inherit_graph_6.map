@@ -1,4 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classChronos_1_1Engine_1_1ObjectManager.html" title=" " alt="" coords="5,5,240,47"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1TextManager.html" title="This is the text manager for Chronos. It handles creation, modification, updating and desrtuction of ..." alt="" coords="288,13,507,39"/>
+<area shape="rect" id="node1" href="$classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects." alt="" coords="5,75,183,102"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Shape.html" title="Class for creating a shape(triangle, rectangle, etc.)." alt="" coords="231,39,405,80"/>
+<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1Text.html" title="Class for creating a font object for rendering text." alt="" coords="237,105,399,131"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Rectangle.html" title="Class for creating a rectangle." alt="" coords="453,5,653,47"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Triangle.html" title="Class for creating a triangle." alt="" coords="460,71,647,112"/>
 </map>

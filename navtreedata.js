@@ -81,7 +81,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Examples.html",
-"editorRenderer_8hpp.html"
+"editorRenderer_8cpp.html",
+"vulkanHeaders_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

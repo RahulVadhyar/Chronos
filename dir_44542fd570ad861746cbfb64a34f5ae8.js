@@ -16,10 +16,9 @@ var dir_44542fd570ad861746cbfb64a34f5ae8 =
       [ "UniformBufferObject", "structChronos_1_1Engine_1_1UniformBufferObject.html", "structChronos_1_1Engine_1_1UniformBufferObject" ],
       [ "UniformColorBufferObject", "structChronos_1_1Engine_1_1UniformColorBufferObject.html", "structChronos_1_1Engine_1_1UniformColorBufferObject" ]
     ] ],
-    [ "font.hpp", "font_8hpp.html", [
-      [ "Font", "classChronos_1_1Engine_1_1Font.html", "classChronos_1_1Engine_1_1Font" ]
-    ] ],
+    [ "fontTypes.hpp", "fontTypes_8hpp.html", "fontTypes_8hpp" ],
     [ "helper.hpp", "helper_8hpp.html", "helper_8hpp" ],
+    [ "multiFontInclude.hpp", "multiFontInclude_8hpp.html", null ],
     [ "object.hpp", "object_8hpp.html", [
       [ "PipelineAttributes", "structChronos_1_1Engine_1_1PipelineAttributes.html", "structChronos_1_1Engine_1_1PipelineAttributes" ],
       [ "Object", "classChronos_1_1Engine_1_1Object.html", "classChronos_1_1Engine_1_1Object" ]
@@ -30,6 +29,10 @@ var dir_44542fd570ad861746cbfb64a34f5ae8 =
       [ "ShapeManager", "classChronos_1_1Engine_1_1ShapeManager.html", "classChronos_1_1Engine_1_1ShapeManager" ]
     ] ],
     [ "swapchain.hpp", "swapchain_8hpp.html", "swapchain_8hpp" ],
+    [ "text.hpp", "text_8hpp.html", [
+      [ "FontTypes", "structChronos_1_1Engine_1_1FontTypes.html", "structChronos_1_1Engine_1_1FontTypes" ],
+      [ "Text", "classChronos_1_1Engine_1_1Text.html", "classChronos_1_1Engine_1_1Text" ]
+    ] ],
     [ "textManager.hpp", "textManager_8hpp.html", [
       [ "TextManager", "classChronos_1_1Engine_1_1TextManager.html", "classChronos_1_1Engine_1_1TextManager" ]
     ] ],

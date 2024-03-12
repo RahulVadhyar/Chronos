@@ -11,7 +11,7 @@
 <area shape="rect" id="node31" href="$buffers_8hpp.html" title="Contains the Buffer and UniformBuffer class." alt="" coords="3039,177,3133,203"/>
 <area shape="rect" id="node32" href="$texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="2511,95,2608,121"/>
 <area shape="rect" id="node33" href="$object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="2633,95,2723,121"/>
-<area shape="rect" id="node34" href="$font_8hpp.html" title="Contains the class for creating a font object for rendering text." alt="" coords="2411,95,2487,121"/>
+<area shape="rect" id="node34" href="$text_8hpp.html" title=" " alt="" coords="2411,95,2487,121"/>
 <area shape="rect" id="node36" href="$objectManager_8hpp.html" title="Defines the ObjectManager class for managing objects in the Chronos::Engine namespace." alt="" coords="2747,95,2894,121"/>
 <area shape="rect" id="node38" href="$textManager_8hpp.html" title="Contains the class for managing text in the Chronos::Engine namespace." alt="" coords="2969,95,3101,121"/>
 <area shape="rect" id="node39" href="$commonStructs_8hpp.html" title=" " alt="" coords="3126,95,3278,121"/>
