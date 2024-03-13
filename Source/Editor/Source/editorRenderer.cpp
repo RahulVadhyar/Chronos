@@ -28,6 +28,8 @@ void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFW
     ImGuiIO& io = ImGui::GetIO();
     (void)io;
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+    io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+    io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 
     ImGui::StyleColorsDark();
 
@@ -143,6 +145,13 @@ void Chronos::Editor::EditorRenderer::recreate()
 {
     cleanup();
     framebuffers = Chronos::Engine::createFramebuffer(*device, *swapChain, renderPass, false);
+}
+
+void Chronos::Editor::EditorRenderer::renderAdditionalViewports(){
+if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_ViewportsEnable){
+    ImGui::UpdatePlatformWindows();
+    ImGui::RenderPlatformWindowsDefault();
+}
 }
 
 #endif

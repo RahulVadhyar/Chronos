@@ -23,6 +23,7 @@ namespace Editor {
         void recreate(); // destroy framebuffer
         void changeMsaa(); // destroy renderpass
         void cleanup();
+        void renderAdditionalViewports();
     };
 }; // namespace Editor
 }; // namespace Chronos

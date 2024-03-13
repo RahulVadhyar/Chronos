@@ -212,6 +212,9 @@ void Chronos::Engine::Engine::drawFrame()
 
     // update the current frame
     currentFrame = (currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
+#ifdef ENABLE_EDITOR
+    gui.renderAdditionalViewports();
+#endif
 }
 
 void Chronos::Engine::Engine::createInstance()
