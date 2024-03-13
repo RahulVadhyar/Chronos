@@ -186,6 +186,9 @@ void Chronos::Engine::Engine::drawFrame()
         throw std::runtime_error("failed to submit draw command buffer!");
     }
 
+#ifdef ENABLE_EDITOR
+    gui.renderAdditionalViewports();
+#endif
     // present the image
     VkPresentInfoKHR presentInfo {};
     presentInfo.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
@@ -212,9 +215,6 @@ void Chronos::Engine::Engine::drawFrame()
 
     // update the current frame
     currentFrame = (currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
-#ifdef ENABLE_EDITOR
-    gui.renderAdditionalViewports();
-#endif
 }
 
 void Chronos::Engine::Engine::createInstance()
