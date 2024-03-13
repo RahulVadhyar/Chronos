@@ -63,6 +63,7 @@ void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFW
     init_info.Allocator = nullptr;
     init_info.MinImageCount = MAX_FRAMES_IN_FLIGHT;
     init_info.ImageCount = MAX_FRAMES_IN_FLIGHT;
+    init_info.MSAASamples = VK_SAMPLE_COUNT_1_BIT;
     init_info.CheckVkResultFn = nullptr; // add a fucntion to this
     ImGui_ImplVulkan_Init(&init_info);
 
