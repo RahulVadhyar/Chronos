@@ -3,13 +3,23 @@ project(Chronos)
 set(CMAKE_CXX_STANDARD 20)
 # set(CMAKE_BUILD_TYPE Debug)
 
+if(UNIX)
+option(CHRONOS_SUPPORT_WAYLAND "Build with Wayland support" ON)
+endif()
+
+option(CHRONOS_BUILD_TESTS "Build the tests" OFF)
+option(CHRONOS_BUILD_EDITOR "Build the editor" OFF)
+
+if(CHRONOS_SUPPORT_WAYLAND)
 set(GLFW_BUILD_WAYLAND ON)
+endif()
 set(X11_X11_LIB who_cares)
 set(GLFW_BUILD_EXAMPLES OFF)
 set(GLFW_BUILD_TESTS OFF)
 set(GLFW_BUILD_DOCS OFF)
 set(GLFW_INSTALL OFF)
 set(GLFW_VULKAN_STATIC ON)
+
 #GLFW
 add_subdirectory(ThirdParty/glfw)
 set(GLFW_DIR ThirdParty/glfw/include)
@@ -21,56 +31,29 @@ if (WIN32)
     set(VULKAN_SDK_INCLUDE ${VULKAN_SDK_DIR}/Include) 
 endif (WIN32)
 
-#imgui
-set(IMGUI_DIR ThirdParty/imgui) 
-set(IMGUI_BACKENDS ${IMGUI_DIR}/backends)
-
-#imGuizmo
-set(IMGUI_GUIZMO ThirdParty/ImGuizmo)
-
-#imgui-node-editor
-set(IMGUI_NODE_EDITOR_DIR ThirdParty/imgui-node-editor)
-
-#fonts
-
-file(GLOB FONTS_DIR ThirdParty/fonts/latin1/*)
-
 #source files
 set(SOURCE_DIR Source/Engine/Source)
 set(API_DIR Source/API/Source)
-set(EDITOR_DIR Source/Editor/Source)
 set(ANIMATION_DIR Source/Animation/Source)
 file(GLOB MAIN ${SOURCE_DIR}/*.cpp)
 file(GLOB API ${API_DIR}/*.cpp)
-file(GLOB EDITOR ${EDITOR_DIR}/*.cpp)
 file(GLOB ANIMATION ${ANIMATION_DIR}/*.cpp)
-file(GLOB IMGUI ${IMGUI_DIR}/*.cpp)
-file(GLOB IM_GUIZMO_CPP ${IMGUI_GUIZMO}/*.cpp)
-file(GLOB IMGUI_NODE_EDITOR_CPP ${IMGUI_NODE_EDITOR_DIR}/*.cpp)
+file(GLOB FONTS_DIR ThirdParty/fonts/latin1/*)
 
 #get all the cpp files
-file(GLOB CHRONOS_CPP ${MAIN} ${API} ${IMGUI} ${EDITOR} ${ANIMATION}
-${IMGUI_BACKENDS}/imgui_impl_glfw.cpp 
-${IMGUI_BACKENDS}/imgui_impl_vulkan.cpp
-${IM_GUIZMO_CPP}
-${IMGUI_NODE_EDITOR_CPP})
+file(GLOB CHRONOS_CPP ${MAIN} ${API}  ${ANIMATION})
 
 #create a fucntion to include all the directories, also link vulkan and glfw
 function(IncludeDirectories projectName)
     target_include_directories(${projectName} PUBLIC Source/Engine/Headers)
     target_include_directories(${projectName} PUBLIC Source/Engine/Templates)
     target_include_directories(${projectName} PUBLIC Source/API/Headers)
-    target_include_directories(${projectName} PUBLIC Source/Editor/Headers)
     target_include_directories(${projectName} PUBLIC Source/Animation/Headers)
     target_include_directories(${projectName} PUBLIC Source/Common)
     target_include_directories(${projectName} PUBLIC ThirdParty/stb)
     target_include_directories(${projectName} PUBLIC include)
-    target_include_directories(${projectName} PUBLIC ${GLFW_DIR})  
-    target_include_directories(${projectName} PUBLIC ${IMGUI_DIR})               
-    target_include_directories(${projectName} PUBLIC ${IMGUI_BACKENDS})
     target_include_directories(${projectName} PUBLIC ${FONTS_DIR})
-    target_include_directories(${projectName} PUBLIC ${IMGUI_GUIZMO})    
-    target_include_directories(${projectName} PUBLIC ${IMGUI_NODE_EDITOR_DIR})
+    target_include_directories(${projectName} PUBLIC ${GLFW_DIR})  
     
     if(WIN32)
         target_link_libraries(${projectName} vulkan-1) 
@@ -80,31 +63,63 @@ function(IncludeDirectories projectName)
     endif(UNIX)
     target_link_libraries(${projectName} glfw)
 
-    
 endfunction()
 
-
-
 #build the executable
-#again windows vulkan stuf....git 
-if(WIN32)
-    target_link_directories(${CMAKE_PROJECT_NAME} PUBLIC ${VULKAN_SDK_LIB})
-endif(WIN32)
-
 # linking
 add_library(Chronos STATIC ${CHRONOS_CPP})
+target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC ENABLE_VULKAN_VALIDATION_LAYERS)
+IncludeDirectories(${PROJECT_NAME})
 
 #vulkan sdk if using windows
 if(WIN32)
-    target_include_directories(${PROJECT_NAME} PUBLIC ${VULKAN_SDK_INCLUDE})     
+    target_include_directories(${PROJECT_NAME} PUBLIC ${VULKAN_SDK_INCLUDE})    
+    target_link_directories(${CMAKE_PROJECT_NAME} PUBLIC ${VULKAN_SDK_LIB}) 
 endif(WIN32) 
 
-target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC ENABLE_EDITOR)
-target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC ENABLE_VULKAN_VALIDATION_LAYERS)
+#editor executable
+if(CHRONOS_BUILD_EDITOR)
+set(EDITOR_DIR Source/Editor/Source)
+set(IMGUI_DIR ThirdParty/imgui) 
+set(IMGUI_BACKENDS ${IMGUI_DIR}/backends)
+set(IMGUI_GUIZMO ThirdParty/ImGuizmo)
+set(IMGUI_NODE_EDITOR_DIR ThirdParty/imgui-node-editor)
+
+file(GLOB EDITOR ${EDITOR_DIR}/*.cpp)
+file(GLOB IMGUI ${IMGUI_DIR}/*.cpp)
+file(GLOB IM_GUIZMO_CPP ${IMGUI_GUIZMO}/*.cpp)
+file(GLOB IMGUI_NODE_EDITOR_CPP ${IMGUI_NODE_EDITOR_DIR}/*.cpp)
+file(GLOB EDITOR_FILES 
+${EDITOR} 
+${IMGUI} 
+${IMGUI_BACKENDS}/imgui_impl_glfw.cpp 
+${IMGUI_BACKENDS}/imgui_impl_vulkan.cpp
+${IM_GUIZMO_CPP}
+${IMGUI_NODE_EDITOR_CPP})
+
+# linking
+add_executable(ChronosEditor ${CHRONOS_CPP} ${EDITOR_FILES})
+
+#vulkan sdk if using windows
+if(WIN32)
+    target_include_directories(ChronosEditor PUBLIC ${VULKAN_SDK_INCLUDE})     
+    target_link_directories(ChronosEditor PUBLIC ${VULKAN_SDK_LIB})
+endif(WIN32) 
+
+target_compile_definitions(ChronosEditor PUBLIC ENABLE_EDITOR)
+target_compile_definitions(ChronosEditor PUBLIC ENABLE_VULKAN_VALIDATION_LAYERS)
+
 #header files
-IncludeDirectories(${PROJECT_NAME})
+target_include_directories(ChronosEditor PUBLIC Source/Editor/Headers)
+target_include_directories(ChronosEditor PUBLIC ${IMGUI_DIR})               
+target_include_directories(ChronosEditor PUBLIC ${IMGUI_BACKENDS})
+target_include_directories(ChronosEditor PUBLIC ${IMGUI_GUIZMO})    
+target_include_directories(ChronosEditor PUBLIC ${IMGUI_NODE_EDITOR_DIR})
+IncludeDirectories(ChronosEditor)
+endif()
 
 #testing time...
+if(CHRONOS_BUILD_TESTS)
 #fetch the test files
 file(GLOB ENGINE_TESTS 
 Source/Engine/Tests/*.cpp)
@@ -137,3 +152,4 @@ IncludeDirectories(ChronosTests)
 
 include(GoogleTest)
 gtest_discover_tests(ChronosTests)
+endif()
