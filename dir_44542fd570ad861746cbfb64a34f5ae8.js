@@ -37,6 +37,9 @@ var dir_44542fd570ad861746cbfb64a34f5ae8 =
       [ "TextManager", "classChronos_1_1Engine_1_1TextManager.html", "classChronos_1_1Engine_1_1TextManager" ]
     ] ],
     [ "texture.hpp", "texture_8hpp.html", "texture_8hpp" ],
+    [ "textureManager.hpp", "textureManager_8hpp.html", [
+      [ "TextureManager", "classChronos_1_1Engine_1_1TextureManager.html", "classChronos_1_1Engine_1_1TextureManager" ]
+    ] ],
     [ "validation.hpp", "validation_8hpp.html", "validation_8hpp" ],
     [ "Vertex.hpp", "Vertex_8hpp.html", [
       [ "ColorVertex", "structChronos_1_1Engine_1_1ColorVertex.html", "structChronos_1_1Engine_1_1ColorVertex" ],

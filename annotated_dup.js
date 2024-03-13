@@ -27,6 +27,7 @@ var annotated_dup =
         [ "Text", "classChronos_1_1Engine_1_1Text.html", "classChronos_1_1Engine_1_1Text" ],
         [ "TextManager", "classChronos_1_1Engine_1_1TextManager.html", "classChronos_1_1Engine_1_1TextManager" ],
         [ "Texture", "classChronos_1_1Engine_1_1Texture.html", "classChronos_1_1Engine_1_1Texture" ],
+        [ "TextureManager", "classChronos_1_1Engine_1_1TextureManager.html", "classChronos_1_1Engine_1_1TextureManager" ],
         [ "ColorVertex", "structChronos_1_1Engine_1_1ColorVertex.html", "structChronos_1_1Engine_1_1ColorVertex" ],
         [ "TexturedVertex", "structChronos_1_1Engine_1_1TexturedVertex.html", "structChronos_1_1Engine_1_1TexturedVertex" ]
       ] ],

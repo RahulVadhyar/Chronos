@@ -29,6 +29,7 @@ var classChronos_1_1Engine_1_1Engine =
     [ "surface", "classChronos_1_1Engine_1_1Engine.html#ae12d40d93a89fb61496d452203fb0a9c", null ],
     [ "swapChain", "classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a", null ],
     [ "textManager", "classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8", null ],
+    [ "textureManager", "classChronos_1_1Engine_1_1Engine.html#aa3cedc1828056f8515feef8ca0af12dd", null ],
     [ "width", "classChronos_1_1Engine_1_1Engine.html#ae79484eb3130b4251c2fc43179fac68c", null ],
     [ "window", "classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642", null ]
 ];

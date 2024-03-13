@@ -1,5 +1,6 @@
 var structChronos_1_1Manager_1_1ShapeParams =
 [
+    [ "color", "structChronos_1_1Manager_1_1ShapeParams.html#a7914ab240782e411df44a93ba7110a42", null ],
     [ "rotation", "structChronos_1_1Manager_1_1ShapeParams.html#a436f2ec9fd7dd6c7f535965c6f3fa6b1", null ],
     [ "show", "structChronos_1_1Manager_1_1ShapeParams.html#ae874e3107cc5da80895ea6a3840756ef", null ],
     [ "x", "structChronos_1_1Manager_1_1ShapeParams.html#ac19f647202f97d09446a1f0aaba3f57e", null ],

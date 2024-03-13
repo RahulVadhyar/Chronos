@@ -38,6 +38,7 @@ var hierarchy =
     [ "Chronos::Engine::TextParams", "structChronos_1_1Engine_1_1TextParams.html", null ],
     [ "Chronos::Engine::Texture", "classChronos_1_1Engine_1_1Texture.html", null ],
     [ "Chronos::Engine::TexturedVertex", "structChronos_1_1Engine_1_1TexturedVertex.html", null ],
+    [ "Chronos::Engine::TextureManager", "classChronos_1_1Engine_1_1TextureManager.html", null ],
     [ "Chronos::Engine::UniformBufferObject", "structChronos_1_1Engine_1_1UniformBufferObject.html", null ],
     [ "Chronos::Engine::UniformColorBufferObject", "structChronos_1_1Engine_1_1UniformColorBufferObject.html", null ]
 ];

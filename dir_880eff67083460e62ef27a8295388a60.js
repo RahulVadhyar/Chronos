@@ -9,5 +9,6 @@ var dir_880eff67083460e62ef27a8295388a60 =
     [ "text.cpp", "text_8cpp.html", null ],
     [ "textManager.cpp", "textManager_8cpp.html", null ],
     [ "texture.cpp", "texture_8cpp.html", "texture_8cpp" ],
+    [ "textureManager.cpp", "textureManager_8cpp.html", null ],
     [ "validation.cpp", "validation_8cpp.html", null ]
 ];
