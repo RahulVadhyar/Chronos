@@ -41,48 +41,46 @@ void Chronos::Engine::ShapeManager<VertexStruct>::render(uint32_t currentFrame, 
 
 template <Chronos::Engine::VertexLike VertexStruct>
 int Chronos::Engine::ShapeManager<VertexStruct>::addRectangle(Chronos::Manager::ShapeParams shapeParams,
-    std::string texturePath)
+    Chronos::Engine::Texture texture)
     requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     int shapeNo = Chronos::Engine::ObjectManager<Chronos::Engine::Shape<VertexStruct>>::addObject(Rectangle<Chronos::Engine::TexturedVertex>());
     Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].init(Chronos::Engine::ShapeManager<VertexStruct>::device, Chronos::Engine::ShapeManager<VertexStruct>::commandPool, Chronos::Engine::ShapeManager<VertexStruct>::swapChain, Chronos::Engine::ShapeManager<VertexStruct>::textureSampler,
-        texturePath, &(Chronos::Engine::ShapeManager<VertexStruct>::renderPass));
+        texture, &(Chronos::Engine::ShapeManager<VertexStruct>::renderPass));
     Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].params = shapeParams;
     return shapeNo;
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
-int Chronos::Engine::ShapeManager<VertexStruct>::addRectangle(Chronos::Manager::ShapeParams shapeParams,
-    std::array<float, 3> color)
+int Chronos::Engine::ShapeManager<VertexStruct>::addRectangle(Chronos::Manager::ShapeParams shapeParams)
     requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
 {
     int shapeNo = Chronos::Engine::ObjectManager<Chronos::Engine::Shape<VertexStruct>>::addObject(Rectangle<Chronos::Engine::ColorVertex>());
-    Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].init(Chronos::Engine::ShapeManager<VertexStruct>::device, Chronos::Engine::ShapeManager<VertexStruct>::commandPool, Chronos::Engine::ShapeManager<VertexStruct>::swapChain, Chronos::Engine::ShapeManager<VertexStruct>::textureSampler, color,
-        &(Chronos::Engine::ShapeManager<VertexStruct>::renderPass));
+    Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].init(Chronos::Engine::ShapeManager<VertexStruct>::device, Chronos::Engine::ShapeManager<VertexStruct>::commandPool, Chronos::Engine::ShapeManager<VertexStruct>::swapChain, &(Chronos::Engine::ShapeManager<VertexStruct>::renderPass),
+    Chronos::Engine::ShapeManager<VertexStruct>::textureSampler);
     Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].params = shapeParams;
     return shapeNo;
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
 int Chronos::Engine::ShapeManager<VertexStruct>::addTriangle(Chronos::Manager::ShapeParams shapeParams,
-    std::string texturePath)
+    Chronos::Engine::Texture texture)
     requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     int shapeNo = Chronos::Engine::ObjectManager<Chronos::Engine::Shape<VertexStruct>>::addObject(Triangle<Chronos::Engine::TexturedVertex>());
     Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].init(Chronos::Engine::ShapeManager<VertexStruct>::device, Chronos::Engine::ShapeManager<VertexStruct>::commandPool, Chronos::Engine::ShapeManager<VertexStruct>::swapChain, Chronos::Engine::ShapeManager<VertexStruct>::textureSampler,
-        texturePath, &(Chronos::Engine::ShapeManager<VertexStruct>::renderPass));
+        texture, &(Chronos::Engine::ShapeManager<VertexStruct>::renderPass));
     Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].params = shapeParams;
     return shapeNo;
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
-int Chronos::Engine::ShapeManager<VertexStruct>::addTriangle(Chronos::Manager::ShapeParams shapeParams,
-    std::array<float, 3> color)
+int Chronos::Engine::ShapeManager<VertexStruct>::addTriangle(Chronos::Manager::ShapeParams shapeParams)
     requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
 {
     int shapeNo = Chronos::Engine::ObjectManager<Chronos::Engine::Shape<VertexStruct>>::addObject(Triangle<Chronos::Engine::ColorVertex>());
-    Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].init(Chronos::Engine::ShapeManager<VertexStruct>::device, Chronos::Engine::ShapeManager<VertexStruct>::commandPool, Chronos::Engine::ShapeManager<VertexStruct>::swapChain, Chronos::Engine::ShapeManager<VertexStruct>::textureSampler, color,
-        &(Chronos::Engine::ShapeManager<VertexStruct>::renderPass));
+    Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].init(Chronos::Engine::ShapeManager<VertexStruct>::device, Chronos::Engine::ShapeManager<VertexStruct>::commandPool, Chronos::Engine::ShapeManager<VertexStruct>::swapChain, &(Chronos::Engine::ShapeManager<VertexStruct>::renderPass),
+    Chronos::Engine::ShapeManager<VertexStruct>::textureSampler);
     Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].params = shapeParams;
     return shapeNo;
 }

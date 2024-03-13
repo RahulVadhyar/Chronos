@@ -70,6 +70,7 @@ void Chronos::Engine::Engine::initVulkan()
 
     swapChain.init(&device, surface, window);
     commandPool = createCommandPool(device, swapChain.surface);
+    textureManager.init(&device, commandPool);
     shapeManager.init(&device, &swapChain, commandPool);
     colorShapeManager.init(&device, &swapChain, commandPool);
     // textManager.init(&device, commandPool, &swapChain);
@@ -85,10 +86,10 @@ void Chronos::Engine::Engine::cleanup()
 {
     // after we are done, we need to cleanup all the resources we created
     swapChain.cleanup();
-
     shapeManager.destroy();
     colorShapeManager.destroy();
     textManager.destroy();
+    textureManager.destroy();
 #ifdef ENABLE_EDITOR
     gui.destroy();
 #endif

@@ -36,9 +36,9 @@ namespace Engine {
         Supported textures are .jpg and .png
         Returns a shapeNo that references the shape for modifying and destroying t.
         */
-        int addTriangle(Chronos::Manager::ShapeParams shapeParams, std::string texturePath)
+        int addTriangle(Chronos::Manager::ShapeParams shapeParams, Chronos::Engine::Texture texture)
             requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
-        int addTriangle(Chronos::Manager::ShapeParams shapeParams, std::array<float, 3> color)
+        int addTriangle(Chronos::Manager::ShapeParams shapeParams)
             requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value);
 
         /**
@@ -48,9 +48,9 @@ namespace Engine {
         Supported textures are .jpg and .png
         Returns a shapeNo that references the shape for modifying and destroying t.
         */
-        int addRectangle(Chronos::Manager::ShapeParams shapeParams, std::string texturePath)
+        int addRectangle(Chronos::Manager::ShapeParams shapeParams, Chronos::Engine::Texture texture)
             requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
-        int addRectangle(Chronos::Manager::ShapeParams shapeParams, std::array<float, 3> color)
+        int addRectangle(Chronos::Manager::ShapeParams shapeParams)
             requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value);
 
         /**

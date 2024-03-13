@@ -13,6 +13,7 @@
 #include "helper.hpp"
 #include "buffers.hpp"
 #include "texture.hpp"
+#include "textureManager.hpp"
 #include "object.hpp"
 #include "text.hpp"
 #include "objectManager.hpp"
@@ -135,8 +136,8 @@ namespace Manager {
 
         @return Returns the shapeNo that can be used for referencing this shape later.
         */
-        int addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType, std::string texturePath);
-        int addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType, std::array<float, 3> color);
+        int addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType, int texture);
+        int addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType);
 
 
         /**
@@ -150,6 +151,8 @@ namespace Manager {
         @param shapeParams The updated shape parameters to update the shape with.
         */
         void updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams);
+
+        void updateText(int textNo, Chronos::Engine::TextParams params);
 
         /**
         \brief Removes the polygon from the window
@@ -178,15 +181,8 @@ namespace Manager {
         */
         int changeBackgroundColor(float r, float g, float b);
 
-        // animation part
-        //  int createAnimObject(int shapeNo);
-        //  void deleteAnimObject(int animObjNo);
-        //  void makeAnimObjectChild(int parentAnimObjNo, int childAnimObjNo);
-        //  void removeAnimObjectChild(int parentAnimObjNo, int childAnimObjNo);
-        //  int addAnimation(AnimObjNo, std::string animationFile);
-        //  void startAnimation(AnimObjNo, AnimNo);
-        //  void stopAnimation(AnimObjNo, AnimNo);
-        //  void deleteAnimation(AnimObjNo, AnimNo);
+        int addTexture(std::string texturePath);
+        void removeTexture(int textureNo);
 
     private:
         int nextFreeAnimObjNo = 0;

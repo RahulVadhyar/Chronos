@@ -3,8 +3,6 @@
  \brief Contains the class for creating a shape.
 */
 #pragma once
-
-#include "buffers.hpp"
 struct Empty {
     Empty() = default;
 };
@@ -42,14 +40,13 @@ namespace Engine {
         @param texturePath The path to the texture(png and jpg supported)
         */
         void init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
-            VkSampler textureSampler, std::string texturePath,
+            VkSampler textureSampler, Chronos::Engine::Texture texture,
             VkRenderPass* renderPass)
             requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
 
         void init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
-            VkSampler textureSampler,
-            std::array<float, 3> color,
-            VkRenderPass* renderPass)
+            VkRenderPass* renderPass,
+            VkSampler textureSampler)
             requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value);
 
         /**

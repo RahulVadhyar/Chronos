@@ -1,13 +1,14 @@
 #pragma once
+#include "Vertex.hpp"
 template <Chronos::Engine::VertexLike VertexStruct>
 void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     SwapChain* swapChain, VkSampler textureSampler,
-    std::string texturePath, VkRenderPass* renderPass)
+    Chronos::Engine::Texture texture, VkRenderPass* renderPass)
     requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
     this->vertexShaderPath = SPIV_SHADER_PATH"/textureVert.spv";
     this->fragmentShaderPath = SPIV_SHADER_PATH"/textureFrag.spv";
-    texture.create(*device, commandPool, texturePath);
+    this->texture = texture;
 
     Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
 
@@ -26,13 +27,11 @@ void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device,
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
-void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain, VkSampler textureSampler,
-    std::array<float, 3> color,
-    VkRenderPass* renderPass)
+void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
+    VkRenderPass* renderPass,  VkSampler textureSampler)
     requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
 {
 
-    // throw std::runtime_error("ColorVertex not supported yet");
     this->vertexShaderPath = SPIV_SHADER_PATH"/colorVert.spv";
     this->fragmentShaderPath = SPIV_SHADER_PATH"/colorFrag.spv";
 
@@ -61,7 +60,6 @@ template <Chronos::Engine::VertexLike VertexStruct>
 void Chronos::Engine::Shape<VertexStruct>::tempDestroy()
     requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
-    texture.destroy();
     vertexBuffer.destroy();
     indexBuffer.destroy();
     Chronos::Engine::Object::destroy();
@@ -200,7 +198,7 @@ void Chronos::Engine::Shape<VertexStruct>::tempUpdate(uint32_t currentFrame)
     uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x,
         params.y, params.rotation, params.xSize,
         params.ySize);
-    colorBuffers[currentFrame].update({ 1.0, 0.0, 0.0 });
+    colorBuffers[currentFrame].update({ params.color[0], params.color[1], params.color[2] });
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>

@@ -2,6 +2,7 @@
 // #include "text.hpp"
 #include "object.hpp"
 #include "fontTypes.hpp"
+#include <string>
 
 namespace Chronos {
 GLFWwindow* Manager::Manager::getWindow()
@@ -39,38 +40,66 @@ int Manager::Manager::changeBackgroundColor(float r, float g, float b)
     return 0;
 }
 
-int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, Chronos::Manager::PolygonType polygonType, std::string texturePath)
-{
+int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, Chronos::Manager::PolygonType polygonType, int texture)
+{   
+    int shapeNo;
     if (polygonType.triangle) {
-        return engine.shapeManager.addTriangle(shapeParams, texturePath);
+        shapeNo = engine.shapeManager.addTriangle(shapeParams, engine.textureManager.getTexture(texture));
     } else if (polygonType.rectangle) {
-        return engine.shapeManager.addRectangle(shapeParams, texturePath);
+        shapeNo =  engine.shapeManager.addRectangle(shapeParams, engine.textureManager.getTexture(texture));
     } else {
         throw std::runtime_error("Polygon type not supported");
     }
+    shapeNo = std::stoi("1" + std::to_string(shapeNo));
+    return shapeNo;
 }
 
-int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType, std::array<float, 3> color)
-{
+int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType)
+{   
+    int shapeNo;
     if (polygonType.triangle) {
-        return engine.colorShapeManager.addTriangle(shapeParams, color);
+        shapeNo = engine.colorShapeManager.addTriangle(shapeParams);
     } else if (polygonType.rectangle) {
-        return engine.colorShapeManager.addRectangle(shapeParams, color);
+        shapeNo = engine.colorShapeManager.addRectangle(shapeParams);
     } else {
         throw std::runtime_error("Polygon type not supported");
     }
+    shapeNo = std::stoi("2" + std::to_string(shapeNo));
+
+    return shapeNo;
 }
 void Manager::Manager::updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams)
-{
-    if (engine.shapeManager.objects.count(shapeNo) == 0) {
+{   
+    if (std::to_string(shapeNo).substr(0, 1) == "1") {
+        int actualShapeNo = shapeNo - 1*(10*(std::to_string(shapeNo).size() - 1));
+        if (engine.shapeManager.objects.count(actualShapeNo) == 0) {
+            throw std::runtime_error("Shape does not exist");
+        }
+        engine.shapeManager.objects[actualShapeNo].params = shapeParams;
+    } else if (std::to_string(shapeNo).substr(0, 1) == "2") {
+        int actualShapeNo = shapeNo - 2*(10*(std::to_string(shapeNo).size() - 1));
+        if (engine.colorShapeManager.objects.count(actualShapeNo) == 0) {
+            throw std::runtime_error("Shape does not exist");
+        }
+        engine.colorShapeManager.objects[actualShapeNo].params = shapeParams;
+    } else {
         throw std::runtime_error("Shape does not exist");
     }
-    engine.shapeManager.objects[shapeNo].params = shapeParams;
 }
 void Manager::Manager::removePolygon(int shapeNo)
-{
-    if (engine.shapeManager.objects.count(shapeNo) > 0) {
-        engine.shapeManager.remove(shapeNo);
+{   
+    if (std::to_string(shapeNo).substr(0, 1) == "1") {
+        int actualShapeNo = shapeNo - 1*(10*(std::to_string(shapeNo).size() - 1));
+        if (engine.shapeManager.objects.count(actualShapeNo) == 0) {
+            throw std::runtime_error("Shape does not exist");
+        }
+        engine.shapeManager.remove(actualShapeNo);
+    } else if (std::to_string(shapeNo).substr(0, 1) == "2") {
+        int actualShapeNo = shapeNo - 2*(10*(std::to_string(shapeNo).size() - 1));
+        if (engine.colorShapeManager.objects.count(actualShapeNo) == 0) {
+            throw std::runtime_error("Shape does not exist");
+        }
+        engine.colorShapeManager.remove(actualShapeNo);
     } else {
         throw std::runtime_error("Shape does not exist");
     }
@@ -87,55 +116,30 @@ int Manager::Manager::addText(Chronos::Engine::TextParams params)
     return engine.textManager.addFont(font, fontStyle);
 }
 
+void Manager::Manager::updateText(int textNo, Chronos::Engine::TextParams params)
+{   
+    if (params.text == "") {
+        throw std::runtime_error("Text cannot be empty");
+    }
+    if(engine.textManager.objects.count(textNo) == 0) {
+        throw std::runtime_error("Text does not exist");
+    }
+    engine.textManager.objects[textNo].params = params;
+}
+
 void Manager::Manager::removeText(int textNo)
 {
 
     engine.textManager.remove(textNo);
 }
 
-// int Manager::Manager::createAnimObject(int shapeNo){
-//     if(engine.shapeManager.objects.count(shapeNo) == 0){
-//         throw std::runtime_error("Shape does not exist");
-//     }
-//     int animObjNo = nextFreeAnimObjNo;
-//     nextFreeAnimObjNo++;
-//     Shape* shape = &engine.shapeManager.objects[shapeNo];
-//     Chronos::Animation::AnimObject animObject(shapeNo, animObjNo, shape);
-//     animObject.animObjNo = animObjNo;
-//     animObjects[animObjNo] = animObject;
-//     return animObjNo;
-// }
-
-// void Manager::Manager::deleteAnimObject(int animObjNo){
-//     if(animObjects.count(animObjNo) == 0){
-//         throw std::runtime_error("AnimObject does not exist");
-//     }
-//     //TODO: remove the animObject from its parent's children
-//     animObjects.erase(animObjNo);
-// }
-
-// void Manager::Manager::makeAnimObjectChild(int parentAnimObjNo, int childAnimObjNo){
-//     if(animObjects.count(parentAnimObjNo) == 0){
-//         throw std::runtime_error("Parent AnimObject does not exist");
-//     }
-//     if(animObjects.count(childAnimObjNo) == 0){
-//         throw std::runtime_error("Child AnimObject does not exist");
-//     }
-//     Chronos::Animation::AnimObject* parent = &animObjects[parentAnimObjNo];
-//     Chronos::Animation::AnimObject* child = &animObjects[childAnimObjNo];
-//     parent->addChild(child);
-// }
-
-// void Manager::Manager::removeAnimObjectChild(int parentAnimObjNo, int childAnimObjNo){
-//     if(animObjects.count(parentAnimObjNo) == 0){
-//         throw std::runtime_error("Parent AnimObject does not exist");
-//     }
-//     if(animObjects.count(childAnimObjNo) == 0){
-//         throw std::runtime_error("Child AnimObject does not exist");
-//     }
-//     Chronos::Animation::AnimObject* parent = &animObjects[parentAnimObjNo];
-//     Chronos::Animation::AnimObject* child = &animObjects[childAnimObjNo];
-//     parent->removeChild(child);
-// }
+int Manager::Manager::addTexture(std::string texturePath)
+{
+    return engine.textureManager.addTexture(texturePath);
+}
+void Manager::Manager::removeTexture(int textureNo)
+{
+    engine.textureManager.removeTexture(textureNo);
+}
 
 };
