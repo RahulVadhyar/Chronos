@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['usage_2emd_382',['Usage.md',['../Usage_8md.html',1,'']]]
+  ['usage_2emd_375',['Usage.md',['../Usage_8md.html',1,'']]]
 ];

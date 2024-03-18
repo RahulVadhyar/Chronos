@@ -1,8 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects." alt="" coords="5,64,183,91"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Polygon.html" title=" " alt="" coords="231,5,417,32"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Shape.html" title="Class for creating a shape(triangle, rectangle, etc.)." alt="" coords="237,57,411,98"/>
-<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1Text.html" title="Class for creating a font object for rendering text." alt="" coords="243,123,405,149"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Rectangle.html" title="Class for creating a rectangle." alt="" coords="465,23,665,65"/>
-<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1Triangle.html" title="Class for creating a triangle." alt="" coords="472,89,659,130"/>
+<area shape="rect" id="node1" href="$classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects." alt="" coords="5,78,183,105"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Shape.html" title=" " alt="" coords="231,5,405,47"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Shape.html" title="Class for creating a shape(triangle, rectangle, etc.)." alt="" coords="231,71,405,112"/>
+<area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1Text.html" title="Class for creating a font object for rendering text." alt="" coords="237,137,399,163"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Polygon.html" title=" " alt="" coords="460,13,647,39"/>
+<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1Rectangle.html" title="Class for creating a rectangle." alt="" coords="453,67,653,108"/>
+<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1Triangle.html" title="Class for creating a triangle." alt="" coords="460,132,647,173"/>
 </map>

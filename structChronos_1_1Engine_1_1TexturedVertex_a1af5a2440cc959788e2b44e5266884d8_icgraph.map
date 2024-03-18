@@ -1,4 +1,0 @@
-<map id="Chronos::Engine::TexturedVertex::getBindingDescription" name="Chronos::Engine::TexturedVertex::getBindingDescription">
-<area shape="rect" id="node1" title="Creates a VkVertexInputBindingDescription for the vertex based on the size of the vertex." alt="" coords="240,5,456,47"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Polygon.html#a25d515ffc7c461fd8152153798a61768" title=" " alt="" coords="5,5,192,47"/>
-</map>
