@@ -43,7 +43,7 @@ jobs:
           sudo apt update
           sudo apt install -y libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libxext-dev libwayland-dev libxkbcommon-dev libvulkan-dev libglm-dev gcc-multilib g++-multilib libfreetype6-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev
       - name: Get git submodules
-        run: >
+        run: 
           git submodule init
           git submodule update
       - name: Install Vulkan SDK
@@ -78,7 +78,7 @@ jobs:
         sudo apt update
         sudo apt install -y libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libxext-dev libwayland-dev libxkbcommon-dev libvulkan-dev libglm-dev gcc-multilib g++-multilib libfreetype6-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev
     - name: Get git submodules
-      run: >
+      run: 
         git submodule init
         git submodule update
     - name: Install Vulkan SDK
