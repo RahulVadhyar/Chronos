@@ -1,5 +1,3 @@
-# This starter workflow is for a CMake project running on multiple platforms. There is a different starter workflow if you just want a single platform.
-# See: https://github.com/actions/starter-workflows/blob/main/ci/cmake-single-platform.yml
 name: Build and Test
 
 on:
@@ -30,16 +28,22 @@ jobs:
   #     - name: Build
   #       run: cmake --build build --parallel
         
-  build-linux-make:
-    name: Linux (Make)
+  build-linux-gcc:
+    name: Linux (GCC)
     runs-on: ubuntu-latest
-
+    env:
+      CC: gcc
+      CXX: g++
+      CMAKE_GENERATOR: "Unix Makefiles"
+      CFLAGS: -Werror
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
         run: |
           sudo apt update
           sudo apt install -y libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libxext-dev libwayland-dev libxkbcommon-dev libvulkan-dev libglm-dev gcc-multilib g++-multilib libfreetype6-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev
+      - name: Get git submodules
+        run: >
           git submodule init
           git submodule update
       - name: Install Vulkan SDK
@@ -59,17 +63,22 @@ jobs:
       #   working-directory: build
       #   run: ctest --rerun-failed --output-on-failure
       
-  build-linux-ninja:
+  build-linux-clang:
     name: Linux (Ninja)
     runs-on: ubuntu-latest
-
+    env:
+      CC: clang
+      CXX: clang++
+      CMAKE_GENERATOR: "Unix Makefiles"
+      CFLAGS: -Werror
     steps:
     - uses: actions/checkout@v3
     - name: Install dependencies
       run: |
         sudo apt update
         sudo apt install -y libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libxext-dev libwayland-dev libxkbcommon-dev libvulkan-dev libglm-dev gcc-multilib g++-multilib libfreetype6-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev
-        sudo apt install -y ninja-build
+    - name: Get git submodules
+      run: >
         git submodule init
         git submodule update
     - name: Install Vulkan SDK
