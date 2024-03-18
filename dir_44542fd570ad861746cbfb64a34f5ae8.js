@@ -28,7 +28,7 @@ var dir_44542fd570ad861746cbfb64a34f5ae8 =
       [ "Polygon", "classChronos_1_1Engine_1_1Polygon.html", "classChronos_1_1Engine_1_1Polygon" ]
     ] ],
     [ "polygonManager.hpp", "polygonManager_8hpp.html", [
-      [ "PolygonManager", "classChronos_1_1Engine_1_1PolygonManager.html", null ]
+      [ "PolygonManager", "classChronos_1_1Engine_1_1PolygonManager.html", "classChronos_1_1Engine_1_1PolygonManager" ]
     ] ],
     [ "shape.hpp", "shape_8hpp.html", "shape_8hpp" ],
     [ "shapeManager.hpp", "shapeManager_8hpp.html", [

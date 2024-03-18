@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"classChronos_1_1Manager_1_1Manager.html#a919b9af0bfbbd54bbc3e4cf9f482838c":[5,0,0,2,3,11],
+"classChronos_1_1Manager_1_1Manager.html#a9bd373c2e7def6d1a7ad3d827a220cf9":[5,0,0,2,3,4],
+"classChronos_1_1Manager_1_1Manager.html#aa9236f7bb1bae85cd72327e2dcdb3a9a":[5,0,0,2,3,2],
 "classChronos_1_1Manager_1_1Manager.html#aac76a5e1948cec5d13b2bfed862540e4":[5,0,0,2,3,12],
 "classChronos_1_1Manager_1_1Manager.html#ab631ce630b025f97f4e7f501d9a505dd":[5,0,0,2,3,1],
 "classChronos_1_1Manager_1_1Manager.html#ae3d3b9467ccac0d88e00e9e3dba23b8e":[5,0,0,2,3,8],
@@ -48,8 +51,8 @@ var NAVTREEINDEX1 =
 "fontTypes_8hpp.html#a3cec593a59d36445dca675075db1ecd3":[6,0,2,3,0,4,0],
 "fontTypes_8hpp.html#adca06c815814198cb491ca21e6ed76ce":[6,0,2,3,0,4,1],
 "fontTypes_8hpp_source.html":[6,0,2,3,0,4],
-"functions.html":[5,3,0,0],
 "functions.html":[5,3,0],
+"functions.html":[5,3,0,0],
 "functions_b.html":[5,3,0,1],
 "functions_c.html":[5,3,0,2],
 "functions_d.html":[5,3,0,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "structChronos_1_1Manager_1_1Text.html#a7bd29000ccdb18cf6c394c4bc4edd687":[5,0,0,2,1,2],
 "structChronos_1_1Manager_1_1Text.html#ab5bebed1fc2a43c3ec51259c40b82286":[5,0,0,2,1,0],
 "structChronos_1_1Manager_1_1Text.html#ab867e22960ef531c03cd9dda1a5686c2":[5,0,0,2,1,3],
-"structChronos_1_1Manager_1_1Text.html#ad5b58d0011bf614ae3a0ac3de2edaafa":[5,0,0,2,1,4],
-"structEmpty.html":[5,0,1],
-"structEmpty.html#aa2a0d8f0e9afd1284ac389b3ab582608":[5,0,1,0],
-"swapchain_8cpp.html":[6,0,2,3,1,7]
+"structChronos_1_1Manager_1_1Text.html#ad5b58d0011bf614ae3a0ac3de2edaafa":[5,0,0,2,1,4]
 };

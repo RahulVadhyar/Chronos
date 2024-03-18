@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"structEmpty.html":[5,0,1],
+"structEmpty.html#aa2a0d8f0e9afd1284ac389b3ab582608":[5,0,1,0],
+"swapchain_8cpp.html":[6,0,2,3,1,7],
 "swapchain_8cpp_source.html":[6,0,2,3,1,7],
 "swapchain_8hpp.html":[6,0,2,3,0,13],
 "swapchain_8hpp.html#a4cb0fad8419ed33393b0aaceb3153543":[6,0,2,3,0,13,2],
