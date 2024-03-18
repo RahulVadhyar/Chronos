@@ -20,6 +20,7 @@
 #include "textManager.hpp"
 #include "commonStructs.hpp"
 #include "shape.hpp"
+#include "polygon.hpp"
 #include "shapeManager.hpp"
 #include "engine.hpp"
 #include "engineStructs.hpp"
@@ -67,6 +68,7 @@ namespace Manager {
     struct PolygonType {
         bool triangle = false;
         bool rectangle = false;
+        bool npolygon = false;
     };
 
     /**
@@ -138,6 +140,7 @@ namespace Manager {
         */
         int addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType, int texture);
         int addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType);
+        int addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType, int texture, std::vector<std::array<float, 2>> vertices);
 
 
         /**

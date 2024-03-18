@@ -6,14 +6,15 @@
 #include "buffers.hpp"
 #include "Vertex.hpp"
 #include "engineStructs.hpp"
+#include "commonStructs.hpp"
 #include "object.hpp"
 #include "texture.hpp"
+#include "shape.hpp"
 #include "polygon.hpp"
 #include "polygon_triangulation.h"
-#include <cstddef>
 
 void Chronos::Engine::Polygon::init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
-VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* renderPass, std::vector<std::array<int, 2>> vertices){
+VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* renderPass, std::vector<std::array<float, 2>> vertices){
     this->vertexShaderPath = SPIV_SHADER_PATH"/textureVert.spv";
     this->fragmentShaderPath = SPIV_SHADER_PATH"/textureFrag.spv";
     this->texture = texture;
@@ -25,9 +26,16 @@ VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* render
         v.x = vertex[0];
         v.y = vertex[1];
         polytriVertices.push_back(v);
+        TexturedVertex tv = {{vertex[0], vertex[1]}, {0.0f, 0.0f}};
+        this->vertices.push_back(tv);
     }
     PolygonTriangulation::TriangleBuffer_t triangles;
     PolygonTriangulation::Triangulate(1, &nvertices, polytriVertices.data(), triangles);
+    for (auto& t : triangles) {
+        indices.push_back(t.v0);
+        indices.push_back(t.v1);
+        indices.push_back(t.v2);
+    }
 
     Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
 
@@ -44,106 +52,4 @@ VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* render
         VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     indexBuffer.copy(indices.data(), commandPool);
 
-}
-
-void Chronos::Engine::Polygon::destroy(){
-    vertexBuffer.destroy();
-    indexBuffer.destroy();
-    Chronos::Engine::Object::destroy();
-}
-
-void Chronos::Engine::Polygon::createDescriptorSets(){
-    std::vector<VkDescriptorSetLayout> layouts(MAX_FRAMES_IN_FLIGHT,
-        descriptorSetLayout);
-    VkDescriptorSetAllocateInfo allocInfo {};
-    allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
-    allocInfo.descriptorPool = descriptorPool;
-    allocInfo.descriptorSetCount = static_cast<uint32_t>(MAX_FRAMES_IN_FLIGHT);
-    allocInfo.pSetLayouts = layouts.data();
-    descriptorSets.resize(MAX_FRAMES_IN_FLIGHT);
-    if (vkAllocateDescriptorSets(device->device, &allocInfo,
-            descriptorSets.data())
-        != VK_SUCCESS) {
-        throw std::runtime_error("failed to allocate descriptor sets!");
-    }
-    for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
-        VkDescriptorBufferInfo bufferInfo {};
-        bufferInfo.buffer = uniformBuffers[i].buffer;
-        bufferInfo.offset = 0;
-        bufferInfo.range = sizeof(UniformBufferObject);
-        VkWriteDescriptorSet descriptorWrite {};
-
-        VkDescriptorImageInfo imageInfo {};
-        imageInfo.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
-        imageInfo.imageView = texture.textureImageView;
-        imageInfo.sampler = textureSampler;
-
-        std::array<VkWriteDescriptorSet, 2> descriptorWrites {};
-
-        descriptorWrites[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-        descriptorWrites[0].dstSet = descriptorSets[i];
-        descriptorWrites[0].dstBinding = 0;
-        descriptorWrites[0].dstArrayElement = 0;
-        descriptorWrites[0].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
-        descriptorWrites[0].descriptorCount = 1;
-        descriptorWrites[0].pBufferInfo = &bufferInfo;
-
-        descriptorWrites[1].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-        descriptorWrites[1].dstSet = descriptorSets[i];
-        descriptorWrites[1].dstBinding = 1;
-        descriptorWrites[1].dstArrayElement = 0;
-        descriptorWrites[1].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        descriptorWrites[1].descriptorCount = 1;
-        descriptorWrites[1].pImageInfo = &imageInfo;
-
-        vkUpdateDescriptorSets(device->device,
-            static_cast<uint32_t>(descriptorWrites.size()),
-            descriptorWrites.data(), 0, nullptr);
-    }
-}
-
-void Chronos::Engine::Polygon::update(uint32_t currentFrame){
-    // uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x,
-    //     params.y, params.rotation, params.xSize,
-    //     params.ySize);
-}
-
-std::vector<VkDescriptorType> Chronos::Engine::Polygon::getDescriptorTypes(){
-    return {VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER,
-        VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER};
-}
-
-
-std::vector<VkShaderStageFlagBits> Chronos::Engine::Polygon::getDescriptorStages(){
-    return {VK_SHADER_STAGE_VERTEX_BIT, VK_SHADER_STAGE_FRAGMENT_BIT};
-}
-
-Chronos::Engine::PipelineAttributes Chronos::Engine::Polygon::getPipelineAttributes()
-{
-    Chronos::Engine::PipelineAttributes pipelineAttributes;
-
-    auto bindingDescription = TexturedVertex::getBindingDescription();
-    auto attributeDescriptions = TexturedVertex::getAttributeDescriptions();
-
-    pipelineAttributes.bindingDescriptions.resize(1);
-    pipelineAttributes.bindingDescriptions[0] = bindingDescription;
-
-    pipelineAttributes.attributeDescriptions.resize(attributeDescriptions.size());
-    for (int i = 0; i < attributeDescriptions.size(); i++) {
-        pipelineAttributes.attributeDescriptions[i] = attributeDescriptions[i];
-    }
-
-    pipelineAttributes.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
-    pipelineAttributes.frontFace = VK_FRONT_FACE_COUNTER_CLOCKWISE;
-
-    pipelineAttributes.colorBlendAttachment.colorWriteMask = VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT;
-    pipelineAttributes.colorBlendAttachment.blendEnable = VK_FALSE;
-    pipelineAttributes.colorBlendAttachment.srcColorBlendFactor = VK_BLEND_FACTOR_ONE;
-    pipelineAttributes.colorBlendAttachment.dstColorBlendFactor = VK_BLEND_FACTOR_ZERO; // Optional
-    pipelineAttributes.colorBlendAttachment.colorBlendOp = VK_BLEND_OP_ADD; // Optional
-    pipelineAttributes.colorBlendAttachment.srcAlphaBlendFactor = VK_BLEND_FACTOR_ONE; // Optional
-    pipelineAttributes.colorBlendAttachment.dstAlphaBlendFactor = VK_BLEND_FACTOR_ZERO; // Optional
-    pipelineAttributes.colorBlendAttachment.alphaBlendOp = VK_BLEND_OP_ADD; // Optional
-
-    return pipelineAttributes;
 }

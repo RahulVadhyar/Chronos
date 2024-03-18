@@ -53,6 +53,8 @@ namespace Engine {
         int addRectangle(Chronos::Manager::ShapeParams shapeParams)
             requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value);
 
+        int addPolygon(Chronos::Manager::ShapeParams shapeParams, std::vector<std::array<float, 2>> vertices, Chronos::Engine::Texture texture)
+            requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
         /**
         \brief Records the commands needed for rendering the shapes.
 

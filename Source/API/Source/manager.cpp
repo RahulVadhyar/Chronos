@@ -2,6 +2,7 @@
 // #include "text.hpp"
 #include "object.hpp"
 #include "fontTypes.hpp"
+#include <stdexcept>
 #include <string>
 
 namespace Chronos {
@@ -47,12 +48,32 @@ int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, Chro
         shapeNo = engine.shapeManager.addTriangle(shapeParams, engine.textureManager.getTexture(texture));
     } else if (polygonType.rectangle) {
         shapeNo =  engine.shapeManager.addRectangle(shapeParams, engine.textureManager.getTexture(texture));
+    } else if(polygonType.npolygon){
+        throw std::runtime_error("Please use vertices and use other override for this type of polygon.");
     } else {
         throw std::runtime_error("Polygon type not supported");
     }
     shapeNo = std::stoi("1" + std::to_string(shapeNo));
     return shapeNo;
 }
+
+int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, Chronos::Manager::PolygonType polygonType, int texture, 
+    std::vector<std::array<float, 2>> vertices)
+{   
+    int shapeNo;
+    if (polygonType.triangle) {
+        throw std::runtime_error("Please do not use vertices and use other override for this type of polygon.");
+    } else if (polygonType.rectangle) {
+        throw std::runtime_error("Please do not use vertices and use other override for this type of polygon.");
+    } else if(polygonType.npolygon){
+        shapeNo = engine.shapeManager.addPolygon(shapeParams, vertices, engine.textureManager.getTexture(texture));
+    }else {
+        throw std::runtime_error("Polygon type not supported");
+    }
+    shapeNo = std::stoi("1" + std::to_string(shapeNo));
+    return shapeNo;
+}
+
 
 int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType)
 {   

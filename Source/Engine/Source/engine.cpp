@@ -14,6 +14,7 @@
 #include "textManager.hpp"
 #include "commonStructs.hpp"
 #include "shape.hpp"
+#include "polygon.hpp"
 #include "shapeManager.hpp"
 #include "engine.hpp"
 
