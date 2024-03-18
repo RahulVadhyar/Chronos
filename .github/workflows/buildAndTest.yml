@@ -83,7 +83,7 @@ jobs:
          
     - name: Configure CMake
       run: >
-        cmake -B build -S .
+        cmake -B build -S . -GNinja
 
     - name: Build
       run: cmake --build build --parallel
