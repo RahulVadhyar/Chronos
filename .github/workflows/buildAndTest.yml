@@ -34,7 +34,6 @@ jobs:
     env:
       CC: gcc
       CXX: g++
-      CMAKE_GENERATOR: "Unix Makefiles"
       CFLAGS: -Werror
     steps:
       - uses: actions/checkout@v3
@@ -62,12 +61,11 @@ jobs:
       #   run: ctest --rerun-failed --output-on-failure
       
   build-linux-clang:
-    name: Linux (Ninja)
+    name: Linux (Clang)
     runs-on: ubuntu-latest
     env:
       CC: clang
       CXX: clang++
-      CMAKE_GENERATOR: "Unix Makefiles"
       CFLAGS: -Werror
     steps:
     - uses: actions/checkout@v3
