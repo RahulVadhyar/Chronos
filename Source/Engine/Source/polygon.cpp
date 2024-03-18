@@ -4,14 +4,30 @@
 #include "swapchain.hpp"
 #include "helper.hpp"
 #include "buffers.hpp"
+#include "Vertex.hpp"
+#include "engineStructs.hpp"
 #include "object.hpp"
+#include "texture.hpp"
 #include "polygon.hpp"
+#include "polygon_triangulation.h"
+#include <cstddef>
 
 void Chronos::Engine::Polygon::init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
-VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* renderPass){
+VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* renderPass, std::vector<std::array<int, 2>> vertices){
     this->vertexShaderPath = SPIV_SHADER_PATH"/textureVert.spv";
     this->fragmentShaderPath = SPIV_SHADER_PATH"/textureFrag.spv";
     this->texture = texture;
+
+    const uint32_t nvertices = vertices.size();
+    std::vector<vertex_t> polytriVertices;
+    for (auto& vertex : vertices) {
+        vertex_t v;
+        v.x = vertex[0];
+        v.y = vertex[1];
+        polytriVertices.push_back(v);
+    }
+    PolygonTriangulation::TriangleBuffer_t triangles;
+    PolygonTriangulation::Triangulate(1, &nvertices, polytriVertices.data(), triangles);
 
     Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
 
@@ -106,8 +122,8 @@ Chronos::Engine::PipelineAttributes Chronos::Engine::Polygon::getPipelineAttribu
 {
     Chronos::Engine::PipelineAttributes pipelineAttributes;
 
-    auto bindingDescription = VertexStruct::getBindingDescription();
-    auto attributeDescriptions = VertexStruct::getAttributeDescriptions();
+    auto bindingDescription = TexturedVertex::getBindingDescription();
+    auto attributeDescriptions = TexturedVertex::getAttributeDescriptions();
 
     pipelineAttributes.bindingDescriptions.resize(1);
     pipelineAttributes.bindingDescriptions[0] = bindingDescription;

@@ -5,14 +5,14 @@ namespace Chronos{
         public:
         void init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
             VkSampler textureSampler, Chronos::Engine::Texture texture,
-            VkRenderPass* renderPass)
+            VkRenderPass* renderPass, std::vector<std::array<int, 2>> vertices);
        
         void update(uint32_t currentFrame) override;
         void destroy() override;
         std::vector<uint16_t> indices;
 
         Chronos::Engine::Texture texture;
-        std::vector<VertexStruct> vertices;
+        std::vector<TexturedVertex> vertices;
         Chronos::Engine::Buffer vertexBuffer;
         Chronos::Engine::Buffer indexBuffer;
 

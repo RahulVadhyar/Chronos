@@ -13,3 +13,6 @@
 [submodule "ThirdParty/imgui"]
 	path = ThirdParty/imgui
 	url = https://github.com/RahulVadhyar/imgui
+[submodule "ThirdParty/polytri"]
+	path = ThirdParty/polytri
+	url = https://github.com/RahulVadhyar/polytri.git
