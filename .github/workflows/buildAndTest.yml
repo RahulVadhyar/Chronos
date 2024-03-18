@@ -38,12 +38,10 @@ jobs:
       CFLAGS: -Werror
     steps:
       - uses: actions/checkout@v3
-      - name: Install dependencies
+      - name: Install dependencies and get git submodules
         run: |
           sudo apt update
           sudo apt install -y libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libxext-dev libwayland-dev libxkbcommon-dev libvulkan-dev libglm-dev gcc-multilib g++-multilib libfreetype6-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev
-      - name: Get git submodules
-        run: 
           git submodule init
           git submodule update
       - name: Install Vulkan SDK
@@ -73,12 +71,10 @@ jobs:
       CFLAGS: -Werror
     steps:
     - uses: actions/checkout@v3
-    - name: Install dependencies
+    - name: Install dependencies and get git submodules
       run: |
         sudo apt update
         sudo apt install -y libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libxext-dev libwayland-dev libxkbcommon-dev libvulkan-dev libglm-dev gcc-multilib g++-multilib libfreetype6-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev
-    - name: Get git submodules
-      run: 
         git submodule init
         git submodule update
     - name: Install Vulkan SDK
