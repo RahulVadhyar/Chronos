@@ -24,6 +24,12 @@ var dir_44542fd570ad861746cbfb64a34f5ae8 =
       [ "Object", "classChronos_1_1Engine_1_1Object.html", "classChronos_1_1Engine_1_1Object" ]
     ] ],
     [ "objectManager.hpp", "objectManager_8hpp.html", "objectManager_8hpp" ],
+    [ "polygon.hpp", "polygon_8hpp.html", [
+      [ "Polygon", "classChronos_1_1Engine_1_1Polygon.html", "classChronos_1_1Engine_1_1Polygon" ]
+    ] ],
+    [ "polygonManager.hpp", "polygonManager_8hpp.html", [
+      [ "PolygonManager", "classChronos_1_1Engine_1_1PolygonManager.html", null ]
+    ] ],
     [ "shape.hpp", "shape_8hpp.html", "shape_8hpp" ],
     [ "shapeManager.hpp", "shapeManager_8hpp.html", [
       [ "ShapeManager", "classChronos_1_1Engine_1_1ShapeManager.html", "classChronos_1_1Engine_1_1ShapeManager" ]

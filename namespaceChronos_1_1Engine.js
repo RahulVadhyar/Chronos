@@ -13,6 +13,8 @@ var namespaceChronos_1_1Engine =
     [ "PipelineAttributes", "structChronos_1_1Engine_1_1PipelineAttributes.html", "structChronos_1_1Engine_1_1PipelineAttributes" ],
     [ "Object", "classChronos_1_1Engine_1_1Object.html", "classChronos_1_1Engine_1_1Object" ],
     [ "ObjectManager", "classChronos_1_1Engine_1_1ObjectManager.html", "classChronos_1_1Engine_1_1ObjectManager" ],
+    [ "Polygon", "classChronos_1_1Engine_1_1Polygon.html", "classChronos_1_1Engine_1_1Polygon" ],
+    [ "PolygonManager", "classChronos_1_1Engine_1_1PolygonManager.html", null ],
     [ "Shape", "classChronos_1_1Engine_1_1Shape.html", "classChronos_1_1Engine_1_1Shape" ],
     [ "Rectangle", "classChronos_1_1Engine_1_1Rectangle.html", "classChronos_1_1Engine_1_1Rectangle" ],
     [ "Triangle", "classChronos_1_1Engine_1_1Triangle.html", "classChronos_1_1Engine_1_1Triangle" ],
