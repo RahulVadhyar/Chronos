@@ -24,10 +24,6 @@ set(GLFW_VULKAN_STATIC ON)
 add_subdirectory(ThirdParty/glfw)
 set(GLFW_DIR ThirdParty/glfw/include)
 
-#polytri
-add_subdirectory(ThirdParty/polytri)
-set(POLYTRI_DIR ThirdParty/polytri/src)
-
 #vulkan sdk if using windows
 if (WIN32)
     set(VULKAN_SDK_DIR $ENV{VULKAN_SDK})        
@@ -58,7 +54,7 @@ function(IncludeDirectories projectName)
     target_include_directories(${projectName} PUBLIC include)
     target_include_directories(${projectName} PUBLIC ${FONTS_DIR})
     target_include_directories(${projectName} PUBLIC ${GLFW_DIR})  
-    target_include_directories(${projectName} PUBLIC ${POLYTRI_DIR})
+    target_include_directories(${projectName} PUBLIC ThirdParty/earcut.hpp/include/mapbox)
     
     if(WIN32)
         target_link_libraries(${projectName} vulkan-1) 
@@ -67,7 +63,6 @@ function(IncludeDirectories projectName)
         target_link_libraries(${projectName} vulkan)   
     endif(UNIX)
     target_link_libraries(${projectName} glfw)
-    target_link_libraries(${projectName} polytri)
 
 endfunction()
 

@@ -11,7 +11,12 @@
 #include "texture.hpp"
 #include "shape.hpp"
 #include "polygon.hpp"
-#include "polygon_triangulation.h"
+#include "earcut.hpp"
+#include <cstdint>
+#include <iostream>
+#include <stdexcept>
+#include <string>
+#include <vector>
 
 void Chronos::Engine::Polygon::init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
 VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* renderPass, std::vector<std::array<float, 2>> vertices){
@@ -19,22 +24,17 @@ VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* render
     this->fragmentShaderPath = SPIV_SHADER_PATH"/textureFrag.spv";
     this->texture = texture;
 
-    const uint32_t nvertices = vertices.size();
-    std::vector<vertex_t> polytriVertices;
+
     for (auto& vertex : vertices) {
-        vertex_t v;
-        v.x = vertex[0];
-        v.y = vertex[1];
-        polytriVertices.push_back(v);
         TexturedVertex tv = {{vertex[0], vertex[1]}, {0.0f, 0.0f}};
         this->vertices.push_back(tv);
     }
-    PolygonTriangulation::TriangleBuffer_t triangles;
-    PolygonTriangulation::Triangulate(1, &nvertices, polytriVertices.data(), triangles);
-    for (auto& t : triangles) {
-        indices.push_back(t.v0);
-        indices.push_back(t.v1);
-        indices.push_back(t.v2);
+    std::vector<uint32_t> triangleIndices = mapbox::earcut<uint32_t>(std::array<std::vector<std::array<float, 2>>, 2>{vertices, {}});
+    for (uint32_t i = triangleIndices.size() - 1; i > 0; i--){
+        if(triangleIndices[i] >= vertices.size()){
+            throw std::runtime_error("Index" + std::to_string(triangleIndices[i]) + " out of range");
+        }
+        this->indices.push_back(triangleIndices[i]);
     }
 
     Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
