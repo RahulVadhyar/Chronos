@@ -30,7 +30,7 @@ VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* render
         this->vertices.push_back(tv);
     }
     std::vector<uint32_t> triangleIndices = mapbox::earcut<uint32_t>(std::array<std::vector<std::array<float, 2>>, 2>{vertices, {}});
-    for (uint32_t i = triangleIndices.size() - 1; i > 0; i--){
+    for (uint32_t i = 0; i < triangleIndices.size(); i++){
         if(triangleIndices[i] >= vertices.size()){
             throw std::runtime_error("Index" + std::to_string(triangleIndices[i]) + " out of range");
         }
