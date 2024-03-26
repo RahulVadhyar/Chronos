@@ -26,7 +26,7 @@ VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* render
 
 
     for (auto& vertex : vertices) {
-        TexturedVertex tv = {{vertex[0], vertex[1]}, {0.0f, 0.0f}};
+        TexturedVertex tv = {{vertex[0], vertex[1]}, {(vertex[0] + 1.0f)/2.0f, (vertex[1] + 1.0f)/2.0f}};
         this->vertices.push_back(tv);
     }
     std::vector<uint32_t> triangleIndices = mapbox::earcut<uint32_t>(std::array<std::vector<std::array<float, 2>>, 2>{vertices, {}});
