@@ -116,7 +116,7 @@ $(document).ready(function(){initNavTree('polygon_8cpp_source.html',''); initRes
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; vertex : <a class="code" href="classChronos_1_1Engine_1_1Shape.html#a7ed759c6c4d3e9422e12b7f232a083b8">vertices</a>) {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="structChronos_1_1Engine_1_1TexturedVertex.html">TexturedVertex</a> tv = {{vertex[0], vertex[1]}, {0.0f, 0.0f}};</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="structChronos_1_1Engine_1_1TexturedVertex.html">TexturedVertex</a> tv = {{vertex[0], vertex[1]}, {(vertex[0] + 1.0f)/2.0f, (vertex[1] + 1.0f)/2.0f}};</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        this-&gt;vertices.push_back(tv);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::vector&lt;uint32_t&gt; triangleIndices = mapbox::earcut&lt;uint32_t&gt;(std::array&lt;std::vector&lt;std::array&lt;float, 2&gt;&gt;, 2&gt;{<a class="code" href="classChronos_1_1Engine_1_1Shape.html#a7ed759c6c4d3e9422e12b7f232a083b8">vertices</a>, {}});</div>
