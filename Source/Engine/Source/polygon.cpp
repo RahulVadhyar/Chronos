@@ -40,16 +40,16 @@ VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* render
     Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
 
     // create the vertex and index buffers and copy the data
-    vertexBuffer.size = sizeof(vertices[0]) * vertices.size();
+    vertexBuffer.size = sizeof(this->vertices[0]) * this->vertices.size();
     vertexBuffer.create(*device,
         VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_VERTEX_BUFFER_BIT,
         VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    vertexBuffer.copy(vertices.data(), commandPool);
+    vertexBuffer.copy(this->vertices.data(), commandPool);
 
-    indexBuffer.size = sizeof(indices[0]) * indices.size();
+    indexBuffer.size = sizeof(this->indices[0]) * this->indices.size();
     indexBuffer.create(*device,
         VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_INDEX_BUFFER_BIT,
         VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    indexBuffer.copy(indices.data(), commandPool);
+    indexBuffer.copy(this->indices.data(), commandPool);
 
 }
