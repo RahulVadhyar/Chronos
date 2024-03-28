@@ -154,6 +154,7 @@ namespace Manager {
         @param shapeParams The updated shape parameters to update the shape with.
         */
         void updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams);
+        void updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams, std::vector<std::array<float, 2>> vertices);
 
         void updateText(int textNo, Chronos::Engine::TextParams params);
 

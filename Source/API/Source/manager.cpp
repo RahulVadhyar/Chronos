@@ -46,8 +46,10 @@ int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, Chro
     int shapeNo;
     if (polygonType.triangle) {
         shapeNo = engine.shapeManager.addTriangle(shapeParams, engine.textureManager.getTexture(texture));
+        engine.shapeManager.objects[shapeNo].objectPointer = &(engine.shapeManager.objects[shapeNo]);
     } else if (polygonType.rectangle) {
         shapeNo =  engine.shapeManager.addRectangle(shapeParams, engine.textureManager.getTexture(texture));
+        engine.shapeManager.objects[shapeNo].objectPointer = &(engine.shapeManager.objects[shapeNo]);
     } else if(polygonType.npolygon){
         throw std::runtime_error("Please use vertices and use other override for this type of polygon.");
     } else {
@@ -67,10 +69,11 @@ int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, Chro
         throw std::runtime_error("Please do not use vertices and use other override for this type of polygon.");
     } else if(polygonType.npolygon){
         shapeNo = engine.shapeManager.addPolygon(shapeParams, vertices, engine.textureManager.getTexture(texture));
+        engine.shapeManager.objects[shapeNo].objectPointer = &(engine.shapeManager.objects[shapeNo]);
     }else {
         throw std::runtime_error("Polygon type not supported");
     }
-    shapeNo = std::stoi("1" + std::to_string(shapeNo));
+    shapeNo = std::stoi("3" + std::to_string(shapeNo));
     return shapeNo;
 }
 
@@ -97,7 +100,13 @@ void Manager::Manager::updatePolygon(int shapeNo, Chronos::Manager::ShapeParams 
             throw std::runtime_error("Shape does not exist");
         }
         engine.shapeManager.objects[actualShapeNo].params = shapeParams;
-    } else if (std::to_string(shapeNo).substr(0, 1) == "2") {
+    } else if (std::to_string(shapeNo).substr(0, 1) == "3") {
+        int actualShapeNo = shapeNo - 3*(10*(std::to_string(shapeNo).size() - 1));
+        if (engine.shapeManager.objects.count(actualShapeNo) == 0) {
+            throw std::runtime_error("Shape does not exist");
+        }
+        engine.shapeManager.objects[actualShapeNo].params = shapeParams;
+    }  else if (std::to_string(shapeNo).substr(0, 1) == "2") {
         int actualShapeNo = shapeNo - 2*(10*(std::to_string(shapeNo).size() - 1));
         if (engine.colorShapeManager.objects.count(actualShapeNo) == 0) {
             throw std::runtime_error("Shape does not exist");
@@ -107,6 +116,21 @@ void Manager::Manager::updatePolygon(int shapeNo, Chronos::Manager::ShapeParams 
         throw std::runtime_error("Shape does not exist");
     }
 }
+
+void Manager::Manager::updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams, std::vector<std::array<float, 2>> vertices)
+{   
+    if (std::to_string(shapeNo).substr(0, 1) == "3") {
+        int actualShapeNo = shapeNo - 3*(10*(std::to_string(shapeNo).size() - 1));
+        if (engine.shapeManager.objects.count(actualShapeNo) == 0) {
+            throw std::runtime_error("Shape does not exist");
+        }
+        engine.shapeManager.objects[actualShapeNo].params = shapeParams;
+        ((Chronos::Engine::Polygon*)(engine.shapeManager.objects[actualShapeNo].objectPointer))->updateVertices(vertices);
+    } else {
+        throw std::runtime_error("Shape does not exist");
+    }
+}
+
 void Manager::Manager::removePolygon(int shapeNo)
 {   
     if (std::to_string(shapeNo).substr(0, 1) == "1") {
@@ -162,5 +186,6 @@ void Manager::Manager::removeTexture(int textureNo)
 {
     engine.textureManager.removeTexture(textureNo);
 }
+
 
 };

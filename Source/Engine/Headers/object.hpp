@@ -77,6 +77,7 @@ namespace Engine {
         VkPipeline graphicsPipeline; /**< Vulkan graphics pipeline used by the object. */
         VkPipelineLayout pipelineLayout; /**< Vulkan pipeline layout used by the object. */
         std::vector<VkDescriptorSet> descriptorSets; /**< Vulkan descriptor sets associated with the object. */
+        void* objectPointer = nullptr; /**< Pointer to the object. */
 
     protected:
     protected:
