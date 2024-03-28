@@ -148,6 +148,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 , <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html#a6fc03408466f1ce47bbf560e22354ec8">Chronos::Engine::ObjectManager&lt; Object &gt;</a>
 , <a class="el" href="classChronos_1_1Engine_1_1TextureManager.html#a4aba7438aa2d1ede1009c116596f8444">Chronos::Engine::TextureManager</a>
 </li>
+<li>copyVertices
+: <a class="el" href="classChronos_1_1Engine_1_1Polygon.html#a50f9831f04fe556098cca027e8c9ba75">Chronos::Engine::Polygon</a>
+</li>
 <li>currentFrame
 : <a class="el" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">Chronos::Engine::Engine</a>
 </li>
@@ -257,10 +260,12 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 : <a class="el" href="classChronos_1_1Engine_1_1Engine.html#a0ef741eacc3bb47a8dcd4aab0b530c2e">Chronos::Engine::Engine</a>
 </li>
 <li>indexBuffer
-: <a class="el" href="classChronos_1_1Engine_1_1Shape.html#aec5b864443b585a866abbafd0b2da6b4">Chronos::Engine::Shape&lt; VertexStruct &gt;</a>
+: <a class="el" href="classChronos_1_1Engine_1_1Polygon.html#ac4e5e60fc7a3b74eaff1aa5e7018f41a">Chronos::Engine::Polygon</a>
+, <a class="el" href="classChronos_1_1Engine_1_1Shape.html#aec5b864443b585a866abbafd0b2da6b4">Chronos::Engine::Shape&lt; VertexStruct &gt;</a>
 </li>
 <li>indices
-: <a class="el" href="classChronos_1_1Engine_1_1Shape.html#af568aa742535919b46b8caf2b913ba57">Chronos::Engine::Shape&lt; VertexStruct &gt;</a>
+: <a class="el" href="classChronos_1_1Engine_1_1Polygon.html#a42c6e3c28c4712042169d42312445b09">Chronos::Engine::Polygon</a>
+, <a class="el" href="classChronos_1_1Engine_1_1Shape.html#af568aa742535919b46b8caf2b913ba57">Chronos::Engine::Shape&lt; VertexStruct &gt;</a>
 </li>
 <li>inFlightFences
 : <a class="el" href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">Chronos::Engine::Engine</a>
@@ -273,7 +278,8 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 
 <h3><a id="index_m"></a>- m -</h3><ul>
 <li>mappedMemory
-: <a class="el" href="classChronos_1_1Engine_1_1Text.html#a2a749d64a674558d625f36ec332ab60c">Chronos::Engine::Text</a>
+: <a class="el" href="classChronos_1_1Engine_1_1Polygon.html#a05668018ad62419eb0c173ecaebda29e">Chronos::Engine::Polygon</a>
+, <a class="el" href="classChronos_1_1Engine_1_1Text.html#a2a749d64a674558d625f36ec332ab60c">Chronos::Engine::Text</a>
 </li>
 <li>maxTextLength
 : <a class="el" href="classChronos_1_1Engine_1_1Text.html#a222f04b8bbed8a06255667abcdde1ea7">Chronos::Engine::Text</a>
@@ -321,7 +327,8 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 
 <h3><a id="index_p"></a>- p -</h3><ul>
 <li>params
-: <a class="el" href="classChronos_1_1Engine_1_1Shape.html#a1a46fe0b255a93af825cc4099c9b4fad">Chronos::Engine::Shape&lt; VertexStruct &gt;</a>
+: <a class="el" href="classChronos_1_1Engine_1_1Polygon.html#ae4c2cf5396baae44350fdeddfc259c1e">Chronos::Engine::Polygon</a>
+, <a class="el" href="classChronos_1_1Engine_1_1Shape.html#a1a46fe0b255a93af825cc4099c9b4fad">Chronos::Engine::Shape&lt; VertexStruct &gt;</a>
 , <a class="el" href="classChronos_1_1Engine_1_1Text.html#a2daa81d445bd4c329954358df41cfb52">Chronos::Engine::Text</a>
 </li>
 <li>physicalDevice
@@ -329,6 +336,12 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 </li>
 <li>pipelineLayout
 : <a class="el" href="classChronos_1_1Engine_1_1Object.html#ae279ed95c87e90803fd28f7f935b0ab4">Chronos::Engine::Object</a>
+</li>
+<li>polygonManager
+: <a class="el" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">Chronos::Engine::Engine</a>
+</li>
+<li>polygonVertexBuffers
+: <a class="el" href="classChronos_1_1Engine_1_1Polygon.html#a78952ee2b18b752805bc599eb0e177f5">Chronos::Engine::Polygon</a>
 </li>
 <li>pos
 : <a class="el" href="structChronos_1_1Engine_1_1ColorVertex.html#a6b9548882fcda4cac156fca860528efc">Chronos::Engine::ColorVertex</a>
@@ -428,7 +441,8 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 : <a class="el" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">Chronos::Engine::Engine</a>
 </li>
 <li>texture
-: <a class="el" href="classChronos_1_1Engine_1_1Shape.html#a5c6cfeb926c4e0e8d92823e1184e7698">Chronos::Engine::Shape&lt; VertexStruct &gt;</a>
+: <a class="el" href="classChronos_1_1Engine_1_1Polygon.html#ab8d7058f186abfaf5eda4df4d15b9216">Chronos::Engine::Polygon</a>
+, <a class="el" href="classChronos_1_1Engine_1_1Shape.html#a5c6cfeb926c4e0e8d92823e1184e7698">Chronos::Engine::Shape&lt; VertexStruct &gt;</a>
 </li>
 <li>textureImage
 : <a class="el" href="classChronos_1_1Engine_1_1Texture.html#a7dd323e169d6e40e23379abe453e7128">Chronos::Engine::Texture</a>
@@ -480,7 +494,8 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 : <a class="el" href="classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59">Chronos::Engine::Object</a>
 </li>
 <li>vertices
-: <a class="el" href="classChronos_1_1Engine_1_1Shape.html#a7ed759c6c4d3e9422e12b7f232a083b8">Chronos::Engine::Shape&lt; VertexStruct &gt;</a>
+: <a class="el" href="classChronos_1_1Engine_1_1Polygon.html#a6595eb7f2290c6f664626bea23e26878">Chronos::Engine::Polygon</a>
+, <a class="el" href="classChronos_1_1Engine_1_1Shape.html#a7ed759c6c4d3e9422e12b7f232a083b8">Chronos::Engine::Shape&lt; VertexStruct &gt;</a>
 </li>
 <li>view
 : <a class="el" href="structChronos_1_1Engine_1_1UniformBufferObject.html#ae39a2a8974998e0fb6a6757ef9189f26">Chronos::Engine::UniformBufferObject</a>

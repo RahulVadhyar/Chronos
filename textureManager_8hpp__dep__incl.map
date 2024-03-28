@@ -1,9 +1,8 @@
 <map id="Source/Engine/Headers/textureManager.hpp" name="Source/Engine/Headers/textureManager.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="265,5,437,47"/>
-<area shape="rect" id="node2" href="$chronos_8hpp.html" title="Main API for chronos. Any applications should include this file." alt="" coords="151,191,303,218"/>
-<area shape="rect" id="node5" href="$engine_8hpp.html" title="Contains the Engine class." alt="" coords="265,95,437,136"/>
-<area shape="rect" id="node7" href="$textureManager_8cpp.html" title=" " alt="" coords="461,95,624,136"/>
-<area shape="rect" id="node3" href="$manager_8cpp.html" title=" " alt="" coords="5,281,232,307"/>
-<area shape="rect" id="node4" href="$editorMain_8cpp.html" title=" " alt="" coords="257,273,413,315"/>
-<area shape="rect" id="node6" href="$engine_8cpp.html" title=" " alt="" coords="327,184,489,225"/>
+<area shape="rect" id="node1" title=" " alt="" coords="322,5,494,47"/>
+<area shape="rect" id="node2" href="$chronos_8hpp.html" title="Main API for chronos. Any applications should include this file." alt="" coords="151,102,303,129"/>
+<area shape="rect" id="node5" href="$engine_8cpp.html" title=" " alt="" coords="327,95,489,136"/>
+<area shape="rect" id="node6" href="$textureManager_8cpp.html" title=" " alt="" coords="513,95,676,136"/>
+<area shape="rect" id="node3" href="$manager_8cpp.html" title=" " alt="" coords="5,191,232,218"/>
+<area shape="rect" id="node4" href="$editorMain_8cpp.html" title=" " alt="" coords="257,184,413,225"/>
 </map>

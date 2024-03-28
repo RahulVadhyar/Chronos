@@ -23,6 +23,7 @@ var classChronos_1_1Engine_1_1Engine =
     [ "imageAvailableSemaphores", "classChronos_1_1Engine_1_1Engine.html#a0ef741eacc3bb47a8dcd4aab0b530c2e", null ],
     [ "inFlightFences", "classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5", null ],
     [ "instance", "classChronos_1_1Engine_1_1Engine.html#a14231fd3132dee3c7c675b8d1bfd10b9", null ],
+    [ "polygonManager", "classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed", null ],
     [ "prev_time", "classChronos_1_1Engine_1_1Engine.html#a470065034b51af8fb9bd6c4958df2f60", null ],
     [ "renderFinishedSemaphores", "classChronos_1_1Engine_1_1Engine.html#a2d025f55b44d3a56d01f2320bf1de742", null ],
     [ "shapeManager", "classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd", null ],

@@ -1,6 +1,6 @@
 <map id="Chronos::Manager::Manager" name="Chronos::Manager::Manager">
-<area shape="rect" id="node1" title="The main manager of chronos." alt="" coords="1056,165,1261,191"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Engine.html" title=" " alt="" coords="780,165,959,191"/>
+<area shape="rect" id="node1" title="The main manager of chronos." alt="" coords="1056,193,1261,219"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Engine.html" title=" " alt="" coords="780,193,959,219"/>
 <area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1TextManager.html" title="This is the text manager for Chronos. It handles creation, modification, updating and desrtuction of ..." alt="" coords="358,13,577,39"/>
 <area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1ObjectManager.html" title=" " alt="" coords="5,5,240,47"/>
 <area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1TextureManager.html" title=" " alt="" coords="376,127,559,168"/>
@@ -9,4 +9,6 @@
 <area shape="rect" id="node8" href="$classChronos_1_1Engine_1_1ShapeManager.html" title=" " alt="" coords="336,244,599,285"/>
 <area shape="rect" id="node9" href="$classChronos_1_1Engine_1_1ObjectManager.html" title=" " alt="" coords="5,273,240,329"/>
 <area shape="rect" id="node10" href="$classChronos_1_1Engine_1_1ShapeManager.html" title=" " alt="" coords="347,309,588,351"/>
+<area shape="rect" id="node11" href="$classChronos_1_1Engine_1_1PolygonManager.html" title=" " alt="" coords="374,375,561,416"/>
+<area shape="rect" id="node12" href="$classChronos_1_1Engine_1_1ObjectManager.html" title=" " alt="" coords="5,375,240,416"/>
 </map>

@@ -13,6 +13,7 @@ var classChronos_1_1Manager_1_1Manager =
     [ "removeText", "classChronos_1_1Manager_1_1Manager.html#a53d8104d81b2c2bbd62caf7701fe741f", null ],
     [ "removeTexture", "classChronos_1_1Manager_1_1Manager.html#a3f6bcf09bdb773e7b0894a336fb8f161", null ],
     [ "updatePolygon", "classChronos_1_1Manager_1_1Manager.html#a919b9af0bfbbd54bbc3e4cf9f482838c", null ],
+    [ "updatePolygon", "classChronos_1_1Manager_1_1Manager.html#ab9cd59efce49f2936394907ab003dd7a", null ],
     [ "updateText", "classChronos_1_1Manager_1_1Manager.html#aac76a5e1948cec5d13b2bfed862540e4", null ],
     [ "engine", "classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2", null ],
     [ "nextFreeAnimObjNo", "classChronos_1_1Manager_1_1Manager.html#a00d9996f9fd24bc4824f844dc8631358", null ]

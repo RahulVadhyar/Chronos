@@ -1,0 +1,5 @@
+<map id="Chronos::Engine::PolygonManager::render" name="Chronos::Engine::PolygonManager::render">
+<area shape="rect" id="node1" title="Records the commands needed for rendering the shapes." alt="" coords="5,50,192,91"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1ObjectManager.html#a77f6c739ae9749aae03eb708f3aa3852" title="Ends the rendering process for the specified frame." alt="" coords="240,5,475,61"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1ObjectManager.html#ab3e7fdc4a12f926bbd0d34cc4cde100b" title="Renders the objects managed by the ObjectManager." alt="" coords="240,86,475,127"/>
+</map>
