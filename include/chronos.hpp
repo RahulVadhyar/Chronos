@@ -22,6 +22,7 @@
 #include "shape.hpp"
 #include "polygon.hpp"
 #include "shapeManager.hpp"
+#include "polygonManager.hpp"
 #include "engine.hpp"
 #include "engineStructs.hpp"
 // this is the api for chronos. Any applications will include and link to this file

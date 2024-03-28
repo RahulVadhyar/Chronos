@@ -8,6 +8,7 @@
 #include "helper.hpp"
 #include "buffers.hpp"
 #include "texture.hpp"
+#include "textureManager.hpp"
 #include "object.hpp"
 #include "text.hpp"
 #include "objectManager.hpp"
@@ -16,6 +17,7 @@
 #include "shape.hpp"
 #include "polygon.hpp"
 #include "shapeManager.hpp"
+#include "polygonManager.hpp"
 #include "engine.hpp"
 
 static void framebuffer_size_callback(GLFWwindow* window, int width,
@@ -74,6 +76,7 @@ void Chronos::Engine::Engine::initVulkan()
     textureManager.init(&device, commandPool);
     shapeManager.init(&device, &swapChain, commandPool);
     colorShapeManager.init(&device, &swapChain, commandPool);
+    polygonManager.init(&device, &swapChain, commandPool);
     // textManager.init(&device, commandPool, &swapChain);
     textManager.init(&device, &swapChain, commandPool);
     createSyncObjects();
@@ -90,6 +93,7 @@ void Chronos::Engine::Engine::cleanup()
     shapeManager.destroy();
     colorShapeManager.destroy();
     textManager.destroy();
+    polygonManager.destroy();
     textureManager.destroy();
 #ifdef ENABLE_EDITOR
     gui.destroy();
@@ -129,6 +133,7 @@ void Chronos::Engine::Engine::drawFrame()
         shapeManager.recreate();
         colorShapeManager.recreate();
         textManager.recreate();
+        polygonManager.recreate();
 #ifdef ENABLE_EDITOR
         gui.recreate();
 #endif
@@ -140,6 +145,7 @@ void Chronos::Engine::Engine::drawFrame()
     shapeManager.update(currentFrame);
     colorShapeManager.update(currentFrame);
     textManager.update(currentFrame);
+    polygonManager.update(currentFrame);
 #ifdef ENABLE_EDITOR
     gui.update();
 #endif
@@ -151,6 +157,7 @@ void Chronos::Engine::Engine::drawFrame()
     shapeManager.render(currentFrame, imageIndex, bgColor);
     colorShapeManager.render(currentFrame, imageIndex, bgColor);
     textManager.render(currentFrame, imageIndex, bgColor);
+    polygonManager.render(currentFrame, imageIndex, bgColor);
 #ifdef ENABLE_EDITOR
     gui.render(currentFrame, imageIndex, bgColor);
 #endif
@@ -166,6 +173,7 @@ void Chronos::Engine::Engine::drawFrame()
     std::vector<VkCommandBuffer> submitCommandBuffers;
     submitCommandBuffers.push_back(shapeManager.commandBuffers[currentFrame]);
     submitCommandBuffers.push_back(colorShapeManager.commandBuffers[currentFrame]);
+    submitCommandBuffers.push_back(polygonManager.commandBuffers[currentFrame]);
     submitCommandBuffers.push_back(textManager.commandBuffers[currentFrame]);
 
 #ifdef ENABLE_EDITOR
@@ -207,6 +215,7 @@ void Chronos::Engine::Engine::drawFrame()
         shapeManager.recreate();
         colorShapeManager.recreate();
         textManager.recreate();
+        polygonManager.recreate();
 #ifdef ENABLE_EDITOR
         gui.recreate();
 #endif

@@ -105,6 +105,6 @@ template <Chronos::Engine::ObjectLike Object>
 void Chronos::Engine::ObjectManager<Object>::update(uint32_t currentFrame)
 {
     for (auto& objectMap : objects) {
-        objectMap.second.update(currentFrame);
+            objectMap.second.update(currentFrame);
     }
 }

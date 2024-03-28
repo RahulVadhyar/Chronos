@@ -63,20 +63,6 @@ int Chronos::Engine::ShapeManager<VertexStruct>::addRectangle(Chronos::Manager::
 }
 
 template <Chronos::Engine::VertexLike VertexStruct>
-int Chronos::Engine::ShapeManager<VertexStruct>::addPolygon(Chronos::Manager::ShapeParams shapeParams, std::vector<std::array<float, 2>> vertices, 
-            Chronos::Engine::Texture texture)
-            requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
-{
-    Chronos::Engine::Polygon polygon;
-    polygon.init(Chronos::Engine::ShapeManager<VertexStruct>::device, Chronos::Engine::ShapeManager<VertexStruct>::commandPool, Chronos::Engine::ShapeManager<VertexStruct>::swapChain, Chronos::Engine::ShapeManager<VertexStruct>::textureSampler, texture, &(Chronos::Engine::ShapeManager<VertexStruct>::renderPass), 
-        vertices);
-    int shapeNo = Chronos::Engine::ObjectManager<Chronos::Engine::Shape<VertexStruct>>::addObject(polygon);
-    Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].params = shapeParams;
-    return shapeNo;
-}
-
-
-template <Chronos::Engine::VertexLike VertexStruct>
 int Chronos::Engine::ShapeManager<VertexStruct>::addTriangle(Chronos::Manager::ShapeParams shapeParams,
     Chronos::Engine::Texture texture)
     requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)

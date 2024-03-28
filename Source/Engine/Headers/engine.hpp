@@ -6,7 +6,7 @@
 */
 #pragma once
 
-#include "textureManager.hpp"
+
 #ifdef ENABLE_EDITOR
 #include "editorRenderer.hpp"
 #endif
@@ -88,6 +88,7 @@ namespace Engine {
         Chronos::Engine::ShapeManager<TexturedVertex> shapeManager;
         Chronos::Engine::ShapeManager<ColorVertex> colorShapeManager;
         Chronos::Engine::TextureManager textureManager;
+        Chronos::Engine::PolygonManager polygonManager;
 
         /**
         \brief This is the initial width of the window. It can be changed later just by changing this directly.

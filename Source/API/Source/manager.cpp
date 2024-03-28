@@ -2,8 +2,6 @@
 // #include "text.hpp"
 #include "object.hpp"
 #include "fontTypes.hpp"
-#include <stdexcept>
-#include <string>
 
 namespace Chronos {
 GLFWwindow* Manager::Manager::getWindow()
@@ -46,10 +44,8 @@ int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, Chro
     int shapeNo;
     if (polygonType.triangle) {
         shapeNo = engine.shapeManager.addTriangle(shapeParams, engine.textureManager.getTexture(texture));
-        engine.shapeManager.objects[shapeNo].objectPointer = &(engine.shapeManager.objects[shapeNo]);
     } else if (polygonType.rectangle) {
         shapeNo =  engine.shapeManager.addRectangle(shapeParams, engine.textureManager.getTexture(texture));
-        engine.shapeManager.objects[shapeNo].objectPointer = &(engine.shapeManager.objects[shapeNo]);
     } else if(polygonType.npolygon){
         throw std::runtime_error("Please use vertices and use other override for this type of polygon.");
     } else {
@@ -68,8 +64,7 @@ int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, Chro
     } else if (polygonType.rectangle) {
         throw std::runtime_error("Please do not use vertices and use other override for this type of polygon.");
     } else if(polygonType.npolygon){
-        shapeNo = engine.shapeManager.addPolygon(shapeParams, vertices, engine.textureManager.getTexture(texture));
-        engine.shapeManager.objects[shapeNo].objectPointer = &(engine.shapeManager.objects[shapeNo]);
+        shapeNo = engine.polygonManager.addPolygon(shapeParams, vertices, engine.textureManager.getTexture(texture));
     }else {
         throw std::runtime_error("Polygon type not supported");
     }
@@ -102,10 +97,10 @@ void Manager::Manager::updatePolygon(int shapeNo, Chronos::Manager::ShapeParams 
         engine.shapeManager.objects[actualShapeNo].params = shapeParams;
     } else if (std::to_string(shapeNo).substr(0, 1) == "3") {
         int actualShapeNo = shapeNo - 3*(10*(std::to_string(shapeNo).size() - 1));
-        if (engine.shapeManager.objects.count(actualShapeNo) == 0) {
+        if (engine.polygonManager.objects.count(actualShapeNo) == 0) {
             throw std::runtime_error("Shape does not exist");
         }
-        engine.shapeManager.objects[actualShapeNo].params = shapeParams;
+        engine.polygonManager.objects[actualShapeNo].params = shapeParams;
     }  else if (std::to_string(shapeNo).substr(0, 1) == "2") {
         int actualShapeNo = shapeNo - 2*(10*(std::to_string(shapeNo).size() - 1));
         if (engine.colorShapeManager.objects.count(actualShapeNo) == 0) {
@@ -121,11 +116,11 @@ void Manager::Manager::updatePolygon(int shapeNo, Chronos::Manager::ShapeParams 
 {   
     if (std::to_string(shapeNo).substr(0, 1) == "3") {
         int actualShapeNo = shapeNo - 3*(10*(std::to_string(shapeNo).size() - 1));
-        if (engine.shapeManager.objects.count(actualShapeNo) == 0) {
+        if (engine.polygonManager.objects.count(actualShapeNo) == 0) {
             throw std::runtime_error("Shape does not exist");
         }
-        engine.shapeManager.objects[actualShapeNo].params = shapeParams;
-        ((Chronos::Engine::Polygon*)(engine.shapeManager.objects[actualShapeNo].objectPointer))->updateVertices(vertices);
+        engine.polygonManager.objects[actualShapeNo].params = shapeParams;
+        engine.polygonManager.objects[actualShapeNo].updateVertices(vertices);
     } else {
         throw std::runtime_error("Shape does not exist");
     }
@@ -145,6 +140,12 @@ void Manager::Manager::removePolygon(int shapeNo)
             throw std::runtime_error("Shape does not exist");
         }
         engine.colorShapeManager.remove(actualShapeNo);
+    } else if (std::to_string(shapeNo).substr(0, 1) == "3") {
+        int actualShapeNo = shapeNo - 3*(10*(std::to_string(shapeNo).size() - 1));
+        if (engine.polygonManager.objects.count(actualShapeNo) == 0) {
+            throw std::runtime_error("Shape does not exist");
+        }
+        engine.polygonManager.remove(actualShapeNo);
     } else {
         throw std::runtime_error("Shape does not exist");
     }
