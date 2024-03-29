@@ -149,6 +149,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7aadb020d733378808286c48ddc33aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac76a5e1948cec5d13b2bfed862540e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Manager_1_1Manager.html#aac76a5e1948cec5d13b2bfed862540e4">updateText</a> (int textNo, <a class="el" href="structChronos_1_1Engine_1_1TextParams.html">Chronos::Engine::TextParams</a> params)</td></tr>
 <tr class="separator:aac76a5e1948cec5d13b2bfed862540e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a081215f2147bd7055c41c8282e8466d6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; int, <a class="el" href="structChronos_1_1Engine_1_1TextParams.html">Chronos::Engine::TextParams</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Manager_1_1Manager.html#a081215f2147bd7055c41c8282e8466d6">getTextDetails</a> ()</td></tr>
+<tr class="separator:a081215f2147bd7055c41c8282e8466d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3d3b9467ccac0d88e00e9e3dba23b8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Manager_1_1Manager.html#ae3d3b9467ccac0d88e00e9e3dba23b8e">removePolygon</a> (int shapeNo)</td></tr>
 <tr class="memdesc:ae3d3b9467ccac0d88e00e9e3dba23b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the polygon from the window.  <a href="classChronos_1_1Manager_1_1Manager.html#ae3d3b9467ccac0d88e00e9e3dba23b8e">More...</a><br /></td></tr>
 <tr class="separator:ae3d3b9467ccac0d88e00e9e3dba23b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -219,7 +221,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a50165316b5c0c709684961a5ca60011e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">Chronos::Engine::Engine::bgColor</a></div><div class="ttdeci">float bgColor[3]</div><div class="ttdoc">This is the background color of the window.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00114">engine.hpp:114</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a73a8aefde9c16bbe8b4bbd770cba5981"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a73a8aefde9c16bbe8b4bbd770cba5981">Chronos::Engine::Engine::height</a></div><div class="ttdeci">int height</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00101">engine.hpp:101</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ae79484eb3130b4251c2fc43179fac68c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ae79484eb3130b4251c2fc43179fac68c">Chronos::Engine::Engine::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00096">engine.hpp:96</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Manager_1_1Manager_html_a00f8c72aeda5c374bdddcaf183f95cf2"><div class="ttname"><a href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">Chronos::Manager::Manager::engine</a></div><div class="ttdeci">Chronos::Engine::Engine engine</div><div class="ttdoc">The backend Vulkan engine, used for rendering the desired shapes and text.s.</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00209">chronos.hpp:209</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Manager_1_1Manager_html_a00f8c72aeda5c374bdddcaf183f95cf2"><div class="ttname"><a href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">Chronos::Manager::Manager::engine</a></div><div class="ttdeci">Chronos::Engine::Engine engine</div><div class="ttdoc">The backend Vulkan engine, used for rendering the desired shapes and text.s.</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00210">chronos.hpp:210</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00042">Chronos::Manager::Initializer::BackgroundColor</a>, <a class="el" href="chronos_8hpp_source.html#l00041">Chronos::Manager::Initializer::WindowHeight</a>, and <a class="el" href="chronos_8hpp_source.html#l00040">Chronos::Manager::Initializer::WindowWidth</a>.</p>
 
@@ -642,6 +644,36 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a081215f2147bd7055c41c8282e8466d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a081215f2147bd7055c41c8282e8466d6">&#9670;&nbsp;</a></span>getTextDetails()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::pair&lt; int, <a class="el" href="structChronos_1_1Engine_1_1TextParams.html">Chronos::Engine::TextParams</a> &gt; &gt; Chronos::Manager::Manager::getTextDetails </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00239">239</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                                                                               {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    std::vector&lt;std::pair&lt;int, Chronos::Engine::TextParams&gt;&gt; textDetails;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; text : <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">objects</a>)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        std::pair&lt;int, Chronos::Engine::TextParams&gt; textDetail;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        textDetail.first = text.first;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        textDetail.second = text.second.params;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        textDetails.push_back(textDetail);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">return</span> textDetails;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="af60e123e44b2f72401e278a7fc0947fe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af60e123e44b2f72401e278a7fc0947fe">&#9670;&nbsp;</a></span>getTextureDetails()</h2>
 
@@ -707,7 +739,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a489c5250f3c8e92c72e3c2240586e642"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642">Chronos::Engine::Engine::window</a></div><div class="ttdeci">GLFWwindow * window</div><div class="ttdoc">This is the GLFW window reference that is used by the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00106">engine.hpp:106</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00209">engine</a>, and <a class="el" href="engine_8hpp_source.html#l00106">Chronos::Engine::Engine::window</a>.</p>
+<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00210">engine</a>, and <a class="el" href="engine_8hpp_source.html#l00106">Chronos::Engine::Engine::window</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1000,7 +1032,7 @@ Here is the caller graph for this function:</div>
 
 <p>The backend Vulkan engine, used for rendering the desired shapes and text.s. </p>
 
-<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00209">209</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00210">210</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
 
 </div>
 </div>
@@ -1024,7 +1056,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00204">204</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00205">205</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
 
 </div>
 </div>

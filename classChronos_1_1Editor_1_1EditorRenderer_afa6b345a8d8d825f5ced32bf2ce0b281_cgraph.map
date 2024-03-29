@@ -1,12 +1,16 @@
 <map id="Chronos::Editor::EditorRenderer::update" name="Chronos::Editor::EditorRenderer::update">
-<area shape="rect" id="node1" title=" " alt="" coords="5,201,232,243"/>
-<area shape="rect" id="node2" href="$editorMain_8cpp.html#a6a215dd7e7955739c214ee50e9b9ad87" title=" " alt="" coords="280,209,387,235"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Editor_1_1EditorManager.html#a0a83d9d068c5ba9313ee98d5062b469d" title=" " alt="" coords="435,201,659,243"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,332,232,373"/>
+<area shape="rect" id="node2" href="$editorMain_8cpp.html#a6a215dd7e7955739c214ee50e9b9ad87" title=" " alt="" coords="280,339,387,366"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Editor_1_1EditorManager.html#a0a83d9d068c5ba9313ee98d5062b469d" title=" " alt="" coords="435,332,659,373"/>
 <area shape="rect" id="node4" href="$classChronos_1_1Editor_1_1EditorManager.html#a6bcd171159c3a8b07d319881239e2e7d" title=" " alt="" coords="707,5,931,47"/>
-<area shape="rect" id="node5" href="$classChronos_1_1Editor_1_1EditorManager.html#a12fd564aeadb13abc435c96819d4a115" title=" " alt="" coords="707,71,931,112"/>
-<area shape="rect" id="node6" href="$namespaceChronos_1_1Editor.html#a54d3b521c941f39b794afd523c33d666" title=" " alt="" coords="725,136,913,177"/>
-<area shape="rect" id="node7" href="$classChronos_1_1Editor_1_1EditorManager.html#ab64669b8bad1e94604c8fce665910c7d" title=" " alt="" coords="707,201,931,243"/>
-<area shape="rect" id="node8" href="$classChronos_1_1Editor_1_1EditorManager.html#a9f33237b2e46587e1e77b5d69aeb29a5" title=" " alt="" coords="707,267,931,308"/>
-<area shape="rect" id="node9" href="$classChronos_1_1Editor_1_1EditorManager.html#a746cb968bba01b0331909122f598e517" title=" " alt="" coords="707,332,931,373"/>
-<area shape="rect" id="node10" href="$classChronos_1_1Editor_1_1EditorManager.html#a0babaffbb1a34dc127ee45fc92329b18" title=" " alt="" coords="707,397,931,439"/>
+<area shape="rect" id="node5" href="$classChronos_1_1Editor_1_1EditorManager.html#a0cdfab28dbf87e900fd1a4f2715b905e" title=" " alt="" coords="707,71,931,112"/>
+<area shape="rect" id="node6" href="$classChronos_1_1Editor_1_1EditorManager.html#a12fd564aeadb13abc435c96819d4a115" title=" " alt="" coords="707,136,931,177"/>
+<area shape="rect" id="node7" href="$namespaceChronos_1_1Editor.html#a54d3b521c941f39b794afd523c33d666" title=" " alt="" coords="725,201,913,243"/>
+<area shape="rect" id="node8" href="$classChronos_1_1Editor_1_1EditorManager.html#ab64669b8bad1e94604c8fce665910c7d" title=" " alt="" coords="707,267,931,308"/>
+<area shape="rect" id="node9" href="$classChronos_1_1Editor_1_1EditorManager.html#a4b70998992b7e7cf600eba12d0ec8a51" title=" " alt="" coords="707,332,931,373"/>
+<area shape="rect" id="node10" href="$classChronos_1_1Editor_1_1EditorManager.html#a9f33237b2e46587e1e77b5d69aeb29a5" title=" " alt="" coords="707,397,931,439"/>
+<area shape="rect" id="node11" href="$classChronos_1_1Editor_1_1EditorManager.html#a89409609d0e5791551d576e5c3edf9bf" title=" " alt="" coords="707,463,931,504"/>
+<area shape="rect" id="node12" href="$classChronos_1_1Editor_1_1EditorManager.html#ad3c043460b093328b29b6771989f9404" title=" " alt="" coords="707,528,931,569"/>
+<area shape="rect" id="node13" href="$classChronos_1_1Editor_1_1EditorManager.html#a746cb968bba01b0331909122f598e517" title=" " alt="" coords="707,593,931,635"/>
+<area shape="rect" id="node14" href="$classChronos_1_1Editor_1_1EditorManager.html#a0babaffbb1a34dc127ee45fc92329b18" title=" " alt="" coords="707,659,931,700"/>
 </map>
