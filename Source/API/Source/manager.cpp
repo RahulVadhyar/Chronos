@@ -129,6 +129,36 @@ void Manager::Manager::updatePolygon(int shapeNo, Chronos::Manager::ShapeParams 
     }
 }
 
+std::vector<std::pair<int, Chronos::Manager::ShapeParams>> Manager::Manager::getShapeDetails(){
+    std::vector<std::pair<int, Chronos::Manager::ShapeParams>> shapeDetails;
+    for (auto& shape : engine.shapeManager.objects)
+    {
+        std::pair<int, Chronos::Manager::ShapeParams> shapeDetail;
+        shapeDetail.first = shape.first;
+        shapeDetail.second = shape.second.params;
+        shapeDetails.push_back(shapeDetail);
+    }
+    for(auto& shape : engine.colorShapeManager.objects){
+        std::pair<int, Chronos::Manager::ShapeParams> shapeDetail;
+        shapeDetail.first = shape.first;
+        shapeDetail.second = shape.second.params;
+        shapeDetails.push_back(shapeDetail);
+    }
+    return shapeDetails;
+}
+std::vector<std::pair<int, Chronos::Manager::ShapeParams>> Manager::Manager::getPolygonDetails(){
+    std::vector<std::pair<int, Chronos::Manager::ShapeParams>> shapeDetails;
+    for (auto& shape : engine.polygonManager.objects)
+    {
+        std::pair<int, Chronos::Manager::ShapeParams> shapeDetail;
+        shapeDetail.first = shape.first;
+        shapeDetail.second = shape.second.params;
+        shapeDetails.push_back(shapeDetail);
+    }
+    return shapeDetails;
+}
+
+
 void Manager::Manager::removePolygon(int shapeNo)
 {   
     if (std::to_string(shapeNo).substr(0, 1) == "1") {

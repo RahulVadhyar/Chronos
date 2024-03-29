@@ -27,6 +27,7 @@ namespace Manager {
         float ySize = 1;
         bool show = true;
         std::array<float, 3> color = { 1.0f, 0.0f, 0.0f };
+        char shapeName[200] = "Shape";
     };
 
 }

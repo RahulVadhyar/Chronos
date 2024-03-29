@@ -165,7 +165,8 @@ namespace Manager {
         */
         void updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams);
         void updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams, std::vector<std::array<float, 2>> vertices);
-
+        std::vector<std::pair<int, Chronos::Manager::ShapeParams>> getPolygonDetails();
+        std::vector<std::pair<int, Chronos::Manager::ShapeParams>> getShapeDetails();
         void updateText(int textNo, Chronos::Engine::TextParams params);
 
         /**
