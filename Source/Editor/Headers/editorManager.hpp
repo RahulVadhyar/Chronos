@@ -19,12 +19,22 @@ namespace Chronos{
                 bool showSettingsWindow = false;
                 bool showGeneratedCodeWindow = false;
 
+                bool showShapeDetailsWindow = false;
+                bool showPolygonDetailsWindow = false;
+                bool showTextureDetailsWindow = false;
+                bool showTextDetailsWindow = false;
+
                 void MenuBar();
                 void ShapeWindow();
                 void PolygonWindow();
                 void TextureWindow();
                 void TextWindow();
                 void SettingsWindow();
+
+                void ShapeDetailsWindow();
+                void PolygonDetailsWindow();
+                void TextureDetailsWindow();
+                void TextDetailsWindow();
 
                 //Shape Window
                 Chronos::Manager::ShapeParams newShapeParams;
@@ -47,6 +57,17 @@ namespace Chronos{
                 char newTextureName[200];
                 int currentTextureSelection = 0;
                 char currentTextureName[200] = "Select Texture";
+
+                //Text Window
+                Chronos::Engine::TextParams newTextParams;
+
+                //Shape details window
+                Chronos::Manager::ShapeParams shapeDetailsShapeParams;
+                int shapeDetailsShapeNo = 0;
+
+                //polygon details window
+                Chronos::Manager::ShapeParams polygonDetailsShapeParams;
+                int polygonDetailsShapeNo = 0;
         };  
     }
 }

@@ -168,6 +168,7 @@ namespace Manager {
         std::vector<std::pair<int, Chronos::Manager::ShapeParams>> getPolygonDetails();
         std::vector<std::pair<int, Chronos::Manager::ShapeParams>> getShapeDetails();
         void updateText(int textNo, Chronos::Engine::TextParams params);
+        std::vector<std::pair<int, Chronos::Engine::TextParams>> getTextDetails();
 
         /**
         \brief Removes the polygon from the window

@@ -4,6 +4,8 @@
 #include "imgui.h"
 #include "editorHeaders.hpp"
 #include "editorTheme.hpp"
+#include <string>
+#include <vector>
 
 void Chronos::Editor::EditorManager::addElements(){\
     Chronos::Editor::setImGuiStyle();
@@ -13,6 +15,11 @@ void Chronos::Editor::EditorManager::addElements(){\
     this->TextureWindow();
     this->TextWindow();
     this->SettingsWindow();
+    this->ShapeDetailsWindow();
+    this->PolygonDetailsWindow();
+    this->TextureDetailsWindow();
+    this->TextDetailsWindow();
+
 }
 
 void Chronos::Editor::EditorManager::MenuBar(){
@@ -107,8 +114,14 @@ void Chronos::Editor::EditorManager::ShapeWindow(){
                         ImGui::SetItemDefaultFocus();
                     }
                 }
+                
             }
             ImGui::EndListBox();
+            this->showShapeDetailsWindow = ImGui::Button("Edit Shape");
+            ImGui::SameLine();
+            if(ImGui::Button("Remove Shape")){
+                this->manager->removePolygon(this->currentShapeSelection);
+            }
         }
 
         ImGui::End();
@@ -142,6 +155,7 @@ void Chronos::Editor::EditorManager::PolygonWindow(){
                         ImGui::SetItemDefaultFocus();
                     }
                 }
+                
             }
             ImGui::EndCombo();
         }
@@ -165,8 +179,14 @@ void Chronos::Editor::EditorManager::PolygonWindow(){
                         ImGui::SetItemDefaultFocus();
                     }
                 }
+                this->showPolygonDetailsWindow = ImGui::Button("Edit Polygon");
+                
             }
             ImGui::EndListBox();
+            ImGui::SameLine();
+                if(ImGui::Button("Remove Polygon")){
+                    this->manager->removePolygon(this->currentPolygonSelection);
+                }
         }
         ImGui::End();
     }
@@ -207,7 +227,37 @@ void Chronos::Editor::EditorManager::TextureWindow(){
 void Chronos::Editor::EditorManager::TextWindow(){
     if(this->showTextWindow){
         ImGui::Begin("Text", &this->showTextWindow);
-        
+        ImGui::SeparatorText("Add Text");
+        char inputText[2048];
+        memcpy(inputText, this->newTextParams.text.c_str(), sizeof(char) * this->newTextParams.text.size());
+        ImGui::InputText("Text", inputText, 2048);
+        this->newTextParams.text = inputText;
+        ImGui::DragFloat("X(-1 to 1)", &this->newTextParams.x, 0.01f, -1.0f, 1.0f);
+        ImGui::DragFloat("Y(-1 to 1)", &this->newTextParams.y, 0.01f, -1.0f, 1.0f);
+        ImGui::DragFloat("Rotation", &this->newTextParams.rotation, 0.01f, 0.0f, FLT_MAX);
+        ImGui::DragFloat("Scale", &this->newTextParams.scale, 0.01f, 0.0f, FLT_MAX);
+        ImGui::ColorEdit3("Color", this->newTextParams.color.data());
+        if(ImGui::Button("Add Text")){
+            this->manager->addText(this->newTextParams);
+        }
+        ImGui::SeparatorText("Current Text");
+        if(ImGui::BeginListBox("Texts")){
+            std::vector<std::pair<int, Chronos::Engine::TextParams>> textDetails = this->manager->getTextDetails();
+            if(textDetails.size() == 0){
+                ImGui::Selectable("No Texts");
+            } else {
+                for(std::pair<int, Chronos::Engine::TextParams> textDetail : textDetails){
+                    bool isSelected = this->currentShapeSelection == textDetail.first;
+                    if(ImGui::Selectable(textDetail.second.text.c_str(), isSelected)){
+                        this->currentShapeSelection = textDetail.first;
+                    }
+                    if(isSelected){
+                        ImGui::SetItemDefaultFocus();
+                    }
+                }
+            }
+            ImGui::EndListBox();
+        }
         ImGui::End();
     }
 }   
@@ -220,3 +270,65 @@ void Chronos::Editor::EditorManager::SettingsWindow(){
     }
 }   
 
+void Chronos::Editor::EditorManager::ShapeDetailsWindow(){
+    if(this->showShapeDetailsWindow){
+        ImGui::Begin("Shape Details", &this->showShapeDetailsWindow);
+        ImGui::SeparatorText("Shape Details");
+        std::vector<std::pair<int, Chronos::Manager::ShapeParams>> shapeDetails = this->manager->getShapeDetails();
+        if(shapeDetails.size() == 0){
+            ImGui::Text("No Shapes");
+        } else {
+            this->shapeDetailsShapeNo = shapeDetails[currentShapeSelection].first;
+            this->shapeDetailsShapeParams = shapeDetails[currentShapeSelection].second;
+            ImGui::InputText("Shape Name", this->shapeDetailsShapeParams.shapeName, 200);
+            ImGui::DragFloat("X(-1 to 1)", &this->shapeDetailsShapeParams.x, 0.01f, -1.0f, 1.0f);
+            ImGui::DragFloat("Y(-1 to 1)", &this->shapeDetailsShapeParams.y, 0.01f, -1.0f, 1.0f);
+            ImGui::DragFloat("X Size", &this->shapeDetailsShapeParams.xSize, 0.01f, 0.0f, FLT_MAX);
+            ImGui::DragFloat("Y Size", &this->shapeDetailsShapeParams.ySize, 0.01f, 0.0f, FLT_MAX);
+            ImGui::DragFloat("Rotation", &this->shapeDetailsShapeParams.rotation, 0.01f, 0.0f, FLT_MAX);
+            ImGui::ColorEdit3("Color", this->shapeDetailsShapeParams.color.data());
+            if(ImGui::Button("Update Shape")){
+                this->manager->updatePolygon(this->shapeDetailsShapeNo, this->shapeDetailsShapeParams);
+            }
+        }
+        ImGui::End();
+    }
+}
+
+void Chronos::Editor::EditorManager::PolygonDetailsWindow(){
+    if(this->showPolygonDetailsWindow){
+        ImGui::Begin("Polygon Details", &this->showPolygonDetailsWindow);
+        ImGui::SeparatorText("Polygon Details");
+        std::vector<std::pair<int, Chronos::Manager::ShapeParams>> polygonDetails = this->manager->getPolygonDetails();
+        if(polygonDetails.size() == 0){
+            ImGui::Text("No Polygons");
+        } else {
+            this->polygonDetailsShapeNo = polygonDetails[currentShapeSelection].first;
+            this->polygonDetailsShapeParams = polygonDetails[currentShapeSelection].second;
+            ImGui::InputText("Polygon Name", this->polygonDetailsShapeParams.shapeName, 200);
+            ImGui::DragFloat("X(-1 to 1)", &this->polygonDetailsShapeParams.x, 0.01f, -1.0f, 1.0f);
+            ImGui::DragFloat("Y(-1 to 1)", &this->polygonDetailsShapeParams.y, 0.01f, -1.0f, 1.0f);
+            ImGui::DragFloat("X Size", &this->polygonDetailsShapeParams.xSize, 0.01f, 0.0f, FLT_MAX);
+            ImGui::DragFloat("Y Size", &this->polygonDetailsShapeParams.ySize, 0.01f, 0.0f, FLT_MAX);
+            ImGui::DragFloat("Rotation", &this->polygonDetailsShapeParams.rotation, 0.01f, 0.0f, FLT_MAX);
+            if(ImGui::Button("Update Polygon")){
+                this->manager->updatePolygon(this->polygonDetailsShapeNo, this->polygonDetailsShapeParams);
+            }
+        }
+        ImGui::End();
+    }
+}
+
+void Chronos::Editor::EditorManager::TextureDetailsWindow(){
+    if(this->showTextureDetailsWindow){
+        ImGui::Begin("Texture Details", &this->showTextureDetailsWindow);
+        ImGui::End();
+    }
+}
+
+void Chronos::Editor::EditorManager::TextDetailsWindow(){
+    if(this->showTextDetailsWindow){
+        ImGui::Begin("Text Details", &this->showTextDetailsWindow);
+        ImGui::End();
+    }
+}

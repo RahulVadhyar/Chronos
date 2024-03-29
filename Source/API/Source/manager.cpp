@@ -235,4 +235,18 @@ std::vector <Chronos::Manager::TextureDetails> Manager::Manager::getTextureDetai
     return textureDetails;
 
 }
+
+std::vector<std::pair<int, Chronos::Engine::TextParams>> Manager::Manager::getTextDetails(){
+    std::vector<std::pair<int, Chronos::Engine::TextParams>> textDetails;
+    for (auto& text : engine.textManager.objects)
+    {
+        std::pair<int, Chronos::Engine::TextParams> textDetail;
+        textDetail.first = text.first;
+        textDetail.second = text.second.params;
+        textDetails.push_back(textDetail);
+    }
+    return textDetails;
+}
+
 };
+
