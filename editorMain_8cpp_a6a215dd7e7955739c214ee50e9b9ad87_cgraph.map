@@ -1,10 +1,11 @@
 <map id="addElements" name="addElements">
-<area shape="rect" id="node1" title=" " alt="" coords="5,177,112,203"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Editor_1_1EditorManager.html#a0a83d9d068c5ba9313ee98d5062b469d" title=" " alt="" coords="160,169,384,211"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,209,112,235"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Editor_1_1EditorManager.html#a0a83d9d068c5ba9313ee98d5062b469d" title=" " alt="" coords="160,201,384,243"/>
 <area shape="rect" id="node3" href="$classChronos_1_1Editor_1_1EditorManager.html#a6bcd171159c3a8b07d319881239e2e7d" title=" " alt="" coords="432,5,656,47"/>
 <area shape="rect" id="node4" href="$classChronos_1_1Editor_1_1EditorManager.html#a12fd564aeadb13abc435c96819d4a115" title=" " alt="" coords="432,71,656,112"/>
-<area shape="rect" id="node5" href="$classChronos_1_1Editor_1_1EditorManager.html#ab64669b8bad1e94604c8fce665910c7d" title=" " alt="" coords="432,136,656,177"/>
-<area shape="rect" id="node6" href="$classChronos_1_1Editor_1_1EditorManager.html#a9f33237b2e46587e1e77b5d69aeb29a5" title=" " alt="" coords="432,201,656,243"/>
-<area shape="rect" id="node7" href="$classChronos_1_1Editor_1_1EditorManager.html#a746cb968bba01b0331909122f598e517" title=" " alt="" coords="432,267,656,308"/>
-<area shape="rect" id="node8" href="$classChronos_1_1Editor_1_1EditorManager.html#a0babaffbb1a34dc127ee45fc92329b18" title=" " alt="" coords="432,332,656,373"/>
+<area shape="rect" id="node5" href="$namespaceChronos_1_1Editor.html#a54d3b521c941f39b794afd523c33d666" title=" " alt="" coords="450,136,638,177"/>
+<area shape="rect" id="node6" href="$classChronos_1_1Editor_1_1EditorManager.html#ab64669b8bad1e94604c8fce665910c7d" title=" " alt="" coords="432,201,656,243"/>
+<area shape="rect" id="node7" href="$classChronos_1_1Editor_1_1EditorManager.html#a9f33237b2e46587e1e77b5d69aeb29a5" title=" " alt="" coords="432,267,656,308"/>
+<area shape="rect" id="node8" href="$classChronos_1_1Editor_1_1EditorManager.html#a746cb968bba01b0331909122f598e517" title=" " alt="" coords="432,332,656,373"/>
+<area shape="rect" id="node9" href="$classChronos_1_1Editor_1_1EditorManager.html#a0babaffbb1a34dc127ee45fc92329b18" title=" " alt="" coords="432,397,656,439"/>
 </map>

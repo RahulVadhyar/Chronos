@@ -143,6 +143,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a919b9af0bfbbd54bbc3e4cf9f482838c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9cd59efce49f2936394907ab003dd7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Manager_1_1Manager.html#ab9cd59efce49f2936394907ab003dd7a">updatePolygon</a> (int shapeNo, <a class="el" href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a> shapeParams, std::vector&lt; std::array&lt; float, 2 &gt;&gt; vertices)</td></tr>
 <tr class="separator:ab9cd59efce49f2936394907ab003dd7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af07675ce2e469ace314fe96919ac3fb4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; int, <a class="el" href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Manager_1_1Manager.html#af07675ce2e469ace314fe96919ac3fb4">getPolygonDetails</a> ()</td></tr>
+<tr class="separator:af07675ce2e469ace314fe96919ac3fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aadb020d733378808286c48ddc33aa3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; int, <a class="el" href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Manager_1_1Manager.html#a7aadb020d733378808286c48ddc33aa3">getShapeDetails</a> ()</td></tr>
+<tr class="separator:a7aadb020d733378808286c48ddc33aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac76a5e1948cec5d13b2bfed862540e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Manager_1_1Manager.html#aac76a5e1948cec5d13b2bfed862540e4">updateText</a> (int textNo, <a class="el" href="structChronos_1_1Engine_1_1TextParams.html">Chronos::Engine::TextParams</a> params)</td></tr>
 <tr class="separator:aac76a5e1948cec5d13b2bfed862540e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3d3b9467ccac0d88e00e9e3dba23b8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Manager_1_1Manager.html#ae3d3b9467ccac0d88e00e9e3dba23b8e">removePolygon</a> (int shapeNo)</td></tr>
@@ -215,7 +219,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a50165316b5c0c709684961a5ca60011e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">Chronos::Engine::Engine::bgColor</a></div><div class="ttdeci">float bgColor[3]</div><div class="ttdoc">This is the background color of the window.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00114">engine.hpp:114</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a73a8aefde9c16bbe8b4bbd770cba5981"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a73a8aefde9c16bbe8b4bbd770cba5981">Chronos::Engine::Engine::height</a></div><div class="ttdeci">int height</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00101">engine.hpp:101</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ae79484eb3130b4251c2fc43179fac68c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ae79484eb3130b4251c2fc43179fac68c">Chronos::Engine::Engine::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00096">engine.hpp:96</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Manager_1_1Manager_html_a00f8c72aeda5c374bdddcaf183f95cf2"><div class="ttname"><a href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">Chronos::Manager::Manager::engine</a></div><div class="ttdeci">Chronos::Engine::Engine engine</div><div class="ttdoc">The backend Vulkan engine, used for rendering the desired shapes and text.s.</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00208">chronos.hpp:208</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Manager_1_1Manager_html_a00f8c72aeda5c374bdddcaf183f95cf2"><div class="ttname"><a href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">Chronos::Manager::Manager::engine</a></div><div class="ttdeci">Chronos::Engine::Engine engine</div><div class="ttdoc">The backend Vulkan engine, used for rendering the desired shapes and text.s.</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00209">chronos.hpp:209</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00042">Chronos::Manager::Initializer::BackgroundColor</a>, <a class="el" href="chronos_8hpp_source.html#l00041">Chronos::Manager::Initializer::WindowHeight</a>, and <a class="el" href="chronos_8hpp_source.html#l00040">Chronos::Manager::Initializer::WindowWidth</a>.</p>
 
@@ -422,17 +426,17 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The textNo, for the text instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00156">156</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">if</span> (params.<a class="code" href="structChronos_1_1Engine_1_1TextParams.html#a59928aa0d36b41e82d968c6c7ef33602">text</a> == <span class="stringliteral">&quot;&quot;</span>) {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Text cannot be empty&quot;</span>);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// Chronos::Engine::Text font;</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Text.html">Chronos::Engine::Text</a> font;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    font.<a class="code" href="classChronos_1_1Engine_1_1Text.html#a2daa81d445bd4c329954358df41cfb52">params</a> = params;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="structChronos_1_1Engine_1_1FontTypes.html">Chronos::Engine::FontTypes</a> fontStyle = Chronos::Engine::FontStructs::consolas_24;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a">addFont</a>(font, fontStyle);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00186">186</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">if</span> (params.<a class="code" href="structChronos_1_1Engine_1_1TextParams.html#a59928aa0d36b41e82d968c6c7ef33602">text</a> == <span class="stringliteral">&quot;&quot;</span>) {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Text cannot be empty&quot;</span>);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// Chronos::Engine::Text font;</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Text.html">Chronos::Engine::Text</a> font;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    font.<a class="code" href="classChronos_1_1Engine_1_1Text.html#a2daa81d445bd4c329954358df41cfb52">params</a> = params;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="structChronos_1_1Engine_1_1FontTypes.html">Chronos::Engine::FontTypes</a> fontStyle = Chronos::Engine::FontStructs::consolas_24;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a">addFont</a>(font, fontStyle);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_af3189f4b7e39b19c522579fb0d4cc4e8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">Chronos::Engine::Engine::textManager</a></div><div class="ttdeci">Chronos::Engine::TextManager textManager</div><div class="ttdoc">Main function that is used to add, update and remove text to the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00081">engine.hpp:81</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TextManager_html_aeb7f185a51c653701d1547ac3a16ae1a"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a">Chronos::Engine::TextManager::addFont</a></div><div class="ttdeci">int addFont(Chronos::Engine::Text font, Chronos::Engine::FontTypes fontStyle)</div><div class="ttdoc">Adds a font to the text manager.</div><div class="ttdef"><b>Definition:</b> <a href="textManager_8cpp_source.html#l00066">textManager.cpp:66</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html">Chronos::Engine::Text</a></div><div class="ttdoc">Class for creating a font object for rendering text.</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00031">text.hpp:31</a></div></div>
@@ -470,10 +474,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00185">185</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa3cedc1828056f8515feef8ca0af12dd">textureManager</a>.<a class="code" href="classChronos_1_1Engine_1_1TextureManager.html#a9685eb69f90e7fbf14be57610b987678">addTexture</a>(texturePath, textureName);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00215">215</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;{</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa3cedc1828056f8515feef8ca0af12dd">textureManager</a>.<a class="code" href="classChronos_1_1Engine_1_1TextureManager.html#a9685eb69f90e7fbf14be57610b987678">addTexture</a>(texturePath, textureName);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TextureManager_html_a9685eb69f90e7fbf14be57610b987678"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextureManager.html#a9685eb69f90e7fbf14be57610b987678">Chronos::Engine::TextureManager::addTexture</a></div><div class="ttdeci">int addTexture(std::string texturePath, std::string textureName)</div><div class="ttdef"><b>Definition:</b> <a href="textureManager_8cpp_source.html#l00013">textureManager.cpp:13</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -571,6 +575,73 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="af07675ce2e469ace314fe96919ac3fb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af07675ce2e469ace314fe96919ac3fb4">&#9670;&nbsp;</a></span>getPolygonDetails()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::pair&lt; int, <a class="el" href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a> &gt; &gt; Chronos::Manager::Manager::getPolygonDetails </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00149">149</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                                                                    {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    std::vector&lt;std::pair&lt;int, Chronos::Manager::ShapeParams&gt;&gt; shapeDetails;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; shape : <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">objects</a>)</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        std::pair&lt;int, Chronos::Manager::ShapeParams&gt; shapeDetail;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        shapeDetail.first = shape.first;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        shapeDetail.second = shape.second.params;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        shapeDetails.push_back(shapeDetail);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> shapeDetails;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_afcf543c17706586fa4cad24fbdaf9491"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">Chronos::Engine::ObjectManager::objects</a></div><div class="ttdeci">std::map&lt; int, Object &gt; objects</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00032">objectManager.hpp:32</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7aadb020d733378808286c48ddc33aa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aadb020d733378808286c48ddc33aa3">&#9670;&nbsp;</a></span>getShapeDetails()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::pair&lt; int, <a class="el" href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a> &gt; &gt; Chronos::Manager::Manager::getShapeDetails </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00132">132</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                                                                  {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    std::vector&lt;std::pair&lt;int, Chronos::Manager::ShapeParams&gt;&gt; shapeDetails;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; shape : <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.objects)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        std::pair&lt;int, Chronos::Manager::ShapeParams&gt; shapeDetail;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        shapeDetail.first = shape.first;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        shapeDetail.second = shape.second.params;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        shapeDetails.push_back(shapeDetail);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; shape : <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.objects){</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        std::pair&lt;int, Chronos::Manager::ShapeParams&gt; shapeDetail;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        shapeDetail.first = shape.first;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        shapeDetail.second = shape.second.params;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        shapeDetails.push_back(shapeDetail);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">return</span> shapeDetails;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="af60e123e44b2f72401e278a7fc0947fe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af60e123e44b2f72401e278a7fc0947fe">&#9670;&nbsp;</a></span>getTextureDetails()</h2>
 
@@ -586,20 +657,20 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00194">194</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;{</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    std::vector&lt;Chronos::Manager::TextureDetails&gt; textureDetails;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; texture : <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa3cedc1828056f8515feef8ca0af12dd">textureManager</a>.<a class="code" href="classChronos_1_1Engine_1_1TextureManager.html#ae70e30de5fae62d902b53b64b6038a47">textures</a>)</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <a class="code" href="structChronos_1_1Manager_1_1TextureDetails.html">Chronos::Manager::TextureDetails</a> details;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        details.<a class="code" href="structChronos_1_1Manager_1_1TextureDetails.html#a477d033c159cf9146d932ea104597371">textureNo</a> = texture.first;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        details.<a class="code" href="structChronos_1_1Manager_1_1TextureDetails.html#aea27fc52150012eeeff27d4e81e10e44">textureName</a> = texture.second.textureName;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        details.<a class="code" href="structChronos_1_1Manager_1_1TextureDetails.html#aa2342b4563f84373efb7f624cb8c733b">texturePath</a> = texture.second.texturePath;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        textureDetails.push_back(details);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">return</span> textureDetails;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00224">224</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;{</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    std::vector&lt;Chronos::Manager::TextureDetails&gt; textureDetails;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; texture : <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa3cedc1828056f8515feef8ca0af12dd">textureManager</a>.<a class="code" href="classChronos_1_1Engine_1_1TextureManager.html#ae70e30de5fae62d902b53b64b6038a47">textures</a>)</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    {</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <a class="code" href="structChronos_1_1Manager_1_1TextureDetails.html">Chronos::Manager::TextureDetails</a> details;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        details.<a class="code" href="structChronos_1_1Manager_1_1TextureDetails.html#a477d033c159cf9146d932ea104597371">textureNo</a> = texture.first;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        details.<a class="code" href="structChronos_1_1Manager_1_1TextureDetails.html#aea27fc52150012eeeff27d4e81e10e44">textureName</a> = texture.second.textureName;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        details.<a class="code" href="structChronos_1_1Manager_1_1TextureDetails.html#aa2342b4563f84373efb7f624cb8c733b">texturePath</a> = texture.second.texturePath;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        textureDetails.push_back(details);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">return</span> textureDetails;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TextureManager_html_ae70e30de5fae62d902b53b64b6038a47"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextureManager.html#ae70e30de5fae62d902b53b64b6038a47">Chronos::Engine::TextureManager::textures</a></div><div class="ttdeci">std::map&lt; int, Chronos::Engine::Texture &gt; textures</div><div class="ttdef"><b>Definition:</b> <a href="textureManager_8hpp_source.html#l00006">textureManager.hpp:6</a></div></div>
 <div class="ttc" id="astructChronos_1_1Manager_1_1TextureDetails_html"><div class="ttname"><a href="structChronos_1_1Manager_1_1TextureDetails.html">Chronos::Manager::TextureDetails</a></div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00078">chronos.hpp:78</a></div></div>
 <div class="ttc" id="astructChronos_1_1Manager_1_1TextureDetails_html_a477d033c159cf9146d932ea104597371"><div class="ttname"><a href="structChronos_1_1Manager_1_1TextureDetails.html#a477d033c159cf9146d932ea104597371">Chronos::Manager::TextureDetails::textureNo</a></div><div class="ttdeci">int textureNo</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00081">chronos.hpp:81</a></div></div>
@@ -636,7 +707,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a489c5250f3c8e92c72e3c2240586e642"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642">Chronos::Engine::Engine::window</a></div><div class="ttdeci">GLFWwindow * window</div><div class="ttdoc">This is the GLFW window reference that is used by the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00106">engine.hpp:106</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00208">engine</a>, and <a class="el" href="engine_8hpp_source.html#l00106">Chronos::Engine::Engine::window</a>.</p>
+<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00209">engine</a>, and <a class="el" href="engine_8hpp_source.html#l00106">Chronos::Engine::Engine::window</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -674,32 +745,31 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00132">132</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{   </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> (std::to_string(shapeNo).substr(0, 1) == <span class="stringliteral">&quot;1&quot;</span>) {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordtype">int</span> actualShapeNo = shapeNo - 1*(10*(std::to_string(shapeNo).size() - 1));</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.objects.count(actualShapeNo) == 0) {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Shape does not exist&quot;</span>);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.remove(actualShapeNo);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::to_string(shapeNo).substr(0, 1) == <span class="stringliteral">&quot;2&quot;</span>) {</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordtype">int</span> actualShapeNo = shapeNo - 2*(10*(std::to_string(shapeNo).size() - 1));</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.objects.count(actualShapeNo) == 0) {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Shape does not exist&quot;</span>);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        }</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.remove(actualShapeNo);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::to_string(shapeNo).substr(0, 1) == <span class="stringliteral">&quot;3&quot;</span>) {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordtype">int</span> actualShapeNo = shapeNo - 3*(10*(std::to_string(shapeNo).size() - 1));</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">objects</a>.count(actualShapeNo) == 0) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Shape does not exist&quot;</span>);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a9135fff41460d62ffb3b248320e5adfe">remove</a>(actualShapeNo);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Shape does not exist&quot;</span>);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00162">162</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{   </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">if</span> (std::to_string(shapeNo).substr(0, 1) == <span class="stringliteral">&quot;1&quot;</span>) {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordtype">int</span> actualShapeNo = shapeNo - 1*(10*(std::to_string(shapeNo).size() - 1));</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.objects.count(actualShapeNo) == 0) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Shape does not exist&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.remove(actualShapeNo);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::to_string(shapeNo).substr(0, 1) == <span class="stringliteral">&quot;2&quot;</span>) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordtype">int</span> actualShapeNo = shapeNo - 2*(10*(std::to_string(shapeNo).size() - 1));</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.objects.count(actualShapeNo) == 0) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Shape does not exist&quot;</span>);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.remove(actualShapeNo);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::to_string(shapeNo).substr(0, 1) == <span class="stringliteral">&quot;3&quot;</span>) {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordtype">int</span> actualShapeNo = shapeNo - 3*(10*(std::to_string(shapeNo).size() - 1));</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">objects</a>.count(actualShapeNo) == 0) {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Shape does not exist&quot;</span>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a9135fff41460d62ffb3b248320e5adfe">remove</a>(actualShapeNo);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Shape does not exist&quot;</span>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a9135fff41460d62ffb3b248320e5adfe"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a9135fff41460d62ffb3b248320e5adfe">Chronos::Engine::ObjectManager::remove</a></div><div class="ttdeci">void remove(int objectNo)</div><div class="ttdoc">Removes an object with the specified index.</div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_afcf543c17706586fa4cad24fbdaf9491"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">Chronos::Engine::ObjectManager::objects</a></div><div class="ttdeci">std::map&lt; int, Object &gt; objects</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00032">objectManager.hpp:32</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -722,11 +792,11 @@ Here is the caller graph for this function:</div>
 <p>Removes the text from the window. </p>
 <p>By referencing the textNo, the manager removes and destroys the text from the screen. </p>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00179">179</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1TextManager.html#a0d7c5c9abf9b26426ed74df08af3a7aa">remove</a>(textNo);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00209">209</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1TextManager.html#a0d7c5c9abf9b26426ed74df08af3a7aa">remove</a>(textNo);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TextManager_html_a0d7c5c9abf9b26426ed74df08af3a7aa"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextManager.html#a0d7c5c9abf9b26426ed74df08af3a7aa">Chronos::Engine::TextManager::remove</a></div><div class="ttdeci">void remove(int fontNo)</div><div class="ttdoc">Removes a font from the text manager.</div><div class="ttdef"><b>Definition:</b> <a href="textManager_8cpp_source.html#l00072">textManager.cpp:72</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -747,10 +817,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00189">189</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa3cedc1828056f8515feef8ca0af12dd">textureManager</a>.<a class="code" href="classChronos_1_1Engine_1_1TextureManager.html#ad097f91e0791a014b8ef481a297fa2dc">removeTexture</a>(textureNo);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00219">219</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;{</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa3cedc1828056f8515feef8ca0af12dd">textureManager</a>.<a class="code" href="classChronos_1_1Engine_1_1TextureManager.html#ad097f91e0791a014b8ef481a297fa2dc">removeTexture</a>(textureNo);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TextureManager_html_ad097f91e0791a014b8ef481a297fa2dc"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextureManager.html#ad097f91e0791a014b8ef481a297fa2dc">Chronos::Engine::TextureManager::removeTexture</a></div><div class="ttdeci">void removeTexture(int textureNo)</div><div class="ttdef"><b>Definition:</b> <a href="textureManager_8cpp_source.html#l00020">textureManager.cpp:20</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -892,16 +962,16 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00168">168</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;{   </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">if</span> (params.<a class="code" href="structChronos_1_1Engine_1_1TextParams.html#a59928aa0d36b41e82d968c6c7ef33602">text</a> == <span class="stringliteral">&quot;&quot;</span>) {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Text cannot be empty&quot;</span>);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">objects</a>.count(textNo) == 0) {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Text does not exist&quot;</span>);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">objects</a>[textNo].params = params;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00198">198</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;{   </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">if</span> (params.<a class="code" href="structChronos_1_1Engine_1_1TextParams.html#a59928aa0d36b41e82d968c6c7ef33602">text</a> == <span class="stringliteral">&quot;&quot;</span>) {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Text cannot be empty&quot;</span>);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">objects</a>.count(textNo) == 0) {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Text does not exist&quot;</span>);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">objects</a>[textNo].params = params;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="engineStructs_8hpp_source.html#l00025">Chronos::Engine::TextParams::text</a>.</p>
 
@@ -930,7 +1000,7 @@ Here is the caller graph for this function:</div>
 
 <p>The backend Vulkan engine, used for rendering the desired shapes and text.s. </p>
 
-<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00208">208</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00209">209</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
 
 </div>
 </div>
@@ -954,7 +1024,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00203">203</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00204">204</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
 
 </div>
 </div>
