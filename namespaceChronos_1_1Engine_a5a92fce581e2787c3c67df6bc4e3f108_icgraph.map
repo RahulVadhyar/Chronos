@@ -1,5 +1,6 @@
 <map id="Chronos::Engine::createRenderPass" name="Chronos::Engine::createRenderPass">
-<area shape="rect" id="node1" title="Creates a render pass." alt="" coords="272,46,523,73"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1PolygonManager.html#a096443c47c356b417d9cc506bc274158" title="Creates the render pass for the shapes." alt="" coords="13,5,216,47"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1TextManager.html#a4f25e8069dc1faf66f0d6cd249a4d30b" title="Creates the render pass needed for rendering the text." alt="" coords="5,71,224,112"/>
+<area shape="rect" id="node1" title="Creates a render pass." alt="" coords="280,78,531,105"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1PolygonManager.html#a096443c47c356b417d9cc506bc274158" title="Creates the render pass for the shapes." alt="" coords="17,5,220,47"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1TextManager.html#a4f25e8069dc1faf66f0d6cd249a4d30b" title="Creates the render pass needed for rendering the text." alt="" coords="9,71,228,112"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Editor_1_1EditorRenderer.html#ab6b8e3b3ca6428b4ddc27df62584ecf5" title=" " alt="" coords="5,136,232,177"/>
 </map>

@@ -1,4 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classChronos_1_1Engine_1_1ObjectManager.html" title=" " alt="" coords="5,5,240,47"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1TextManager.html" title="This is the text manager for Chronos. It handles creation, modification, updating and desrtuction of ..." alt="" coords="288,13,507,39"/>
+<area shape="rect" id="node1" href="$classChronos_1_1Engine_1_1ObjectManager.html" title=" " alt="" coords="5,63,240,119"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1ShapeManager.html" title=" " alt="" coords="299,5,540,47"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1ShapeManager.html" title=" " alt="" coords="288,71,551,112"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1ShapeManager.html" title="This is the shape manager for Chronos. It handles creation, modification, updating and desrtuction of..." alt="" coords="303,136,535,177"/>
 </map>

@@ -8,6 +8,7 @@ var classChronos_1_1Editor_1_1EditorRenderer =
     [ "render", "classChronos_1_1Editor_1_1EditorRenderer.html#ae29825685386c45d3c658aa94d23dfef", null ],
     [ "renderAdditionalViewports", "classChronos_1_1Editor_1_1EditorRenderer.html#a27e4ac81e7a09484dde7b1da6fb17e1c", null ],
     [ "update", "classChronos_1_1Editor_1_1EditorRenderer.html#afa6b345a8d8d825f5ced32bf2ce0b281", null ],
+    [ "addElements", "classChronos_1_1Editor_1_1EditorRenderer.html#a8d8b60cda5bcdb1a2ea8d8cc77192479", null ],
     [ "commandBuffers", "classChronos_1_1Editor_1_1EditorRenderer.html#ab5aee19b3981ae43e65688895071cfcc", null ],
     [ "commandPool", "classChronos_1_1Editor_1_1EditorRenderer.html#a5575d34a29da8e598b376dc7625ca969", null ],
     [ "descriptorPool", "classChronos_1_1Editor_1_1EditorRenderer.html#a2084f5611c505e16da0a26e07d40d932", null ],

@@ -349,16 +349,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceChronos_1_1Engine_a33f2c14ca3b08b5bf667d0f7554da733_icgraph.png" border="0" usemap="#anamespaceChronos_1_1Engine_a33f2c14ca3b08b5bf667d0f7554da733_icgraph" alt=""/></div>
 <map name="anamespaceChronos_1_1Engine_a33f2c14ca3b08b5bf667d0f7554da733_icgraph" id="anamespaceChronos_1_1Engine_a33f2c14ca3b08b5bf667d0f7554da733_icgraph">
-<area shape="rect" title="Begins recording of a command buffer that will be used once." alt="" coords="991,64,1201,105"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675" title="Copies data from one buffer to another." alt="" coords="737,13,943,39"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#a72a6333d7a23ef16daa4ee34bd6cab5f" title="Copy data from a buffer to an image." alt="" coords="737,64,943,105"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#a486e04f821153409c6c7d0ab3b3e89b4" title="Transiton a VkImage from one layout to another." alt="" coords="741,129,939,171"/>
+<area shape="rect" title="Begins recording of a command buffer that will be used once." alt="" coords="1012,97,1223,139"/>
+<area shape="rect" href="namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675" title="Copies data from one buffer to another." alt="" coords="748,13,953,39"/>
+<area shape="rect" href="namespaceChronos_1_1Engine.html#a72a6333d7a23ef16daa4ee34bd6cab5f" title="Copy data from a buffer to an image." alt="" coords="748,64,953,105"/>
+<area shape="rect" href="classChronos_1_1Editor_1_1EditorRenderer.html#ab6b8e3b3ca6428b4ddc27df62584ecf5" title=" " alt="" coords="737,129,964,171"/>
+<area shape="rect" href="namespaceChronos_1_1Engine.html#a486e04f821153409c6c7d0ab3b3e89b4" title="Transiton a VkImage from one layout to another." alt="" coords="752,195,949,236"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="511,5,685,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e" title=" " alt="" coords="272,5,459,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1PolygonManager.html#a5735e1120cb83960e28b7bf489ee1ae0" title=" " alt="" coords="21,5,208,47"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="507,100,689,141"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="284,100,447,141"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="5,100,224,141"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="507,132,689,173"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="284,132,447,173"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="5,132,224,173"/>
 </map>
 </div>
 
@@ -833,23 +834,23 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="texture_8cpp_source.html#l00180">180</a> of file <a class="el" href="texture_8cpp_source.html">texture.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;{</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    VkCommandBuffer commandBuffer = <a class="code" href="namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733">Chronos::Engine::beginSingleTimeCommands</a>(commandPool, device.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    VkBufferImageCopy region {};</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    region.bufferOffset = 0;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    region.bufferRowLength = 0;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    region.bufferImageHeight = 0;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    region.imageSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    region.imageSubresource.mipLevel = 0;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    region.imageSubresource.baseArrayLayer = 0;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    region.imageSubresource.layerCount = 1;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    region.imageOffset = { 0, 0, 0 };</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    region.imageExtent = { width, height, 1 };</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    vkCmdCopyBufferToImage(commandBuffer, buffer, image,</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, 1, &amp;region);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c">Chronos::Engine::endSingleTimeCommands</a>(&amp;commandBuffer, device, commandPool);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="texture_8cpp_source.html#l00184">184</a> of file <a class="el" href="texture_8cpp_source.html">texture.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    VkCommandBuffer commandBuffer = <a class="code" href="namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733">Chronos::Engine::beginSingleTimeCommands</a>(commandPool, device.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    VkBufferImageCopy region {};</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    region.bufferOffset = 0;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    region.bufferRowLength = 0;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    region.bufferImageHeight = 0;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    region.imageSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    region.imageSubresource.mipLevel = 0;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    region.imageSubresource.baseArrayLayer = 0;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    region.imageSubresource.layerCount = 1;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    region.imageOffset = { 0, 0, 0 };</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    region.imageExtent = { width, height, 1 };</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    vkCmdCopyBufferToImage(commandBuffer, buffer, image,</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, 1, &amp;region);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c">Chronos::Engine::endSingleTimeCommands</a>(&amp;commandBuffer, device, commandPool);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="helper_8cpp_source.html#l00008">beginSingleTimeCommands()</a>, <a class="el" href="device_8hpp_source.html#l00020">Chronos::Engine::Device::device</a>, and <a class="el" href="helper_8cpp_source.html#l00031">endSingleTimeCommands()</a>.</p>
 <div class="dynheader">
@@ -868,7 +869,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="namespaceChronos_1_1Engine_a72a6333d7a23ef16daa4ee34bd6cab5f_icgraph.png" border="0" usemap="#anamespaceChronos_1_1Engine_a72a6333d7a23ef16daa4ee34bd6cab5f_icgraph" alt=""/></div>
 <map name="anamespaceChronos_1_1Engine_a72a6333d7a23ef16daa4ee34bd6cab5f_icgraph" id="anamespaceChronos_1_1Engine_a72a6333d7a23ef16daa4ee34bd6cab5f_icgraph">
 <area shape="rect" title="Copy data from a buffer to an image." alt="" coords="713,5,919,47"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="483,5,665,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="483,5,665,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="272,5,435,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="5,5,224,47"/>
 </map>
@@ -988,7 +989,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title="Creates a buffer of a given size, usage and properties." alt="" coords="759,114,973,141"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="532,7,707,48"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826" title="This is used to initialize the buffer." alt="" coords="532,72,707,113"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="528,139,711,180"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="528,139,711,180"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="295,201,457,243"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e" title=" " alt="" coords="283,5,469,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1PolygonManager.html#a5735e1120cb83960e28b7bf489ee1ae0" title=" " alt="" coords="21,5,208,47"/>
@@ -1284,6 +1285,16 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_a82c322c6832487fce59a72117f280978"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#a82c322c6832487fce59a72117f280978">Chronos::Engine::SwapChain::colorImageView</a></div><div class="ttdeci">VkImageView colorImageView</div><div class="ttdoc">image view of the color attachement</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8hpp_source.html#l00148">swapchain.hpp:148</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="swapchain_8hpp_source.html#l00148">Chronos::Engine::SwapChain::colorImageView</a>, <a class="el" href="device_8hpp_source.html#l00020">Chronos::Engine::Device::device</a>, <a class="el" href="swapchain_8hpp_source.html#l00128">Chronos::Engine::SwapChain::swapChainExtent</a>, and <a class="el" href="swapchain_8hpp_source.html#l00143">Chronos::Engine::SwapChain::swapChainImageViews</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceChronos_1_1Engine_a43d4bb056580340f1df4d5ca610a213e_icgraph.png" border="0" usemap="#anamespaceChronos_1_1Engine_a43d4bb056580340f1df4d5ca610a213e_icgraph" alt=""/></div>
+<map name="anamespaceChronos_1_1Engine_a43d4bb056580340f1df4d5ca610a213e_icgraph" id="anamespaceChronos_1_1Engine_a43d4bb056580340f1df4d5ca610a213e_icgraph">
+<area shape="rect" title="Creates a set of framebuffers for use." alt="" coords="280,46,535,73"/>
+<area shape="rect" href="classChronos_1_1Editor_1_1EditorRenderer.html#ab6b8e3b3ca6428b4ddc27df62584ecf5" title=" " alt="" coords="5,5,232,47"/>
+<area shape="rect" href="classChronos_1_1Editor_1_1EditorRenderer.html#a6224de7dd3e126522b93c2f86298e070" title=" " alt="" coords="5,71,232,112"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1431,7 +1442,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="namespaceChronos_1_1Engine_a7018d1eaf2dfaf4c373269fcaa344a46_icgraph.png" border="0" usemap="#anamespaceChronos_1_1Engine_a7018d1eaf2dfaf4c373269fcaa344a46_icgraph" alt=""/></div>
 <map name="anamespaceChronos_1_1Engine_a7018d1eaf2dfaf4c373269fcaa344a46_icgraph" id="anamespaceChronos_1_1Engine_a7018d1eaf2dfaf4c373269fcaa344a46_icgraph">
 <area shape="rect" title="For a given image dimensons, it creates a VkImage and VkDeviceMemory for the image." alt="" coords="781,46,999,73"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="539,5,721,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="539,5,721,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e" title="Creates the color images along with the associated objects." alt="" coords="527,71,733,112"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="294,5,457,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="5,5,224,47"/>
@@ -1485,26 +1496,26 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The created image view. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="texture_8cpp_source.html#l00200">200</a> of file <a class="el" href="texture_8cpp_source.html">texture.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;{</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    VkImageViewCreateInfo viewInfo {};</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    viewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    viewInfo.image = image;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    viewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    viewInfo.format = format;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    viewInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    viewInfo.subresourceRange.baseMipLevel = 0;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    viewInfo.subresourceRange.levelCount = 1;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    viewInfo.subresourceRange.baseArrayLayer = 0;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    viewInfo.subresourceRange.layerCount = 1;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    VkImageView imageView;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">if</span> (vkCreateImageView(device.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, &amp;viewInfo, <span class="keyword">nullptr</span>, &amp;imageView) != VK_SUCCESS) {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to create texture image view!&quot;</span>);</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    }</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">return</span> imageView;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="texture_8cpp_source.html#l00204">204</a> of file <a class="el" href="texture_8cpp_source.html">texture.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;{</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    VkImageViewCreateInfo viewInfo {};</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    viewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    viewInfo.image = image;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    viewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    viewInfo.format = format;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    viewInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    viewInfo.subresourceRange.baseMipLevel = 0;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    viewInfo.subresourceRange.levelCount = 1;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    viewInfo.subresourceRange.baseArrayLayer = 0;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    viewInfo.subresourceRange.layerCount = 1;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    VkImageView imageView;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">if</span> (vkCreateImageView(device.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, &amp;viewInfo, <span class="keyword">nullptr</span>, &amp;imageView) != VK_SUCCESS) {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to create texture image view!&quot;</span>);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">return</span> imageView;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="device_8hpp_source.html#l00020">Chronos::Engine::Device::device</a>.</p>
 <div class="dynheader">
@@ -1513,7 +1524,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="namespaceChronos_1_1Engine_a34457a6d2cac8f2770ffbaf52b3b2ee3_icgraph.png" border="0" usemap="#anamespaceChronos_1_1Engine_a34457a6d2cac8f2770ffbaf52b3b2ee3_icgraph" alt=""/></div>
 <map name="anamespaceChronos_1_1Engine_a34457a6d2cac8f2770ffbaf52b3b2ee3_icgraph" id="anamespaceChronos_1_1Engine_a34457a6d2cac8f2770ffbaf52b3b2ee3_icgraph">
 <area shape="rect" title="Create a VkImageView for a given VkImage." alt="" coords="781,78,1031,105"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="539,5,721,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="539,5,721,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e" title="Creates the color images along with the associated objects." alt="" coords="527,71,733,112"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1SwapChain.html#a0155650381f813352c42eb2cf2e30e84" title="Creates the image views of the swapchain images." alt="" coords="527,136,733,177"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="294,5,457,47"/>
@@ -1702,9 +1713,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceChronos_1_1Engine_a5a92fce581e2787c3c67df6bc4e3f108_icgraph.png" border="0" usemap="#anamespaceChronos_1_1Engine_a5a92fce581e2787c3c67df6bc4e3f108_icgraph" alt=""/></div>
 <map name="anamespaceChronos_1_1Engine_a5a92fce581e2787c3c67df6bc4e3f108_icgraph" id="anamespaceChronos_1_1Engine_a5a92fce581e2787c3c67df6bc4e3f108_icgraph">
-<area shape="rect" title="Creates a render pass." alt="" coords="272,46,523,73"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1PolygonManager.html#a096443c47c356b417d9cc506bc274158" title="Creates the render pass for the shapes." alt="" coords="13,5,216,47"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html#a4f25e8069dc1faf66f0d6cd249a4d30b" title="Creates the render pass needed for rendering the text." alt="" coords="5,71,224,112"/>
+<area shape="rect" title="Creates a render pass." alt="" coords="280,78,531,105"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1PolygonManager.html#a096443c47c356b417d9cc506bc274158" title="Creates the render pass for the shapes." alt="" coords="17,5,220,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html#a4f25e8069dc1faf66f0d6cd249a4d30b" title="Creates the render pass needed for rendering the text." alt="" coords="9,71,228,112"/>
+<area shape="rect" href="classChronos_1_1Editor_1_1EditorRenderer.html#ab6b8e3b3ca6428b4ddc27df62584ecf5" title=" " alt="" coords="5,136,232,177"/>
 </map>
 </div>
 
@@ -1811,31 +1823,31 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="texture_8cpp_source.html#l00221">221</a> of file <a class="el" href="texture_8cpp_source.html">texture.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;{</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    VkPhysicalDeviceProperties properties {};</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    vkGetPhysicalDeviceProperties(device.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a987dce654f123694a087fc8a74afdb89">physicalDevice</a>, &amp;properties);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    VkSamplerCreateInfo samplerInfo {};</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    samplerInfo.sType = VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    samplerInfo.magFilter = VK_FILTER_LINEAR;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    samplerInfo.minFilter = VK_FILTER_LINEAR;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    samplerInfo.addressModeU = VK_SAMPLER_ADDRESS_MODE_REPEAT;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    samplerInfo.addressModeV = VK_SAMPLER_ADDRESS_MODE_REPEAT;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    samplerInfo.addressModeW = VK_SAMPLER_ADDRESS_MODE_REPEAT;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    samplerInfo.anisotropyEnable = VK_TRUE;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    samplerInfo.maxAnisotropy = properties.limits.maxSamplerAnisotropy;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    samplerInfo.borderColor = VK_BORDER_COLOR_INT_OPAQUE_BLACK;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    samplerInfo.unnormalizedCoordinates = VK_FALSE;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    samplerInfo.compareEnable = VK_FALSE;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    samplerInfo.compareOp = VK_COMPARE_OP_ALWAYS;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    samplerInfo.mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    samplerInfo.mipLodBias = 0.0f;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    samplerInfo.minLod = 0.0f;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    samplerInfo.maxLod = 0.0f;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (vkCreateSampler(device.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, &amp;samplerInfo, <span class="keyword">nullptr</span>, textureSampler) != VK_SUCCESS) {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to create texture sampler!&quot;</span>);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    }</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="texture_8cpp_source.html#l00225">225</a> of file <a class="el" href="texture_8cpp_source.html">texture.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;{</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    VkPhysicalDeviceProperties properties {};</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    vkGetPhysicalDeviceProperties(device.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a987dce654f123694a087fc8a74afdb89">physicalDevice</a>, &amp;properties);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    VkSamplerCreateInfo samplerInfo {};</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    samplerInfo.sType = VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    samplerInfo.magFilter = VK_FILTER_LINEAR;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    samplerInfo.minFilter = VK_FILTER_LINEAR;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    samplerInfo.addressModeU = VK_SAMPLER_ADDRESS_MODE_REPEAT;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    samplerInfo.addressModeV = VK_SAMPLER_ADDRESS_MODE_REPEAT;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    samplerInfo.addressModeW = VK_SAMPLER_ADDRESS_MODE_REPEAT;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    samplerInfo.anisotropyEnable = VK_TRUE;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    samplerInfo.maxAnisotropy = properties.limits.maxSamplerAnisotropy;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    samplerInfo.borderColor = VK_BORDER_COLOR_INT_OPAQUE_BLACK;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    samplerInfo.unnormalizedCoordinates = VK_FALSE;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    samplerInfo.compareEnable = VK_FALSE;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    samplerInfo.compareOp = VK_COMPARE_OP_ALWAYS;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    samplerInfo.mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    samplerInfo.mipLodBias = 0.0f;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    samplerInfo.minLod = 0.0f;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    samplerInfo.maxLod = 0.0f;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">if</span> (vkCreateSampler(device.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, &amp;samplerInfo, <span class="keyword">nullptr</span>, textureSampler) != VK_SUCCESS) {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to create texture sampler!&quot;</span>);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="device_8hpp_source.html#l00020">Chronos::Engine::Device::device</a>, and <a class="el" href="device_8hpp_source.html#l00028">Chronos::Engine::Device::physicalDevice</a>.</p>
 
@@ -2084,16 +2096,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceChronos_1_1Engine_a55354e8eeaccc5c3ab2b2636cb7ad56c_icgraph.png" border="0" usemap="#anamespaceChronos_1_1Engine_a55354e8eeaccc5c3ab2b2636cb7ad56c_icgraph" alt=""/></div>
 <map name="anamespaceChronos_1_1Engine_a55354e8eeaccc5c3ab2b2636cb7ad56c_icgraph" id="anamespaceChronos_1_1Engine_a55354e8eeaccc5c3ab2b2636cb7ad56c_icgraph">
-<area shape="rect" title="Ends recording of single time command buffer and destroys it." alt="" coords="991,64,1189,105"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675" title="Copies data from one buffer to another." alt="" coords="737,13,943,39"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#a72a6333d7a23ef16daa4ee34bd6cab5f" title="Copy data from a buffer to an image." alt="" coords="737,64,943,105"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#a486e04f821153409c6c7d0ab3b3e89b4" title="Transiton a VkImage from one layout to another." alt="" coords="741,129,939,171"/>
+<area shape="rect" title="Ends recording of single time command buffer and destroys it." alt="" coords="1012,97,1211,139"/>
+<area shape="rect" href="namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675" title="Copies data from one buffer to another." alt="" coords="748,13,953,39"/>
+<area shape="rect" href="namespaceChronos_1_1Engine.html#a72a6333d7a23ef16daa4ee34bd6cab5f" title="Copy data from a buffer to an image." alt="" coords="748,64,953,105"/>
+<area shape="rect" href="classChronos_1_1Editor_1_1EditorRenderer.html#ab6b8e3b3ca6428b4ddc27df62584ecf5" title=" " alt="" coords="737,129,964,171"/>
+<area shape="rect" href="namespaceChronos_1_1Engine.html#a486e04f821153409c6c7d0ab3b3e89b4" title="Transiton a VkImage from one layout to another." alt="" coords="752,195,949,236"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="511,5,685,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e" title=" " alt="" coords="272,5,459,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1PolygonManager.html#a5735e1120cb83960e28b7bf489ee1ae0" title=" " alt="" coords="21,5,208,47"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="507,100,689,141"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="284,100,447,141"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="5,100,224,141"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="507,132,689,173"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="284,132,447,173"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="5,132,224,173"/>
 </map>
 </div>
 
@@ -2164,7 +2177,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a7018d1eaf2dfaf4c373269fcaa344a46" title="For a given image dimensons, it creates a VkImage and VkDeviceMemory for the image." alt="" coords="783,209,1000,235"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="544,9,719,51"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826" title="This is used to initialize the buffer." alt="" coords="544,77,719,119"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="540,201,723,243"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="540,201,723,243"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="295,201,457,243"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e" title=" " alt="" coords="283,5,469,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1PolygonManager.html#a5735e1120cb83960e28b7bf489ee1ae0" title=" " alt="" coords="21,5,208,47"/>
@@ -2261,16 +2274,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceChronos_1_1Engine_a8cdc4cba55ceff22fd5b05b159cbc357_icgraph.png" border="0" usemap="#anamespaceChronos_1_1Engine_a8cdc4cba55ceff22fd5b05b159cbc357_icgraph" alt=""/></div>
 <map name="anamespaceChronos_1_1Engine_a8cdc4cba55ceff22fd5b05b159cbc357_icgraph" id="anamespaceChronos_1_1Engine_a8cdc4cba55ceff22fd5b05b159cbc357_icgraph">
-<area shape="rect" title="Gets the indices of the needed queue families." alt="" coords="807,107,1008,148"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5" title="Creates the swapchain image resources and chooses the optimal settings for given hardware." alt="" coords="520,9,727,51"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#ae9065643643c464231ba47b6ed3f8a8a" title="Creates a command pool for a given device and surface." alt="" coords="488,82,759,109"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Device.html#ad0d1809c3c17ada51ed37695fdee5fe0" title="This creates the logical device." alt="" coords="247,136,427,177"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#a5d1bdae6108eaaf072fe2619be7123d8" title="Checks if the physical device that we provide it is suitable for our needs." alt="" coords="528,193,719,235"/>
+<area shape="rect" title="Gets the indices of the needed queue families." alt="" coords="807,119,1008,160"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5" title="Creates the swapchain image resources and chooses the optimal settings for given hardware." alt="" coords="520,7,727,48"/>
+<area shape="rect" href="namespaceChronos_1_1Engine.html#ae9065643643c464231ba47b6ed3f8a8a" title="Creates a command pool for a given device and surface." alt="" coords="488,75,759,102"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Device.html#ad0d1809c3c17ada51ed37695fdee5fe0" title="This creates the logical device." alt="" coords="247,145,427,187"/>
+<area shape="rect" href="classChronos_1_1Editor_1_1EditorRenderer.html#ab6b8e3b3ca6428b4ddc27df62584ecf5" title=" " alt="" coords="510,177,737,219"/>
+<area shape="rect" href="namespaceChronos_1_1Engine.html#a5d1bdae6108eaaf072fe2619be7123d8" title="Checks if the physical device that we provide it is suitable for our needs." alt="" coords="528,243,719,284"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe" title="Initilize the swapchain." alt="" coords="233,5,440,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Engine.html#a087a97e8ab427e73745b6fe7bb449340" title="The complicated process of initalizing the vulkan API is done here." alt="" coords="247,71,426,112"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Engine.html#a66c6b72176c3e93affdb0018eb137801" title="Initlizes the engine." alt="" coords="6,71,185,112"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Device.html#a66e307ea98c1eb761c90b4acd9c3752a" title="This is the function that initializes the devices and queues." alt="" coords="5,168,185,209"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Device.html#a50c43c6576d56f35473f2240d2f3bf59" title="This is the function that picks the best device based on the requirements and features that we requir..." alt="" coords="247,201,427,243"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Device.html#a50c43c6576d56f35473f2240d2f3bf59" title="This is the function that picks the best device based on the requirements and features that we requir..." alt="" coords="247,231,427,272"/>
 </map>
 </div>
 
@@ -2741,44 +2755,44 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="texture_8cpp_source.html#l00139">139</a> of file <a class="el" href="texture_8cpp_source.html">texture.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    VkCommandBuffer commandBuffer = <a class="code" href="namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733">Chronos::Engine::beginSingleTimeCommands</a>(commandPool, device.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    VkImageMemoryBarrier barrier {};</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    barrier.sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    barrier.oldLayout = oldLayout;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    barrier.newLayout = newLayout;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    barrier.srcQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    barrier.dstQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    barrier.image = image;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    barrier.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    barrier.subresourceRange.baseMipLevel = 0;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    barrier.subresourceRange.levelCount = 1;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    barrier.subresourceRange.baseArrayLayer = 0;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    barrier.subresourceRange.layerCount = 1;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    VkPipelineStageFlags sourceStage;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    VkPipelineStageFlags destinationStage;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">if</span> (oldLayout == VK_IMAGE_LAYOUT_UNDEFINED &amp;&amp; newLayout == VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL) {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        barrier.srcAccessMask = 0;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        barrier.dstAccessMask = VK_ACCESS_TRANSFER_WRITE_BIT;</div>
+<p class="definition">Definition at line <a class="el" href="texture_8cpp_source.html#l00143">143</a> of file <a class="el" href="texture_8cpp_source.html">texture.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    VkCommandBuffer commandBuffer = <a class="code" href="namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733">Chronos::Engine::beginSingleTimeCommands</a>(commandPool, device.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    VkImageMemoryBarrier barrier {};</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    barrier.sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    barrier.oldLayout = oldLayout;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    barrier.newLayout = newLayout;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    barrier.srcQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    barrier.dstQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    barrier.image = image;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    barrier.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    barrier.subresourceRange.baseMipLevel = 0;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    barrier.subresourceRange.levelCount = 1;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    barrier.subresourceRange.baseArrayLayer = 0;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    barrier.subresourceRange.layerCount = 1;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    VkPipelineStageFlags sourceStage;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    VkPipelineStageFlags destinationStage;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        sourceStage = VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        destinationStage = VK_PIPELINE_STAGE_TRANSFER_BIT;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (oldLayout == VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL &amp;&amp; newLayout == VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL) {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        barrier.srcAccessMask = VK_ACCESS_TRANSFER_WRITE_BIT;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        barrier.dstAccessMask = VK_ACCESS_SHADER_READ_BIT;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        sourceStage = VK_PIPELINE_STAGE_TRANSFER_BIT;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        destinationStage = VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;unsupported layout transition!&quot;</span>);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    vkCmdPipelineBarrier(commandBuffer, sourceStage, destinationStage, 0, 0,</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keyword">nullptr</span>, 0, <span class="keyword">nullptr</span>, 1, &amp;barrier);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c">Chronos::Engine::endSingleTimeCommands</a>(&amp;commandBuffer, device, commandPool);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">if</span> (oldLayout == VK_IMAGE_LAYOUT_UNDEFINED &amp;&amp; newLayout == VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL) {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        barrier.srcAccessMask = 0;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        barrier.dstAccessMask = VK_ACCESS_TRANSFER_WRITE_BIT;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        sourceStage = VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        destinationStage = VK_PIPELINE_STAGE_TRANSFER_BIT;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (oldLayout == VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL &amp;&amp; newLayout == VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL) {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        barrier.srcAccessMask = VK_ACCESS_TRANSFER_WRITE_BIT;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        barrier.dstAccessMask = VK_ACCESS_SHADER_READ_BIT;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        sourceStage = VK_PIPELINE_STAGE_TRANSFER_BIT;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        destinationStage = VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;unsupported layout transition!&quot;</span>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    vkCmdPipelineBarrier(commandBuffer, sourceStage, destinationStage, 0, 0,</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keyword">nullptr</span>, 0, <span class="keyword">nullptr</span>, 1, &amp;barrier);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c">Chronos::Engine::endSingleTimeCommands</a>(&amp;commandBuffer, device, commandPool);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="helper_8cpp_source.html#l00008">beginSingleTimeCommands()</a>, <a class="el" href="device_8hpp_source.html#l00020">Chronos::Engine::Device::device</a>, and <a class="el" href="helper_8cpp_source.html#l00031">endSingleTimeCommands()</a>.</p>
 <div class="dynheader">
@@ -2797,7 +2811,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="namespaceChronos_1_1Engine_a486e04f821153409c6c7d0ab3b3e89b4_icgraph.png" border="0" usemap="#anamespaceChronos_1_1Engine_a486e04f821153409c6c7d0ab3b3e89b4_icgraph" alt=""/></div>
 <map name="anamespaceChronos_1_1Engine_a486e04f821153409c6c7d0ab3b3e89b4_icgraph" id="anamespaceChronos_1_1Engine_a486e04f821153409c6c7d0ab3b3e89b4_icgraph">
 <area shape="rect" title="Transiton a VkImage from one layout to another." alt="" coords="713,5,911,47"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="483,5,665,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="483,5,665,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="272,5,435,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="5,5,224,47"/>
 </map>

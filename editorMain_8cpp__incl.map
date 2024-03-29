@@ -1,6 +1,7 @@
 <map id="Source/Editor/Source/editorMain.cpp" name="Source/Editor/Source/editorMain.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="2663,5,2819,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="2736,5,2892,47"/>
 <area shape="rect" id="node2" href="$chronos_8hpp.html" title="Main API for chronos. Any applications should include this file." alt="" coords="2690,95,2791,121"/>
+<area shape="rect" id="node49" href="$editorManager_8hpp.html" title=" " alt="" coords="2815,95,2959,121"/>
 <area shape="rect" id="node3" href="$vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="361,169,507,196"/>
 <area shape="rect" id="node9" href="$stlheader_8hpp.html" title="Contains all the standard library headers used in the project." alt="" coords="1493,169,1604,196"/>
 <area shape="rect" id="node26" href="$device_8hpp.html" title="Contains the Device class." alt="" coords="1629,169,1722,196"/>

@@ -1,6 +1,6 @@
 <map id="Chronos::Engine::transitionImageLayout" name="Chronos::Engine::transitionImageLayout">
 <area shape="rect" id="node1" title="Transiton a VkImage from one layout to another." alt="" coords="713,5,911,47"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="483,5,665,47"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="483,5,665,47"/>
 <area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="272,5,435,47"/>
 <area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="5,5,224,47"/>
 </map>

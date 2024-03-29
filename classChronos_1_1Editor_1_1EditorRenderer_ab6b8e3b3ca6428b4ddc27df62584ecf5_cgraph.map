@@ -1,0 +1,9 @@
+<map id="Chronos::Editor::EditorRenderer::init" name="Chronos::Editor::EditorRenderer::init">
+<area shape="rect" id="node1" title=" " alt="" coords="5,115,232,156"/>
+<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="302,5,513,47"/>
+<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a43d4bb056580340f1df4d5ca610a213e" title="Creates a set of framebuffers for use." alt="" coords="280,71,535,98"/>
+<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a5a92fce581e2787c3c67df6bc4e3f108" title="Creates a render pass." alt="" coords="282,122,533,149"/>
+<area shape="rect" id="node5" href="$namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c" title="Ends recording of single time command buffer and destroys it." alt="" coords="308,173,507,215"/>
+<area shape="rect" id="node6" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="307,239,508,280"/>
+<area shape="rect" id="node7" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="583,239,803,280"/>
+</map>

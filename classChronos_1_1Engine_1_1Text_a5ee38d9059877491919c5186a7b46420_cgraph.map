@@ -1,6 +1,6 @@
 <map id="Chronos::Engine::Text::init" name="Chronos::Engine::Text::init">
 <area shape="rect" id="node1" title="Initializes the font object and creates the necessary objects." alt="" coords="5,99,168,141"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Texture.html#a116603930df574fe8ae4844e23b54ae4" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="216,99,399,141"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="216,99,399,141"/>
 <area shape="rect" id="node6" href="$namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a" title="Creates a buffer of a given size, usage and properties." alt="" coords="464,5,679,32"/>
 <area shape="rect" id="node11" href="$classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e" title="Initializes the object." alt="" coords="219,354,396,395"/>
 <area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a72a6333d7a23ef16daa4ee34bd6cab5f" title="Copy data from a buffer to an image." alt="" coords="469,223,674,265"/>
