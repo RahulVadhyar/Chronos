@@ -8,7 +8,7 @@ option(CHRONOS_SUPPORT_WAYLAND "Build with Wayland support" ON)
 endif()
 
 option(CHRONOS_BUILD_TESTS "Build the tests" OFF)
-option(CHRONOS_BUILD_EDITOR "Build the editor" OFF)
+option(CHRONOS_BUILD_EDITOR "Build the editor" ON)
 
 if(CHRONOS_SUPPORT_WAYLAND)
 set(GLFW_BUILD_WAYLAND ON)

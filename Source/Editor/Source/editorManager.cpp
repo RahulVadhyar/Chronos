@@ -4,8 +4,6 @@
 #include "imgui.h"
 #include "editorHeaders.hpp"
 #include "editorTheme.hpp"
-#include <string>
-#include <vector>
 
 void Chronos::Editor::EditorManager::addElements(){\
     Chronos::Editor::setImGuiStyle();
@@ -110,13 +108,14 @@ void Chronos::Editor::EditorManager::ShapeWindow(){
                     if(ImGui::Selectable(shapeDetail.second.shapeName, isSelected)){
                         this->currentShapeSelection = shapeDetail.first;
                     }
-                    if(isSelected){
+if(isSelected){
                         ImGui::SetItemDefaultFocus();
                     }
                 }
                 
             }
             ImGui::EndListBox();
+            ImGui::Text("Selected Shape: %d", shapeDetails[currentShapeSelection].first);
             this->showShapeDetailsWindow = ImGui::Button("Edit Shape");
             ImGui::SameLine();
             if(ImGui::Button("Remove Shape")){
