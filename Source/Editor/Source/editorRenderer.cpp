@@ -1,7 +1,5 @@
-#ifdef ENABLE_EDITOR
 #include "stlheader.hpp"
 #include "editorHeaders.hpp"
-#include "editorElements.hpp"
 
 #include "vulkanHeaders.hpp"
 #include "device.hpp"
@@ -110,7 +108,7 @@ void Chronos::Editor::EditorRenderer::update()
     ImGui_ImplVulkan_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
-    Chronos::Editor::addElements();
+    this->addElements();
     ImGui::Render();
 }
 
@@ -154,5 +152,3 @@ if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_ViewportsEnable){
     ImGui::RenderPlatformWindowsDefault();
 }
 }
-
-#endif

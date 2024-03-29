@@ -7,7 +7,7 @@ namespace Chronos{
         int nextFreeTextureNo = 0;
         
         void init(Chronos::Engine::Device* device, VkCommandPool commandPool);
-        int addTexture(std::string texturePath);
+        int addTexture(std::string texturePath, std::string textureName);
         void removeTexture(int textureNo);
         Chronos::Engine::Texture getTexture(int textureNo);
         void destroy();

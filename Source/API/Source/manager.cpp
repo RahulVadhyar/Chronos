@@ -22,6 +22,9 @@ Manager::Manager::Manager(Chronos::Manager::Initializer initializer)
     }
     engine.width = initializer.WindowWidth;
     engine.height = initializer.WindowHeight;
+    #ifdef ENABLE_EDITOR
+    engine.setEditorAddElementsCallback(initializer.editorAddElements);
+    #endif
 }
 void Manager::Manager::drawFrame()
 {
@@ -179,14 +182,27 @@ void Manager::Manager::removeText(int textNo)
     engine.textManager.remove(textNo);
 }
 
-int Manager::Manager::addTexture(std::string texturePath)
+int Manager::Manager::addTexture(std::string texturePath, std::string textureName)
 {
-    return engine.textureManager.addTexture(texturePath);
+    return engine.textureManager.addTexture(texturePath, textureName);
 }
 void Manager::Manager::removeTexture(int textureNo)
 {
     engine.textureManager.removeTexture(textureNo);
 }
 
+std::vector <Chronos::Manager::TextureDetails> Manager::Manager::getTextureDetails()
+{
+    std::vector<Chronos::Manager::TextureDetails> textureDetails;
+    for (auto& texture : engine.textureManager.textures)
+    {
+        Chronos::Manager::TextureDetails details;
+        details.textureNo = texture.first;
+        details.textureName = texture.second.textureName;
+        details.texturePath = texture.second.texturePath;
+        textureDetails.push_back(details);
+    }
+    return textureDetails;
 
+}
 };

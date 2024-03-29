@@ -321,3 +321,10 @@ void Chronos::Engine::Engine::createSyncObjects()
         }
     }
 }
+
+#ifdef ENABLE_EDITOR
+void Chronos::Engine::Engine::setEditorAddElementsCallback(void (*editorAddElements)())
+{
+    gui.addElements = editorAddElements;
+}
+#endif

@@ -48,8 +48,10 @@ void Chronos::Engine::createImage(Chronos::Engine::Device device, uint32_t width
     vkBindImageMemory(device.device, *image, *imageMemory, 0);
 }
 void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandPool commandPool,
-    std::string texturePath)
+    std::string texturePath, std::string textureName)
 {
+    this->texturePath = texturePath;
+    this->textureName = textureName;
     int texWidth, texHeight, texChannels;
     this->device = device;
     VkDeviceSize imageSize;
@@ -101,8 +103,10 @@ void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandP
 }
 
 void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandPool commandPool,
-    void* data, size_t texWidth, size_t texHeight, VkDeviceSize imageSize, VkFormat format)
+    void* data, size_t texWidth, size_t texHeight, VkDeviceSize imageSize, VkFormat format, std::string textureName)
 {
+    this->textureName = textureName;
+    this->texturePath = "NA";
     this->device = device;
     VkBuffer stagingBuffer;
     VkDeviceMemory stagingBufferMemory;

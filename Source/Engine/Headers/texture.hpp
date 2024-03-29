@@ -109,7 +109,7 @@ namespace Engine {
         \brief Create the texture by loading the texture from the given path. Only supports jpg and png images.
         */
         void create(Chronos::Engine::Device device, VkCommandPool commandPool,
-            std::string texturePath);
+            std::string texturePath, std::string textureName);
 
         /**
         \brief Create the texture by loading the texture from the given raw data.
@@ -117,12 +117,16 @@ namespace Engine {
         Used in Text Rendering
         */
         void create(Chronos::Engine::Device device, VkCommandPool commandPool,
-            void* data, size_t texWidth, size_t texHeight, VkDeviceSize imageSize, VkFormat format);
+            void* data, size_t texWidth, size_t texHeight, VkDeviceSize imageSize, VkFormat format,
+            std::string textureName);
 
         /**
         \brief Destroy the texture assets.
         */
         void destroy();
+
+        std::string texturePath;
+        std::string textureName;
 
     private:
         /**

@@ -139,7 +139,9 @@ namespace Engine {
         This tells Vulkan that the swapChain has to be recreated.
         */
         void resizeFrameBuffer();
-
+#ifdef ENABLE_EDITOR
+        void setEditorAddElementsCallback(void(*)());
+#endif
         /**
         \brief This is the destructor of the engine.
 

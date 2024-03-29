@@ -40,6 +40,9 @@ namespace Manager {
         int WindowWidth = 800;
         int WindowHeight = 600;
         int BackgroundColor[3] = { 0, 0, 0 };
+#ifdef ENABLE_EDITOR
+        void (*editorAddElements)();
+#endif
     };
 
     /**
@@ -70,6 +73,12 @@ namespace Manager {
         bool triangle = false;
         bool rectangle = false;
         bool npolygon = false;
+    };
+
+    struct TextureDetails{
+        std::string textureName;
+        std::string texturePath;
+        int textureNo;
     };
 
     /**
@@ -186,8 +195,9 @@ namespace Manager {
         */
         int changeBackgroundColor(float r, float g, float b);
 
-        int addTexture(std::string texturePath);
+        int addTexture(std::string texturePath, std::string textureName);
         void removeTexture(int textureNo);
+        std::vector<TextureDetails> getTextureDetails();
 
     private:
         int nextFreeAnimObjNo = 0;

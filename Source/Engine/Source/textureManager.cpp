@@ -10,10 +10,10 @@ void Chronos::Engine::TextureManager::init(Chronos::Engine::Device* device, VkCo
     this->commandPool = commandPool;
 }
 
-int Chronos::Engine::TextureManager::addTexture(std::string texturePath)
+int Chronos::Engine::TextureManager::addTexture(std::string texturePath, std::string textureName)
 {
     int textureNo = nextFreeTextureNo++;
-    textures[textureNo].create(*device, commandPool, texturePath);
+    textures[textureNo].create(*device, commandPool, texturePath, textureName);
     return textureNo;
 }
 

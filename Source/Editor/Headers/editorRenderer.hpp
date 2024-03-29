@@ -24,6 +24,7 @@ namespace Editor {
         void changeMsaa(); // destroy renderpass
         void cleanup();
         void renderAdditionalViewports();
+        void (*addElements)();
     };
 }; // namespace Editor
 }; // namespace Chronos
