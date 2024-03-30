@@ -215,7 +215,7 @@ namespace Manager {
 
         @return Returns the shapeNo that can be used for referencing this shape later.
         */
-        int addPolygon(Chronos::Manager::ShapeParams shapeParams int texture, std::vector<std::array<float, 2>> vertices);
+        int addPolygon(Chronos::Manager::ShapeParams shapeParams, int texture, std::vector<std::array<float, 2>> vertices);
 
         /**
         \brief Updates the polygon(any) with the new parameters.
