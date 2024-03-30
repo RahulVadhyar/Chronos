@@ -1,11 +1,10 @@
 #include "stlheader.hpp"
+#include "editorHeaders.hpp"
 #include "chronos.hpp"
 #include "editorManager.hpp"
-#include "imgui.h"
-#include "editorHeaders.hpp"
 #include "editorTheme.hpp"
 
-void Chronos::Editor::EditorManager::addElements(){\
+void Chronos::Editor::EditorManager::addElements(){
     Chronos::Editor::setImGuiStyle();
     this->MenuBar();
     this->ShapeWindow();

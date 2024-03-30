@@ -1,5 +1,5 @@
+#include "editorHeaders.hpp"
 #include "editorTheme.hpp"
-#include "imgui.h"
 
 void Chronos::Editor::setImGuiStyle(){
 // auto &colors = ImGui::GetStyle().Colors;
