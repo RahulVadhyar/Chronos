@@ -67,7 +67,7 @@ namespace Engine {
     /**
         \brief This is a Uniform buffer for storing the uniform variables in the shaders
 
-    Currently used only for shapes.
+    Currently used only for shapes properties like postition, size etc.
     Can be updated on the fly using the update function.
     */
     class UniformBuffer : public Buffer {
@@ -107,9 +107,27 @@ namespace Engine {
         void* data;
     };
 
+    /**
+    \brief This is a buffer for storing and updating the color of the shape.
+
+    It is used to store the color of the shape and update it on the fly.
+    */
     class ColorBuffer : public Buffer {
     public:
+        /**
+        \brief Creates the buffer and maps the memory.
+
+        It uses the inherited function [create](#Chronos::Engine::Buffer::create) to create the buffer
+
+        @param device The device on which the buffer should be stored.
+        */
         void create(Chronos::Engine::Device device);
+        
+        /**
+        \brief Updates the buffer with the new color.
+
+        @param color The new color of the shape.
+        */
         void update(glm::vec3 color);
 
     private:
