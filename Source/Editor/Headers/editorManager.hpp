@@ -60,6 +60,7 @@ namespace Chronos{
 
                 //Text Window
                 Chronos::Engine::TextParams newTextParams;
+                int currentTextSelection = 0;
 
                 //Shape details window
                 Chronos::Manager::ShapeParams shapeDetailsShapeParams;
