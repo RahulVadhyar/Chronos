@@ -9,7 +9,7 @@
 <area shape="rect" id="node29" href="$texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="2124,95,2221,121"/>
 <area shape="rect" id="node30" href="$object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="2246,95,2337,121"/>
 <area shape="rect" id="node31" href="$objectManager_8hpp.html" title="Defines the ObjectManager class for managing objects in the Chronos::Engine namespace." alt="" coords="2361,95,2507,121"/>
-<area shape="rect" id="node33" href="$commonStructs_8hpp.html" title=" " alt="" coords="2531,95,2683,121"/>
+<area shape="rect" id="node33" href="$commonStructs_8hpp.html" title="Header file that contains common structs used in Chronos." alt="" coords="2531,95,2683,121"/>
 <area shape="rect" id="node34" href="$engineStructs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="2707,95,2846,121"/>
 <area shape="rect" id="node35" href="$text_8hpp.html" title=" " alt="" coords="2871,95,2947,121"/>
 <area shape="rect" id="node37" href="$textManager_8hpp.html" title="Contains the class for managing text in the Chronos::Engine namespace." alt="" coords="2971,95,3103,121"/>

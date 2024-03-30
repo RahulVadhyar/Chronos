@@ -3,7 +3,7 @@
 <area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Engine.html" title=" " alt="" coords="780,193,959,219"/>
 <area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1TextManager.html" title="This is the text manager for Chronos. It handles creation, modification, updating and desrtuction of ..." alt="" coords="358,13,577,39"/>
 <area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1ObjectManager.html" title=" " alt="" coords="5,5,240,47"/>
-<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1TextureManager.html" title=" " alt="" coords="376,127,559,168"/>
+<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1TextureManager.html" title="This is the texture manager for Chronos. It handles creation, modification, updating and desrtuction ..." alt="" coords="376,127,559,168"/>
 <area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="33,134,213,161"/>
 <area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="364,193,571,219"/>
 <area shape="rect" id="node8" href="$classChronos_1_1Engine_1_1ShapeManager.html" title=" " alt="" coords="336,244,599,285"/>

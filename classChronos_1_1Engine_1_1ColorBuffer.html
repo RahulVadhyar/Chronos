@@ -93,13 +93,16 @@ $(document).ready(function(){initNavTree('classChronos_1_1Engine_1_1ColorBuffer.
 </div><!--header-->
 <div class="contents">
 
+<p>This is a buffer for storing and updating the color of the shape.  
+ <a href="classChronos_1_1Engine_1_1ColorBuffer.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="buffers_8hpp_source.html">buffers.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Chronos::Engine::ColorBuffer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1ColorBuffer__inherit__graph.png" border="0" usemap="#aChronos_1_1Engine_1_1ColorBuffer_inherit__map" alt="Inheritance graph"/></div>
 <map name="aChronos_1_1Engine_1_1ColorBuffer_inherit__map" id="aChronos_1_1Engine_1_1ColorBuffer_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,213,107"/>
+<area shape="rect" title="This is a buffer for storing and updating the color of the shape." alt="" coords="5,80,213,107"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html" title="Used to store buffers in GPU." alt="" coords="22,5,197,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -108,7 +111,7 @@ Collaboration diagram for Chronos::Engine::ColorBuffer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1ColorBuffer__coll__graph.png" border="0" usemap="#aChronos_1_1Engine_1_1ColorBuffer_coll__map" alt="Collaboration graph"/></div>
 <map name="aChronos_1_1Engine_1_1ColorBuffer_coll__map" id="aChronos_1_1Engine_1_1ColorBuffer_coll__map">
-<area shape="rect" title=" " alt="" coords="5,171,213,197"/>
+<area shape="rect" title="This is a buffer for storing and updating the color of the shape." alt="" coords="5,171,213,197"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html" title="Used to store buffers in GPU." alt="" coords="22,95,197,121"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="19,5,199,32"/>
 </map>
@@ -117,8 +120,10 @@ Collaboration diagram for Chronos::Engine::ColorBuffer:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a315b2e206d85861cf5f6b99ac0a35aed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1ColorBuffer.html#a315b2e206d85861cf5f6b99ac0a35aed">create</a> (<a class="el" href="classChronos_1_1Engine_1_1Device.html">Chronos::Engine::Device</a> <a class="el" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>)</td></tr>
+<tr class="memdesc:a315b2e206d85861cf5f6b99ac0a35aed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the buffer and maps the memory.  <a href="classChronos_1_1Engine_1_1ColorBuffer.html#a315b2e206d85861cf5f6b99ac0a35aed">More...</a><br /></td></tr>
 <tr class="separator:a315b2e206d85861cf5f6b99ac0a35aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a280ddeb2524307345682f309a6687b92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1ColorBuffer.html#a280ddeb2524307345682f309a6687b92">update</a> (glm::vec3 color)</td></tr>
+<tr class="memdesc:a280ddeb2524307345682f309a6687b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the buffer with the new color.  <a href="classChronos_1_1Engine_1_1ColorBuffer.html#a280ddeb2524307345682f309a6687b92">More...</a><br /></td></tr>
 <tr class="separator:a280ddeb2524307345682f309a6687b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classChronos_1_1Engine_1_1Buffer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classChronos_1_1Engine_1_1Buffer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classChronos_1_1Engine_1_1Buffer.html">Chronos::Engine::Buffer</a></td></tr>
 <tr class="memitem:ab14754126e56811cc67254f425780826 inherit pub_methods_classChronos_1_1Engine_1_1Buffer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826">create</a> (<a class="el" href="classChronos_1_1Engine_1_1Device.html">Chronos::Engine::Device</a> <a class="el" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>, VkBufferUsageFlags flags, VkMemoryPropertyFlags properties)</td></tr>
@@ -150,8 +155,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ad4f872dd55a1a2d78f6094bd545c9861 inherit pub_attribs_classChronos_1_1Engine_1_1Buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="buffers_8hpp_source.html#l00110">110</a> of file <a class="el" href="buffers_8hpp_source.html">buffers.hpp</a>.</p>
+<div class="textblock"><p>This is a buffer for storing and updating the color of the shape. </p>
+<p>It is used to store the color of the shape and update it on the fly. </p>
+
+<p class="definition">Definition at line <a class="el" href="buffers_8hpp_source.html#l00115">115</a> of file <a class="el" href="buffers_8hpp_source.html">buffers.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a315b2e206d85861cf5f6b99ac0a35aed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a315b2e206d85861cf5f6b99ac0a35aed">&#9670;&nbsp;</a></span>create()</h2>
@@ -169,18 +176,27 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates the buffer and maps the memory. </p>
+<p>It uses the inherited function <a href="#Chronos::Engine::Buffer::create">create</a> to create the buffer</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>The device on which the buffer should be stored. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="buffers_8cpp_source.html#l00071">71</a> of file <a class="el" href="buffers_8cpp_source.html">buffers.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a> = <span class="keyword">sizeof</span>(UniformColorBufferObject);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826">Buffer::create</a>(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); <span class="comment">//want to be visible to host and device</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    vkMapMemory(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>, 0, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>, 0, &amp;<a class="code" href="classChronos_1_1Engine_1_1ColorBuffer.html#a86f5651df2e38414f11598af8b194d56">data</a>);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a45958dc37af9a03b85b94445f8f25e0f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">Chronos::Engine::Buffer::size</a></div><div class="ttdeci">VkDeviceSize size</div><div class="ttdoc">The size of the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00053">buffers.hpp:53</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_ab14754126e56811cc67254f425780826"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826">Chronos::Engine::Buffer::create</a></div><div class="ttdeci">void create(Chronos::Engine::Device device, VkBufferUsageFlags flags, VkMemoryPropertyFlags properties)</div><div class="ttdoc">This is used to initialize the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8cpp_source.html#l00014">buffers.cpp:14</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_ad4f872dd55a1a2d78f6094bd545c9861"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">Chronos::Engine::Buffer::memory</a></div><div class="ttdeci">VkDeviceMemory memory</div><div class="ttdoc">The device memory of the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00058">buffers.hpp:58</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_adb83b0443d3a24404bf414686d27f590"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">Chronos::Engine::Buffer::device</a></div><div class="ttdeci">Chronos::Engine::Device device</div><div class="ttdoc">The device on which the buffer is stored.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00064">buffers.hpp:64</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ColorBuffer_html_a86f5651df2e38414f11598af8b194d56"><div class="ttname"><a href="classChronos_1_1Engine_1_1ColorBuffer.html#a86f5651df2e38414f11598af8b194d56">Chronos::Engine::ColorBuffer::data</a></div><div class="ttdeci">void * data</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00116">buffers.hpp:116</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1ColorBuffer_html_a86f5651df2e38414f11598af8b194d56"><div class="ttname"><a href="classChronos_1_1Engine_1_1ColorBuffer.html#a86f5651df2e38414f11598af8b194d56">Chronos::Engine::ColorBuffer::data</a></div><div class="ttdeci">void * data</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00134">buffers.hpp:134</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00020">device.hpp:20</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="buffers_8cpp_source.html#l00014">Chronos::Engine::Buffer::create()</a>, and <a class="el" href="device_8hpp_source.html#l00020">Chronos::Engine::Device::device</a>.</p>
@@ -189,7 +205,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1ColorBuffer_a315b2e206d85861cf5f6b99ac0a35aed_cgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1ColorBuffer_a315b2e206d85861cf5f6b99ac0a35aed_cgraph" alt=""/></div>
 <map name="aclassChronos_1_1Engine_1_1ColorBuffer_a315b2e206d85861cf5f6b99ac0a35aed_cgraph" id="aclassChronos_1_1Engine_1_1ColorBuffer_a315b2e206d85861cf5f6b99ac0a35aed_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,213,47"/>
+<area shape="rect" title="Creates the buffer and maps the memory." alt="" coords="5,5,213,47"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826" title="This is used to initialize the buffer." alt="" coords="261,5,436,47"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a" title="Creates a buffer of a given size, usage and properties." alt="" coords="484,13,699,39"/>
 <area shape="rect" href="namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="747,13,989,39"/>
@@ -214,14 +230,23 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Updates the buffer with the new color. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>The new color of the shape. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="buffers_8cpp_source.html#l00079">79</a> of file <a class="el" href="buffers_8cpp_source.html">buffers.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    UniformColorBufferObject ubo {};</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    ubo.color = color;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    memcpy(<a class="code" href="classChronos_1_1Engine_1_1ColorBuffer.html#a86f5651df2e38414f11598af8b194d56">data</a>, &amp;ubo, <span class="keyword">sizeof</span>(ubo));</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{   </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">//copy the color to the buffer</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    UniformColorBufferObject ubo {};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    ubo.color = color;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    memcpy(<a class="code" href="classChronos_1_1Engine_1_1ColorBuffer.html#a86f5651df2e38414f11598af8b194d56">data</a>, &amp;ubo, <span class="keyword">sizeof</span>(ubo));</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="engineStructs_8hpp_source.html#l00044">Chronos::Engine::UniformColorBufferObject::color</a>.</p>
+<p class="reference">References <a class="el" href="engineStructs_8hpp_source.html#l00050">Chronos::Engine::UniformColorBufferObject::color</a>.</p>
 
 </div>
 </div>
@@ -246,7 +271,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buffers_8hpp_source.html#l00116">116</a> of file <a class="el" href="buffers_8hpp_source.html">buffers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffers_8hpp_source.html#l00134">134</a> of file <a class="el" href="buffers_8hpp_source.html">buffers.hpp</a>.</p>
 
 </div>
 </div>

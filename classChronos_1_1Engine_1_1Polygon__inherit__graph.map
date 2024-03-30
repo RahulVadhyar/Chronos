@@ -1,4 +1,4 @@
 <map id="Chronos::Engine::Polygon" name="Chronos::Engine::Polygon">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,192,107"/>
+<area shape="rect" id="node1" title="A class to represent a polygon object." alt="" coords="5,80,192,107"/>
 <area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects." alt="" coords="10,5,187,32"/>
 </map>

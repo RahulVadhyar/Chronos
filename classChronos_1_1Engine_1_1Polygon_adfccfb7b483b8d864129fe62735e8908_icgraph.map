@@ -1,5 +1,5 @@
 <map id="Chronos::Engine::Polygon::copyVerticestoBuffer" name="Chronos::Engine::Polygon::copyVerticestoBuffer">
-<area shape="rect" id="node1" title=" " alt="" coords="475,5,661,47"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e" title=" " alt="" coords="240,5,427,47"/>
+<area shape="rect" id="node1" title="Copies the current vertices in the vertices vector to the vertex buffer given." alt="" coords="475,5,661,47"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e" title="Initializes the polygon object." alt="" coords="240,5,427,47"/>
 <area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1PolygonManager.html#a5735e1120cb83960e28b7bf489ee1ae0" title=" " alt="" coords="5,5,192,47"/>
 </map>

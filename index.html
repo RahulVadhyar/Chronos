@@ -85,32 +85,32 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title"><a class="el" href="namespaceChronos.html" title="The number of frames in flight.">Chronos</a>(v0.0) </div>  </div>
+<div class="title"><a class="el" href="namespaceChronos.html">Chronos</a>(v0.0) </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md5">Cloning:</a></li>
-<li class="level1"><a href="#autotoc_md6">Table of Contents</a></li>
-<li class="level1"><a href="#autotoc_md7">Dependencies</a><ul><li class="level2"><a href="#autotoc_md8">For Windows:</a></li>
-<li class="level2"><a href="#autotoc_md9">For Linux and Unix like systems</a></li>
+<ul><li class="level1"><a href="#autotoc_md14">Cloning:</a></li>
+<li class="level1"><a href="#autotoc_md15">Table of Contents</a></li>
+<li class="level1"><a href="#autotoc_md16">Dependencies</a><ul><li class="level2"><a href="#autotoc_md17">For Windows:</a></li>
+<li class="level2"><a href="#autotoc_md18">For Linux and Unix like systems</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#autotoc_md10">How To Use</a></li>
-<li class="level1"><a href="#autotoc_md11">API Documentation</a></li>
-<li class="level1"><a href="#autotoc_md12">How to file an issue</a></li>
-<li class="level1"><a href="#autotoc_md13">Libraries used</a></li>
-<li class="level1"><a href="#autotoc_md14">Contributing</a></li>
-<li class="level1"><a href="#autotoc_md15">FAQs</a></li>
+<li class="level1"><a href="#autotoc_md19">How To Use</a></li>
+<li class="level1"><a href="#autotoc_md20">API Documentation</a></li>
+<li class="level1"><a href="#autotoc_md21">How to file an issue</a></li>
+<li class="level1"><a href="#autotoc_md22">Libraries used</a></li>
+<li class="level1"><a href="#autotoc_md23">Contributing</a></li>
+<li class="level1"><a href="#autotoc_md24">FAQs</a></li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md_README"></a></p>
 <p>A advanced 2D rendering and animation engine written in C++ and using the Vulkan graphics rendering API. Supports many advanced features and is performant, hackable and flexbile that can cater to a wide range of needs, including simple 2D game development.</p>
 <p><b>Please Note</b> : This project is currently under development and is not stable yet. All features are not final.</p>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Cloning:</h1>
 <p><em><b>Make sure to clone this repo recursively.</b></em></p>
 <p>There are other submodule dependencies that need to be cloned to compile this. </p><div class="fragment"><div class="line">git clone --recursive https://github.com/RahulVadhyar/Chronos.git</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md15"></a>
 Table of Contents</h1>
 <ul>
 <li><a href="#dependencies">Dependencies</a></li>
@@ -131,12 +131,12 @@ Table of Contents</h1>
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 Dependencies</h1>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 For Windows:</h2>
 <p>Download and install the Vulkan SDK from this <a href="https://sdk.lunarg.com/sdk/download/latest/windows/vulkan-sdk.exe">link</a>. Everything needed is in that package.</p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 For Linux and Unix like systems</h2>
 <p>This project uses GLM, GLFW, Vulkan Validation Layers. It also compiles GLFW from source(it is included as submodule) so we need its dependencies</p><ul>
 <li>#### For Fedora Linux: #### Run the following terminal commands: <div class="fragment"><div class="line">sudo dnf install glm-devel vulkan-validation-layers glfw glfw-devel</div>
@@ -146,7 +146,7 @@ For Linux and Unix like systems</h2>
 </div><!-- fragment --></li>
 <li>#### For Other Linux and Unix-Like platforms: #### Due to the fact that this project is still in early development, I haven't tested this on anything other than Fedora Linux and Ubuntu Linux. However the needed dependencies are given above and can be installed using your package manager.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md19"></a>
 How To Use</h1>
 <p>In order to use this library with your project, you will need to use cmake. Install the dependencies. Then clone this(recursively) to your project and add it. Then in CMakeLists.txt, write it as follows </p><div class="fragment"><div class="line">cmake_minimum_required(VERSION 3.13)</div>
 <div class="line">project(YourProject)</div>
@@ -158,13 +158,13 @@ How To Use</h1>
 <div class="line"> </div>
 <div class="line">add_subdirectory(path/to/Chronos)</div>
 <div class="line">target_link_libraries(YourProject Chronos)</div>
-</div><!-- fragment --> <h1><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --> <h1><a class="anchor" id="autotoc_md20"></a>
 API Documentation</h1>
 <p>The documentation for this library can be found <a href="https://rahulvadhyar.github.io/Chronos/">here</a>.</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 How to file an issue</h1>
 <p>As this is early stages of development, issues are not taken right now. However they will be soon open.</p>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md22"></a>
 Libraries used</h1>
 <p>All the libraries and third party code is inside the ThirdParty folder. The dependencies along with the usage is given as shown:</p><ul>
 <li>GLFW: This is a cross platform window system. It converts the different protocols of different display managers such as Windows DVM, X11 and Wayland into a common protocol that can be used.</li>
@@ -173,10 +173,10 @@ Libraries used</h1>
 <li>ImGuizmo: This provided guizmo tools for the editor for dragging shapes and other objects.</li>
 <li>STB: This includes all the stb headers(stb_image.h) and ini font files that are used by this project. It is used for image loading and font loading.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md23"></a>
 Contributing</h1>
 <p>As this project is still under development and does not have a stable release, I do not accept any contributions for now. However they will soon be open.</p>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md24"></a>
 FAQs</h1>
 <ul>
 <li><p class="startli">### Why did I choose Vulkan over OpenGL? ### My first attempt at this to use OpenGL. However during development, I realized that OpenGL has some issues due to the fact that it was an old API not made for modern software. Some of the issues that OpenGL had that did not work for this project was:</p><ul>
@@ -192,7 +192,7 @@ FAQs</h1>
 <li>### Is Wayland and/or X11 supported? ### Yes. Since this project uses GLFW that is compiled from scratch, it supports both Wayland and X11 platforms. The flags are set such that they are built for both by default.</li>
 <li>### Which platforms are supported? ### As of right now, Windows and Linux(includes unix-like OSes) are supported. MacOS is not supported. See below for reason.</li>
 <li>### Why is MacOS not supported? ### While Vulkan applications can be run on a mac via moltenVK, this library uses Vulkan 1.30, which is not supported by moltenVK. Once the support has come and is stable, this can run on macs. If you really want, you can try it yourself, this is open source and free after all.</li>
-<li>### Why just not use Unreal Engine or Unity or similar engine? ### Well there are mainly two reasons for this. One is that when I started this project I wanted to learn to write C++ and learn software development and all its quirks. The second reason is that the other libraries or engines target 3D rendering with 2D added as an afterthought. I wanted a custom dedicated 2D renderer for the game that I am developing that I can add custom features to as and when needed. Hence I went ahead and created <a class="el" href="namespaceChronos.html" title="The number of frames in flight.">Chronos</a></li>
+<li>### Why just not use Unreal Engine or Unity or similar engine? ### Well there are mainly two reasons for this. One is that when I started this project I wanted to learn to write C++ and learn software development and all its quirks. The second reason is that the other libraries or engines target 3D rendering with 2D added as an afterthought. I wanted a custom dedicated 2D renderer for the game that I am developing that I can add custom features to as and when needed. Hence I went ahead and created <a class="el" href="namespaceChronos.html">Chronos</a></li>
 <li>### Can I use this for my project? ### Regarding licensing, this is fully open souce, and in the public domain. There are no restrictions, do as you please. However please note that until v1.0, API stability is not guaranteed and will break. Also due to the fact that this is in not stable, there will be bugs and issues. Please keep this in mind while using this.</li>
 <li>### Are there any projects that use this library as an example? ### Currently my <a href="https://github.com/RahulVadhyar/StreetChase.git">game</a> is used as a test bed and is developed simultaenously. As of now, no other project uses this to the best of my knowledge. </li>
 </ul>

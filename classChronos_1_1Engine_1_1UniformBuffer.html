@@ -154,7 +154,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">\brief This is a Uniform buffer for storing the uniform variables in the shaders
-</pre><p> Currently used only for shapes. Can be updated on the fly using the update function. </p>
+</pre><p> Currently used only for shapes properties like postition, size etc. Can be updated on the fly using the update function. </p>
 
 <p class="definition">Definition at line <a class="el" href="buffers_8hpp_source.html#l00073">73</a> of file <a class="el" href="buffers_8hpp_source.html">buffers.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
@@ -187,7 +187,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a> = <span class="keyword">sizeof</span>(UniformBufferObject);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826">Buffer::create</a>(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); <span class="comment">//want to be visible to host and device</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    vkMapMemory(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>, 0, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>, 0, &amp;<a class="code" href="classChronos_1_1Engine_1_1UniformBuffer.html#a17fac3b8f664782a8fdbc331867391d2">data</a>);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a45958dc37af9a03b85b94445f8f25e0f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">Chronos::Engine::Buffer::size</a></div><div class="ttdeci">VkDeviceSize size</div><div class="ttdoc">The size of the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00053">buffers.hpp:53</a></div></div>
@@ -294,7 +294,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    memcpy(<a class="code" href="classChronos_1_1Engine_1_1UniformBuffer.html#a17fac3b8f664782a8fdbc331867391d2">data</a>, &amp;ubo, <span class="keyword">sizeof</span>(ubo));</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="engineStructs_8hpp_source.html#l00038">Chronos::Engine::UniformBufferObject::model</a>.</p>
+<p class="reference">References <a class="el" href="engineStructs_8hpp_source.html#l00039">Chronos::Engine::UniformBufferObject::model</a>.</p>
 
 </div>
 </div>

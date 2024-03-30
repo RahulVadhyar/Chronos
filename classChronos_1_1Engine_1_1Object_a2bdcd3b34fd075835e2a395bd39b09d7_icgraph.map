@@ -1,5 +1,5 @@
 <map id="Chronos::Engine::Object::destroy" name="Chronos::Engine::Object::destroy">
 <area shape="rect" id="node1" title="Destroys the object and releases associated resources." alt="" coords="240,39,417,80"/>
 <area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Text.html#a5b951ee13c422d24a63fa551ecb1014c" title="Destroys the font object and frees the memory." alt="" coords="17,5,180,47"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Polygon.html#a0e3324494b8538884a071b8d588ed05e" title="Destroys the object and releases associated resources." alt="" coords="5,71,192,112"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Polygon.html#a0e3324494b8538884a071b8d588ed05e" title="Destroys the polygon object." alt="" coords="5,71,192,112"/>
 </map>

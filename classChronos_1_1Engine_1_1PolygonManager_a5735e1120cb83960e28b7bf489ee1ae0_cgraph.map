@@ -1,9 +1,9 @@
 <map id="Chronos::Engine::PolygonManager::addPolygon" name="Chronos::Engine::PolygonManager::addPolygon">
 <area shape="rect" id="node1" title=" " alt="" coords="5,135,192,176"/>
 <area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1ObjectManager.html#ab41e9ab71459a6c7301cc31cff6e7ae3" title="Adds an object to the ObjectManager." alt="" coords="240,101,475,143"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e" title=" " alt="" coords="264,167,451,208"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e" title="Initializes the polygon object." alt="" coords="264,167,451,208"/>
 <area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="529,68,703,109"/>
-<area shape="rect" id="node10" href="$classChronos_1_1Engine_1_1Polygon.html#adfccfb7b483b8d864129fe62735e8908" title=" " alt="" coords="523,133,709,175"/>
+<area shape="rect" id="node10" href="$classChronos_1_1Engine_1_1Polygon.html#adfccfb7b483b8d864129fe62735e8908" title="Copies the current vertices in the vertices vector to the vertex buffer given." alt="" coords="523,133,709,175"/>
 <area shape="rect" id="node11" href="$classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826" title="This is used to initialize the buffer." alt="" coords="529,199,703,240"/>
 <area shape="rect" id="node12" href="$classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e" title="Initializes the object." alt="" coords="527,264,705,305"/>
 <area shape="rect" id="node5" href="$namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675" title="Copies data from one buffer to another." alt="" coords="762,75,967,102"/>

@@ -1,7 +1,7 @@
 <map id="Chronos::Engine::Buffer::create" name="Chronos::Engine::Buffer::create">
 <area shape="rect" id="node1" title="This is used to initialize the buffer." alt="" coords="496,71,671,112"/>
 <area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1UniformBuffer.html#a4c14b97754025d584f9fbf73ac26d8c2" title="Creates the buffer and maps the memory." alt="" coords="250,5,438,47"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1ColorBuffer.html#a315b2e206d85861cf5f6b99ac0a35aed" title=" " alt="" coords="240,71,448,112"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e" title=" " alt="" coords="251,136,437,177"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1ColorBuffer.html#a315b2e206d85861cf5f6b99ac0a35aed" title="Creates the buffer and maps the memory." alt="" coords="240,71,448,112"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e" title="Initializes the polygon object." alt="" coords="251,136,437,177"/>
 <area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1PolygonManager.html#a5735e1120cb83960e28b7bf489ee1ae0" title=" " alt="" coords="5,136,192,177"/>
 </map>

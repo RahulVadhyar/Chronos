@@ -1,5 +1,5 @@
 <map id="Chronos::Engine::ColorBuffer::create" name="Chronos::Engine::ColorBuffer::create">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,213,47"/>
+<area shape="rect" id="node1" title="Creates the buffer and maps the memory." alt="" coords="5,5,213,47"/>
 <area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826" title="This is used to initialize the buffer." alt="" coords="261,5,436,47"/>
 <area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a" title="Creates a buffer of a given size, usage and properties." alt="" coords="484,13,699,39"/>
 <area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="747,13,989,39"/>

@@ -8,10 +8,10 @@
 <area shape="rect" id="node28" href="$buffers_8hpp.html" title="Contains the Buffer and UniformBuffer class." alt="" coords="2243,95,2338,121"/>
 <area shape="rect" id="node29" href="$Vertex_8hpp.html" title="This file includes the structure of a vertex." alt="" coords="2362,95,2454,121"/>
 <area shape="rect" id="node30" href="$engineStructs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="2479,95,2617,121"/>
-<area shape="rect" id="node31" href="$commonStructs_8hpp.html" title=" " alt="" coords="2641,95,2793,121"/>
+<area shape="rect" id="node31" href="$commonStructs_8hpp.html" title="Header file that contains common structs used in Chronos." alt="" coords="2641,95,2793,121"/>
 <area shape="rect" id="node32" href="$object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="2817,95,2908,121"/>
 <area shape="rect" id="node33" href="$texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="2933,95,3030,121"/>
-<area shape="rect" id="node34" href="$polygon_8hpp.html" title=" " alt="" coords="3054,95,3157,121"/>
+<area shape="rect" id="node34" href="$polygon_8hpp.html" title="Header file for Polygon class." alt="" coords="3054,95,3157,121"/>
 <area shape="rect" id="node35" href="$objectManager_8hpp.html" title="Defines the ObjectManager class for managing objects in the Chronos::Engine namespace." alt="" coords="3181,95,3328,121"/>
 <area shape="rect" id="node37" href="$polygonManager_8hpp.html" title=" " alt="" coords="3353,95,3511,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,169,91,196"/>

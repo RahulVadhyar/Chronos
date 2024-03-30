@@ -132,8 +132,10 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a4e9fa6072f861955b04b663d63eede66"><td class="mdescLeft">&#160;</td><td class="mdescRight">The image view for the texture.  <a href="classChronos_1_1Engine_1_1Texture.html#a4e9fa6072f861955b04b663d63eede66">More...</a><br /></td></tr>
 <tr class="separator:a4e9fa6072f861955b04b663d63eede66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb37dc18961fb2f3cfd029626feed19f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Texture.html#aeb37dc18961fb2f3cfd029626feed19f">texturePath</a></td></tr>
+<tr class="memdesc:aeb37dc18961fb2f3cfd029626feed19f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The path of the texture that it was loaded from.  <a href="classChronos_1_1Engine_1_1Texture.html#aeb37dc18961fb2f3cfd029626feed19f">More...</a><br /></td></tr>
 <tr class="separator:aeb37dc18961fb2f3cfd029626feed19f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a017da0077ec137911a87f6573560d91d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Texture.html#a017da0077ec137911a87f6573560d91d">textureName</a></td></tr>
+<tr class="memdesc:a017da0077ec137911a87f6573560d91d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the texture.  <a href="classChronos_1_1Engine_1_1Texture.html#a017da0077ec137911a87f6573560d91d">More...</a><br /></td></tr>
 <tr class="separator:a017da0077ec137911a87f6573560d91d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -191,6 +193,15 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Create the texture by loading the texture from the given path. Only supports jpg and png images. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>The device that has the texture. </td></tr>
+    <tr><td class="paramname">commandPool</td><td>The command pool to create the temporary command buffer from. </td></tr>
+    <tr><td class="paramname">texturePath</td><td>The path to the texture(only jpg or png). </td></tr>
+    <tr><td class="paramname">textureName</td><td>The name of the texture(must be unique). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="texture_8cpp_source.html#l00050">50</a> of file <a class="el" href="texture_8cpp_source.html">texture.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
@@ -246,19 +257,19 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Texture.html#a4e9fa6072f861955b04b663d63eede66">textureImageView</a> = <a class="code" href="namespaceChronos_1_1Engine.html#a34457a6d2cac8f2770ffbaf52b3b2ee3">createImageView</a>(<a class="code" href="classChronos_1_1Engine_1_1Texture.html#a45c8c3b0d560c16f84011561e8681f0e">device</a>, VK_FORMAT_R8G8B8A8_SRGB, <a class="code" href="classChronos_1_1Engine_1_1Texture.html#a7dd323e169d6e40e23379abe453e7128">textureImage</a>);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00020">device.hpp:20</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_a017da0077ec137911a87f6573560d91d"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#a017da0077ec137911a87f6573560d91d">Chronos::Engine::Texture::textureName</a></div><div class="ttdeci">std::string textureName</div><div class="ttdef"><b>Definition:</b> <a href="texture_8hpp_source.html#l00129">texture.hpp:129</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_a017da0077ec137911a87f6573560d91d"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#a017da0077ec137911a87f6573560d91d">Chronos::Engine::Texture::textureName</a></div><div class="ttdeci">std::string textureName</div><div class="ttdoc">The name of the texture.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8hpp_source.html#l00150">texture.hpp:150</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_a1542281212aa959828eb2173885c93b6"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#a1542281212aa959828eb2173885c93b6">Chronos::Engine::Texture::textureImageMemory</a></div><div class="ttdeci">VkDeviceMemory textureImageMemory</div><div class="ttdoc">The memory for the texture.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8hpp_source.html#l00096">texture.hpp:96</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_a45c8c3b0d560c16f84011561e8681f0e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#a45c8c3b0d560c16f84011561e8681f0e">Chronos::Engine::Texture::device</a></div><div class="ttdeci">Chronos::Engine::Device device</div><div class="ttdoc">The device that has the texture.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8hpp_source.html#l00135">texture.hpp:135</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_a45c8c3b0d560c16f84011561e8681f0e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#a45c8c3b0d560c16f84011561e8681f0e">Chronos::Engine::Texture::device</a></div><div class="ttdeci">Chronos::Engine::Device device</div><div class="ttdoc">The device that has the texture.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8hpp_source.html#l00156">texture.hpp:156</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_a4e9fa6072f861955b04b663d63eede66"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#a4e9fa6072f861955b04b663d63eede66">Chronos::Engine::Texture::textureImageView</a></div><div class="ttdeci">VkImageView textureImageView</div><div class="ttdoc">The image view for the texture.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8hpp_source.html#l00106">texture.hpp:106</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_a7dd323e169d6e40e23379abe453e7128"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#a7dd323e169d6e40e23379abe453e7128">Chronos::Engine::Texture::textureImage</a></div><div class="ttdeci">VkImage textureImage</div><div class="ttdoc">The image for the texture.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8hpp_source.html#l00101">texture.hpp:101</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_aeb37dc18961fb2f3cfd029626feed19f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#aeb37dc18961fb2f3cfd029626feed19f">Chronos::Engine::Texture::texturePath</a></div><div class="ttdeci">std::string texturePath</div><div class="ttdef"><b>Definition:</b> <a href="texture_8hpp_source.html#l00128">texture.hpp:128</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_aeb37dc18961fb2f3cfd029626feed19f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#aeb37dc18961fb2f3cfd029626feed19f">Chronos::Engine::Texture::texturePath</a></div><div class="ttdeci">std::string texturePath</div><div class="ttdoc">The path of the texture that it was loaded from.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8hpp_source.html#l00145">texture.hpp:145</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_a34457a6d2cac8f2770ffbaf52b3b2ee3"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a34457a6d2cac8f2770ffbaf52b3b2ee3">Chronos::Engine::createImageView</a></div><div class="ttdeci">VkImageView createImageView(Chronos::Engine::Device device, VkFormat format, VkImage image)</div><div class="ttdoc">Create a VkImageView for a given VkImage.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8cpp_source.html#l00204">texture.cpp:204</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_a486e04f821153409c6c7d0ab3b3e89b4"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a486e04f821153409c6c7d0ab3b3e89b4">Chronos::Engine::transitionImageLayout</a></div><div class="ttdeci">void transitionImageLayout(VkImage image, VkFormat format, VkImageLayout oldLayout, VkImageLayout newLayout, VkCommandPool commandPool, Chronos::Engine::Device device)</div><div class="ttdoc">Transiton a VkImage from one layout to another.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8cpp_source.html#l00143">texture.cpp:143</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_a7018d1eaf2dfaf4c373269fcaa344a46"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a7018d1eaf2dfaf4c373269fcaa344a46">Chronos::Engine::createImage</a></div><div class="ttdeci">void createImage(Chronos::Engine::Device device, uint32_t width, uint32_t height, VkFormat format, VkImageTiling tiling, VkImageUsageFlags usage, VkMemoryPropertyFlags properties, VkImage *image, VkDeviceMemory *imageMemory, VkSampleCountFlagBits numSamples)</div><div class="ttdoc">For a given image dimensons, it creates a VkImage and VkDeviceMemory for the image.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8cpp_source.html#l00010">texture.cpp:10</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_a72a6333d7a23ef16daa4ee34bd6cab5f"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a72a6333d7a23ef16daa4ee34bd6cab5f">Chronos::Engine::copyBufferToImage</a></div><div class="ttdeci">void copyBufferToImage(VkBuffer buffer, VkImage image, uint32_t width, uint32_t height, VkCommandPool commandPool, Chronos::Engine::Device device)</div><div class="ttdoc">Copy data from a buffer to an image.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8cpp_source.html#l00184">texture.cpp:184</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_aa86983b2d3f7d09e250b31c3209d207a"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a">Chronos::Engine::createBuffer</a></div><div class="ttdeci">void createBuffer(Chronos::Engine::Device device, VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer *buffer, VkDeviceMemory *bufferMemory)</div><div class="ttdoc">Creates a buffer of a given size, usage and properties.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00060">helper.cpp:60</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="texture_8cpp_source.html#l00184">Chronos::Engine::copyBufferToImage()</a>, <a class="el" href="helper_8cpp_source.html#l00060">Chronos::Engine::createBuffer()</a>, <a class="el" href="texture_8cpp_source.html#l00010">Chronos::Engine::createImage()</a>, <a class="el" href="texture_8cpp_source.html#l00204">Chronos::Engine::createImageView()</a>, <a class="el" href="device_8hpp_source.html#l00020">Chronos::Engine::Device::device</a>, <a class="el" href="texture_8hpp_source.html#l00135">device</a>, <a class="el" href="texture_8hpp_source.html#l00101">textureImage</a>, <a class="el" href="texture_8hpp_source.html#l00096">textureImageMemory</a>, <a class="el" href="texture_8hpp_source.html#l00106">textureImageView</a>, <a class="el" href="texture_8hpp_source.html#l00129">textureName</a>, <a class="el" href="texture_8hpp_source.html#l00128">texturePath</a>, and <a class="el" href="texture_8cpp_source.html#l00143">Chronos::Engine::transitionImageLayout()</a>.</p>
+<p class="reference">References <a class="el" href="texture_8cpp_source.html#l00184">Chronos::Engine::copyBufferToImage()</a>, <a class="el" href="helper_8cpp_source.html#l00060">Chronos::Engine::createBuffer()</a>, <a class="el" href="texture_8cpp_source.html#l00010">Chronos::Engine::createImage()</a>, <a class="el" href="texture_8cpp_source.html#l00204">Chronos::Engine::createImageView()</a>, <a class="el" href="device_8hpp_source.html#l00020">Chronos::Engine::Device::device</a>, <a class="el" href="texture_8hpp_source.html#l00156">device</a>, <a class="el" href="texture_8hpp_source.html#l00101">textureImage</a>, <a class="el" href="texture_8hpp_source.html#l00096">textureImageMemory</a>, <a class="el" href="texture_8hpp_source.html#l00106">textureImageView</a>, <a class="el" href="texture_8hpp_source.html#l00150">textureName</a>, <a class="el" href="texture_8hpp_source.html#l00145">texturePath</a>, and <a class="el" href="texture_8cpp_source.html#l00143">Chronos::Engine::transitionImageLayout()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -351,7 +362,20 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Create the texture by loading the texture from the given raw data. </p>
-<p>Used in <a class="el" href="classChronos_1_1Engine_1_1Text.html" title="Class for creating a font object for rendering text.">Text</a> Rendering </p>
+<p>Used in <a class="el" href="classChronos_1_1Engine_1_1Text.html" title="Class for creating a text object for rendering text.">Text</a> Rendering</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>The device that has the texture. </td></tr>
+    <tr><td class="paramname">commandPool</td><td>The command pool to create the temporary command buffer from. </td></tr>
+    <tr><td class="paramname">data</td><td>The raw data of the texture. </td></tr>
+    <tr><td class="paramname">texWidth</td><td>The width of the texture. </td></tr>
+    <tr><td class="paramname">texHeight</td><td>The height of the texture. </td></tr>
+    <tr><td class="paramname">imageSize</td><td>The size of the image. </td></tr>
+    <tr><td class="paramname">format</td><td>The format of the image. </td></tr>
+    <tr><td class="paramname">textureName</td><td>The name of the texture(must be unique). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="texture_8cpp_source.html#l00105">105</a> of file <a class="el" href="texture_8cpp_source.html">texture.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
@@ -459,7 +483,7 @@ Here is the call graph for this function:</div>
 
 <p>The device that has the texture. </p>
 
-<p class="definition">Definition at line <a class="el" href="texture_8hpp_source.html#l00135">135</a> of file <a class="el" href="texture_8hpp_source.html">texture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="texture_8hpp_source.html#l00156">156</a> of file <a class="el" href="texture_8hpp_source.html">texture.hpp</a>.</p>
 
 </div>
 </div>
@@ -529,7 +553,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="texture_8hpp_source.html#l00129">129</a> of file <a class="el" href="texture_8hpp_source.html">texture.hpp</a>.</p>
+<p>The name of the texture. </p>
+
+<p class="definition">Definition at line <a class="el" href="texture_8hpp_source.html#l00150">150</a> of file <a class="el" href="texture_8hpp_source.html">texture.hpp</a>.</p>
 
 </div>
 </div>
@@ -545,7 +571,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="texture_8hpp_source.html#l00128">128</a> of file <a class="el" href="texture_8hpp_source.html">texture.hpp</a>.</p>
+<p>The path of the texture that it was loaded from. </p>
+
+<p class="definition">Definition at line <a class="el" href="texture_8hpp_source.html#l00145">145</a> of file <a class="el" href="texture_8hpp_source.html">texture.hpp</a>.</p>
 
 </div>
 </div>

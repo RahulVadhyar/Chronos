@@ -4,7 +4,7 @@
 <area shape="rect" id="node19" href="$vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="1696,95,1843,121"/>
 <area shape="rect" id="node25" href="$device_8hpp.html" title="Contains the Device class." alt="" coords="1867,95,1960,121"/>
 <area shape="rect" id="node26" href="$texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="1985,95,2082,121"/>
-<area shape="rect" id="node27" href="$textureManager_8hpp.html" title=" " alt="" coords="2106,95,2259,121"/>
+<area shape="rect" id="node27" href="$textureManager_8hpp.html" title="Contains the class for managing textures in the Chronos::Engine namespace." alt="" coords="2106,95,2259,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,169,91,196"/>
 <area shape="rect" id="node4" title=" " alt="" coords="115,169,171,196"/>
 <area shape="rect" id="node5" title=" " alt="" coords="195,169,261,196"/>

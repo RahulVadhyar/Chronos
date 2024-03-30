@@ -18,6 +18,7 @@ var classChronos_1_1Editor_1_1EditorManager =
     [ "currentShapeSelection", "classChronos_1_1Editor_1_1EditorManager.html#abd00ad6571a99eec767534374195926b", null ],
     [ "currentShapeTextureName", "classChronos_1_1Editor_1_1EditorManager.html#aba9ae9372b05b7ecd863212f54a64372", null ],
     [ "currentShapeTextureSelection", "classChronos_1_1Editor_1_1EditorManager.html#a360d21107b799e4be20a5c67af9c248f", null ],
+    [ "currentTextSelection", "classChronos_1_1Editor_1_1EditorManager.html#abfe389bf4271814c1cb0888cf680621a", null ],
     [ "currentTextureName", "classChronos_1_1Editor_1_1EditorManager.html#a47c46a68f7b900ad569ae4fc10022889", null ],
     [ "currentTextureSelection", "classChronos_1_1Editor_1_1EditorManager.html#a12546dab53688745c57ffc3a091cd9ca", null ],
     [ "manager", "classChronos_1_1Editor_1_1EditorManager.html#a54d3c886260f18c56d50fcff936563ef", null ],

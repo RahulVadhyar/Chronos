@@ -4,5 +4,5 @@
 <area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="5,51,185,77"/>
 <area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="281,95,488,121"/>
 <area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1Buffer.html" title="Used to store buffers in GPU." alt="" coords="512,136,687,163"/>
-<area shape="rect" id="node5" href="$structChronos_1_1Manager_1_1ShapeParams.html" title="Parameters for creating a shape." alt="" coords="711,179,947,205"/>
+<area shape="rect" id="node5" href="$structChronos_1_1Manager_1_1ShapeParams.html" title="Parameters for creating a shape(any)" alt="" coords="711,179,947,205"/>
 </map>

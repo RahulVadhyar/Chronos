@@ -9,7 +9,7 @@
 <area shape="rect" id="node29" href="$object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="2125,95,2215,121"/>
 <area shape="rect" id="node30" href="$Vertex_8hpp.html" title="This file includes the structure of a vertex." alt="" coords="2240,95,2332,121"/>
 <area shape="rect" id="node31" href="$engineStructs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="2357,95,2495,121"/>
-<area shape="rect" id="node32" href="$commonStructs_8hpp.html" title=" " alt="" coords="2519,95,2671,121"/>
+<area shape="rect" id="node32" href="$commonStructs_8hpp.html" title="Header file that contains common structs used in Chronos." alt="" coords="2519,95,2671,121"/>
 <area shape="rect" id="node33" href="$texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="2696,95,2793,121"/>
 <area shape="rect" id="node34" href="$shape_8hpp.html" title="Contains the class for creating a shape." alt="" coords="2817,95,2907,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,169,116,196"/>

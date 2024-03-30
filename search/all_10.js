@@ -34,7 +34,6 @@ var searchData=
   ['textwindow_322',['TextWindow',['../classChronos_1_1Editor_1_1EditorManager.html#a0babaffbb1a34dc127ee45fc92329b18',1,'Chronos::Editor::EditorManager']]],
   ['topology_323',['topology',['../structChronos_1_1Engine_1_1PipelineAttributes.html#a14e0f95045ac8e59a01daab9fbda2b6c',1,'Chronos::Engine::PipelineAttributes']]],
   ['transitionimagelayout_324',['transitionImageLayout',['../namespaceChronos_1_1Engine.html#a486e04f821153409c6c7d0ab3b3e89b4',1,'Chronos::Engine']]],
-  ['triangle_325',['Triangle',['../classChronos_1_1Engine_1_1Triangle.html',1,'Chronos::Engine']]],
-  ['triangle_326',['triangle',['../structChronos_1_1Manager_1_1PolygonType.html#a2f9497c3247c88c900aa507643113f24',1,'Chronos::Manager::PolygonType']]],
-  ['triangle_327',['Triangle',['../classChronos_1_1Engine_1_1Triangle.html#a1f65e1a18b68bb25d851a4cab418c2ba',1,'Chronos::Engine::Triangle::Triangle() requires(std'],['../classChronos_1_1Engine_1_1Triangle.html#a1f65e1a18b68bb25d851a4cab418c2ba',1,'Chronos::Engine::Triangle::Triangle() requires(std']]]
+  ['triangle_325',['Triangle',['../classChronos_1_1Engine_1_1Triangle.html',1,'Chronos::Engine::Triangle&lt; VertexStruct &gt;'],['../classChronos_1_1Engine_1_1Triangle.html#a1f65e1a18b68bb25d851a4cab418c2ba',1,'Chronos::Engine::Triangle::Triangle() requires(std'],['../classChronos_1_1Engine_1_1Triangle.html#a1f65e1a18b68bb25d851a4cab418c2ba',1,'Chronos::Engine::Triangle::Triangle() requires(std']]],
+  ['triangle_326',['triangle',['../structChronos_1_1Manager_1_1PolygonType.html#a2f9497c3247c88c900aa507643113f24',1,'Chronos::Manager::PolygonType']]]
 ];

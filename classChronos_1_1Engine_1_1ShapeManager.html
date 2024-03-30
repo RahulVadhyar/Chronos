@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('classChronos_1_1Engine_1_1ShapeManager
 </div><!--header-->
 <div class="contents">
 
-<p>This is the shape manager for <a class="el" href="namespaceChronos.html" title="The number of frames in flight.">Chronos</a>. It handles creation, modification, updating and desrtuction of shapes.  
+<p>This is the shape manager for <a class="el" href="namespaceChronos.html">Chronos</a>. It handles creation, modification, updating and desrtuction of shapes.  
  <a href="classChronos_1_1Engine_1_1ShapeManager.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="shapeManager_8hpp_source.html">shapeManager.hpp</a>&gt;</code></p>
@@ -180,7 +180,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><h3>template&lt;VertexLike VertexStruct&gt;<br />
 class Chronos::Engine::ShapeManager&lt; VertexStruct &gt;</h3>
 
-<p>This is the shape manager for <a class="el" href="namespaceChronos.html" title="The number of frames in flight.">Chronos</a>. It handles creation, modification, updating and desrtuction of shapes. </p>
+<p>This is the shape manager for <a class="el" href="namespaceChronos.html">Chronos</a>. It handles creation, modification, updating and desrtuction of shapes. </p>
+<p>Since there can be two types of shapes, textured and colored, this class is templated. The template parameter is the type of vertex to use for the shapes. if the vertex type is <a class="el" href="structChronos_1_1Engine_1_1TexturedVertex.html" title="This defines the position and texture coordinates of a vertex. Used when we need a textured vertex.">TexturedVertex</a>, then the shape will be textured. If the vertex type is <a class="el" href="structChronos_1_1Engine_1_1ColorVertex.html" title="This defines the position of a vertex. Used when we need a colored vertex. Does not support textures.">ColorVertex</a>, then the shape will be colored.</p>
 <p>Generally in order to manage shapes the methods to be used are:</p><ul>
 <li><code>addTriangle</code></li>
 <li><code>addRectangle</code></li>
@@ -189,7 +190,7 @@ class Chronos::Engine::ShapeManager&lt; VertexStruct &gt;</h3>
 <p>Inherits from <a class="el" href="classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects.">Object</a> <a class="el" href="namespaceChronos_1_1Manager.html">Manager</a>. All the public methods defined in that class is also available. It includes the following functions for internal use -init -destroy -update -render -changeMsaa -recreate</p>
 <p>For more details on these functions, please reference the [ObjectManger](<a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html" title="Manages objects within the Chronos::Engine namespace.">Chronos::Engine::ObjectManager</a>) class </p>
 
-<p class="definition">Definition at line <a class="el" href="shapeManager_8hpp_source.html#l00030">30</a> of file <a class="el" href="shapeManager_8hpp_source.html">shapeManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shapeManager_8hpp_source.html#l00033">33</a> of file <a class="el" href="shapeManager_8hpp_source.html">shapeManager.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a279e1e6ce6f5111f38df530cebd00b20"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a279e1e6ce6f5111f38df530cebd00b20">&#9670;&nbsp;</a></span>createRenderPass()</h2>

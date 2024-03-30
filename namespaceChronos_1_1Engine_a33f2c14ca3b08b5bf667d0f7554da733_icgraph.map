@@ -5,7 +5,7 @@
 <area shape="rect" id="node10" href="$classChronos_1_1Editor_1_1EditorRenderer.html#ab6b8e3b3ca6428b4ddc27df62584ecf5" title=" " alt="" coords="737,129,964,171"/>
 <area shape="rect" id="node11" href="$namespaceChronos_1_1Engine.html#a486e04f821153409c6c7d0ab3b3e89b4" title="Transiton a VkImage from one layout to another." alt="" coords="752,195,949,236"/>
 <area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="511,5,685,47"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e" title=" " alt="" coords="272,5,459,47"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e" title="Initializes the polygon object." alt="" coords="272,5,459,47"/>
 <area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1PolygonManager.html#a5735e1120cb83960e28b7bf489ee1ae0" title=" " alt="" coords="21,5,208,47"/>
 <area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="507,132,689,173"/>
 <area shape="rect" id="node8" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="284,132,447,173"/>

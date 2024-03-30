@@ -12,14 +12,14 @@
 <area shape="rect" id="node31" href="$helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="2309,169,2399,196"/>
 <area shape="rect" id="node32" href="$buffers_8hpp.html" title="Contains the Buffer and UniformBuffer class." alt="" coords="2424,169,2519,196"/>
 <area shape="rect" id="node33" href="$texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="2543,169,2640,196"/>
-<area shape="rect" id="node34" href="$textureManager_8hpp.html" title=" " alt="" coords="2664,169,2817,196"/>
+<area shape="rect" id="node34" href="$textureManager_8hpp.html" title="Contains the class for managing textures in the Chronos::Engine namespace." alt="" coords="2664,169,2817,196"/>
 <area shape="rect" id="node35" href="$object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="2842,169,2933,196"/>
 <area shape="rect" id="node36" href="$text_8hpp.html" title=" " alt="" coords="2957,169,3033,196"/>
 <area shape="rect" id="node38" href="$objectManager_8hpp.html" title="Defines the ObjectManager class for managing objects in the Chronos::Engine namespace." alt="" coords="3058,169,3205,196"/>
 <area shape="rect" id="node40" href="$textManager_8hpp.html" title="Contains the class for managing text in the Chronos::Engine namespace." alt="" coords="3229,169,3361,196"/>
-<area shape="rect" id="node41" href="$commonStructs_8hpp.html" title=" " alt="" coords="3386,169,3538,196"/>
+<area shape="rect" id="node41" href="$commonStructs_8hpp.html" title="Header file that contains common structs used in Chronos." alt="" coords="3386,169,3538,196"/>
 <area shape="rect" id="node42" href="$shape_8hpp.html" title="Contains the class for creating a shape." alt="" coords="3563,169,3652,196"/>
-<area shape="rect" id="node44" href="$polygon_8hpp.html" title=" " alt="" coords="3676,169,3779,196"/>
+<area shape="rect" id="node44" href="$polygon_8hpp.html" title="Header file for Polygon class." alt="" coords="3676,169,3779,196"/>
 <area shape="rect" id="node45" href="$shapeManager_8hpp.html" title="Contains the class for managing shapes." alt="" coords="3803,169,3948,196"/>
 <area shape="rect" id="node47" href="$polygonManager_8hpp.html" title=" " alt="" coords="3972,169,4131,196"/>
 <area shape="rect" id="node48" href="$engine_8hpp.html" title="Contains the Engine class." alt="" coords="4155,169,4249,196"/>
