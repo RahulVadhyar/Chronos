@@ -45,7 +45,7 @@ void Chronos::Engine::UniformBuffer::create(Chronos::Engine::Device device)
 {
     size = sizeof(UniformBufferObject);
     Buffer::create(device, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
-        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT);
+        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); //want to be visible to host and device
     vkMapMemory(device.device, memory, 0, size, 0, &data);
 }
 
@@ -72,12 +72,13 @@ void Chronos::Engine::ColorBuffer::create(Chronos::Engine::Device device)
 {
     size = sizeof(UniformColorBufferObject);
     Buffer::create(device, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
-        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT);
+        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); //want to be visible to host and device
     vkMapMemory(device.device, memory, 0, size, 0, &data);
 }
 
 void Chronos::Engine::ColorBuffer::update(glm::vec3 color)
-{
+{   
+    //copy the color to the buffer
     UniformColorBufferObject ubo {};
     ubo.color = color;
     memcpy(data, &ubo, sizeof(ubo));

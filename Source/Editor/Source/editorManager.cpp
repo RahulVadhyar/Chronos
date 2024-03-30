@@ -180,9 +180,7 @@ void Chronos::Editor::EditorManager::PolygonWindow(){
         }
         if(!doesPolygonExist){
             if(ImGui::Button("Add Shape")){
-                Chronos::Manager::PolygonType type;
-                type.npolygon = true;
-                this->manager->addPolygon(this->newShapeParams, type, this->currentPolygonTextureSelection, {{-0.5, -0.5}, {0.5, -0.5}, {0.5, 0.5}, {-0.5, 0.5} });
+                this->manager->addPolygon(this->newShapeParams, this->currentPolygonTextureSelection, {{-0.5, -0.5}, {0.5, -0.5}, {0.5, 0.5}, {-0.5, 0.5} });
             }
         }
         ImGui::SeparatorText("Current Shapes");

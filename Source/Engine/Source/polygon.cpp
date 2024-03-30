@@ -9,7 +9,6 @@
 #include "commonStructs.hpp"
 #include "object.hpp"
 #include "texture.hpp"
-#include "shape.hpp"
 #include "polygon.hpp"
 #include "earcut.hpp"
 
@@ -19,11 +18,13 @@ VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* render
     this->fragmentShaderPath = SPIV_SHADER_PATH"/textureFrag.spv";
     this->texture = texture;
 
-
+    //we copy the vertices to the vertex struct. For the texture cooring we use the same vertex coordinates, but we map them to the range [0, 1] from [-1, 1]
     for (auto& vertex : vertices) {
         TexturedVertex tv = {{vertex[0], vertex[1]}, {(vertex[0] + 1.0f)/2.0f, (vertex[1] + 1.0f)/2.0f}};
         this->vertices.push_back(tv);
     }
+
+    //we use the earcut library to triangulate the polygon and generate the indicies
     std::vector<uint32_t> triangleIndices = mapbox::earcut<uint32_t>(std::array<std::vector<std::array<float, 2>>, 2>{vertices, {}});
     for (uint32_t i = 0; i < triangleIndices.size(); i++){
         if(triangleIndices[i] >= vertices.size()){
@@ -41,7 +42,7 @@ VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* render
         buffer.size = sizeof(this->vertices[0]) * this->vertices.size();
         buffer.create(*device,
             VK_BUFFER_USAGE_VERTEX_BUFFER_BIT,
-            VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT);
+            VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); //we use host visible and coherent memory to be able to map it and to edit the vertiuces
         copyVerticestoBuffer(buffer);
     }
     copyVertices.resize(MAX_FRAMES_IN_FLIGHT, false);
@@ -49,7 +50,7 @@ VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* render
     indexBuffer.size = sizeof(this->indices[0]) * this->indices.size();
     indexBuffer.create(*device,
         VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_INDEX_BUFFER_BIT,
-        VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+        VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT); //inidcies will not change
     indexBuffer.copy(this->indices.data(), commandPool);
     
 }
@@ -67,6 +68,9 @@ void Chronos::Engine::Polygon::copyVerticestoBuffer(Chronos::Engine::Buffer vert
 }
 
 void Chronos::Engine::Polygon::updateVertices(std::vector<std::array<float, 2>>vertices){
+    //There are a vertex buffer, one for each frame in flight. We need to update all of them
+    //however, some of them may be in use, hence we just set bools correspoding to each buffer to true
+    //on update of the frame, we will copy the vertices to the buffer if the bool is true for that frame
     assert(vertices.size() == this->vertices.size());
     this->vertices.clear();
     for (auto& vertex : vertices) {

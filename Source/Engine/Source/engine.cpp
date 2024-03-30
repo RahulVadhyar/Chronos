@@ -53,7 +53,7 @@ void Chronos::Engine::Engine::initWindow()
     glfwInit();
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
 
-    window = glfwCreateWindow(width, height, "Chrono", nullptr, nullptr);
+    window = glfwCreateWindow(width, height, "Chronos", nullptr, nullptr);
     if (window == nullptr) {
         throw std::runtime_error("Failed to create GLFW window");
     }
@@ -64,21 +64,24 @@ void Chronos::Engine::Engine::initWindow()
 
 void Chronos::Engine::Engine::initVulkan()
 {
+    //create the basic objects
     createInstance();
     if (enableValidationLayers) {
         setupDebugMessenger();
     }
     createSurface();
     device.init(instance, surface);
-
     swapChain.init(&device, surface, window);
     commandPool = createCommandPool(device, swapChain.surface);
+
+    //initalize all the managers
     textureManager.init(&device, commandPool);
     shapeManager.init(&device, &swapChain, commandPool);
     colorShapeManager.init(&device, &swapChain, commandPool);
     polygonManager.init(&device, &swapChain, commandPool);
-    // textManager.init(&device, commandPool, &swapChain);
     textManager.init(&device, &swapChain, commandPool);
+
+
     createSyncObjects();
 
 #ifdef ENABLE_EDITOR
@@ -231,9 +234,9 @@ void Chronos::Engine::Engine::createInstance()
 {
     VkApplicationInfo appInfo {};
     appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
-    appInfo.pApplicationName = "Chrono";
+    appInfo.pApplicationName = "Chronos";
     appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
-    appInfo.pEngineName = "Chrono Engine";
+    appInfo.pEngineName = "Chronos Engine";
     appInfo.engineVersion = VK_MAKE_VERSION(1, 0, 0);
     // using vulkan 1.3 as we need shader printf support
     appInfo.apiVersion = VK_API_VERSION_1_3;

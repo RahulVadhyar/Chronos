@@ -7,6 +7,7 @@
 VkSurfaceFormatKHR Chronos::Engine::chooseSwapSurfaceFormat(
     const std::vector<VkSurfaceFormatKHR>& availableFormats)
 {
+    //try to choose SRBG format, else return the first available format
     for (const auto& availableFormat : availableFormats) {
         if (availableFormat.format == VK_FORMAT_B8G8R8A8_SRGB && availableFormat.colorSpace == VK_COLOR_SPACE_SRGB_NONLINEAR_KHR) {
             return availableFormat;
@@ -39,6 +40,8 @@ VkPresentModeKHR Chronos::Engine::chooseSwapPresentMode(
     // tearing, resulting in fewer latency issues than standard vertical sync.This
     // is commonly 							known as "triple buffering", although the existence of three
     // buffers alone does not necessarily mean that the framerate 							is unlocked.
+
+    //try to select mailbox mode, else select the default FIFO mode
     for (const auto& availablePresentMode : availablePresentModes) {
         if (availablePresentMode == VK_PRESENT_MODE_MAILBOX_KHR) {
             return availablePresentMode;
@@ -118,7 +121,7 @@ void Chronos::Engine::SwapChain::create()
     // set the number of images in the swap chain
     uint32_t imageCount = swapChainSupport.capabilities.minImageCount + 1;
 
-    // check if the number of images exceeds the maximum
+    // check if the number of images exceeds the maximum possible images supprted
     if (swapChainSupport.capabilities.maxImageCount > 0 && imageCount > swapChainSupport.capabilities.maxImageCount) {
         imageCount = swapChainSupport.capabilities.maxImageCount;
     }
@@ -214,7 +217,8 @@ void Chronos::Engine::SwapChain::recreate()
 }
 
 void Chronos::Engine::SwapChain::changeMsaa()
-{
+{   
+    //if we want to change msaa, we need to recreate the swapchain
     vkDeviceWaitIdle(device->device);
     cleanup();
     create();

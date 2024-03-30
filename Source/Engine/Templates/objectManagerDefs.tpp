@@ -29,7 +29,8 @@ void Chronos::Engine::ObjectManager<Object>::destroy()
 template <Chronos::Engine::ObjectLike Object>
 void Chronos::Engine::ObjectManager<Object>::render(uint32_t currentFrame, uint32_t imageIndex,
     float bgColor[3])
-{
+{   
+    //this function starts rendering. When child classes override this function, they should call this function first to start rendering
     vkResetCommandBuffer(commandBuffers[currentFrame], 0);
     VkCommandBufferBeginInfo beginInfo {};
     beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;

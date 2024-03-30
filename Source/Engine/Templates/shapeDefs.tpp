@@ -1,5 +1,4 @@
 #pragma once
-#include "Vertex.hpp"
 template <Chronos::Engine::VertexLike VertexStruct>
 void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
     SwapChain* swapChain, VkSampler textureSampler,

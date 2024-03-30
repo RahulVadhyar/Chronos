@@ -14,7 +14,9 @@ void Chronos::Engine::Text::init(Chronos::Engine::Device* device, VkCommandPool 
     vertexShaderPath = SPIV_SHADER_PATH"/textVert.spv";
     fragmentShaderPath = SPIV_SHADER_PATH"/textFrag.spv";
 
+    //set the fontstyle
     this->fontStyle = fontStyle;
+ 
     // initalize the font
     const uint32_t fontWidth = fontStyle.fontWidth;
     const uint32_t fontHeight = fontStyle.fontHeight;
@@ -24,15 +26,18 @@ void Chronos::Engine::Text::init(Chronos::Engine::Device* device, VkCommandPool 
 
     fontStyle.getFontData(stbFontData, fontpixels, fontHeight);
 
+    //create the font texture from the raw data
     fontTexture.create(*device, commandPool, (void*)&fontpixels[0][0], static_cast<size_t>(fontWidth),
         static_cast<size_t>(fontHeight), static_cast<VkDeviceSize>(fontWidth * fontHeight), VK_FORMAT_R8_UNORM, "Text Texture");
 
     // create the vertex buffer
     VkDeviceSize bufferSize = maxTextLength * sizeof(glm::vec4);
     Chronos::Engine::createBuffer(*device, bufferSize, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT,
-        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
+        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, //want to be visible to host and device
         &vertexBuffer, &vertexBufferMemory);
 
+
+    // create the uniform buffers for color changing
     colorBuffers.resize(MAX_FRAMES_IN_FLIGHT);
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
         colorBuffers[i].create(*device);
@@ -170,7 +175,8 @@ void Chronos::Engine::Text::destroy()
 }
 
 void Chronos::Engine::Text::updateBuffer()
-{
+{   
+    //update the vertex buffer with new text on update
     if (vkMapMemory(device->device, vertexBufferMemory, 0, VK_WHOLE_SIZE, 0,
             (void**)&mappedMemory)
         != VK_SUCCESS) {
