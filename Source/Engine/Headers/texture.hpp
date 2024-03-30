@@ -107,6 +107,11 @@ namespace Engine {
 
         /**
         \brief Create the texture by loading the texture from the given path. Only supports jpg and png images.
+
+        @param device The device that has the texture.
+        @param commandPool The command pool to create the temporary command buffer from.
+        @param texturePath The path to the texture(only jpg or png).
+        @param textureName The name of the texture(must be unique).
         */
         void create(Chronos::Engine::Device device, VkCommandPool commandPool,
             std::string texturePath, std::string textureName);
@@ -115,6 +120,15 @@ namespace Engine {
         \brief Create the texture by loading the texture from the given raw data.
 
         Used in Text Rendering
+
+        @param device The device that has the texture.
+        @param commandPool The command pool to create the temporary command buffer from.
+        @param data The raw data of the texture.
+        @param texWidth The width of the texture.
+        @param texHeight The height of the texture.
+        @param imageSize The size of the image.
+        @param format The format of the image.
+        @param textureName The name of the texture(must be unique).
         */
         void create(Chronos::Engine::Device device, VkCommandPool commandPool,
             void* data, size_t texWidth, size_t texHeight, VkDeviceSize imageSize, VkFormat format,
@@ -125,7 +139,14 @@ namespace Engine {
         */
         void destroy();
 
+        /**
+        \brief The path of the texture that it was loaded from.
+        */
         std::string texturePath;
+
+        /**
+        \brief The name of the texture.
+        */
         std::string textureName;
 
     private:

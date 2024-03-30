@@ -9,7 +9,7 @@ namespace Chronos {
 namespace Engine {
 
     /**
-    \brief This defines the position, color(not used), and texture coordinates of a vertex.
+    \brief This defines the position  of a vertex. Used when we need a colored vertex. Does not support textures
     */
     struct ColorVertex {
         glm::vec2 pos;
@@ -28,7 +28,7 @@ namespace Engine {
         }
 
         /**
-        \brief Generates the ```VkVertexInputAttributeDescription``` for the vertex based on attributes(pos, color, texCoord) of the vertex.
+        \brief Generates the ```VkVertexInputAttributeDescription``` for the vertex based on pos attribute of the vertex.
         */
         static std::array<VkVertexInputAttributeDescription, 1>
         getAttributeDescriptions()
@@ -43,6 +43,9 @@ namespace Engine {
         }
     };
 
+    /**
+    \brief This defines the position and texture coordinates of a vertex. Used when we need a textured vertex.
+    */
     struct TexturedVertex {
         glm::vec2 pos;
         glm::vec2 texCoord;
@@ -61,7 +64,7 @@ namespace Engine {
         }
 
         /**
-        \brief Generates the ```VkVertexInputAttributeDescription``` for the vertex based on attributes(pos, color, texCoord) of the vertex.
+        \brief Generates the ```VkVertexInputAttributeDescription``` for the vertex based on attributes(pos, texCoord) of the vertex.
         */
         static std::array<VkVertexInputAttributeDescription, 2>
         getAttributeDescriptions()

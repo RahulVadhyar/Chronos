@@ -47,10 +47,10 @@ int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, Chro
 {   
     //this function is for textured triangles and rectangles only
     //we need to add a check for the texture
-    std::vector<std::pair<int, Chronos::Manager::TextureDetails>> textureDetails = getTextureDetails();
+    std::vector<Chronos::Manager::TextureDetails> textureDetails = getTextureDetails();
     bool textureExists = false;
     for (auto& textureDetail : textureDetails) {
-        if (textureDetail.first == texture) {
+        if (textureDetail.textureNo == texture) {
             textureExists = true;
             break;
         }
@@ -91,12 +91,16 @@ int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, int 
     int shapeNo;
 
     //check to make sure the texture exists
+    std::vector<Chronos::Manager::TextureDetails> textureDetails = getTextureDetails();
     bool textureExists = false;
     for (auto& textureDetail : textureDetails) {
-        if (textureDetail.first == texture) {
+        if (textureDetail.textureNo == texture) {
             textureExists = true;
             break;
         }
+    }
+    if (!textureExists) {
+        throw std::runtime_error("Texture does not exist");
     }
 
     //check whether shape name exists

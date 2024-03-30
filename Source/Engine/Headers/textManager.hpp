@@ -16,6 +16,8 @@ namespace Engine {
         \brief Adds a font to the text manager.
 
         @param font The font to add.
+        @param fontStyle The style of the font to add.
+        @return The index of the font that was added.
         */
         int addFont(Chronos::Engine::Text font, Chronos::Engine::FontTypes fontStyle);
 

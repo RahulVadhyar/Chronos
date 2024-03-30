@@ -35,7 +35,7 @@ void Chronos::Engine::PolygonManager::render(uint32_t currentFrame, uint32_t ima
             VK_PIPELINE_BIND_POINT_GRAPHICS, polygon.second.graphicsPipeline);
         vkCmdSetViewport(commandBuffers[currentFrame], 0, 1, &viewport);
         vkCmdSetScissor(commandBuffers[currentFrame], 0, 1, &scissor);
-        VkBuffer vertexBuffers[] = { polygon.second.polygonVertexBuffers[currentFrame].buffer };
+        VkBuffer vertexBuffers[] = { polygon.second.polygonVertexBuffers[currentFrame].buffer }; //note that we have multiple vertex buffers
         VkDeviceSize offsets[] = { 0 };
         vkCmdBindVertexBuffers(commandBuffers[currentFrame], 0, 1, vertexBuffers,
             offsets);

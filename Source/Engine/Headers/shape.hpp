@@ -3,6 +3,8 @@
  \brief Contains the class for creating a shape.
 */
 #pragma once
+
+//empty struct for conditional
 struct Empty {
     Empty() = default;
 };
@@ -10,14 +12,25 @@ struct Empty {
 namespace Chronos {
 namespace Engine {
 
+    /**
+    \brief Concept that checks if the given type is a class inheriting from the ColorVertex or TexturedVertex class.
+
+    A vertex struct is different depending on whether it is a color vertex or a textured vertex. 
+    This concept checks if the given type is a class inheriting from the ColorVertex or TexturedVertex class.
+    It is used by the shape class to render a colored vertex or a textured vertex.
+
+    \tparam T The type to check for the VertexLike concept.
+    */
     template <typename T>
     concept VertexLike = std::is_base_of<Chronos::Engine::ColorVertex, T>::value || std::is_base_of<Chronos::Engine::TexturedVertex, T>::value;
 
     /**
     \brief Class for creating a shape(triangle, rectangle, etc.).
 
-    This class is used to create a shape(triangle, rectangle, etc.). It is a child of the Object class.
+    This class is used to create a textured or colored shape(triangle, rectangle, etc.). It is a child of the Object class.
     It handles all the vulkan objects needed for rendering the shape.
+
+    \tparam VertexStruct The type of vertex to use for rendering the shape. It can be a colored vertex or a textured vertex. This determines whether the shape is colored or textured.
     */
     template <VertexLike VertexStruct>
     class Shape : public Object {
@@ -29,21 +42,37 @@ namespace Engine {
         Chronos::Manager::ShapeParams params;
 
         /**
-        \brief Initializes the shape object and creates the necessary objects.
+        \brief Initializes a textured shape object and creates the necessary objects.
 
         Used to create the shape object and create the necessary vulkan objects for rendering the shape.
+        This function is only used when the vertex struct is a textured vertex.
 
         @param device The device to use for creating the objects.
         @param commandPool The command pool to create the command buffer on
         @param swapChain The swapchain that is used
-        @param textureSampler The texture sampler to use
-        @param texturePath The path to the texture(png and jpg supported)
+        @param textureSampler The texture sampler to use for the shape
+        @param texture The texture to use for the shape
+        @param renderPass The renderpass to use for rendering
+
         */
         void init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
             VkSampler textureSampler, Chronos::Engine::Texture texture,
             VkRenderPass* renderPass)
             requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
 
+
+        /**
+        \brief Initializes a colored shape object and creates the necessary objects.
+
+        Used to create the shape object and create the necessary vulkan objects for rendering the shape.
+        This function is only used when the vertex struct is a colored vertex.
+
+        @param device The device to use for creating the objects.
+        @param commandPool The command pool to create the command buffer on
+        @param swapChain The swapchain that is used
+        @param renderPass The renderpass to use for rendering
+        @param textureSampler The texture sampler to use for the shape
+        */
         void init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
             VkRenderPass* renderPass,
             VkSampler textureSampler)
@@ -55,6 +84,9 @@ namespace Engine {
         This function is used to update the shape object for the current frame. It is called by the ```ObjectManager``` class.
         It does this by updating the uniform buffer.
 
+        Note the actual logic is in tempUpdate(), this is because the logic differs depends on whether Shape is a colored object or a textured object.
+        We cannot have specialized template fucntions for a overriden function, hence we have to have a wrapper function that calls the specialized function.
+
         @param currentFrame The current frame number to render to.
         */
         void update(uint32_t currentFrame) override
@@ -62,8 +94,20 @@ namespace Engine {
             tempUpdate(currentFrame);
         }
 
+
+        /**
+        \brief Implements the update function for a textured shape object.
+
+        See update function for more details.
+        */
         void tempUpdate(uint32_t currentFrame)
             requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
+
+        /**
+        \brief Implements the update function for a colored shape object.
+
+        See update function for more details.
+        */
         void tempUpdate(uint32_t currentFrame)
             requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value);
 
@@ -71,13 +115,28 @@ namespace Engine {
         \brief Destroys the shape object and frees the memory.
 
         This destroys all the vulkan related objects related to this class and frees memory.
+
+        Since the logic for destroying the objects is different for a colored object and a textured object, we have to have a wrapper function that calls the specialized function.
+        We cannot have specialized template functions for a overriden function, hence we have to have a wrapper function that calls the specialized function.
         */
         void destroy() override
         {
             return tempDestroy();
         };
+
+        /**
+        \brief Destroys the shape object and frees the memory for a textured object.
+
+        See destroy function for more details.
+        */
         void tempDestroy()
             requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
+
+        /**
+        \brief Destroys the shape object and frees the memory for a colored object.
+
+        See destroy function for more details.
+        */
         void tempDestroy()
             requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value);
 
@@ -88,6 +147,8 @@ namespace Engine {
 
         /**
         \brief The texture that is to be used
+
+        This is only used when we have textured shaoe. Else this does not exist when using colored shape. It is an empty struct instead
         */
         [[no_unique_address]] std::conditional_t<std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value, Chronos::Engine::Texture, Empty> texture;
 
@@ -134,6 +195,12 @@ namespace Engine {
         std::vector<VkShaderStageFlagBits> getShaderStages();
 
     private:
+
+        /**
+        \brief The color buffers used to store the color information of the shape.
+
+        This is only used when we have colored shape. Else this does not exist when using textured shape. It is an empty struct instead
+        */
         [[no_unique_address]] std::conditional_t<std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value, std::vector<Chronos::Engine::ColorBuffer>, Empty> colorBuffers;
         PipelineAttributes getPipelineAttributes() override;
     };
@@ -144,6 +211,10 @@ namespace Engine {
 
     This class is used to create a rectangle. It is a child of the Shape class.
     For more details about the functions, see the Shape class.
+
+    It can be a colored rectangle or a textured rectangle. The type of rectangle is determined by the type of vertex struct.
+
+    \tparam VertexStruct The type of vertex to use for rendering the shape. It can be a colored vertex or a textured vertex. This determines whether the shape is colored or textured.
     */
     template <VertexLike VertexStruct>
     class Rectangle : public Shape<VertexStruct> {
@@ -174,6 +245,10 @@ namespace Engine {
 
     This class is used to create a triangle. It is a child of the Shape class.
     For more details about the functions, see the Shape class.
+
+    It can be a colored triangle or a textured triangle. The type of triangle is determined by the type of vertex struct.
+
+    \tparam VertexStruct The type of vertex to use for rendering the shape. It can be a colored vertex or a textured vertex. This determines whether the shape is colored or textured.
     */
     template <VertexLike VertexStruct>
     class Triangle : public Shape<VertexStruct> {

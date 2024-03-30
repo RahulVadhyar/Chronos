@@ -1,12 +1,24 @@
 /** \file font.hpp
 
- \brief Contains the class for creating a font object for rendering text.
+ \brief Contains the class for creating a font object for rendering text along with the FontTypes struct.
 */
 #pragma once
 #include "stb_font_consolas_24_latin1.inl"
 namespace Chronos {
 namespace Engine {
 
+
+    /**
+    \brief The parameters needed for the font style
+
+    This structure contains the parameters needed for the font style.
+    
+    @param fontWidth The width of the font texture
+    @param fontHeight The height of the font texture
+    @param getFontData The function to get the font data
+    @param firstChar The first character in the texture
+    @param numChars The number of characters in the texture
+    */
     struct FontTypes{
         uint32_t fontWidth;
         uint32_t fontHeight;
@@ -16,7 +28,9 @@ namespace Engine {
     };
 
     /**
-    \brief Class for creating a font object for rendering text.
+    \brief Class for creating a text object for rendering text.
+
+    We can choose from a lot of fonts and sizes. There are many available.
 
     For rendering text in vulkan, we need a bunch of setup and objects. It is also a very complex process.
     This class handles this process and abstracts this complex process into a simple class with simple methods that can be used for rendering text.
@@ -38,6 +52,7 @@ namespace Engine {
         @param swapChain The swapchain to use for rendering
         @param textureSampler The texture sampler to use for fonts
         @param renderPass The renderpass to use for rendering
+        @param fontStyle The font style to use for rendering
 
         */
         void init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
