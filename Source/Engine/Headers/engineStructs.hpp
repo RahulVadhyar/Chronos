@@ -20,6 +20,7 @@ namespace Engine {
     @param rotation Rotation of the text in degrees(Range: any float).
     @param scale Scale of the text(Range : any float).
     @param text The text to render.
+    @param color The color of the text(Range : 0 and 1).
     */
     struct TextParams {
         std::string text;
@@ -40,6 +41,11 @@ namespace Engine {
         glm::mat4 proj;
     };
 
+    /**
+    \brief Uniform struct for color passed to shader
+
+    This is used for passing the color to the shaders. Used with colored shapes.
+    */
     struct UniformColorBufferObject {
         glm::vec3 color;
     };

@@ -8,17 +8,9 @@
 
 
 #ifdef ENABLE_EDITOR
+//if the editor is enabled, then include the editorRenderer to get the rendering functions and classes of the editor.
 #include "editorRenderer.hpp"
 #endif
-
-/**
-\brief The number of frames in flight.
-
-During rendering, we can have multiple frames in flight.
-This ensures that the GPU and CPU are busy at the same time and not waiting for each other.
-Hence we create multiple frames and while one is rendering, the other is being prepared.
-This ensures maximum performance.
-*/
 
 namespace Chronos {
 namespace Engine {
@@ -81,13 +73,31 @@ namespace Engine {
         Chronos::Engine::TextManager textManager;
 
         /**
-        \brief This is the main function that is used to add, remove and modify shapes to the engine.
+        \brief This is the main function that is used to add, remove and modify textured shapes(rectangles or triangles) to the engine.
 
         To render shapes to the window, one may call the necessary methods in this class.
         */
         Chronos::Engine::ShapeManager<TexturedVertex> shapeManager;
+
+        /**
+        \brief This is the main function that is used to add, remove and modify colored shapes(rectangles or triangles) to the engine.
+
+        To render shapes to the window, one may call the necessary methods in this class.
+        */
         Chronos::Engine::ShapeManager<ColorVertex> colorShapeManager;
+
+        /**
+        \brief Used to create and manage textures.
+
+        To add or remove textures, one may call the necessary methods in this class.
+        */
         Chronos::Engine::TextureManager textureManager;
+        
+        /**
+        \brief Used to create and manage aribatry polygons.
+
+        To add or remove polygons, one may call the necessary methods in this class.
+        */
         Chronos::Engine::PolygonManager polygonManager;
 
         /**
@@ -139,7 +149,16 @@ namespace Engine {
         This tells Vulkan that the swapChain has to be recreated.
         */
         void resizeFrameBuffer();
+
+
 #ifdef ENABLE_EDITOR
+        /**
+        \brief Sets the callback function for the editor to add elements.
+
+        This is used to set the callback function for the editor to add elements.
+        This is used by ImGui to add elements to the editor.
+        Since that fucntions are not part of the engine, the user has to set the callback function.
+        */
         void setEditorAddElementsCallback(void(*)());
 #endif
         /**

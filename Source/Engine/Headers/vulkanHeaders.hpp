@@ -18,5 +18,14 @@ More specifically it includes the following packages:
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+
+/**
+\brief The number of frames in flight.
+
+During rendering, we can have multiple frames in flight.
+This ensures that the GPU and CPU are busy at the same time and not waiting for each other.
+Hence we create multiple frames and while one is rendering, the other is being prepared.
+This ensures maximum performance.
+*/
 const int MAX_FRAMES_IN_FLIGHT = 2;
 #define SPIV_SHADER_PATH "ThirdParty/Chronos/Shaders/SPIV"
