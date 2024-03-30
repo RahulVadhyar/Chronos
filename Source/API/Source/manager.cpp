@@ -58,6 +58,13 @@ int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, Chro
     if (!textureExists) {
         throw std::runtime_error("Texture does not exist");
     }
+
+    //check whether shape name exists
+    for (auto& shape : engine.shapeManager.objects) {
+        if (strcmp(shape.second.params.shapeName, shapeParams.shapeName) == 0) {
+            throw std::runtime_error("Shape name already exists");
+        }
+    }
     int shapeNo;
     if (polygonType.triangle) {
         shapeNo = engine.shapeManager.addTriangle(shapeParams, engine.textureManager.getTexture(texture));
@@ -91,6 +98,13 @@ int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, int 
             break;
         }
     }
+
+    //check whether shape name exists
+    for (auto& shape : engine.shapeManager.objects) {
+        if (strcmp(shape.second.params.shapeName, shapeParams.shapeName) == 0) {
+            throw std::runtime_error("Shape name already exists");
+        }
+    }
     if (!textureExists) {
         throw std::runtime_error("Texture does not exist");
     }
@@ -104,12 +118,10 @@ int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, int 
 int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType)
 {   
     //this function is for colored triangles and rectangles only
-    //check to make sure the texture exists
-    bool textureExists = false;
-    for (auto& textureDetail : textureDetails) {
-        if (textureDetail.first == texture) {
-            textureExists = true;
-            break;
+    //check whether shape name exists
+    for (auto& shape : engine.shapeManager.objects) {
+        if (strcmp(shape.second.params.shapeName, shapeParams.shapeName) == 0) {
+            throw std::runtime_error("Shape name already exists");
         }
     }
     int shapeNo;

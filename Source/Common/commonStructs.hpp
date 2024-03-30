@@ -1,12 +1,16 @@
 #pragma once
 
+/**
+\file commonStructs.hpp
+\brief Header file that contains common structs used in Chronos.
+*/
 namespace Chronos {
 namespace Manager {
     /**
-    \brief Parameters for creating a shape
+    \brief Parameters for creating a shape(any)
 
-    This is the struct for the parameters of a ```Shape```.
-    This is needed to create and modify a ```Shape```.
+    This is the struct for the parameters of a Shape.
+    This is needed to create and modify a Shape.
 
     ## Note:
     In Vulkan y axis is inverted. So the y axis of the shape is inverted.
@@ -18,6 +22,8 @@ namespace Manager {
     @param xSize x scale of the shape(Range : 0 and 1).
     @param ySize y scale of the shape(Range : 0 and 1).
     @param show Show or hide the shape.
+    @param color Color of the shape(Range : 0 and 1).
+    @param shapeName Name of the shape(must be unique).
     */
     struct ShapeParams {
         float x = 0;
