@@ -261,7 +261,7 @@ void Chronos::Editor::EditorManager::TextWindow(){
         ImGui::DragFloat("Scale", &this->newTextParams.scale, 0.01f, 0.0f, FLT_MAX);
         ImGui::ColorEdit3("Color", this->newTextParams.color.data());
         if(ImGui::Button("Add Text")){
-            this->manager->addText(this->newTextParams);
+            this->manager->addText(this->newTextParams, "consolas", 24);
         }
         ImGui::SeparatorText("Current Text");
         if(ImGui::BeginListBox("Text")){

@@ -7,8 +7,18 @@ Using macros, this includes the structs for all the font types and their sizes.
 This is so that the user can use any font type and size they want.
 
 Font sizes range from 6 to 50.
-*/
 
+The font types are:
+- arial
+- arial_bold
+- consolas
+- consolas_bold
+- courier
+- courier_bold
+- times
+- times_bold
+*/
+#pragma once
 #include "multiFontInclude.hpp"
 
 #define FONT_STRUCT(type, size) \

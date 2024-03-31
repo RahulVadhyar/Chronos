@@ -1,8 +1,7 @@
 #include "chronos.hpp"
 // #include "text.hpp"
 #include "object.hpp"
-#include "fontTypes.hpp"
-
+#include "getFontType.hpp"
 namespace Chronos {
 GLFWwindow* Manager::Manager::getWindow()
 {
@@ -70,10 +69,6 @@ int Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, Chro
         shapeNo = engine.shapeManager.addTriangle(shapeParams, engine.textureManager.getTexture(texture));
     } else if (polygonType.rectangle) {
         shapeNo =  engine.shapeManager.addRectangle(shapeParams, engine.textureManager.getTexture(texture));
-
-    //this function does not support npolygon
-    } else if(polygonType.npolygon){
-        throw std::runtime_error("Please use vertices and use other override for this type of polygon.");
     } else {
         throw std::runtime_error("Polygon type not supported");
     }
@@ -238,7 +233,7 @@ void Manager::Manager::removePolygon(int shapeNo)
     }
 }
 
-int Manager::Manager::addText(Chronos::Engine::TextParams params)
+int Manager::Manager::addText(Chronos::Engine::TextParams params, std::string fontType, int fontSize)
 {
     if (params.text == "") {
         throw std::runtime_error("Text cannot be empty");
@@ -246,7 +241,8 @@ int Manager::Manager::addText(Chronos::Engine::TextParams params)
     // Chronos::Engine::Text font;
     Chronos::Engine::Text font;
     font.params = params;
-    Chronos::Engine::FontTypes fontStyle = Chronos::Engine::FontStructs::consolas_24;
+    Chronos::Engine::FontTypes fontStyle = Chronos::Engine::getFontType(fontType, fontSize);
+    
     return engine.textManager.addFont(font, fontStyle);
 }
 

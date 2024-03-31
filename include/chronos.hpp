@@ -76,7 +76,6 @@ namespace Manager {
     struct PolygonType {
         bool triangle = false;
         bool rectangle = false;
-        bool npolygon = false;
     };
 
     /**
@@ -140,13 +139,28 @@ namespace Manager {
 
         If you want to add text to the window, this function must be used.
         It returns a textNo, that is used for updating, modifyign and removing the text instance
+        One may select the fontType and fontSize from the available options. The fontType and fontSize must be selected from the available options.
+        Font size may be from 6 to 50. The fontType may be one of the following:
+        - arial
+        - arial_bold
+        - consolas
+        - consolas_bold
+        - courier
+        - courier_bold
+        - times
+        - times_bold
 
+        An example of how this function is called is:
+        ```
+        addText(params, "arial", 12);
+        ```
+        In the above, params refer to the text parameters that are assumed to be defined and filled.
         The necessary functions must be defined in the struct. For the options, please refer to the [Text](#Chronos::Manager::Text) struct
 
         @param params The necessary parameters needed for rendering text
         @return The textNo, for the text instance.
         */
-        int addText(Chronos::Engine::TextParams params);
+        int addText(Chronos::Engine::TextParams params, std::string fontType, int fontSize);
 
         /**
         \brief Adds a textured shape(triangle or rectangle) to the window
