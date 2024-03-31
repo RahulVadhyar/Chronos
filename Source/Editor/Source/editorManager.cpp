@@ -1,4 +1,5 @@
 #include "imgui.h"
+#include "imgui_impl_glfw.h"
 #include "stlheader.hpp"
 #include "editorHeaders.hpp"
 #include "chronos.hpp"
@@ -318,6 +319,18 @@ void Chronos::Editor::EditorManager::SettingsWindow(){
         if(ImGui::Button("Update Window Title")){
             glfwSetWindowTitle(this->manager->getWindow(), this->windowTitle);
         }
+        ImGui::Checkbox("Make Window Fullscreen", &this->fullScreen);
+        if(this->fullScreen && !this->isWindowFullscreen){
+            GLFWwindow* window = this->manager->getWindow();
+            const GLFWvidmode* mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+            glfwSetWindowMonitor(window, glfwGetPrimaryMonitor(), 0, 0, mode->width, mode->height, mode->refreshRate);
+            this->isWindowFullscreen = true;
+        } else if(!this->fullScreen && this->isWindowFullscreen){
+            GLFWwindow* window = this->manager->getWindow();
+            glfwSetWindowMonitor(window, nullptr, 0, 0, 800, 600, 0);
+            this->isWindowFullscreen = false;
+        }
+        ImGui::SeparatorText("Present Mode");
         if(ImGui::BeginCombo("Present Mode", this->presentMode.c_str())){
             if(ImGui::Selectable("mailbox", this->presentMode == "mailbox")){
                 this->presentMode = "mailbox";
@@ -336,6 +349,12 @@ void Chronos::Editor::EditorManager::SettingsWindow(){
         if(ImGui::Button("Update Present Mode")){
             this->manager->changePresentMode(this->presentMode);
         }
+        ImGui::SeparatorText("Background Color");
+        ImGui::ColorEdit3("Background Color", this->bgColor);
+        if(ImGui::Button("Update Background Color")){
+            this->manager->changeBackgroundColor(this->bgColor[0], this->bgColor[1], this->bgColor[2]);
+        }
+
         ImGui::End();
     }
 }   

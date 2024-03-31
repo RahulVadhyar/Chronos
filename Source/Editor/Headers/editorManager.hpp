@@ -75,6 +75,9 @@ namespace Chronos{
                 //settings window
                 char windowTitle[200] = GAME_NAME;
                 std::string presentMode = "mailbox";
+                float bgColor[3] = {0,0,0};
+                bool fullScreen = false;
+                bool isWindowFullscreen = false;
         };  
     }
 }
