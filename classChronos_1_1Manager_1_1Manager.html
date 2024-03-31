@@ -176,6 +176,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af60e123e44b2f72401e278a7fc0947fe"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structChronos_1_1Manager_1_1TextureDetails.html">TextureDetails</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Manager_1_1Manager.html#af60e123e44b2f72401e278a7fc0947fe">getTextureDetails</a> ()</td></tr>
 <tr class="memdesc:af60e123e44b2f72401e278a7fc0947fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the details of all textures defined.  <a href="classChronos_1_1Manager_1_1Manager.html#af60e123e44b2f72401e278a7fc0947fe">More...</a><br /></td></tr>
 <tr class="separator:af60e123e44b2f72401e278a7fc0947fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a771cc5ec3e2e0827454ba27fcc8343b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Manager_1_1Manager.html#a771cc5ec3e2e0827454ba27fcc8343b0">changePresentMode</a> (std::string presentMode)</td></tr>
+<tr class="memdesc:a771cc5ec3e2e0827454ba27fcc8343b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the present mode of the swapchain.  <a href="classChronos_1_1Manager_1_1Manager.html#a771cc5ec3e2e0827454ba27fcc8343b0">More...</a><br /></td></tr>
+<tr class="separator:a771cc5ec3e2e0827454ba27fcc8343b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -233,7 +236,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a50165316b5c0c709684961a5ca60011e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">Chronos::Engine::Engine::bgColor</a></div><div class="ttdeci">float bgColor[3]</div><div class="ttdoc">This is the background color of the window.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00124">engine.hpp:124</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a73a8aefde9c16bbe8b4bbd770cba5981"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a73a8aefde9c16bbe8b4bbd770cba5981">Chronos::Engine::Engine::height</a></div><div class="ttdeci">int height</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00111">engine.hpp:111</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ae79484eb3130b4251c2fc43179fac68c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ae79484eb3130b4251c2fc43179fac68c">Chronos::Engine::Engine::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00106">engine.hpp:106</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Manager_1_1Manager_html_a00f8c72aeda5c374bdddcaf183f95cf2"><div class="ttname"><a href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">Chronos::Manager::Manager::engine</a></div><div class="ttdeci">Chronos::Engine::Engine engine</div><div class="ttdoc">The backend Vulkan engine, used for rendering the desired shapes and text.s.</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00389">chronos.hpp:389</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Manager_1_1Manager_html_a00f8c72aeda5c374bdddcaf183f95cf2"><div class="ttname"><a href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">Chronos::Manager::Manager::engine</a></div><div class="ttdeci">Chronos::Engine::Engine engine</div><div class="ttdoc">The backend Vulkan engine, used for rendering the desired shapes and text.s.</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00416">chronos.hpp:416</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00041">Chronos::Manager::Initializer::BackgroundColor</a>, <a class="el" href="chronos_8hpp_source.html#l00040">Chronos::Manager::Initializer::WindowHeight</a>, and <a class="el" href="chronos_8hpp_source.html#l00039">Chronos::Manager::Initializer::WindowWidth</a>.</p>
 
@@ -681,6 +684,69 @@ Note: Only png and jpg files are supported.</h2>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a771cc5ec3e2e0827454ba27fcc8343b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a771cc5ec3e2e0827454ba27fcc8343b0">&#9670;&nbsp;</a></span>changePresentMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Chronos::Manager::Manager::changePresentMode </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>presentMode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Changes the present mode of the swapchain. </p>
+<p>The present mode is the mode in which the images are presented to the screen. There are various methods available. this can be used to cap or unlock the framerate, control tearing etc. Some of the presentation modes available are:</p><ul>
+<li>immediate: Images submitted by your application are transferred to the screen right away, which may result in tearing.</li>
+<li>fifo : The swap chain is a queue where the display takes an image from the front of the queue when the display is refreshed and the program inserts rendered images at the back of the queue.If the queue is full then the program has to wait. This is most similar to vertical sync as found in modern games.The moment that the display is refreshed is known as "vertical blank".</li>
+<li>fifo_relaxed : This mode only differs from the previous one if the application is late and the queue was empty at the last vertical blank. Instead of waiting for the next vertical blank, the image is transferred right away when it finally arrives.This may result in visible tearing.</li>
+<li>mailbox : This is another variation of the second mode.Instead of blocking the application when the queue is full, the images that are already queued are simply replaced with the newer ones.This mode can be used to render frames as fast as possible while still avoiding tearing, resulting in fewer latency issues than standard vertical sync.This is commonly known as "triple buffering", although the existence of three buffers alone does not necessarily mean that the framerate</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>The mode to change to. It can be one of the following:<ul>
+<li>immediate</li>
+<li>fifo</li>
+<li>fifo_relaxed</li>
+<li>mailbox </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00406">406</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                                                     {</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#acf25b73a4efdf8b8949973a987363700">changePresentMode</a>(presentMode);</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        }</div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_acf25b73a4efdf8b8949973a987363700"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#acf25b73a4efdf8b8949973a987363700">Chronos::Engine::Engine::changePresentMode</a></div><div class="ttdeci">void changePresentMode(std::string mode)</div><div class="ttdoc">Changes the present mode of the swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00339">engine.cpp:339</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="engine_8cpp_source.html#l00339">Chronos::Engine::Engine::changePresentMode()</a>, and <a class="el" href="chronos_8hpp_source.html#l00416">engine</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChronos_1_1Manager_1_1Manager_a771cc5ec3e2e0827454ba27fcc8343b0_cgraph.png" border="0" usemap="#aclassChronos_1_1Manager_1_1Manager_a771cc5ec3e2e0827454ba27fcc8343b0_cgraph" alt=""/></div>
+<map name="aclassChronos_1_1Manager_1_1Manager_a771cc5ec3e2e0827454ba27fcc8343b0_cgraph" id="aclassChronos_1_1Manager_1_1Manager_a771cc5ec3e2e0827454ba27fcc8343b0_cgraph">
+<area shape="rect" title="Changes the present mode of the swapchain." alt="" coords="5,5,211,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Engine.html#acf25b73a4efdf8b8949973a987363700" title="Changes the present mode of the swapchain." alt="" coords="259,5,437,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a633479d3104552a11a4546cbb048b8f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a633479d3104552a11a4546cbb048b8f8">&#9670;&nbsp;</a></span>drawFrame()</h2>
 
@@ -704,7 +770,7 @@ Note: Only png and jpg files are supported.</h2>
 <div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a3110c5587aaf2d5fcd81a416fae1f563">drawFrame</a>();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a3110c5587aaf2d5fcd81a416fae1f563"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a3110c5587aaf2d5fcd81a416fae1f563">Chronos::Engine::Engine::drawFrame</a></div><div class="ttdeci">void drawFrame()</div><div class="ttdoc">Main draw call. Its responsible for drawing frames and resizing the window. To be added to the main g...</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00120">engine.cpp:120</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a3110c5587aaf2d5fcd81a416fae1f563"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a3110c5587aaf2d5fcd81a416fae1f563">Chronos::Engine::Engine::drawFrame</a></div><div class="ttdeci">void drawFrame()</div><div class="ttdoc">Main draw call. Its responsible for drawing frames and resizing the window. To be added to the main g...</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00125">engine.cpp:125</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -902,7 +968,7 @@ Note: This will return both textured and colored shapes.</h2>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a489c5250f3c8e92c72e3c2240586e642"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642">Chronos::Engine::Engine::window</a></div><div class="ttdeci">GLFWwindow * window</div><div class="ttdoc">This is the GLFW window reference that is used by the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00116">engine.hpp:116</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00389">engine</a>, and <a class="el" href="engine_8hpp_source.html#l00116">Chronos::Engine::Engine::window</a>.</p>
+<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00416">engine</a>, and <a class="el" href="engine_8hpp_source.html#l00116">Chronos::Engine::Engine::window</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1242,7 +1308,7 @@ Note:</h2>
 
 <p>The backend Vulkan engine, used for rendering the desired shapes and text.s. </p>
 
-<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00389">389</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00416">416</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
 
 </div>
 </div>
@@ -1266,7 +1332,7 @@ Note:</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00384">384</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00411">411</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
 
 </div>
 </div>

@@ -92,44 +92,34 @@ $(document).ready(function(){initNavTree('validation_8hpp_source.html',''); init
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceChronos.html">Chronos</a> {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>Engine {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespaceChronos_1_1Engine.html#af3568125b76ff39839d82ca9a7d525bc">   13</a></span>&#160;    <span class="keyword">const</span> std::vector&lt;const char*&gt; <a class="code" href="namespaceChronos_1_1Engine.html#af3568125b76ff39839d82ca9a7d525bc">validationLayers</a> = {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="stringliteral">&quot;VK_LAYER_KHRONOS_validation&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    };</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifdef ENABLE_VULKAN_VALIDATION_LAYERS</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="namespaceChronos_1_1Engine.html#a84a0ca17f8376dbc4daa6f798c9bc24e">enableValidationLayers</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespaceChronos_1_1Engine.html#a84a0ca17f8376dbc4daa6f798c9bc24e">   23</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="namespaceChronos_1_1Engine.html#a84a0ca17f8376dbc4daa6f798c9bc24e">enableValidationLayers</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="namespaceChronos_1_1Engine.html#ae343c6be067a32c5c92c47a8d0dca6f9">checkValidationLayerSupport</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">static</span> VKAPI_ATTR VkBool32 VKAPI_CALL <a class="code" href="namespaceChronos_1_1Engine.html#a5bd356a2b6410169470aeead4d7eebc0">debugCallback</a>(</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        VkDebugUtilsMessageTypeFlagsEXT messageType,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">const</span> VkDebugUtilsMessengerCallbackDataEXT* pCallbackData, <span class="keywordtype">void</span>* pUserData);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    VkResult <a class="code" href="namespaceChronos_1_1Engine.html#af93e058ca2e6b10c2be3940bc0bb9b9d">CreateDebugUtilsMessengerEXT</a>(</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        VkInstance instance, <span class="keyword">const</span> VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">const</span> VkAllocationCallbacks* pAllocator,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        VkDebugUtilsMessengerEXT* pDebugMessenger);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceChronos_1_1Engine.html#ab9790724c8603dca3a74d78e9c81a9b6">DestroyDebugUtilsMessengerEXT</a>(VkInstance instance,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        VkDebugUtilsMessengerEXT debugMessenger,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keyword">const</span> VkAllocationCallbacks* pAllocator);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceChronos_1_1Engine.html#a68f7436439ca126c4a4d8a639c8ffdf1">populateDebugMessengerCreateInfo</a>(</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        VkDebugUtilsMessengerCreateInfoEXT&amp; createInfo);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_a5bd356a2b6410169470aeead4d7eebc0"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a5bd356a2b6410169470aeead4d7eebc0">Chronos::Engine::debugCallback</a></div><div class="ttdeci">static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity, VkDebugUtilsMessageTypeFlagsEXT messageType, const VkDebugUtilsMessengerCallbackDataEXT *pCallbackData, void *pUserData)</div><div class="ttdoc">This sets the debug Callback function.</div><div class="ttdef"><b>Definition:</b> <a href="validation_8cpp_source.html#l00030">validation.cpp:30</a></div></div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_a68f7436439ca126c4a4d8a639c8ffdf1"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a68f7436439ca126c4a4d8a639c8ffdf1">Chronos::Engine::populateDebugMessengerCreateInfo</a></div><div class="ttdeci">void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT &amp;createInfo)</div><div class="ttdoc">Populates the debug messenger create info.</div><div class="ttdef"><b>Definition:</b> <a href="validation_8cpp_source.html#l00096">validation.cpp:96</a></div></div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_a84a0ca17f8376dbc4daa6f798c9bc24e"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a84a0ca17f8376dbc4daa6f798c9bc24e">Chronos::Engine::enableValidationLayers</a></div><div class="ttdeci">const bool enableValidationLayers</div><div class="ttdoc">Flag to enable validation layers.</div><div class="ttdef"><b>Definition:</b> <a href="validation_8hpp_source.html#l00023">validation.hpp:23</a></div></div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_ab9790724c8603dca3a74d78e9c81a9b6"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#ab9790724c8603dca3a74d78e9c81a9b6">Chronos::Engine::DestroyDebugUtilsMessengerEXT</a></div><div class="ttdeci">void DestroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT debugMessenger, const VkAllocationCallbacks *pAllocator)</div><div class="ttdoc">Destroys the debug messenger.</div><div class="ttdef"><b>Definition:</b> <a href="validation_8cpp_source.html#l00086">validation.cpp:86</a></div></div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_ae343c6be067a32c5c92c47a8d0dca6f9"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#ae343c6be067a32c5c92c47a8d0dca6f9">Chronos::Engine::checkValidationLayerSupport</a></div><div class="ttdeci">bool checkValidationLayerSupport()</div><div class="ttdoc">Checks if the validation layers are supported by the system.</div><div class="ttdef"><b>Definition:</b> <a href="validation_8cpp_source.html#l00006">validation.cpp:6</a></div></div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_af3568125b76ff39839d82ca9a7d525bc"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#af3568125b76ff39839d82ca9a7d525bc">Chronos::Engine::validationLayers</a></div><div class="ttdeci">const std::vector&lt; const char * &gt; validationLayers</div><div class="ttdoc">Contains the name of the extensions needed to be enabled for validation layers.</div><div class="ttdef"><b>Definition:</b> <a href="validation_8hpp_source.html#l00013">validation.hpp:13</a></div></div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_af93e058ca2e6b10c2be3940bc0bb9b9d"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#af93e058ca2e6b10c2be3940bc0bb9b9d">Chronos::Engine::CreateDebugUtilsMessengerEXT</a></div><div class="ttdeci">VkResult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkDebugUtilsMessengerEXT *pDebugMessenger)</div><div class="ttdoc">Creates the debug messenger.</div><div class="ttdef"><b>Definition:</b> <a href="validation_8cpp_source.html#l00072">validation.cpp:72</a></div></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifdef ENABLE_VULKAN_VALIDATION_LAYERS</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">const</span> std::vector&lt;const char*&gt; validationLayers = {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="stringliteral">&quot;VK_LAYER_KHRONOS_validation&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    };</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">bool</span> checkValidationLayerSupport();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">static</span> VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        VkDebugUtilsMessageTypeFlagsEXT messageType,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">const</span> VkDebugUtilsMessengerCallbackDataEXT* pCallbackData, <span class="keywordtype">void</span>* pUserData);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    VkResult CreateDebugUtilsMessengerEXT(</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        VkInstance instance, <span class="keyword">const</span> VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">const</span> VkAllocationCallbacks* pAllocator,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        VkDebugUtilsMessengerEXT* pDebugMessenger);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> DestroyDebugUtilsMessengerEXT(VkInstance instance,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        VkDebugUtilsMessengerEXT debugMessenger,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">const</span> VkAllocationCallbacks* pAllocator);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> populateDebugMessengerCreateInfo(</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        VkDebugUtilsMessengerCreateInfoEXT&amp; createInfo);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
 <div class="ttc" id="anamespaceChronos_html"><div class="ttname"><a href="namespaceChronos.html">Chronos</a></div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00029">chronos.hpp:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

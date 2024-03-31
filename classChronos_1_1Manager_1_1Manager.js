@@ -7,6 +7,7 @@ var classChronos_1_1Manager_1_1Manager =
     [ "addText", "classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32", null ],
     [ "addTexture", "classChronos_1_1Manager_1_1Manager.html#a56f536155e14387a8d8067d771497daf", null ],
     [ "changeBackgroundColor", "classChronos_1_1Manager_1_1Manager.html#a0cfdce93c8e2edca317751978453bce3", null ],
+    [ "changePresentMode", "classChronos_1_1Manager_1_1Manager.html#a771cc5ec3e2e0827454ba27fcc8343b0", null ],
     [ "drawFrame", "classChronos_1_1Manager_1_1Manager.html#a633479d3104552a11a4546cbb048b8f8", null ],
     [ "getPolygonDetails", "classChronos_1_1Manager_1_1Manager.html#af07675ce2e469ace314fe96919ac3fb4", null ],
     [ "getShapeDetails", "classChronos_1_1Manager_1_1Manager.html#a7aadb020d733378808286c48ddc33aa3", null ],

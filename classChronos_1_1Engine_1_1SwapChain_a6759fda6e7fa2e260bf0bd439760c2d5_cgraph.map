@@ -1,9 +1,8 @@
 <map id="Chronos::Engine::SwapChain::create" name="Chronos::Engine::SwapChain::create">
-<area shape="rect" id="node1" title="Creates the swapchain image resources and chooses the optimal settings for given hardware." alt="" coords="5,136,212,177"/>
+<area shape="rect" id="node1" title="Creates the swapchain image resources and chooses the optimal settings for given hardware." alt="" coords="5,104,212,145"/>
 <area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a4cb0fad8419ed33393b0aaceb3153543" title="Gets the maximum extent of the swapchain images(framebuffer size)." alt="" coords="260,5,476,47"/>
-<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a8454bbfbf2aec6c10dfa65c0f2decc51" title="From the available present mode, this chooses the the best present mode." alt="" coords="260,71,476,112"/>
-<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a52bd349b91415659b6681f47145ed328" title="Chooses the best present mode among the supported modes." alt="" coords="260,136,476,177"/>
-<area shape="rect" id="node5" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="267,201,469,243"/>
-<area shape="rect" id="node7" href="$namespaceChronos_1_1Engine.html#a76f8a7e2a71632ea17aacab0fb642fba" title="For a given swapchain mode, it gets the capabilites, formats and present modes." alt="" coords="265,267,471,308"/>
-<area shape="rect" id="node6" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="524,201,744,243"/>
+<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a52bd349b91415659b6681f47145ed328" title="Chooses the best present mode among the supported modes." alt="" coords="260,71,476,112"/>
+<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="267,136,469,177"/>
+<area shape="rect" id="node6" href="$namespaceChronos_1_1Engine.html#a76f8a7e2a71632ea17aacab0fb642fba" title="For a given swapchain mode, it gets the capabilites, formats and present modes." alt="" coords="265,201,471,243"/>
+<area shape="rect" id="node5" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="524,136,744,177"/>
 </map>

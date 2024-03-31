@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['buffer_362',['Buffer',['../classChronos_1_1Engine_1_1Buffer.html',1,'Chronos::Engine']]]
+  ['buffer_355',['Buffer',['../classChronos_1_1Engine_1_1Buffer.html',1,'Chronos::Engine']]]
 ];

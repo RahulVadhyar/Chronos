@@ -1,15 +1,14 @@
 <map id="Chronos::Engine::SwapChain::init" name="Chronos::Engine::SwapChain::init">
-<area shape="rect" id="node1" title="Initilize the swapchain." alt="" coords="5,321,212,363"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5" title="Creates the swapchain image resources and chooses the optimal settings for given hardware." alt="" coords="260,169,467,211"/>
-<area shape="rect" id="node9" href="$classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e" title="Creates the color images along with the associated objects." alt="" coords="260,321,467,363"/>
-<area shape="rect" id="node13" href="$classChronos_1_1Engine_1_1SwapChain.html#a0155650381f813352c42eb2cf2e30e84" title="Creates the image views of the swapchain images." alt="" coords="260,387,467,428"/>
+<area shape="rect" id="node1" title="Initilize the swapchain." alt="" coords="5,256,212,297"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5" title="Creates the swapchain image resources and chooses the optimal settings for given hardware." alt="" coords="260,136,467,177"/>
+<area shape="rect" id="node8" href="$classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e" title="Creates the color images along with the associated objects." alt="" coords="260,256,467,297"/>
+<area shape="rect" id="node12" href="$classChronos_1_1Engine_1_1SwapChain.html#a0155650381f813352c42eb2cf2e30e84" title="Creates the image views of the swapchain images." alt="" coords="260,321,467,363"/>
 <area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a4cb0fad8419ed33393b0aaceb3153543" title="Gets the maximum extent of the swapchain images(framebuffer size)." alt="" coords="531,5,747,47"/>
-<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a8454bbfbf2aec6c10dfa65c0f2decc51" title="From the available present mode, this chooses the the best present mode." alt="" coords="531,71,747,112"/>
-<area shape="rect" id="node5" href="$namespaceChronos_1_1Engine.html#a52bd349b91415659b6681f47145ed328" title="Chooses the best present mode among the supported modes." alt="" coords="531,136,747,177"/>
-<area shape="rect" id="node6" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="539,201,740,243"/>
-<area shape="rect" id="node8" href="$namespaceChronos_1_1Engine.html#a76f8a7e2a71632ea17aacab0fb642fba" title="For a given swapchain mode, it gets the capabilites, formats and present modes." alt="" coords="536,267,743,308"/>
-<area shape="rect" id="node7" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="823,201,1043,243"/>
-<area shape="rect" id="node10" href="$namespaceChronos_1_1Engine.html#a7018d1eaf2dfaf4c373269fcaa344a46" title="For a given image dimensons, it creates a VkImage and VkDeviceMemory for the image." alt="" coords="531,333,748,359"/>
-<area shape="rect" id="node12" href="$namespaceChronos_1_1Engine.html#a34457a6d2cac8f2770ffbaf52b3b2ee3" title="Create a VkImageView for a given VkImage." alt="" coords="515,387,764,414"/>
-<area shape="rect" id="node11" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="812,333,1055,359"/>
+<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a52bd349b91415659b6681f47145ed328" title="Chooses the best present mode among the supported modes." alt="" coords="531,71,747,112"/>
+<area shape="rect" id="node5" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="539,136,740,177"/>
+<area shape="rect" id="node7" href="$namespaceChronos_1_1Engine.html#a76f8a7e2a71632ea17aacab0fb642fba" title="For a given swapchain mode, it gets the capabilites, formats and present modes." alt="" coords="536,201,743,243"/>
+<area shape="rect" id="node6" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="823,136,1043,177"/>
+<area shape="rect" id="node9" href="$namespaceChronos_1_1Engine.html#a7018d1eaf2dfaf4c373269fcaa344a46" title="For a given image dimensons, it creates a VkImage and VkDeviceMemory for the image." alt="" coords="531,267,748,294"/>
+<area shape="rect" id="node11" href="$namespaceChronos_1_1Engine.html#a34457a6d2cac8f2770ffbaf52b3b2ee3" title="Create a VkImageView for a given VkImage." alt="" coords="515,322,764,349"/>
+<area shape="rect" id="node10" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="812,267,1055,294"/>
 </map>

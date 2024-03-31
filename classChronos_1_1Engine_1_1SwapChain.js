@@ -1,6 +1,7 @@
 var classChronos_1_1Engine_1_1SwapChain =
 [
     [ "changeMsaa", "classChronos_1_1Engine_1_1SwapChain.html#af75e48c888e43f5dfc7b73590b984d01", null ],
+    [ "chooseSwapPresentMode", "classChronos_1_1Engine_1_1SwapChain.html#ae692686f5be18f64f462863b4e17b6e7", null ],
     [ "cleanup", "classChronos_1_1Engine_1_1SwapChain.html#aa8c764800b9a61a91a1e5e40e497bc03", null ],
     [ "create", "classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5", null ],
     [ "createColorResources", "classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e", null ],
@@ -11,6 +12,7 @@ var classChronos_1_1Engine_1_1SwapChain =
     [ "colorImageMemory", "classChronos_1_1Engine_1_1SwapChain.html#a8f9b8463fd4e77e094d2b8d2790421d4", null ],
     [ "colorImageView", "classChronos_1_1Engine_1_1SwapChain.html#a82c322c6832487fce59a72117f280978", null ],
     [ "device", "classChronos_1_1Engine_1_1SwapChain.html#a11fe620eb415b91b3e2a1bd09991ec92", null ],
+    [ "preferredPresentMode", "classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb", null ],
     [ "surface", "classChronos_1_1Engine_1_1SwapChain.html#a29872992a178cb1b2fd1c89fa141dfe4", null ],
     [ "swapChain", "classChronos_1_1Engine_1_1SwapChain.html#ab50ec3eb6293b1e2d52553ed5eeb7ec6", null ],
     [ "swapChainExtent", "classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63", null ],

@@ -1,11 +1,7 @@
 <map id="Source/Engine/Headers/validation.hpp" name="Source/Engine/Headers/validation.hpp">
-<area shape="rect" id="node1" title="Contains the functions needed for initalization of vulkan validation layers." alt="" coords="617,5,789,47"/>
-<area shape="rect" id="node2" href="$chronos_8hpp.html" title="Main API for chronos. Any applications should include this file." alt="" coords="259,102,411,129"/>
-<area shape="rect" id="node6" href="$device_8cpp.html" title=" " alt="" coords="435,95,597,136"/>
-<area shape="rect" id="node7" href="$engine_8cpp.html" title=" " alt="" coords="621,95,784,136"/>
-<area shape="rect" id="node8" href="$helper_8cpp.html" title=" " alt="" coords="808,95,971,136"/>
-<area shape="rect" id="node9" href="$validation_8cpp.html" title=" " alt="" coords="995,95,1157,136"/>
-<area shape="rect" id="node3" href="$manager_8cpp.html" title=" " alt="" coords="5,191,232,218"/>
-<area shape="rect" id="node4" href="$editorMain_8cpp.html" title=" " alt="" coords="257,184,413,225"/>
-<area shape="rect" id="node5" href="$editorManager_8cpp.html" title=" " alt="" coords="437,184,593,225"/>
+<area shape="rect" id="node1" title="Contains the functions needed for initalization of vulkan validation layers." alt="" coords="249,5,421,47"/>
+<area shape="rect" id="node2" href="$chronos_8hpp.html" title="Main API for chronos. Any applications should include this file." alt="" coords="259,95,411,121"/>
+<area shape="rect" id="node3" href="$manager_8cpp.html" title=" " alt="" coords="5,177,232,203"/>
+<area shape="rect" id="node4" href="$editorMain_8cpp.html" title=" " alt="" coords="257,169,413,211"/>
+<area shape="rect" id="node5" href="$editorManager_8cpp.html" title=" " alt="" coords="437,169,593,211"/>
 </map>

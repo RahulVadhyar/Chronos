@@ -1,5 +1,4 @@
 <map id="Chronos::Engine::Engine::createInstance" name="Chronos::Engine::Engine::createInstance">
-<area shape="rect" id="node1" title="Creates a vulkan instance." alt="" coords="5,39,184,80"/>
-<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#ae343c6be067a32c5c92c47a8d0dca6f9" title="Checks if the validation layers are supported by the system." alt="" coords="232,5,471,47"/>
-<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a35cd835c537872d49915832ce7979b5c" title="Gets the required extensions to be enabled." alt="" coords="244,71,459,112"/>
+<area shape="rect" id="node1" title="Creates a vulkan instance." alt="" coords="5,5,184,47"/>
+<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a35cd835c537872d49915832ce7979b5c" title="Gets the required extensions to be enabled." alt="" coords="232,5,447,47"/>
 </map>

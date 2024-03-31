@@ -1,6 +1,0 @@
-<map id="Chronos::Engine::Engine::setupDebugMessenger" name="Chronos::Engine::Engine::setupDebugMessenger">
-<area shape="rect" id="node1" title="Sets up the vulkan validation layers." alt="" coords="5,39,184,80"/>
-<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#af93e058ca2e6b10c2be3940bc0bb9b9d" title="Creates the debug messenger." alt="" coords="232,5,452,47"/>
-<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a68f7436439ca126c4a4d8a639c8ffdf1" title="Populates the debug messenger create info." alt="" coords="241,71,443,112"/>
-<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a5bd356a2b6410169470aeead4d7eebc0" title="This sets the debug Callback function." alt="" coords="500,78,731,105"/>
-</map>
