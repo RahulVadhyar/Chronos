@@ -8,6 +8,7 @@ var classChronos_1_1Engine_1_1SwapChain =
     [ "createImageViews", "classChronos_1_1Engine_1_1SwapChain.html#a0155650381f813352c42eb2cf2e30e84", null ],
     [ "init", "classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe", null ],
     [ "recreate", "classChronos_1_1Engine_1_1SwapChain.html#ab62945a629a540f51adf21f82780fd7c", null ],
+    [ "changePresentMode", "classChronos_1_1Engine_1_1SwapChain.html#a24ae3a2025905fa8a724855c121fcda6", null ],
     [ "colorImage", "classChronos_1_1Engine_1_1SwapChain.html#a9a6737e3c128f8a7a8287a444879d215", null ],
     [ "colorImageMemory", "classChronos_1_1Engine_1_1SwapChain.html#a8f9b8463fd4e77e094d2b8d2790421d4", null ],
     [ "colorImageView", "classChronos_1_1Engine_1_1SwapChain.html#a82c322c6832487fce59a72117f280978", null ],

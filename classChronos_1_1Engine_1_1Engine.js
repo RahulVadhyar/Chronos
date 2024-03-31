@@ -2,7 +2,7 @@ var classChronos_1_1Engine_1_1Engine =
 [
     [ "Engine", "classChronos_1_1Engine_1_1Engine.html#a66c6b72176c3e93affdb0018eb137801", null ],
     [ "~Engine", "classChronos_1_1Engine_1_1Engine.html#a532edb6a6f3f0b8d48fb43fb4e9b7e2f", null ],
-    [ "changePresentMode", "classChronos_1_1Engine_1_1Engine.html#acf25b73a4efdf8b8949973a987363700", null ],
+    [ "changePresentMode", "classChronos_1_1Engine_1_1Engine.html#af4f93a5928076463872d2ab6fcfb7e29", null ],
     [ "cleanup", "classChronos_1_1Engine_1_1Engine.html#a3f1da8f7cab1fcd9f9c3b6ea565252a3", null ],
     [ "createInstance", "classChronos_1_1Engine_1_1Engine.html#a4be8d1abd5f346749a04f0c82510965a", null ],
     [ "createSurface", "classChronos_1_1Engine_1_1Engine.html#a2b1cad0d764a37e732adbf39e787c904", null ],
@@ -11,6 +11,7 @@ var classChronos_1_1Engine_1_1Engine =
     [ "initVulkan", "classChronos_1_1Engine_1_1Engine.html#a087a97e8ab427e73745b6fe7bb449340", null ],
     [ "initWindow", "classChronos_1_1Engine_1_1Engine.html#a3be23c5c76ba6d586a0fb29433f37771", null ],
     [ "resizeFrameBuffer", "classChronos_1_1Engine_1_1Engine.html#a2afd596420fea9c9b273a1a600f19a92", null ],
+    [ "setPresentMode", "classChronos_1_1Engine_1_1Engine.html#aa811161bd3c56252a4802ce7b5a044b5", null ],
     [ "showfps", "classChronos_1_1Engine_1_1Engine.html#a1668ffbea544bc8c886b475af7f28b0f", null ],
     [ "bgColor", "classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e", null ],
     [ "colorShapeManager", "classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583", null ],
