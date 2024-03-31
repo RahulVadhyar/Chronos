@@ -17,6 +17,7 @@ var dir_44542fd570ad861746cbfb64a34f5ae8 =
       [ "UniformColorBufferObject", "structChronos_1_1Engine_1_1UniformColorBufferObject.html", "structChronos_1_1Engine_1_1UniformColorBufferObject" ]
     ] ],
     [ "fontTypes.hpp", "fontTypes_8hpp.html", "fontTypes_8hpp" ],
+    [ "getFontType.hpp", "getFontType_8hpp.html", "getFontType_8hpp" ],
     [ "helper.hpp", "helper_8hpp.html", "helper_8hpp" ],
     [ "multiFontInclude.hpp", "multiFontInclude_8hpp.html", null ],
     [ "object.hpp", "object_8hpp.html", [

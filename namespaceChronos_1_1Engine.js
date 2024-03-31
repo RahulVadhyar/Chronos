@@ -51,6 +51,7 @@ var namespaceChronos_1_1Engine =
     [ "endSingleTimeCommands", "namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c", null ],
     [ "findMemoryType", "namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3", null ],
     [ "findQueueFamilies", "namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357", null ],
+    [ "getFontType", "namespaceChronos_1_1Engine.html#a0b14987fbd6059bc502391f317ddcb97", null ],
     [ "getMaxUsableSampleCount", "namespaceChronos_1_1Engine.html#a7eb1b7f1844da31f8c3dd350c04f3812", null ],
     [ "getRequiredExtensions", "namespaceChronos_1_1Engine.html#a35cd835c537872d49915832ce7979b5c", null ],
     [ "isDeviceSuitable", "namespaceChronos_1_1Engine.html#a5d1bdae6108eaaf072fe2619be7123d8", null ],
