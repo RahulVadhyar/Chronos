@@ -36,6 +36,8 @@ var NAVTREEINDEX0 =
 "classChronos_1_1Editor_1_1EditorManager.html#a4b70998992b7e7cf600eba12d0ec8a51":[5,0,0,0,0,6],
 "classChronos_1_1Editor_1_1EditorManager.html#a54d3c886260f18c56d50fcff936563ef":[5,0,0,0,0,26],
 "classChronos_1_1Editor_1_1EditorManager.html#a54e30f9bd64f65be55efa77183f84e0a":[5,0,0,0,0,45],
+"classChronos_1_1Editor_1_1EditorManager.html#a5511189d999a9b95b32acb4468924474":[5,0,0,0,0,51],
+"classChronos_1_1Editor_1_1EditorManager.html#a5bcbdfc80a2542e0fcabb12b382fe3f9":[5,0,0,0,0,50],
 "classChronos_1_1Editor_1_1EditorManager.html#a6641062eec1d91abd615ef7d601c74c5":[5,0,0,0,0,16],
 "classChronos_1_1Editor_1_1EditorManager.html#a690898a392f26183d4c29309132270d8":[5,0,0,0,0,33],
 "classChronos_1_1Editor_1_1EditorManager.html#a6bcd171159c3a8b07d319881239e2e7d":[5,0,0,0,0,2],
@@ -45,7 +47,7 @@ var NAVTREEINDEX0 =
 "classChronos_1_1Editor_1_1EditorManager.html#a8cf788c495640f042b71bfe192dd5232":[5,0,0,0,0,49],
 "classChronos_1_1Editor_1_1EditorManager.html#a9f33237b2e46587e1e77b5d69aeb29a5":[5,0,0,0,0,7],
 "classChronos_1_1Editor_1_1EditorManager.html#aa094afb7f2c082a769dfe1349212cedb":[5,0,0,0,0,12],
-"classChronos_1_1Editor_1_1EditorManager.html#aa6cc989e6fb30ee8270253b625f66c2c":[5,0,0,0,0,50],
+"classChronos_1_1Editor_1_1EditorManager.html#aa6cc989e6fb30ee8270253b625f66c2c":[5,0,0,0,0,52],
 "classChronos_1_1Editor_1_1EditorManager.html#aaade646cc93ad7180c55398a6cf8b467":[5,0,0,0,0,35],
 "classChronos_1_1Editor_1_1EditorManager.html#ab64669b8bad1e94604c8fce665910c7d":[5,0,0,0,0,5],
 "classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150":[5,0,0,0,0,38],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "classChronos_1_1Engine_1_1SwapChain.html#ab50ec3eb6293b1e2d52553ed5eeb7ec6":[5,0,0,1,19,15],
 "classChronos_1_1Engine_1_1SwapChain.html#ab62945a629a540f51adf21f82780fd7c":[5,0,0,1,19,7],
 "classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe":[5,0,0,1,19,6],
-"classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e":[5,0,0,1,19,4],
-"classChronos_1_1Engine_1_1SwapChain.html#ae692686f5be18f64f462863b4e17b6e7":[5,0,0,1,19,1],
-"classChronos_1_1Engine_1_1SwapChain.html#af75e48c888e43f5dfc7b73590b984d01":[5,0,0,1,19,0]
+"classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e":[5,0,0,1,19,4]
 };

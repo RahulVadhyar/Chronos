@@ -272,13 +272,13 @@ $(document).ready(function(){initNavTree('manager_8cpp_source.html',''); initRes
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; shape : engine.shapeManager.objects)</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    {</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        std::pair&lt;int, Chronos::Manager::ShapeParams&gt; shapeDetail;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        shapeDetail.first = shape.first;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        shapeDetail.first = std::stoi(<span class="stringliteral">&quot;1&quot;</span> + std::to_string(shape.first));</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        shapeDetail.second = shape.second.params;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        shapeDetails.push_back(shapeDetail);</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; shape : engine.colorShapeManager.objects){</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        std::pair&lt;int, Chronos::Manager::ShapeParams&gt; shapeDetail;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        shapeDetail.first = shape.first;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        shapeDetail.first = std::stoi(<span class="stringliteral">&quot;2&quot;</span> + std::to_string(shape.first));</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        shapeDetail.second = shape.second.params;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        shapeDetails.push_back(shapeDetail);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
@@ -291,7 +291,7 @@ $(document).ready(function(){initNavTree('manager_8cpp_source.html',''); initRes
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; shape : engine.polygonManager.objects)</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    {</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        std::pair&lt;int, Chronos::Manager::ShapeParams&gt; shapeDetail;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        shapeDetail.first = shape.first;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        shapeDetail.first = std::stoi(<span class="stringliteral">&quot;3&quot;</span> + std::to_string(shape.first));</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        shapeDetail.second = shape.second.params;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        shapeDetails.push_back(shapeDetail);</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>

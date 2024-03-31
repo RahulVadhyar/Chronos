@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"classChronos_1_1Engine_1_1SwapChain.html#ae692686f5be18f64f462863b4e17b6e7":[5,0,0,1,19,1],
+"classChronos_1_1Engine_1_1SwapChain.html#af75e48c888e43f5dfc7b73590b984d01":[5,0,0,1,19,0],
 "classChronos_1_1Engine_1_1Text.html":[5,0,0,1,21],
 "classChronos_1_1Engine_1_1Text.html#a041a7aaa6a6f1b198117b1515c231af2":[5,0,0,1,21,13],
 "classChronos_1_1Engine_1_1Text.html#a222f04b8bbed8a06255667abcdde1ea7":[5,0,0,1,21,15],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "namespaceChronos_1_1Engine.html#a76f8a7e2a71632ea17aacab0fb642fba":[4,0,0,1,50],
 "namespaceChronos_1_1Engine.html#a78d48217937b348633f1184b862e0312":[4,0,0,1,41],
 "namespaceChronos_1_1Engine.html#a7eb1b7f1844da31f8c3dd350c04f3812":[4,0,0,1,47],
-"namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357":[4,0,0,1,45],
-"namespaceChronos_1_1Engine.html#a984181461b9c5fcc9a52c817deb01ed8":[4,0,0,1,29],
-"namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a":[4,0,0,1,34]
+"namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357":[4,0,0,1,45]
 };
