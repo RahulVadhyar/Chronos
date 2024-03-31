@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['initializer_375',['Initializer',['../structChronos_1_1Manager_1_1Initializer.html',1,'Chronos::Manager']]]
+  ['initializer_380',['Initializer',['../structChronos_1_1Manager_1_1Initializer.html',1,'Chronos::Manager']]]
 ];
