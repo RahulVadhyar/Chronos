@@ -57,7 +57,7 @@ void Chronos::Engine::Engine::initWindow()
     glfwInit();
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
 
-    window = glfwCreateWindow(width, height, "Chronos", nullptr, nullptr);
+    window = glfwCreateWindow(width, height, GAME_NAME, nullptr, nullptr);
     if (window == nullptr) {
         throw std::runtime_error("Failed to create GLFW window");
     }
