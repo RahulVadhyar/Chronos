@@ -24,6 +24,10 @@ namespace Chronos{
                 bool showTextureDetailsWindow = false;
                 bool showTextDetailsWindow = false;
 
+                bool showDebugMetricsWindow = false;
+                bool showDebugLogWindow = false;
+
+
                 void MenuBar();
                 void ShapeWindow();
                 void PolygonWindow();
@@ -36,6 +40,9 @@ namespace Chronos{
                 void TextureDetailsWindow();
                 void TextDetailsWindow();
 
+                void DebugMetricsWindow();
+                void DebugLogWindow();
+
                 //Shape Window
                 Chronos::Manager::ShapeParams newShapeParams;
                 int newShapeType = 0;
@@ -47,6 +54,8 @@ namespace Chronos{
 
                 //Polygon Window
                 Chronos::Manager::ShapeParams newPolygonParams;
+                int numVertices = 4;
+                std::vector<std::array<float, 2>> polygonVertices = {{-0.5, -0.5}, {0.5, -0.5}, {0.5, 0.5}, {-0.5, 0.5} };
                 int currentPolygonTextureSelection = 0;
                 char currentPolygonTextureName[200] = "Select Texture";
                 int currentPolygonSelection = 0;

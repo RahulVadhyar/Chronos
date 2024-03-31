@@ -19,6 +19,8 @@ void Chronos::Editor::EditorManager::addElements(){
     this->PolygonDetailsWindow();
     this->TextureDetailsWindow();
     this->TextDetailsWindow();
+    this->DebugMetricsWindow();
+    this->DebugLogWindow();
 
 }
 
@@ -181,9 +183,28 @@ void Chronos::Editor::EditorManager::PolygonWindow(){
             }
             ImGui::EndCombo();
         }
+        ImGui::SeparatorText("Vertices");
+        ImGui::Text("Number of Vertices %d", this->numVertices);
+        if(ImGui::Button("Add Vertices")){
+            this->numVertices++;
+            this->polygonVertices.push_back({0.0f, 0.0f});
+        }
+        ImGui::SameLine();
+        if(ImGui::Button("Remove Vertices")){
+            if(this->numVertices > 3){
+                this->numVertices--;
+                this->polygonVertices.pop_back();
+            }
+        }
+        for(int i = 0; i < this->numVertices; i++){
+            ImGui::Text("Vertex %d", i);
+            ImGui::DragFloat("X", &this->polygonVertices[i][0], 0.01f, -1.0f, 1.0f);
+            ImGui::DragFloat("Y", &this->polygonVertices[i][1], 0.01f, -1.0f, 1.0f);
+        }
+
         if(!doesPolygonExist){
             if(ImGui::Button("Add Shape")){
-                this->manager->addPolygon(this->newShapeParams, this->currentPolygonTextureSelection, {{-0.5, -0.5}, {0.5, -0.5}, {0.5, 0.5}, {-0.5, 0.5} });
+                this->manager->addPolygon(this->newShapeParams, this->currentPolygonTextureSelection, this->polygonVertices);
             }
         }
         ImGui::SeparatorText("Current Shapes");
@@ -372,6 +393,10 @@ void Chronos::Editor::EditorManager::SettingsWindow(){
             this->manager->changeBackgroundColor(this->bgColor[0], this->bgColor[1], this->bgColor[2]);
         }
 
+        ImGui::SeparatorText("ImGui Debug Settings");
+        ImGui::Checkbox("Show Metrics", &this->showDebugMetricsWindow);
+        ImGui::Checkbox("Show Log", &this->showDebugLogWindow);
+
         ImGui::End();
     }
 }   
@@ -445,5 +470,16 @@ void Chronos::Editor::EditorManager::TextDetailsWindow(){
             this->manager->updateText(this->textDetailsTextNo, this->textDetailsTextParams);
         }
         ImGui::End();
+    }
+}
+void Chronos::Editor::EditorManager::DebugMetricsWindow(){
+    if(this->showDebugMetricsWindow){
+        ImGui::ShowMetricsWindow(&this->showDebugMetricsWindow);
+    }
+}
+
+void Chronos::Editor::EditorManager::DebugLogWindow(){
+    if(this->showDebugLogWindow){
+        ImGui::ShowDebugLogWindow(&this->showDebugLogWindow);
     }
 }
