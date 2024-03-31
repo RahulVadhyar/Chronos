@@ -60,7 +60,7 @@ namespace Manager {
         float y = 0.0;
         float rotation = 0.0;
         float scale = 1.0;
-        std::string text;
+        std::string text = "";
     };
     /**
     \brief Selects the polygon type to be used.
@@ -404,7 +404,7 @@ namespace Manager {
         - mailbox
         */
         void changePresentMode(std::string presentMode){
-            engine.changePresentMode(presentMode);
+            engine.setPresentMode(presentMode);
         }
 
     private:

@@ -60,6 +60,8 @@ namespace Chronos{
 
                 //Text Window
                 Chronos::Engine::TextParams newTextParams;
+                std::string currentFontSelection = "consolas";
+                int currentFontSizeSelection = 6;
                 int currentTextSelection = 0;
 
                 //Shape details window
@@ -69,6 +71,10 @@ namespace Chronos{
                 //polygon details window
                 Chronos::Manager::ShapeParams polygonDetailsShapeParams;
                 int polygonDetailsShapeNo = 0;
+
+                //settings window
+                char windowTitle[200] = GAME_NAME;
+                std::string presentMode = "mailbox";
         };  
     }
 }

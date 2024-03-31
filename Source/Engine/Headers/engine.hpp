@@ -173,7 +173,7 @@ namespace Engine {
         - fifo_relaxed
         - mailbox
         */
-        void changePresentMode(std::string mode);
+        void setPresentMode(std::string mode);
 
 #ifdef ENABLE_EDITOR
         /**
@@ -344,6 +344,8 @@ namespace Engine {
             - In Flight fences to ensure that the renderer is synchronized with the GPU
         */
         void createSyncObjects();
+
+        void changePresentMode();
 
 #ifdef ENABLE_EDITOR
         Chronos::Editor::EditorRenderer gui = Chronos::Editor::EditorRenderer();

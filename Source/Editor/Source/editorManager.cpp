@@ -1,8 +1,10 @@
+#include "imgui.h"
 #include "stlheader.hpp"
 #include "editorHeaders.hpp"
 #include "chronos.hpp"
 #include "editorManager.hpp"
 #include "editorTheme.hpp"
+#include <cstring>
 
 void Chronos::Editor::EditorManager::addElements(){
     Chronos::Editor::setImGuiStyle();
@@ -252,7 +254,7 @@ void Chronos::Editor::EditorManager::TextWindow(){
         ImGui::Begin("Text", &this->showTextWindow);
         ImGui::SeparatorText("Add Text");
         char inputText[2048];
-        memcpy(inputText, this->newTextParams.text.c_str(), sizeof(char) * this->newTextParams.text.size());
+        strcpy(inputText, this->newTextParams.text.c_str());
         ImGui::InputText("Text", inputText, 2048);
         this->newTextParams.text = inputText;
         ImGui::DragFloat("X(-1 to 1)", &this->newTextParams.x, 0.01f, -1.0f, 1.0f);
@@ -260,8 +262,30 @@ void Chronos::Editor::EditorManager::TextWindow(){
         ImGui::DragFloat("Rotation", &this->newTextParams.rotation, 0.01f, 0.0f, FLT_MAX);
         ImGui::DragFloat("Scale", &this->newTextParams.scale, 0.01f, 0.0f, FLT_MAX);
         ImGui::ColorEdit3("Color", this->newTextParams.color.data());
+        if(ImGui::BeginCombo("Select Font", this->currentFontSelection.c_str())){
+            if(ImGui::Selectable("consolas", this->currentFontSelection == "consolas")){
+                this->currentFontSelection = "consolas";
+            }
+            if(ImGui::Selectable("consolas_bold", this->currentFontSelection == "consolas_bold")){
+                this->currentFontSelection = "consolas_bold";
+            }
+            if(ImGui::Selectable("arial", this->currentFontSelection == "arial")){
+                this->currentFontSelection = "arial";
+            }
+            if(ImGui::Selectable("arial_bold", this->currentFontSelection == "arial_bold")){
+                this->currentFontSelection = "arial_bold";
+            }
+            if(ImGui::Selectable("times", this->currentFontSelection == "times")){
+                this->currentFontSelection = "times";
+            }
+            if(ImGui::Selectable("times_bold", this->currentFontSelection == "times_bold")){
+                this->currentFontSelection = "times_bold";
+            }
+            ImGui::EndCombo();
+        }
+        ImGui::DragInt("Font Size", &this->currentFontSizeSelection, 1, 6, 50);
         if(ImGui::Button("Add Text")){
-            this->manager->addText(this->newTextParams, "consolas", 24);
+            this->manager->addText(this->newTextParams, this->currentFontSelection, this->currentFontSizeSelection);
         }
         ImGui::SeparatorText("Current Text");
         if(ImGui::BeginListBox("Text")){
@@ -284,7 +308,34 @@ void Chronos::Editor::EditorManager::TextWindow(){
 void Chronos::Editor::EditorManager::SettingsWindow(){
     if(this->showSettingsWindow){
         ImGui::Begin("Settings", &this->showSettingsWindow);
-        ImGui::Text("Functions for this are yet to be defined");
+        ImGui::SeparatorText("Build Information");
+        ImGui::Text("Engine name: %s", "Chronos");
+        ImGui::Text("Build Version: %d.%d.%d", CHRONOS_VERSION_MAJOR, CHRONOS_VERSION_MINOR, CHRONOS_VERSION_PATCH);
+        ImGui::Text("Build Date: %s", __DATE__);
+        ImGui::Text("Build Time: %s", __TIME__);
+        ImGui::SeparatorText("Window Settings");
+        ImGui::InputText("Window Title", this->windowTitle, 200);
+        if(ImGui::Button("Update Window Title")){
+            glfwSetWindowTitle(this->manager->getWindow(), this->windowTitle);
+        }
+        if(ImGui::BeginCombo("Present Mode", this->presentMode.c_str())){
+            if(ImGui::Selectable("mailbox", this->presentMode == "mailbox")){
+                this->presentMode = "mailbox";
+            }
+            if(ImGui::Selectable("immediate", this->presentMode == "immediate")){
+                this->presentMode = "immediate";
+            }
+            if(ImGui::Selectable("fifo", this->presentMode == "fifo")){
+                this->presentMode = "fifo";
+            }
+            if(ImGui::Selectable("fifo_relaxed", this->presentMode == "fifo_relaxed")){
+                this->presentMode = "fifo_relaxed";
+            }
+            ImGui::EndCombo();
+        }
+        if(ImGui::Button("Update Present Mode")){
+            this->manager->changePresentMode(this->presentMode);
+        }
         ImGui::End();
     }
 }   

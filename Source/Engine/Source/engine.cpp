@@ -123,7 +123,11 @@ void Chronos::Engine::Engine::cleanup()
 }
 
 void Chronos::Engine::Engine::drawFrame()
-{
+{   
+    if(swapChain.changePresentMode){
+        changePresentMode();
+        swapChain.changePresentMode = false;
+    }
     // wait for the previous frame to finish
     glfwPollEvents();
     vkWaitForFences(device.device, 1, &inFlightFences[currentFrame], VK_TRUE,
@@ -336,7 +340,19 @@ void Chronos::Engine::Engine::setEditorAddElementsCallback(void (*editorAddEleme
 }
 #endif
 
-void Chronos::Engine::Engine::changePresentMode(std::string mode){
+void Chronos::Engine::Engine::changePresentMode(){
+    vkDeviceWaitIdle(device.device);
+    swapChain.recreate();
+    shapeManager.recreate();
+    colorShapeManager.recreate();
+    textManager.recreate();
+    polygonManager.recreate();
+    #ifdef ENABLE_EDITOR
+    gui.recreate();
+    #endif
+}
+
+void Chronos::Engine::Engine::setPresentMode(std::string mode){
     if(mode == "immediate"){
         this->swapChain.preferredPresentMode = VK_PRESENT_MODE_IMMEDIATE_KHR;
     }  else if(mode == "fifo"){
@@ -348,12 +364,5 @@ void Chronos::Engine::Engine::changePresentMode(std::string mode){
     } else {
         throw std::runtime_error("Invalid present mode");
     }
-    swapChain.recreate();
-    shapeManager.recreate();
-    colorShapeManager.recreate();
-    textManager.recreate();
-    polygonManager.recreate();
-    #ifdef ENABLE_EDITOR
-    gui.recreate();
-    #endif
+    this->swapChain.changePresentMode = true;
 }

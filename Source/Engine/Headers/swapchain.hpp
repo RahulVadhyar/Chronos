@@ -134,6 +134,8 @@ namespace Engine {
         */
         VkPresentModeKHR preferredPresentMode = VK_PRESENT_MODE_MAILBOX_KHR;
 
+        bool changePresentMode = false;
+
     private:
         /**
         \brief Device to which swapchain needs to be created
