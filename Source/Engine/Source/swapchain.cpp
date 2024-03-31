@@ -17,39 +17,7 @@ VkSurfaceFormatKHR Chronos::Engine::chooseSwapSurfaceFormat(
     return availableFormats[0];
 }
 
-VkPresentModeKHR Chronos::Engine::chooseSwapPresentMode(
-    const std::vector<VkPresentModeKHR>& availablePresentModes)
-{
-    // The presentation modes available
-    // VK_PRESENT_MODE_IMMEDIATE_KHR: Images submitted by your application are
-    // transferred to the screen right away, which may result in tearing.
-    // VK_PRESENT_MODE_FIFO_KHR : The swap chain is a queue where the display
-    // takes an image from the front of the queue when the display is refreshed
-    //							and the program inserts rendered images at the
-    // back of the queue.If the queue is full then the program has to wait. 							This is
-    // most similar to vertical sync as found in modern games.The moment that the
-    // display is refreshed is known as 							"vertical blank".
-    // VK_PRESENT_MODE_FIFO_RELAXED_KHR : This mode only differs from the previous
-    // one if the application is late and the queue was empty at the last 									vertical
-    // blank.Instead of waiting for the next vertical blank, the image is
-    // transferred right away when it 									finally arrives.This may result in visible
-    // tearing. VK_PRESENT_MODE_MAILBOX_KHR : This is another variation of the
-    // second mode.Instead of blocking the application when the queue is full, the
-    // images 							that are already queued are simply replaced with the newer ones.This
-    // mode can be used to render frames as fast as 							possible while still avoiding
-    // tearing, resulting in fewer latency issues than standard vertical sync.This
-    // is commonly 							known as "triple buffering", although the existence of three
-    // buffers alone does not necessarily mean that the framerate 							is unlocked.
 
-    //try to select mailbox mode, else select the default FIFO mode
-    for (const auto& availablePresentMode : availablePresentModes) {
-        if (availablePresentMode == VK_PRESENT_MODE_MAILBOX_KHR) {
-            return availablePresentMode;
-        }
-    }
-
-    return VK_PRESENT_MODE_FIFO_KHR;
-}
 
 VkExtent2D Chronos::Engine::chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities,
     GLFWwindow* window)
@@ -115,7 +83,7 @@ void Chronos::Engine::SwapChain::create()
     // create the swapchain
     SwapChainSupportDetails swapChainSupport = Chronos::Engine::querySwapChainSupport((*device).physicalDevice, surface);
     VkSurfaceFormatKHR surfaceFormat = Chronos::Engine::chooseSwapSurfaceFormat(swapChainSupport.formats);
-    VkPresentModeKHR presentMode = Chronos::Engine::chooseSwapPresentMode(swapChainSupport.presentModes);
+    VkPresentModeKHR presentMode = this->chooseSwapPresentMode(swapChainSupport.presentModes);
     VkExtent2D extent = Chronos::Engine::chooseSwapExtent(swapChainSupport.capabilities, window);
 
     // set the number of images in the swap chain
@@ -224,4 +192,38 @@ void Chronos::Engine::SwapChain::changeMsaa()
     create();
     createImageViews();
     createColorResources();
+}
+
+VkPresentModeKHR Chronos::Engine::SwapChain::chooseSwapPresentMode(
+    const std::vector<VkPresentModeKHR>& availablePresentModes)
+{
+    // The presentation modes available
+    // VK_PRESENT_MODE_IMMEDIATE_KHR: Images submitted by your application are
+    // transferred to the screen right away, which may result in tearing.
+    // VK_PRESENT_MODE_FIFO_KHR : The swap chain is a queue where the display
+    // takes an image from the front of the queue when the display is refreshed
+    //							and the program inserts rendered images at the
+    // back of the queue.If the queue is full then the program has to wait. 							This is
+    // most similar to vertical sync as found in modern games.The moment that the
+    // display is refreshed is known as 							"vertical blank".
+    // VK_PRESENT_MODE_FIFO_RELAXED_KHR : This mode only differs from the previous
+    // one if the application is late and the queue was empty at the last 									vertical
+    // blank.Instead of waiting for the next vertical blank, the image is
+    // transferred right away when it 									finally arrives.This may result in visible
+    // tearing. VK_PRESENT_MODE_MAILBOX_KHR : This is another variation of the
+    // second mode.Instead of blocking the application when the queue is full, the
+    // images 							that are already queued are simply replaced with the newer ones.This
+    // mode can be used to render frames as fast as 							possible while still avoiding
+    // tearing, resulting in fewer latency issues than standard vertical sync.This
+    // is commonly 							known as "triple buffering", although the existence of three
+    // buffers alone does not necessarily mean that the framerate 							is unlocked.
+
+    //try to select mailbox mode, else select the default FIFO mode
+    for (const auto& availablePresentMode : availablePresentModes) {
+        if (availablePresentMode == this->preferredPresentMode) {
+            return availablePresentMode;
+        }
+    }
+
+    return VK_PRESENT_MODE_FIFO_KHR;
 }

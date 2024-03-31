@@ -2,7 +2,11 @@
 #include "stlheader.hpp"
 #include "device.hpp"
 #include "swapchain.hpp"
+
+#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
 #include "validation.hpp"
+#endif
+
 #include "engineStructs.hpp"
 #include "Vertex.hpp"
 #include "helper.hpp"
@@ -66,9 +70,10 @@ void Chronos::Engine::Engine::initVulkan()
 {
     //create the basic objects
     createInstance();
-    if (enableValidationLayers) {
-        setupDebugMessenger();
-    }
+
+    #ifdef ENABLE_VULKAN_VALIDATION_LAYERS
+    setupDebugMessenger();
+    #endif
     createSurface();
     device.init(instance, surface);
     swapChain.init(&device, surface, window);
@@ -107,9 +112,9 @@ void Chronos::Engine::Engine::cleanup()
         vkDestroyFence(device.device, inFlightFences[i], nullptr);
     }
     vkDestroyCommandPool(device.device, commandPool, nullptr);
-    if (enableValidationLayers) {
-        DestroyDebugUtilsMessengerEXT(instance, debugMessenger, nullptr);
-    }
+#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
+    DestroyDebugUtilsMessengerEXT(instance, debugMessenger, nullptr);
+#endif
     device.destroy(); // destroy the logical device
     vkDestroySurfaceKHR(instance, surface, nullptr);
     vkDestroyInstance(instance, nullptr);
@@ -253,34 +258,32 @@ void Chronos::Engine::Engine::createInstance()
     createInfo.enabledExtensionCount = static_cast<uint32_t>(extensions.size());
     createInfo.ppEnabledExtensionNames = extensions.data();
 
-    if (enableValidationLayers && !checkValidationLayerSupport()) {
+#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
+    if (!checkValidationLayerSupport()) {
         throw std::runtime_error("Validation layers requested, but not available");
     }
-
+#endif
     VkDebugUtilsMessengerCreateInfoEXT debugCreateInfo {};
 
     createInfo.enabledLayerCount = 0;
     createInfo.pNext = nullptr;
 
-    if (enableValidationLayers) {
+#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
         createInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
         createInfo.ppEnabledLayerNames = validationLayers.data();
         // uncomment below if u need fine details. It just creates extra verbose
         // generally not needed
         //  populateDebugMessengerCreateInfo(debugCreateInfo);
-        //  createInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT*)
-        //  &debugCreateInfo;
-    }
-
+        //  createInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT*)&debugCreateInfo;
+#endif
     if (vkCreateInstance(&createInfo, nullptr, &instance) != VK_SUCCESS) {
         throw std::runtime_error("Failed to create instance");
     }
 }
 
+#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
 void Chronos::Engine::Engine::setupDebugMessenger()
 {
-    if (!enableValidationLayers)
-        return;
     VkDebugUtilsMessengerCreateInfoEXT createInfo;
     populateDebugMessengerCreateInfo(createInfo);
     if (CreateDebugUtilsMessengerEXT(instance, &createInfo, nullptr,
@@ -289,6 +292,7 @@ void Chronos::Engine::Engine::setupDebugMessenger()
         throw std::runtime_error("Failed to set up debug messenger");
     }
 }
+#endif
 
 void Chronos::Engine::Engine::createSurface()
 {
@@ -331,3 +335,25 @@ void Chronos::Engine::Engine::setEditorAddElementsCallback(void (*editorAddEleme
     gui.addElements = editorAddElements;
 }
 #endif
+
+void Chronos::Engine::Engine::changePresentMode(std::string mode){
+    if(mode == "immediate"){
+        this->swapChain.preferredPresentMode = VK_PRESENT_MODE_IMMEDIATE_KHR;
+    }  else if(mode == "fifo"){
+        this->swapChain.preferredPresentMode = VK_PRESENT_MODE_FIFO_KHR;
+    } else if(mode == "fifo_relaxed"){
+        this->swapChain.preferredPresentMode = VK_PRESENT_MODE_FIFO_RELAXED_KHR;
+    } else if(mode == "mailbox"){
+        this->swapChain.preferredPresentMode = VK_PRESENT_MODE_MAILBOX_KHR;
+    } else {
+        throw std::runtime_error("Invalid present mode");
+    }
+    swapChain.recreate();
+    shapeManager.recreate();
+    colorShapeManager.recreate();
+    textManager.recreate();
+    polygonManager.recreate();
+    #ifdef ENABLE_EDITOR
+    gui.recreate();
+    #endif
+}

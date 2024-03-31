@@ -9,6 +9,7 @@ endif()
 
 option(CHRONOS_BUILD_TESTS "Build the tests" OFF)
 option(CHRONOS_BUILD_EDITOR "Build the editor" ON)
+option(CHRONOS_ENABLE_VULKAN_VALIDATION_LAYERS "Enable Vulkan validation layers" ON)
 
 if(CHRONOS_SUPPORT_WAYLAND)
 set(GLFW_BUILD_WAYLAND ON)
@@ -69,7 +70,6 @@ endfunction()
 #build the executable
 # linking
 add_library(Chronos STATIC ${CHRONOS_CPP})
-target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC ENABLE_VULKAN_VALIDATION_LAYERS)
 IncludeDirectories(${PROJECT_NAME})
 
 #vulkan sdk if using windows
@@ -77,6 +77,10 @@ if(WIN32)
     target_include_directories(${PROJECT_NAME} PUBLIC ${VULKAN_SDK_INCLUDE})    
     target_link_directories(${CMAKE_PROJECT_NAME} PUBLIC ${VULKAN_SDK_LIB}) 
 endif(WIN32) 
+
+if(CHRONOS_ENABLE_VULKAN_VALIDATION_LAYERS)
+target_compile_definitions(Chronos PUBLIC ENABLE_VULKAN_VALIDATION_LAYERS)
+endif()
 
 #editor executable
 if(CHRONOS_BUILD_EDITOR)
@@ -108,7 +112,10 @@ if(WIN32)
 endif(WIN32) 
 
 target_compile_definitions(ChronosEditor PUBLIC ENABLE_EDITOR)
+
+if(CHRONOS_ENABLE_VULKAN_VALIDATION_LAYERS)
 target_compile_definitions(ChronosEditor PUBLIC ENABLE_VULKAN_VALIDATION_LAYERS)
+endif()
 
 #header files
 target_include_directories(ChronosEditor PUBLIC Source/Editor/Headers)
@@ -150,6 +157,10 @@ target_link_libraries(
   GTest::gtest_main
 )
 IncludeDirectories(ChronosTests)
+
+if(CHRONOS_ENABLE_VULKAN_VALIDATION_LAYERS)
+target_compile_definitions(ChronosTests PUBLIC ENABLE_VULKAN_VALIDATION_LAYERS)
+endif()
 
 include(GoogleTest)
 gtest_discover_tests(ChronosTests)

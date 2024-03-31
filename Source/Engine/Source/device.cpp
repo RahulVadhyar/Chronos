@@ -2,7 +2,9 @@
 #include "stlheader.hpp"
 #include "device.hpp"
 #include "swapchain.hpp"
+#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
 #include "validation.hpp"
+#endif
 #include "helper.hpp"
 
 void Chronos::Engine::Device::init(VkInstance instance, VkSurfaceKHR surface)
@@ -67,10 +69,10 @@ void Chronos::Engine::Device::createLogicalDevice(VkSurfaceKHR surface)
     createInfo.enabledExtensionCount = static_cast<uint32_t>(deviceExtensions.size());
     createInfo.ppEnabledExtensionNames = deviceExtensions.data();
     createInfo.enabledLayerCount = 0;
-    if (enableValidationLayers) {
-        createInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
-        createInfo.ppEnabledLayerNames = validationLayers.data();
-    }
+    #ifdef ENABLE_VALIDATION_LAYERS
+    createInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
+    createInfo.ppEnabledLayerNames = validationLayers.data();
+    #endif
 
     if (vkCreateDevice(physicalDevice, &createInfo, nullptr, &device) != VK_SUCCESS) {
         throw std::runtime_error("Failed to create logical device");

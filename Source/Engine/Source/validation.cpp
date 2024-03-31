@@ -1,3 +1,4 @@
+#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
 #include "vulkanHeaders.hpp"
 #include "stlheader.hpp"
 #include "device.hpp"
@@ -108,3 +109,4 @@ void Chronos::Engine::populateDebugMessengerCreateInfo(
     // set the callback function
     createInfo.pfnUserCallback = debugCallback;
 }
+#endif

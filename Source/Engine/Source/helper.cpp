@@ -3,7 +3,9 @@
 #include "device.hpp"
 #include "swapchain.hpp"
 #include "helper.hpp"
+#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
 #include "validation.hpp"
+#endif
 
 VkCommandBuffer Chronos::Engine::beginSingleTimeCommands(VkCommandPool commandPool,
     VkDevice device)
@@ -108,9 +110,9 @@ std::vector<const char*> Chronos::Engine::getRequiredExtensions()
     glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
     std::vector<const char*> extensions(glfwExtensions,
         glfwExtensions + glfwExtensionCount);
-    if (enableValidationLayers) {
-        extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
-    }
+    #ifdef ENABLE_VULKAN_VALIDATION_LAYERS
+    extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
+    #endif
     return extensions;
 }
 

@@ -6,6 +6,7 @@
 #pragma once
 namespace Chronos {
 namespace Engine {
+#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
 
     /**
     \brief Contains the name of the extensions needed to be enabled for validation layers.
@@ -14,14 +15,6 @@ namespace Engine {
         "VK_LAYER_KHRONOS_validation"
     };
 
-/**
-\brief Flag to enable validation layers.
-*/
-#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
-    const bool enableValidationLayers = true;
-#else
-    const bool enableValidationLayers = true;
-#endif
 
     /**
     \brief Checks if the validation layers are supported by the system.
@@ -97,5 +90,6 @@ namespace Engine {
     */
     void populateDebugMessengerCreateInfo(
         VkDebugUtilsMessengerCreateInfoEXT& createInfo);
+#endif
 };
 };
