@@ -1,11 +1,8 @@
-#include "imgui.h"
-#include "imgui_impl_glfw.h"
 #include "stlheader.hpp"
 #include "editorHeaders.hpp"
 #include "chronos.hpp"
 #include "editorManager.hpp"
 #include "editorTheme.hpp"
-#include <cstring>
 
 void Chronos::Editor::EditorManager::addElements(){
     Chronos::Editor::setImGuiStyle();
