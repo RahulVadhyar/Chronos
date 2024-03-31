@@ -182,13 +182,13 @@ std::vector<std::pair<int, Chronos::Manager::ShapeParams>> Manager::Manager::get
     for (auto& shape : engine.shapeManager.objects)
     {
         std::pair<int, Chronos::Manager::ShapeParams> shapeDetail;
-        shapeDetail.first = shape.first;
+        shapeDetail.first = std::stoi("1" + std::to_string(shape.first));
         shapeDetail.second = shape.second.params;
         shapeDetails.push_back(shapeDetail);
     }
     for(auto& shape : engine.colorShapeManager.objects){
         std::pair<int, Chronos::Manager::ShapeParams> shapeDetail;
-        shapeDetail.first = shape.first;
+        shapeDetail.first = std::stoi("2" + std::to_string(shape.first));
         shapeDetail.second = shape.second.params;
         shapeDetails.push_back(shapeDetail);
     }
@@ -201,7 +201,7 @@ std::vector<std::pair<int, Chronos::Manager::ShapeParams>> Manager::Manager::get
     for (auto& shape : engine.polygonManager.objects)
     {
         std::pair<int, Chronos::Manager::ShapeParams> shapeDetail;
-        shapeDetail.first = shape.first;
+        shapeDetail.first = std::stoi("3" + std::to_string(shape.first));
         shapeDetail.second = shape.second.params;
         shapeDetails.push_back(shapeDetail);
     }

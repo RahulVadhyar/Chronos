@@ -72,6 +72,10 @@ namespace Chronos{
                 Chronos::Manager::ShapeParams polygonDetailsShapeParams;
                 int polygonDetailsShapeNo = 0;
 
+                //text details window
+                Chronos::Engine::TextParams textDetailsTextParams;
+                int textDetailsTextNo = 0;
+
                 //settings window
                 char windowTitle[200] = GAME_NAME;
                 std::string presentMode = "mailbox";
