@@ -280,10 +280,10 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// This is where the shape parameters are updated</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    UniformBufferObject ubo {};</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    ubo.model = glm::translate(glm::mat4(1.0f), glm::vec3(x, y, 0.0f));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    ubo.model = glm::translate(glm::mat4(1.0f), glm::vec3(y, -x, 0.0f));</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    ubo.model = glm::rotate(ubo.model, glm::radians(rotation),</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        glm::vec3(0.0f, 0.0f, 1.0f));</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ubo.model = glm::scale(ubo.model, glm::vec3(x_size, y_size, 1.0f));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ubo.model = glm::scale(ubo.model, glm::vec3(y_size, x_size, 1.0f));</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    ubo.view = glm::lookAt(glm::vec3(0.0f, 0.0f, 0.1f), glm::vec3(0.0f, 0.0f, 0.0f),</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        glm::vec3(1.0f, 0.0f, 0.0f));</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    ubo.proj = glm::ortho(-1.0f, 1.0f,</div>
