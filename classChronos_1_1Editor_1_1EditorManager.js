@@ -37,6 +37,7 @@ var classChronos_1_1Editor_1_1EditorManager =
     [ "newTextureName", "classChronos_1_1Editor_1_1EditorManager.html#aea1556d9ff0d86eed66371303665dfc7", null ],
     [ "newTexturePath", "classChronos_1_1Editor_1_1EditorManager.html#a690898a392f26183d4c29309132270d8", null ],
     [ "numVertices", "classChronos_1_1Editor_1_1EditorManager.html#ae9f5c0832a6595e7fb07efab0812d73d", null ],
+    [ "pinMenuBar", "classChronos_1_1Editor_1_1EditorManager.html#a706f467cdf81e8cbe6e520986e4f25e4", null ],
     [ "polygonDetailsShapeNo", "classChronos_1_1Editor_1_1EditorManager.html#ad105591acf133c67486a6317b96c206f", null ],
     [ "polygonDetailsShapeParams", "classChronos_1_1Editor_1_1EditorManager.html#aaade646cc93ad7180c55398a6cf8b467", null ],
     [ "polygonVertices", "classChronos_1_1Editor_1_1EditorManager.html#af5955eb2b523e809b301a1709ab7255e", null ],
