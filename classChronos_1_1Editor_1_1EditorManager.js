@@ -20,6 +20,7 @@ var classChronos_1_1Editor_1_1EditorManager =
     [ "currentPolygonSelection", "classChronos_1_1Editor_1_1EditorManager.html#a422840b177e8c18c9c4b010d290a7ba8", null ],
     [ "currentPolygonTextureName", "classChronos_1_1Editor_1_1EditorManager.html#a6641062eec1d91abd615ef7d601c74c5", null ],
     [ "currentPolygonTextureSelection", "classChronos_1_1Editor_1_1EditorManager.html#a1c91876396f512819c3dda03ae76d749", null ],
+    [ "currentPolygonVertices", "classChronos_1_1Editor_1_1EditorManager.html#a2c775033810707df962dc685a6946527", null ],
     [ "currentShapeSelection", "classChronos_1_1Editor_1_1EditorManager.html#abd00ad6571a99eec767534374195926b", null ],
     [ "currentShapeTextureName", "classChronos_1_1Editor_1_1EditorManager.html#aba9ae9372b05b7ecd863212f54a64372", null ],
     [ "currentShapeTextureSelection", "classChronos_1_1Editor_1_1EditorManager.html#a360d21107b799e4be20a5c67af9c248f", null ],

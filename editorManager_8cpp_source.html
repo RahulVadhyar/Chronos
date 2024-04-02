@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('editorManager_8cpp_source.html',''); i
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            ImGui::MenuItem(<span class="stringliteral">&quot;Polygon&quot;</span>, NULL, &amp;this-&gt;showPolygonWindow);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            ImGui::MenuItem(<span class="stringliteral">&quot;Texture&quot;</span>, NULL, &amp;this-&gt;showTextureWindow);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            ImGui::MenuItem(<span class="stringliteral">&quot;Text&quot;</span>, NULL, &amp;this-&gt;showTextWindow);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            ImGui::MenuItem(<span class="stringliteral">&quot;Animation&quot;</span>, NULL, &amp;this-&gt;showAnimationWindow);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="comment">// ImGui::MenuItem(&quot;Animation&quot;, NULL, &amp;this-&gt;showAnimationWindow);</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            ImGui::MenuItem(<span class="stringliteral">&quot;Settings&quot;</span>, NULL, &amp;this-&gt;showSettingsWindow);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            ImGui::MenuItem(<span class="stringliteral">&quot;Generated Code&quot;</span>, NULL, &amp;this-&gt;showGeneratedCodeWindow);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            ImGui::EndMainMenuBar();</div>
@@ -296,8 +296,8 @@ $(document).ready(function(){initNavTree('editorManager_8cpp_source.html',''); i
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        }</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; this-&gt;numVertices; i++){</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            ImGui::Text(<span class="stringliteral">&quot;Vertex %d&quot;</span>, i);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            ImGui::DragFloat(<span class="stringliteral">&quot;X&quot;</span>, &amp;this-&gt;polygonVertices[i][0], 0.01f, -1.0f, 1.0f);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            ImGui::DragFloat(<span class="stringliteral">&quot;Y&quot;</span>, &amp;this-&gt;polygonVertices[i][1], 0.01f, -1.0f, 1.0f);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            ImGui::DragFloat((<span class="stringliteral">&quot;coord X &quot;</span> + std::to_string(i + 1) + <span class="stringliteral">&quot;(-1 to 1)&quot;</span>).c_str(), &amp;this-&gt;polygonVertices[i][0], 0.01f, -1.0f, 1.0f);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            ImGui::DragFloat((<span class="stringliteral">&quot;coord Y &quot;</span> + std::to_string(i + 1) + <span class="stringliteral">&quot;(-1 to 1)&quot;</span>).c_str(), &amp;this-&gt;polygonVertices[i][1], 0.01f, -1.0f, 1.0f);</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        }</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">if</span>(!doesPolygonExist){</div>
@@ -540,58 +540,66 @@ $(document).ready(function(){initNavTree('editorManager_8cpp_source.html',''); i
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            ImGui::DragFloat(<span class="stringliteral">&quot;X Size&quot;</span>, &amp;this-&gt;polygonDetailsShapeParams.xSize, 0.01f, 0.0f, FLT_MAX);</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            ImGui::DragFloat(<span class="stringliteral">&quot;Y Size&quot;</span>, &amp;this-&gt;polygonDetailsShapeParams.ySize, 0.01f, 0.0f, FLT_MAX);</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            ImGui::DragFloat(<span class="stringliteral">&quot;Rotation&quot;</span>, &amp;this-&gt;polygonDetailsShapeParams.rotation, 0.01f, 0.0f, FLT_MAX);</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            this-&gt;manager-&gt;updatePolygon(this-&gt;polygonDetailsShapeNo, this-&gt;polygonDetailsShapeParams);</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        }</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        ImGui::End();</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    }</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;}</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160; </div>
-<div class="line"><a name="l00459"></a><span class="lineno"><a class="line" href="classChronos_1_1Editor_1_1EditorManager.html#ad3c043460b093328b29b6771989f9404">  459</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ad3c043460b093328b29b6771989f9404">Chronos::Editor::EditorManager::TextureDetailsWindow</a>(){</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    <span class="keywordflow">if</span>(this-&gt;showTextureDetailsWindow){</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        ImGui::Begin(<span class="stringliteral">&quot;Texture Details&quot;</span>, &amp;this-&gt;showTextureDetailsWindow);</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        ImGui::End();</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    }</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;}</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
-<div class="line"><a name="l00466"></a><span class="lineno"><a class="line" href="classChronos_1_1Editor_1_1EditorManager.html#a89409609d0e5791551d576e5c3edf9bf">  466</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a89409609d0e5791551d576e5c3edf9bf">Chronos::Editor::EditorManager::TextDetailsWindow</a>(){</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    <span class="keywordflow">if</span>(this-&gt;showTextDetailsWindow){</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;        ImGui::Begin(<span class="stringliteral">&quot;Text Details&quot;</span>, &amp;this-&gt;showTextDetailsWindow);</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;        ImGui::SeparatorText(<span class="stringliteral">&quot;Text Details&quot;</span>);</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        std::vector&lt;std::pair&lt;int, Chronos::Engine::TextParams&gt;&gt; textDetails = this-&gt;manager-&gt;getTextDetails();</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        <span class="keywordflow">if</span>(textDetails.size() == 0){</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;            ImGui::Text(<span class="stringliteral">&quot;No Text&quot;</span>);</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;            <span class="keywordtype">char</span> inputText[2048];</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;            strcpy(inputText, this-&gt;textDetailsTextParams.text.c_str());</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            ImGui::InputText(<span class="stringliteral">&quot;Text&quot;</span>, inputText, 2048);</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;            <span class="keywordflow">if</span>(inputText[0] != <span class="charliteral">&#39;\0&#39;</span>){</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                this-&gt;textDetailsTextParams.text = inputText;</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                ImGui::Text(<span class="stringliteral">&quot;Text Field cannot be empty&quot;</span>);</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;            }</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160; </div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;            ImGui::DragFloat(<span class="stringliteral">&quot;X(-1 to 1)&quot;</span>, &amp;this-&gt;textDetailsTextParams.x, 0.01f, -1.0f, 1.0f);</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;            ImGui::DragFloat(<span class="stringliteral">&quot;Y(-1 to 1)&quot;</span>, &amp;this-&gt;textDetailsTextParams.y, 0.01f, -1.0f, 1.0f);</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;            ImGui::DragFloat(<span class="stringliteral">&quot;Rotation&quot;</span>, &amp;this-&gt;textDetailsTextParams.rotation, 0.01f, 0.0f, FLT_MAX);</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;            ImGui::DragFloat(<span class="stringliteral">&quot;Scale&quot;</span>, &amp;this-&gt;textDetailsTextParams.scale, 0.01f, 0.0f, FLT_MAX);</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;            ImGui::ColorEdit3(<span class="stringliteral">&quot;Color&quot;</span>, this-&gt;textDetailsTextParams.color.data());</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;            this-&gt;manager-&gt;updateText(this-&gt;textDetailsTextNo, this-&gt;textDetailsTextParams);</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        }</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        ImGui::End();</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    }</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;}</div>
-<div class="line"><a name="l00492"></a><span class="lineno"><a class="line" href="classChronos_1_1Editor_1_1EditorManager.html#a06155e374e7589b9510f6f9284047920">  492</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a06155e374e7589b9510f6f9284047920">Chronos::Editor::EditorManager::DebugMetricsWindow</a>(){</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <span class="keywordflow">if</span>(this-&gt;showDebugMetricsWindow){</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        ImGui::ShowMetricsWindow(&amp;this-&gt;showDebugMetricsWindow);</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    }</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;}</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160; </div>
-<div class="line"><a name="l00498"></a><span class="lineno"><a class="line" href="classChronos_1_1Editor_1_1EditorManager.html#a9af7c4fe35cefbce32f8aab29442dde8">  498</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a9af7c4fe35cefbce32f8aab29442dde8">Chronos::Editor::EditorManager::DebugLogWindow</a>(){</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keywordflow">if</span>(this-&gt;showDebugLogWindow){</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        ImGui::ShowDebugLogWindow(&amp;this-&gt;showDebugLogWindow);</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    }</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;}</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;            this-&gt;currentPolygonVertices = this-&gt;manager-&gt;getPolygonVertices(this-&gt;polygonDetailsShapeNo);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;            ImGui::SeparatorText(<span class="stringliteral">&quot;Polygon Vertices&quot;</span>);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; this-&gt;currentPolygonVertices.size(); i++){</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                ImGui::Text(<span class="stringliteral">&quot;Vertex %d&quot;</span>, i);</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;                ImGui::DragFloat((<span class="stringliteral">&quot;X &quot;</span> + std::to_string(i + 1) + <span class="stringliteral">&quot;(-1 to 1)&quot;</span>).c_str(), &amp;this-&gt;currentPolygonVertices[i][0], 0.01f, -1.0f, 1.0f);</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;                ImGui::DragFloat((<span class="stringliteral">&quot;Y &quot;</span> + std::to_string(i + 1) + <span class="stringliteral">&quot;(-1 to 1)&quot;</span>).c_str(), &amp;this-&gt;currentPolygonVertices[i][1], 0.01f, -1.0f, 1.0f);</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;            }</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            this-&gt;manager-&gt;updatePolygon(this-&gt;polygonDetailsShapeNo, this-&gt;polygonDetailsShapeParams, this-&gt;currentPolygonVertices);</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        }</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        ImGui::End();</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    }</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;}</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160; </div>
+<div class="line"><a name="l00467"></a><span class="lineno"><a class="line" href="classChronos_1_1Editor_1_1EditorManager.html#ad3c043460b093328b29b6771989f9404">  467</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ad3c043460b093328b29b6771989f9404">Chronos::Editor::EditorManager::TextureDetailsWindow</a>(){</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    <span class="keywordflow">if</span>(this-&gt;showTextureDetailsWindow){</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;        ImGui::Begin(<span class="stringliteral">&quot;Texture Details&quot;</span>, &amp;this-&gt;showTextureDetailsWindow);</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        ImGui::End();</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    }</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;}</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160; </div>
+<div class="line"><a name="l00474"></a><span class="lineno"><a class="line" href="classChronos_1_1Editor_1_1EditorManager.html#a89409609d0e5791551d576e5c3edf9bf">  474</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a89409609d0e5791551d576e5c3edf9bf">Chronos::Editor::EditorManager::TextDetailsWindow</a>(){</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <span class="keywordflow">if</span>(this-&gt;showTextDetailsWindow){</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;        ImGui::Begin(<span class="stringliteral">&quot;Text Details&quot;</span>, &amp;this-&gt;showTextDetailsWindow);</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        ImGui::SeparatorText(<span class="stringliteral">&quot;Text Details&quot;</span>);</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        std::vector&lt;std::pair&lt;int, Chronos::Engine::TextParams&gt;&gt; textDetails = this-&gt;manager-&gt;getTextDetails();</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        <span class="keywordflow">if</span>(textDetails.size() == 0){</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;            ImGui::Text(<span class="stringliteral">&quot;No Text&quot;</span>);</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;            <span class="keywordtype">char</span> inputText[2048];</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;            strcpy(inputText, this-&gt;textDetailsTextParams.text.c_str());</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;            ImGui::InputText(<span class="stringliteral">&quot;Text&quot;</span>, inputText, 2048);</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;            <span class="keywordflow">if</span>(inputText[0] != <span class="charliteral">&#39;\0&#39;</span>){</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                this-&gt;textDetailsTextParams.text = inputText;</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                ImGui::Text(<span class="stringliteral">&quot;Text Field cannot be empty&quot;</span>);</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;            }</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160; </div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;            ImGui::DragFloat(<span class="stringliteral">&quot;X(-1 to 1)&quot;</span>, &amp;this-&gt;textDetailsTextParams.x, 0.01f, -1.0f, 1.0f);</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;            ImGui::DragFloat(<span class="stringliteral">&quot;Y(-1 to 1)&quot;</span>, &amp;this-&gt;textDetailsTextParams.y, 0.01f, -1.0f, 1.0f);</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            ImGui::DragFloat(<span class="stringliteral">&quot;Rotation&quot;</span>, &amp;this-&gt;textDetailsTextParams.rotation, 0.01f, 0.0f, FLT_MAX);</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;            ImGui::DragFloat(<span class="stringliteral">&quot;Scale&quot;</span>, &amp;this-&gt;textDetailsTextParams.scale, 0.01f, 0.0f, FLT_MAX);</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;            ImGui::ColorEdit3(<span class="stringliteral">&quot;Color&quot;</span>, this-&gt;textDetailsTextParams.color.data());</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            this-&gt;manager-&gt;updateText(this-&gt;textDetailsTextNo, this-&gt;textDetailsTextParams);</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        }</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        ImGui::End();</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    }</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;}</div>
+<div class="line"><a name="l00500"></a><span class="lineno"><a class="line" href="classChronos_1_1Editor_1_1EditorManager.html#a06155e374e7589b9510f6f9284047920">  500</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a06155e374e7589b9510f6f9284047920">Chronos::Editor::EditorManager::DebugMetricsWindow</a>(){</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <span class="keywordflow">if</span>(this-&gt;showDebugMetricsWindow){</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        ImGui::ShowMetricsWindow(&amp;this-&gt;showDebugMetricsWindow);</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    }</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;}</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160; </div>
+<div class="line"><a name="l00506"></a><span class="lineno"><a class="line" href="classChronos_1_1Editor_1_1EditorManager.html#a9af7c4fe35cefbce32f8aab29442dde8">  506</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a9af7c4fe35cefbce32f8aab29442dde8">Chronos::Editor::EditorManager::DebugLogWindow</a>(){</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <span class="keywordflow">if</span>(this-&gt;showDebugLogWindow){</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        ImGui::ShowDebugLogWindow(&amp;this-&gt;showDebugLogWindow);</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    }</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;}</div>
 <div class="ttc" id="achronos_8hpp_html"><div class="ttname"><a href="chronos_8hpp.html">chronos.hpp</a></div><div class="ttdoc">Main API for chronos. Any applications should include this file.</div></div>
-<div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_a06155e374e7589b9510f6f9284047920"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#a06155e374e7589b9510f6f9284047920">Chronos::Editor::EditorManager::DebugMetricsWindow</a></div><div class="ttdeci">void DebugMetricsWindow()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00492">editorManager.cpp:492</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_a06155e374e7589b9510f6f9284047920"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#a06155e374e7589b9510f6f9284047920">Chronos::Editor::EditorManager::DebugMetricsWindow</a></div><div class="ttdeci">void DebugMetricsWindow()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00500">editorManager.cpp:500</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_a0a83d9d068c5ba9313ee98d5062b469d"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#a0a83d9d068c5ba9313ee98d5062b469d">Chronos::Editor::EditorManager::addElements</a></div><div class="ttdeci">void addElements()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00007">editorManager.cpp:7</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_a0babaffbb1a34dc127ee45fc92329b18"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#a0babaffbb1a34dc127ee45fc92329b18">Chronos::Editor::EditorManager::TextWindow</a></div><div class="ttdeci">void TextWindow()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00288">editorManager.cpp:288</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_a0cdfab28dbf87e900fd1a4f2715b905e"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#a0cdfab28dbf87e900fd1a4f2715b905e">Chronos::Editor::EditorManager::PolygonDetailsWindow</a></div><div class="ttdeci">void PolygonDetailsWindow()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00439">editorManager.cpp:439</a></div></div>
@@ -599,11 +607,11 @@ $(document).ready(function(){initNavTree('editorManager_8cpp_source.html',''); i
 <div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_a4b70998992b7e7cf600eba12d0ec8a51"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#a4b70998992b7e7cf600eba12d0ec8a51">Chronos::Editor::EditorManager::ShapeDetailsWindow</a></div><div class="ttdeci">void ShapeDetailsWindow()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00417">editorManager.cpp:417</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_a6bcd171159c3a8b07d319881239e2e7d"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#a6bcd171159c3a8b07d319881239e2e7d">Chronos::Editor::EditorManager::MenuBar</a></div><div class="ttdeci">void MenuBar()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00024">editorManager.cpp:24</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_a746cb968bba01b0331909122f598e517"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#a746cb968bba01b0331909122f598e517">Chronos::Editor::EditorManager::TextureWindow</a></div><div class="ttdeci">void TextureWindow()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00248">editorManager.cpp:248</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_a89409609d0e5791551d576e5c3edf9bf"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#a89409609d0e5791551d576e5c3edf9bf">Chronos::Editor::EditorManager::TextDetailsWindow</a></div><div class="ttdeci">void TextDetailsWindow()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00466">editorManager.cpp:466</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_a9af7c4fe35cefbce32f8aab29442dde8"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#a9af7c4fe35cefbce32f8aab29442dde8">Chronos::Editor::EditorManager::DebugLogWindow</a></div><div class="ttdeci">void DebugLogWindow()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00498">editorManager.cpp:498</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_a89409609d0e5791551d576e5c3edf9bf"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#a89409609d0e5791551d576e5c3edf9bf">Chronos::Editor::EditorManager::TextDetailsWindow</a></div><div class="ttdeci">void TextDetailsWindow()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00474">editorManager.cpp:474</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_a9af7c4fe35cefbce32f8aab29442dde8"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#a9af7c4fe35cefbce32f8aab29442dde8">Chronos::Editor::EditorManager::DebugLogWindow</a></div><div class="ttdeci">void DebugLogWindow()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00506">editorManager.cpp:506</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_a9f33237b2e46587e1e77b5d69aeb29a5"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#a9f33237b2e46587e1e77b5d69aeb29a5">Chronos::Editor::EditorManager::ShapeWindow</a></div><div class="ttdeci">void ShapeWindow()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00052">editorManager.cpp:52</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_ab64669b8bad1e94604c8fce665910c7d"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#ab64669b8bad1e94604c8fce665910c7d">Chronos::Editor::EditorManager::SettingsWindow</a></div><div class="ttdeci">void SettingsWindow()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00359">editorManager.cpp:359</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_ad3c043460b093328b29b6771989f9404"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#ad3c043460b093328b29b6771989f9404">Chronos::Editor::EditorManager::TextureDetailsWindow</a></div><div class="ttdeci">void TextureDetailsWindow()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00459">editorManager.cpp:459</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_ad3c043460b093328b29b6771989f9404"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#ad3c043460b093328b29b6771989f9404">Chronos::Editor::EditorManager::TextureDetailsWindow</a></div><div class="ttdeci">void TextureDetailsWindow()</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00467">editorManager.cpp:467</a></div></div>
 <div class="ttc" id="aeditorHeaders_8hpp_html"><div class="ttname"><a href="editorHeaders_8hpp.html">editorHeaders.hpp</a></div><div class="ttdoc">Contains all the editor headers.</div></div>
 <div class="ttc" id="aeditorManager_8hpp_html"><div class="ttname"><a href="editorManager_8hpp.html">editorManager.hpp</a></div></div>
 <div class="ttc" id="aeditorTheme_8hpp_html"><div class="ttname"><a href="editorTheme_8hpp.html">editorTheme.hpp</a></div></div>
