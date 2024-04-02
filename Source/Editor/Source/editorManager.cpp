@@ -22,93 +22,104 @@ void Chronos::Editor::EditorManager::addElements(){
 }
 
 void Chronos::Editor::EditorManager::MenuBar(){
-    ImGui::Begin("Editor", nullptr, ImGuiWindowFlags_MenuBar);
-    if (ImGui::BeginMenuBar()) {
-        ImGui::MenuItem("Shape", NULL, &this->showShapeWindow);
-        ImGui::MenuItem("Polygon", NULL, &this->showPolygonWindow);
-        ImGui::MenuItem("Texture", NULL, &this->showTextureWindow);
-        ImGui::MenuItem("Text", NULL, &this->showTextWindow);
-        ImGui::MenuItem("Animation", NULL, &this->showAnimationWindow);
-        ImGui::MenuItem("Settings", NULL, &this->showSettingsWindow);
-        ImGui::MenuItem("Generated Code", NULL, &this->showGeneratedCodeWindow);
-        ImGui::EndMenuBar();
+    if(this->pinMenuBar){
+        if (ImGui::BeginMainMenuBar()) {
+            ImGui::MenuItem("Shape", NULL, &this->showShapeWindow);
+            ImGui::MenuItem("Polygon", NULL, &this->showPolygonWindow);
+            ImGui::MenuItem("Texture", NULL, &this->showTextureWindow);
+            ImGui::MenuItem("Text", NULL, &this->showTextWindow);
+            ImGui::MenuItem("Animation", NULL, &this->showAnimationWindow);
+            ImGui::MenuItem("Settings", NULL, &this->showSettingsWindow);
+            ImGui::MenuItem("Generated Code", NULL, &this->showGeneratedCodeWindow);
+            ImGui::EndMainMenuBar();
+        }
+    } else {
+        ImGui::Begin("Editor", nullptr, ImGuiWindowFlags_MenuBar);
+        if (ImGui::BeginMenuBar()) {
+            ImGui::MenuItem("Shape", NULL, &this->showShapeWindow);
+            ImGui::MenuItem("Polygon", NULL, &this->showPolygonWindow);
+            ImGui::MenuItem("Texture", NULL, &this->showTextureWindow);
+            ImGui::MenuItem("Text", NULL, &this->showTextWindow);
+            ImGui::MenuItem("Animation", NULL, &this->showAnimationWindow);
+            ImGui::MenuItem("Settings", NULL, &this->showSettingsWindow);
+            ImGui::MenuItem("Generated Code", NULL, &this->showGeneratedCodeWindow);
+            ImGui::EndMenuBar();
+        }
+        ImGui::End();
     }
-    ImGui::End();
 }
 
 void Chronos::Editor::EditorManager::ShapeWindow(){
     if(this->showShapeWindow){
         ImGui::Begin("Shape", &this->showShapeWindow);
             bool doesNameExist = false;
-            ImGui::BeginChild("Add Shapes");
-                ImGui::SeparatorText("Shape Name");
-                ImGui::InputText("Shape Name", this->newShapeParams.shapeName, 200);
-                std::vector<std::pair<int, Chronos::Manager::ShapeParams>> nameShapeDetails = this->manager->getShapeDetails();
-                for(std::pair<int, Chronos::Manager::ShapeParams> shapeDetail : nameShapeDetails){
-                    if(!strcmp(this->newShapeParams.shapeName, shapeDetail.second.shapeName)){
-                        ImGui::Text("Name Already Exists");
-                        doesNameExist = true;
-                        break;
-                    }
+            ImGui::SeparatorText("Shape Name");
+            ImGui::InputText("Shape Name", this->newShapeParams.shapeName, 200);
+            std::vector<std::pair<int, Chronos::Manager::ShapeParams>> nameShapeDetails = this->manager->getShapeDetails();
+            for(std::pair<int, Chronos::Manager::ShapeParams> shapeDetail : nameShapeDetails){
+                if(!strcmp(this->newShapeParams.shapeName, shapeDetail.second.shapeName)){
+                    ImGui::Text("Name Already Exists");
+                    doesNameExist = true;
+                    break;
                 }
-                ImGui::SeparatorText("Type");
-                ImGui::RadioButton("Triangle", &this->newShapeType, 0);
-                ImGui::RadioButton("Rectangle", &this->newShapeType, 1);
-                ImGui::SeparatorText("Fill");
-                ImGui::RadioButton("Color", &this->newShapeFill, 0);
-                ImGui::RadioButton("Texture", &this->newShapeFill, 1);
-                ImGui::SeparatorText("Properties");
-                ImGui::DragFloat("X(-1 to 1)", &this->newShapeParams.x, 0.01f, -1.0f, 1.0f);
-                ImGui::DragFloat("Y(-1 to 1)", &this->newShapeParams.y, 0.01f, -1.0f, 1.0f);
-                ImGui::DragFloat("X Size", &this->newShapeParams.xSize, 0.01f, 0.0f, FLT_MAX);
-                ImGui::DragFloat("Y Size", &this->newShapeParams.ySize, 0.01f, 0.0f, FLT_MAX);
-                ImGui::DragFloat("Rotation", &this->newShapeParams.rotation, 0.01f, 0.0f, FLT_MAX);
-                switch(this->newShapeFill){
-                    case 0:
-                        ImGui::ColorEdit3("Color", this->newShapeParams.color.data());
-                        break;
-                    case 1:
-                        if(ImGui::BeginCombo("Select Texture", currentShapeTextureName)){
-                            std::vector<Chronos::Manager::TextureDetails> details = this->manager->getTextureDetails();
-                            if(details.size() == 0){
-                                ImGui::Selectable("No Textures");
-                            } else {
-                                for(Chronos::Manager::TextureDetails textureDetail : details){
-                                    bool isSelected = currentShapeTextureSelection == textureDetail.textureNo;
-                                    if(ImGui::Selectable(textureDetail.textureName.c_str(), isSelected)){
-                                        currentShapeTextureSelection = textureDetail.textureNo;
-                                        strcpy(currentShapeTextureName, textureDetail.textureName.c_str());
-                                    }
-                                    if(isSelected){
-                                        ImGui::SetItemDefaultFocus();
-                                    }
+            }
+            ImGui::SeparatorText("Type");
+            ImGui::RadioButton("Triangle", &this->newShapeType, 0);
+            ImGui::RadioButton("Rectangle", &this->newShapeType, 1);
+            ImGui::SeparatorText("Fill");
+            ImGui::RadioButton("Color", &this->newShapeFill, 0);
+            ImGui::RadioButton("Texture", &this->newShapeFill, 1);
+            ImGui::SeparatorText("Properties");
+            ImGui::DragFloat("X(-1 to 1)", &this->newShapeParams.x, 0.01f, -1.0f, 1.0f);
+            ImGui::DragFloat("Y(-1 to 1)", &this->newShapeParams.y, 0.01f, -1.0f, 1.0f);
+            ImGui::DragFloat("X Size", &this->newShapeParams.xSize, 0.01f, 0.0f, FLT_MAX);
+            ImGui::DragFloat("Y Size", &this->newShapeParams.ySize, 0.01f, 0.0f, FLT_MAX);
+            ImGui::DragFloat("Rotation", &this->newShapeParams.rotation, 0.01f, 0.0f, FLT_MAX);
+            switch(this->newShapeFill){
+                case 0:
+                    ImGui::ColorEdit3("Color", this->newShapeParams.color.data());
+                    break;
+                case 1:
+                    if(ImGui::BeginCombo("Select Texture", currentShapeTextureName)){
+                        std::vector<Chronos::Manager::TextureDetails> details = this->manager->getTextureDetails();
+                        if(details.size() == 0){
+                            ImGui::Selectable("No Textures");
+                        } else {
+                            for(Chronos::Manager::TextureDetails textureDetail : details){
+                                bool isSelected = currentShapeTextureSelection == textureDetail.textureNo;
+                                if(ImGui::Selectable(textureDetail.textureName.c_str(), isSelected)){
+                                    currentShapeTextureSelection = textureDetail.textureNo;
+                                    strcpy(currentShapeTextureName, textureDetail.textureName.c_str());
+                                }
+                                if(isSelected){
+                                    ImGui::SetItemDefaultFocus();
                                 }
                             }
-                            ImGui::EndCombo();
                         }
-                }
-                if(!doesNameExist){           \
-                    if(ImGui::Button("Add Shape")){
-                        Chronos::Manager::PolygonType type;
-                        switch(this->newShapeType){
-                            case 0:
-                                type.triangle = true;
-                                break;
-                            case 1:
-                                type.rectangle = true;
-                                break;
-                        }
-                        switch(this->newShapeFill){
-                            case 0:
-                                this->manager->addPolygon(this->newShapeParams, type);
-                                break;
-                            case 1:
-                                this->manager->addPolygon(this->newShapeParams, type, this->currentShapeTextureSelection);
-                                break;
-                        }
+                        ImGui::EndCombo();
+                    }
+            }
+            if(!doesNameExist){           \
+                if(ImGui::Button("Add Shape")){
+                    Chronos::Manager::PolygonType type;
+                    switch(this->newShapeType){
+                        case 0:
+                            type.triangle = true;
+                            break;
+                        case 1:
+                            type.rectangle = true;
+                            break;
+                    }
+                    switch(this->newShapeFill){
+                        case 0:
+                            this->manager->addPolygon(this->newShapeParams, type);
+                            break;
+                        case 1:
+                            this->manager->addPolygon(this->newShapeParams, type, this->currentShapeTextureSelection);
+                            break;
                     }
                 }
-            ImGui::EndChild();
+            }
         ImGui::SeparatorText("Current Shapes");
         if(ImGui::BeginListBox("Shapes")){
             std::vector<std::pair<int, Chronos::Manager::ShapeParams>> shapeDetails = this->manager->getShapeDetails();
@@ -393,6 +404,7 @@ void Chronos::Editor::EditorManager::SettingsWindow(){
         ImGui::SeparatorText("ImGui Debug Settings");
         ImGui::Checkbox("Show Metrics", &this->showDebugMetricsWindow);
         ImGui::Checkbox("Show Log", &this->showDebugLogWindow);
+        ImGui::Checkbox("Pin Menu Bar", &this->pinMenuBar);
 
         ImGui::End();
     }

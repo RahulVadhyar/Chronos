@@ -10,6 +10,7 @@ namespace Chronos{
                 void addElements();
             private:
                 Chronos::Manager::Manager* manager;
+                bool pinMenuBar = true;
                 
                 bool showShapeWindow = false;
                 bool showPolygonWindow = false;
