@@ -138,6 +138,7 @@ namespace Engine {
         VkRenderPass renderPass; /**< Vulkan render pass used for rendering. */
         VkSampler textureSampler; /**< Vulkan sampler for textures. */
         std::vector<VkFramebuffer> framebuffers; /**< Vector of Vulkan framebuffers. */
+        std::map<int, std::array<bool, MAX_FRAMES_IN_FLIGHT>> objectsToBeRemoved; /**< Map of objects to be removed. */
     };
 };
 };

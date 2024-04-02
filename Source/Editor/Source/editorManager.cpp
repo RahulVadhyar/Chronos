@@ -320,8 +320,12 @@ void Chronos::Editor::EditorManager::TextWindow(){
             ImGui::EndCombo();
         }
         ImGui::DragInt("Font Size", &this->currentFontSizeSelection, 1, 6, 50);
-        if(ImGui::Button("Add Text")){
-            this->manager->addText(this->newTextParams, this->currentFontSelection, this->currentFontSizeSelection);
+        if(this->newTextParams.text.size() == 0){
+            ImGui::Text("Text Cannot be empty");
+        } else{
+            if(ImGui::Button("Add Text")){
+                this->manager->addText(this->newTextParams, this->currentFontSelection, this->currentFontSizeSelection);
+            }
         }
         ImGui::SeparatorText("Current Text");
         if(ImGui::BeginListBox("Text")){
@@ -470,7 +474,11 @@ void Chronos::Editor::EditorManager::TextDetailsWindow(){
             char inputText[2048];
             strcpy(inputText, this->textDetailsTextParams.text.c_str());
             ImGui::InputText("Text", inputText, 2048);
-            this->textDetailsTextParams.text = inputText;
+            if(inputText[0] != '\0'){
+                this->textDetailsTextParams.text = inputText;
+                ImGui::Text("Text Field cannot be empty");
+            }
+
             ImGui::DragFloat("X(-1 to 1)", &this->textDetailsTextParams.x, 0.01f, -1.0f, 1.0f);
             ImGui::DragFloat("Y(-1 to 1)", &this->textDetailsTextParams.y, 0.01f, -1.0f, 1.0f);
             ImGui::DragFloat("Rotation", &this->textDetailsTextParams.rotation, 0.01f, 0.0f, FLT_MAX);

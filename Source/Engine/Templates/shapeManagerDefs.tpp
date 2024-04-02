@@ -19,6 +19,7 @@ void Chronos::Engine::ShapeManager<VertexStruct>::render(uint32_t currentFrame, 
 
     // render the shapes
     for (auto& shape : Chronos::Engine::ShapeManager<VertexStruct>::objects) {
+        if(this->objectsToBeRemoved.count(shape.first) > 0) continue;
         vkCmdBindPipeline(Chronos::Engine::ShapeManager<VertexStruct>::commandBuffers[currentFrame],
             VK_PIPELINE_BIND_POINT_GRAPHICS, shape.second.graphicsPipeline);
         vkCmdSetViewport(Chronos::Engine::ShapeManager<VertexStruct>::commandBuffers[currentFrame], 0, 1, &viewport);

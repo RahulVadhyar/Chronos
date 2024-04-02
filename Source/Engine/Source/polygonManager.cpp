@@ -31,6 +31,7 @@ void Chronos::Engine::PolygonManager::render(uint32_t currentFrame, uint32_t ima
 
     // render the shapes
     for (auto& polygon : objects) {
+        if(this->objectsToBeRemoved.count(polygon.first) > 0) continue;
         vkCmdBindPipeline(commandBuffers[currentFrame],
             VK_PIPELINE_BIND_POINT_GRAPHICS, polygon.second.graphicsPipeline);
         vkCmdSetViewport(commandBuffers[currentFrame], 0, 1, &viewport);

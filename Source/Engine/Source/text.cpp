@@ -265,6 +265,6 @@ void Chronos::Engine::Text::clear()
 void Chronos::Engine::Text::update(uint32_t currentFrame)
 {
     updateBuffer();
-    uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x, params.y, params.rotation - 90, 1.0f, -1.0f);
+    uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x, params.y, params.rotation - 90, 1.0f, 1.0f);
     colorBuffers[currentFrame].update({params.color[0], params.color[1], params.color[2]});
 }

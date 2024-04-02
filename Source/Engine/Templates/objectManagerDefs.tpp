@@ -98,14 +98,35 @@ int Chronos::Engine::ObjectManager<Object>::addObject(Object object)
 template <Chronos::Engine::ObjectLike Object>
 void Chronos::Engine::ObjectManager<Object>::remove(int objectNo)
 {
-    objects[objectNo].destroy();
-    objects.erase(objectNo);
+    for(bool& flag : objectsToBeRemoved[objectNo]){
+        flag = true;
+    }
+    // objects[objectNo].destroy();
+    
+    // objects.erase(objectNo);
 }
 
 template <Chronos::Engine::ObjectLike Object>
 void Chronos::Engine::ObjectManager<Object>::update(uint32_t currentFrame)
-{
+{   
+    for(auto& objectMap : objectsToBeRemoved){
+        objectMap.second[currentFrame] = false;
+        bool toBeRemoved = true;
+        for(bool flag : objectMap.second){
+            if(flag){
+                toBeRemoved = false;
+                break;
+            }
+        }
+        if(toBeRemoved){
+            objects[objectMap.first].destroy();
+            objectsToBeRemoved.erase(objectMap.first);
+            objects.erase(objectMap.first);
+        }
+    }
     for (auto& objectMap : objects) {
+        if(objectsToBeRemoved.count(objectMap.first) == 0){
             objectMap.second.update(currentFrame);
+        }
     }
 }

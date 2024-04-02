@@ -27,5 +27,5 @@ This ensures that the GPU and CPU are busy at the same time and not waiting for 
 Hence we create multiple frames and while one is rendering, the other is being prepared.
 This ensures maximum performance.
 */
-const int MAX_FRAMES_IN_FLIGHT = 2;
+#define MAX_FRAMES_IN_FLIGHT 2
 #define SPIV_SHADER_PATH "ThirdParty/Chronos/Shaders/SPIV"
