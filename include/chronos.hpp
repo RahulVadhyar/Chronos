@@ -380,6 +380,8 @@ namespace Manager {
         */
         std::vector<TextureDetails> getTextureDetails();
 
+        std::vector<std::array<float, 2>> getPolygonVertices(int polygonNo);
+
         /**
         \brief Changes the present mode of the swapchain.
 

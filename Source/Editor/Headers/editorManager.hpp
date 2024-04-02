@@ -60,6 +60,7 @@ namespace Chronos{
                 int currentPolygonTextureSelection = 0;
                 char currentPolygonTextureName[200] = "Select Texture";
                 int currentPolygonSelection = 0;
+                std::vector<std::array<float, 2>> currentPolygonVertices;
 
                 
                 //Texture Window

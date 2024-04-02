@@ -28,7 +28,7 @@ void Chronos::Editor::EditorManager::MenuBar(){
             ImGui::MenuItem("Polygon", NULL, &this->showPolygonWindow);
             ImGui::MenuItem("Texture", NULL, &this->showTextureWindow);
             ImGui::MenuItem("Text", NULL, &this->showTextWindow);
-            ImGui::MenuItem("Animation", NULL, &this->showAnimationWindow);
+            // ImGui::MenuItem("Animation", NULL, &this->showAnimationWindow);
             ImGui::MenuItem("Settings", NULL, &this->showSettingsWindow);
             ImGui::MenuItem("Generated Code", NULL, &this->showGeneratedCodeWindow);
             ImGui::EndMainMenuBar();
@@ -206,8 +206,8 @@ void Chronos::Editor::EditorManager::PolygonWindow(){
         }
         for(int i = 0; i < this->numVertices; i++){
             ImGui::Text("Vertex %d", i);
-            ImGui::DragFloat("X", &this->polygonVertices[i][0], 0.01f, -1.0f, 1.0f);
-            ImGui::DragFloat("Y", &this->polygonVertices[i][1], 0.01f, -1.0f, 1.0f);
+            ImGui::DragFloat(("coord X " + std::to_string(i + 1) + "(-1 to 1)").c_str(), &this->polygonVertices[i][0], 0.01f, -1.0f, 1.0f);
+            ImGui::DragFloat(("coord Y " + std::to_string(i + 1) + "(-1 to 1)").c_str(), &this->polygonVertices[i][1], 0.01f, -1.0f, 1.0f);
         }
 
         if(!doesPolygonExist){
@@ -450,7 +450,15 @@ void Chronos::Editor::EditorManager::PolygonDetailsWindow(){
             ImGui::DragFloat("X Size", &this->polygonDetailsShapeParams.xSize, 0.01f, 0.0f, FLT_MAX);
             ImGui::DragFloat("Y Size", &this->polygonDetailsShapeParams.ySize, 0.01f, 0.0f, FLT_MAX);
             ImGui::DragFloat("Rotation", &this->polygonDetailsShapeParams.rotation, 0.01f, 0.0f, FLT_MAX);
-            this->manager->updatePolygon(this->polygonDetailsShapeNo, this->polygonDetailsShapeParams);
+
+            this->currentPolygonVertices = this->manager->getPolygonVertices(this->polygonDetailsShapeNo);
+            ImGui::SeparatorText("Polygon Vertices");
+            for(int i = 0; i < this->currentPolygonVertices.size(); i++){
+                ImGui::Text("Vertex %d", i);
+                ImGui::DragFloat(("X " + std::to_string(i + 1) + "(-1 to 1)").c_str(), &this->currentPolygonVertices[i][0], 0.01f, -1.0f, 1.0f);
+                ImGui::DragFloat(("Y " + std::to_string(i + 1) + "(-1 to 1)").c_str(), &this->currentPolygonVertices[i][1], 0.01f, -1.0f, 1.0f);
+            }
+            this->manager->updatePolygon(this->polygonDetailsShapeNo, this->polygonDetailsShapeParams, this->currentPolygonVertices);
         }
         ImGui::End();
     }

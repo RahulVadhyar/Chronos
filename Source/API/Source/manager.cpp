@@ -208,6 +208,23 @@ std::vector<std::pair<int, Chronos::Manager::ShapeParams>> Manager::Manager::get
     return shapeDetails;
 }
 
+std::vector<std::array<float, 2>> Manager::Manager::getPolygonVertices(int polygonNo){
+    if (std::to_string(polygonNo).substr(0, 1) == "3") { //textured npolygons
+        int actualPolygonNo = polygonNo - 3*(10*(std::to_string(polygonNo).size() - 1));
+        if (engine.polygonManager.objects.count(actualPolygonNo) == 0) {
+            throw std::runtime_error("Shape does not exist");
+        }
+        std::vector<Chronos::Engine::TexturedVertex> texturedVertices = engine.polygonManager.objects[actualPolygonNo].vertices;
+        std::vector<std::array<float, 2>> vertices;
+        for(Chronos::Engine::TexturedVertex vertex : texturedVertices){
+            vertices.push_back({vertex.pos[0], vertex.pos[1]});
+        }
+        return vertices;
+    } else {
+        throw std::runtime_error("Shape does not exist");
+    }
+}
+
 void Manager::Manager::removePolygon(int shapeNo)
 {   
     if (std::to_string(shapeNo).substr(0, 1) == "1") { //textured triangles and rectangles
