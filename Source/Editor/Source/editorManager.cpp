@@ -18,6 +18,7 @@ void Chronos::Editor::EditorManager::addElements(){
     this->TextDetailsWindow();
     this->DebugMetricsWindow();
     this->DebugLogWindow();
+    LOG(4, "Editor", "Elements added to the editor.");
 
 }
 
@@ -90,6 +91,7 @@ void Chronos::Editor::EditorManager::ShapeWindow(){
                                 if(ImGui::Selectable(textureDetail.textureName.c_str(), isSelected)){
                                     currentShapeTextureSelection = textureDetail.textureNo;
                                     strcpy(currentShapeTextureName, textureDetail.textureName.c_str());
+                                    LOG(1, "Editor", "Texture selected for shapeNo [" + std::to_string(currentShapeTextureSelection) + "], textureName [" + currentShapeTextureName + "]");
                                 }
                                 if(isSelected){
                                     ImGui::SetItemDefaultFocus();
@@ -113,9 +115,11 @@ void Chronos::Editor::EditorManager::ShapeWindow(){
                     switch(this->newShapeFill){
                         case 0:
                             this->manager->addPolygon(this->newShapeParams, type);
+                            LOG(1, "Editor", "Colored shape added with shapeName [" + std::string(this->newShapeParams.shapeName) + "]");
                             break;
                         case 1:
                             this->manager->addPolygon(this->newShapeParams, type, this->currentShapeTextureSelection);
+                            LOG(1, "Editor", "Textured shape added with shapeName [" + std::string(this->newShapeParams.shapeName) + "]");
                             break;
                     }
                 }
@@ -196,12 +200,14 @@ void Chronos::Editor::EditorManager::PolygonWindow(){
         if(ImGui::Button("Add Vertices")){
             this->numVertices++;
             this->polygonVertices.push_back({0.0f, 0.0f});
+            LOG(1, "Editor", "Vertex added to polygon");
         }
         ImGui::SameLine();
         if(ImGui::Button("Remove Vertices")){
             if(this->numVertices > 3){
                 this->numVertices--;
                 this->polygonVertices.pop_back();
+                LOG(1, "Editor", "Vertex removed from polygon");
             }
         }
         for(int i = 0; i < this->numVertices; i++){
@@ -213,6 +219,7 @@ void Chronos::Editor::EditorManager::PolygonWindow(){
         if(!doesPolygonExist){
             if(ImGui::Button("Add Shape")){
                 this->manager->addPolygon(this->newShapeParams, this->currentPolygonTextureSelection, this->polygonVertices);
+                LOG(1, "Editor", "Polygon added with shapeName [" + std::string(this->newShapeParams.shapeName) + "]");
             }
         }
         ImGui::SeparatorText("Current Shapes");
@@ -233,11 +240,13 @@ void Chronos::Editor::EditorManager::PolygonWindow(){
                     this->showPolygonDetailsWindow = true;
                     this->polygonDetailsShapeNo = polygonDetails[currentPolygonSelection].first;
                     this->polygonDetailsShapeParams = polygonDetails[currentPolygonSelection].second;
+                    LOG(1, "Editor", "Polygon selected for editing with shapeNo [" + std::to_string(this->polygonDetailsShapeNo) + "]");
                 }                
 
                 ImGui::SameLine();
                 if(ImGui::Button("Remove Polygon")){
                     this->manager->removePolygon(polygonDetails[currentPolygonSelection].first);
+                    LOG(1, "Editor", "Polygon removed with shapeNo [" + std::to_string(polygonDetails[currentPolygonSelection].first) + "]");
                 }
             }
         }
@@ -265,6 +274,7 @@ void Chronos::Editor::EditorManager::TextureWindow(){
                 if(ImGui::Button("Add Texture")){
                     this->manager->addTexture(this->newTexturePath, this->newTextureName);
                     this->newTexturePath[0] = '\0';
+                    LOG(1, "Editor", "Texture added with textureName [" + std::string(this->newTextureName) + "] and texturePath [" + this->newTexturePath + "]");
                 }  
             }   
             ImGui::SeparatorText("Current Textures");
@@ -301,21 +311,27 @@ void Chronos::Editor::EditorManager::TextWindow(){
         if(ImGui::BeginCombo("Select Font", this->currentFontSelection.c_str())){
             if(ImGui::Selectable("consolas", this->currentFontSelection == "consolas")){
                 this->currentFontSelection = "consolas";
+                LOG(1, "Editor", "Font selected [" + this->currentFontSelection + "]");   
             }
             if(ImGui::Selectable("consolas_bold", this->currentFontSelection == "consolas_bold")){
                 this->currentFontSelection = "consolas_bold";
+                LOG(1, "Editor", "Font selected [" + this->currentFontSelection + "]");
             }
             if(ImGui::Selectable("arial", this->currentFontSelection == "arial")){
                 this->currentFontSelection = "arial";
+                LOG(1, "Editor", "Font selected [" + this->currentFontSelection + "]");
             }
             if(ImGui::Selectable("arial_bold", this->currentFontSelection == "arial_bold")){
                 this->currentFontSelection = "arial_bold";
+                LOG(1, "Editor", "Font selected [" + this->currentFontSelection + "]");
             }
             if(ImGui::Selectable("times", this->currentFontSelection == "times")){
                 this->currentFontSelection = "times";
+                LOG(1, "Editor", "Font selected [" + this->currentFontSelection + "]");
             }
             if(ImGui::Selectable("times_bold", this->currentFontSelection == "times_bold")){
                 this->currentFontSelection = "times_bold";
+                LOG(1, "Editor", "Font selected [" + this->currentFontSelection + "]");
             }
             ImGui::EndCombo();
         }
@@ -325,6 +341,7 @@ void Chronos::Editor::EditorManager::TextWindow(){
         } else{
             if(ImGui::Button("Add Text")){
                 this->manager->addText(this->newTextParams, this->currentFontSelection, this->currentFontSizeSelection);
+                LOG(1, "Editor", "Text added with text [" + this->newTextParams.text + "]");
             }
         }
         ImGui::SeparatorText("Current Text");
@@ -345,10 +362,12 @@ void Chronos::Editor::EditorManager::TextWindow(){
                     this->showTextDetailsWindow = true;
                     this->textDetailsTextNo = textDetails[currentTextSelection].first;
                     this->textDetailsTextParams = textDetails[currentTextSelection].second;
+                    LOG(1, "Editor", "Text selected for editing with textNo [" + std::to_string(this->textDetailsTextNo) + "]");
                 }
                 ImGui::SameLine();
                 if(ImGui::Button("Remove Text")){
                     this->manager->removeText(textDetails[currentTextSelection].first);
+                    LOG(1, "Editor", "Text removed with textNo [" + std::to_string(textDetails[currentTextSelection].first) + "]");
                 }
             }
         }
@@ -368,6 +387,7 @@ void Chronos::Editor::EditorManager::SettingsWindow(){
         ImGui::InputText("Window Title", this->windowTitle, 200);
         if(ImGui::Button("Update Window Title")){
             glfwSetWindowTitle(this->manager->getWindow(), this->windowTitle);
+            LOG(1, "Editor", "Window title updated to [" + std::string(this->windowTitle) + "]");
         }
         ImGui::Checkbox("Make Window Fullscreen", &this->fullScreen);
         if(this->fullScreen && !this->isWindowFullscreen){
@@ -375,10 +395,12 @@ void Chronos::Editor::EditorManager::SettingsWindow(){
             const GLFWvidmode* mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
             glfwSetWindowMonitor(window, glfwGetPrimaryMonitor(), 0, 0, mode->width, mode->height, mode->refreshRate);
             this->isWindowFullscreen = true;
+            LOG(1, "Editor", "Window set to fullscreen");
         } else if(!this->fullScreen && this->isWindowFullscreen){
             GLFWwindow* window = this->manager->getWindow();
             glfwSetWindowMonitor(window, nullptr, 0, 0, 800, 600, 0);
             this->isWindowFullscreen = false;
+            LOG(1, "Editor", "Window set to windowed mode");
         }
         ImGui::SeparatorText("Present Mode");
         if(ImGui::BeginCombo("Present Mode", this->presentMode.c_str())){
@@ -398,11 +420,13 @@ void Chronos::Editor::EditorManager::SettingsWindow(){
         }
         if(ImGui::Button("Update Present Mode")){
             this->manager->changePresentMode(this->presentMode);
+            LOG(1, "Editor", "Present mode updated to [" + this->presentMode + "]");
         }
         ImGui::SeparatorText("Background Color");
         ImGui::ColorEdit3("Background Color", this->bgColor);
         if(ImGui::Button("Update Background Color")){
             this->manager->changeBackgroundColor(this->bgColor[0], this->bgColor[1], this->bgColor[2]);
+            LOG(1, "Editor", "Background color updated to [" + std::to_string(this->bgColor[0]) + ", " + std::to_string(this->bgColor[1]) + ", " + std::to_string(this->bgColor[2]) + "]");
         }
 
         ImGui::SeparatorText("ImGui Debug Settings");
@@ -428,9 +452,7 @@ void Chronos::Editor::EditorManager::ShapeDetailsWindow(){
             ImGui::DragFloat("Y Size", &this->shapeDetailsShapeParams.ySize, 0.01f, 0.0f, FLT_MAX);
             ImGui::DragFloat("Rotation", &this->shapeDetailsShapeParams.rotation, 0.01f, 0.0f, FLT_MAX);
             ImGui::ColorEdit3("Color", this->shapeDetailsShapeParams.color.data());
-            if(ImGui::Button("Update Shape")){
-                this->manager->updatePolygon(this->shapeDetailsShapeNo, this->shapeDetailsShapeParams);
-            }
+            this->manager->updatePolygon(this->shapeDetailsShapeNo, this->shapeDetailsShapeParams);
         }
         ImGui::End();
     }

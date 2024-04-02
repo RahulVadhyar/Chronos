@@ -5,6 +5,7 @@
 */
 #include "vulkanHeaders.hpp"
 #include "stlheader.hpp"
+#include "logging.hpp"
 #include "device.hpp"
 #include "swapchain.hpp"
 #include "validation.hpp"

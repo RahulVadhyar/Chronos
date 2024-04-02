@@ -1,4 +1,5 @@
 #include "stlheader.hpp"
+#include "logging.hpp"
 #include "editorHeaders.hpp"
 
 #include "vulkanHeaders.hpp"
@@ -27,8 +28,10 @@ void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFW
     (void)io;
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-    // io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
-
+#ifdef WIN32
+    io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+    LOG(3, "EditorRenderer", "Viewports enabled");
+#endif
     ImGui::StyleColorsDark();
 
     std::array<VkDescriptorPoolSize, 2> poolSizes {};
@@ -73,6 +76,7 @@ void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFW
     if (vkCreateCommandPool(device->device, &commandPoolCreateInfo, nullptr,
             &commandPool)
         != VK_SUCCESS) {
+        LOG(1, "EditorRenderer", "Could not create graphics command pool");
         throw std::runtime_error("Could not create graphics command pool");
     }
 
@@ -89,8 +93,10 @@ void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFW
     if (vkAllocateCommandBuffers(device->device, &allocInfo,
             commandBuffers.data())
         != VK_SUCCESS) {
+        LOG(1, "EditorRenderer", "failed to allocate command buffers!");
         throw std::runtime_error("failed to allocate command buffers!");
     }
+    LOG(3, "EditorRenderer", "EditorRenderer initialized");
 }
 
 void Chronos::Editor::EditorRenderer::destroy()
@@ -101,6 +107,7 @@ void Chronos::Editor::EditorRenderer::destroy()
         vkDestroyFramebuffer(device->device, framebuffer, nullptr);
     vkDestroyCommandPool(device->device, commandPool, nullptr);
     vkDestroyDescriptorPool(device->device, descriptorPool, nullptr);
+    LOG(3, "EditorRenderer", "EditorRenderer destroyed");
 }
 
 void Chronos::Editor::EditorRenderer::update()
@@ -110,6 +117,7 @@ void Chronos::Editor::EditorRenderer::update()
     ImGui::NewFrame();
     this->addElements();
     ImGui::Render();
+    LOG(4, "EditorRenderer", "EditorRenderer updated");
 }
 
 void Chronos::Editor::EditorRenderer::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])
@@ -132,23 +140,29 @@ void Chronos::Editor::EditorRenderer::render(uint32_t currentFrame, uint32_t ima
         commandBuffers[currentFrame]);
     vkCmdEndRenderPass(commandBuffers[currentFrame]);
     vkEndCommandBuffer(commandBuffers[currentFrame]);
+    LOG(4, "EditorRenderer", "EditorRenderer rendered");
 }
 
 void Chronos::Editor::EditorRenderer::cleanup()
 {
     for (auto framebuffer : framebuffers)
         vkDestroyFramebuffer(device->device, framebuffer, nullptr);
+    LOG(3, "EditorRenderer", "EditorRenderer cleaned up");
 }
 
 void Chronos::Editor::EditorRenderer::recreate()
 {
     cleanup();
     framebuffers = Chronos::Engine::createFramebuffer(*device, *swapChain, renderPass, false);
+    LOG(3, "EditorRenderer", "EditorRenderer recreated");
 }
 
 void Chronos::Editor::EditorRenderer::renderAdditionalViewports(){
-// if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_ViewportsEnable){
-//     ImGui::UpdatePlatformWindows();
-//     ImGui::RenderPlatformWindowsDefault();
-// }
+#ifdef WIN32
+    if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_ViewportsEnable){
+        ImGui::UpdatePlatformWindows();
+        ImGui::RenderPlatformWindowsDefault();
+    }
+    LOG(4, "EditorRenderer", "Rendered additional viewports");
+#endif
 }
