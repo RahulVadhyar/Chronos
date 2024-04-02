@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('engine_8cpp.html',''); initResizable()
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="vulkanHeaders_8hpp_source.html">vulkanHeaders.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="stlheader_8hpp_source.html">stlheader.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="logging_8hpp_source.html">logging.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="device_8hpp_source.html">device.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="swapchain_8hpp_source.html">swapchain.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="engineStructs_8hpp_source.html">engineStructs.hpp</a>&quot;</code><br />
@@ -115,27 +116,28 @@ Include dependency graph for engine.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="engine_8cpp__incl.png" border="0" usemap="#aSource_2Engine_2Source_2engine_8cpp" alt=""/></div>
 <map name="aSource_2Engine_2Source_2engine_8cpp" id="aSource_2Engine_2Source_2engine_8cpp">
-<area shape="rect" title=" " alt="" coords="2594,5,2757,47"/>
+<area shape="rect" title=" " alt="" coords="2643,5,2806,47"/>
 <area shape="rect" href="vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="361,95,507,121"/>
 <area shape="rect" href="stlheader_8hpp.html" title="Contains all the standard library headers used in the project." alt="" coords="1493,95,1604,121"/>
-<area shape="rect" href="device_8hpp.html" title="Contains the Device class." alt="" coords="1629,95,1722,121"/>
-<area shape="rect" href="swapchain_8hpp.html" title="Contains the swapChain class along with all the swapChain related functions." alt="" coords="1747,95,1865,121"/>
-<area shape="rect" href="engineStructs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="1890,95,2029,121"/>
-<area shape="rect" href="Vertex_8hpp.html" title="This file includes the structure of a vertex." alt="" coords="2053,95,2145,121"/>
-<area shape="rect" href="helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="2170,95,2261,121"/>
-<area shape="rect" href="buffers_8hpp.html" title="Contains the Buffer and UniformBuffer class." alt="" coords="2285,95,2380,121"/>
-<area shape="rect" href="texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="2404,95,2501,121"/>
-<area shape="rect" href="textureManager_8hpp.html" title="Contains the class for managing textures in the Chronos::Engine namespace." alt="" coords="2525,95,2679,121"/>
-<area shape="rect" href="object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="2703,95,2794,121"/>
-<area shape="rect" href="text_8hpp.html" title=" " alt="" coords="2819,95,2895,121"/>
-<area shape="rect" href="objectManager_8hpp.html" title="Defines the ObjectManager class for managing objects in the Chronos::Engine namespace." alt="" coords="2919,95,3066,121"/>
-<area shape="rect" href="textManager_8hpp.html" title="Contains the class for managing text in the Chronos::Engine namespace." alt="" coords="3091,95,3223,121"/>
-<area shape="rect" href="commonStructs_8hpp.html" title="Header file that contains common structs used in Chronos." alt="" coords="3247,95,3399,121"/>
-<area shape="rect" href="shape_8hpp.html" title="Contains the class for creating a shape." alt="" coords="3424,95,3513,121"/>
-<area shape="rect" href="polygon_8hpp.html" title="Header file for Polygon class." alt="" coords="3537,95,3640,121"/>
-<area shape="rect" href="shapeManager_8hpp.html" title="Contains the class for managing shapes." alt="" coords="3664,95,3809,121"/>
-<area shape="rect" href="polygonManager_8hpp.html" title=" " alt="" coords="3833,95,3992,121"/>
-<area shape="rect" href="engine_8hpp.html" title="Contains the Engine class." alt="" coords="4016,95,4111,121"/>
+<area shape="rect" href="logging_8hpp.html" title=" " alt="" coords="1629,95,1727,121"/>
+<area shape="rect" href="device_8hpp.html" title="Contains the Device class." alt="" coords="1751,95,1845,121"/>
+<area shape="rect" href="swapchain_8hpp.html" title="Contains the swapChain class along with all the swapChain related functions." alt="" coords="1869,95,1988,121"/>
+<area shape="rect" href="engineStructs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="2013,95,2151,121"/>
+<area shape="rect" href="Vertex_8hpp.html" title="This file includes the structure of a vertex." alt="" coords="2176,95,2268,121"/>
+<area shape="rect" href="helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="2293,95,2383,121"/>
+<area shape="rect" href="buffers_8hpp.html" title="Contains the Buffer and UniformBuffer class." alt="" coords="2408,95,2503,121"/>
+<area shape="rect" href="texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="2527,95,2624,121"/>
+<area shape="rect" href="textureManager_8hpp.html" title="Contains the class for managing textures in the Chronos::Engine namespace." alt="" coords="2648,95,2801,121"/>
+<area shape="rect" href="object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="2826,95,2917,121"/>
+<area shape="rect" href="text_8hpp.html" title=" " alt="" coords="2941,95,3017,121"/>
+<area shape="rect" href="objectManager_8hpp.html" title="Defines the ObjectManager class for managing objects in the Chronos::Engine namespace." alt="" coords="3042,95,3189,121"/>
+<area shape="rect" href="textManager_8hpp.html" title="Contains the class for managing text in the Chronos::Engine namespace." alt="" coords="3213,95,3345,121"/>
+<area shape="rect" href="commonStructs_8hpp.html" title="Header file that contains common structs used in Chronos." alt="" coords="3370,95,3522,121"/>
+<area shape="rect" href="shape_8hpp.html" title="Contains the class for creating a shape." alt="" coords="3547,95,3636,121"/>
+<area shape="rect" href="polygon_8hpp.html" title="Header file for Polygon class." alt="" coords="3660,95,3763,121"/>
+<area shape="rect" href="shapeManager_8hpp.html" title="Contains the class for managing shapes." alt="" coords="3787,95,3932,121"/>
+<area shape="rect" href="polygonManager_8hpp.html" title=" " alt="" coords="3956,95,4115,121"/>
+<area shape="rect" href="engine_8hpp.html" title="Contains the Engine class." alt="" coords="4139,95,4233,121"/>
 <area shape="rect" title=" " alt="" coords="5,177,116,203"/>
 <area shape="rect" title=" " alt="" coords="140,177,240,203"/>
 <area shape="rect" title=" " alt="" coords="264,177,439,203"/>
@@ -157,10 +159,10 @@ Include dependency graph for engine.cpp:</div>
 <area shape="rect" title=" " alt="" coords="2047,177,2106,203"/>
 <area shape="rect" title=" " alt="" coords="2131,177,2193,203"/>
 <area shape="rect" title=" " alt="" coords="2217,177,2309,203"/>
-<area shape="rect" title=" " alt="" coords="2747,169,2910,211"/>
-<area shape="rect" title=" " alt="" coords="2935,177,3109,203"/>
-<area shape="rect" title=" " alt="" coords="3411,177,3527,203"/>
-<area shape="rect" title=" " alt="" coords="3650,177,3823,203"/>
+<area shape="rect" title=" " alt="" coords="2870,169,3033,211"/>
+<area shape="rect" title=" " alt="" coords="3057,177,3232,203"/>
+<area shape="rect" title=" " alt="" coords="3533,177,3649,203"/>
+<area shape="rect" title=" " alt="" coords="3773,177,3946,203"/>
 </map>
 </div>
 </div>
@@ -212,15 +214,17 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00027">27</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">auto</span> app = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="classChronos_1_1Engine_1_1Engine.html">Chronos::Engine::Engine</a>*<span class="keyword">&gt;</span>(glfwGetWindowUserPointer(window));</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    app-&gt;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2afd596420fea9c9b273a1a600f19a92">resizeFrameBuffer</a>();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00028">28</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">auto</span> app = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="classChronos_1_1Engine_1_1Engine.html">Chronos::Engine::Engine</a>*<span class="keyword">&gt;</span>(glfwGetWindowUserPointer(window));</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    app-&gt;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2afd596420fea9c9b273a1a600f19a92">resizeFrameBuffer</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Framebuffer resized&quot;</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html">Chronos::Engine::Engine</a></div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00052">engine.hpp:52</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a2afd596420fea9c9b273a1a600f19a92"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a2afd596420fea9c9b273a1a600f19a92">Chronos::Engine::Engine::resizeFrameBuffer</a></div><div class="ttdeci">void resizeFrameBuffer()</div><div class="ttdoc">Tells the engine that the window has to be resized. This is called by GLFW.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00049">engine.cpp:49</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a2afd596420fea9c9b273a1a600f19a92"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a2afd596420fea9c9b273a1a600f19a92">Chronos::Engine::Engine::resizeFrameBuffer</a></div><div class="ttdeci">void resizeFrameBuffer()</div><div class="ttdoc">Tells the engine that the window has to be resized. This is called by GLFW.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00054">engine.cpp:54</a></div></div>
+<div class="ttc" id="alogging_8hpp_html_a5b58fc422e0e0d9227a7ef69954b689a"><div class="ttname"><a href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a></div><div class="ttdeci">#define LOG(LEVEL, CLASS, MESSAGE)</div><div class="ttdef"><b>Definition:</b> <a href="logging_8hpp_source.html#l00015">logging.hpp:15</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="engine_8cpp_source.html#l00049">Chronos::Engine::Engine::resizeFrameBuffer()</a>.</p>
+<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00015">LOG</a>, and <a class="el" href="engine_8cpp_source.html#l00054">Chronos::Engine::Engine::resizeFrameBuffer()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

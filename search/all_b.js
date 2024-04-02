@@ -1,14 +1,16 @@
 var searchData=
 [
-  ['object_201',['Object',['../classChronos_1_1Engine_1_1Object.html',1,'Chronos::Engine']]],
-  ['object_2ecpp_202',['object.cpp',['../object_8cpp.html',1,'']]],
-  ['object_2ehpp_203',['object.hpp',['../object_8hpp.html',1,'']]],
-  ['objectlike_204',['ObjectLike',['../namespaceChronos_1_1Engine.html#ae7424bca06d7525a9f71e63c7aa6d7b3',1,'Chronos::Engine']]],
-  ['objectmanager_205',['ObjectManager',['../classChronos_1_1Engine_1_1ObjectManager.html',1,'Chronos::Engine']]],
-  ['objectmanager_2ehpp_206',['objectManager.hpp',['../objectManager_8hpp.html',1,'']]],
-  ['objectmanager_3c_20chronos_3a_3aengine_3a_3apolygon_20_3e_207',['ObjectManager&lt; Chronos::Engine::Polygon &gt;',['../classChronos_1_1Engine_1_1ObjectManager.html',1,'Chronos::Engine']]],
-  ['objectmanager_3c_20chronos_3a_3aengine_3a_3ashape_3c_20vertexstruct_20_3e_20_3e_208',['ObjectManager&lt; Chronos::Engine::Shape&lt; VertexStruct &gt; &gt;',['../classChronos_1_1Engine_1_1ObjectManager.html',1,'Chronos::Engine']]],
-  ['objectmanager_3c_20chronos_3a_3aengine_3a_3atext_20_3e_209',['ObjectManager&lt; Chronos::Engine::Text &gt;',['../classChronos_1_1Engine_1_1ObjectManager.html',1,'Chronos::Engine']]],
-  ['objects_210',['objects',['../classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491',1,'Chronos::Engine::ObjectManager']]],
-  ['objectstoberemoved_211',['objectsToBeRemoved',['../classChronos_1_1Engine_1_1ObjectManager.html#a54d17aebc9898f934fde0f72e0c95e20',1,'Chronos::Engine::ObjectManager']]]
+  ['newpolygonparams_191',['newPolygonParams',['../classChronos_1_1Editor_1_1EditorManager.html#a4998cb31fedc59b321a480ee9164c0ac',1,'Chronos::Editor::EditorManager']]],
+  ['newshapefill_192',['newShapeFill',['../classChronos_1_1Editor_1_1EditorManager.html#ae22f4037091e94e304e9aa7b402b6263',1,'Chronos::Editor::EditorManager']]],
+  ['newshapeparams_193',['newShapeParams',['../classChronos_1_1Editor_1_1EditorManager.html#ac4356c21e788d9e2fdd02fc76a61578e',1,'Chronos::Editor::EditorManager']]],
+  ['newshapetype_194',['newShapeType',['../classChronos_1_1Editor_1_1EditorManager.html#a1c6436d72a959c549df7736044fb8a8a',1,'Chronos::Editor::EditorManager']]],
+  ['newtextparams_195',['newTextParams',['../classChronos_1_1Editor_1_1EditorManager.html#abbfff9d7a4b953859a2fb88b094049e8',1,'Chronos::Editor::EditorManager']]],
+  ['newtexturename_196',['newTextureName',['../classChronos_1_1Editor_1_1EditorManager.html#aea1556d9ff0d86eed66371303665dfc7',1,'Chronos::Editor::EditorManager']]],
+  ['newtexturepath_197',['newTexturePath',['../classChronos_1_1Editor_1_1EditorManager.html#a690898a392f26183d4c29309132270d8',1,'Chronos::Editor::EditorManager']]],
+  ['nextfreeanimobjno_198',['nextFreeAnimObjNo',['../classChronos_1_1Manager_1_1Manager.html#a00d9996f9fd24bc4824f844dc8631358',1,'Chronos::Manager::Manager']]],
+  ['nextfreeobjectno_199',['nextFreeObjectNo',['../classChronos_1_1Engine_1_1ObjectManager.html#aee7f95d9a104bd82067cc13b10c83256',1,'Chronos::Engine::ObjectManager']]],
+  ['nextfreetextureno_200',['nextFreeTextureNo',['../classChronos_1_1Engine_1_1TextureManager.html#a4d43f6b45726e2301c15cc77597da349',1,'Chronos::Engine::TextureManager']]],
+  ['numchars_201',['numChars',['../structChronos_1_1Engine_1_1FontTypes.html#aa52a34737a2a284e59475fadc1fac1f5',1,'Chronos::Engine::FontTypes']]],
+  ['numletters_202',['numLetters',['../classChronos_1_1Engine_1_1Text.html#ab53476b59186ad357333df25278366b3',1,'Chronos::Engine::Text']]],
+  ['numvertices_203',['numVertices',['../classChronos_1_1Editor_1_1EditorManager.html#ae9f5c0832a6595e7fb07efab0812d73d',1,'Chronos::Editor::EditorManager']]]
 ];

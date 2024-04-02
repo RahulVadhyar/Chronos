@@ -232,6 +232,10 @@ var NAVTREEINDEX1 =
 "index.html#autotoc_md22":[0,6],
 "index.html#autotoc_md23":[0,7],
 "index.html#autotoc_md24":[0,8],
+"logging_8hpp.html":[6,0,2,1,1],
+"logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a":[6,0,2,1,1,1],
+"logging_8hpp.html#aafd7ab101b22caf7ff160ea6870f9982":[6,0,2,1,1,0],
+"logging_8hpp_source.html":[6,0,2,1,1],
 "manager_8cpp.html":[6,0,2,0,0,0],
 "manager_8cpp_source.html":[6,0,2,0,0,0],
 "multiFontInclude_8hpp.html":[6,0,2,3,0,7],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733":[4,0,0,1,28],
 "namespaceChronos_1_1Engine.html#a34457a6d2cac8f2770ffbaf52b3b2ee3":[4,0,0,1,39],
 "namespaceChronos_1_1Engine.html#a35cd835c537872d49915832ce7979b5c":[4,0,0,1,48],
-"namespaceChronos_1_1Engine.html#a43d4bb056580340f1df4d5ca610a213e":[4,0,0,1,37],
-"namespaceChronos_1_1Engine.html#a486e04f821153409c6c7d0ab3b3e89b4":[4,0,0,1,52],
-"namespaceChronos_1_1Engine.html#a4cb0fad8419ed33393b0aaceb3153543":[4,0,0,1,30],
-"namespaceChronos_1_1Engine.html#a518ca04e28b0aa0558dd8b8f1e51449d":[4,0,0,1,35],
-"namespaceChronos_1_1Engine.html#a52bd349b91415659b6681f47145ed328":[4,0,0,1,31]
+"namespaceChronos_1_1Engine.html#a43d4bb056580340f1df4d5ca610a213e":[4,0,0,1,37]
 };

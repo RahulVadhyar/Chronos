@@ -1,16 +1,15 @@
 var searchData=
 [
-  ['newpolygonparams_188',['newPolygonParams',['../classChronos_1_1Editor_1_1EditorManager.html#a4998cb31fedc59b321a480ee9164c0ac',1,'Chronos::Editor::EditorManager']]],
-  ['newshapefill_189',['newShapeFill',['../classChronos_1_1Editor_1_1EditorManager.html#ae22f4037091e94e304e9aa7b402b6263',1,'Chronos::Editor::EditorManager']]],
-  ['newshapeparams_190',['newShapeParams',['../classChronos_1_1Editor_1_1EditorManager.html#ac4356c21e788d9e2fdd02fc76a61578e',1,'Chronos::Editor::EditorManager']]],
-  ['newshapetype_191',['newShapeType',['../classChronos_1_1Editor_1_1EditorManager.html#a1c6436d72a959c549df7736044fb8a8a',1,'Chronos::Editor::EditorManager']]],
-  ['newtextparams_192',['newTextParams',['../classChronos_1_1Editor_1_1EditorManager.html#abbfff9d7a4b953859a2fb88b094049e8',1,'Chronos::Editor::EditorManager']]],
-  ['newtexturename_193',['newTextureName',['../classChronos_1_1Editor_1_1EditorManager.html#aea1556d9ff0d86eed66371303665dfc7',1,'Chronos::Editor::EditorManager']]],
-  ['newtexturepath_194',['newTexturePath',['../classChronos_1_1Editor_1_1EditorManager.html#a690898a392f26183d4c29309132270d8',1,'Chronos::Editor::EditorManager']]],
-  ['nextfreeanimobjno_195',['nextFreeAnimObjNo',['../classChronos_1_1Manager_1_1Manager.html#a00d9996f9fd24bc4824f844dc8631358',1,'Chronos::Manager::Manager']]],
-  ['nextfreeobjectno_196',['nextFreeObjectNo',['../classChronos_1_1Engine_1_1ObjectManager.html#aee7f95d9a104bd82067cc13b10c83256',1,'Chronos::Engine::ObjectManager']]],
-  ['nextfreetextureno_197',['nextFreeTextureNo',['../classChronos_1_1Engine_1_1TextureManager.html#a4d43f6b45726e2301c15cc77597da349',1,'Chronos::Engine::TextureManager']]],
-  ['numchars_198',['numChars',['../structChronos_1_1Engine_1_1FontTypes.html#aa52a34737a2a284e59475fadc1fac1f5',1,'Chronos::Engine::FontTypes']]],
-  ['numletters_199',['numLetters',['../classChronos_1_1Engine_1_1Text.html#ab53476b59186ad357333df25278366b3',1,'Chronos::Engine::Text']]],
-  ['numvertices_200',['numVertices',['../classChronos_1_1Editor_1_1EditorManager.html#ae9f5c0832a6595e7fb07efab0812d73d',1,'Chronos::Editor::EditorManager']]]
+  ['main_179',['main',['../editorMain_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'editorMain.cpp']]],
+  ['manager_180',['Manager',['../classChronos_1_1Manager_1_1Manager.html',1,'Chronos::Manager::Manager'],['../classChronos_1_1Manager_1_1Manager.html#a0a100e214d7647f355e7c313b23674c2',1,'Chronos::Manager::Manager::Manager()']]],
+  ['manager_181',['manager',['../classChronos_1_1Editor_1_1EditorManager.html#a54d3c886260f18c56d50fcff936563ef',1,'Chronos::Editor::EditorManager']]],
+  ['manager_2ecpp_182',['manager.cpp',['../manager_8cpp.html',1,'']]],
+  ['mappedmemory_183',['mappedMemory',['../classChronos_1_1Engine_1_1Polygon.html#a05668018ad62419eb0c173ecaebda29e',1,'Chronos::Engine::Polygon::mappedMemory()'],['../classChronos_1_1Engine_1_1Text.html#a2a749d64a674558d625f36ec332ab60c',1,'Chronos::Engine::Text::mappedMemory()']]],
+  ['max_5fframes_5fin_5fflight_184',['MAX_FRAMES_IN_FLIGHT',['../vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec',1,'vulkanHeaders.hpp']]],
+  ['maxtextlength_185',['maxTextLength',['../classChronos_1_1Engine_1_1Text.html#a222f04b8bbed8a06255667abcdde1ea7',1,'Chronos::Engine::Text']]],
+  ['memory_186',['memory',['../classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861',1,'Chronos::Engine::Buffer']]],
+  ['menubar_187',['MenuBar',['../classChronos_1_1Editor_1_1EditorManager.html#a6bcd171159c3a8b07d319881239e2e7d',1,'Chronos::Editor::EditorManager']]],
+  ['model_188',['model',['../structChronos_1_1Engine_1_1UniformBufferObject.html#a268c55fb110e7a67a422a69cd4001589',1,'Chronos::Engine::UniformBufferObject']]],
+  ['msaasamples_189',['msaaSamples',['../classChronos_1_1Engine_1_1Device.html#a98ab680304c67713f698d714aa4be474',1,'Chronos::Engine::Device']]],
+  ['multifontinclude_2ehpp_190',['multiFontInclude.hpp',['../multiFontInclude_8hpp.html',1,'']]]
 ];

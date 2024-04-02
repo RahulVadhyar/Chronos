@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7eengine_374',['~Engine',['../classChronos_1_1Engine_1_1Engine.html#a532edb6a6f3f0b8d48fb43fb4e9b7e2f',1,'Chronos::Engine::Engine']]]
+  ['y_375',['y',['../structChronos_1_1Manager_1_1Text.html#ad5b58d0011bf614ae3a0ac3de2edaafa',1,'Chronos::Manager::Text::y()'],['../structChronos_1_1Manager_1_1ShapeParams.html#a57af8e9f2161df8083f206cfbb34502e',1,'Chronos::Manager::ShapeParams::y()'],['../structChronos_1_1Engine_1_1TextParams.html#a64d04c5961e99caa9d0987622cd14d02',1,'Chronos::Engine::TextParams::y()']]],
+  ['ysize_376',['ySize',['../structChronos_1_1Manager_1_1ShapeParams.html#a70bb93d5f5427be148c67c4811cb9b3b',1,'Chronos::Manager::ShapeParams']]]
 ];

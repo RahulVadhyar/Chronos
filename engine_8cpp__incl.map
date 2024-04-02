@@ -1,25 +1,26 @@
 <map id="Source/Engine/Source/engine.cpp" name="Source/Engine/Source/engine.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="2594,5,2757,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="2643,5,2806,47"/>
 <area shape="rect" id="node2" href="$vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="361,95,507,121"/>
 <area shape="rect" id="node8" href="$stlheader_8hpp.html" title="Contains all the standard library headers used in the project." alt="" coords="1493,95,1604,121"/>
-<area shape="rect" id="node25" href="$device_8hpp.html" title="Contains the Device class." alt="" coords="1629,95,1722,121"/>
-<area shape="rect" id="node26" href="$swapchain_8hpp.html" title="Contains the swapChain class along with all the swapChain related functions." alt="" coords="1747,95,1865,121"/>
-<area shape="rect" id="node27" href="$engineStructs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="1890,95,2029,121"/>
-<area shape="rect" id="node28" href="$Vertex_8hpp.html" title="This file includes the structure of a vertex." alt="" coords="2053,95,2145,121"/>
-<area shape="rect" id="node29" href="$helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="2170,95,2261,121"/>
-<area shape="rect" id="node30" href="$buffers_8hpp.html" title="Contains the Buffer and UniformBuffer class." alt="" coords="2285,95,2380,121"/>
-<area shape="rect" id="node31" href="$texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="2404,95,2501,121"/>
-<area shape="rect" id="node32" href="$textureManager_8hpp.html" title="Contains the class for managing textures in the Chronos::Engine namespace." alt="" coords="2525,95,2679,121"/>
-<area shape="rect" id="node33" href="$object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="2703,95,2794,121"/>
-<area shape="rect" id="node34" href="$text_8hpp.html" title=" " alt="" coords="2819,95,2895,121"/>
-<area shape="rect" id="node36" href="$objectManager_8hpp.html" title="Defines the ObjectManager class for managing objects in the Chronos::Engine namespace." alt="" coords="2919,95,3066,121"/>
-<area shape="rect" id="node38" href="$textManager_8hpp.html" title="Contains the class for managing text in the Chronos::Engine namespace." alt="" coords="3091,95,3223,121"/>
-<area shape="rect" id="node39" href="$commonStructs_8hpp.html" title="Header file that contains common structs used in Chronos." alt="" coords="3247,95,3399,121"/>
-<area shape="rect" id="node40" href="$shape_8hpp.html" title="Contains the class for creating a shape." alt="" coords="3424,95,3513,121"/>
-<area shape="rect" id="node42" href="$polygon_8hpp.html" title="Header file for Polygon class." alt="" coords="3537,95,3640,121"/>
-<area shape="rect" id="node43" href="$shapeManager_8hpp.html" title="Contains the class for managing shapes." alt="" coords="3664,95,3809,121"/>
-<area shape="rect" id="node45" href="$polygonManager_8hpp.html" title=" " alt="" coords="3833,95,3992,121"/>
-<area shape="rect" id="node46" href="$engine_8hpp.html" title="Contains the Engine class." alt="" coords="4016,95,4111,121"/>
+<area shape="rect" id="node25" href="$logging_8hpp.html" title=" " alt="" coords="1629,95,1727,121"/>
+<area shape="rect" id="node26" href="$device_8hpp.html" title="Contains the Device class." alt="" coords="1751,95,1845,121"/>
+<area shape="rect" id="node27" href="$swapchain_8hpp.html" title="Contains the swapChain class along with all the swapChain related functions." alt="" coords="1869,95,1988,121"/>
+<area shape="rect" id="node28" href="$engineStructs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="2013,95,2151,121"/>
+<area shape="rect" id="node29" href="$Vertex_8hpp.html" title="This file includes the structure of a vertex." alt="" coords="2176,95,2268,121"/>
+<area shape="rect" id="node30" href="$helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="2293,95,2383,121"/>
+<area shape="rect" id="node31" href="$buffers_8hpp.html" title="Contains the Buffer and UniformBuffer class." alt="" coords="2408,95,2503,121"/>
+<area shape="rect" id="node32" href="$texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="2527,95,2624,121"/>
+<area shape="rect" id="node33" href="$textureManager_8hpp.html" title="Contains the class for managing textures in the Chronos::Engine namespace." alt="" coords="2648,95,2801,121"/>
+<area shape="rect" id="node34" href="$object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="2826,95,2917,121"/>
+<area shape="rect" id="node35" href="$text_8hpp.html" title=" " alt="" coords="2941,95,3017,121"/>
+<area shape="rect" id="node37" href="$objectManager_8hpp.html" title="Defines the ObjectManager class for managing objects in the Chronos::Engine namespace." alt="" coords="3042,95,3189,121"/>
+<area shape="rect" id="node39" href="$textManager_8hpp.html" title="Contains the class for managing text in the Chronos::Engine namespace." alt="" coords="3213,95,3345,121"/>
+<area shape="rect" id="node40" href="$commonStructs_8hpp.html" title="Header file that contains common structs used in Chronos." alt="" coords="3370,95,3522,121"/>
+<area shape="rect" id="node41" href="$shape_8hpp.html" title="Contains the class for creating a shape." alt="" coords="3547,95,3636,121"/>
+<area shape="rect" id="node43" href="$polygon_8hpp.html" title="Header file for Polygon class." alt="" coords="3660,95,3763,121"/>
+<area shape="rect" id="node44" href="$shapeManager_8hpp.html" title="Contains the class for managing shapes." alt="" coords="3787,95,3932,121"/>
+<area shape="rect" id="node46" href="$polygonManager_8hpp.html" title=" " alt="" coords="3956,95,4115,121"/>
+<area shape="rect" id="node47" href="$engine_8hpp.html" title="Contains the Engine class." alt="" coords="4139,95,4233,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,177,116,203"/>
 <area shape="rect" id="node4" title=" " alt="" coords="140,177,240,203"/>
 <area shape="rect" id="node5" title=" " alt="" coords="264,177,439,203"/>
@@ -41,8 +42,8 @@
 <area shape="rect" id="node22" title=" " alt="" coords="2047,177,2106,203"/>
 <area shape="rect" id="node23" title=" " alt="" coords="2131,177,2193,203"/>
 <area shape="rect" id="node24" title=" " alt="" coords="2217,177,2309,203"/>
-<area shape="rect" id="node35" title=" " alt="" coords="2747,169,2910,211"/>
-<area shape="rect" id="node37" title=" " alt="" coords="2935,177,3109,203"/>
-<area shape="rect" id="node41" title=" " alt="" coords="3411,177,3527,203"/>
-<area shape="rect" id="node44" title=" " alt="" coords="3650,177,3823,203"/>
+<area shape="rect" id="node36" title=" " alt="" coords="2870,169,3033,211"/>
+<area shape="rect" id="node38" title=" " alt="" coords="3057,177,3232,203"/>
+<area shape="rect" id="node42" title=" " alt="" coords="3533,177,3649,203"/>
+<area shape="rect" id="node45" title=" " alt="" coords="3773,177,3946,203"/>
 </map>

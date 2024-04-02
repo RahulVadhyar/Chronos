@@ -82,7 +82,7 @@ var NAVTREEINDEX =
 [
 "Examples.html",
 "classChronos_1_1Engine_1_1SwapChain.html#a8f9b8463fd4e77e094d2b8d2790421d4",
-"namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c"
+"namespaceChronos_1_1Engine.html#a486e04f821153409c6c7d0ab3b3e89b4"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
