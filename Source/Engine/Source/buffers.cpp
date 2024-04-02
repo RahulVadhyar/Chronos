@@ -54,10 +54,10 @@ void Chronos::Engine::UniformBuffer::update(VkExtent2D swapChainExtent, float x,
 {
     // This is where the shape parameters are updated
     UniformBufferObject ubo {};
-    ubo.model = glm::translate(glm::mat4(1.0f), glm::vec3(x, y, 0.0f));
+    ubo.model = glm::translate(glm::mat4(1.0f), glm::vec3(y, -x, 0.0f));
     ubo.model = glm::rotate(ubo.model, glm::radians(rotation),
         glm::vec3(0.0f, 0.0f, 1.0f));
-    ubo.model = glm::scale(ubo.model, glm::vec3(x_size, y_size, 1.0f));
+    ubo.model = glm::scale(ubo.model, glm::vec3(y_size, x_size, 1.0f));
     ubo.view = glm::lookAt(glm::vec3(0.0f, 0.0f, 0.1f), glm::vec3(0.0f, 0.0f, 0.0f),
         glm::vec3(1.0f, 0.0f, 0.0f));
     ubo.proj = glm::ortho(-1.0f, 1.0f,
