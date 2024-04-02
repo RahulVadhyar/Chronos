@@ -196,7 +196,7 @@ $(document).ready(function(){initNavTree('engine_8cpp_source.html',''); initResi
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    gui.destroy();</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        vkDestroySemaphore(device.device, renderFinishedSemaphores[i], <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        vkDestroySemaphore(device.device, imageAvailableSemaphores[i], <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        vkDestroyFence(device.device, inFlightFences[i], <span class="keyword">nullptr</span>);</div>
@@ -326,7 +326,7 @@ $(document).ready(function(){initNavTree('engine_8cpp_source.html',''); initResi
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">// update the current frame</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    currentFrame = (currentFrame + 1) % <a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    currentFrame = (currentFrame + 1) % <a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;}</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
 <div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Engine.html#a4be8d1abd5f346749a04f0c82510965a">  242</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a4be8d1abd5f346749a04f0c82510965a">Chronos::Engine::Engine::createInstance</a>()</div>
@@ -397,9 +397,9 @@ $(document).ready(function(){initNavTree('engine_8cpp_source.html',''); initResi
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
 <div class="line"><a name="l00308"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Engine.html#a45c7769114afb2cf3c9a10c049368fe6">  308</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a45c7769114afb2cf3c9a10c049368fe6">Chronos::Engine::Engine::createSyncObjects</a>()</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;{</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    imageAvailableSemaphores.resize(<a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    renderFinishedSemaphores.resize(<a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    inFlightFences.resize(<a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    imageAvailableSemaphores.resize(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    renderFinishedSemaphores.resize(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    inFlightFences.resize(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    VkSemaphoreCreateInfo semaphoreInfo {};</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    semaphoreInfo.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;</div>
@@ -408,7 +408,7 @@ $(document).ready(function(){initNavTree('engine_8cpp_source.html',''); initResi
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    fenceInfo.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    fenceInfo.flags = VK_FENCE_CREATE_SIGNALED_BIT;</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keywordflow">if</span> (vkCreateSemaphore(device.device, &amp;semaphoreInfo, <span class="keyword">nullptr</span>,</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                &amp;imageAvailableSemaphores[i])</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                != VK_SUCCESS</div>
@@ -494,7 +494,7 @@ $(document).ready(function(){initNavTree('engine_8cpp_source.html',''); initResi
 <div class="ttc" id="atexture_8hpp_html"><div class="ttname"><a href="texture_8hpp.html">texture.hpp</a></div><div class="ttdoc">Contains the functions for image manipulation along with the Texture class.</div></div>
 <div class="ttc" id="avalidation_8hpp_html"><div class="ttname"><a href="validation_8hpp.html">validation.hpp</a></div><div class="ttdoc">Contains the functions needed for initalization of vulkan validation layers.</div></div>
 <div class="ttc" id="avulkanHeaders_8hpp_html"><div class="ttname"><a href="vulkanHeaders_8hpp.html">vulkanHeaders.hpp</a></div><div class="ttdoc">Contains the common headers for the vulkan API.</div></div>
-<div class="ttc" id="avulkanHeaders_8hpp_html_a7302e21aaabe341f71d799a7dd3f274f"><div class="ttname"><a href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a></div><div class="ttdeci">const int MAX_FRAMES_IN_FLIGHT</div><div class="ttdoc">The number of frames in flight.</div><div class="ttdef"><b>Definition:</b> <a href="vulkanHeaders_8hpp_source.html#l00030">vulkanHeaders.hpp:30</a></div></div>
+<div class="ttc" id="avulkanHeaders_8hpp_html_a84d3ea5135a58a3d5c7d802762e320ec"><div class="ttname"><a href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a></div><div class="ttdeci">#define MAX_FRAMES_IN_FLIGHT</div><div class="ttdoc">The number of frames in flight.</div><div class="ttdef"><b>Definition:</b> <a href="vulkanHeaders_8hpp_source.html#l00030">vulkanHeaders.hpp:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

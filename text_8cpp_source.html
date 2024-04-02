@@ -128,8 +128,8 @@ $(document).ready(function(){initNavTree('text_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// create the uniform buffers for color changing</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Text.html#a397c79280594e47a90ca7b63e1a792c0">colorBuffers</a>.resize(<a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Text.html#a397c79280594e47a90ca7b63e1a792c0">colorBuffers</a>.resize(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Text.html#a397c79280594e47a90ca7b63e1a792c0">colorBuffers</a>[i].create(*<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
@@ -151,20 +151,20 @@ $(document).ready(function(){initNavTree('text_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Text.html#af1be15553add287fe4a180e8decfcfc7">   62</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Text.html#af1be15553add287fe4a180e8decfcfc7">Chronos::Engine::Text::createDescriptorSets</a>()</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::vector&lt;VkDescriptorSetLayout&gt; layouts(<a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::vector&lt;VkDescriptorSetLayout&gt; layouts(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>,</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        descriptorSetLayout);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    VkDescriptorSetAllocateInfo allocInfo {};</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    allocInfo.descriptorPool = descriptorPool;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    allocInfo.descriptorSetCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    allocInfo.descriptorSetCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    allocInfo.pSetLayouts = layouts.data();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    descriptorSets.resize(<a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    descriptorSets.resize(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (vkAllocateDescriptorSets(device-&gt;device, &amp;allocInfo,</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            descriptorSets.data())</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        != VK_SUCCESS) {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to allocate descriptor sets!&quot;</span>);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        VkDescriptorImageInfo imageInfo {};</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        imageInfo.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;</div>
@@ -258,7 +258,7 @@ $(document).ready(function(){initNavTree('text_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a>();</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    vkDestroyBuffer(device-&gt;device, vertexBuffer, <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    vkFreeMemory(device-&gt;device, vertexBufferMemory, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        colorBuffers[i].destroy();</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    fontTexture.destroy();</div>
@@ -355,7 +355,7 @@ $(document).ready(function(){initNavTree('text_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Text.html#a2279c3602b1705ef3fb39d2e14825177">  265</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Text.html#a2279c3602b1705ef3fb39d2e14825177">Chronos::Engine::Text::update</a>(uint32_t currentFrame)</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    updateBuffer();</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    uniformBuffers[currentFrame].update(swapChain-&gt;swapChainExtent, params.x, params.y, params.rotation - 90, 1.0f, -1.0f);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    uniformBuffers[currentFrame].update(swapChain-&gt;swapChainExtent, params.x, params.y, params.rotation - 90, 1.0f, 1.0f);</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    colorBuffers[currentFrame].update({params.color[0], params.color[1], params.color[2]});</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;}</div>
 <div class="ttc" id="abuffers_8hpp_html"><div class="ttname"><a href="buffers_8hpp.html">buffers.hpp</a></div><div class="ttdoc">Contains the Buffer and UniformBuffer class.</div></div>
@@ -411,7 +411,7 @@ $(document).ready(function(){initNavTree('text_8cpp_source.html',''); initResiza
 <div class="ttc" id="atext_8hpp_html"><div class="ttname"><a href="text_8hpp.html">text.hpp</a></div></div>
 <div class="ttc" id="atexture_8hpp_html"><div class="ttname"><a href="texture_8hpp.html">texture.hpp</a></div><div class="ttdoc">Contains the functions for image manipulation along with the Texture class.</div></div>
 <div class="ttc" id="avulkanHeaders_8hpp_html"><div class="ttname"><a href="vulkanHeaders_8hpp.html">vulkanHeaders.hpp</a></div><div class="ttdoc">Contains the common headers for the vulkan API.</div></div>
-<div class="ttc" id="avulkanHeaders_8hpp_html_a7302e21aaabe341f71d799a7dd3f274f"><div class="ttname"><a href="vulkanHeaders_8hpp.html#a7302e21aaabe341f71d799a7dd3f274f">MAX_FRAMES_IN_FLIGHT</a></div><div class="ttdeci">const int MAX_FRAMES_IN_FLIGHT</div><div class="ttdoc">The number of frames in flight.</div><div class="ttdef"><b>Definition:</b> <a href="vulkanHeaders_8hpp_source.html#l00030">vulkanHeaders.hpp:30</a></div></div>
+<div class="ttc" id="avulkanHeaders_8hpp_html_a84d3ea5135a58a3d5c7d802762e320ec"><div class="ttname"><a href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a></div><div class="ttdeci">#define MAX_FRAMES_IN_FLIGHT</div><div class="ttdoc">The number of frames in flight.</div><div class="ttdef"><b>Definition:</b> <a href="vulkanHeaders_8hpp_source.html#l00030">vulkanHeaders.hpp:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

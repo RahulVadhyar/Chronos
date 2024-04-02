@@ -172,6 +172,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a5d4dcec12f74b5a15dd5c3521efac5e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a846cce51cad6f1ce3eed3863ec57546d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; VkFramebuffer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html#a846cce51cad6f1ce3eed3863ec57546d">framebuffers</a></td></tr>
 <tr class="separator:a846cce51cad6f1ce3eed3863ec57546d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54d17aebc9898f934fde0f72e0c95e20"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, std::array&lt; bool, <a class="el" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html#a54d17aebc9898f934fde0f72e0c95e20">objectsToBeRemoved</a></td></tr>
+<tr class="separator:a54d17aebc9898f934fde0f72e0c95e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;ObjectLike Object&gt;<br />
@@ -727,6 +729,33 @@ template&lt;ObjectLike Object&gt; </div>
 <p>A map of object indices to their corresponding objects. </p>
 
 <p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00032">32</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a54d17aebc9898f934fde0f72e0c95e20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54d17aebc9898f934fde0f72e0c95e20">&#9670;&nbsp;</a></span>objectsToBeRemoved</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;ObjectLike Object&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;int, std::array&lt;bool, <a class="el" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>&gt; &gt; <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt; <a class="el" href="classChronos_1_1Engine_1_1Object.html">Object</a> &gt;::objectsToBeRemoved</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Map of objects to be removed. </p>
+
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00141">141</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>

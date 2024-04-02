@@ -17,6 +17,7 @@ var classChronos_1_1Engine_1_1ObjectManager =
     [ "framebuffers", "classChronos_1_1Engine_1_1ObjectManager.html#a846cce51cad6f1ce3eed3863ec57546d", null ],
     [ "nextFreeObjectNo", "classChronos_1_1Engine_1_1ObjectManager.html#aee7f95d9a104bd82067cc13b10c83256", null ],
     [ "objects", "classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491", null ],
+    [ "objectsToBeRemoved", "classChronos_1_1Engine_1_1ObjectManager.html#a54d17aebc9898f934fde0f72e0c95e20", null ],
     [ "renderPass", "classChronos_1_1Engine_1_1ObjectManager.html#a36d12af7af4f858732ec7ffd280a0b41", null ],
     [ "swapChain", "classChronos_1_1Engine_1_1ObjectManager.html#a09186962fa6a42ed4b3231cdf2e73ce6", null ],
     [ "textureSampler", "classChronos_1_1Engine_1_1ObjectManager.html#a5d4dcec12f74b5a15dd5c3521efac5e6", null ]
