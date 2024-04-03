@@ -84,12 +84,22 @@ $(document).ready(function(){initNavTree('Usage.html',''); initResizable(); });
 </div>
 
 <div class="PageDoc"><div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md23"></a>
 Usage</h1>
 <ul>
-<li>Example 1 </li>
+<li>Example 1</li>
 </ul>
-</div></div><!-- contents -->
+<p>This project is designed to be linked to your project with cmake. To link with cmake, install the dependencies as described <a class="el" href="md_docs_build.html">here</a>. After that, link it to cmake as follows using the following code as an example. </p><div class="fragment"><div class="line">cmake_minimum_required(VERSION 3.13)</div>
+<div class="line">project(YourProject)</div>
+<div class="line">set(CMAKE_CXX_STANDARD 20)</div>
+<div class="line">set(CHRONOS_INCLUDE_DIR path/to/Chronos/include)</div>
+<div class="line">include_directories(BEFORE ${CHRONOS_INCLUDE_DIR})</div>
+<div class="line"> </div>
+<div class="line">#add your stuff here</div>
+<div class="line"> </div>
+<div class="line">add_subdirectory(path/to/Chronos)</div>
+<div class="line">target_link_libraries(YourProject Chronos)</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

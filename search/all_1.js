@@ -7,5 +7,7 @@ var searchData=
   ['buffer_11',['buffer',['../classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e',1,'Chronos::Engine::Buffer']]],
   ['buffer_12',['Buffer',['../classChronos_1_1Engine_1_1Buffer.html',1,'Chronos::Engine']]],
   ['buffers_2ecpp_13',['buffers.cpp',['../buffers_8cpp.html',1,'']]],
-  ['buffers_2ehpp_14',['buffers.hpp',['../buffers_8hpp.html',1,'']]]
+  ['buffers_2ehpp_14',['buffers.hpp',['../buffers_8hpp.html',1,'']]],
+  ['build_20instructions_15',['Build Instructions',['../md_docs_build.html',1,'']]],
+  ['build_2emd_16',['build.md',['../build_8md.html',1,'']]]
 ];

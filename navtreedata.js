@@ -26,27 +26,58 @@ var NAVTREE =
 [
   [ "Chronos", "index.html", [
     [ "Chronos(v0.0)", "index.html", [
-      [ "Cloning:", "index.html#autotoc_md14", null ],
-      [ "Table of Contents", "index.html#autotoc_md15", null ],
-      [ "Dependencies", "index.html#autotoc_md16", [
-        [ "For Windows:", "index.html#autotoc_md17", null ],
-        [ "For Linux and Unix like systems", "index.html#autotoc_md18", null ]
+      [ "Cloning:", "index.html#autotoc_md36", [
+        [ "Make sure to clone this repo recursively.", "index.html#autotoc_md37", null ]
       ] ],
-      [ "How To Use", "index.html#autotoc_md19", null ],
-      [ "API Documentation", "index.html#autotoc_md20", null ],
-      [ "How to file an issue", "index.html#autotoc_md21", null ],
-      [ "Libraries used", "index.html#autotoc_md22", null ],
-      [ "Contributing", "index.html#autotoc_md23", null ],
-      [ "FAQs", "index.html#autotoc_md24", null ]
+      [ "Table of Contents", "index.html#autotoc_md38", null ],
+      [ "What is Chronos?", "index.html#autotoc_md39", null ],
+      [ "Building Chronos", "index.html#autotoc_md40", null ],
+      [ "How To Use", "index.html#autotoc_md41", null ],
+      [ "How to file an issue", "index.html#autotoc_md42", null ],
+      [ "Libraries used", "index.html#autotoc_md43", null ],
+      [ "Contributing", "index.html#autotoc_md44", null ],
+      [ "FAQs", "index.html#autotoc_md45", null ]
     ] ],
+    [ "Build Instructions", "md_docs_build.html", [
+      [ "Table of Contents", "md_docs_build.html#autotoc_md1", null ],
+      [ "Cloning", "md_docs_build.html#autotoc_md2", [
+        [ "Make sure to clone this repo recursively.", "md_docs_build.html#autotoc_md3", null ]
+      ] ],
+      [ "Dependencies", "md_docs_build.html#autotoc_md4", [
+        [ "For Windows", "md_docs_build.html#autotoc_md5", null ],
+        [ "For Linux and Unix Like Systems", "md_docs_build.html#autotoc_md6", null ]
+      ] ],
+      [ "Configuring Chronos", "md_docs_build.html#autotoc_md7", null ],
+      [ "Configuring Flags", "md_docs_build.html#autotoc_md8", [
+        [ "Available Flags", "md_docs_build.html#autotoc_md9", null ],
+        [ "CHRONOS_BUILD_EDITOR", "md_docs_build.html#autotoc_md10", null ],
+        [ "CHRONOS_BUILD_TESTS", "md_docs_build.html#autotoc_md11", null ],
+        [ "CHRONOS_ENABLE_PROFILING", "md_docs_build.html#autotoc_md12", null ],
+        [ "CHRONOS_ENABLE_VULKAN_VALIDATION_LAYERS", "md_docs_build.html#autotoc_md13", [
+          [ "What is Vulkan Validation layer:", "md_docs_build.html#autotoc_md14", null ]
+        ] ],
+        [ "Logging", "md_docs_build.html#autotoc_md15", [
+          [ "CHRONOS_ENABLE_ERROR_LOGGING", "md_docs_build.html#autotoc_md16", null ],
+          [ "CHRONOS_ENABLE_BASIC_LOGGING", "md_docs_build.html#autotoc_md17", null ],
+          [ "CHRONOS_ENABLE_VERBOSE_LOGGING", "md_docs_build.html#autotoc_md18", null ],
+          [ "CHRONOS_ENABLE_EXTREME_LOGGING", "md_docs_build.html#autotoc_md19", null ]
+        ] ]
+      ] ],
+      [ "Build Commands", "md_docs_build.html#autotoc_md20", null ],
+      [ "Compiling Shaders", "md_docs_build.html#autotoc_md21", null ]
+    ] ],
+    [ "Contributing", "Contributing.html", null ],
     [ "Examples", "Examples.html", [
-      [ "Examples", "Examples.html#autotoc_md0", null ]
+      [ "Examples", "Examples.html#autotoc_md22", null ]
     ] ],
+    [ "Issues", "Filing.html", null ],
+    [ "Used", "Libraries.html", null ],
     [ "Usage", "Usage.html", [
-      [ "Usage", "Usage.html#autotoc_md1", null ]
+      [ "Usage", "Usage.html#autotoc_md23", null ]
     ] ],
+    [ "the editor", "Using.html", null ],
     [ "it works", "How.html", [
-      [ "How It works", "How.html#autotoc_md2", null ]
+      [ "How It works", "How.html#autotoc_md24", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -80,9 +111,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Examples.html",
-"classChronos_1_1Engine_1_1SwapChain.html#aa8c764800b9a61a91a1e5e40e497bc03",
-"namespaceChronos_1_1Engine.html#a4cb0fad8419ed33393b0aaceb3153543"
+"Contributing.html",
+"classChronos_1_1Engine_1_1SwapChain.html#a82c322c6832487fce59a72117f280978",
+"md_docs_build.html#autotoc_md18"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
