@@ -11,6 +11,7 @@
 + [Configuring Flags](#configuring-flags)
 + [Build Commands](#build-commands)
 + [Compiling Shaders](#compiling-shaders)
++ [Building Documentation](#building-documentation)
 
 ## Cloning ##
 ### Make sure to clone this repo recursively. ###
@@ -168,3 +169,12 @@ Shaders are generally precompiled and this step is not neccessary. You may skip 
 
 If you do want to compile the shaders, install ```glslc```. On Windows this is bundled with Vulkan SDK . On Linux this is available from the package manager.
 Then just run ```compile.bat``` for windows or ```compile.sh``` for linux in the terminal.
+
+## Building Documentation ##
+
+Documentation can be found online at this [link](https://rahulvadhyar.github.io/Chronos/). However if you wish to build the documentation yourself, then install doxygen and run the below command from inside Chronos. The documentation can be viewed by opening doxygen/index.html
+
+```bash
+doxygen ChronosDoc
+```
+

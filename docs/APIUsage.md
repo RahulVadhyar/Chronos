@@ -1,6 +1,20 @@
-# Usage
+# API Usage
 
-* Example 1
+[TOC]
+
+## Table of Contents
++ Introduction
++ How to get started
++ Starting with an example
++ Important points to note
++ Some of the API functions explained in detail
++ How to profile
++ How to use editor for development
++ Do's and Don't's
+
+## Introduction
+
+## How to get Started
 
 This project is designed to be linked to your project with cmake. To link with cmake, install the dependencies as described [here](docs/build.md).
   After that, link it to cmake as follows using the following code as an example.
@@ -16,3 +30,16 @@ This project is designed to be linked to your project with cmake. To link with c
   add_subdirectory(path/to/Chronos)
   target_link_libraries(YourProject Chronos)
   ```
+
+
+## Starting with an example
+
+## Important points to note
+
+## Some of the API functions explained in detail
+
+## How to profile
+
+## How to use editor for development
+
+## Do's and Don't's
