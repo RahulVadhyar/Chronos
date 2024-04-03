@@ -1,8 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"md_docs_build.html#autotoc_md18":[1,4,5,2],
-"md_docs_build.html#autotoc_md19":[1,4,5,3],
-"md_docs_build.html#autotoc_md2":[1,1],
 "md_docs_build.html#autotoc_md20":[1,5],
 "md_docs_build.html#autotoc_md21":[1,6],
 "md_docs_build.html#autotoc_md3":[1,1,0],

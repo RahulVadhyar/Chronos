@@ -1,15 +1,5 @@
 var NAVTREEINDEX0 =
 {
-"Contributing.html":[2],
-"Examples.html":[3],
-"Examples.html#autotoc_md22":[3,0],
-"Filing.html":[4],
-"How.html":[8],
-"How.html#autotoc_md24":[8,0],
-"Libraries.html":[5],
-"Usage.html":[6],
-"Usage.html#autotoc_md23":[6,0],
-"Using.html":[7],
 "Vertex_8hpp.html":[11,0,2,3,0,20],
 "Vertex_8hpp_source.html":[11,0,2,3,0,20],
 "annotated.html":[10,0],
@@ -249,5 +239,15 @@ var NAVTREEINDEX0 =
 "classChronos_1_1Engine_1_1SwapChain.html#a24ae3a2025905fa8a724855c121fcda6":[10,0,0,1,19,8],
 "classChronos_1_1Engine_1_1SwapChain.html#a29872992a178cb1b2fd1c89fa141dfe4":[10,0,0,1,19,14],
 "classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb":[10,0,0,1,19,13],
-"classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5":[10,0,0,1,19,3]
+"classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5":[10,0,0,1,19,3],
+"classChronos_1_1Engine_1_1SwapChain.html#a82c322c6832487fce59a72117f280978":[10,0,0,1,19,11],
+"classChronos_1_1Engine_1_1SwapChain.html#a8d187933ff35d9ac2c09cce5b21b411e":[10,0,0,1,19,17],
+"classChronos_1_1Engine_1_1SwapChain.html#a8f9b8463fd4e77e094d2b8d2790421d4":[10,0,0,1,19,10],
+"classChronos_1_1Engine_1_1SwapChain.html#a9a6737e3c128f8a7a8287a444879d215":[10,0,0,1,19,9],
+"classChronos_1_1Engine_1_1SwapChain.html#aa8c764800b9a61a91a1e5e40e497bc03":[10,0,0,1,19,2],
+"classChronos_1_1Engine_1_1SwapChain.html#aace7d98c5402a9980de910d792cbc7e6":[10,0,0,1,19,18],
+"classChronos_1_1Engine_1_1SwapChain.html#ab319157d8020fdce9f8f4d5640be3786":[10,0,0,1,19,20],
+"classChronos_1_1Engine_1_1SwapChain.html#ab50ec3eb6293b1e2d52553ed5eeb7ec6":[10,0,0,1,19,15],
+"classChronos_1_1Engine_1_1SwapChain.html#ab62945a629a540f51adf21f82780fd7c":[10,0,0,1,19,7],
+"classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe":[10,0,0,1,19,6]
 };

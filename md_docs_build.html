@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('md_docs_build.html',''); initResizable
 <div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
 Table of Contents</h1>
 <ul>
-<li>[Cloning][#cloning]</li>
+<li><a href="#cloning">Cloning</a></li>
 <li><a href="#dependencies">Dependencies</a><ul>
 <li><a href="#for-windows">For Windows</a></li>
 <li><a href="#for-linux-and-unix-like-systems">For Linux and Unix-Like Systems</a></li>
@@ -147,20 +147,20 @@ For Windows</h2>
 For Linux and Unix Like Systems</h2>
 <p>This project uses GLM, GLFW, Vulkan Validation Layers. However we compile GLFW from source(its one of the submodules ;) )It also compiles GLFW from source(it is included as submodule) so we need its dependencies</p>
 <ul>
-<li><p class="startli">#### For Fedora, RHEL, CentOS and similar distributions: ####</p>
+<li><p class="startli"><b>For Fedora, RHEL, CentOS and similar distributions:</b></p>
 <p class="startli">Run the following terminal commands: </p><div class="fragment"><div class="line">sudo dnf install glm-devel vulkan-validation-layers glfw glfw-devel cmake gcc</div>
 <div class="line">sudo dnf builddep glfw glfw-devel</div>
 </div><!-- fragment --><p class="startli">We install all the dependencies that are needed by GLFW using the builddep command above.</p>
 <p class="startli">Optional: Install ninja-build and configure using ninja for faster build times.</p>
 </li>
-<li><p class="startli">#### For Ubuntu, Debian and similar distributions: ####</p>
+<li><p class="startli"><b>For Ubuntu, Debian and similar distributions:</b></p>
 <p class="startli">The following commands will install the dependencies needed to build this project</p>
 </li>
 </ul>
 <div class="fragment"><div class="line">sudo apt install libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libxext-dev libwayland-dev libxkbcommon-dev libvulkan-dev libglm-dev gcc-multilib g++-multilib libfreetype6-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev cmake</div>
 </div><!-- fragment --><p> Optional: Install ninja-build and generate using ninja for faster build times(if you know how to do this).</p>
 <ul>
-<li><p class="startli">#### For Other Linux and Unix-Like platforms: #### Due to the fact that this project is still in early development, I haven't tested this on anything other than Fedora Linux and Ubuntu Linux. However it should work on other systems. File an issue if you have any issues.</p>
+<li><p class="startli"><b>For Other Linux and Unix-Like platforms:</b> Due to the fact that this project is still in early development, I haven't tested this on anything other than Fedora Linux and Ubuntu Linux. However it should work on other systems. File an issue if you have any issues.</p>
 <p class="startli">We need the following packages or set of packages for compiling:</p><ul>
 <li>GLFW build dependencies(this includes the headers for X11 and Wayland)</li>
 <li>Compiler of choice(GCC or Clang)</li>

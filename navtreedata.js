@@ -26,17 +26,17 @@ var NAVTREE =
 [
   [ "Chronos", "index.html", [
     [ "Chronos(v0.0)", "index.html", [
-      [ "Cloning:", "index.html#autotoc_md36", [
-        [ "Make sure to clone this repo recursively.", "index.html#autotoc_md37", null ]
+      [ "Cloning:", "index.html#autotoc_md40", [
+        [ "Make sure to clone this repo recursively.", "index.html#autotoc_md41", null ]
       ] ],
-      [ "Table of Contents", "index.html#autotoc_md38", null ],
-      [ "What is Chronos?", "index.html#autotoc_md39", null ],
-      [ "Building Chronos", "index.html#autotoc_md40", null ],
-      [ "How To Use", "index.html#autotoc_md41", null ],
-      [ "How to file an issue", "index.html#autotoc_md42", null ],
-      [ "Libraries used", "index.html#autotoc_md43", null ],
-      [ "Contributing", "index.html#autotoc_md44", null ],
-      [ "FAQs", "index.html#autotoc_md45", null ]
+      [ "Table of Contents", "index.html#autotoc_md42", null ],
+      [ "What is Chronos?", "index.html#autotoc_md43", null ],
+      [ "Building Chronos", "index.html#autotoc_md44", null ],
+      [ "How To Use", "index.html#autotoc_md45", null ],
+      [ "How to file an issue", "index.html#autotoc_md46", null ],
+      [ "Libraries used", "index.html#autotoc_md47", null ],
+      [ "Contributing", "index.html#autotoc_md48", null ],
+      [ "FAQs", "index.html#autotoc_md49", null ]
     ] ],
     [ "Build Instructions", "md_docs_build.html", [
       [ "Table of Contents", "md_docs_build.html#autotoc_md1", null ],
@@ -66,19 +66,13 @@ var NAVTREE =
       [ "Build Commands", "md_docs_build.html#autotoc_md20", null ],
       [ "Compiling Shaders", "md_docs_build.html#autotoc_md21", null ]
     ] ],
-    [ "Contributing", "Contributing.html", null ],
-    [ "Examples", "Examples.html", [
-      [ "Examples", "Examples.html#autotoc_md22", null ]
-    ] ],
-    [ "Issues", "Filing.html", null ],
-    [ "Used", "Libraries.html", null ],
-    [ "Usage", "Usage.html", [
-      [ "Usage", "Usage.html#autotoc_md23", null ]
-    ] ],
-    [ "the editor", "Using.html", null ],
-    [ "it works", "How.html", [
-      [ "How It works", "How.html#autotoc_md24", null ]
-    ] ],
+    [ "Contributing", "md_docs_Contributing.html", null ],
+    [ "Examples", "md_docs_Examples.html", null ],
+    [ "Filing Issues", "md_docs_FilingIssues.html", null ],
+    [ "Libraries Used", "md_docs_LibrariesUsed.html", null ],
+    [ "Usage", "md_docs_Usage.html", null ],
+    [ "Using the editor", "md_docs_UsingEditor.html", null ],
+    [ "How It works", "md_docs_Working.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -111,9 +105,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Contributing.html",
-"classChronos_1_1Engine_1_1SwapChain.html#a82c322c6832487fce59a72117f280978",
-"md_docs_build.html#autotoc_md18"
+"Vertex_8hpp.html",
+"classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e",
+"md_docs_build.html#autotoc_md20"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
