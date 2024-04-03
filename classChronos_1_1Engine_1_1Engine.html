@@ -185,9 +185,6 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a45c7769114afb2cf3c9a10c049368fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4f93a5928076463872d2ab6fcfb7e29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Engine.html#af4f93a5928076463872d2ab6fcfb7e29">changePresentMode</a> ()</td></tr>
 <tr class="separator:af4f93a5928076463872d2ab6fcfb7e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1668ffbea544bc8c886b475af7f28b0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Engine.html#a1668ffbea544bc8c886b475af7f28b0f">showfps</a> ()</td></tr>
-<tr class="memdesc:a1668ffbea544bc8c886b475af7f28b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the FPS to the console.  <a href="classChronos_1_1Engine_1_1Engine.html#a1668ffbea544bc8c886b475af7f28b0f">More...</a><br /></td></tr>
-<tr class="separator:a1668ffbea544bc8c886b475af7f28b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -197,9 +194,6 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:af877a78d497b0d86b4254960fcf84f1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChronos_1_1Engine_1_1SwapChain.html">Chronos::Engine::SwapChain</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a> = <a class="el" href="classChronos_1_1Engine_1_1SwapChain.html">Chronos::Engine::SwapChain</a>()</td></tr>
 <tr class="memdesc:af877a78d497b0d86b4254960fcf84f1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the object that manages the swapchain.  <a href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">More...</a><br /></td></tr>
 <tr class="separator:af877a78d497b0d86b4254960fcf84f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a470065034b51af8fb9bd6c4958df2f60"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Engine.html#a470065034b51af8fb9bd6c4958df2f60">prev_time</a> = 0.0f</td></tr>
-<tr class="memdesc:a470065034b51af8fb9bd6c4958df2f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is used to store the absolute previous time by the showFPS function.  <a href="classChronos_1_1Engine_1_1Engine.html#a470065034b51af8fb9bd6c4958df2f60">More...</a><br /></td></tr>
-<tr class="separator:a470065034b51af8fb9bd6c4958df2f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7bdcb4c424429687b9a6b27a852a7d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Engine.html#ab7bdcb4c424429687b9a6b27a852a7d3">framebufferResized</a> = false</td></tr>
 <tr class="memdesc:ab7bdcb4c424429687b9a6b27a852a7d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does the framebuffer need to be resized?  <a href="classChronos_1_1Engine_1_1Engine.html#ab7bdcb4c424429687b9a6b27a852a7d3">More...</a><br /></td></tr>
 <tr class="separator:ab7bdcb4c424429687b9a6b27a852a7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -361,18 +355,18 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00395">395</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                                           {</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    vkDeviceWaitIdle(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>);</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#ab62945a629a540f51adf21f82780fd7c">recreate</a>();</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.recreate();</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.recreate();</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a144958b63850e3ac41c4f875aed17956">recreate</a>();</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a144958b63850e3ac41c4f875aed17956">recreate</a>();</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="preprocessor">    #ifdef ENABLE_EDITOR</span></div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    gui.recreate();</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00420">420</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                                           {</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    vkDeviceWaitIdle(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>);</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#ab62945a629a540f51adf21f82780fd7c">recreate</a>();</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.recreate();</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.recreate();</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a144958b63850e3ac41c4f875aed17956">recreate</a>();</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a144958b63850e3ac41c4f875aed17956">recreate</a>();</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="preprocessor">    #ifdef ENABLE_EDITOR</span></div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    gui.recreate();</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a12765ebca68b3aaa889a824fdfade9cd"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">Chronos::Engine::Engine::shapeManager</a></div><div class="ttdeci">Chronos::Engine::ShapeManager&lt; TexturedVertex &gt; shapeManager</div><div class="ttdoc">This is the main function that is used to add, remove and modify textured shapes(rectangles or triang...</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00080">engine.hpp:80</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a443de04f089d9814259caf3a4ea1c583"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">Chronos::Engine::Engine::colorShapeManager</a></div><div class="ttdeci">Chronos::Engine::ShapeManager&lt; ColorVertex &gt; colorShapeManager</div><div class="ttdoc">This is the main function that is used to add, remove and modify colored shapes(rectangles or triangl...</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00087">engine.hpp:87</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_aa79ab1f8cc0b0d5ebcfb4136c18699ed"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">Chronos::Engine::Engine::polygonManager</a></div><div class="ttdeci">Chronos::Engine::PolygonManager polygonManager</div><div class="ttdoc">Used to create and manage aribatry polygons.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00101">engine.hpp:101</a></div></div>
@@ -456,14 +450,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;GLFW cleaned up&quot;</span>);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a2c581e7cb6a00ef53003a9b8913e5396"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a2c581e7cb6a00ef53003a9b8913e5396">Chronos::Engine::Device::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">This is the function that destroys the device.</div><div class="ttdef"><b>Definition:</b> <a href="device_8cpp_source.html#l00019">device.cpp:19</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a0576a084f0980ed2dbbebf7335c0c119"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a0576a084f0980ed2dbbebf7335c0c119">Chronos::Engine::Engine::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdoc">The command Pool.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00270">engine.hpp:270</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a0ef741eacc3bb47a8dcd4aab0b530c2e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a0ef741eacc3bb47a8dcd4aab0b530c2e">Chronos::Engine::Engine::imageAvailableSemaphores</a></div><div class="ttdeci">std::vector&lt; VkSemaphore &gt; imageAvailableSemaphores</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00272">engine.hpp:272</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a14231fd3132dee3c7c675b8d1bfd10b9"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a14231fd3132dee3c7c675b8d1bfd10b9">Chronos::Engine::Engine::instance</a></div><div class="ttdeci">VkInstance instance</div><div class="ttdoc">The Vulkan instance.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00244">engine.hpp:244</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a2d025f55b44d3a56d01f2320bf1de742"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a2d025f55b44d3a56d01f2320bf1de742">Chronos::Engine::Engine::renderFinishedSemaphores</a></div><div class="ttdeci">std::vector&lt; VkSemaphore &gt; renderFinishedSemaphores</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00273">engine.hpp:273</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a2d8968ac621e29f56e7955d9ee320fb5"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">Chronos::Engine::Engine::inFlightFences</a></div><div class="ttdeci">std::vector&lt; VkFence &gt; inFlightFences</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00274">engine.hpp:274</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a0576a084f0980ed2dbbebf7335c0c119"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a0576a084f0980ed2dbbebf7335c0c119">Chronos::Engine::Engine::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdoc">The command Pool.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00262">engine.hpp:262</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a0ef741eacc3bb47a8dcd4aab0b530c2e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a0ef741eacc3bb47a8dcd4aab0b530c2e">Chronos::Engine::Engine::imageAvailableSemaphores</a></div><div class="ttdeci">std::vector&lt; VkSemaphore &gt; imageAvailableSemaphores</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00264">engine.hpp:264</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a14231fd3132dee3c7c675b8d1bfd10b9"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a14231fd3132dee3c7c675b8d1bfd10b9">Chronos::Engine::Engine::instance</a></div><div class="ttdeci">VkInstance instance</div><div class="ttdoc">The Vulkan instance.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00236">engine.hpp:236</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a2d025f55b44d3a56d01f2320bf1de742"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a2d025f55b44d3a56d01f2320bf1de742">Chronos::Engine::Engine::renderFinishedSemaphores</a></div><div class="ttdeci">std::vector&lt; VkSemaphore &gt; renderFinishedSemaphores</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00265">engine.hpp:265</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a2d8968ac621e29f56e7955d9ee320fb5"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">Chronos::Engine::Engine::inFlightFences</a></div><div class="ttdeci">std::vector&lt; VkFence &gt; inFlightFences</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00266">engine.hpp:266</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a489c5250f3c8e92c72e3c2240586e642"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642">Chronos::Engine::Engine::window</a></div><div class="ttdeci">GLFWwindow * window</div><div class="ttdoc">This is the GLFW window reference that is used by the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00116">engine.hpp:116</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_aa3cedc1828056f8515feef8ca0af12dd"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#aa3cedc1828056f8515feef8ca0af12dd">Chronos::Engine::Engine::textureManager</a></div><div class="ttdeci">Chronos::Engine::TextureManager textureManager</div><div class="ttdoc">Used to create and manage textures.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00094">engine.hpp:94</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ae12d40d93a89fb61496d452203fb0a9c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ae12d40d93a89fb61496d452203fb0a9c">Chronos::Engine::Engine::surface</a></div><div class="ttdeci">VkSurfaceKHR surface</div><div class="ttdoc">The surface to render to.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00262">engine.hpp:262</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ae12d40d93a89fb61496d452203fb0a9c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ae12d40d93a89fb61496d452203fb0a9c">Chronos::Engine::Engine::surface</a></div><div class="ttdeci">VkSurfaceKHR surface</div><div class="ttdoc">The surface to render to.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00254">engine.hpp:254</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_af1099ec61ecc8cc16b606d526e981709"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#af1099ec61ecc8cc16b606d526e981709">Chronos::Engine::ObjectManager::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">Destroys resources associated with the ObjectManager.</div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_aa8c764800b9a61a91a1e5e40e497bc03"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#aa8c764800b9a61a91a1e5e40e497bc03">Chronos::Engine::SwapChain::cleanup</a></div><div class="ttdeci">void cleanup()</div><div class="ttdoc">Cleans up the assets that are rendered invalid during MSAA changes or swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8cpp_source.html#l00157">swapchain.cpp:157</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TextureManager_html_a3c81f8bca94b1cac2d763adb36cdc84d"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextureManager.html#a3c81f8bca94b1cac2d763adb36cdc84d">Chronos::Engine::TextureManager::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">Destroys the texture manager.</div><div class="ttdef"><b>Definition:</b> <a href="textureManager_8cpp_source.html#l00026">textureManager.cpp:26</a></div></div>
@@ -499,56 +493,56 @@ Here is the call graph for this function:</div>
 <p>Creates a vulkan instance. </p>
 <p>This function sets some of the information about our app. It enables all the extensions and validation layers. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00287">287</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;{</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    VkApplicationInfo appInfo {};</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    appInfo.pApplicationName = GAME_NAME;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    appInfo.applicationVersion = VK_MAKE_VERSION(GAME_VERSION_MAJOR, GAME_VERSION_MINOR, GAME_VERSION_PATCH);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    appInfo.pEngineName = <span class="stringliteral">&quot;Chronos&quot;</span>;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    appInfo.engineVersion = VK_MAKE_VERSION(CHRONOS_VERSION_MAJOR, CHRONOS_VERSION_MINOR, CHRONOS_VERSION_PATCH);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="comment">// using vulkan 1.3 as we need shader printf support</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    appInfo.apiVersion = VK_API_VERSION_1_0;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;engine version: &quot;</span> + std::to_string(CHRONOS_VERSION_MAJOR) + <span class="stringliteral">&quot;.&quot;</span> + std::to_string(CHRONOS_VERSION_MINOR) + <span class="stringliteral">&quot;.&quot;</span> + std::to_string(CHRONOS_VERSION_PATCH));</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;game version: &quot;</span> + std::to_string(GAME_VERSION_MAJOR) + <span class="stringliteral">&quot;.&quot;</span> + std::to_string(GAME_VERSION_MINOR) + <span class="stringliteral">&quot;.&quot;</span> + std::to_string(GAME_VERSION_PATCH));</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;game name: &quot;</span> + std::string(GAME_NAME));</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    VkInstanceCreateInfo createInfo {};</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    createInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    createInfo.pApplicationInfo = &amp;appInfo;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    uint32_t glfwExtensionCount = 0;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>** glfwExtensions;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    glfwExtensions = glfwGetRequiredInstanceExtensions(&amp;glfwExtensionCount);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keyword">auto</span> extensions = <a class="code" href="namespaceChronos_1_1Engine.html#a35cd835c537872d49915832ce7979b5c">getRequiredExtensions</a>();</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    createInfo.enabledExtensionCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(extensions.size());</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    createInfo.ppEnabledExtensionNames = extensions.data();</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">#ifdef ENABLE_VULKAN_VALIDATION_LAYERS</span></div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">if</span> (!checkValidationLayerSupport()) {</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Validation layers requested, but not available&quot;</span>);</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Validation layers requested, but not available&quot;</span>);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    }</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    VkDebugUtilsMessengerCreateInfoEXT debugCreateInfo {};</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    createInfo.enabledLayerCount = 0;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    createInfo.pNext = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="preprocessor">#ifdef ENABLE_VULKAN_VALIDATION_LAYERS</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        createInfo.enabledLayerCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(validationLayers.size());</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        createInfo.ppEnabledLayerNames = validationLayers.data();</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="comment">// uncomment below if u need fine details. It just creates extra verbose</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="comment">// generally not needed</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="comment">//  populateDebugMessengerCreateInfo(debugCreateInfo);</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="comment">//  createInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT*)&amp;debugCreateInfo;</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">if</span> (vkCreateInstance(&amp;createInfo, <span class="keyword">nullptr</span>, &amp;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a14231fd3132dee3c7c675b8d1bfd10b9">instance</a>) != VK_SUCCESS) {</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Failed to create instance&quot;</span>);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to create instance&quot;</span>);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    }</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00312">312</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;{</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    VkApplicationInfo appInfo {};</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    appInfo.pApplicationName = GAME_NAME;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    appInfo.applicationVersion = VK_MAKE_VERSION(GAME_VERSION_MAJOR, GAME_VERSION_MINOR, GAME_VERSION_PATCH);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    appInfo.pEngineName = <span class="stringliteral">&quot;Chronos&quot;</span>;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    appInfo.engineVersion = VK_MAKE_VERSION(CHRONOS_VERSION_MAJOR, CHRONOS_VERSION_MINOR, CHRONOS_VERSION_PATCH);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="comment">// using vulkan 1.3 as we need shader printf support</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    appInfo.apiVersion = VK_API_VERSION_1_0;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;engine version: &quot;</span> + std::to_string(CHRONOS_VERSION_MAJOR) + <span class="stringliteral">&quot;.&quot;</span> + std::to_string(CHRONOS_VERSION_MINOR) + <span class="stringliteral">&quot;.&quot;</span> + std::to_string(CHRONOS_VERSION_PATCH));</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;game version: &quot;</span> + std::to_string(GAME_VERSION_MAJOR) + <span class="stringliteral">&quot;.&quot;</span> + std::to_string(GAME_VERSION_MINOR) + <span class="stringliteral">&quot;.&quot;</span> + std::to_string(GAME_VERSION_PATCH));</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;game name: &quot;</span> + std::string(GAME_NAME));</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    VkInstanceCreateInfo createInfo {};</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    createInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    createInfo.pApplicationInfo = &amp;appInfo;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    uint32_t glfwExtensionCount = 0;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>** glfwExtensions;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    glfwExtensions = glfwGetRequiredInstanceExtensions(&amp;glfwExtensionCount);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keyword">auto</span> extensions = <a class="code" href="namespaceChronos_1_1Engine.html#a35cd835c537872d49915832ce7979b5c">getRequiredExtensions</a>();</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    createInfo.enabledExtensionCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(extensions.size());</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    createInfo.ppEnabledExtensionNames = extensions.data();</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="preprocessor">#ifdef ENABLE_VULKAN_VALIDATION_LAYERS</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordflow">if</span> (!checkValidationLayerSupport()) {</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Validation layers requested, but not available&quot;</span>);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Validation layers requested, but not available&quot;</span>);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    }</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    VkDebugUtilsMessengerCreateInfoEXT debugCreateInfo {};</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    createInfo.enabledLayerCount = 0;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    createInfo.pNext = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor">#ifdef ENABLE_VULKAN_VALIDATION_LAYERS</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        createInfo.enabledLayerCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(validationLayers.size());</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        createInfo.ppEnabledLayerNames = validationLayers.data();</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="comment">// uncomment below if u need fine details. It just creates extra verbose</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="comment">// generally not needed</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="comment">//  populateDebugMessengerCreateInfo(debugCreateInfo);</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="comment">//  createInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT*)&amp;debugCreateInfo;</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">if</span> (vkCreateInstance(&amp;createInfo, <span class="keyword">nullptr</span>, &amp;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a14231fd3132dee3c7c675b8d1bfd10b9">instance</a>) != VK_SUCCESS) {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Failed to create instance&quot;</span>);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to create instance&quot;</span>);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    }</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;}</div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_a35cd835c537872d49915832ce7979b5c"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a35cd835c537872d49915832ce7979b5c">Chronos::Engine::getRequiredExtensions</a></div><div class="ttdeci">std::vector&lt; const char * &gt; getRequiredExtensions()</div><div class="ttdoc">Gets the required extensions to be enabled.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00105">helper.cpp:105</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="helper_8cpp_source.html#l00105">Chronos::Engine::getRequiredExtensions()</a>, and <a class="el" href="logging_8hpp_source.html#l00015">LOG</a>.</p>
@@ -589,13 +583,13 @@ Here is the call graph for this function:</div>
 
 <p>Creates the surface to render to. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00352">352</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;{</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keywordflow">if</span> (glfwCreateWindowSurface(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a14231fd3132dee3c7c675b8d1bfd10b9">instance</a>, <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642">window</a>, <span class="keyword">nullptr</span>, &amp;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#ae12d40d93a89fb61496d452203fb0a9c">surface</a>) != VK_SUCCESS) {</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Failed to create window surface&quot;</span>);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to create window surface&quot;</span>);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    }</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00377">377</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;{</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordflow">if</span> (glfwCreateWindowSurface(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a14231fd3132dee3c7c675b8d1bfd10b9">instance</a>, <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642">window</a>, <span class="keyword">nullptr</span>, &amp;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#ae12d40d93a89fb61496d452203fb0a9c">surface</a>) != VK_SUCCESS) {</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Failed to create window surface&quot;</span>);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to create window surface&quot;</span>);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    }</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="logging_8hpp_source.html#l00015">LOG</a>.</p>
 
@@ -632,33 +626,33 @@ Here is the call graph for this function:</div>
 <li>In Flight fences to ensure that the renderer is synchronized with the GPU </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00360">360</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;{</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a0ef741eacc3bb47a8dcd4aab0b530c2e">imageAvailableSemaphores</a>.resize(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d025f55b44d3a56d01f2320bf1de742">renderFinishedSemaphores</a>.resize(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">inFlightFences</a>.resize(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    VkSemaphoreCreateInfo semaphoreInfo {};</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    semaphoreInfo.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    VkFenceCreateInfo fenceInfo {};</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    fenceInfo.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    fenceInfo.flags = VK_FENCE_CREATE_SIGNALED_BIT;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="keywordflow">if</span> (vkCreateSemaphore(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, &amp;semaphoreInfo, <span class="keyword">nullptr</span>,</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                &amp;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a0ef741eacc3bb47a8dcd4aab0b530c2e">imageAvailableSemaphores</a>[i])</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                != VK_SUCCESS</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            || vkCreateSemaphore(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, &amp;semaphoreInfo, <span class="keyword">nullptr</span>,</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                   &amp;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d025f55b44d3a56d01f2320bf1de742">renderFinishedSemaphores</a>[i])</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                != VK_SUCCESS</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            || vkCreateFence(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, &amp;fenceInfo, <span class="keyword">nullptr</span>, &amp;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">inFlightFences</a>[i]) != VK_SUCCESS) {</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Failed to create synchronization objects for a frame&quot;</span>);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                <span class="stringliteral">&quot;failed to create synchronization objects for a frame!&quot;</span>);</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        }</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    }</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00385">385</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;{</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a0ef741eacc3bb47a8dcd4aab0b530c2e">imageAvailableSemaphores</a>.resize(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d025f55b44d3a56d01f2320bf1de742">renderFinishedSemaphores</a>.resize(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">inFlightFences</a>.resize(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    VkSemaphoreCreateInfo semaphoreInfo {};</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    semaphoreInfo.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    VkFenceCreateInfo fenceInfo {};</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    fenceInfo.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    fenceInfo.flags = VK_FENCE_CREATE_SIGNALED_BIT;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keywordflow">if</span> (vkCreateSemaphore(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, &amp;semaphoreInfo, <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                &amp;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a0ef741eacc3bb47a8dcd4aab0b530c2e">imageAvailableSemaphores</a>[i])</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                != VK_SUCCESS</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            || vkCreateSemaphore(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, &amp;semaphoreInfo, <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                   &amp;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d025f55b44d3a56d01f2320bf1de742">renderFinishedSemaphores</a>[i])</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                != VK_SUCCESS</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            || vkCreateFence(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, &amp;fenceInfo, <span class="keyword">nullptr</span>, &amp;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">inFlightFences</a>[i]) != VK_SUCCESS) {</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Failed to create synchronization objects for a frame&quot;</span>);</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                <span class="stringliteral">&quot;failed to create synchronization objects for a frame!&quot;</span>);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        }</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    }</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="logging_8hpp_source.html#l00015">LOG</a>, and <a class="el" href="vulkanHeaders_8hpp_source.html#l00030">MAX_FRAMES_IN_FLIGHT</a>.</p>
 
@@ -702,139 +696,164 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">// wait for the previous frame to finish</span></div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    glfwPollEvents();</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    vkWaitForFences(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, 1, &amp;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">inFlightFences</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>], VK_TRUE,</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        UINT64_MAX);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">// get the index of the next image to render to</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    uint32_t imageIndex;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    VkResult result = vkAcquireNextImageKHR(</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#ab50ec3eb6293b1e2d52553ed5eeb7ec6">swapChain</a>, UINT64_MAX,</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a0ef741eacc3bb47a8dcd4aab0b530c2e">imageAvailableSemaphores</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>], VK_NULL_HANDLE, &amp;imageIndex);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">// if window has been minimized, then recreate the swap chain and other things</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">if</span> (result == VK_ERROR_OUT_OF_DATE_KHR) {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#ab62945a629a540f51adf21f82780fd7c">recreate</a>();</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Swapchain recreated&quot;</span>);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.recreate();</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Shape manager recreated&quot;</span>);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.recreate();</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Color shape manager recreated&quot;</span>);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a144958b63850e3ac41c4f875aed17956">recreate</a>();</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Text manager recreated&quot;</span>);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a144958b63850e3ac41c4f875aed17956">recreate</a>();</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Polygon manager recreated&quot;</span>);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        gui.recreate();</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Editor recreated&quot;</span>);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (result != VK_SUCCESS &amp;&amp; result != VK_SUBOPTIMAL_KHR) {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Failed to acquire swap chain image&quot;</span>);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to acquire swap chain image&quot;</span>);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="comment">// update the shapes and text</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.update(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.update(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#ab6d2da00f56ad678931da06cb4d0e7ac">update</a>(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#ab6d2da00f56ad678931da06cb4d0e7ac">update</a>(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    gui.update();</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(4, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Managers updated&quot;</span>);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">// reset the fences</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    vkResetFences(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, 1, &amp;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">inFlightFences</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>]);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="comment">// record the command buffers</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.render(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>, imageIndex, <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">bgColor</a>);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.render(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>, imageIndex, <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">bgColor</a>);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1TextManager.html#a394c61ace78db87785baae88de717191">render</a>(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>, imageIndex, <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">bgColor</a>);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1PolygonManager.html#a5d0881f297bd7a22252ab2ad2de3ebf7">render</a>(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>, imageIndex, <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">bgColor</a>);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    gui.render(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>, imageIndex, <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">bgColor</a>);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(4, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Managers command buffers recorded&quot;</span>)</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="comment">// configure the semaphores</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    VkSemaphore waitSemaphores[] = { <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a0ef741eacc3bb47a8dcd4aab0b530c2e">imageAvailableSemaphores</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>] };</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    VkPipelineStageFlags waitStages[] = {</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    };</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    VkSemaphore signalSemaphores[] = { <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d025f55b44d3a56d01f2320bf1de742">renderFinishedSemaphores</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>] };</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="comment">// submit the command buffers</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    std::vector&lt;VkCommandBuffer&gt; submitCommandBuffers;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    submitCommandBuffers.push_back(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.commandBuffers[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>]);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    submitCommandBuffers.push_back(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.commandBuffers[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>]);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    submitCommandBuffers.push_back(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">commandBuffers</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>]);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    submitCommandBuffers.push_back(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">commandBuffers</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>]);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    submitCommandBuffers.push_back(gui.commandBuffers[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>]);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    VkSubmitInfo submitInfo {};</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    submitInfo.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    submitInfo.waitSemaphoreCount = 1;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    submitInfo.pWaitSemaphores = waitSemaphores;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    submitInfo.pWaitDstStageMask = waitStages;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    submitInfo.commandBufferCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(submitCommandBuffers.size());</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    submitInfo.pCommandBuffers = submitCommandBuffers.data();</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    submitInfo.signalSemaphoreCount = 1;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    submitInfo.pSignalSemaphores = signalSemaphores;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">if</span> (vkQueueSubmit(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#ac2609e8515d57e873e3da13599452cf9">graphicsQueue</a>, 1, &amp;submitInfo,</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">inFlightFences</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>])</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        != VK_SUCCESS) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Failed to submit draw command buffer&quot;</span>);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to submit draw command buffer!&quot;</span>);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    }</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(4, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Command buffers submitted&quot;</span>);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    gui.renderAdditionalViewports();</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="comment">// present the image</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    VkPresentInfoKHR presentInfo {};</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    presentInfo.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    presentInfo.waitSemaphoreCount = 1;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    presentInfo.pWaitSemaphores = signalSemaphores;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    VkSwapchainKHR swapChains[] = { <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#ab50ec3eb6293b1e2d52553ed5eeb7ec6">swapChain</a> };</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    presentInfo.swapchainCount = 1;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    presentInfo.pSwapchains = swapChains;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    presentInfo.pImageIndices = &amp;imageIndex;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    presentInfo.pResults = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    result = vkQueuePresentKHR(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a671f38eeab8280bd4b878bc9c04544a2">presentQueue</a>, &amp;presentInfo);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">if</span> (result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR || <a class="code" href="classChronos_1_1Engine_1_1Engine.html#ab7bdcb4c424429687b9a6b27a852a7d3">framebufferResized</a>) {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#ab7bdcb4c424429687b9a6b27a852a7d3">framebufferResized</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#ab62945a629a540f51adf21f82780fd7c">recreate</a>();</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Swapchain recreated&quot;</span>);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.recreate();</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Shape Manager recreated&quot;</span>);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.recreate();</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Color Shape Manager recreated&quot;</span>);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a144958b63850e3ac41c4f875aed17956">recreate</a>();</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Text Manager recreated&quot;</span>);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a144958b63850e3ac41c4f875aed17956">recreate</a>();</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;polygon Manager recreated&quot;</span>);</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        gui.recreate();</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Editor recreated&quot;</span>);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (result != VK_SUCCESS) {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Failed to present swap chain image&quot;</span>);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to present swap chain image&quot;</span>);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    }</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="comment">// update the current frame</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a> = (<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a> + 1) % <a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(4, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Current frame is &quot;</span> + std::to_string(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>));</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#ifdef CHRONOS_PROFILING</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    vkWaitForFences(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, 1, &amp;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">inFlightFences</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>], VK_TRUE,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        UINT64_MAX);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#ifdef CHRONOS_PROFILING</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    this-&gt;waitTime = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(std::chrono::steady_clock::now() - start).count();</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">// get the index of the next image to render to</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    uint32_t imageIndex;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    VkResult result = vkAcquireNextImageKHR(</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#ab50ec3eb6293b1e2d52553ed5eeb7ec6">swapChain</a>, UINT64_MAX,</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a0ef741eacc3bb47a8dcd4aab0b530c2e">imageAvailableSemaphores</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>], VK_NULL_HANDLE, &amp;imageIndex);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">// if window has been minimized, then recreate the swap chain and other things</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">if</span> (result == VK_ERROR_OUT_OF_DATE_KHR) {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#ab62945a629a540f51adf21f82780fd7c">recreate</a>();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Swapchain recreated&quot;</span>);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.recreate();</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Shape manager recreated&quot;</span>);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.recreate();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Color shape manager recreated&quot;</span>);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a144958b63850e3ac41c4f875aed17956">recreate</a>();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Text manager recreated&quot;</span>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a144958b63850e3ac41c4f875aed17956">recreate</a>();</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Polygon manager recreated&quot;</span>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        gui.recreate();</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Editor recreated&quot;</span>);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (result != VK_SUCCESS &amp;&amp; result != VK_SUBOPTIMAL_KHR) {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Failed to acquire swap chain image&quot;</span>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to acquire swap chain image&quot;</span>);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">#ifdef CHRONOS_PROFILING</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keyword">auto</span> startUpdate = std::chrono::steady_clock::now();</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// update the shapes and text</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.update(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.update(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#ab6d2da00f56ad678931da06cb4d0e7ac">update</a>(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#ab6d2da00f56ad678931da06cb4d0e7ac">update</a>(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    gui.update();</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">#ifdef CHRONOS_PROFILING</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    this-&gt;updateTime = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(std::chrono::steady_clock::now() - startUpdate).count();</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(4, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Managers updated&quot;</span>);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="comment">// reset the fences</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    vkResetFences(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, 1, &amp;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">inFlightFences</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>]);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="comment">// record the command buffers</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.render(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>, imageIndex, <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">bgColor</a>);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.render(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>, imageIndex, <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">bgColor</a>);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1TextManager.html#a394c61ace78db87785baae88de717191">render</a>(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>, imageIndex, <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">bgColor</a>);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1PolygonManager.html#a5d0881f297bd7a22252ab2ad2de3ebf7">render</a>(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>, imageIndex, <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">bgColor</a>);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    gui.render(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>, imageIndex, <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">bgColor</a>);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(4, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Managers command buffers recorded&quot;</span>)</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">// configure the semaphores</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    VkSemaphore waitSemaphores[] = { <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a0ef741eacc3bb47a8dcd4aab0b530c2e">imageAvailableSemaphores</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>] };</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    VkPipelineStageFlags waitStages[] = {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    };</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    VkSemaphore signalSemaphores[] = { <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d025f55b44d3a56d01f2320bf1de742">renderFinishedSemaphores</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>] };</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="comment">// submit the command buffers</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    std::vector&lt;VkCommandBuffer&gt; submitCommandBuffers;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    submitCommandBuffers.push_back(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.commandBuffers[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>]);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    submitCommandBuffers.push_back(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.commandBuffers[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>]);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    submitCommandBuffers.push_back(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">commandBuffers</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>]);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    submitCommandBuffers.push_back(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">commandBuffers</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>]);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    submitCommandBuffers.push_back(gui.commandBuffers[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>]);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    VkSubmitInfo submitInfo {};</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    submitInfo.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    submitInfo.waitSemaphoreCount = 1;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    submitInfo.pWaitSemaphores = waitSemaphores;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    submitInfo.pWaitDstStageMask = waitStages;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    submitInfo.commandBufferCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(submitCommandBuffers.size());</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    submitInfo.pCommandBuffers = submitCommandBuffers.data();</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    submitInfo.signalSemaphoreCount = 1;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    submitInfo.pSignalSemaphores = signalSemaphores;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">if</span> (vkQueueSubmit(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#ac2609e8515d57e873e3da13599452cf9">graphicsQueue</a>, 1, &amp;submitInfo,</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">inFlightFences</a>[<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>])</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        != VK_SUCCESS) {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Failed to submit draw command buffer&quot;</span>);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to submit draw command buffer!&quot;</span>);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(4, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Command buffers submitted&quot;</span>);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    gui.renderAdditionalViewports();</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="preprocessor">#ifdef CHRONOS_PROFILING</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    this-&gt;cpuTime = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(std::chrono::steady_clock::now() - start).count();</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keyword">auto</span> startPresent = std::chrono::steady_clock::now();</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="comment">// present the image</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    VkPresentInfoKHR presentInfo {};</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    presentInfo.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    presentInfo.waitSemaphoreCount = 1;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    presentInfo.pWaitSemaphores = signalSemaphores;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    VkSwapchainKHR swapChains[] = { <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#ab50ec3eb6293b1e2d52553ed5eeb7ec6">swapChain</a> };</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    presentInfo.swapchainCount = 1;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    presentInfo.pSwapchains = swapChains;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    presentInfo.pImageIndices = &amp;imageIndex;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    presentInfo.pResults = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    result = vkQueuePresentKHR(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a671f38eeab8280bd4b878bc9c04544a2">presentQueue</a>, &amp;presentInfo);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">if</span> (result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR || <a class="code" href="classChronos_1_1Engine_1_1Engine.html#ab7bdcb4c424429687b9a6b27a852a7d3">framebufferResized</a>) {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#ab7bdcb4c424429687b9a6b27a852a7d3">framebufferResized</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#ab62945a629a540f51adf21f82780fd7c">recreate</a>();</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Swapchain recreated&quot;</span>);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">shapeManager</a>.recreate();</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Shape Manager recreated&quot;</span>);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">colorShapeManager</a>.recreate();</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Color Shape Manager recreated&quot;</span>);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a144958b63850e3ac41c4f875aed17956">recreate</a>();</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Text Manager recreated&quot;</span>);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">polygonManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a144958b63850e3ac41c4f875aed17956">recreate</a>();</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;polygon Manager recreated&quot;</span>);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        gui.recreate();</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Editor recreated&quot;</span>);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (result != VK_SUCCESS) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Failed to present swap chain image&quot;</span>);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to present swap chain image&quot;</span>);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="preprocessor">#ifdef CHRONOS_PROFILING</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    this-&gt;presentTime = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(std::chrono::steady_clock::now() - startPresent).count();</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    this-&gt;totalTime = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(std::chrono::steady_clock::now() - start).count();</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="comment">// update the current frame</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a> = (<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a> + 1) % <a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(4, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Current frame is &quot;</span> + std::to_string(<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">currentFrame</a>));</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a671f38eeab8280bd4b878bc9c04544a2"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a671f38eeab8280bd4b878bc9c04544a2">Chronos::Engine::Device::presentQueue</a></div><div class="ttdeci">VkQueue presentQueue</div><div class="ttdoc">This is the queue that is used for presentation of the rendered frames.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00038">device.hpp:38</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_ac2609e8515d57e873e3da13599452cf9"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#ac2609e8515d57e873e3da13599452cf9">Chronos::Engine::Device::graphicsQueue</a></div><div class="ttdeci">VkQueue graphicsQueue</div><div class="ttdoc">This is the queue that is used for graphics rendering.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00033">device.hpp:33</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a00087dabb9938a55399e2c8b58ba7f7c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">Chronos::Engine::Engine::currentFrame</a></div><div class="ttdeci">uint32_t currentFrame</div><div class="ttdoc">The current frame to be rendered to.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00236">engine.hpp:236</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a00087dabb9938a55399e2c8b58ba7f7c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">Chronos::Engine::Engine::currentFrame</a></div><div class="ttdeci">uint32_t currentFrame</div><div class="ttdoc">The current frame to be rendered to.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00228">engine.hpp:228</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a50165316b5c0c709684961a5ca60011e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">Chronos::Engine::Engine::bgColor</a></div><div class="ttdeci">float bgColor[3]</div><div class="ttdoc">This is the background color of the window.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00124">engine.hpp:124</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ab7bdcb4c424429687b9a6b27a852a7d3"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ab7bdcb4c424429687b9a6b27a852a7d3">Chronos::Engine::Engine::framebufferResized</a></div><div class="ttdeci">bool framebufferResized</div><div class="ttdoc">Does the framebuffer need to be resized?</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00229">engine.hpp:229</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_af4f93a5928076463872d2ab6fcfb7e29"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#af4f93a5928076463872d2ab6fcfb7e29">Chronos::Engine::Engine::changePresentMode</a></div><div class="ttdeci">void changePresentMode()</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00395">engine.cpp:395</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ab7bdcb4c424429687b9a6b27a852a7d3"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ab7bdcb4c424429687b9a6b27a852a7d3">Chronos::Engine::Engine::framebufferResized</a></div><div class="ttdeci">bool framebufferResized</div><div class="ttdoc">Does the framebuffer need to be resized?</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00221">engine.hpp:221</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_af4f93a5928076463872d2ab6fcfb7e29"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#af4f93a5928076463872d2ab6fcfb7e29">Chronos::Engine::Engine::changePresentMode</a></div><div class="ttdeci">void changePresentMode()</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00420">engine.cpp:420</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a3cf7995633555faa52870bcdd745a70e"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">Chronos::Engine::ObjectManager::commandBuffers</a></div><div class="ttdeci">std::vector&lt; VkCommandBuffer &gt; commandBuffers</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00033">objectManager.hpp:33</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_ab6d2da00f56ad678931da06cb4d0e7ac"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#ab6d2da00f56ad678931da06cb4d0e7ac">Chronos::Engine::ObjectManager::update</a></div><div class="ttdeci">void update(uint32_t currentFrame)</div><div class="ttdoc">Updates the objects managed by the ObjectManager.</div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1PolygonManager_html_a5d0881f297bd7a22252ab2ad2de3ebf7"><div class="ttname"><a href="classChronos_1_1Engine_1_1PolygonManager.html#a5d0881f297bd7a22252ab2ad2de3ebf7">Chronos::Engine::PolygonManager::render</a></div><div class="ttdeci">void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])</div><div class="ttdoc">Records the commands needed for rendering the shapes.</div><div class="ttdef"><b>Definition:</b> <a href="polygonManager_8cpp_source.html#l00015">polygonManager.cpp:15</a></div></div>
@@ -917,9 +936,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a66e307ea98c1eb761c90b4acd9c3752a"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a66e307ea98c1eb761c90b4acd9c3752a">Chronos::Engine::Device::init</a></div><div class="ttdeci">void init(VkInstance instance, VkSurfaceKHR surface)</div><div class="ttdoc">This is the function that initializes the devices and queues.</div><div class="ttdef"><b>Definition:</b> <a href="device_8cpp_source.html#l00011">device.cpp:11</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a2b1cad0d764a37e732adbf39e787c904"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a2b1cad0d764a37e732adbf39e787c904">Chronos::Engine::Engine::createSurface</a></div><div class="ttdeci">void createSurface()</div><div class="ttdoc">Creates the surface to render to.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00352">engine.cpp:352</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a45c7769114afb2cf3c9a10c049368fe6"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a45c7769114afb2cf3c9a10c049368fe6">Chronos::Engine::Engine::createSyncObjects</a></div><div class="ttdeci">void createSyncObjects()</div><div class="ttdoc">Creates sync objects for rendering.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00360">engine.cpp:360</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a4be8d1abd5f346749a04f0c82510965a"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a4be8d1abd5f346749a04f0c82510965a">Chronos::Engine::Engine::createInstance</a></div><div class="ttdeci">void createInstance()</div><div class="ttdoc">Creates a vulkan instance.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00287">engine.cpp:287</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a2b1cad0d764a37e732adbf39e787c904"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a2b1cad0d764a37e732adbf39e787c904">Chronos::Engine::Engine::createSurface</a></div><div class="ttdeci">void createSurface()</div><div class="ttdoc">Creates the surface to render to.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00377">engine.cpp:377</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a45c7769114afb2cf3c9a10c049368fe6"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a45c7769114afb2cf3c9a10c049368fe6">Chronos::Engine::Engine::createSyncObjects</a></div><div class="ttdeci">void createSyncObjects()</div><div class="ttdoc">Creates sync objects for rendering.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00385">engine.cpp:385</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a4be8d1abd5f346749a04f0c82510965a"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a4be8d1abd5f346749a04f0c82510965a">Chronos::Engine::Engine::createInstance</a></div><div class="ttdeci">void createInstance()</div><div class="ttdoc">Creates a vulkan instance.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00312">engine.cpp:312</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a0ba9500496ff88214ea2343c48c477cc"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a0ba9500496ff88214ea2343c48c477cc">Chronos::Engine::ObjectManager::init</a></div><div class="ttdeci">void init(Chronos::Engine::Device *device, Chronos::Engine::SwapChain *swapChain, VkCommandPool commandPool)</div><div class="ttdoc">Initializes the ObjectManager.</div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_a29872992a178cb1b2fd1c89fa141dfe4"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#a29872992a178cb1b2fd1c89fa141dfe4">Chronos::Engine::SwapChain::surface</a></div><div class="ttdeci">VkSurfaceKHR surface</div><div class="ttdoc">Surface to which we need to present the swapchain images.</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8hpp_source.html#l00114">swapchain.hpp:114</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_ace1a08ad6430f336d2560ad737e60fbe"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe">Chronos::Engine::SwapChain::init</a></div><div class="ttdeci">void init(Chronos::Engine::Device *device, VkSurfaceKHR surface, GLFWwindow *window)</div><div class="ttdoc">Initilize the swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8cpp_source.html#l00071">swapchain.cpp:71</a></div></div>
@@ -1090,22 +1109,22 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00407">407</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                                                      {</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordflow">if</span>(mode == <span class="stringliteral">&quot;immediate&quot;</span>){</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_IMMEDIATE_KHR;</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    }  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(mode == <span class="stringliteral">&quot;fifo&quot;</span>){</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_FIFO_KHR;</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(mode == <span class="stringliteral">&quot;fifo_relaxed&quot;</span>){</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_FIFO_RELAXED_KHR;</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(mode == <span class="stringliteral">&quot;mailbox&quot;</span>){</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_MAILBOX_KHR;</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid present mode&quot;</span>);</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    }</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a24ae3a2025905fa8a724855c121fcda6">changePresentMode</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Present mode set to &quot;</span> + mode);</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00432">432</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                                                      {</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordflow">if</span>(mode == <span class="stringliteral">&quot;immediate&quot;</span>){</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_IMMEDIATE_KHR;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    }  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(mode == <span class="stringliteral">&quot;fifo&quot;</span>){</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_FIFO_KHR;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(mode == <span class="stringliteral">&quot;fifo_relaxed&quot;</span>){</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_FIFO_RELAXED_KHR;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(mode == <span class="stringliteral">&quot;mailbox&quot;</span>){</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_MAILBOX_KHR;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid present mode&quot;</span>);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    }</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a24ae3a2025905fa8a724855c121fcda6">changePresentMode</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Present mode set to &quot;</span> + mode);</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_a5e8b76c0a36ee9b9a7031961c55107eb"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">Chronos::Engine::SwapChain::preferredPresentMode</a></div><div class="ttdeci">VkPresentModeKHR preferredPresentMode</div><div class="ttdoc">Preferred present mode for the swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8hpp_source.html#l00135">swapchain.hpp:135</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="logging_8hpp_source.html#l00015">LOG</a>.</p>
@@ -1118,45 +1137,6 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classChronos_1_1Manager_1_1Manager.html#a771cc5ec3e2e0827454ba27fcc8343b0" title="Changes the present mode of the swapchain." alt="" coords="5,5,211,47"/>
 </map>
 </div>
-
-</div>
-</div>
-<a id="a1668ffbea544bc8c886b475af7f28b0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1668ffbea544bc8c886b475af7f28b0f">&#9670;&nbsp;</a></span>showfps()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Chronos::Engine::Engine::showfps </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Displays the FPS to the console. </p>
-<p>This is a helper function that prints the FPS to the console. This is useful to monitor the performance of the application. </p>
-
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00360">360</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        {</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            <span class="keywordtype">float</span> current_time = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(glfwGetTime());</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            <span class="keywordtype">float</span> fps = 1.0f / (current_time - <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a470065034b51af8fb9bd6c4958df2f60">prev_time</a>);</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <a class="code" href="classChronos_1_1Engine_1_1Engine.html#a470065034b51af8fb9bd6c4958df2f60">prev_time</a> = current_time;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;FPS: &quot;</span> &lt;&lt; fps &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        }</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a470065034b51af8fb9bd6c4958df2f60"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a470065034b51af8fb9bd6c4958df2f60">Chronos::Engine::Engine::prev_time</a></div><div class="ttdeci">float prev_time</div><div class="ttdoc">This is used to store the absolute previous time by the showFPS function.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00219">engine.hpp:219</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="engine_8hpp_source.html#l00219">prev_time</a>.</p>
 
 </div>
 </div>
@@ -1222,7 +1202,7 @@ Here is the caller graph for this function:</div>
 <p>The command Pool. </p>
 <p>All command buffers are allocated from a command pool. This is where the command pool is stored. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00270">270</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00262">262</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1249,7 +1229,7 @@ Here is the caller graph for this function:</div>
 <p>The current frame to be rendered to. </p>
 <p>Since there will be multiple frames in flight, we need to keep track of which frame is currently being rendered. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00236">236</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00228">228</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1303,7 +1283,7 @@ Here is the caller graph for this function:</div>
 <p>Does the framebuffer need to be resized? </p>
 <p>When the window is resized, or minimized, the swapchain needs to be recreated. GLFW will tell us that this needs to happen, and when it does, this flag is set to true. The next time the drawFrame function is called, the swapchain will be recreated. During that time, this flag will be set to false. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00229">229</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00221">221</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1345,7 +1325,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00272">272</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00264">264</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1369,7 +1349,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00274">274</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00266">266</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1396,7 +1376,7 @@ Here is the caller graph for this function:</div>
 <p>The Vulkan instance. </p>
 <p>When initializing Vulkan, the first thing we create is an instance. This is where is it stored. We need this during cleanup </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00244">244</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00236">236</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1416,33 +1396,6 @@ Here is the caller graph for this function:</div>
 <p>To add or remove polygons, one may call the necessary methods in this class. </p>
 
 <p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00101">101</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a470065034b51af8fb9bd6c4958df2f60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a470065034b51af8fb9bd6c4958df2f60">&#9670;&nbsp;</a></span>prev_time</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Chronos::Engine::Engine::prev_time = 0.0f</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>This is used to store the absolute previous time by the showFPS function. </p>
-<p>The showFPS function is used to print the FPS to the console. This needs the previous time to calculate the FPS. </p>
-
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00219">219</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1466,7 +1419,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00273">273</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00265">265</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -1512,7 +1465,7 @@ Here is the caller graph for this function:</div>
 <p>The surface to render to. </p>
 <p>For rendering to the window from the Vulkan framebuffer, we need a surface. </p>
 
-<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00262">262</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="engine_8hpp_source.html#l00254">254</a> of file <a class="el" href="engine_8hpp_source.html">engine.hpp</a>.</p>
 
 </div>
 </div>

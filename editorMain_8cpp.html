@@ -241,32 +241,29 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="editorMain_8cpp_source.html#l00010">10</a> of file <a class="el" href="editorMain_8cpp_source.html">editorMain.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;          {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    std::filesystem::path cwdpath(<span class="stringliteral">&quot;../../../&quot;</span>);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::filesystem::current_path(cwdpath);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="structChronos_1_1Manager_1_1Initializer.html">Chronos::Manager::Initializer</a> initializer;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    initializer.<a class="code" href="structChronos_1_1Manager_1_1Initializer.html#a6e5b05085029f176abc15e6338217dbc">WindowWidth</a> = 800;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    initializer.<a class="code" href="structChronos_1_1Manager_1_1Initializer.html#a5b4aae219fd3a1074b7fc164a5eb084e">WindowHeight</a> = 600;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    initializer.<a class="code" href="structChronos_1_1Manager_1_1Initializer.html#ab66ebfa962b94ea624394f3436bb6570">BackgroundColor</a>[0] = 0;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    initializer.<a class="code" href="structChronos_1_1Manager_1_1Initializer.html#ab66ebfa962b94ea624394f3436bb6570">BackgroundColor</a>[1] = 0;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    initializer.<a class="code" href="structChronos_1_1Manager_1_1Initializer.html#ab66ebfa962b94ea624394f3436bb6570">BackgroundColor</a>[2] = 0;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    initializer.editorAddElements = <a class="code" href="editorMain_8cpp.html#a6a215dd7e7955739c214ee50e9b9ad87">addElements</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classChronos_1_1Manager_1_1Manager.html">Chronos::Manager::Manager</a> manager(initializer);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(2, <span class="stringliteral">&quot;EditorMain&quot;</span>, <span class="stringliteral">&quot;Manager created.&quot;</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="editorMain_8cpp.html#a13d1c6300fe3c9fe31eebe196e35cd71">editorManager</a>.<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ae28f6a26ba542f66491d5326ad1c7f79">init</a>(&amp;manager);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;EditorMain&quot;</span>, <span class="stringliteral">&quot;EditorManager created.&quot;</span>)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    while (!glfwWindowShouldClose(manager.getWindow())) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (glfwGetKey(manager.getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS) {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            glfwSetWindowShouldClose(manager.getWindow(), <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        manager.drawFrame();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(4, <span class="stringliteral">&quot;EditorMain&quot;</span>, <span class="stringliteral">&quot;Frame drawn.&quot;</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(2, <span class="stringliteral">&quot;EditorMain&quot;</span>, <span class="stringliteral">&quot;Exited rendering loop, closing program.&quot;</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="structChronos_1_1Manager_1_1Initializer.html">Chronos::Manager::Initializer</a> initializer;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    initializer.<a class="code" href="structChronos_1_1Manager_1_1Initializer.html#a6e5b05085029f176abc15e6338217dbc">WindowWidth</a> = 800;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    initializer.<a class="code" href="structChronos_1_1Manager_1_1Initializer.html#a5b4aae219fd3a1074b7fc164a5eb084e">WindowHeight</a> = 600;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    initializer.<a class="code" href="structChronos_1_1Manager_1_1Initializer.html#ab66ebfa962b94ea624394f3436bb6570">BackgroundColor</a>[0] = 0;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    initializer.<a class="code" href="structChronos_1_1Manager_1_1Initializer.html#ab66ebfa962b94ea624394f3436bb6570">BackgroundColor</a>[1] = 0;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    initializer.<a class="code" href="structChronos_1_1Manager_1_1Initializer.html#ab66ebfa962b94ea624394f3436bb6570">BackgroundColor</a>[2] = 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    initializer.editorAddElements = <a class="code" href="editorMain_8cpp.html#a6a215dd7e7955739c214ee50e9b9ad87">addElements</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classChronos_1_1Manager_1_1Manager.html">Chronos::Manager::Manager</a> manager(initializer);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(2, <span class="stringliteral">&quot;EditorMain&quot;</span>, <span class="stringliteral">&quot;Manager created.&quot;</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="editorMain_8cpp.html#a13d1c6300fe3c9fe31eebe196e35cd71">editorManager</a>.<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ae28f6a26ba542f66491d5326ad1c7f79">init</a>(&amp;manager);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;EditorMain&quot;</span>, <span class="stringliteral">&quot;EditorManager created.&quot;</span>)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    while (!glfwWindowShouldClose(manager.getWindow())) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">if</span> (glfwGetKey(manager.getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            glfwSetWindowShouldClose(manager.getWindow(), <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        manager.drawFrame();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(4, <span class="stringliteral">&quot;EditorMain&quot;</span>, <span class="stringliteral">&quot;Frame drawn.&quot;</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(2, <span class="stringliteral">&quot;EditorMain&quot;</span>, <span class="stringliteral">&quot;Exited rendering loop, closing program.&quot;</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_ae28f6a26ba542f66491d5326ad1c7f79"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#ae28f6a26ba542f66491d5326ad1c7f79">Chronos::Editor::EditorManager::init</a></div><div class="ttdeci">void init(Chronos::Manager::Manager *manager)</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8hpp_source.html#l00007">editorManager.hpp:7</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Manager_1_1Manager_html"><div class="ttname"><a href="classChronos_1_1Manager_1_1Manager.html">Chronos::Manager::Manager</a></div><div class="ttdoc">The main manager of chronos.</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00107">chronos.hpp:107</a></div></div>
 <div class="ttc" id="aeditorMain_8cpp_html_a6a215dd7e7955739c214ee50e9b9ad87"><div class="ttname"><a href="editorMain_8cpp.html#a6a215dd7e7955739c214ee50e9b9ad87">addElements</a></div><div class="ttdeci">void addElements()</div><div class="ttdef"><b>Definition:</b> <a href="editorMain_8cpp_source.html#l00006">editorMain.cpp:6</a></div></div>
