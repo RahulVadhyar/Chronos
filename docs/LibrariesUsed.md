@@ -1,4 +1,4 @@
-\page Libraries Used
+# Libraries Used
 
 All the libraries and third party code is inside the ThirdParty folder.
 The dependencies along with the usage is given as shown:

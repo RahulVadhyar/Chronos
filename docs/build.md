@@ -4,7 +4,7 @@
 
 ## Table of Contents
 
-+ [Cloning][#cloning]
++ [Cloning](#cloning)
 + [Dependencies](#dependencies)
     + [For Windows](#for-windows)
     + [For Linux and Unix-Like Systems](#for-linux-and-unix-like-systems)
@@ -34,7 +34,7 @@ For the other files download and install the Vulkan SDK(suggestion to use versio
 ### For Linux and Unix Like Systems ###
 This project uses GLM, GLFW, Vulkan Validation Layers. However we compile GLFW from source(its one of the submodules ;) )It also compiles GLFW from source(it is included as submodule) so we need its dependencies
 
-+ #### For Fedora, RHEL, CentOS and similar distributions: ####
++ **For Fedora, RHEL, CentOS and similar distributions:**
 
   Run the following terminal commands:
   ```bash
@@ -46,7 +46,7 @@ This project uses GLM, GLFW, Vulkan Validation Layers. However we compile GLFW f
 
   Optional: Install ninja-build and configure using ninja for faster build times.
 
-+ #### For Ubuntu, Debian and similar distributions: ####
++ **For Ubuntu, Debian and similar distributions:**
 
   The following commands will install the dependencies needed to build this project
 
@@ -55,7 +55,7 @@ This project uses GLM, GLFW, Vulkan Validation Layers. However we compile GLFW f
   ```
   Optional: Install ninja-build and generate using ninja for faster build times(if you know how to do this).
 
-+ #### For Other Linux and Unix-Like platforms: ####
++ **For Other Linux and Unix-Like platforms:**
   Due to the fact that this project is still in early development, I haven't tested this on anything other than Fedora Linux and Ubuntu Linux. However it should work on other systems. File an issue if you have any issues.
 
   We need the following packages or set of packages for compiling:
