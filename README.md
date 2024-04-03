@@ -2,17 +2,16 @@
 [TOC]
 
 [![Build](https://github.com/RahulVadhyar/Chronos/actions/workflows/buildAndTest.yml/badge.svg?branch=master)](https://github.com/RahulVadhyar/Chronos/actions/workflows/buildAndTest.yml)
-
 [![Documentation](https://github.com/RahulVadhyar/Chronos/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/RahulVadhyar/Chronos/actions/workflows/pages/pages-build-deployment)
 
-A advanced 2D rendering and animation engine written in C++ and using the Vulkan graphics rendering API.
+An advanced 2D rendering and animation engine written in C++ and using the Vulkan graphics rendering API.
 Supports many advanced features and is performant, hackable and flexbile that can cater to a wide range of needs,
-including simple 2D game development.
+including simple 2D game development. It comes with an editor for fast prototyping and easy use.
 
 **Please Note** : This project is currently under development and is not stable yet. All features are not final.
 
 ## Cloning:
-***Make sure to clone this repo recursively.***
+### Make sure to clone this repo recursively. ###
 
 There are other submodule dependencies that need to be cloned to compile this.
 ```bash
@@ -20,9 +19,9 @@ git clone --recursive https://github.com/RahulVadhyar/Chronos.git
 ```
 
 ## Table of Contents
-+ [Dependencies](#dependencies)
++ [What is Chronos?](#what-is-chronos)
++ [Building Chronos](#building-chronos)
 + [How To Use](#how-to-use)
-+ [API Documentation](#api-documentation)
 + [How to file an issue](#how-to-file-an-issue)
 + [Libraries used](#libraries-used)
 + [Contributing](#contributing)
@@ -35,65 +34,49 @@ git clone --recursive https://github.com/RahulVadhyar/Chronos.git
   + [Why just not use Unreal Engine or Unity or similar engine](#why-not-just-use-unreal-engine-or-unity-or-similar-engine)
   + [Can I use this for my project?](#can-i-use-this-for-my-project)
   + [Are there any projects that use this library as an example?](#are-there-any-projects-that-use-this-library-as-an-example)
+  + [Does the editor have the same feature set across Linux and Windows?](#does-the-editor-have-the-same-feature-set-across-linux-and-windows)
 
-## Dependencies
-### For Windows:
-Download and install the Vulkan SDK from this [link](https://sdk.lunarg.com/sdk/download/latest/windows/vulkan-sdk.exe). Everything needed is in that package.
+## What is Chronos? ##
 
-### For Linux and Unix like systems ###
-This project uses GLM, GLFW, Vulkan Validation Layers. It also compiles GLFW from source(it is included as submodule) so we need its dependencies
-+ #### For Fedora Linux: ####
-  Run the following terminal commands:
-  ```bash
-  sudo dnf install glm-devel vulkan-validation-layers glfw glfw-devel
-  sudo dnf builddep glfw glfw-devel
-  ```
+Chronos is a advanced 2D rendering and animation engine written in C++ and designed around Vulkan API.
 
-+ #### For Ubuntu and similar platforms: ####
-  The following commands will install the dependencies needed to build this project
-  ```bash
-  sudo apt install libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libxext-dev libwayland-dev libxkbcommon-dev libvulkan-dev libglm-dev gcc-multilib g++-multilib libfreetype6-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev
-  ```
-+ #### For Other Linux and Unix-Like platforms: ####
-  Due to the fact that this project is still in early development, I haven't tested this on anything other than Fedora Linux and Ubuntu Linux.
-However the needed dependencies are given above and can be installed using your package manager.
+It is
+
+  + High Performance
+  + Relatively small in size and footprint
+  + Cross platform(Windows and Linux)
+  + Easy to use
+  + Supports Animations
+  + Has a simple, powerful and easy to use editor
+  + Open source(ofc ;) )
   
+It is not
+  + A game
+  + GUI library
+  + 3D engine
+  + Physics Engine
+  + Sound Engine
+  + Texture Creator etc... I think you get the point by now. 
+
+Chronos is designed for use with 2D games that want a small footprint.
+Chronos accomplishes this by providing a small yet complete API that can be used in projects for use.
+No game logic, input handling or the many other things needed for a game is provided. Chronos is focused and has only one purpose.
+
+## Building Chronos ##
+
+Detailed build instructions can be found [here](docs/build.md)
 
 ## How To Use ##
-  In order to use this library with your project, you will need to use cmake. Install the dependencies. Then clone this(recursively) to your project and add it. Then in CMakeLists.txt, write it as follows
-  ```cmake
-  cmake_minimum_required(VERSION 3.13)
-  project(YourProject)
-  set(CMAKE_CXX_STANDARD 20)
-  set(CHRONOS_INCLUDE_DIR path/to/Chronos/include)
-  include_directories(BEFORE ${CHRONOS_INCLUDE_DIR})
-  
-  #add your stuff here
-  
-  add_subdirectory(path/to/Chronos)
-  target_link_libraries(YourProject Chronos)
-  ```
-## API Documentation ##
-The documentation for this library can be found [here](https://rahulvadhyar.github.io/Chronos/).
+  Detailed documentation and usage guides of both API and Editor along with tutorials and examples can be found [here](https://rahulvadhyar.github.io/Chronos/)
 
 ## How to file an issue ##
-As this is early stages of development, issues are not taken right now. However they will be soon open.
+See [FilingIssues.md](docs/FilingIssues.md) for more information on how to collect and file issues.
 
 ## Libraries used ##
-All the libraries and third party code is inside the ThirdParty folder.
-The dependencies along with the usage is given as shown:
-+ GLFW: This is a cross platform window system. It converts the different protocols of
-  different display managers such as Windows DVM, X11 and Wayland into a common protocol
-  that can be used.
-
-+ ImGui: This is a immediate GUI system. This is not intended to be used for final use. Instead it is used in the editor provided. 
-
-+ ImGui Node Editor: As described by its name, its a Node editor that is used in the editor.
-+ ImGuizmo: This provided guizmo tools for the editor for dragging shapes and other objects.
-+ STB: This includes all the stb headers(stb_image.h) and ini font files that are used by this project. It is used for image loading and font loading.
+See [LibrariesUsed.md](docs/LibrariesUsed.md) for more information on third party dependencies of this project.
 
 ## Contributing ##
-As this project is still under development and does not have a stable release, I do not accept any contributions for now. However they will soon be open.
+See [Contributing.md](docs/Contributing.md) for more information on how to contribute to this project.
 
 ## FAQs ##
 * ### Why did I choose Vulkan over OpenGL? ###
@@ -106,7 +89,7 @@ As this project is still under development and does not have a stable release, I
   * Limited debugging and validation support
   * OpenGL has a considerable amount of overhead compared to modern rendering APIs. Since
     the intended use was 2D rendering, which is inherently going to be CPU limited, this would have
-    been a problem
+    been slower than using vulkan.
 
   These are just some of the highlights of the limitations and issues with OpenGL. While OpenGL is a remarkably simple
   API for rendering compared to Vulkan, it was just not the right fit for this project. Hence Vulkan is the graphics API of choice.
@@ -117,18 +100,18 @@ As this project is still under development and does not have a stable release, I
   and SDL. After evaluating all the options it was clear that Vulkan was the way to go.
 
 * ### Is Wayland and/or X11 supported? ###
-  Yes. Since this project uses GLFW that is compiled from scratch, it supports both Wayland and X11 platforms. The flags are set such that they are built for both by default.
+  Yes. Since this project uses GLFW that is compiled from scratch, it supports both Wayland and X11 platforms. The flags are set such that they are built for both by default. Note that some features of the editor on linux is disabled due to limitations of X11 and Wayland(see [below](#does-the-editor-have-the-same-feature-set-across-linux-and-windows))
 
 * ### Which platforms are supported? ###
   As of right now, Windows and Linux(includes unix-like OSes) are supported. MacOS is not supported. See below for reason.
 
 * ### Why is MacOS not supported? ###
-  While Vulkan applications can be run on a mac via moltenVK, this library uses Vulkan 1.30, which is not supported by moltenVK. Once the support has come and is stable, this can run on macs. If you really want, you can try it yourself, this is open source and free after all.
+  While Vulkan applications can be run on a mac via moltenVK, I have not tested it, and there might be certain things broken. If you really want, you can try it yourself, this is open source and free after all. ;)
   
 * ### Why just not use Unreal Engine or Unity or similar engine? ###
   Well there are mainly two reasons for this. One is that when I started this project I wanted to learn to write C++ and learn software development
   and all its quirks. The second reason is that the other libraries or engines target 3D rendering with 2D added as an afterthought. I wanted a custom dedicated
-  2D renderer for the game that I am developing that I can add custom features to as and when needed. Hence I went ahead and created Chronos
+  2D renderer along with a small performant animation engine for the game that I am developing that I can add custom features to as and when needed. Hence I went ahead and created Chronos
 
 * ### Can I use this for my project? ###
   Regarding licensing, this is fully open souce, and in the public domain. There are no restrictions, do as you please. However please note that until v1.0, API stability is
@@ -136,3 +119,6 @@ As this project is still under development and does not have a stable release, I
 
 * ### Are there any projects that use this library as an example? ###
   Currently my [game](https://github.com/RahulVadhyar/StreetChase.git) is used as a test bed and is developed simultaenously. As of now, no other project uses this to the best of my knowledge.
+
+* ### Does the editor have the same feature set across Linux and Windows? ###
+  No. However the only thing that is missing is the multi viewports(windows) feature. This is due to lack of support from ImGui(the GUI library I am using for this) due to no easy way to do this in X11 and wayland. While X11 is supported to an extent by ImGui for this, its extremely buggy and I cannot support it. However, this is the only feature missing and all other features are fully supported. This limitation will not affect 90% of use cases
