@@ -410,6 +410,28 @@ namespace Manager {
             engine.setPresentMode(presentMode);
         }
 
+#ifdef CHRONOS_PROFILING
+        float getWaitTime(){
+            return engine.getWaitTime()*1e-6;
+        }
+
+        float getUpdateTime(){
+            return engine.getUpdateTime()*1e-6;
+        }
+
+        float getCpuTime(){
+            return engine.getCpuTime()*1e-6;
+        }
+
+        float getTotalTime(){
+            return engine.getTotalTime()*1e-6;
+        }
+
+        float getPresentTime(){
+            return engine.getPresentTime()*1e-6;
+        }
+#endif
+
     private:
         int nextFreeAnimObjNo = 0;
 

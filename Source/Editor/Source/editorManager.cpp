@@ -18,6 +18,10 @@ void Chronos::Editor::EditorManager::addElements(){
     this->TextDetailsWindow();
     this->DebugMetricsWindow();
     this->DebugLogWindow();
+#ifdef CHRONOS_PROFILING
+    this->ProfilingWindow();
+#endif
+
     LOG(4, "Editor", "Elements added to the editor.");
 
 }
@@ -32,6 +36,9 @@ void Chronos::Editor::EditorManager::MenuBar(){
             // ImGui::MenuItem("Animation", NULL, &this->showAnimationWindow);
             ImGui::MenuItem("Settings", NULL, &this->showSettingsWindow);
             ImGui::MenuItem("Generated Code", NULL, &this->showGeneratedCodeWindow);
+            #ifdef CHRONOS_PROFILING
+            ImGui::MenuItem("Profiling", NULL, &this->showProfilingWindow);
+            #endif
             ImGui::EndMainMenuBar();
         }
     } else {
@@ -530,3 +537,18 @@ void Chronos::Editor::EditorManager::DebugLogWindow(){
         ImGui::ShowDebugLogWindow(&this->showDebugLogWindow);
     }
 }
+
+#ifdef CHRONOS_PROFILING
+void Chronos::Editor::EditorManager::ProfilingWindow(){
+    if(this->showProfilingWindow){
+        ImGui::Begin("Profiling", &this->showProfilingWindow);
+        ImGui::Text("FPS %f ms", 1000/this->manager->getTotalTime());
+        ImGui::Text("Frame Time %f ms", this->manager->getTotalTime());
+        ImGui::Text("Update Time %f ms", this->manager->getUpdateTime());
+        ImGui::Text("CPU Time %f ms", this->manager->getCpuTime());
+        ImGui::Text("GPU Time %f ms", this->manager->getTotalTime() - this->manager->getCpuTime());
+        ImGui::Text("Present Time %f ms", this->manager->getPresentTime());
+        ImGui::End();
+    }
+}
+#endif

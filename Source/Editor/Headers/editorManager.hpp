@@ -27,7 +27,9 @@ namespace Chronos{
 
                 bool showDebugMetricsWindow = false;
                 bool showDebugLogWindow = false;
-
+#ifdef CHRONOS_PROFILING
+                bool showProfilingWindow = false;
+#endif
 
                 void MenuBar();
                 void ShapeWindow();
@@ -43,7 +45,9 @@ namespace Chronos{
 
                 void DebugMetricsWindow();
                 void DebugLogWindow();
-
+#ifdef CHRONOS_PROFILING
+                void ProfilingWindow();
+#endif
                 //Shape Window
                 Chronos::Manager::ShapeParams newShapeParams;
                 int newShapeType = 0;

@@ -156,8 +156,17 @@ void Chronos::Engine::Engine::drawFrame()
     }
     // wait for the previous frame to finish
     glfwPollEvents();
+
+#ifdef CHRONOS_PROFILING
+    std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
+#endif
+
     vkWaitForFences(device.device, 1, &inFlightFences[currentFrame], VK_TRUE,
         UINT64_MAX);
+
+#ifdef CHRONOS_PROFILING
+    this->waitTime = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now() - start).count();
+#endif
 
     // get the index of the next image to render to
     uint32_t imageIndex;
@@ -186,6 +195,9 @@ void Chronos::Engine::Engine::drawFrame()
         LOG(1, "Engine", "Failed to acquire swap chain image");
         throw std::runtime_error("Failed to acquire swap chain image");
     }
+#ifdef CHRONOS_PROFILING
+    auto startUpdate = std::chrono::steady_clock::now();
+#endif
     // update the shapes and text
     shapeManager.update(currentFrame);
     colorShapeManager.update(currentFrame);
@@ -193,6 +205,9 @@ void Chronos::Engine::Engine::drawFrame()
     polygonManager.update(currentFrame);
 #ifdef ENABLE_EDITOR
     gui.update();
+#endif
+#ifdef CHRONOS_PROFILING
+    this->updateTime = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now() - startUpdate).count();
 #endif
     LOG(4, "Engine", "Managers updated");
 
@@ -208,6 +223,7 @@ void Chronos::Engine::Engine::drawFrame()
     gui.render(currentFrame, imageIndex, bgColor);
 #endif
     LOG(4, "Engine", "Managers command buffers recorded")
+
 
     // configure the semaphores
     VkSemaphore waitSemaphores[] = { imageAvailableSemaphores[currentFrame] };
@@ -243,10 +259,16 @@ void Chronos::Engine::Engine::drawFrame()
         throw std::runtime_error("failed to submit draw command buffer!");
     }
     LOG(4, "Engine", "Command buffers submitted");
-
+    
 #ifdef ENABLE_EDITOR
     gui.renderAdditionalViewports();
 #endif
+
+#ifdef CHRONOS_PROFILING
+    this->cpuTime = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now() - start).count();
+    auto startPresent = std::chrono::steady_clock::now();
+#endif
+
     // present the image
     VkPresentInfoKHR presentInfo {};
     presentInfo.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
@@ -278,7 +300,10 @@ void Chronos::Engine::Engine::drawFrame()
         LOG(1, "Engine", "Failed to present swap chain image");
         throw std::runtime_error("Failed to present swap chain image");
     }
-
+#ifdef CHRONOS_PROFILING
+    this->presentTime = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now() - startPresent).count();
+    this->totalTime = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now() - start).count();
+#endif
     // update the current frame
     currentFrame = (currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
     LOG(4, "Engine", "Current frame is " + std::to_string(currentFrame));

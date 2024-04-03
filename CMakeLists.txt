@@ -13,6 +13,7 @@ option(CHRONOS_ENABLE_ERROR_LOGGING "Enable Error logging(level 1)" OFF)
 option(CHRONOS_ENABLE_BASIC_LOGGING "Enable Basic logging(level 2)" OFF)
 option(CHRONOS_ENABLE_VERBOSE_LOGGING "Enable Verbose logging(level 3)" OFF)
 option(CHRONOS_ENABLE_EXTREME_LOGGING "Enable Extreme logging(level 4)" OFF)
+option(CHRONOS_ENABLE_PROFILING "Enable profiling" OFF)
 
 if(CHRONOS_SUPPORT_WAYLAND)
 set(GLFW_BUILD_WAYLAND ON)
@@ -27,6 +28,11 @@ set(GLFW_BUILD_TESTS OFF)
 set(GLFW_BUILD_DOCS OFF)
 set(GLFW_INSTALL OFF)
 set(GLFW_VULKAN_STATIC ON)
+
+file(GLOB SHADERS Shaders/SPIV/*.spv)
+
+message("Moving shaders to build dir")
+file(COPY ${SHADERS} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Shaders)
 
 #GLFW
 add_subdirectory(ThirdParty/glfw)
@@ -57,7 +63,7 @@ function(IncludeDirectories projectName)
     target_include_directories(${projectName} PUBLIC Source/Engine/Templates)
     target_include_directories(${projectName} PUBLIC Source/API/Headers)
     target_include_directories(${projectName} PUBLIC Source/Animation/Headers)
-    target_include_directories(${projectName} PUBLIC Source/Common)
+    target_include_directories(${projectName} PUBLIC Source/Common/Headers)
     target_include_directories(${projectName} PUBLIC ThirdParty/stb)
     target_include_directories(${projectName} PUBLIC include)
     target_include_directories(${projectName} PUBLIC ${FONTS_DIR})
@@ -117,6 +123,9 @@ target_compile_definitions(Chronos PUBLIC CHRONOS_ENABLE_LOGGING=0)
 message("Logging disabled(level 0)")
 endif()
 
+if(CHRONOS_ENABLE_PROFILING)
+target_compile_definitions(Chronos PUBLIC CHRONOS_PROFILING)
+endif()
 
 #editor executable
 if(CHRONOS_BUILD_EDITOR)
@@ -183,7 +192,9 @@ else()
 target_compile_definitions(ChronosEditor PUBLIC CHRONOS_ENABLE_LOGGING=0)
 message("Logging disabled (level 0)")
 endif()
-    
+if(CHRONOS_ENABLE_PROFILING)
+target_compile_definitions(ChronosEditor PUBLIC CHRONOS_PROFILING)
+endif()
 
 #header files
 target_include_directories(ChronosEditor PUBLIC Source/Editor/Headers)
@@ -239,6 +250,9 @@ target_compile_definitions(ChronosTests PUBLIC GAME_VERSION_PATCH=${PROJECT_VERS
 target_compile_definitions(ChronosTests PUBLIC CHRONOS_VERSION_MAJOR=${PROJECT_VERSION_MAJOR})
 target_compile_definitions(ChronosTests PUBLIC CHRONOS_VERSION_MINOR=${PROJECT_VERSION_MINOR})
 target_compile_definitions(ChronosTests PUBLIC CHRONOS_VERSION_PATCH=${PROJECT_VERSION_PATCH})
+if(CHRONOS_ENABLE_PROFILING)
+target_compile_definitions(ChronosTests PUBLIC CHRONOS_PROFILING)
+endif()
 
 if(CHRONOS_ENABLE_EXTREME_LOGGING)
 target_compile_definitions(ChronosTests PUBLIC CHRONOS_ENABLE_LOGGING=4)

@@ -211,14 +211,6 @@ namespace Engine {
         Chronos::Engine::SwapChain swapChain = Chronos::Engine::SwapChain();
 
         /**
-        \brief This is used to store the absolute previous time by the showFPS function.
-
-        The showFPS function is used to print the FPS to the console.
-        This needs the previous time to calculate the FPS.
-        */
-        float prev_time = 0.0f;
-
-        /**
         \brief Does the framebuffer need to be resized?
 
         When the window is resized, or minimized, the swapchain needs to be recreated.
@@ -350,20 +342,52 @@ namespace Engine {
 #ifdef ENABLE_EDITOR
         Chronos::Editor::EditorRenderer gui = Chronos::Editor::EditorRenderer();
 #endif
-
+#ifdef CHRONOS_PROFILING
+public:
         /**
         \brief Displays the FPS to the console.
 
         This is a helper function that prints the FPS to the console.
         This is useful to monitor the performance of the application.
         */
-        void showfps()
-        {
-            float current_time = static_cast<float>(glfwGetTime());
-            float fps = 1.0f / (current_time - prev_time);
-            prev_time = current_time;
-            std::cout << "FPS: " << fps << std::endl;
+        float getfps()
+        {       
+                static float prevTime = 0.0f;
+                float current_time = static_cast<float>(glfwGetTime());
+                float fps = 1.0f / (current_time - prevTime);
+                prevTime = current_time;
+                return fps;
+
         }
+
+        float getWaitTime()
+        {
+            return waitTime;
+        }
+        float getUpdateTime()
+        {
+            return updateTime;
+        }
+        float getCpuTime()
+        {
+            return cpuTime;
+        }
+        float getTotalTime()
+        {
+            return totalTime;
+        }
+        float getPresentTime()
+        {
+            return presentTime;
+        }
+private:
+        float waitTime = 0.0f;
+        float updateTime = 0.0f;
+        float cpuTime = 0.0f;
+        float totalTime = 0.0f;
+        float presentTime = 0.0f;
+
+#endif
     };
 
 };
