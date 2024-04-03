@@ -88,40 +88,62 @@ $(document).ready(function(){initNavTree('shapeManager_8hpp_source.html',''); in
 <div class="title">shapeManager.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="shapeManager_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceChronos.html">Chronos</a> {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>Engine {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">template</span> &lt;VertexLike VertexStruct&gt;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1ShapeManager.html">   33</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classChronos_1_1Engine_1_1ShapeManager.html">ShapeManager</a> : <span class="keyword">public</span> <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt;Chronos::Engine::Shape&lt;VertexStruct&gt;&gt; {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">int</span> addTriangle(<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a> shapeParams, <a class="code" href="classChronos_1_1Engine_1_1Texture.html">Chronos::Engine::Texture</a> texture)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            requires(std::is_same&lt;Chronos::Engine::TexturedVertex, VertexStruct&gt;::value);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">int</span> addTriangle(<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a> shapeParams)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            requires(std::is_same&lt;Chronos::Engine::ColorVertex, VertexStruct&gt;::value);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">int</span> addRectangle(<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a> shapeParams, <a class="code" href="classChronos_1_1Engine_1_1Texture.html">Chronos::Engine::Texture</a> texture)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            requires(std::is_same&lt;Chronos::Engine::TexturedVertex, VertexStruct&gt;::value);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">int</span> addRectangle(<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a> shapeParams)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            requires(std::is_same&lt;Chronos::Engine::ColorVertex, VertexStruct&gt;::value);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#ab3e7fdc4a12f926bbd0d34cc4cde100b">render</a>(uint32_t currentFrame, uint32_t imageIndex, <span class="keywordtype">float</span> bgColor[3]);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1ShapeManager.html#a279e1e6ce6f5111f38df530cebd00b20">  103</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1ShapeManager.html#a279e1e6ce6f5111f38df530cebd00b20">createRenderPass</a>();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    };</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#include &quot;shapeManagerDefs.tpp&quot;</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;};</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a></div><div class="ttdoc">Manages objects within the Chronos::Engine namespace.</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00029">objectManager.hpp:29</a></div></div>
+<a href="shapeManager_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">Copyright (c) 2024 Rahul Satish Vadhyar</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">copies or substantial portions of the Software.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">SOFTWARE.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceChronos.html">Chronos</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>Engine {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">template</span> &lt;VertexLike VertexStruct&gt;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1ShapeManager.html">   55</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classChronos_1_1Engine_1_1ShapeManager.html">ShapeManager</a> : <span class="keyword">public</span> <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a>&lt;Chronos::Engine::Shape&lt;VertexStruct&gt;&gt; {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">int</span> addTriangle(<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a> shapeParams, <a class="code" href="classChronos_1_1Engine_1_1Texture.html">Chronos::Engine::Texture</a> texture)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            requires(std::is_same&lt;Chronos::Engine::TexturedVertex, VertexStruct&gt;::value);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">int</span> addTriangle(<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a> shapeParams)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            requires(std::is_same&lt;Chronos::Engine::ColorVertex, VertexStruct&gt;::value);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordtype">int</span> addRectangle(<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a> shapeParams, <a class="code" href="classChronos_1_1Engine_1_1Texture.html">Chronos::Engine::Texture</a> texture)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            requires(std::is_same&lt;Chronos::Engine::TexturedVertex, VertexStruct&gt;::value);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">int</span> addRectangle(<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a> shapeParams)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            requires(std::is_same&lt;Chronos::Engine::ColorVertex, VertexStruct&gt;::value);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#ab3e7fdc4a12f926bbd0d34cc4cde100b">render</a>(uint32_t currentFrame, uint32_t imageIndex, <span class="keywordtype">float</span> bgColor[3]);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1ShapeManager.html#a279e1e6ce6f5111f38df530cebd00b20">  125</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1ShapeManager.html#a279e1e6ce6f5111f38df530cebd00b20">createRenderPass</a>();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    };</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#include &quot;shapeManagerDefs.tpp&quot;</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;};</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;};</div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html">Chronos::Engine::ObjectManager</a></div><div class="ttdoc">Manages objects within the Chronos::Engine namespace.</div><div class="ttdef"><b>Definition:</b> <a href="objectManager_8hpp_source.html#l00051">objectManager.hpp:51</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_ab3e7fdc4a12f926bbd0d34cc4cde100b"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#ab3e7fdc4a12f926bbd0d34cc4cde100b">Chronos::Engine::ObjectManager&lt; Chronos::Engine::Shape&lt; VertexStruct &gt; &gt;::render</a></div><div class="ttdeci">virtual void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])</div><div class="ttdoc">Renders the objects managed by the ObjectManager.</div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ShapeManager_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1ShapeManager.html">Chronos::Engine::ShapeManager</a></div><div class="ttdoc">This is the shape manager for Chronos. It handles creation, modification, updating and desrtuction of...</div><div class="ttdef"><b>Definition:</b> <a href="shapeManager_8hpp_source.html#l00033">shapeManager.hpp:33</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1ShapeManager_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1ShapeManager.html">Chronos::Engine::ShapeManager</a></div><div class="ttdoc">This is the shape manager for Chronos. It handles creation, modification, updating and desrtuction of...</div><div class="ttdef"><b>Definition:</b> <a href="shapeManager_8hpp_source.html#l00055">shapeManager.hpp:55</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ShapeManager_html_a279e1e6ce6f5111f38df530cebd00b20"><div class="ttname"><a href="classChronos_1_1Engine_1_1ShapeManager.html#a279e1e6ce6f5111f38df530cebd00b20">Chronos::Engine::ShapeManager::createRenderPass</a></div><div class="ttdeci">void createRenderPass()</div><div class="ttdoc">Creates the render pass for the shapes.</div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html">Chronos::Engine::Texture</a></div><div class="ttdoc">This class holds the Vulkan data and objects needed for a texture.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8hpp_source.html#l00091">texture.hpp:91</a></div></div>
-<div class="ttc" id="anamespaceChronos_html"><div class="ttname"><a href="namespaceChronos.html">Chronos</a></div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00030">chronos.hpp:30</a></div></div>
-<div class="ttc" id="astructChronos_1_1Manager_1_1ShapeParams_html"><div class="ttname"><a href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a></div><div class="ttdoc">Parameters for creating a shape(any)</div><div class="ttdef"><b>Definition:</b> <a href="commonStructs_8hpp_source.html#l00028">commonStructs.hpp:28</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html">Chronos::Engine::Texture</a></div><div class="ttdoc">This class holds the Vulkan data and objects needed for a texture.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8hpp_source.html#l00113">texture.hpp:113</a></div></div>
+<div class="ttc" id="anamespaceChronos_html"><div class="ttname"><a href="namespaceChronos.html">Chronos</a></div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00052">chronos.hpp:52</a></div></div>
+<div class="ttc" id="astructChronos_1_1Manager_1_1ShapeParams_html"><div class="ttname"><a href="structChronos_1_1Manager_1_1ShapeParams.html">Chronos::Manager::ShapeParams</a></div><div class="ttdoc">Parameters for creating a shape(any)</div><div class="ttdef"><b>Definition:</b> <a href="commonStructs_8hpp_source.html#l00049">commonStructs.hpp:49</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
