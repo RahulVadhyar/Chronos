@@ -1,6 +1,10 @@
 # Chronos(v0.0)
 [TOC]
 
+[![Build](https://github.com/RahulVadhyar/Chronos/actions/workflows/buildAndTest.yml/badge.svg?branch=master)](https://github.com/RahulVadhyar/Chronos/actions/workflows/buildAndTest.yml)
+
+[![Documentation](https://github.com/RahulVadhyar/Chronos/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/RahulVadhyar/Chronos/actions/workflows/pages/pages-build-deployment)
+
 A advanced 2D rendering and animation engine written in C++ and using the Vulkan graphics rendering API.
 Supports many advanced features and is performant, hackable and flexbile that can cater to a wide range of needs,
 including simple 2D game development.
