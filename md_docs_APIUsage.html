@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Chronos: Examples</title>
+<title>Chronos: API Usage</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,7 +65,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('md_docs_Examples.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md_docs_APIUsage.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -85,10 +85,59 @@ $(document).ready(function(){initNavTree('md_docs_Examples.html',''); initResiza
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Examples </div>  </div>
+<div class="title">API Usage </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This is an example of how this works. </p>
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#autotoc_md1">Table of Contents</a></li>
+<li class="level1"><a href="#autotoc_md2">Introduction</a></li>
+<li class="level1"><a href="#autotoc_md3">How to get Started</a></li>
+<li class="level1"><a href="#autotoc_md4">Starting with an example</a></li>
+<li class="level1"><a href="#autotoc_md5">Important points to note</a></li>
+<li class="level1"><a href="#autotoc_md6">Some of the API functions explained in detail</a></li>
+<li class="level1"><a href="#autotoc_md7">How to profile</a></li>
+<li class="level1"><a href="#autotoc_md8">How to use editor for development</a></li>
+<li class="level1"><a href="#autotoc_md9">Do&#39;s and Don&#39;t&#39;s</a></li>
+</ul>
+</div>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
+Table of Contents</h1>
+<ul>
+<li>Introduction</li>
+<li>How to get started</li>
+<li>Starting with an example</li>
+<li>Important points to note</li>
+<li>Some of the API functions explained in detail</li>
+<li>How to profile</li>
+<li>How to use editor for development</li>
+<li>Do's and Don't's</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Introduction</h1>
+<h1><a class="anchor" id="autotoc_md3"></a>
+How to get Started</h1>
+<p>This project is designed to be linked to your project with cmake. To link with cmake, install the dependencies as described <a class="el" href="md_docs_build.html">here</a>. After that, link it to cmake as follows using the following code as an example. </p><div class="fragment"><div class="line">cmake_minimum_required(VERSION 3.13)</div>
+<div class="line">project(YourProject)</div>
+<div class="line">set(CMAKE_CXX_STANDARD 20)</div>
+<div class="line">set(CHRONOS_INCLUDE_DIR path/to/Chronos/include)</div>
+<div class="line">include_directories(BEFORE ${CHRONOS_INCLUDE_DIR})</div>
+<div class="line"> </div>
+<div class="line">#add your stuff here</div>
+<div class="line"> </div>
+<div class="line">add_subdirectory(path/to/Chronos)</div>
+<div class="line">target_link_libraries(YourProject Chronos)</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+Starting with an example</h1>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Important points to note</h1>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Some of the API functions explained in detail</h1>
+<h1><a class="anchor" id="autotoc_md7"></a>
+How to profile</h1>
+<h1><a class="anchor" id="autotoc_md8"></a>
+How to use editor for development</h1>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Do's and Don't's</h1>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

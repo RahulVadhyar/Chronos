@@ -605,7 +605,7 @@ Here is the call graph for this function:</div>
 
 <p>Loads a texture from file. </p>
 <p>If a texture is needed to be loaded from a file, then this function can be used. The texture is loaded from the file and added to the texture manager. The textureNo is returned, which can be used for referencing the texture in other functions.</p>
-<h2><a class="anchor" id="autotoc_md38"></a>
+<h2><a class="anchor" id="autotoc_md94"></a>
 Note: Only png and jpg files are supported.</h2>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -876,9 +876,9 @@ Here is the caller graph for this function:</div>
 
 <p>Returns the details of all shapes(triangle or rectangle) defined. </p>
 <p>If the details of the shapes(triangle or rectangle) are needed, this function can be used to get the details of all shapes. It returns a vector of pairs, where the first element is the shapeNo and the second element is the shapeParams.</p>
-<h2><a class="anchor" id="autotoc_md36"></a>
+<h2><a class="anchor" id="autotoc_md92"></a>
 Note: This function does not return the details of npolygon shapes. For npolygon shapes, use the other override.</h2>
-<h2><a class="anchor" id="autotoc_md37"></a>
+<h2><a class="anchor" id="autotoc_md93"></a>
 Note: This will return both textured and colored shapes.</h2>
 <dl class="section return"><dt>Returns</dt><dd>A vector of pairs, where the first element is the shapeNo and the second element is the shapeParams of the corresponding polygon. </dd></dl>
 
@@ -1162,10 +1162,10 @@ Here is the caller graph for this function:</div>
 
 <p>Updates the polygon(any) with the new parameters. </p>
 <p>After initializing the shape, if you want to change the parameters of the shape to new attributes, using the shapeNo and passing the shapeParams, the new parameters can be propogated to the shape. The results will be displayed on the next <code><a class="el" href="classChronos_1_1Manager_1_1Manager.html#a633479d3104552a11a4546cbb048b8f8" title="Draws the current frame to the window.">drawFrame()</a></code> call.</p>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<h2><a class="anchor" id="autotoc_md87"></a>
 Note:</h2>
 <p>If textured shape is chosen then the color field will have no effect on the shape. The texture will be always be displayed.</p>
-<h2><a class="anchor" id="autotoc_md32"></a>
+<h2><a class="anchor" id="autotoc_md88"></a>
 Note:</h2>
 <p>This function cannot update the vertices of npolygon. To update the vertices of npolygon, use the other override.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1239,13 +1239,13 @@ Note:</h2>
 <p>After initializing the shape, if you want to change the parameters of the shape to new attributes, using the shapeNo and passing the shapeParams, the new parameters can be propogated to the shape.</p>
 <p>The vertices can also be updated. Please note that the number of vertices must remain the same. However their values may be changed.</p>
 <p>The results will be displayed on the next <code><a class="el" href="classChronos_1_1Manager_1_1Manager.html#a633479d3104552a11a4546cbb048b8f8" title="Draws the current frame to the window.">drawFrame()</a></code> call. </p>
-<h2><a class="anchor" id="autotoc_md33"></a>
+<h2><a class="anchor" id="autotoc_md89"></a>
 Note:</h2>
 <p>Yhe color field will have no effect on the shape. The texture will be always be displayed.</p>
-<h2><a class="anchor" id="autotoc_md34"></a>
+<h2><a class="anchor" id="autotoc_md90"></a>
 Note:</h2>
 <p>This function can be only used with npolygon shape. For rectangle or triangle, use the other override.</p>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md91"></a>
 Note:</h2>
 <p>The number of vertices must remain the same. However their values may be changed.</p>
 <dl class="params"><dt>Parameters</dt><dd>

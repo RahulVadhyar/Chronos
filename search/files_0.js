@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['buffers_2ecpp_432',['buffers.cpp',['../buffers_8cpp.html',1,'']]],
-  ['buffers_2ehpp_433',['buffers.hpp',['../buffers_8hpp.html',1,'']]],
-  ['build_2emd_434',['build.md',['../build_8md.html',1,'']]]
+  ['apiusage_2emd_430',['APIUsage.md',['../APIUsage_8md.html',1,'']]]
 ];

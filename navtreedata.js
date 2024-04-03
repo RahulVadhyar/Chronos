@@ -26,53 +26,115 @@ var NAVTREE =
 [
   [ "Chronos", "index.html", [
     [ "Chronos(v0.0)", "index.html", [
-      [ "Cloning:", "index.html#autotoc_md40", [
-        [ "Make sure to clone this repo recursively.", "index.html#autotoc_md41", null ]
+      [ "Cloning:", "index.html#autotoc_md96", [
+        [ "Make sure to clone this repo recursively.", "index.html#autotoc_md97", null ]
       ] ],
-      [ "Table of Contents", "index.html#autotoc_md42", null ],
-      [ "What is Chronos?", "index.html#autotoc_md43", null ],
-      [ "Building Chronos", "index.html#autotoc_md44", null ],
-      [ "How To Use", "index.html#autotoc_md45", null ],
-      [ "How to file an issue", "index.html#autotoc_md46", null ],
-      [ "Libraries used", "index.html#autotoc_md47", null ],
-      [ "Contributing", "index.html#autotoc_md48", null ],
-      [ "FAQs", "index.html#autotoc_md49", null ]
+      [ "Table of Contents", "index.html#autotoc_md98", null ],
+      [ "What is Chronos?", "index.html#autotoc_md99", null ],
+      [ "Building Chronos", "index.html#autotoc_md100", null ],
+      [ "How To Use", "index.html#autotoc_md101", null ],
+      [ "How to file an issue", "index.html#autotoc_md102", null ],
+      [ "Libraries used", "index.html#autotoc_md103", null ],
+      [ "Contributing", "index.html#autotoc_md104", null ],
+      [ "FAQs", "index.html#autotoc_md105", null ]
+    ] ],
+    [ "API Usage", "md_docs_APIUsage.html", [
+      [ "Table of Contents", "md_docs_APIUsage.html#autotoc_md1", null ],
+      [ "Introduction", "md_docs_APIUsage.html#autotoc_md2", null ],
+      [ "How to get Started", "md_docs_APIUsage.html#autotoc_md3", null ],
+      [ "Starting with an example", "md_docs_APIUsage.html#autotoc_md4", null ],
+      [ "Important points to note", "md_docs_APIUsage.html#autotoc_md5", null ],
+      [ "Some of the API functions explained in detail", "md_docs_APIUsage.html#autotoc_md6", null ],
+      [ "How to profile", "md_docs_APIUsage.html#autotoc_md7", null ],
+      [ "How to use editor for development", "md_docs_APIUsage.html#autotoc_md8", null ],
+      [ "Do's and Don't's", "md_docs_APIUsage.html#autotoc_md9", null ]
     ] ],
     [ "Build Instructions", "md_docs_build.html", [
-      [ "Table of Contents", "md_docs_build.html#autotoc_md1", null ],
-      [ "Cloning", "md_docs_build.html#autotoc_md2", [
-        [ "Make sure to clone this repo recursively.", "md_docs_build.html#autotoc_md3", null ]
+      [ "Table of Contents", "md_docs_build.html#autotoc_md11", null ],
+      [ "Cloning", "md_docs_build.html#autotoc_md12", [
+        [ "Make sure to clone this repo recursively.", "md_docs_build.html#autotoc_md13", null ]
       ] ],
-      [ "Dependencies", "md_docs_build.html#autotoc_md4", [
-        [ "For Windows", "md_docs_build.html#autotoc_md5", null ],
-        [ "For Linux and Unix Like Systems", "md_docs_build.html#autotoc_md6", null ]
+      [ "Dependencies", "md_docs_build.html#autotoc_md14", [
+        [ "For Windows", "md_docs_build.html#autotoc_md15", null ],
+        [ "For Linux and Unix Like Systems", "md_docs_build.html#autotoc_md16", null ]
       ] ],
-      [ "Configuring Chronos", "md_docs_build.html#autotoc_md7", null ],
-      [ "Configuring Flags", "md_docs_build.html#autotoc_md8", [
-        [ "Available Flags", "md_docs_build.html#autotoc_md9", null ],
-        [ "CHRONOS_BUILD_EDITOR", "md_docs_build.html#autotoc_md10", null ],
-        [ "CHRONOS_BUILD_TESTS", "md_docs_build.html#autotoc_md11", null ],
-        [ "CHRONOS_ENABLE_PROFILING", "md_docs_build.html#autotoc_md12", null ],
-        [ "CHRONOS_ENABLE_VULKAN_VALIDATION_LAYERS", "md_docs_build.html#autotoc_md13", [
-          [ "What is Vulkan Validation layer:", "md_docs_build.html#autotoc_md14", null ]
+      [ "Configuring Chronos", "md_docs_build.html#autotoc_md17", null ],
+      [ "Configuring Flags", "md_docs_build.html#autotoc_md18", [
+        [ "Available Flags", "md_docs_build.html#autotoc_md19", null ],
+        [ "CHRONOS_BUILD_EDITOR", "md_docs_build.html#autotoc_md20", null ],
+        [ "CHRONOS_BUILD_TESTS", "md_docs_build.html#autotoc_md21", null ],
+        [ "CHRONOS_ENABLE_PROFILING", "md_docs_build.html#autotoc_md22", null ],
+        [ "CHRONOS_ENABLE_VULKAN_VALIDATION_LAYERS", "md_docs_build.html#autotoc_md23", [
+          [ "What is Vulkan Validation layer:", "md_docs_build.html#autotoc_md24", null ]
         ] ],
-        [ "Logging", "md_docs_build.html#autotoc_md15", [
-          [ "CHRONOS_ENABLE_ERROR_LOGGING", "md_docs_build.html#autotoc_md16", null ],
-          [ "CHRONOS_ENABLE_BASIC_LOGGING", "md_docs_build.html#autotoc_md17", null ],
-          [ "CHRONOS_ENABLE_VERBOSE_LOGGING", "md_docs_build.html#autotoc_md18", null ],
-          [ "CHRONOS_ENABLE_EXTREME_LOGGING", "md_docs_build.html#autotoc_md19", null ]
+        [ "Logging", "md_docs_build.html#autotoc_md25", [
+          [ "CHRONOS_ENABLE_ERROR_LOGGING", "md_docs_build.html#autotoc_md26", null ],
+          [ "CHRONOS_ENABLE_BASIC_LOGGING", "md_docs_build.html#autotoc_md27", null ],
+          [ "CHRONOS_ENABLE_VERBOSE_LOGGING", "md_docs_build.html#autotoc_md28", null ],
+          [ "CHRONOS_ENABLE_EXTREME_LOGGING", "md_docs_build.html#autotoc_md29", null ]
         ] ]
       ] ],
-      [ "Build Commands", "md_docs_build.html#autotoc_md20", null ],
-      [ "Compiling Shaders", "md_docs_build.html#autotoc_md21", null ]
+      [ "Build Commands", "md_docs_build.html#autotoc_md30", null ],
+      [ "Compiling Shaders", "md_docs_build.html#autotoc_md31", null ],
+      [ "Building Documentation", "md_docs_build.html#autotoc_md32", null ]
     ] ],
-    [ "Contributing", "md_docs_Contributing.html", null ],
-    [ "Examples", "md_docs_Examples.html", null ],
+    [ "Contributing", "md_docs_Contributing.html", [
+      [ "Table of Contents", "md_docs_Contributing.html#autotoc_md34", null ]
+    ] ],
     [ "Filing Issues", "md_docs_FilingIssues.html", null ],
-    [ "Libraries Used", "md_docs_LibrariesUsed.html", null ],
-    [ "Usage", "md_docs_Usage.html", null ],
-    [ "Using the editor", "md_docs_UsingEditor.html", null ],
-    [ "How It works", "md_docs_Working.html", null ],
+    [ "Libraries Used", "md_docs_LibrariesUsed.html", [
+      [ "Table of Contents", "md_docs_LibrariesUsed.html#autotoc_md37", null ],
+      [ "Introduction", "md_docs_LibrariesUsed.html#autotoc_md38", null ],
+      [ "glfw", "md_docs_LibrariesUsed.html#autotoc_md39", null ],
+      [ "stb", "md_docs_LibrariesUsed.html#autotoc_md40", null ],
+      [ "stb fonts", "md_docs_LibrariesUsed.html#autotoc_md41", null ],
+      [ "earcut.hpp", "md_docs_LibrariesUsed.html#autotoc_md42", null ],
+      [ "imgui", "md_docs_LibrariesUsed.html#autotoc_md43", null ],
+      [ "doxygen awesome css", "md_docs_LibrariesUsed.html#autotoc_md44", null ],
+      [ "imgui node editor", "md_docs_LibrariesUsed.html#autotoc_md45", null ],
+      [ "ImGuizmo", "md_docs_LibrariesUsed.html#autotoc_md46", null ]
+    ] ],
+    [ "Using the editor", "md_docs_UsingEditor.html", [
+      [ "Table of Contents", "md_docs_UsingEditor.html#autotoc_md48", null ],
+      [ "Introduction", "md_docs_UsingEditor.html#autotoc_md49", null ],
+      [ "Features", "md_docs_UsingEditor.html#autotoc_md50", null ],
+      [ "Getting Started", "md_docs_UsingEditor.html#autotoc_md51", null ],
+      [ "Quick Start", "md_docs_UsingEditor.html#autotoc_md52", null ],
+      [ "More detailed Example", "md_docs_UsingEditor.html#autotoc_md53", null ],
+      [ "Components of the Editor", "md_docs_UsingEditor.html#autotoc_md54", [
+        [ "The Menu Bar", "md_docs_UsingEditor.html#autotoc_md55", null ],
+        [ "Shape Window", "md_docs_UsingEditor.html#autotoc_md56", null ],
+        [ "Shape Details Window", "md_docs_UsingEditor.html#autotoc_md57", null ],
+        [ "Polygon Window", "md_docs_UsingEditor.html#autotoc_md58", null ],
+        [ "Polygon Details Window", "md_docs_UsingEditor.html#autotoc_md59", null ],
+        [ "Texture Window", "md_docs_UsingEditor.html#autotoc_md60", null ],
+        [ "Texture Details Window", "md_docs_UsingEditor.html#autotoc_md61", null ],
+        [ "Text Window", "md_docs_UsingEditor.html#autotoc_md62", null ],
+        [ "Text Details Window", "md_docs_UsingEditor.html#autotoc_md63", null ],
+        [ "Animation Window", "md_docs_UsingEditor.html#autotoc_md64", null ],
+        [ "Settings Window", "md_docs_UsingEditor.html#autotoc_md65", null ],
+        [ "Generated Code Window", "md_docs_UsingEditor.html#autotoc_md66", null ],
+        [ "Debug Metrics Window", "md_docs_UsingEditor.html#autotoc_md67", null ],
+        [ "Debug Log window", "md_docs_UsingEditor.html#autotoc_md68", null ],
+        [ "Profiling Window", "md_docs_UsingEditor.html#autotoc_md69", null ]
+      ] ]
+    ] ],
+    [ "How It works", "md_docs_Working.html", [
+      [ "Table of Contents", "md_docs_Working.html#autotoc_md71", null ],
+      [ "File structure", "md_docs_Working.html#autotoc_md72", null ],
+      [ "How the API works", "md_docs_Working.html#autotoc_md73", null ],
+      [ "Input and Window handling", "md_docs_Working.html#autotoc_md74", null ],
+      [ "How the <tt>engine</tt> works", "md_docs_Working.html#autotoc_md75", null ],
+      [ "Initalization", "md_docs_Working.html#autotoc_md76", null ],
+      [ "Adding textures", "md_docs_Working.html#autotoc_md77", null ],
+      [ "Rendering Shapes with Color", "md_docs_Working.html#autotoc_md78", null ],
+      [ "Rendering Shapes with Texture", "md_docs_Working.html#autotoc_md79", null ],
+      [ "Rendering arbitary polygons", "md_docs_Working.html#autotoc_md80", null ],
+      [ "Rendering Text with vulkan", "md_docs_Working.html#autotoc_md81", null ],
+      [ "The drawFrame() call", "md_docs_Working.html#autotoc_md82", null ],
+      [ "How the editor is integrated", "md_docs_Working.html#autotoc_md83", null ],
+      [ "How CMake builds Chronos", "md_docs_Working.html#autotoc_md84", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -107,7 +169,7 @@ var NAVTREEINDEX =
 [
 "Vertex_8hpp.html",
 "classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e",
-"md_docs_build.html#autotoc_md20"
+"md_docs_LibrariesUsed.html#autotoc_md43"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

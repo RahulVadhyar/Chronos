@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['manager_2ecpp_460',['manager.cpp',['../manager_8cpp.html',1,'']]],
-  ['multifontinclude_2ehpp_461',['multiFontInclude.hpp',['../multiFontInclude_8hpp.html',1,'']]]
+  ['librariesused_2emd_456',['LibrariesUsed.md',['../LibrariesUsed_8md.html',1,'']]],
+  ['logging_2ehpp_457',['logging.hpp',['../logging_8hpp.html',1,'']]]
 ];

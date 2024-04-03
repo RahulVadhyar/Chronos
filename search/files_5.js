@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['getfonttype_2ecpp_454',['getFontType.cpp',['../getFontType_8cpp.html',1,'']]],
-  ['getfonttype_2ehpp_455',['getFontType.hpp',['../getFontType_8hpp.html',1,'']]]
+  ['filingissues_2emd_450',['FilingIssues.md',['../FilingIssues_8md.html',1,'']]],
+  ['fonttypes_2ehpp_451',['fontTypes.hpp',['../fontTypes_8hpp.html',1,'']]]
 ];
