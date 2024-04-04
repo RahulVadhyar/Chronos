@@ -20,6 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+#include "imgui.h"
 #include "stlheader.hpp"
 #include "editorHeaders.hpp"
 #include "chronos.hpp"
@@ -297,6 +298,16 @@ void Chronos::Editor::EditorManager::TextureWindow(){
                     doesTextureExist = true;
                     break;
                 }
+                if(std::string(this->newTextureName).size() == '\0'){
+                    ImGui::Text("Name Cannot be empty");
+                    doesTextureExist = true;
+                    break;
+                }
+                if(!std::string(this->newTexturePath).ends_with(".jpg") && !std::string(this->newTexturePath).ends_with(".png")){
+                    ImGui::Text("Only jpg and png files are supported");
+                    doesTextureExist = true;
+                    break;
+                }
             }
 
             if(!doesTextureExist){
@@ -307,8 +318,8 @@ void Chronos::Editor::EditorManager::TextureWindow(){
                 }  
             }   
             ImGui::SeparatorText("Current Textures");
+            std::vector<Chronos::Manager::TextureDetails> details = this->manager->getTextureDetails();
             if(ImGui::BeginListBox("Textures")){
-                std::vector<Chronos::Manager::TextureDetails> details = this->manager->getTextureDetails();
                 if(details.size() == 0){
                     ImGui::Selectable("No Textures");
                 } else {
@@ -319,6 +330,17 @@ void Chronos::Editor::EditorManager::TextureWindow(){
                     }
                 }
                 ImGui::EndListBox();
+            }
+            if(details.size() > 0){
+                if(ImGui::Button("Remove Texture")){
+                    this->manager->removeTexture(details[currentTextureSelection].textureNo);
+                    LOG(1, "Editor", "Texture removed with textureNo [" + std::to_string(details[currentTextureSelection].textureNo) + "]");
+                }
+                ImGui::SameLine();
+                if(ImGui::Button("View Texture Details")){
+                    this->showTextureDetailsWindow = true;
+                    LOG(1, "Editor", "Texture selected for editing with textureNo [" + std::to_string(this->textureDetailsCurrentSelection) + "]");
+                }
             }
         ImGui::End();
     }
@@ -534,6 +556,19 @@ void Chronos::Editor::EditorManager::PolygonDetailsWindow(){
 void Chronos::Editor::EditorManager::TextureDetailsWindow(){
     if(this->showTextureDetailsWindow){
         ImGui::Begin("Texture Details", &this->showTextureDetailsWindow);
+        ImGui::SeparatorText("Texture Details");
+        std::vector<Chronos::Manager::TextureDetails> textureDetails = this->manager->getTextureDetails();
+        if(textureDetails.size() == 0){
+            ImGui::Text("No Textures");
+        } else {
+            ImGui::Text("Texture Name: %s", textureDetails[this->textureDetailsCurrentSelection].textureName.data());
+            ImGui::Text("Texture Path: %s", textureDetails[this->textureDetailsCurrentSelection].texturePath.data());
+            ImGui::Text("Width: %d", textureDetails[this->textureDetailsCurrentSelection].width);
+            ImGui::Text("Height: %d", textureDetails[this->textureDetailsCurrentSelection].height);
+            ImGui::SeparatorText("Texture Preview");
+            ImGui::Image((ImTextureID)textureDetails[this->textureDetailsCurrentSelection].descriptorSet, ImVec2(textureDetails[this->textureDetailsCurrentSelection].width, textureDetails[this->textureDetailsCurrentSelection].height));
+
+        }
         ImGui::End();
     }
 }

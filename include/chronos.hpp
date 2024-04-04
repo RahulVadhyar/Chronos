@@ -117,6 +117,11 @@ namespace Manager {
         std::string textureName;
         std::string texturePath;
         int textureNo;
+        int width;
+        int height;
+        #ifdef ENABLE_EDITOR
+        VkDescriptorSet descriptorSet;
+        #endif
     };
 
     /**

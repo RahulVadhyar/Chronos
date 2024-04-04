@@ -29,6 +29,10 @@ SOFTWARE.
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
+#ifdef ENABLE_EDITOR
+#include "editorHeaders.hpp"
+#endif
+
 void Chronos::Engine::createImage(Chronos::Engine::Device device, uint32_t width, uint32_t height,
     VkFormat format, VkImageTiling tiling, VkImageUsageFlags usage,
     VkMemoryPropertyFlags properties, VkImage* image,
@@ -83,6 +87,8 @@ void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandP
         pixels = stbi_load(texturePath.c_str(), &texWidth, &texHeight, &texChannels,
             STBI_rgb_alpha);
         imageSize = texWidth * texHeight * 4;
+        this->width = texWidth;
+        this->height = texHeight;
         if (!pixels) {
             throw std::runtime_error("failed to load texture image " + texturePath);
         }
@@ -122,6 +128,12 @@ void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandP
     vkDestroyBuffer(device.device, stagingBuffer, nullptr);
     vkFreeMemory(device.device, stagingBufferMemory, nullptr);
     textureImageView = createImageView(device, VK_FORMAT_R8G8B8A8_SRGB, textureImage);
+    #ifdef ENABLE_EDITOR
+    Chronos::Engine::createTextureSampler(device, &textureSampler);
+    descriptorSet = ImGui_ImplVulkan_AddTexture(textureSampler, textureImageView,
+        VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL);
+    
+#endif
 }
 
 void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandPool commandPool,
@@ -160,6 +172,7 @@ void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandP
     vkDestroyBuffer(device.device, stagingBuffer, nullptr);
     vkFreeMemory(device.device, stagingBufferMemory, nullptr);
     textureImageView = createImageView(device, format, textureImage);
+
 }
 
 void Chronos::Engine::transitionImageLayout(VkImage image, VkFormat format,

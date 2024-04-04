@@ -171,6 +171,13 @@ namespace Engine {
         */
         std::string textureName;
 
+        int height;
+        int width;
+#ifdef ENABLE_EDITOR
+        VkDescriptorSet descriptorSet;
+        VkSampler textureSampler;
+#endif
+
     private:
         /**
         \brief The device that has the texture.

@@ -327,6 +327,11 @@ std::vector <Chronos::Manager::TextureDetails> Manager::Manager::getTextureDetai
         details.textureNo = texture.first;
         details.textureName = texture.second.textureName;
         details.texturePath = texture.second.texturePath;
+        details.height = texture.second.height;
+        details.width = texture.second.width;
+        #ifdef ENABLE_EDITOR
+        details.descriptorSet = texture.second.descriptorSet;
+        #endif
         textureDetails.push_back(details);
     }
     return textureDetails;

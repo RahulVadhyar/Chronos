@@ -113,6 +113,10 @@ namespace Chronos{
                 Chronos::Engine::TextParams textDetailsTextParams;
                 int textDetailsTextNo = 0;
 
+                //texture details window
+                int textureDetailsCurrentSelection = 0;
+
+
                 //settings window
                 char windowTitle[200] = GAME_NAME;
                 std::string presentMode = "mailbox";
