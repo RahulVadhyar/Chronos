@@ -26,6 +26,7 @@ SOFTWARE.
 #include "chronos.hpp"
 #include "editorManager.hpp"
 #include "editorTheme.hpp"
+#include "editorCodeGenerator.hpp"
 
 void Chronos::Editor::EditorManager::addElements(){
     Chronos::Editor::setImGuiStyle();
@@ -35,6 +36,7 @@ void Chronos::Editor::EditorManager::addElements(){
     this->TextureWindow();
     this->TextWindow();
     this->SettingsWindow();
+    this->TotalCodeGenerationWindow();
     this->ShapeDetailsWindow();
     this->PolygonDetailsWindow();
     this->TextureDetailsWindow();
@@ -625,3 +627,13 @@ void Chronos::Editor::EditorManager::ProfilingWindow(){
     }
 }
 #endif
+
+void Chronos::Editor::EditorManager::TotalCodeGenerationWindow(){
+    if(this->showGeneratedCodeWindow){
+        ImGui::Begin("Generated Code", &this->showGeneratedCodeWindow);
+        ImGui::SeparatorText("Generated Code");
+        std::string code = Chronos::Editor::generateCode(this->manager);
+        ImGui::InputTextMultiline("Code", code.data(), code.size(), ImVec2(800, 600), ImGuiInputTextFlags_ReadOnly);
+        ImGui::End();
+    }
+}

@@ -59,6 +59,7 @@ namespace Chronos{
                 void TextureWindow();
                 void TextWindow();
                 void SettingsWindow();
+                void TotalCodeGenerationWindow();
 
                 void ShapeDetailsWindow();
                 void PolygonDetailsWindow();
