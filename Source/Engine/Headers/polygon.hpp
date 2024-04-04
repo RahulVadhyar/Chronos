@@ -82,7 +82,7 @@ namespace Chronos{
         Chronos::Engine::Texture texture;
         std::vector<TexturedVertex> vertices;
         std::vector<Chronos::Engine::Buffer> polygonVertexBuffers;
-        Chronos::Engine::Buffer indexBuffer;
+        std::vector<Chronos::Engine::Buffer> indexBuffers;
 
         void createDescriptorSets() override;
         std::vector<VkDescriptorType> getDescriptorTypes() override;
@@ -96,10 +96,13 @@ namespace Chronos{
         */
         void copyVerticestoBuffer(Chronos::Engine::Buffer vertexBuffer);
 
+        void copyIndicestoBuffer(Chronos::Engine::Buffer indexBuffer);
+
         /**
         \brief Flags to know if the vertex buffer is to be updated.
         */
         std::vector<bool> copyVertices;
+
         };      
     };
 };

@@ -88,10 +88,11 @@ template <Chronos::Engine::ObjectLike Object>
 void Chronos::Engine::ObjectManager<Object>::changeMsaa()
 {
     vkDestroyRenderPass(device->device, renderPass, nullptr);
-    renderPass = Chronos::Engine::createRenderPass(*device, *swapChain, VK_IMAGE_LAYOUT_UNDEFINED,
-        VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
-        VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL, true,
-        true, false);
+    createRenderPass();
+    recreate();
+    for(auto& objectMap : objects){
+        objectMap.second.recreateGraphicsPipeline();
+    }
 }
 
 template <Chronos::Engine::ObjectLike Object>

@@ -176,6 +176,12 @@ void Chronos::Engine::Engine::drawFrame()
         swapChain.changePresentMode = false;
         LOG(3, "Engine", "Present mode changed");
     }
+    if(this->changeMSAAFlag){
+        vkDeviceWaitIdle(device.device);
+        changeMSAASettings();
+        this->changeMSAAFlag = false;
+        LOG(3, "Engine", "MSAA changed");
+    }
     // wait for the previous frame to finish
     glfwPollEvents();
 
@@ -225,6 +231,7 @@ void Chronos::Engine::Engine::drawFrame()
     colorShapeManager.update(currentFrame);
     textManager.update(currentFrame);
     polygonManager.update(currentFrame);
+    
 #ifdef ENABLE_EDITOR
     gui.update();
 #endif
@@ -465,4 +472,67 @@ void Chronos::Engine::Engine::setPresentMode(std::string mode){
     }
     this->swapChain.changePresentMode = true;
     LOG(3, "Engine", "Present mode set to " + mode);
+}
+
+std::vector<std::string> Chronos::Engine::Engine::getAvailableMSAAModes(){
+    VkSampleCountFlagBits maxSample = device.maxMsaaSamples;
+    std::vector<std::string> modes;
+    if(VK_SAMPLE_COUNT_64_BIT <= maxSample){
+        modes.push_back("64");
+    }
+    if(VK_SAMPLE_COUNT_32_BIT <= maxSample){
+        modes.push_back("32");
+}
+    if(VK_SAMPLE_COUNT_16_BIT <= maxSample){
+        modes.push_back("16");
+    }
+    if(VK_SAMPLE_COUNT_8_BIT <= maxSample){
+        modes.push_back("8");
+    }
+    if(VK_SAMPLE_COUNT_4_BIT <= maxSample){
+        modes.push_back("4");
+    }
+    if(VK_SAMPLE_COUNT_2_BIT <= maxSample){
+        modes.push_back("2");
+    }
+    modes.push_back("1");
+    return modes;
+}
+
+void Chronos::Engine::Engine::changeMSAA(std::string mode){
+    if(mode == "64"){
+        this->newMSAAMode = VK_SAMPLE_COUNT_64_BIT;
+    } else if(mode == "32"){
+        this->newMSAAMode = VK_SAMPLE_COUNT_32_BIT;
+    } else if(mode == "16"){
+        this->newMSAAMode = VK_SAMPLE_COUNT_16_BIT;
+    } else if(mode == "8"){
+        this->newMSAAMode = VK_SAMPLE_COUNT_8_BIT;
+    } else if(mode == "4"){
+        this->newMSAAMode = VK_SAMPLE_COUNT_4_BIT;
+    } else if(mode == "2"){
+        this->newMSAAMode = VK_SAMPLE_COUNT_2_BIT;
+    } else if(mode == "1"){
+        this->newMSAAMode = VK_SAMPLE_COUNT_1_BIT;
+    } else {
+        throw std::runtime_error("Invalid MSAA mode");
+    }
+    if(this->newMSAAMode > device.maxMsaaSamples){
+        throw std::runtime_error("Invalid MSAA mode");
+    }
+    this->changeMSAAFlag = true;
+    LOG(3, "Engine", "MSAA to be changed to " + mode);
+}
+
+void Chronos::Engine::Engine::changeMSAASettings(){
+    device.msaaSamples = this->newMSAAMode;
+    this->swapChain.changeMsaa();
+    this->textManager.changeMsaa();
+    this->shapeManager.changeMsaa();
+    this->colorShapeManager.changeMsaa();
+    this->polygonManager.changeMsaa();
+#ifdef ENABLE_EDITOR
+    this->gui.changeMsaa();
+#endif
+    LOG(3, "Engine", "MSAA changed to " + std::to_string(device.msaaSamples));
 }

@@ -412,6 +412,7 @@ void Chronos::Editor::EditorManager::SettingsWindow(){
         ImGui::Text("Build Version: %d.%d.%d", CHRONOS_VERSION_MAJOR, CHRONOS_VERSION_MINOR, CHRONOS_VERSION_PATCH);
         ImGui::Text("Build Date: %s", __DATE__);
         ImGui::Text("Build Time: %s", __TIME__);
+
         ImGui::SeparatorText("Window Settings");
         ImGui::InputText("Window Title", this->windowTitle, 200);
         if(ImGui::Button("Update Window Title")){
@@ -431,6 +432,7 @@ void Chronos::Editor::EditorManager::SettingsWindow(){
             this->isWindowFullscreen = false;
             LOG(1, "Editor", "Window set to windowed mode");
         }
+
         ImGui::SeparatorText("Present Mode");
         if(ImGui::BeginCombo("Present Mode", this->presentMode.c_str())){
             if(ImGui::Selectable("mailbox", this->presentMode == "mailbox")){
@@ -451,6 +453,20 @@ void Chronos::Editor::EditorManager::SettingsWindow(){
             this->manager->changePresentMode(this->presentMode);
             LOG(1, "Editor", "Present mode updated to [" + this->presentMode + "]");
         }
+
+        ImGui::SeparatorText("MSAA Samples");
+        std::vector<std::string> msaaSamples = this->manager->getMSAAModes();
+        for(std::string sample : msaaSamples){
+            if(ImGui::Selectable(sample.c_str(), this->msaaSamples == sample)){
+                this->msaaSamples = sample;
+            }
+        }
+        if(ImGui::Button("Update MSAA Samples")){
+            this->manager->changeMSAA(this->msaaSamples);
+            LOG(1, "Editor", "MSAA Samples updated to [" + this->msaaSamples + "]");
+        }
+
+
         ImGui::SeparatorText("Background Color");
         ImGui::ColorEdit3("Background Color", this->bgColor);
         if(ImGui::Button("Update Background Color")){

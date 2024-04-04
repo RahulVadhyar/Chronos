@@ -188,3 +188,13 @@ void Chronos::Editor::EditorRenderer::renderAdditionalViewports(){
     LOG(4, "EditorRenderer", "Rendered additional viewports");
 #endif
 }
+
+void Chronos::Editor::EditorRenderer::changeMsaa(){
+    vkDestroyRenderPass(device->device, renderPass, nullptr);
+    renderPass = Chronos::Engine::createRenderPass(
+        *device, *swapChain, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
+        VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
+        false, false, true);
+    recreate();
+    
+}

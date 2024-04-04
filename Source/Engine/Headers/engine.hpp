@@ -29,6 +29,7 @@ SOFTWARE.
 #pragma once
 
 
+
 #ifdef ENABLE_EDITOR
 //if the editor is enabled, then include the editorRenderer to get the rendering functions and classes of the editor.
 #include "editorRenderer.hpp"
@@ -215,7 +216,17 @@ namespace Engine {
         */
         ~Engine();
 
+        void changeMSAA(std::string);
+
+        std::vector<std::string> getAvailableMSAAModes();
+
     private:
+
+        bool changeMSAAFlag = false;
+        VkSampleCountFlagBits newMSAAMode;
+
+        void changeMSAASettings();
+
         /**
         \brief This is the object that manages the device.
 

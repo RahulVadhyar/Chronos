@@ -57,7 +57,7 @@ void Chronos::Engine::Device::pickPhysicalDevice(VkInstance instance, VkSurfaceK
     for (const auto& device : devices) {
         if (isDeviceSuitable(device, surface)) {
             physicalDevice = device;
-            msaaSamples = getMaxUsableSampleCount(device);
+            maxMsaaSamples = getMaxUsableSampleCount(device);
             break;
         }
     }

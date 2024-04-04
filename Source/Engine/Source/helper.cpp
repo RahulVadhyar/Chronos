@@ -283,7 +283,7 @@ VkRenderPass Chronos::Engine::createRenderPass(Chronos::Engine::Device device, S
     VkAttachmentDescription colorAttachment {};
     colorAttachment.format = swapChain.swapChainImageFormat;
     // if using msaa, set the bits
-    if (msaa) {
+    if (msaa && device.msaaSamples != VK_SAMPLE_COUNT_1_BIT) {
         colorAttachment.samples = device.msaaSamples;
     } else {
         colorAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
@@ -323,7 +323,7 @@ VkRenderPass Chronos::Engine::createRenderPass(Chronos::Engine::Device device, S
     subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
     subpass.colorAttachmentCount = 1;
     subpass.pColorAttachments = &colorAttachmentRef;
-    if (msaa) {
+    if (msaa && device.msaaSamples != VK_SAMPLE_COUNT_1_BIT) {
         subpass.pResolveAttachments = &colorAttachmentResolveRef;
     } else {
         subpass.pResolveAttachments = nullptr;
@@ -348,7 +348,7 @@ VkRenderPass Chronos::Engine::createRenderPass(Chronos::Engine::Device device, S
     subpassDependencies[1].dependencyFlags = VK_DEPENDENCY_BY_REGION_BIT;
 
     std::vector<VkAttachmentDescription> attachments = { colorAttachment };
-    if (msaa) {
+    if (msaa && device.msaaSamples != VK_SAMPLE_COUNT_1_BIT) {
         attachments.push_back(colorAttachmentResolve);
     }
 
@@ -378,7 +378,7 @@ std::vector<VkFramebuffer> Chronos::Engine::createFramebuffer(Chronos::Engine::D
     framebuffers.resize(swapChain.swapChainImageViews.size());
     for (size_t i = 0; i < swapChain.swapChainImageViews.size(); i++) {
         std::vector<VkImageView> attachments;
-        if (msaa) {
+        if (msaa && device.msaaSamples != VK_SAMPLE_COUNT_1_BIT) {
             attachments = { swapChain.colorImageView,
                 swapChain.swapChainImageViews[i] };
         } else {

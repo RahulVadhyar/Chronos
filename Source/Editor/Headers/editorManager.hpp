@@ -119,6 +119,7 @@ namespace Chronos{
                 float bgColor[3] = {0,0,0};
                 bool fullScreen = false;
                 bool isWindowFullscreen = false;
+                std::string msaaSamples = "1";
         };  
     }
 }

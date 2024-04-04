@@ -432,6 +432,14 @@ namespace Manager {
             engine.setPresentMode(presentMode);
         }
 
+        std::vector<std::string> getMSAAModes(){
+            return engine.getAvailableMSAAModes();
+        }
+
+        void changeMSAA(std::string mode){
+            engine.changeMSAA(mode);
+        }
+
 #ifdef CHRONOS_PROFILING
         float getWaitTime(){
             return engine.getWaitTime()*1e-6;

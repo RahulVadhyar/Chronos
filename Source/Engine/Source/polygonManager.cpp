@@ -62,14 +62,14 @@ void Chronos::Engine::PolygonManager::render(uint32_t currentFrame, uint32_t ima
         VkDeviceSize offsets[] = { 0 };
         vkCmdBindVertexBuffers(commandBuffers[currentFrame], 0, 1, vertexBuffers,
             offsets);
-        vkCmdBindIndexBuffer(commandBuffers[currentFrame], polygon.second.indexBuffer.buffer,
+        vkCmdBindIndexBuffer(commandBuffers[currentFrame], polygon.second.indexBuffers[currentFrame].buffer,
             0, VK_INDEX_TYPE_UINT16);
         vkCmdBindDescriptorSets(commandBuffers[currentFrame],
             VK_PIPELINE_BIND_POINT_GRAPHICS,
             polygon.second.pipelineLayout, 0, 1,
             &polygon.second.descriptorSets[currentFrame], 0, nullptr);
         vkCmdDrawIndexed(commandBuffers[currentFrame],
-            static_cast<uint32_t>(polygon.second.indices.size()), 1, 0, 0, 0);
+            static_cast<uint32_t>(polygon.second.vertices.size() - 2), 1, 0, 0, 0);
     }
     endRender(currentFrame);
 }

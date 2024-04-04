@@ -69,11 +69,14 @@ VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* render
     }
     copyVertices.resize(MAX_FRAMES_IN_FLIGHT, false);
 
-    indexBuffer.size = sizeof(this->indices[0]) * this->indices.size();
-    indexBuffer.create(*device,
-        VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_INDEX_BUFFER_BIT,
-        VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT); //inidcies will not change
-    indexBuffer.copy(this->indices.data(), commandPool);
+    indexBuffers.resize(MAX_FRAMES_IN_FLIGHT);
+    for (auto& buffer : indexBuffers){
+        buffer.size = sizeof(this->indices[0]) * (this->vertices.size() - 2); //max indices = n - 2
+        buffer.create(*device,
+            VK_BUFFER_USAGE_INDEX_BUFFER_BIT,
+            VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); //inidcies will not change
+        copyIndicestoBuffer(buffer);
+    }
     
 }
 
@@ -89,6 +92,18 @@ void Chronos::Engine::Polygon::copyVerticestoBuffer(Chronos::Engine::Buffer vert
     vkUnmapMemory(device->device, vertexBuffer.memory);
 }
 
+void Chronos::Engine::Polygon::copyIndicestoBuffer(Chronos::Engine::Buffer indexBuffer){
+    if(vkMapMemory(device->device, indexBuffer.memory, 0, VK_WHOLE_SIZE, 0, &this->mappedMemory)
+        != VK_SUCCESS){
+        throw std::runtime_error("Failed to map memory");
+    }
+    if(this->mappedMemory == nullptr){
+        throw std::runtime_error("Memory not mapped, current address is " + std::to_string((uint64_t)this->mappedMemory));
+    }
+    memcpy(this->mappedMemory, this->indices.data(), (size_t)indexBuffer.size);
+    vkUnmapMemory(device->device, indexBuffer.memory);
+}
+
 void Chronos::Engine::Polygon::updateVertices(std::vector<std::array<float, 2>>vertices){
     //There are a vertex buffer, one for each frame in flight. We need to update all of them
     //however, some of them may be in use, hence we just set bools correspoding to each buffer to true
@@ -99,6 +114,18 @@ void Chronos::Engine::Polygon::updateVertices(std::vector<std::array<float, 2>>v
         TexturedVertex tv = {{vertex[0], vertex[1]}, {(vertex[0] + 1.0f)/2.0f, (vertex[1] + 1.0f)/2.0f}};
         this->vertices.push_back(tv);
     }
+
+    std::vector<uint32_t> triangleIndices = mapbox::earcut<uint32_t>(std::array<std::vector<std::array<float, 2>>, 2>{vertices, {}});
+    assert(triangleIndices.size() <= this->indices.size());
+    this->indices.clear();
+    this->indices.resize(this->vertices.size() - 2);
+    for (uint32_t i = 0; i < triangleIndices.size(); i++){
+        if(triangleIndices[i] >= vertices.size()){
+            throw std::runtime_error("Index" + std::to_string(triangleIndices[i]) + " out of range");
+        }
+        this->indices.push_back(triangleIndices[i]);
+    }
+
     for(int i = 0; i < copyVertices.size(); i++){
         copyVertices[i] = true;
     }
@@ -107,6 +134,7 @@ void Chronos::Engine::Polygon::updateVertices(std::vector<std::array<float, 2>>v
 void Chronos::Engine::Polygon::update(uint32_t currentFrame){
     if (copyVertices[currentFrame]){
         copyVerticestoBuffer(polygonVertexBuffers[currentFrame]);
+        copyIndicestoBuffer(indexBuffers[currentFrame]);
         copyVertices[currentFrame] = false;
     }
     uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x,
@@ -118,7 +146,9 @@ void Chronos::Engine::Polygon::destroy(){
     for (auto& buffer : polygonVertexBuffers){
         buffer.destroy();
     }
-    indexBuffer.destroy();
+    for (auto& buffer : indexBuffers){
+        buffer.destroy();
+    }
     Chronos::Engine::Object::destroy();
 }
 

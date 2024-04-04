@@ -67,6 +67,8 @@ namespace Engine {
         */
         VkSampleCountFlagBits msaaSamples = VK_SAMPLE_COUNT_1_BIT;
 
+        VkSampleCountFlagBits maxMsaaSamples = VK_SAMPLE_COUNT_1_BIT;
+
         /**
         \brief This is the function that initializes the devices and queues.
 
