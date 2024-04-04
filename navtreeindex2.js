@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"md_docs_APIUsage.html#autotoc_md7":[1,6],
+"md_docs_APIUsage.html#autotoc_md8":[1,7],
+"md_docs_APIUsage.html#autotoc_md9":[1,8],
 "md_docs_Contributing.html":[3],
 "md_docs_Contributing.html#autotoc_md34":[3,0],
 "md_docs_FilingIssues.html":[4],
@@ -203,9 +206,11 @@ var NAVTREEINDEX2 =
 "structChronos_1_1Manager_1_1Text.html#ab867e22960ef531c03cd9dda1a5686c2":[9,0,0,2,1,3],
 "structChronos_1_1Manager_1_1Text.html#ad5b58d0011bf614ae3a0ac3de2edaafa":[9,0,0,2,1,4],
 "structChronos_1_1Manager_1_1TextureDetails.html":[9,0,0,2,3],
-"structChronos_1_1Manager_1_1TextureDetails.html#a477d033c159cf9146d932ea104597371":[9,0,0,2,3,1],
-"structChronos_1_1Manager_1_1TextureDetails.html#aa2342b4563f84373efb7f624cb8c733b":[9,0,0,2,3,2],
-"structChronos_1_1Manager_1_1TextureDetails.html#aea27fc52150012eeeff27d4e81e10e44":[9,0,0,2,3,0],
+"structChronos_1_1Manager_1_1TextureDetails.html#a31ecddfb74850b47f59beac60f327fdc":[9,0,0,2,3,0],
+"structChronos_1_1Manager_1_1TextureDetails.html#a477d033c159cf9146d932ea104597371":[9,0,0,2,3,2],
+"structChronos_1_1Manager_1_1TextureDetails.html#a82e3a256b07bb2aec81ad25605e13d3c":[9,0,0,2,3,4],
+"structChronos_1_1Manager_1_1TextureDetails.html#aa2342b4563f84373efb7f624cb8c733b":[9,0,0,2,3,3],
+"structChronos_1_1Manager_1_1TextureDetails.html#aea27fc52150012eeeff27d4e81e10e44":[9,0,0,2,3,1],
 "structEmpty.html":[9,0,1],
 "structEmpty.html#aa2a0d8f0e9afd1284ac389b3ab582608":[9,0,1,0],
 "swapchain_8cpp.html":[10,0,2,3,1,8],
@@ -244,7 +249,5 @@ var NAVTREEINDEX2 =
 "vulkanHeaders_8hpp.html":[10,0,2,3,0,21],
 "vulkanHeaders_8hpp.html#a53aeecf6b7ba36273b6998fbd206ca7d":[10,0,2,3,0,21,1],
 "vulkanHeaders_8hpp.html#a816ab7d5c2ce1f0a01216042837beb93":[10,0,2,3,0,21,2],
-"vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec":[10,0,2,3,0,21,3],
-"vulkanHeaders_8hpp.html#ab91f325a54d3e35fe831a86d6382c2a9":[10,0,2,3,0,21,0],
-"vulkanHeaders_8hpp_source.html":[10,0,2,3,0,21]
+"vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec":[10,0,2,3,0,21,3]
 };

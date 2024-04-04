@@ -14,10 +14,9 @@ var searchData=
   ['empty_118',['Empty',['../structEmpty.html#aa2a0d8f0e9afd1284ac389b3ab582608',1,'Empty::Empty()'],['../structEmpty.html',1,'Empty']]],
   ['endrender_119',['endRender',['../classChronos_1_1Engine_1_1ObjectManager.html#a77f6c739ae9749aae03eb708f3aa3852',1,'Chronos::Engine::ObjectManager']]],
   ['endsingletimecommands_120',['endSingleTimeCommands',['../namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c',1,'Chronos::Engine']]],
-  ['engine_121',['Engine',['../classChronos_1_1Engine_1_1Engine.html',1,'Chronos::Engine']]],
+  ['engine_121',['Engine',['../classChronos_1_1Engine_1_1Engine.html',1,'Chronos::Engine::Engine'],['../classChronos_1_1Engine_1_1Engine.html#a66c6b72176c3e93affdb0018eb137801',1,'Chronos::Engine::Engine::Engine()']]],
   ['engine_122',['engine',['../classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2',1,'Chronos::Manager::Manager']]],
-  ['engine_123',['Engine',['../classChronos_1_1Engine_1_1Engine.html#a66c6b72176c3e93affdb0018eb137801',1,'Chronos::Engine::Engine']]],
-  ['engine_2ecpp_124',['engine.cpp',['../engine_8cpp.html',1,'']]],
-  ['engine_2ehpp_125',['engine.hpp',['../engine_8hpp.html',1,'']]],
-  ['enginestructs_2ehpp_126',['engineStructs.hpp',['../engineStructs_8hpp.html',1,'']]]
+  ['engine_2ecpp_123',['engine.cpp',['../engine_8cpp.html',1,'']]],
+  ['engine_2ehpp_124',['engine.hpp',['../engine_8hpp.html',1,'']]],
+  ['enginestructs_2ehpp_125',['engineStructs.hpp',['../engineStructs_8hpp.html',1,'']]]
 ];

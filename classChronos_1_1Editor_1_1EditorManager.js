@@ -61,5 +61,6 @@ var classChronos_1_1Editor_1_1EditorManager =
     [ "showTextWindow", "classChronos_1_1Editor_1_1EditorManager.html#a8cf788c495640f042b71bfe192dd5232", null ],
     [ "textDetailsTextNo", "classChronos_1_1Editor_1_1EditorManager.html#a5bcbdfc80a2542e0fcabb12b382fe3f9", null ],
     [ "textDetailsTextParams", "classChronos_1_1Editor_1_1EditorManager.html#a5511189d999a9b95b32acb4468924474", null ],
+    [ "textureDetailsCurrentSelection", "classChronos_1_1Editor_1_1EditorManager.html#ae7451406a008bf9172f5ee5966c70d81", null ],
     [ "windowTitle", "classChronos_1_1Editor_1_1EditorManager.html#aa6cc989e6fb30ee8270253b625f66c2c", null ]
 ];

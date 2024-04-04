@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['texcoord_744',['texCoord',['../structChronos_1_1Engine_1_1TexturedVertex.html#aabdb83ac2cad25c9bdf056c7251d1eb5',1,'Chronos::Engine::TexturedVertex']]],
-  ['text_745',['text',['../structChronos_1_1Manager_1_1Text.html#a7bd29000ccdb18cf6c394c4bc4edd687',1,'Chronos::Manager::Text::text()'],['../structChronos_1_1Engine_1_1TextParams.html#a59928aa0d36b41e82d968c6c7ef33602',1,'Chronos::Engine::TextParams::text()']]],
-  ['textdetailstextno_746',['textDetailsTextNo',['../classChronos_1_1Editor_1_1EditorManager.html#a5bcbdfc80a2542e0fcabb12b382fe3f9',1,'Chronos::Editor::EditorManager']]],
-  ['textdetailstextparams_747',['textDetailsTextParams',['../classChronos_1_1Editor_1_1EditorManager.html#a5511189d999a9b95b32acb4468924474',1,'Chronos::Editor::EditorManager']]],
-  ['textmanager_748',['textManager',['../classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8',1,'Chronos::Engine::Engine']]],
-  ['texture_749',['texture',['../classChronos_1_1Engine_1_1Polygon.html#ab8d7058f186abfaf5eda4df4d15b9216',1,'Chronos::Engine::Polygon::texture()'],['../classChronos_1_1Engine_1_1Shape.html#a5c6cfeb926c4e0e8d92823e1184e7698',1,'Chronos::Engine::Shape::texture()']]],
+  ['texcoord_743',['texCoord',['../structChronos_1_1Engine_1_1TexturedVertex.html#aabdb83ac2cad25c9bdf056c7251d1eb5',1,'Chronos::Engine::TexturedVertex']]],
+  ['text_744',['text',['../structChronos_1_1Manager_1_1Text.html#a7bd29000ccdb18cf6c394c4bc4edd687',1,'Chronos::Manager::Text::text()'],['../structChronos_1_1Engine_1_1TextParams.html#a59928aa0d36b41e82d968c6c7ef33602',1,'Chronos::Engine::TextParams::text()']]],
+  ['textdetailstextno_745',['textDetailsTextNo',['../classChronos_1_1Editor_1_1EditorManager.html#a5bcbdfc80a2542e0fcabb12b382fe3f9',1,'Chronos::Editor::EditorManager']]],
+  ['textdetailstextparams_746',['textDetailsTextParams',['../classChronos_1_1Editor_1_1EditorManager.html#a5511189d999a9b95b32acb4468924474',1,'Chronos::Editor::EditorManager']]],
+  ['textmanager_747',['textManager',['../classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8',1,'Chronos::Engine::Engine']]],
+  ['texture_748',['texture',['../classChronos_1_1Engine_1_1Polygon.html#ab8d7058f186abfaf5eda4df4d15b9216',1,'Chronos::Engine::Polygon::texture()'],['../classChronos_1_1Engine_1_1Shape.html#a5c6cfeb926c4e0e8d92823e1184e7698',1,'Chronos::Engine::Shape::texture()']]],
+  ['texturedetailscurrentselection_749',['textureDetailsCurrentSelection',['../classChronos_1_1Editor_1_1EditorManager.html#ae7451406a008bf9172f5ee5966c70d81',1,'Chronos::Editor::EditorManager']]],
   ['textureimage_750',['textureImage',['../classChronos_1_1Engine_1_1Texture.html#a7dd323e169d6e40e23379abe453e7128',1,'Chronos::Engine::Texture']]],
   ['textureimagememory_751',['textureImageMemory',['../classChronos_1_1Engine_1_1Texture.html#a1542281212aa959828eb2173885c93b6',1,'Chronos::Engine::Texture']]],
   ['textureimageview_752',['textureImageView',['../classChronos_1_1Engine_1_1Texture.html#a4e9fa6072f861955b04b663d63eede66',1,'Chronos::Engine::Texture']]],

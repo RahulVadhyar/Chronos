@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"classChronos_1_1Engine_1_1SwapChain.html#a8d187933ff35d9ac2c09cce5b21b411e":[9,0,0,1,19,17],
 "classChronos_1_1Engine_1_1SwapChain.html#a8f9b8463fd4e77e094d2b8d2790421d4":[9,0,0,1,19,10],
 "classChronos_1_1Engine_1_1SwapChain.html#a9a6737e3c128f8a7a8287a444879d215":[9,0,0,1,19,9],
 "classChronos_1_1Engine_1_1SwapChain.html#aa8c764800b9a61a91a1e5e40e497bc03":[9,0,0,1,19,2],
@@ -39,15 +40,17 @@ var NAVTREEINDEX1 =
 "classChronos_1_1Engine_1_1TextManager.html#a4f25e8069dc1faf66f0d6cd249a4d30b":[9,0,0,1,22,1],
 "classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a":[9,0,0,1,22,0],
 "classChronos_1_1Engine_1_1Texture.html":[9,0,0,1,23],
-"classChronos_1_1Engine_1_1Texture.html#a017da0077ec137911a87f6573560d91d":[9,0,0,1,23,7],
-"classChronos_1_1Engine_1_1Texture.html#a1542281212aa959828eb2173885c93b6":[9,0,0,1,23,5],
+"classChronos_1_1Engine_1_1Texture.html#a017da0077ec137911a87f6573560d91d":[9,0,0,1,23,8],
+"classChronos_1_1Engine_1_1Texture.html#a018e6a6312544cbe2e850f773df7ebc9":[9,0,0,1,23,4],
+"classChronos_1_1Engine_1_1Texture.html#a1542281212aa959828eb2173885c93b6":[9,0,0,1,23,6],
 "classChronos_1_1Engine_1_1Texture.html#a1616c3aa51be3139d2edfa5ac5e1bdc1":[9,0,0,1,23,1],
 "classChronos_1_1Engine_1_1Texture.html#a45c8c3b0d560c16f84011561e8681f0e":[9,0,0,1,23,3],
-"classChronos_1_1Engine_1_1Texture.html#a4e9fa6072f861955b04b663d63eede66":[9,0,0,1,23,6],
-"classChronos_1_1Engine_1_1Texture.html#a7dd323e169d6e40e23379abe453e7128":[9,0,0,1,23,4],
+"classChronos_1_1Engine_1_1Texture.html#a4e9fa6072f861955b04b663d63eede66":[9,0,0,1,23,7],
+"classChronos_1_1Engine_1_1Texture.html#a7dd323e169d6e40e23379abe453e7128":[9,0,0,1,23,5],
+"classChronos_1_1Engine_1_1Texture.html#abb16361208c9467e809f4986e56c5304":[9,0,0,1,23,10],
 "classChronos_1_1Engine_1_1Texture.html#abea74b812d9b2dacfddfe9b4e51b1a83":[9,0,0,1,23,2],
 "classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98":[9,0,0,1,23,0],
-"classChronos_1_1Engine_1_1Texture.html#aeb37dc18961fb2f3cfd029626feed19f":[9,0,0,1,23,8],
+"classChronos_1_1Engine_1_1Texture.html#aeb37dc18961fb2f3cfd029626feed19f":[9,0,0,1,23,9],
 "classChronos_1_1Engine_1_1TextureManager.html":[9,0,0,1,24],
 "classChronos_1_1Engine_1_1TextureManager.html#a3c81f8bca94b1cac2d763adb36cdc84d":[9,0,0,1,24,1],
 "classChronos_1_1Engine_1_1TextureManager.html#a4aba7438aa2d1ede1009c116596f8444":[9,0,0,1,24,5],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "md_docs_APIUsage.html#autotoc_md3":[1,2],
 "md_docs_APIUsage.html#autotoc_md4":[1,3],
 "md_docs_APIUsage.html#autotoc_md5":[1,4],
-"md_docs_APIUsage.html#autotoc_md6":[1,5],
-"md_docs_APIUsage.html#autotoc_md7":[1,6],
-"md_docs_APIUsage.html#autotoc_md8":[1,7],
-"md_docs_APIUsage.html#autotoc_md9":[1,8]
+"md_docs_APIUsage.html#autotoc_md6":[1,5]
 };

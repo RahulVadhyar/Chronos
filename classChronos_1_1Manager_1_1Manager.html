@@ -198,7 +198,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>The main manager of chronos. </p>
 <p>Only this class must be used for interfacing with chronos. Do not use the internal classes for this Any changes to the window can be done via this object. Please use only the functions and variables in this class. For more information, refer to the individual methods and variables and the examples </p>
 
-<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00129">129</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00134">134</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0a100e214d7647f355e7c313b23674c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a100e214d7647f355e7c313b23674c2">&#9670;&nbsp;</a></span>Manager()</h2>
@@ -242,7 +242,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a50165316b5c0c709684961a5ca60011e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">Chronos::Engine::Engine::bgColor</a></div><div class="ttdeci">float bgColor[3]</div><div class="ttdoc">This is the background color of the window.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00147">engine.hpp:147</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a73a8aefde9c16bbe8b4bbd770cba5981"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a73a8aefde9c16bbe8b4bbd770cba5981">Chronos::Engine::Engine::height</a></div><div class="ttdeci">int height</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00134">engine.hpp:134</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ae79484eb3130b4251c2fc43179fac68c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ae79484eb3130b4251c2fc43179fac68c">Chronos::Engine::Engine::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00129">engine.hpp:129</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Manager_1_1Manager_html_a00f8c72aeda5c374bdddcaf183f95cf2"><div class="ttname"><a href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">Chronos::Manager::Manager::engine</a></div><div class="ttdeci">Chronos::Engine::Engine engine</div><div class="ttdoc">The backend Vulkan engine, used for rendering the desired shapes and text.s.</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00471">chronos.hpp:471</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Manager_1_1Manager_html_a00f8c72aeda5c374bdddcaf183f95cf2"><div class="ttname"><a href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">Chronos::Manager::Manager::engine</a></div><div class="ttdeci">Chronos::Engine::Engine engine</div><div class="ttdoc">The backend Vulkan engine, used for rendering the desired shapes and text.s.</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00476">chronos.hpp:476</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00064">Chronos::Manager::Initializer::BackgroundColor</a>, <a class="el" href="chronos_8hpp_source.html#l00063">Chronos::Manager::Initializer::WindowHeight</a>, and <a class="el" href="chronos_8hpp_source.html#l00062">Chronos::Manager::Initializer::WindowWidth</a>.</p>
 
@@ -714,13 +714,13 @@ Note: Only png and jpg files are supported.</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00439">439</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                                       {</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#ac4d2d427167bd980a19f7f6d545b687f">changeMSAA</a>(mode);</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00444">444</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                                       {</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#ac4d2d427167bd980a19f7f6d545b687f">changeMSAA</a>(mode);</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        }</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ac4d2d427167bd980a19f7f6d545b687f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ac4d2d427167bd980a19f7f6d545b687f">Chronos::Engine::Engine::changeMSAA</a></div><div class="ttdeci">void changeMSAA(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00502">engine.cpp:502</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="engine_8cpp_source.html#l00502">Chronos::Engine::Engine::changeMSAA()</a>, and <a class="el" href="chronos_8hpp_source.html#l00471">engine</a>.</p>
+<p class="reference">References <a class="el" href="engine_8cpp_source.html#l00502">Chronos::Engine::Engine::changeMSAA()</a>, and <a class="el" href="chronos_8hpp_source.html#l00476">engine</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -777,13 +777,13 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00431">431</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                                                     {</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa811161bd3c56252a4802ce7b5a044b5">setPresentMode</a>(presentMode);</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00436">436</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                                                     {</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa811161bd3c56252a4802ce7b5a044b5">setPresentMode</a>(presentMode);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        }</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_aa811161bd3c56252a4802ce7b5a044b5"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#aa811161bd3c56252a4802ce7b5a044b5">Chronos::Engine::Engine::setPresentMode</a></div><div class="ttdeci">void setPresentMode(std::string mode)</div><div class="ttdoc">Changes the present mode of the swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00461">engine.cpp:461</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00471">engine</a>, and <a class="el" href="engine_8cpp_source.html#l00461">Chronos::Engine::Engine::setPresentMode()</a>.</p>
+<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00476">engine</a>, and <a class="el" href="engine_8cpp_source.html#l00461">Chronos::Engine::Engine::setPresentMode()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -855,13 +855,13 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00435">435</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                                           {</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#adbcb2d98aa26e42c6a6e15402f0bd2b9">getAvailableMSAAModes</a>();</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00440">440</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                                           {</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#adbcb2d98aa26e42c6a6e15402f0bd2b9">getAvailableMSAAModes</a>();</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        }</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_adbcb2d98aa26e42c6a6e15402f0bd2b9"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#adbcb2d98aa26e42c6a6e15402f0bd2b9">Chronos::Engine::Engine::getAvailableMSAAModes</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getAvailableMSAAModes()</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00477">engine.cpp:477</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00471">engine</a>, and <a class="el" href="engine_8cpp_source.html#l00477">Chronos::Engine::Engine::getAvailableMSAAModes()</a>.</p>
+<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00476">engine</a>, and <a class="el" href="engine_8cpp_source.html#l00477">Chronos::Engine::Engine::getAvailableMSAAModes()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1012,18 +1012,18 @@ Note: This will return both textured and colored shapes.</h2>
 <p>If the details of the text are needed, this function can be used to get the details of all text. It returns a vector of pairs, where the first element is the textNo and the second element is the textParams.</p>
 <dl class="section return"><dt>Returns</dt><dd>A vector of pairs, where the first element is the textNo and the second element is the textParams of the corresponding text. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00336">336</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                                                                               {</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    std::vector&lt;std::pair&lt;int, Chronos::Engine::TextParams&gt;&gt; textDetails;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; text : <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">objects</a>)</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    {</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        std::pair&lt;int, Chronos::Engine::TextParams&gt; textDetail;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        textDetail.first = text.first;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        textDetail.second = text.second.params;</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        textDetails.push_back(textDetail);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    }</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keywordflow">return</span> textDetails;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00341">341</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                                                                               {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    std::vector&lt;std::pair&lt;int, Chronos::Engine::TextParams&gt;&gt; textDetails;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; text : <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#afcf543c17706586fa4cad24fbdaf9491">objects</a>)</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    {</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        std::pair&lt;int, Chronos::Engine::TextParams&gt; textDetail;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        textDetail.first = text.first;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        textDetail.second = text.second.params;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        textDetails.push_back(textDetail);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordflow">return</span> textDetails;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1055,18 +1055,25 @@ Note: This will return both textured and colored shapes.</h2>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        details.<a class="code" href="structChronos_1_1Manager_1_1TextureDetails.html#a477d033c159cf9146d932ea104597371">textureNo</a> = texture.first;</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        details.<a class="code" href="structChronos_1_1Manager_1_1TextureDetails.html#aea27fc52150012eeeff27d4e81e10e44">textureName</a> = texture.second.textureName;</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        details.<a class="code" href="structChronos_1_1Manager_1_1TextureDetails.html#aa2342b4563f84373efb7f624cb8c733b">texturePath</a> = texture.second.texturePath;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        textureDetails.push_back(details);</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    }</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">return</span> textureDetails;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;}</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        details.<a class="code" href="structChronos_1_1Manager_1_1TextureDetails.html#a31ecddfb74850b47f59beac60f327fdc">height</a> = texture.second.height;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        details.<a class="code" href="structChronos_1_1Manager_1_1TextureDetails.html#a82e3a256b07bb2aec81ad25605e13d3c">width</a> = texture.second.width;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="preprocessor">        #ifdef ENABLE_EDITOR</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        details.descriptorSet = texture.second.descriptorSet;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="preprocessor">        #endif</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        textureDetails.push_back(details);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    }</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordflow">return</span> textureDetails;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TextureManager_html_ae70e30de5fae62d902b53b64b6038a47"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextureManager.html#ae70e30de5fae62d902b53b64b6038a47">Chronos::Engine::TextureManager::textures</a></div><div class="ttdeci">std::map&lt; int, Chronos::Engine::Texture &gt; textures</div><div class="ttdoc">The textures that are managed by this class. They are mapped via texture nos.</div><div class="ttdef"><b>Definition:</b> <a href="textureManager_8hpp_source.html#l00043">textureManager.hpp:43</a></div></div>
 <div class="ttc" id="astructChronos_1_1Manager_1_1TextureDetails_html"><div class="ttname"><a href="structChronos_1_1Manager_1_1TextureDetails.html">Chronos::Manager::TextureDetails</a></div><div class="ttdoc">Holds some details about the texture.</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00116">chronos.hpp:116</a></div></div>
+<div class="ttc" id="astructChronos_1_1Manager_1_1TextureDetails_html_a31ecddfb74850b47f59beac60f327fdc"><div class="ttname"><a href="structChronos_1_1Manager_1_1TextureDetails.html#a31ecddfb74850b47f59beac60f327fdc">Chronos::Manager::TextureDetails::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00121">chronos.hpp:121</a></div></div>
 <div class="ttc" id="astructChronos_1_1Manager_1_1TextureDetails_html_a477d033c159cf9146d932ea104597371"><div class="ttname"><a href="structChronos_1_1Manager_1_1TextureDetails.html#a477d033c159cf9146d932ea104597371">Chronos::Manager::TextureDetails::textureNo</a></div><div class="ttdeci">int textureNo</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00119">chronos.hpp:119</a></div></div>
+<div class="ttc" id="astructChronos_1_1Manager_1_1TextureDetails_html_a82e3a256b07bb2aec81ad25605e13d3c"><div class="ttname"><a href="structChronos_1_1Manager_1_1TextureDetails.html#a82e3a256b07bb2aec81ad25605e13d3c">Chronos::Manager::TextureDetails::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00120">chronos.hpp:120</a></div></div>
 <div class="ttc" id="astructChronos_1_1Manager_1_1TextureDetails_html_aa2342b4563f84373efb7f624cb8c733b"><div class="ttname"><a href="structChronos_1_1Manager_1_1TextureDetails.html#aa2342b4563f84373efb7f624cb8c733b">Chronos::Manager::TextureDetails::texturePath</a></div><div class="ttdeci">std::string texturePath</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00118">chronos.hpp:118</a></div></div>
 <div class="ttc" id="astructChronos_1_1Manager_1_1TextureDetails_html_aea27fc52150012eeeff27d4e81e10e44"><div class="ttname"><a href="structChronos_1_1Manager_1_1TextureDetails.html#aea27fc52150012eeeff27d4e81e10e44">Chronos::Manager::TextureDetails::textureName</a></div><div class="ttdeci">std::string textureName</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00117">chronos.hpp:117</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00117">Chronos::Manager::TextureDetails::textureName</a>, <a class="el" href="chronos_8hpp_source.html#l00119">Chronos::Manager::TextureDetails::textureNo</a>, and <a class="el" href="chronos_8hpp_source.html#l00118">Chronos::Manager::TextureDetails::texturePath</a>.</p>
+<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00121">Chronos::Manager::TextureDetails::height</a>, <a class="el" href="chronos_8hpp_source.html#l00117">Chronos::Manager::TextureDetails::textureName</a>, <a class="el" href="chronos_8hpp_source.html#l00119">Chronos::Manager::TextureDetails::textureNo</a>, <a class="el" href="chronos_8hpp_source.html#l00118">Chronos::Manager::TextureDetails::texturePath</a>, and <a class="el" href="chronos_8hpp_source.html#l00120">Chronos::Manager::TextureDetails::width</a>.</p>
 
 </div>
 </div>
@@ -1096,7 +1103,7 @@ Note: This will return both textured and colored shapes.</h2>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a489c5250f3c8e92c72e3c2240586e642"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642">Chronos::Engine::Engine::window</a></div><div class="ttdeci">GLFWwindow * window</div><div class="ttdoc">This is the GLFW window reference that is used by the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00139">engine.hpp:139</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00471">engine</a>, and <a class="el" href="engine_8hpp_source.html#l00139">Chronos::Engine::Engine::window</a>.</p>
+<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00476">engine</a>, and <a class="el" href="engine_8hpp_source.html#l00139">Chronos::Engine::Engine::window</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1436,7 +1443,7 @@ Note:</h2>
 
 <p>The backend Vulkan engine, used for rendering the desired shapes and text.s. </p>
 
-<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00471">471</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00476">476</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
 
 </div>
 </div>
@@ -1460,7 +1467,7 @@ Note:</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00466">466</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00471">471</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
 
 </div>
 </div>
