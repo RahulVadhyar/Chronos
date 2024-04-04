@@ -168,8 +168,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Vertex_8hpp.html",
-"classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e",
-"md_docs_LibrariesUsed.html#autotoc_md43"
+"classChronos_1_1Engine_1_1SwapChain.html#a8f9b8463fd4e77e094d2b8d2790421d4",
+"md_docs_Contributing.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,5 +1,6 @@
 var classChronos_1_1Engine_1_1Polygon =
 [
+    [ "copyIndicestoBuffer", "classChronos_1_1Engine_1_1Polygon.html#a8c836694f19cb707e19eccbbfe8e8c47", null ],
     [ "copyVerticestoBuffer", "classChronos_1_1Engine_1_1Polygon.html#adfccfb7b483b8d864129fe62735e8908", null ],
     [ "createDescriptorSets", "classChronos_1_1Engine_1_1Polygon.html#af0f639118d1197e3a2d6c108b53b0777", null ],
     [ "destroy", "classChronos_1_1Engine_1_1Polygon.html#a0e3324494b8538884a071b8d588ed05e", null ],
@@ -10,7 +11,7 @@ var classChronos_1_1Engine_1_1Polygon =
     [ "update", "classChronos_1_1Engine_1_1Polygon.html#ae8c5bb301d03f9d2de304cb35de9fd37", null ],
     [ "updateVertices", "classChronos_1_1Engine_1_1Polygon.html#a605e3bf3bd9c2dcf0ed97e6545e280aa", null ],
     [ "copyVertices", "classChronos_1_1Engine_1_1Polygon.html#a50f9831f04fe556098cca027e8c9ba75", null ],
-    [ "indexBuffer", "classChronos_1_1Engine_1_1Polygon.html#ac4e5e60fc7a3b74eaff1aa5e7018f41a", null ],
+    [ "indexBuffers", "classChronos_1_1Engine_1_1Polygon.html#aadc28f12e9d8cb099de22138de72f625", null ],
     [ "indices", "classChronos_1_1Engine_1_1Polygon.html#a42c6e3c28c4712042169d42312445b09", null ],
     [ "mappedMemory", "classChronos_1_1Engine_1_1Polygon.html#a05668018ad62419eb0c173ecaebda29e", null ],
     [ "params", "classChronos_1_1Engine_1_1Polygon.html#ae4c2cf5396baae44350fdeddfc259c1e", null ],

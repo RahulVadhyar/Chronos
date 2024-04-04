@@ -113,13 +113,12 @@ Collaboration diagram for Chronos::Engine::Polygon:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1Polygon__coll__graph.png" border="0" usemap="#aChronos_1_1Engine_1_1Polygon_coll__map" alt="Collaboration graph"/></div>
 <map name="aChronos_1_1Engine_1_1Polygon_coll__map" id="aChronos_1_1Engine_1_1Polygon_coll__map">
-<area shape="rect" title="A class to represent a polygon object." alt="" coords="1056,124,1243,151"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects." alt="" coords="748,40,925,67"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="5,69,185,96"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="281,44,488,71"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html" title="This class holds the Vulkan data and objects needed for a texture." alt="" coords="512,93,695,120"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html" title="Used to store buffers in GPU." alt="" coords="516,149,691,176"/>
-<area shape="rect" href="structChronos_1_1Manager_1_1ShapeParams.html" title="Parameters for creating a shape(any)" alt="" coords="719,216,955,243"/>
+<area shape="rect" title="A class to represent a polygon object." alt="" coords="206,285,392,312"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects." alt="" coords="54,196,232,223"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="86,5,266,32"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="73,95,280,121"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Texture.html" title="This class holds the Vulkan data and objects needed for a texture." alt="" coords="226,145,409,172"/>
+<area shape="rect" href="structChronos_1_1Manager_1_1ShapeParams.html" title="Parameters for creating a shape(any)" alt="" coords="376,196,612,223"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -166,8 +165,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a6595eb7f2290c6f664626bea23e26878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78952ee2b18b752805bc599eb0e177f5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classChronos_1_1Engine_1_1Buffer.html">Chronos::Engine::Buffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Polygon.html#a78952ee2b18b752805bc599eb0e177f5">polygonVertexBuffers</a></td></tr>
 <tr class="separator:a78952ee2b18b752805bc599eb0e177f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4e5e60fc7a3b74eaff1aa5e7018f41a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChronos_1_1Engine_1_1Buffer.html">Chronos::Engine::Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Polygon.html#ac4e5e60fc7a3b74eaff1aa5e7018f41a">indexBuffer</a></td></tr>
-<tr class="separator:ac4e5e60fc7a3b74eaff1aa5e7018f41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadc28f12e9d8cb099de22138de72f625"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classChronos_1_1Engine_1_1Buffer.html">Chronos::Engine::Buffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Polygon.html#aadc28f12e9d8cb099de22138de72f625">indexBuffers</a></td></tr>
+<tr class="separator:aadc28f12e9d8cb099de22138de72f625"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classChronos_1_1Engine_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classChronos_1_1Engine_1_1Object')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classChronos_1_1Engine_1_1Object.html">Chronos::Engine::Object</a></td></tr>
 <tr class="memitem:adb6e0cf994046b58b10f95d59eeef3c3 inherit pub_attribs_classChronos_1_1Engine_1_1Object"><td class="memItemLeft" align="right" valign="top">VkPipeline&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Object.html#adb6e0cf994046b58b10f95d59eeef3c3">graphicsPipeline</a></td></tr>
 <tr class="separator:adb6e0cf994046b58b10f95d59eeef3c3 inherit pub_attribs_classChronos_1_1Engine_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,6 +180,8 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:adfccfb7b483b8d864129fe62735e8908"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Polygon.html#adfccfb7b483b8d864129fe62735e8908">copyVerticestoBuffer</a> (<a class="el" href="classChronos_1_1Engine_1_1Buffer.html">Chronos::Engine::Buffer</a> vertexBuffer)</td></tr>
 <tr class="memdesc:adfccfb7b483b8d864129fe62735e8908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the current vertices in the vertices vector to the vertex buffer given.  <a href="classChronos_1_1Engine_1_1Polygon.html#adfccfb7b483b8d864129fe62735e8908">More...</a><br /></td></tr>
 <tr class="separator:adfccfb7b483b8d864129fe62735e8908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c836694f19cb707e19eccbbfe8e8c47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Polygon.html#a8c836694f19cb707e19eccbbfe8e8c47">copyIndicestoBuffer</a> (<a class="el" href="classChronos_1_1Engine_1_1Buffer.html">Chronos::Engine::Buffer</a> indexBuffer)</td></tr>
+<tr class="separator:a8c836694f19cb707e19eccbbfe8e8c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -230,6 +231,63 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="polygon_8hpp_source.html#l00041">41</a> of file <a class="el" href="polygon_8hpp_source.html">polygon.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8c836694f19cb707e19eccbbfe8e8c47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c836694f19cb707e19eccbbfe8e8c47">&#9670;&nbsp;</a></span>copyIndicestoBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Chronos::Engine::Polygon::copyIndicestoBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classChronos_1_1Engine_1_1Buffer.html">Chronos::Engine::Buffer</a>&#160;</td>
+          <td class="paramname"><em>indexBuffer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00095">95</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                                             {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span>(vkMapMemory(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, indexBuffer.<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>, 0, VK_WHOLE_SIZE, 0, &amp;this-&gt;mappedMemory)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        != VK_SUCCESS){</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to map memory&quot;</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span>(this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a05668018ad62419eb0c173ecaebda29e">mappedMemory</a> == <span class="keyword">nullptr</span>){</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Memory not mapped, current address is &quot;</span> + std::to_string((uint64_t)this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a05668018ad62419eb0c173ecaebda29e">mappedMemory</a>));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    memcpy(this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a05668018ad62419eb0c173ecaebda29e">mappedMemory</a>, this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a42c6e3c28c4712042169d42312445b09">indices</a>.data(), (<span class="keywordtype">size_t</span>)indexBuffer.<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    vkUnmapMemory(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, indexBuffer.<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a45958dc37af9a03b85b94445f8f25e0f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">Chronos::Engine::Buffer::size</a></div><div class="ttdeci">VkDeviceSize size</div><div class="ttdoc">The size of the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00075">buffers.hpp:75</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_ad4f872dd55a1a2d78f6094bd545c9861"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">Chronos::Engine::Buffer::memory</a></div><div class="ttdeci">VkDeviceMemory memory</div><div class="ttdoc">The device memory of the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00080">buffers.hpp:80</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00042">device.hpp:42</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a9ec42d04a85645aaffe162580da68a29"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">Chronos::Engine::Object::device</a></div><div class="ttdeci">Chronos::Engine::Device * device</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00107">object.hpp:107</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Polygon_html_a05668018ad62419eb0c173ecaebda29e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Polygon.html#a05668018ad62419eb0c173ecaebda29e">Chronos::Engine::Polygon::mappedMemory</a></div><div class="ttdeci">void * mappedMemory</div><div class="ttdef"><b>Definition:</b> <a href="polygon_8hpp_source.html#l00092">polygon.hpp:92</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Polygon_html_a42c6e3c28c4712042169d42312445b09"><div class="ttname"><a href="classChronos_1_1Engine_1_1Polygon.html#a42c6e3c28c4712042169d42312445b09">Chronos::Engine::Polygon::indices</a></div><div class="ttdeci">std::vector&lt; uint16_t &gt; indices</div><div class="ttdef"><b>Definition:</b> <a href="polygon_8hpp_source.html#l00081">polygon.hpp:81</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="buffers_8hpp_source.html#l00080">Chronos::Engine::Buffer::memory</a>, and <a class="el" href="buffers_8hpp_source.html#l00075">Chronos::Engine::Buffer::size</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChronos_1_1Engine_1_1Polygon_a8c836694f19cb707e19eccbbfe8e8c47_icgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1Polygon_a8c836694f19cb707e19eccbbfe8e8c47_icgraph" alt=""/></div>
+<map name="aclassChronos_1_1Engine_1_1Polygon_a8c836694f19cb707e19eccbbfe8e8c47_icgraph" id="aclassChronos_1_1Engine_1_1Polygon_a8c836694f19cb707e19eccbbfe8e8c47_icgraph">
+<area shape="rect" title=" " alt="" coords="475,5,661,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e" title="Initializes the polygon object." alt="" coords="240,5,427,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1PolygonManager.html#a5735e1120cb83960e28b7bf489ee1ae0" title=" " alt="" coords="5,5,192,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="adfccfb7b483b8d864129fe62735e8908"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adfccfb7b483b8d864129fe62735e8908">&#9670;&nbsp;</a></span>copyVerticestoBuffer()</h2>
 
@@ -256,23 +314,18 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Copies the current vertices in the vertices vector to the vertex buffer given. </p>
 
-<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00080">80</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                                               {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span>(vkMapMemory(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, vertexBuffer.<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>, 0, VK_WHOLE_SIZE, 0, &amp;this-&gt;mappedMemory)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        != VK_SUCCESS){</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to map memory&quot;</span>);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span>(this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a05668018ad62419eb0c173ecaebda29e">mappedMemory</a> == <span class="keyword">nullptr</span>){</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Memory not mapped, current address is &quot;</span> + std::to_string((uint64_t)this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a05668018ad62419eb0c173ecaebda29e">mappedMemory</a>));</div>
+<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00083">83</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                                                               {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span>(vkMapMemory(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, vertexBuffer.<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>, 0, VK_WHOLE_SIZE, 0, &amp;this-&gt;mappedMemory)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        != VK_SUCCESS){</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to map memory&quot;</span>);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    memcpy(this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a05668018ad62419eb0c173ecaebda29e">mappedMemory</a>, this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a6595eb7f2290c6f664626bea23e26878">vertices</a>.data(), (<span class="keywordtype">size_t</span>)vertexBuffer.<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    vkUnmapMemory(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, vertexBuffer.<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a45958dc37af9a03b85b94445f8f25e0f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">Chronos::Engine::Buffer::size</a></div><div class="ttdeci">VkDeviceSize size</div><div class="ttdoc">The size of the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00075">buffers.hpp:75</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_ad4f872dd55a1a2d78f6094bd545c9861"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">Chronos::Engine::Buffer::memory</a></div><div class="ttdeci">VkDeviceMemory memory</div><div class="ttdoc">The device memory of the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00080">buffers.hpp:80</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00042">device.hpp:42</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a9ec42d04a85645aaffe162580da68a29"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">Chronos::Engine::Object::device</a></div><div class="ttdeci">Chronos::Engine::Device * device</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00107">object.hpp:107</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Polygon_html_a05668018ad62419eb0c173ecaebda29e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Polygon.html#a05668018ad62419eb0c173ecaebda29e">Chronos::Engine::Polygon::mappedMemory</a></div><div class="ttdeci">void * mappedMemory</div><div class="ttdef"><b>Definition:</b> <a href="polygon_8hpp_source.html#l00092">polygon.hpp:92</a></div></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span>(this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a05668018ad62419eb0c173ecaebda29e">mappedMemory</a> == <span class="keyword">nullptr</span>){</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Memory not mapped, current address is &quot;</span> + std::to_string((uint64_t)this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a05668018ad62419eb0c173ecaebda29e">mappedMemory</a>));</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    memcpy(this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a05668018ad62419eb0c173ecaebda29e">mappedMemory</a>, this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a6595eb7f2290c6f664626bea23e26878">vertices</a>.data(), (<span class="keywordtype">size_t</span>)vertexBuffer.<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    vkUnmapMemory(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, vertexBuffer.<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Polygon_html_a6595eb7f2290c6f664626bea23e26878"><div class="ttname"><a href="classChronos_1_1Engine_1_1Polygon.html#a6595eb7f2290c6f664626bea23e26878">Chronos::Engine::Polygon::vertices</a></div><div class="ttdeci">std::vector&lt; TexturedVertex &gt; vertices</div><div class="ttdef"><b>Definition:</b> <a href="polygon_8hpp_source.html#l00083">polygon.hpp:83</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="buffers_8hpp_source.html#l00080">Chronos::Engine::Buffer::memory</a>, and <a class="el" href="buffers_8hpp_source.html#l00075">Chronos::Engine::Buffer::size</a>.</p>
@@ -314,56 +367,56 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#adf7e359418ad5653b9590645282aee1e">Chronos::Engine::Object</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00125">125</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                                               {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    std::vector&lt;VkDescriptorSetLayout&gt; layouts(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>,</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Object.html#a004f17b08fbd33cbcab795376a9ef8a1">descriptorSetLayout</a>);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    VkDescriptorSetAllocateInfo allocInfo {};</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    allocInfo.descriptorPool = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a8bcbdc312c4e8afcd1eb382a530b9fd7">descriptorPool</a>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    allocInfo.descriptorSetCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    allocInfo.pSetLayouts = layouts.data();</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">descriptorSets</a>.resize(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> (vkAllocateDescriptorSets(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, &amp;allocInfo,</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <a class="code" href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">descriptorSets</a>.data())</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        != VK_SUCCESS) {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to allocate descriptor sets!&quot;</span>);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        VkDescriptorBufferInfo bufferInfo {};</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        bufferInfo.buffer = <a class="code" href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">uniformBuffers</a>[i].buffer;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        bufferInfo.offset = 0;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        bufferInfo.range = <span class="keyword">sizeof</span>(UniformBufferObject);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        VkWriteDescriptorSet descriptorWrite {};</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        VkDescriptorImageInfo imageInfo {};</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        imageInfo.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        imageInfo.imageView = <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ab8d7058f186abfaf5eda4df4d15b9216">texture</a>.<a class="code" href="classChronos_1_1Engine_1_1Texture.html#a4e9fa6072f861955b04b663d63eede66">textureImageView</a>;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        imageInfo.sampler = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">textureSampler</a>;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        std::array&lt;VkWriteDescriptorSet, 2&gt; descriptorWrites {};</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        descriptorWrites[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        descriptorWrites[0].dstSet = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">descriptorSets</a>[i];</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        descriptorWrites[0].dstBinding = 0;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        descriptorWrites[0].dstArrayElement = 0;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        descriptorWrites[0].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        descriptorWrites[0].descriptorCount = 1;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        descriptorWrites[0].pBufferInfo = &amp;bufferInfo;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        descriptorWrites[1].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        descriptorWrites[1].dstSet = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">descriptorSets</a>[i];</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        descriptorWrites[1].dstBinding = 1;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        descriptorWrites[1].dstArrayElement = 0;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        descriptorWrites[1].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        descriptorWrites[1].descriptorCount = 1;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        descriptorWrites[1].pImageInfo = &amp;imageInfo;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        vkUpdateDescriptorSets(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>,</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(descriptorWrites.size()),</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            descriptorWrites.data(), 0, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00155">155</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                               {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    std::vector&lt;VkDescriptorSetLayout&gt; layouts(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>,</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Object.html#a004f17b08fbd33cbcab795376a9ef8a1">descriptorSetLayout</a>);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    VkDescriptorSetAllocateInfo allocInfo {};</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    allocInfo.descriptorPool = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a8bcbdc312c4e8afcd1eb382a530b9fd7">descriptorPool</a>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    allocInfo.descriptorSetCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    allocInfo.pSetLayouts = layouts.data();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">descriptorSets</a>.resize(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">if</span> (vkAllocateDescriptorSets(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, &amp;allocInfo,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <a class="code" href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">descriptorSets</a>.data())</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        != VK_SUCCESS) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to allocate descriptor sets!&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>; i++) {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        VkDescriptorBufferInfo bufferInfo {};</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        bufferInfo.buffer = <a class="code" href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">uniformBuffers</a>[i].buffer;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        bufferInfo.offset = 0;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        bufferInfo.range = <span class="keyword">sizeof</span>(UniformBufferObject);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        VkWriteDescriptorSet descriptorWrite {};</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        VkDescriptorImageInfo imageInfo {};</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        imageInfo.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        imageInfo.imageView = <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ab8d7058f186abfaf5eda4df4d15b9216">texture</a>.<a class="code" href="classChronos_1_1Engine_1_1Texture.html#a4e9fa6072f861955b04b663d63eede66">textureImageView</a>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        imageInfo.sampler = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">textureSampler</a>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        std::array&lt;VkWriteDescriptorSet, 2&gt; descriptorWrites {};</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        descriptorWrites[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        descriptorWrites[0].dstSet = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">descriptorSets</a>[i];</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        descriptorWrites[0].dstBinding = 0;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        descriptorWrites[0].dstArrayElement = 0;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        descriptorWrites[0].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        descriptorWrites[0].descriptorCount = 1;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        descriptorWrites[0].pBufferInfo = &amp;bufferInfo;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        descriptorWrites[1].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        descriptorWrites[1].dstSet = <a class="code" href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">descriptorSets</a>[i];</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        descriptorWrites[1].dstBinding = 1;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        descriptorWrites[1].dstArrayElement = 0;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        descriptorWrites[1].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        descriptorWrites[1].descriptorCount = 1;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        descriptorWrites[1].pImageInfo = &amp;imageInfo;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        vkUpdateDescriptorSets(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>,</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(descriptorWrites.size()),</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            descriptorWrites.data(), 0, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a004f17b08fbd33cbcab795376a9ef8a1"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a004f17b08fbd33cbcab795376a9ef8a1">Chronos::Engine::Object::descriptorSetLayout</a></div><div class="ttdeci">VkDescriptorSetLayout descriptorSetLayout</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00112">object.hpp:112</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a203a494524c8c74d52e5d692a2845f8b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">Chronos::Engine::Object::textureSampler</a></div><div class="ttdeci">VkSampler textureSampler</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00110">object.hpp:110</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a5587465d9740b74dbece2415df63fb9f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">Chronos::Engine::Object::descriptorSets</a></div><div class="ttdeci">std::vector&lt; VkDescriptorSet &gt; descriptorSets</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00101">object.hpp:101</a></div></div>
@@ -405,18 +458,19 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00117">117</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                                  {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; buffer : <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a78952ee2b18b752805bc599eb0e177f5">polygonVertexBuffers</a>){</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        buffer.destroy();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ac4e5e60fc7a3b74eaff1aa5e7018f41a">indexBuffer</a>.<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a96c16eb443ecac4400e67d6172effff1">destroy</a>();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a>();</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a96c16eb443ecac4400e67d6172effff1"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a96c16eb443ecac4400e67d6172effff1">Chronos::Engine::Buffer::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">Destroys the buffer and frees the memory.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8cpp_source.html#l00063">buffers.cpp:63</a></div></div>
+<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00145">145</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                  {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; buffer : <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a78952ee2b18b752805bc599eb0e177f5">polygonVertexBuffers</a>){</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        buffer.destroy();</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; buffer : <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#aadc28f12e9d8cb099de22138de72f625">indexBuffers</a>){</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        buffer.destroy();</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a>();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2bdcd3b34fd075835e2a395bd39b09d7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a></div><div class="ttdeci">virtual void destroy()=0</div><div class="ttdoc">Destroys the object and releases associated resources.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00195">object.cpp:195</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Polygon_html_a78952ee2b18b752805bc599eb0e177f5"><div class="ttname"><a href="classChronos_1_1Engine_1_1Polygon.html#a78952ee2b18b752805bc599eb0e177f5">Chronos::Engine::Polygon::polygonVertexBuffers</a></div><div class="ttdeci">std::vector&lt; Chronos::Engine::Buffer &gt; polygonVertexBuffers</div><div class="ttdef"><b>Definition:</b> <a href="polygon_8hpp_source.html#l00084">polygon.hpp:84</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Polygon_html_ac4e5e60fc7a3b74eaff1aa5e7018f41a"><div class="ttname"><a href="classChronos_1_1Engine_1_1Polygon.html#ac4e5e60fc7a3b74eaff1aa5e7018f41a">Chronos::Engine::Polygon::indexBuffer</a></div><div class="ttdeci">Chronos::Engine::Buffer indexBuffer</div><div class="ttdef"><b>Definition:</b> <a href="polygon_8hpp_source.html#l00085">polygon.hpp:85</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Polygon_html_aadc28f12e9d8cb099de22138de72f625"><div class="ttname"><a href="classChronos_1_1Engine_1_1Polygon.html#aadc28f12e9d8cb099de22138de72f625">Chronos::Engine::Polygon::indexBuffers</a></div><div class="ttdeci">std::vector&lt; Chronos::Engine::Buffer &gt; indexBuffers</div><div class="ttdef"><b>Definition:</b> <a href="polygon_8hpp_source.html#l00085">polygon.hpp:85</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="object_8cpp_source.html#l00195">Chronos::Engine::Object::destroy()</a>.</p>
 <div class="dynheader">
@@ -456,10 +510,10 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a747d67af4581cd3476d2348b5d0889e9">Chronos::Engine::Object</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00179">179</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                                                                          {</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">return</span> {VK_SHADER_STAGE_VERTEX_BIT, VK_SHADER_STAGE_FRAGMENT_BIT};</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00209">209</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                                                                          {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">return</span> {VK_SHADER_STAGE_VERTEX_BIT, VK_SHADER_STAGE_FRAGMENT_BIT};</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -488,10 +542,10 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a6e7f4a4b4c1707146b44ec5d7c695c9c">Chronos::Engine::Object</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00175">175</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                                                                    {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">return</span> {VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER};</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00205">205</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                                                                    {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">return</span> {VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER};</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -520,35 +574,35 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a329ee54c7e407fe640b7cf858b26b65d">Chronos::Engine::Object</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00183">183</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                                                                           {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html">Chronos::Engine::PipelineAttributes</a> pipelineAttributes;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keyword">auto</span> bindingDescription = <a class="code" href="structChronos_1_1Engine_1_1TexturedVertex.html#a1af5a2440cc959788e2b44e5266884d8">TexturedVertex::getBindingDescription</a>();</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keyword">auto</span> attributeDescriptions = <a class="code" href="structChronos_1_1Engine_1_1TexturedVertex.html#a15af4a3d1e89209fcab3d0007c867641">TexturedVertex::getAttributeDescriptions</a>();</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a6449ea448af9b4ce79281ff243f9b1cd">bindingDescriptions</a>.resize(1);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a6449ea448af9b4ce79281ff243f9b1cd">bindingDescriptions</a>[0] = bindingDescription;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225">attributeDescriptions</a>.resize(attributeDescriptions.size());</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; attributeDescriptions.size(); i++) {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225">attributeDescriptions</a>[i] = attributeDescriptions[i];</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a14e0f95045ac8e59a01daab9fbda2b6c">topology</a> = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#aeda2f1f1bedbeca2694b16154ce8bd3d">frontFace</a> = VK_FRONT_FACE_COUNTER_CLOCKWISE;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.colorWriteMask = VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.blendEnable = VK_FALSE;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.srcColorBlendFactor = VK_BLEND_FACTOR_ONE;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.dstColorBlendFactor = VK_BLEND_FACTOR_ZERO; <span class="comment">// Optional</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.colorBlendOp = VK_BLEND_OP_ADD; <span class="comment">// Optional</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.srcAlphaBlendFactor = VK_BLEND_FACTOR_ONE; <span class="comment">// Optional</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.dstAlphaBlendFactor = VK_BLEND_FACTOR_ZERO; <span class="comment">// Optional</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.alphaBlendOp = VK_BLEND_OP_ADD; <span class="comment">// Optional</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">return</span> pipelineAttributes;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00213">213</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                                                                           {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html">Chronos::Engine::PipelineAttributes</a> pipelineAttributes;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keyword">auto</span> bindingDescription = <a class="code" href="structChronos_1_1Engine_1_1TexturedVertex.html#a1af5a2440cc959788e2b44e5266884d8">TexturedVertex::getBindingDescription</a>();</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keyword">auto</span> attributeDescriptions = <a class="code" href="structChronos_1_1Engine_1_1TexturedVertex.html#a15af4a3d1e89209fcab3d0007c867641">TexturedVertex::getAttributeDescriptions</a>();</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a6449ea448af9b4ce79281ff243f9b1cd">bindingDescriptions</a>.resize(1);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a6449ea448af9b4ce79281ff243f9b1cd">bindingDescriptions</a>[0] = bindingDescription;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225">attributeDescriptions</a>.resize(attributeDescriptions.size());</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; attributeDescriptions.size(); i++) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225">attributeDescriptions</a>[i] = attributeDescriptions[i];</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a14e0f95045ac8e59a01daab9fbda2b6c">topology</a> = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#aeda2f1f1bedbeca2694b16154ce8bd3d">frontFace</a> = VK_FRONT_FACE_COUNTER_CLOCKWISE;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.colorWriteMask = VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.blendEnable = VK_FALSE;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.srcColorBlendFactor = VK_BLEND_FACTOR_ONE;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.dstColorBlendFactor = VK_BLEND_FACTOR_ZERO; <span class="comment">// Optional</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.colorBlendOp = VK_BLEND_OP_ADD; <span class="comment">// Optional</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.srcAlphaBlendFactor = VK_BLEND_FACTOR_ONE; <span class="comment">// Optional</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.dstAlphaBlendFactor = VK_BLEND_FACTOR_ZERO; <span class="comment">// Optional</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.alphaBlendOp = VK_BLEND_OP_ADD; <span class="comment">// Optional</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">return</span> pipelineAttributes;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;}</div>
 <div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html">Chronos::Engine::PipelineAttributes</a></div><div class="ttdoc">Structure defining attributes required for creating a graphics pipeline.</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00039">object.hpp:39</a></div></div>
 <div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a14e0f95045ac8e59a01daab9fbda2b6c"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a14e0f95045ac8e59a01daab9fbda2b6c">Chronos::Engine::PipelineAttributes::topology</a></div><div class="ttdeci">VkPrimitiveTopology topology</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00042">object.hpp:42</a></div></div>
 <div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a41fb73c4ce11e598e3bc04701dcf7513"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">Chronos::Engine::PipelineAttributes::colorBlendAttachment</a></div><div class="ttdeci">VkPipelineColorBlendAttachmentState colorBlendAttachment</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00044">object.hpp:44</a></div></div>
@@ -666,47 +720,42 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a50f9831f04fe556098cca027e8c9ba75">copyVertices</a>.resize(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>, <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ac4e5e60fc7a3b74eaff1aa5e7018f41a">indexBuffer</a>.<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a> = <span class="keyword">sizeof</span>(this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a42c6e3c28c4712042169d42312445b09">indices</a>[0]) * this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a42c6e3c28c4712042169d42312445b09">indices</a>.size();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ac4e5e60fc7a3b74eaff1aa5e7018f41a">indexBuffer</a>.<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826">create</a>(*device,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_INDEX_BUFFER_BIT,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT); <span class="comment">//inidcies will not change</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ac4e5e60fc7a3b74eaff1aa5e7018f41a">indexBuffer</a>.<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d">copy</a>(this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a42c6e3c28c4712042169d42312445b09">indices</a>.data(), <a class="code" href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">commandPool</a>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_aa7fa451f423cc9c6f53219258bb8a33d"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d">Chronos::Engine::Buffer::copy</a></div><div class="ttdeci">void copy(void *data, VkCommandPool commandPool)</div><div class="ttdoc">Copies the data to the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8cpp_source.html#l00045">buffers.cpp:45</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_ab14754126e56811cc67254f425780826"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826">Chronos::Engine::Buffer::create</a></div><div class="ttdeci">void create(Chronos::Engine::Device device, VkBufferUsageFlags flags, VkMemoryPropertyFlags properties)</div><div class="ttdoc">This is used to initialize the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8cpp_source.html#l00037">buffers.cpp:37</a></div></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#aadc28f12e9d8cb099de22138de72f625">indexBuffers</a>.resize(<a class="code" href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; buffer : <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#aadc28f12e9d8cb099de22138de72f625">indexBuffers</a>){</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        buffer.size = <span class="keyword">sizeof</span>(this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a42c6e3c28c4712042169d42312445b09">indices</a>[0]) * (this-&gt;vertices.size() - 2); <span class="comment">//max indices = n - 2</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        buffer.create(*<a class="code" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            VK_BUFFER_USAGE_INDEX_BUFFER_BIT,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); <span class="comment">//inidcies will not change</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a8c836694f19cb707e19eccbbfe8e8c47">copyIndicestoBuffer</a>(buffer);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2ff58729143a63b536fcd06e890b514e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e">Chronos::Engine::Object::init</a></div><div class="ttdeci">virtual void init(Chronos::Engine::Device *device, VkCommandPool commandPool, Chronos::Engine::SwapChain *swapChain, VkSampler textureSampler, VkRenderPass *renderPass)</div><div class="ttdoc">Initializes the object.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00031">object.cpp:31</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a300ba4549a4e0119cf2fcf0fad24569b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">Chronos::Engine::Object::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00109">object.hpp:109</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a6323a6f9a4c9fefff3d27c34f51f2f59"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59">Chronos::Engine::Object::vertexShaderPath</a></div><div class="ttdeci">std::string vertexShaderPath</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00105">object.hpp:105</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a7cfcd07115e8e58783c5cc40e4575bd8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">Chronos::Engine::Object::swapChain</a></div><div class="ttdeci">Chronos::Engine::SwapChain * swapChain</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00108">object.hpp:108</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_ad017c20cbe79d573325a66621de9963e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#ad017c20cbe79d573325a66621de9963e">Chronos::Engine::Object::fragmentShaderPath</a></div><div class="ttdeci">std::string fragmentShaderPath</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00106">object.hpp:106</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_af8b89f8ed5191515b60219682efba376"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">Chronos::Engine::Object::renderPass</a></div><div class="ttdeci">VkRenderPass * renderPass</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00111">object.hpp:111</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Polygon_html_a42c6e3c28c4712042169d42312445b09"><div class="ttname"><a href="classChronos_1_1Engine_1_1Polygon.html#a42c6e3c28c4712042169d42312445b09">Chronos::Engine::Polygon::indices</a></div><div class="ttdeci">std::vector&lt; uint16_t &gt; indices</div><div class="ttdef"><b>Definition:</b> <a href="polygon_8hpp_source.html#l00081">polygon.hpp:81</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Polygon_html_a50f9831f04fe556098cca027e8c9ba75"><div class="ttname"><a href="classChronos_1_1Engine_1_1Polygon.html#a50f9831f04fe556098cca027e8c9ba75">Chronos::Engine::Polygon::copyVertices</a></div><div class="ttdeci">std::vector&lt; bool &gt; copyVertices</div><div class="ttdoc">Flags to know if the vertex buffer is to be updated.</div><div class="ttdef"><b>Definition:</b> <a href="polygon_8hpp_source.html#l00102">polygon.hpp:102</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Polygon_html_adfccfb7b483b8d864129fe62735e8908"><div class="ttname"><a href="classChronos_1_1Engine_1_1Polygon.html#adfccfb7b483b8d864129fe62735e8908">Chronos::Engine::Polygon::copyVerticestoBuffer</a></div><div class="ttdeci">void copyVerticestoBuffer(Chronos::Engine::Buffer vertexBuffer)</div><div class="ttdoc">Copies the current vertices in the vertices vector to the vertex buffer given.</div><div class="ttdef"><b>Definition:</b> <a href="polygon_8cpp_source.html#l00080">polygon.cpp:80</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Polygon_html_a50f9831f04fe556098cca027e8c9ba75"><div class="ttname"><a href="classChronos_1_1Engine_1_1Polygon.html#a50f9831f04fe556098cca027e8c9ba75">Chronos::Engine::Polygon::copyVertices</a></div><div class="ttdeci">std::vector&lt; bool &gt; copyVertices</div><div class="ttdoc">Flags to know if the vertex buffer is to be updated.</div><div class="ttdef"><b>Definition:</b> <a href="polygon_8hpp_source.html#l00104">polygon.hpp:104</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Polygon_html_a8c836694f19cb707e19eccbbfe8e8c47"><div class="ttname"><a href="classChronos_1_1Engine_1_1Polygon.html#a8c836694f19cb707e19eccbbfe8e8c47">Chronos::Engine::Polygon::copyIndicestoBuffer</a></div><div class="ttdeci">void copyIndicestoBuffer(Chronos::Engine::Buffer indexBuffer)</div><div class="ttdef"><b>Definition:</b> <a href="polygon_8cpp_source.html#l00095">polygon.cpp:95</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Polygon_html_adfccfb7b483b8d864129fe62735e8908"><div class="ttname"><a href="classChronos_1_1Engine_1_1Polygon.html#adfccfb7b483b8d864129fe62735e8908">Chronos::Engine::Polygon::copyVerticestoBuffer</a></div><div class="ttdeci">void copyVerticestoBuffer(Chronos::Engine::Buffer vertexBuffer)</div><div class="ttdoc">Copies the current vertices in the vertices vector to the vertex buffer given.</div><div class="ttdef"><b>Definition:</b> <a href="polygon_8cpp_source.html#l00083">polygon.cpp:83</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="object_8hpp_source.html#l00109">Chronos::Engine::Object::commandPool</a>, <a class="el" href="buffers_8cpp_source.html#l00045">Chronos::Engine::Buffer::copy()</a>, <a class="el" href="polygon_8hpp_source.html#l00102">copyVertices</a>, <a class="el" href="polygon_8cpp_source.html#l00080">copyVerticestoBuffer()</a>, <a class="el" href="buffers_8cpp_source.html#l00037">Chronos::Engine::Buffer::create()</a>, <a class="el" href="object_8hpp_source.html#l00107">Chronos::Engine::Object::device</a>, <a class="el" href="object_8hpp_source.html#l00106">Chronos::Engine::Object::fragmentShaderPath</a>, <a class="el" href="polygon_8hpp_source.html#l00085">indexBuffer</a>, <a class="el" href="polygon_8hpp_source.html#l00081">indices</a>, <a class="el" href="object_8cpp_source.html#l00031">Chronos::Engine::Object::init()</a>, <a class="el" href="vulkanHeaders_8hpp_source.html#l00052">MAX_FRAMES_IN_FLIGHT</a>, <a class="el" href="polygon_8hpp_source.html#l00084">polygonVertexBuffers</a>, <a class="el" href="object_8hpp_source.html#l00111">Chronos::Engine::Object::renderPass</a>, <a class="el" href="buffers_8hpp_source.html#l00075">Chronos::Engine::Buffer::size</a>, <a class="el" href="object_8hpp_source.html#l00108">Chronos::Engine::Object::swapChain</a>, <a class="el" href="polygon_8hpp_source.html#l00082">texture</a>, <a class="el" href="object_8hpp_source.html#l00110">Chronos::Engine::Object::textureSampler</a>, <a class="el" href="object_8hpp_source.html#l00105">Chronos::Engine::Object::vertexShaderPath</a>, and <a class="el" href="polygon_8hpp_source.html#l00083">vertices</a>.</p>
+<p class="reference">References <a class="el" href="object_8hpp_source.html#l00109">Chronos::Engine::Object::commandPool</a>, <a class="el" href="polygon_8cpp_source.html#l00095">copyIndicestoBuffer()</a>, <a class="el" href="polygon_8hpp_source.html#l00104">copyVertices</a>, <a class="el" href="polygon_8cpp_source.html#l00083">copyVerticestoBuffer()</a>, <a class="el" href="object_8hpp_source.html#l00107">Chronos::Engine::Object::device</a>, <a class="el" href="object_8hpp_source.html#l00106">Chronos::Engine::Object::fragmentShaderPath</a>, <a class="el" href="polygon_8hpp_source.html#l00085">indexBuffers</a>, <a class="el" href="polygon_8hpp_source.html#l00081">indices</a>, <a class="el" href="object_8cpp_source.html#l00031">Chronos::Engine::Object::init()</a>, <a class="el" href="vulkanHeaders_8hpp_source.html#l00052">MAX_FRAMES_IN_FLIGHT</a>, <a class="el" href="polygon_8hpp_source.html#l00084">polygonVertexBuffers</a>, <a class="el" href="object_8hpp_source.html#l00111">Chronos::Engine::Object::renderPass</a>, <a class="el" href="object_8hpp_source.html#l00108">Chronos::Engine::Object::swapChain</a>, <a class="el" href="polygon_8hpp_source.html#l00082">texture</a>, <a class="el" href="object_8hpp_source.html#l00110">Chronos::Engine::Object::textureSampler</a>, <a class="el" href="object_8hpp_source.html#l00105">Chronos::Engine::Object::vertexShaderPath</a>, and <a class="el" href="polygon_8hpp_source.html#l00083">vertices</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1Polygon_a1adbc891708ff947404aa55cd51b577e_cgraph.png" border="0" usemap="#aclassChronos_1_1Engine_1_1Polygon_a1adbc891708ff947404aa55cd51b577e_cgraph" alt=""/></div>
 <map name="aclassChronos_1_1Engine_1_1Polygon_a1adbc891708ff947404aa55cd51b577e_cgraph" id="aclassChronos_1_1Engine_1_1Polygon_a1adbc891708ff947404aa55cd51b577e_cgraph">
-<area shape="rect" title="Initializes the polygon object." alt="" coords="5,167,192,208"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="246,68,421,109"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Polygon.html#adfccfb7b483b8d864129fe62735e8908" title="Copies the current vertices in the vertices vector to the vertex buffer given." alt="" coords="240,133,427,175"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826" title="This is used to initialize the buffer." alt="" coords="246,199,421,240"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e" title="Initializes the object." alt="" coords="245,264,422,305"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675" title="Copies data from one buffer to another." alt="" coords="479,75,685,102"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a" title="Creates a buffer of a given size, usage and properties." alt="" coords="475,138,689,165"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="753,5,964,47"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c" title="Ends recording of single time command buffer and destroys it." alt="" coords="759,71,958,112"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="737,138,980,165"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e" title="Creates the Vulkan descriptor pool for the object." alt="" coords="493,196,671,237"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e" title="Creates the Vulkan descriptor set layout for the object." alt="" coords="481,261,683,303"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#adf7e359418ad5653b9590645282aee1e" title=" " alt="" coords="493,327,671,368"/>
-<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c" title="Creates the graphics pipeline for the object." alt="" coords="492,392,672,433"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#a78d48217937b348633f1184b862e0312" title="Creates a shader module from given shader(SPIV) code." alt="" coords="748,363,969,404"/>
-<area shape="rect" href="namespaceChronos_1_1Engine.html#af002a6ceca11bcbaf38e8df34b47b966" title="Returns the content of a shader file." alt="" coords="765,429,952,455"/>
+<area shape="rect" title="Initializes the polygon object." alt="" coords="5,71,192,112"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Polygon.html#a8c836694f19cb707e19eccbbfe8e8c47" title=" " alt="" coords="240,5,427,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Polygon.html#adfccfb7b483b8d864129fe62735e8908" title="Copies the current vertices in the vertices vector to the vertex buffer given." alt="" coords="240,71,427,112"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e" title="Initializes the object." alt="" coords="245,136,422,177"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e" title="Creates the Vulkan descriptor pool for the object." alt="" coords="487,37,665,79"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e" title="Creates the Vulkan descriptor set layout for the object." alt="" coords="475,103,677,144"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#adf7e359418ad5653b9590645282aee1e" title=" " alt="" coords="487,168,665,209"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c" title="Creates the graphics pipeline for the object." alt="" coords="486,233,666,275"/>
+<area shape="rect" href="namespaceChronos_1_1Engine.html#a78d48217937b348633f1184b862e0312" title="Creates a shader module from given shader(SPIV) code." alt="" coords="725,204,947,245"/>
+<area shape="rect" href="namespaceChronos_1_1Engine.html#af002a6ceca11bcbaf38e8df34b47b966" title="Returns the content of a shader file." alt="" coords="743,270,929,297"/>
 </map>
 </div>
 <div class="dynheader">
@@ -750,16 +799,17 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#aa32fe5592512c1fa8534aed8cb2797ef">Chronos::Engine::Object</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00107">107</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                                      {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a50f9831f04fe556098cca027e8c9ba75">copyVertices</a>[currentFrame]){</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#adfccfb7b483b8d864129fe62735e8908">copyVerticestoBuffer</a>(<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a78952ee2b18b752805bc599eb0e177f5">polygonVertexBuffers</a>[currentFrame]);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a50f9831f04fe556098cca027e8c9ba75">copyVertices</a>[currentFrame] = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">uniformBuffers</a>[currentFrame].update(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">swapChain</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">swapChainExtent</a>, <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ae4c2cf5396baae44350fdeddfc259c1e">params</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#ac19f647202f97d09446a1f0aaba3f57e">x</a>,</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ae4c2cf5396baae44350fdeddfc259c1e">params</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a57af8e9f2161df8083f206cfbb34502e">y</a>, <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ae4c2cf5396baae44350fdeddfc259c1e">params</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a436f2ec9fd7dd6c7f535965c6f3fa6b1">rotation</a>, <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ae4c2cf5396baae44350fdeddfc259c1e">params</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a5e3bb516b908ca90775cad71d8370f03">xSize</a>,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ae4c2cf5396baae44350fdeddfc259c1e">params</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a70bb93d5f5427be148c67c4811cb9b3b">ySize</a>);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00134">134</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                                      {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a50f9831f04fe556098cca027e8c9ba75">copyVertices</a>[currentFrame]){</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#adfccfb7b483b8d864129fe62735e8908">copyVerticestoBuffer</a>(<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a78952ee2b18b752805bc599eb0e177f5">polygonVertexBuffers</a>[currentFrame]);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a8c836694f19cb707e19eccbbfe8e8c47">copyIndicestoBuffer</a>(<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#aadc28f12e9d8cb099de22138de72f625">indexBuffers</a>[currentFrame]);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a50f9831f04fe556098cca027e8c9ba75">copyVertices</a>[currentFrame] = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">uniformBuffers</a>[currentFrame].update(<a class="code" href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">swapChain</a>-&gt;<a class="code" href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">swapChainExtent</a>, <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ae4c2cf5396baae44350fdeddfc259c1e">params</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#ac19f647202f97d09446a1f0aaba3f57e">x</a>,</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ae4c2cf5396baae44350fdeddfc259c1e">params</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a57af8e9f2161df8083f206cfbb34502e">y</a>, <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ae4c2cf5396baae44350fdeddfc259c1e">params</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a436f2ec9fd7dd6c7f535965c6f3fa6b1">rotation</a>, <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ae4c2cf5396baae44350fdeddfc259c1e">params</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a5e3bb516b908ca90775cad71d8370f03">xSize</a>,</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#ae4c2cf5396baae44350fdeddfc259c1e">params</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a70bb93d5f5427be148c67c4811cb9b3b">ySize</a>);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Polygon_html_ae4c2cf5396baae44350fdeddfc259c1e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Polygon.html#ae4c2cf5396baae44350fdeddfc259c1e">Chronos::Engine::Polygon::params</a></div><div class="ttdeci">Chronos::Manager::ShapeParams params</div><div class="ttdoc">Basic properties of the polygon.</div><div class="ttdef"><b>Definition:</b> <a href="polygon_8hpp_source.html#l00047">polygon.hpp:47</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_a10893a5577243552e6d64875e1167a63"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">Chronos::Engine::SwapChain::swapChainExtent</a></div><div class="ttdeci">VkExtent2D swapChainExtent</div><div class="ttdoc">Dimenisons of the current swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8hpp_source.html#l00126">swapchain.hpp:126</a></div></div>
 <div class="ttc" id="astructChronos_1_1Manager_1_1ShapeParams_html_a436f2ec9fd7dd6c7f535965c6f3fa6b1"><div class="ttname"><a href="structChronos_1_1Manager_1_1ShapeParams.html#a436f2ec9fd7dd6c7f535965c6f3fa6b1">Chronos::Manager::ShapeParams::rotation</a></div><div class="ttdeci">float rotation</div><div class="ttdef"><b>Definition:</b> <a href="commonStructs_8hpp_source.html#l00052">commonStructs.hpp:52</a></div></div>
@@ -789,21 +839,33 @@ Here is the caller graph for this function:</div>
 <p>Updates the vertices of the polygon. </p>
 <p>This function updates the vertices of the polygon. It copies the vertices to the vertex stroage buffer and sets the copyVertices flag to true for all buffers </p>
 
-<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00092">92</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                                                              {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">//There are a vertex buffer, one for each frame in flight. We need to update all of them</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">//however, some of them may be in use, hence we just set bools correspoding to each buffer to true</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">//on update of the frame, we will copy the vertices to the buffer if the bool is true for that frame</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    assert(<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a6595eb7f2290c6f664626bea23e26878">vertices</a>.size() == this-&gt;vertices.size());</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a6595eb7f2290c6f664626bea23e26878">vertices</a>.clear();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; vertex : <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a6595eb7f2290c6f664626bea23e26878">vertices</a>) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        TexturedVertex tv = {{vertex[0], vertex[1]}, {(vertex[0] + 1.0f)/2.0f, (vertex[1] + 1.0f)/2.0f}};</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        this-&gt;vertices.push_back(tv);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a50f9831f04fe556098cca027e8c9ba75">copyVertices</a>.size(); i++){</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a50f9831f04fe556098cca027e8c9ba75">copyVertices</a>[i] = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="polygon_8cpp_source.html#l00107">107</a> of file <a class="el" href="polygon_8cpp_source.html">polygon.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                                                              {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">//There are a vertex buffer, one for each frame in flight. We need to update all of them</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">//however, some of them may be in use, hence we just set bools correspoding to each buffer to true</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">//on update of the frame, we will copy the vertices to the buffer if the bool is true for that frame</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    assert(<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a6595eb7f2290c6f664626bea23e26878">vertices</a>.size() == this-&gt;vertices.size());</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a6595eb7f2290c6f664626bea23e26878">vertices</a>.clear();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; vertex : <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a6595eb7f2290c6f664626bea23e26878">vertices</a>) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        TexturedVertex tv = {{vertex[0], vertex[1]}, {(vertex[0] + 1.0f)/2.0f, (vertex[1] + 1.0f)/2.0f}};</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        this-&gt;vertices.push_back(tv);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    std::vector&lt;uint32_t&gt; triangleIndices = mapbox::earcut&lt;uint32_t&gt;(std::array&lt;std::vector&lt;std::array&lt;float, 2&gt;&gt;, 2&gt;{<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a6595eb7f2290c6f664626bea23e26878">vertices</a>, {}});</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    assert(triangleIndices.size() &lt;= this-&gt;indices.size());</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a42c6e3c28c4712042169d42312445b09">indices</a>.clear();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a42c6e3c28c4712042169d42312445b09">indices</a>.resize(this-&gt;vertices.size() - 2);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; triangleIndices.size(); i++){</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">if</span>(triangleIndices[i] &gt;= <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a6595eb7f2290c6f664626bea23e26878">vertices</a>.size()){</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Index&quot;</span> + std::to_string(triangleIndices[i]) + <span class="stringliteral">&quot; out of range&quot;</span>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a42c6e3c28c4712042169d42312445b09">indices</a>.push_back(triangleIndices[i]);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a50f9831f04fe556098cca027e8c9ba75">copyVertices</a>.size(); i++){</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="classChronos_1_1Engine_1_1Polygon.html#a50f9831f04fe556098cca027e8c9ba75">copyVertices</a>[i] = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -830,18 +892,18 @@ Here is the caller graph for this function:</div>
 
 <p>Flags to know if the vertex buffer is to be updated. </p>
 
-<p class="definition">Definition at line <a class="el" href="polygon_8hpp_source.html#l00102">102</a> of file <a class="el" href="polygon_8hpp_source.html">polygon.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="polygon_8hpp_source.html#l00104">104</a> of file <a class="el" href="polygon_8hpp_source.html">polygon.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ac4e5e60fc7a3b74eaff1aa5e7018f41a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4e5e60fc7a3b74eaff1aa5e7018f41a">&#9670;&nbsp;</a></span>indexBuffer</h2>
+<a id="aadc28f12e9d8cb099de22138de72f625"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadc28f12e9d8cb099de22138de72f625">&#9670;&nbsp;</a></span>indexBuffers</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classChronos_1_1Engine_1_1Buffer.html">Chronos::Engine::Buffer</a> Chronos::Engine::Polygon::indexBuffer</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classChronos_1_1Engine_1_1Buffer.html">Chronos::Engine::Buffer</a>&gt; Chronos::Engine::Polygon::indexBuffers</td>
         </tr>
       </table>
 </div><div class="memdoc">

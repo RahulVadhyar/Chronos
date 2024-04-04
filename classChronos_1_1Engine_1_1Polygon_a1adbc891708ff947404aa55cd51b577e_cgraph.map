@@ -1,18 +1,12 @@
 <map id="Chronos::Engine::Polygon::init" name="Chronos::Engine::Polygon::init">
-<area shape="rect" id="node1" title="Initializes the polygon object." alt="" coords="5,167,192,208"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="246,68,421,109"/>
-<area shape="rect" id="node8" href="$classChronos_1_1Engine_1_1Polygon.html#adfccfb7b483b8d864129fe62735e8908" title="Copies the current vertices in the vertices vector to the vertex buffer given." alt="" coords="240,133,427,175"/>
-<area shape="rect" id="node9" href="$classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826" title="This is used to initialize the buffer." alt="" coords="246,199,421,240"/>
-<area shape="rect" id="node10" href="$classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e" title="Initializes the object." alt="" coords="245,264,422,305"/>
-<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675" title="Copies data from one buffer to another." alt="" coords="479,75,685,102"/>
-<area shape="rect" id="node6" href="$namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a" title="Creates a buffer of a given size, usage and properties." alt="" coords="475,138,689,165"/>
-<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="753,5,964,47"/>
-<area shape="rect" id="node5" href="$namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c" title="Ends recording of single time command buffer and destroys it." alt="" coords="759,71,958,112"/>
-<area shape="rect" id="node7" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="737,138,980,165"/>
-<area shape="rect" id="node11" href="$classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e" title="Creates the Vulkan descriptor pool for the object." alt="" coords="493,196,671,237"/>
-<area shape="rect" id="node12" href="$classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e" title="Creates the Vulkan descriptor set layout for the object." alt="" coords="481,261,683,303"/>
-<area shape="rect" id="node13" href="$classChronos_1_1Engine_1_1Object.html#adf7e359418ad5653b9590645282aee1e" title=" " alt="" coords="493,327,671,368"/>
-<area shape="rect" id="node14" href="$classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c" title="Creates the graphics pipeline for the object." alt="" coords="492,392,672,433"/>
-<area shape="rect" id="node15" href="$namespaceChronos_1_1Engine.html#a78d48217937b348633f1184b862e0312" title="Creates a shader module from given shader(SPIV) code." alt="" coords="748,363,969,404"/>
-<area shape="rect" id="node16" href="$namespaceChronos_1_1Engine.html#af002a6ceca11bcbaf38e8df34b47b966" title="Returns the content of a shader file." alt="" coords="765,429,952,455"/>
+<area shape="rect" id="node1" title="Initializes the polygon object." alt="" coords="5,71,192,112"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Polygon.html#a8c836694f19cb707e19eccbbfe8e8c47" title=" " alt="" coords="240,5,427,47"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Polygon.html#adfccfb7b483b8d864129fe62735e8908" title="Copies the current vertices in the vertices vector to the vertex buffer given." alt="" coords="240,71,427,112"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e" title="Initializes the object." alt="" coords="245,136,422,177"/>
+<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e" title="Creates the Vulkan descriptor pool for the object." alt="" coords="487,37,665,79"/>
+<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e" title="Creates the Vulkan descriptor set layout for the object." alt="" coords="475,103,677,144"/>
+<area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1Object.html#adf7e359418ad5653b9590645282aee1e" title=" " alt="" coords="487,168,665,209"/>
+<area shape="rect" id="node8" href="$classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c" title="Creates the graphics pipeline for the object." alt="" coords="486,233,666,275"/>
+<area shape="rect" id="node9" href="$namespaceChronos_1_1Engine.html#a78d48217937b348633f1184b862e0312" title="Creates a shader module from given shader(SPIV) code." alt="" coords="725,204,947,245"/>
+<area shape="rect" id="node10" href="$namespaceChronos_1_1Engine.html#af002a6ceca11bcbaf38e8df34b47b966" title="Returns the content of a shader file." alt="" coords="743,270,929,297"/>
 </map>

@@ -125,6 +125,8 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a98ab680304c67713f698d714aa4be474"><td class="memItemLeft" align="right" valign="top">VkSampleCountFlagBits&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Device.html#a98ab680304c67713f698d714aa4be474">msaaSamples</a> = VK_SAMPLE_COUNT_1_BIT</td></tr>
 <tr class="memdesc:a98ab680304c67713f698d714aa4be474"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the MSAA samples count.  <a href="classChronos_1_1Engine_1_1Device.html#a98ab680304c67713f698d714aa4be474">More...</a><br /></td></tr>
 <tr class="separator:a98ab680304c67713f698d714aa4be474"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18bf509379c7fa5e2bb2195332dab902"><td class="memItemLeft" align="right" valign="top">VkSampleCountFlagBits&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Engine_1_1Device.html#a18bf509379c7fa5e2bb2195332dab902">maxMsaaSamples</a> = VK_SAMPLE_COUNT_1_BIT</td></tr>
+<tr class="separator:a18bf509379c7fa5e2bb2195332dab902"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -400,7 +402,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a> : devices) {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceChronos_1_1Engine.html#a5d1bdae6108eaaf072fe2619be7123d8">isDeviceSuitable</a>(<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, surface)) {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="classChronos_1_1Engine_1_1Device.html#a987dce654f123694a087fc8a74afdb89">physicalDevice</a> = <a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="classChronos_1_1Engine_1_1Device.html#a98ab680304c67713f698d714aa4be474">msaaSamples</a> = <a class="code" href="namespaceChronos_1_1Engine.html#a7eb1b7f1844da31f8c3dd350c04f3812">getMaxUsableSampleCount</a>(<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="classChronos_1_1Engine_1_1Device.html#a18bf509379c7fa5e2bb2195332dab902">maxMsaaSamples</a> = <a class="code" href="namespaceChronos_1_1Engine.html#a7eb1b7f1844da31f8c3dd350c04f3812">getMaxUsableSampleCount</a>(<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
@@ -420,6 +422,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, &quot;Device&quot;, &quot;MSAA samples: &quot; + std::to_string(<a class="code" href="classChronos_1_1Engine_1_1Device.html#a98ab680304c67713f698d714aa4be474">msaaSamples</a>));</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a18bf509379c7fa5e2bb2195332dab902"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a18bf509379c7fa5e2bb2195332dab902">Chronos::Engine::Device::maxMsaaSamples</a></div><div class="ttdeci">VkSampleCountFlagBits maxMsaaSamples</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00070">device.hpp:70</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a98ab680304c67713f698d714aa4be474"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a98ab680304c67713f698d714aa4be474">Chronos::Engine::Device::msaaSamples</a></div><div class="ttdeci">VkSampleCountFlagBits msaaSamples</div><div class="ttdoc">This sets the MSAA samples count.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00068">device.hpp:68</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_a5d1bdae6108eaaf072fe2619be7123d8"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a5d1bdae6108eaaf072fe2619be7123d8">Chronos::Engine::isDeviceSuitable</a></div><div class="ttdeci">bool isDeviceSuitable(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface)</div><div class="ttdoc">Checks if the physical device that we provide it is suitable for our needs.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00189">helper.cpp:189</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_a7eb1b7f1844da31f8c3dd350c04f3812"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a7eb1b7f1844da31f8c3dd350c04f3812">Chronos::Engine::getMaxUsableSampleCount</a></div><div class="ttdeci">VkSampleCountFlagBits getMaxUsableSampleCount(VkPhysicalDevice physicalDevice)</div><div class="ttdoc">Gets the maxmimum supported MSAA sample count.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00234">helper.cpp:234</a></div></div>
@@ -485,6 +488,22 @@ Here is the caller graph for this function:</div>
 <p>This is the queue that is used for graphics rendering. </p>
 
 <p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00055">55</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a18bf509379c7fa5e2bb2195332dab902"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18bf509379c7fa5e2bb2195332dab902">&#9670;&nbsp;</a></span>maxMsaaSamples</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkSampleCountFlagBits Chronos::Engine::Device::maxMsaaSamples = VK_SAMPLE_COUNT_1_BIT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00070">70</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
 
 </div>
 </div>

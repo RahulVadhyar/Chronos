@@ -152,14 +152,14 @@ $(document).ready(function(){initNavTree('polygonManager_8cpp_source.html',''); 
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        VkDeviceSize offsets[] = { 0 };</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        vkCmdBindVertexBuffers(<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">commandBuffers</a>[currentFrame], 0, 1, vertexBuffers,</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            offsets);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        vkCmdBindIndexBuffer(<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">commandBuffers</a>[currentFrame], polygon.second.indexBuffer.buffer,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        vkCmdBindIndexBuffer(<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">commandBuffers</a>[currentFrame], polygon.second.indexBuffers[currentFrame].buffer,</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            0, VK_INDEX_TYPE_UINT16);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        vkCmdBindDescriptorSets(<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">commandBuffers</a>[currentFrame],</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            VK_PIPELINE_BIND_POINT_GRAPHICS,</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            polygon.second.pipelineLayout, 0, 1,</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            &amp;polygon.second.descriptorSets[currentFrame], 0, <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        vkCmdDrawIndexed(<a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a3cf7995633555faa52870bcdd745a70e">commandBuffers</a>[currentFrame],</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(polygon.second.indices.size()), 1, 0, 0, 0);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(polygon.second.vertices.size() - 2), 1, 0, 0, 0);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1ObjectManager.html#a77f6c739ae9749aae03eb708f3aa3852">endRender</a>(currentFrame);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>

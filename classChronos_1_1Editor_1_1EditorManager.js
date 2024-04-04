@@ -30,6 +30,7 @@ var classChronos_1_1Editor_1_1EditorManager =
     [ "fullScreen", "classChronos_1_1Editor_1_1EditorManager.html#ae2cb9f8d94533f410c0ca288f0c222b7", null ],
     [ "isWindowFullscreen", "classChronos_1_1Editor_1_1EditorManager.html#a0a36a41cb12c5a466f4f3c121d640b3e", null ],
     [ "manager", "classChronos_1_1Editor_1_1EditorManager.html#a54d3c886260f18c56d50fcff936563ef", null ],
+    [ "msaaSamples", "classChronos_1_1Editor_1_1EditorManager.html#a93c56aeccc6c07dfef2754c2097aa30a", null ],
     [ "newPolygonParams", "classChronos_1_1Editor_1_1EditorManager.html#a4998cb31fedc59b321a480ee9164c0ac", null ],
     [ "newShapeFill", "classChronos_1_1Editor_1_1EditorManager.html#ae22f4037091e94e304e9aa7b402b6263", null ],
     [ "newShapeParams", "classChronos_1_1Editor_1_1EditorManager.html#ac4356c21e788d9e2fdd02fc76a61578e", null ],

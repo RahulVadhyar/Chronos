@@ -181,6 +181,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a771cc5ec3e2e0827454ba27fcc8343b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Manager_1_1Manager.html#a771cc5ec3e2e0827454ba27fcc8343b0">changePresentMode</a> (std::string presentMode)</td></tr>
 <tr class="memdesc:a771cc5ec3e2e0827454ba27fcc8343b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the present mode of the swapchain.  <a href="classChronos_1_1Manager_1_1Manager.html#a771cc5ec3e2e0827454ba27fcc8343b0">More...</a><br /></td></tr>
 <tr class="separator:a771cc5ec3e2e0827454ba27fcc8343b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a530fc29195a3c6004a551e8360cdd898"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Manager_1_1Manager.html#a530fc29195a3c6004a551e8360cdd898">getMSAAModes</a> ()</td></tr>
+<tr class="separator:a530fc29195a3c6004a551e8360cdd898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae11402335fc4f99d513f798bc79173f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Manager_1_1Manager.html#ae11402335fc4f99d513f798bc79173f7">changeMSAA</a> (std::string mode)</td></tr>
+<tr class="separator:ae11402335fc4f99d513f798bc79173f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -235,10 +239,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.setEditorAddElementsCallback(initializer.editorAddElements);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a50165316b5c0c709684961a5ca60011e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">Chronos::Engine::Engine::bgColor</a></div><div class="ttdeci">float bgColor[3]</div><div class="ttdoc">This is the background color of the window.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00146">engine.hpp:146</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a73a8aefde9c16bbe8b4bbd770cba5981"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a73a8aefde9c16bbe8b4bbd770cba5981">Chronos::Engine::Engine::height</a></div><div class="ttdeci">int height</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00133">engine.hpp:133</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ae79484eb3130b4251c2fc43179fac68c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ae79484eb3130b4251c2fc43179fac68c">Chronos::Engine::Engine::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00128">engine.hpp:128</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Manager_1_1Manager_html_a00f8c72aeda5c374bdddcaf183f95cf2"><div class="ttname"><a href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">Chronos::Manager::Manager::engine</a></div><div class="ttdeci">Chronos::Engine::Engine engine</div><div class="ttdoc">The backend Vulkan engine, used for rendering the desired shapes and text.s.</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00463">chronos.hpp:463</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a50165316b5c0c709684961a5ca60011e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">Chronos::Engine::Engine::bgColor</a></div><div class="ttdeci">float bgColor[3]</div><div class="ttdoc">This is the background color of the window.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00147">engine.hpp:147</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a73a8aefde9c16bbe8b4bbd770cba5981"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a73a8aefde9c16bbe8b4bbd770cba5981">Chronos::Engine::Engine::height</a></div><div class="ttdeci">int height</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00134">engine.hpp:134</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ae79484eb3130b4251c2fc43179fac68c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ae79484eb3130b4251c2fc43179fac68c">Chronos::Engine::Engine::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00129">engine.hpp:129</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Manager_1_1Manager_html_a00f8c72aeda5c374bdddcaf183f95cf2"><div class="ttname"><a href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">Chronos::Manager::Manager::engine</a></div><div class="ttdeci">Chronos::Engine::Engine engine</div><div class="ttdoc">The backend Vulkan engine, used for rendering the desired shapes and text.s.</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00471">chronos.hpp:471</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00064">Chronos::Manager::Initializer::BackgroundColor</a>, <a class="el" href="chronos_8hpp_source.html#l00063">Chronos::Manager::Initializer::WindowHeight</a>, and <a class="el" href="chronos_8hpp_source.html#l00062">Chronos::Manager::Initializer::WindowWidth</a>.</p>
 
@@ -324,9 +328,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    shapeNo = std::stoi(<span class="stringliteral">&quot;3&quot;</span> + std::to_string(shapeNo));</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span> shapeNo;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a12765ebca68b3aaa889a824fdfade9cd"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">Chronos::Engine::Engine::shapeManager</a></div><div class="ttdeci">Chronos::Engine::ShapeManager&lt; TexturedVertex &gt; shapeManager</div><div class="ttdoc">This is the main function that is used to add, remove and modify textured shapes(rectangles or triang...</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00102">engine.hpp:102</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_aa3cedc1828056f8515feef8ca0af12dd"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#aa3cedc1828056f8515feef8ca0af12dd">Chronos::Engine::Engine::textureManager</a></div><div class="ttdeci">Chronos::Engine::TextureManager textureManager</div><div class="ttdoc">Used to create and manage textures.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00116">engine.hpp:116</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_aa79ab1f8cc0b0d5ebcfb4136c18699ed"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">Chronos::Engine::Engine::polygonManager</a></div><div class="ttdeci">Chronos::Engine::PolygonManager polygonManager</div><div class="ttdoc">Used to create and manage aribatry polygons.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00123">engine.hpp:123</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a12765ebca68b3aaa889a824fdfade9cd"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a12765ebca68b3aaa889a824fdfade9cd">Chronos::Engine::Engine::shapeManager</a></div><div class="ttdeci">Chronos::Engine::ShapeManager&lt; TexturedVertex &gt; shapeManager</div><div class="ttdoc">This is the main function that is used to add, remove and modify textured shapes(rectangles or triang...</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00103">engine.hpp:103</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_aa3cedc1828056f8515feef8ca0af12dd"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#aa3cedc1828056f8515feef8ca0af12dd">Chronos::Engine::Engine::textureManager</a></div><div class="ttdeci">Chronos::Engine::TextureManager textureManager</div><div class="ttdoc">Used to create and manage textures.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00117">engine.hpp:117</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_aa79ab1f8cc0b0d5ebcfb4136c18699ed"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#aa79ab1f8cc0b0d5ebcfb4136c18699ed">Chronos::Engine::Engine::polygonManager</a></div><div class="ttdeci">Chronos::Engine::PolygonManager polygonManager</div><div class="ttdoc">Used to create and manage aribatry polygons.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00124">engine.hpp:124</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1PolygonManager_html_a5735e1120cb83960e28b7bf489ee1ae0"><div class="ttname"><a href="classChronos_1_1Engine_1_1PolygonManager.html#a5735e1120cb83960e28b7bf489ee1ae0">Chronos::Engine::PolygonManager::addPolygon</a></div><div class="ttdeci">int addPolygon(Chronos::Manager::ShapeParams shapeParams, std::vector&lt; std::array&lt; float, 2 &gt;&gt; vertices, Chronos::Engine::Texture texture)</div><div class="ttdef"><b>Definition:</b> <a href="polygonManager_8cpp_source.html#l00077">polygonManager.cpp:77</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TextureManager_html_a7e9cdd7e6b0020c9475aad5513e15e46"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextureManager.html#a7e9cdd7e6b0020c9475aad5513e15e46">Chronos::Engine::TextureManager::getTexture</a></div><div class="ttdeci">Chronos::Engine::Texture getTexture(int textureNo)</div><div class="ttdoc">Gets the texture from the texture manager.</div><div class="ttdef"><b>Definition:</b> <a href="textureManager_8cpp_source.html#l00056">textureManager.cpp:56</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Manager_1_1Manager_html_af60e123e44b2f72401e278a7fc0947fe"><div class="ttname"><a href="classChronos_1_1Manager_1_1Manager.html#af60e123e44b2f72401e278a7fc0947fe">Chronos::Manager::Manager::getTextureDetails</a></div><div class="ttdeci">std::vector&lt; TextureDetails &gt; getTextureDetails()</div><div class="ttdoc">Returns the details of all textures defined.</div><div class="ttdef"><b>Definition:</b> <a href="manager_8cpp_source.html#l00321">manager.cpp:321</a></div></div>
@@ -398,7 +402,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">return</span> shapeNo;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a443de04f089d9814259caf3a4ea1c583"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">Chronos::Engine::Engine::colorShapeManager</a></div><div class="ttdeci">Chronos::Engine::ShapeManager&lt; ColorVertex &gt; colorShapeManager</div><div class="ttdoc">This is the main function that is used to add, remove and modify colored shapes(rectangles or triangl...</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00109">engine.hpp:109</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a443de04f089d9814259caf3a4ea1c583"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a443de04f089d9814259caf3a4ea1c583">Chronos::Engine::Engine::colorShapeManager</a></div><div class="ttdeci">Chronos::Engine::ShapeManager&lt; ColorVertex &gt; colorShapeManager</div><div class="ttdoc">This is the main function that is used to add, remove and modify colored shapes(rectangles or triangl...</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00110">engine.hpp:110</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00101">Chronos::Manager::PolygonType::rectangle</a>, <a class="el" href="commonStructs_8hpp_source.html#l00057">Chronos::Manager::ShapeParams::shapeName</a>, and <a class="el" href="chronos_8hpp_source.html#l00100">Chronos::Manager::PolygonType::triangle</a>.</p>
 
@@ -556,7 +560,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    </div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">textManager</a>.<a class="code" href="classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a">addFont</a>(font, fontStyle);</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_af3189f4b7e39b19c522579fb0d4cc4e8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">Chronos::Engine::Engine::textManager</a></div><div class="ttdeci">Chronos::Engine::TextManager textManager</div><div class="ttdoc">Main function that is used to add, update and remove text to the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00095">engine.hpp:95</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_af3189f4b7e39b19c522579fb0d4cc4e8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#af3189f4b7e39b19c522579fb0d4cc4e8">Chronos::Engine::Engine::textManager</a></div><div class="ttdeci">Chronos::Engine::TextManager textManager</div><div class="ttdoc">Main function that is used to add, update and remove text to the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00096">engine.hpp:96</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TextManager_html_aeb7f185a51c653701d1547ac3a16ae1a"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a">Chronos::Engine::TextManager::addFont</a></div><div class="ttdeci">int addFont(Chronos::Engine::Text font, Chronos::Engine::FontTypes fontStyle)</div><div class="ttdoc">Adds a font to the text manager.</div><div class="ttdef"><b>Definition:</b> <a href="textManager_8cpp_source.html#l00089">textManager.cpp:89</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html">Chronos::Engine::Text</a></div><div class="ttdoc">Class for creating a text object for rendering text.</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00067">text.hpp:67</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_a2daa81d445bd4c329954358df41cfb52"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#a2daa81d445bd4c329954358df41cfb52">Chronos::Engine::Text::params</a></div><div class="ttdeci">Chronos::Engine::TextParams params</div><div class="ttdoc">Various parameters of the text that are set by the user.</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00129">text.hpp:129</a></div></div>
@@ -686,6 +690,49 @@ Note: Only png and jpg files are supported.</h2>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="ae11402335fc4f99d513f798bc79173f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae11402335fc4f99d513f798bc79173f7">&#9670;&nbsp;</a></span>changeMSAA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Chronos::Manager::Manager::changeMSAA </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00439">439</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                                       {</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#ac4d2d427167bd980a19f7f6d545b687f">changeMSAA</a>(mode);</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        }</div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ac4d2d427167bd980a19f7f6d545b687f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ac4d2d427167bd980a19f7f6d545b687f">Chronos::Engine::Engine::changeMSAA</a></div><div class="ttdeci">void changeMSAA(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00502">engine.cpp:502</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="engine_8cpp_source.html#l00502">Chronos::Engine::Engine::changeMSAA()</a>, and <a class="el" href="chronos_8hpp_source.html#l00471">engine</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChronos_1_1Manager_1_1Manager_ae11402335fc4f99d513f798bc79173f7_cgraph.png" border="0" usemap="#aclassChronos_1_1Manager_1_1Manager_ae11402335fc4f99d513f798bc79173f7_cgraph" alt=""/></div>
+<map name="aclassChronos_1_1Manager_1_1Manager_ae11402335fc4f99d513f798bc79173f7_cgraph" id="aclassChronos_1_1Manager_1_1Manager_ae11402335fc4f99d513f798bc79173f7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,211,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Engine.html#ac4d2d427167bd980a19f7f6d545b687f" title=" " alt="" coords="259,5,437,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a771cc5ec3e2e0827454ba27fcc8343b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a771cc5ec3e2e0827454ba27fcc8343b0">&#9670;&nbsp;</a></span>changePresentMode()</h2>
 
@@ -734,9 +781,9 @@ Note: Only png and jpg files are supported.</h2>
 <div class="fragment"><div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                                                     {</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#aa811161bd3c56252a4802ce7b5a044b5">setPresentMode</a>(presentMode);</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        }</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_aa811161bd3c56252a4802ce7b5a044b5"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#aa811161bd3c56252a4802ce7b5a044b5">Chronos::Engine::Engine::setPresentMode</a></div><div class="ttdeci">void setPresentMode(std::string mode)</div><div class="ttdoc">Changes the present mode of the swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00454">engine.cpp:454</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_aa811161bd3c56252a4802ce7b5a044b5"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#aa811161bd3c56252a4802ce7b5a044b5">Chronos::Engine::Engine::setPresentMode</a></div><div class="ttdeci">void setPresentMode(std::string mode)</div><div class="ttdoc">Changes the present mode of the swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00461">engine.cpp:461</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00463">engine</a>, and <a class="el" href="engine_8cpp_source.html#l00454">Chronos::Engine::Engine::setPresentMode()</a>.</p>
+<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00471">engine</a>, and <a class="el" href="engine_8cpp_source.html#l00461">Chronos::Engine::Engine::setPresentMode()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -780,6 +827,48 @@ Here is the caller graph for this function:</div>
 <map name="aclassChronos_1_1Manager_1_1Manager_a633479d3104552a11a4546cbb048b8f8_icgraph" id="aclassChronos_1_1Manager_1_1Manager_a633479d3104552a11a4546cbb048b8f8_icgraph">
 <area shape="rect" title="Draws the current frame to the window." alt="" coords="108,5,313,47"/>
 <area shape="rect" href="editorMain_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a530fc29195a3c6004a551e8360cdd898"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a530fc29195a3c6004a551e8360cdd898">&#9670;&nbsp;</a></span>getMSAAModes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; Chronos::Manager::Manager::getMSAAModes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00435">435</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                                           {</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#adbcb2d98aa26e42c6a6e15402f0bd2b9">getAvailableMSAAModes</a>();</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        }</div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_adbcb2d98aa26e42c6a6e15402f0bd2b9"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#adbcb2d98aa26e42c6a6e15402f0bd2b9">Chronos::Engine::Engine::getAvailableMSAAModes</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getAvailableMSAAModes()</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00477">engine.cpp:477</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00471">engine</a>, and <a class="el" href="engine_8cpp_source.html#l00477">Chronos::Engine::Engine::getAvailableMSAAModes()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChronos_1_1Manager_1_1Manager_a530fc29195a3c6004a551e8360cdd898_cgraph.png" border="0" usemap="#aclassChronos_1_1Manager_1_1Manager_a530fc29195a3c6004a551e8360cdd898_cgraph" alt=""/></div>
+<map name="aclassChronos_1_1Manager_1_1Manager_a530fc29195a3c6004a551e8360cdd898_cgraph" id="aclassChronos_1_1Manager_1_1Manager_a530fc29195a3c6004a551e8360cdd898_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,211,47"/>
+<area shape="rect" href="classChronos_1_1Engine_1_1Engine.html#adbcb2d98aa26e42c6a6e15402f0bd2b9" title=" " alt="" coords="259,5,452,47"/>
 </map>
 </div>
 
@@ -1005,9 +1094,9 @@ Note: This will return both textured and colored shapes.</h2>
 <div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2">engine</a>.<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642">window</a>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a489c5250f3c8e92c72e3c2240586e642"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642">Chronos::Engine::Engine::window</a></div><div class="ttdeci">GLFWwindow * window</div><div class="ttdoc">This is the GLFW window reference that is used by the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00138">engine.hpp:138</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a489c5250f3c8e92c72e3c2240586e642"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642">Chronos::Engine::Engine::window</a></div><div class="ttdeci">GLFWwindow * window</div><div class="ttdoc">This is the GLFW window reference that is used by the engine.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00139">engine.hpp:139</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00463">engine</a>, and <a class="el" href="engine_8hpp_source.html#l00138">Chronos::Engine::Engine::window</a>.</p>
+<p class="reference">References <a class="el" href="chronos_8hpp_source.html#l00471">engine</a>, and <a class="el" href="engine_8hpp_source.html#l00139">Chronos::Engine::Engine::window</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1347,7 +1436,7 @@ Note:</h2>
 
 <p>The backend Vulkan engine, used for rendering the desired shapes and text.s. </p>
 
-<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00463">463</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00471">471</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
 
 </div>
 </div>
@@ -1371,7 +1460,7 @@ Note:</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00458">458</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="chronos_8hpp_source.html#l00466">466</a> of file <a class="el" href="chronos_8hpp_source.html">chronos.hpp</a>.</p>
 
 </div>
 </div>
