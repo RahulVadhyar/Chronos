@@ -14,6 +14,7 @@ var classChronos_1_1Editor_1_1EditorManager =
     [ "TextureDetailsWindow", "classChronos_1_1Editor_1_1EditorManager.html#ad3c043460b093328b29b6771989f9404", null ],
     [ "TextureWindow", "classChronos_1_1Editor_1_1EditorManager.html#a746cb968bba01b0331909122f598e517", null ],
     [ "TextWindow", "classChronos_1_1Editor_1_1EditorManager.html#a0babaffbb1a34dc127ee45fc92329b18", null ],
+    [ "TotalCodeGenerationWindow", "classChronos_1_1Editor_1_1EditorManager.html#a610a100a2ca481fb0825c692905c1440", null ],
     [ "bgColor", "classChronos_1_1Editor_1_1EditorManager.html#aa094afb7f2c082a769dfe1349212cedb", null ],
     [ "currentFontSelection", "classChronos_1_1Editor_1_1EditorManager.html#a4679df9e4fe69c237cd045fc7747d9d3", null ],
     [ "currentFontSizeSelection", "classChronos_1_1Editor_1_1EditorManager.html#aec56a0e787c041726274cd9bdf07c9bd", null ],

@@ -101,10 +101,74 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a6d176de988790c248a6b6b2dce733917"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChronos_1_1Editor.html#a6d176de988790c248a6b6b2dce733917">generateCode</a> (<a class="el" href="classChronos_1_1Manager_1_1Manager.html">Chronos::Manager::Manager</a> *manager)</td></tr>
+<tr class="separator:a6d176de988790c248a6b6b2dce733917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54d3b521c941f39b794afd523c33d666"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChronos_1_1Editor.html#a54d3b521c941f39b794afd523c33d666">setImGuiStyle</a> ()</td></tr>
 <tr class="separator:a54d3b521c941f39b794afd523c33d666"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a6d176de988790c248a6b6b2dce733917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d176de988790c248a6b6b2dce733917">&#9670;&nbsp;</a></span>generateCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Chronos::Editor::generateCode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classChronos_1_1Manager_1_1Manager.html">Chronos::Manager::Manager</a> *&#160;</td>
+          <td class="paramname"><em>manager</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="editorCodeGenerator_8cpp_source.html#l00027">27</a> of file <a class="el" href="editorCodeGenerator_8cpp_source.html">editorCodeGenerator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                                                   {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//generate code for initalizer, textured shape, colored shape, polygons, textures</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::string code = <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="stringliteral">&quot;#include \&quot;chronos.hpp\&quot;\n&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="stringliteral">&quot;Chronos::Manager::Initializer initializer;\n&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="stringliteral">&quot;initializer.WindowWidth = 800;\n&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="stringliteral">&quot;initializer.WindowHeight = 600;\n&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="stringliteral">&quot;initializer.BackgroundColor[0] = 0;\n&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="stringliteral">&quot;initializer.BackgroundColor[1] = 0;\n&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="stringliteral">&quot;initializer.BackgroundColor[2] = 0;\n&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="stringliteral">&quot;Chronos::Manager::Manager manager(initializer);\n&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="stringliteral">&quot;//texture\n&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="stringliteral">&quot;//textured shapes\n&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="stringliteral">&quot;//colored shapes\n&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="stringliteral">&quot;//polygons\n&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="stringliteral">&quot;settings\n&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="stringliteral">&quot;while (!glfwWindowShouldClose(manager.getWindow())) {\n&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="stringliteral">&quot;if (glfwGetKey(manager.getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS) {\n&quot;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="stringliteral">&quot;glfwSetWindowShouldClose(manager.getWindow(), true);\n&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="stringliteral">&quot;}\n&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="stringliteral">&quot;manager.drawFrame();\n&quot;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="stringliteral">&quot;}\n &quot;</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> code;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceChronos_1_1Editor_a6d176de988790c248a6b6b2dce733917_icgraph.png" border="0" usemap="#anamespaceChronos_1_1Editor_a6d176de988790c248a6b6b2dce733917_icgraph" alt=""/></div>
+<map name="anamespaceChronos_1_1Editor_a6d176de988790c248a6b6b2dce733917_icgraph" id="anamespaceChronos_1_1Editor_a6d176de988790c248a6b6b2dce733917_icgraph">
+<area shape="rect" title=" " alt="" coords="979,35,1199,61"/>
+<area shape="rect" href="classChronos_1_1Editor_1_1EditorManager.html#a610a100a2ca481fb0825c692905c1440" title=" " alt="" coords="707,27,931,69"/>
+<area shape="rect" href="classChronos_1_1Editor_1_1EditorManager.html#a0a83d9d068c5ba9313ee98d5062b469d" title=" " alt="" coords="435,27,659,69"/>
+<area shape="rect" href="editorMain_8cpp.html#a6a215dd7e7955739c214ee50e9b9ad87" title=" " alt="" coords="280,35,387,61"/>
+<area shape="rect" href="editorMain_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="91,5,146,32"/>
+<area shape="rect" href="classChronos_1_1Editor_1_1EditorRenderer.html#afa6b345a8d8d825f5ced32bf2ce0b281" title=" " alt="" coords="5,57,232,98"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a54d3b521c941f39b794afd523c33d666"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a54d3b521c941f39b794afd523c33d666">&#9670;&nbsp;</a></span>setImGuiStyle()</h2>
 

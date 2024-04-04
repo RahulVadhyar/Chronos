@@ -1,10 +1,10 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,497,60,523"/>
-<area shape="rect" id="node2" href="$editorMain_8cpp.html#a6a215dd7e7955739c214ee50e9b9ad87" title=" " alt="" coords="167,405,273,431"/>
-<area shape="rect" id="node17" href="$classChronos_1_1Manager_1_1Manager.html#a633479d3104552a11a4546cbb048b8f8" title="Draws the current frame to the window." alt="" coords="117,456,323,497"/>
-<area shape="rect" id="node18" href="$classChronos_1_1Manager_1_1Manager.html#a248fdc281a1b24ee47fd605ba6c7cd70" title="Gets a reference to the GLFWWindow." alt="" coords="117,521,323,563"/>
-<area shape="rect" id="node19" href="$classChronos_1_1Editor_1_1EditorManager.html#ae28f6a26ba542f66491d5326ad1c7f79" title=" " alt="" coords="108,587,332,628"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Editor_1_1EditorManager.html#a0a83d9d068c5ba9313ee98d5062b469d" title=" " alt="" coords="380,397,604,439"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,530,60,557"/>
+<area shape="rect" id="node2" href="$editorMain_8cpp.html#a6a215dd7e7955739c214ee50e9b9ad87" title=" " alt="" coords="167,438,273,465"/>
+<area shape="rect" id="node19" href="$classChronos_1_1Manager_1_1Manager.html#a633479d3104552a11a4546cbb048b8f8" title="Draws the current frame to the window." alt="" coords="117,489,323,531"/>
+<area shape="rect" id="node20" href="$classChronos_1_1Manager_1_1Manager.html#a248fdc281a1b24ee47fd605ba6c7cd70" title="Gets a reference to the GLFWWindow." alt="" coords="117,555,323,596"/>
+<area shape="rect" id="node21" href="$classChronos_1_1Editor_1_1EditorManager.html#ae28f6a26ba542f66491d5326ad1c7f79" title=" " alt="" coords="108,620,332,661"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Editor_1_1EditorManager.html#a0a83d9d068c5ba9313ee98d5062b469d" title=" " alt="" coords="380,431,604,472"/>
 <area shape="rect" id="node4" href="$classChronos_1_1Editor_1_1EditorManager.html#a9af7c4fe35cefbce32f8aab29442dde8" title=" " alt="" coords="652,5,876,47"/>
 <area shape="rect" id="node5" href="$classChronos_1_1Editor_1_1EditorManager.html#a06155e374e7589b9510f6f9284047920" title=" " alt="" coords="652,71,876,112"/>
 <area shape="rect" id="node6" href="$classChronos_1_1Editor_1_1EditorManager.html#a6bcd171159c3a8b07d319881239e2e7d" title=" " alt="" coords="652,136,876,177"/>
@@ -18,4 +18,6 @@
 <area shape="rect" id="node14" href="$classChronos_1_1Editor_1_1EditorManager.html#ad3c043460b093328b29b6771989f9404" title=" " alt="" coords="652,659,876,700"/>
 <area shape="rect" id="node15" href="$classChronos_1_1Editor_1_1EditorManager.html#a746cb968bba01b0331909122f598e517" title=" " alt="" coords="652,724,876,765"/>
 <area shape="rect" id="node16" href="$classChronos_1_1Editor_1_1EditorManager.html#a0babaffbb1a34dc127ee45fc92329b18" title=" " alt="" coords="652,789,876,831"/>
+<area shape="rect" id="node17" href="$classChronos_1_1Editor_1_1EditorManager.html#a610a100a2ca481fb0825c692905c1440" title=" " alt="" coords="652,855,876,896"/>
+<area shape="rect" id="node18" href="$namespaceChronos_1_1Editor.html#a6d176de988790c248a6b6b2dce733917" title=" " alt="" coords="924,862,1144,889"/>
 </map>
