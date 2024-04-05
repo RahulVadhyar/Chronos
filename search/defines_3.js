@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['log_794',['LOG',['../logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a',1,'logging.hpp']]]
+  ['imgui_5fdefine_5fmath_5foperators_795',['IMGUI_DEFINE_MATH_OPERATORS',['../editorHeaders_8hpp.html#adf4d73301961430d50d7edd96f92ce38',1,'editorHeaders.hpp']]]
 ];

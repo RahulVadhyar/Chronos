@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stb_5fimage_5fimplementation_796',['STB_IMAGE_IMPLEMENTATION',['../texture_8cpp.html#a18372412ad2fc3ce1e3240b3cf0efe78',1,'texture.cpp']]]
+  ['max_5fframes_5fin_5fflight_797',['MAX_FRAMES_IN_FLIGHT',['../vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec',1,'vulkanHeaders.hpp']]]
 ];

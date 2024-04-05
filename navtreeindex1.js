@@ -121,6 +121,7 @@ var NAVTREEINDEX1 =
 "editorCodeGenerator_8hpp.html#a6d176de988790c248a6b6b2dce733917":[10,0,2,2,0,0,0],
 "editorCodeGenerator_8hpp_source.html":[10,0,2,2,0,0],
 "editorHeaders_8hpp.html":[10,0,2,2,0,1],
+"editorHeaders_8hpp.html#adf4d73301961430d50d7edd96f92ce38":[10,0,2,2,0,1,0],
 "editorHeaders_8hpp_source.html":[10,0,2,2,0,1],
 "editorMain_8cpp.html":[10,0,2,2,1,1],
 "editorMain_8cpp.html#a13d1c6300fe3c9fe31eebe196e35cd71":[10,0,2,2,1,1,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "logging_8hpp.html#aafd7ab101b22caf7ff160ea6870f9982":[10,0,2,1,0,1,0],
 "logging_8hpp_source.html":[10,0,2,1,0,1],
 "manager_8cpp.html":[10,0,2,0,0,0],
-"manager_8cpp_source.html":[10,0,2,0,0,0],
-"md_docs_APIUsage.html":[1]
+"manager_8cpp_source.html":[10,0,2,0,0,0]
 };
