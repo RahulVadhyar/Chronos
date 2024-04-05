@@ -29,10 +29,13 @@ SOFTWARE.
 */
 #pragma once
 
+#define IMGUI_DEFINE_MATH_OPERATORS
 #include "imgui.h"
+#include "imgui_internal.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_vulkan.h"
 #include "imstb_rectpack.h"
 #include "imstb_textedit.h"
 #include "imstb_truetype.h"
 #include "ImSequencer.h"
+#include "imgui_curve.hpp"

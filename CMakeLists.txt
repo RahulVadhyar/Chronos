@@ -135,18 +135,22 @@ set(IMGUI_DIR ThirdParty/imgui)
 set(IMGUI_BACKENDS ${IMGUI_DIR}/backends)
 set(IMGUI_GUIZMO ThirdParty/ImGuizmo)
 set(IMGUI_NODE_EDITOR_DIR ThirdParty/imgui-node-editor)
+set(IMGUI_CURVE_EDITOR_DIR ThirdParty/imgui_curve_editor)
 
 file(GLOB EDITOR ${EDITOR_DIR}/*.cpp)
 file(GLOB IMGUI ${IMGUI_DIR}/*.cpp)
 file(GLOB IM_GUIZMO_CPP ${IMGUI_GUIZMO}/*.cpp)
 file(GLOB IMGUI_NODE_EDITOR_CPP ${IMGUI_NODE_EDITOR_DIR}/*.cpp)
+file(GLOB IMGUI_CURVE_EDITOR_CPP ${IMGUI_CURVE_EDITOR_DIR}/*.cpp)
 file(GLOB EDITOR_FILES 
 ${EDITOR} 
 ${IMGUI} 
 ${IMGUI_BACKENDS}/imgui_impl_glfw.cpp 
 ${IMGUI_BACKENDS}/imgui_impl_vulkan.cpp
 ${IM_GUIZMO_CPP}
-${IMGUI_NODE_EDITOR_CPP})
+${IMGUI_NODE_EDITOR_CPP}
+${IMGUI_CURVE_EDITOR_CPP}
+)
 
 # linking
 add_executable(ChronosEditor ${CHRONOS_CPP} ${EDITOR_FILES})
@@ -202,6 +206,7 @@ target_include_directories(ChronosEditor PUBLIC ${IMGUI_DIR})
 target_include_directories(ChronosEditor PUBLIC ${IMGUI_BACKENDS})
 target_include_directories(ChronosEditor PUBLIC ${IMGUI_GUIZMO})    
 target_include_directories(ChronosEditor PUBLIC ${IMGUI_NODE_EDITOR_DIR})
+target_include_directories(ChronosEditor PUBLIC ${IMGUI_CURVE_EDITOR_DIR})
 IncludeDirectories(ChronosEditor)
 endif()
 

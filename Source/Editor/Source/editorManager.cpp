@@ -20,7 +20,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "imgui.h"
 #include "stlheader.hpp"
 #include "editorHeaders.hpp"
 #include "chronos.hpp"

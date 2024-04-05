@@ -16,3 +16,6 @@
 [submodule "ThirdParty/earcut.hpp"]
 	path = ThirdParty/earcut.hpp
 	url = https://github.com/mapbox/earcut.hpp
+[submodule "ThirdParty/imgui_curve_editor"]
+	path = ThirdParty/imgui_curve_editor
+	url = https://github.com/RahulVadhyar/imgui_curve_editor
