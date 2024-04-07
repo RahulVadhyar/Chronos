@@ -44,6 +44,7 @@ SOFTWARE.
 #include <map>
 #include <optional>
 #include <set>
+#include <unordered_set>
 #include <stdexcept>
 #include <string>
 #include <vector>

@@ -48,6 +48,11 @@ SOFTWARE.
 #include "polygonManager.hpp"
 #include "engine.hpp"
 #include "engineStructs.hpp"
+#include "animParams.hpp"
+#include "animBone.hpp"
+#include "animShape.hpp"
+#include "animRig.hpp"
+#include "animManager.hpp"
 
 namespace Chronos {
 namespace Manager {
@@ -133,6 +138,7 @@ namespace Manager {
     */
     class Manager {
     public:
+        friend Chronos::Animation::AnimationManager;
         /**
         \brief Constructor for chronos. The initalizer struct with the necessary options to be passed.
 
@@ -468,7 +474,7 @@ namespace Manager {
 #endif
 
     private:
-        int nextFreeAnimObjNo = 0;
+        Chronos::Animation::AnimationManager animManager;
 
         /**
         \brief The backend Vulkan engine, used for rendering the desired shapes and text.s

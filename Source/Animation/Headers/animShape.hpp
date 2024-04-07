@@ -21,28 +21,18 @@ SOFTWARE.
 */
 #pragma once
 
-namespace Chronos {
-namespace Animation {
-    /**
-    \brief Class for animation shapes.
-
-    Animation shapes are shapes that can be animated/
-    */
-    class AnimShape : public AnimObject {
-    public:
-        void init();
-        void update();
-        void destroy();
-        void loadFromFile();
-        void saveToFile();
-        void nextFrame();
-        void prevFrame();
-        void setFrame();
-        void createFrame();
-        void changeAnimation();
-
-    private:
-        std::vector<Chronos::Manager::ShapeParams> animFrames;
+namespace Chronos{
+    namespace Animation{
+        class AnimShape{
+        public:
+            AnimShape() = default;
+            AnimShape(int shapeNo);
+            void setBindLocation(Chronos::Animation::Bone* bone, float boneLocation, float shapeLocation);
+            int getShapeNo();
+        private:
+            int shapeNo;
+            std::map<Chronos::Animation::Bone*, float> bonesLocation;
+            std::vector<float> shapeLocation;
+        };
     };
-}
-}
+};

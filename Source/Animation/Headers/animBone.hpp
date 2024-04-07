@@ -21,26 +21,27 @@ SOFTWARE.
 */
 #pragma once
 
-namespace Chronos {
-namespace Animation {
-
-    /**
-     \brief Abstract class for animation objects.
-
-    It contains the basic functions and variables needed for animation objects.
-    */
-    class AnimObject {
-    public:
-        virtual void init() = 0;
-        virtual void update() = 0;
-        virtual void destroy() = 0;
-        virtual void loadFromFile() = 0;
-        virtual void saveToFile() = 0;
-        virtual void nextFrame() = 0;
-        virtual void prevFrame() = 0;
-        virtual void setFrame() = 0;
-        virtual void createFrame() = 0;
-        virtual void changeAnimation() = 0;
+namespace Chronos{
+    namespace Animation{
+        class Bone{
+        public:
+            Bone();
+            Bone(Bone* parent, Chronos::Animation::AnimParams initialParams);
+            void setKeyframe(Chronos::Animation::AnimParams params, float time);
+            void removeKeyframe(float time);
+            void addChildren(Bone* childBone);
+            void removeChildren(Bone* childBone);
+            void update(float time);
+            Chronos::Animation::AnimParams getParams();
+            void setAnimation(int animNo);
+            void updateCurrentPararms(Chronos::Animation::AnimParams params);
+            void deleteAnimation(int animNo);
+        private:
+            Chronos::Animation::AnimParams currentParams;
+            Bone* parent;
+            std::unordered_set<Bone*> children;
+            std::map<float, Chronos::Animation::AnimParams>* keyframes;
+            std::map<int, std::map<float, Chronos::Animation::AnimParams>> animations;
+        };
     };
-}
-}
+};

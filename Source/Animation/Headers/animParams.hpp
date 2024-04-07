@@ -20,29 +20,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 #pragma once
-namespace Chronos {
-namespace Animation {
 
-    /**
-     \brief Class for animation composites.
-
-     Animation composites are objects that contain multiple animation shapes.
-    */
-    class AnimComposite : public AnimObject {
-    public:
-        void init();
-        void update();
-        void destroy();
-        void loadFromFile();
-        void saveToFile();
-        void nextFrame();
-        void prevFrame();
-        void setFrame();
-        void createFrame();
-        void changeAnimation();
-
-        void addShape();
-        void removeShape();
+namespace Chronos{
+    namespace Animation{
+        struct AnimParams{
+            float rotation;
+            float pivot[2];
+            float length;
+            float relX;
+            float relY;
+        };
     };
-}
-}
+};

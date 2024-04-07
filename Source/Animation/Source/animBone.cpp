@@ -24,13 +24,45 @@ SOFTWARE.
 #include "commonStructs.hpp"
 #include "animParams.hpp"
 #include "animBone.hpp"
-#include "animShape.hpp"
 
-Chronos::Animation::AnimShape::AnimShape(int shapeNo){
-    this->shapeNo = shapeNo;
+Chronos::Animation::Bone::Bone(){
+    keyframes = &animations[0];
+}
+Chronos::Animation::Bone::Bone(Bone* parent, AnimParams initialParams){
+    this->parent = parent;
+    keyframes = &animations[0];
+    (*keyframes)[0] = initialParams;
+    (*keyframes)[1] = initialParams;
 }
 
-void Chronos::Animation::AnimShape::setBindLocation(Chronos::Animation::Bone* bone, float boneLocation, float shapeLocation){
-    bonesLocation[bone] = boneLocation;
-    this->shapeLocation.push_back(shapeLocation);
+void Chronos::Animation::Bone::setKeyframe(Chronos::Animation::AnimParams params, float time){
+    (*keyframes)[time] = params;
+}
+
+void Chronos::Animation::Bone::removeKeyframe(float time){
+    keyframes->erase(keyframes->find(time));
+}
+
+void Chronos::Animation::Bone::addChildren(Bone* childBone){
+    children.insert(childBone);
+}
+
+void Chronos::Animation::Bone::removeChildren(Bone* childBone){
+    children.erase(childBone);
+}
+
+Chronos::Animation::AnimParams Chronos::Animation::Bone::getParams(){
+    return currentParams;
+}
+
+void Chronos::Animation::Bone::setAnimation(int animNo){
+    keyframes = &animations[animNo];
+}
+
+void Chronos::Animation::Bone::updateCurrentPararms(Chronos::Animation::AnimParams params){
+    currentParams = params;
+}
+
+void Chronos::Animation::Bone::deleteAnimation(int animNo){
+    animations.erase(animations.find(animNo));
 }
