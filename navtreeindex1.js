@@ -70,7 +70,6 @@ var NAVTREEINDEX1 =
 "classChronos_1_1Engine_1_1UniformBuffer.html#a48ca4058bc14c74797334acde22d83f7":[9,0,0,1,1,1],
 "classChronos_1_1Engine_1_1UniformBuffer.html#a4c14b97754025d584f9fbf73ac26d8c2":[9,0,0,1,1,0],
 "classChronos_1_1Manager_1_1Manager.html":[9,0,0,2,4],
-"classChronos_1_1Manager_1_1Manager.html#a00d9996f9fd24bc4824f844dc8631358":[9,0,0,2,4,24],
 "classChronos_1_1Manager_1_1Manager.html#a00f8c72aeda5c374bdddcaf183f95cf2":[9,0,0,2,4,23],
 "classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32":[9,0,0,2,4,4],
 "classChronos_1_1Manager_1_1Manager.html#a081215f2147bd7055c41c8282e8466d6":[9,0,0,2,4,14],
@@ -248,6 +247,7 @@ var NAVTREEINDEX1 =
 "logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a":[10,0,2,1,0,1,1],
 "logging_8hpp.html#aafd7ab101b22caf7ff160ea6870f9982":[10,0,2,1,0,1,0],
 "logging_8hpp_source.html":[10,0,2,1,0,1],
-"manager_8cpp.html":[10,0,2,0,0,0],
-"manager_8cpp_source.html":[10,0,2,0,0,0]
+"managerShapeFunctions_8cpp.html":[10,0,2,0,0,1],
+"managerShapeFunctions_8cpp_source.html":[10,0,2,0,0,1],
+"managerTextFunctions_8cpp.html":[10,0,2,0,0,2]
 };

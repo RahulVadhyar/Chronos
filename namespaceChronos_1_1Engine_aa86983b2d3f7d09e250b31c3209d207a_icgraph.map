@@ -1,10 +1,11 @@
 <map id="Chronos::Engine::createBuffer" name="Chronos::Engine::createBuffer">
-<area shape="rect" id="node1" title="Creates a buffer of a given size, usage and properties." alt="" coords="759,111,973,138"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="532,5,707,47"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826" title="This is used to initialize the buffer." alt="" coords="532,71,707,112"/>
-<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="528,136,711,177"/>
-<area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="295,165,457,207"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1UniformBuffer.html#a4c14b97754025d584f9fbf73ac26d8c2" title="Creates the buffer and maps the memory." alt="" coords="282,20,470,61"/>
-<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1ColorBuffer.html#a315b2e206d85861cf5f6b99ac0a35aed" title="Creates the buffer and maps the memory." alt="" coords="272,85,480,127"/>
-<area shape="rect" id="node8" href="$classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="5,165,224,207"/>
+<area shape="rect" id="node1" title="Creates a buffer of a given size, usage and properties." alt="" coords="1012,111,1227,138"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="785,5,960,47"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826" title="This is used to initialize the buffer." alt="" coords="785,71,960,112"/>
+<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="781,136,964,177"/>
+<area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="548,165,711,207"/>
+<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1UniformBuffer.html#a4c14b97754025d584f9fbf73ac26d8c2" title="Creates the buffer and maps the memory." alt="" coords="535,20,723,61"/>
+<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1ColorBuffer.html#a315b2e206d85861cf5f6b99ac0a35aed" title="Creates the buffer and maps the memory." alt="" coords="525,85,733,127"/>
+<area shape="rect" id="node8" href="$classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="259,165,477,207"/>
+<area shape="rect" id="node9" href="$classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32" title="Adds text to the window." alt="" coords="5,165,211,207"/>
 </map>

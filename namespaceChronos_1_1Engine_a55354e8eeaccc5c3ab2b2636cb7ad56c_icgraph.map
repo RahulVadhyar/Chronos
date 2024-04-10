@@ -1,11 +1,12 @@
 <map id="Chronos::Engine::endSingleTimeCommands" name="Chronos::Engine::endSingleTimeCommands">
-<area shape="rect" id="node1" title="Ends recording of single time command buffer and destroys it." alt="" coords="988,97,1187,139"/>
-<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675" title="Copies data from one buffer to another." alt="" coords="724,13,929,39"/>
-<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a72a6333d7a23ef16daa4ee34bd6cab5f" title="Copy data from a buffer to an image." alt="" coords="724,64,929,105"/>
-<area shape="rect" id="node8" href="$classChronos_1_1Editor_1_1EditorRenderer.html#ab6b8e3b3ca6428b4ddc27df62584ecf5" title=" " alt="" coords="713,129,940,171"/>
-<area shape="rect" id="node9" href="$namespaceChronos_1_1Engine.html#a486e04f821153409c6c7d0ab3b3e89b4" title="Transiton a VkImage from one layout to another." alt="" coords="728,195,925,236"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="487,5,661,47"/>
-<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="483,132,665,173"/>
-<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="272,132,435,173"/>
-<area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="5,132,224,173"/>
+<area shape="rect" id="node1" title="Ends recording of single time command buffer and destroys it." alt="" coords="1241,97,1440,139"/>
+<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675" title="Copies data from one buffer to another." alt="" coords="977,13,1183,39"/>
+<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a72a6333d7a23ef16daa4ee34bd6cab5f" title="Copy data from a buffer to an image." alt="" coords="977,64,1183,105"/>
+<area shape="rect" id="node9" href="$classChronos_1_1Editor_1_1EditorRenderer.html#ab6b8e3b3ca6428b4ddc27df62584ecf5" title=" " alt="" coords="967,129,1193,171"/>
+<area shape="rect" id="node10" href="$namespaceChronos_1_1Engine.html#a486e04f821153409c6c7d0ab3b3e89b4" title="Transiton a VkImage from one layout to another." alt="" coords="981,195,1179,236"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="740,5,915,47"/>
+<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="736,132,919,173"/>
+<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="525,132,688,173"/>
+<area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="259,132,477,173"/>
+<area shape="rect" id="node8" href="$classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32" title="Adds text to the window." alt="" coords="5,132,211,173"/>
 </map>

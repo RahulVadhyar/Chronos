@@ -1,0 +1,4 @@
+<map id="Chronos::Engine::TextureManager::getTexture" name="Chronos::Engine::TextureManager::getTexture">
+<area shape="rect" id="node1" title="Gets the texture from the texture manager." alt="" coords="259,5,441,47"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Manager_1_1Manager.html#aa9236f7bb1bae85cd72327e2dcdb3a9a" title="Adds a textured shape(triangle or rectangle) to the window." alt="" coords="5,5,211,47"/>
+</map>

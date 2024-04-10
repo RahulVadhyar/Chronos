@@ -1,0 +1,4 @@
+<map id="Chronos::Engine::TextureManager::addTexture" name="Chronos::Engine::TextureManager::addTexture">
+<area shape="rect" id="node1" title="Adds a texture to the texture manager." alt="" coords="259,5,441,47"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Manager_1_1Manager.html#a56f536155e14387a8d8067d771497daf" title="Loads a texture from file." alt="" coords="5,5,211,47"/>
+</map>

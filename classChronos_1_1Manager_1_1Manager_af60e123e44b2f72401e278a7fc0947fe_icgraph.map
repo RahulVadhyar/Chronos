@@ -1,0 +1,5 @@
+<map id="Chronos::Manager::Manager::getTextureDetails" name="Chronos::Manager::Manager::getTextureDetails">
+<area shape="rect" id="node1" title="Returns the details of all textures defined." alt="" coords="259,39,464,80"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Manager_1_1Manager.html#aa9236f7bb1bae85cd72327e2dcdb3a9a" title="Adds a textured shape(triangle or rectangle) to the window." alt="" coords="5,5,211,47"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Manager_1_1Manager.html#a56f536155e14387a8d8067d771497daf" title="Loads a texture from file." alt="" coords="5,71,211,112"/>
+</map>

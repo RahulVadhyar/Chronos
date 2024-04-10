@@ -1,4 +1,5 @@
 <map id="Chronos::Engine::Text::init" name="Chronos::Engine::Text::init">
-<area shape="rect" id="node1" title="Initializes the font object and creates the necessary objects." alt="" coords="272,5,435,47"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="5,5,224,47"/>
+<area shape="rect" id="node1" title="Initializes the font object and creates the necessary objects." alt="" coords="525,5,688,47"/>
+<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="259,5,477,47"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32" title="Adds text to the window." alt="" coords="5,5,211,47"/>
 </map>
