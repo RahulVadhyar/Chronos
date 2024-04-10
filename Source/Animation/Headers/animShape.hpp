@@ -29,6 +29,7 @@ namespace Chronos{
             AnimShape(int shapeNo);
             void setBindLocation(Chronos::Animation::Bone* bone, float boneLocation, float shapeLocation);
             int getShapeNo();
+            void update();
         private:
             int shapeNo;
             std::map<Chronos::Animation::Bone*, float> bonesLocation;

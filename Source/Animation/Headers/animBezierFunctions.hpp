@@ -20,36 +20,24 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "chronos.hpp"
-#include "editorManager.hpp"
+namespace Chronos{
+    namespace Animation{
+        template <typename T>
+        struct BezierParams{
+            T minParam;
+            T maxParam;
+            std::vector<float> bezierPoints;
+        };
 
-Chronos::Editor::EditorManager editorManager;
-
-void addElements(){
-    editorManager.addElements();
-}
-
-int main(){
-    Chronos::Manager::Initializer initializer;
-    initializer.WindowWidth = 800;
-    initializer.WindowHeight = 600;
-    initializer.BackgroundColor[0] = 0;
-    initializer.BackgroundColor[1] = 0;
-    initializer.BackgroundColor[2] = 0;
-    initializer.editorAddElements = addElements;
-
-    Chronos::Manager::Manager manager(initializer);
-    LOG(2, "EditorMain", "Manager created.");
-    editorManager.init(&manager);
-    LOG(3, "EditorMain", "EditorManager created.")
-
-    while (!glfwWindowShouldClose(manager.getWindow())) {
-        if (glfwGetKey(manager.getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-            glfwSetWindowShouldClose(manager.getWindow(), true);
-        }
-        manager.drawFrame();
-        LOG(4, "EditorMain", "Frame drawn.");
-    }
-    LOG(2, "EditorMain", "Exited rendering loop, closing program.");
-    return 0; 
-}
+        /*
+        https://en.wikipedia.org/wiki/B%C3%A9zier_curve
+        We need to compute the bezier curve value for the given time. 
+        The points are keyframes(P(i)) and time(t) is the operator.
+        We have n keyframes. From the above link, we can see that the formula for the bezier curve is:
+        F(n) = SUM(i=0 to n) nCi * (1-t)^(n-i) * t^i * P(i)
+        where nCi is the binomial coefficient.
+        After that we scale it to the value range.
+        */
+        template<typename T> T getAnimationValue(float time, BezierParams<T> keyframe);
+    };
+};

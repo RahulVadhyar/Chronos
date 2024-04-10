@@ -27,84 +27,137 @@ SOFTWARE.
 #include "animShape.hpp"
 #include "animRig.hpp"
 #include "animManager.hpp"
-#include "chronos.hpp"
 
 void Chronos::Animation::AnimationManager::init(void* manager){
     this->manager = manager;
 }
 
 void Chronos::Animation::AnimationManager::update(){
-
+    for(auto& rig : animRigs){
+        rig.second.update();
+    }
 }
 
 void Chronos::Animation::AnimationManager::destroy(){
-
+    for(auto& rig : animRigs){
+        rig.second.destroy();
+    }
 }
 
 void Chronos::Animation::AnimationManager::destroyRig(int rigNo){
-
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    animRigs[rigNo].destroy();
+    animRigs.erase(rigNo);
 }
 
 void Chronos::Animation::AnimationManager::setTime(int rigNo, float time){
-
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    animRigs[rigNo].setTime(time);
 }
 
 void Chronos::Animation::AnimationManager::addBone(int rigNo, Chronos::Animation::AnimParams initialParams, int parentBoneNo){
-
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    animRigs[rigNo].addBone(initialParams, parentBoneNo);
 }
 
 void Chronos::Animation::AnimationManager::removeBone(int rigNo, int boneNo){
-
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    animRigs[rigNo].removeBone(boneNo);
 }
 
-void Chronos::Animation::AnimationManager::addShape(int rigNo, int boneNo){
-
+void Chronos::Animation::AnimationManager::addShape(int rigNo, int shapeNo){
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    animRigs[rigNo].addShape(shapeNo);
 }
 
 void Chronos::Animation::AnimationManager::removeShape(int rigNo, int shapeNo){
-
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    animRigs[rigNo].removeShape(shapeNo);
 }
 
 void Chronos::Animation::AnimationManager::bindShapeToBone(int rigNo, int shapeNo, int boneNo, float boneLocation, float shapeLocation){
-
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    animRigs[rigNo].bindShapeToBone(shapeNo, boneNo, boneLocation, shapeLocation);
 }
 
 void Chronos::Animation::AnimationManager::deleteKeyframe(int rigNo, int boneNo, int keyframeNo){
-
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    animRigs[rigNo].deleteKeyframe(boneNo, keyframeNo);
 }
 
 void Chronos::Animation::AnimationManager::setAnimation(int rigNo, int animNo){
-
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    animRigs[rigNo].setAnimation(animNo);
 }
 
 void Chronos::Animation::AnimationManager::changeBoneParams(int rigNo, int boneNo, Chronos::Animation::AnimParams animParams){
-
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    animRigs[rigNo].changeBoneParams(boneNo, animParams);
 }
 
 void Chronos::Animation::AnimationManager::deleteAnimation(int rigNo, int animNo){
-
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    animRigs[rigNo].deleteAnimation(animNo);
 }
 
 int Chronos::Animation::AnimationManager::getCurrentAnimation(int rigNo){
-
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    return animRigs[rigNo].getCurrentAnimation();
 }
 
 int Chronos::Animation::AnimationManager::setKeyframe(int rigNo, int boneNo){
-
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    return animRigs[rigNo].setKeyframe(boneNo);
 }
 
 int Chronos::Animation::AnimationManager::createRig(){
-
+    animRigs[nextFreeRigNo] = Chronos::Animation::Rig();
+    return nextFreeRigNo++;
 }
 
 std::map<int, Chronos::Animation::AnimParams> Chronos::Animation::AnimationManager::getCurrentBoneSettings(int rigNo){
-
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    return animRigs[rigNo].getCurrentBoneSettings();
 }
 
 std::vector<int> Chronos::Animation::AnimationManager::getCurrentShapes(int rigNo){
-
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    return animRigs[rigNo].getCurrentShapes();
 }
 
 std::map<int, int> Chronos::Animation::AnimationManager::getCurrentShapeToBoneBindings(int rigNo){
-    
+    if(animRigs.find(rigNo) == animRigs.end()){
+        throw std::runtime_error("Rig not found");
+    }
+    return animRigs[rigNo].getCurrentShapeToBoneBindings();
 }

@@ -21,10 +21,12 @@ SOFTWARE.
 */
 #pragma once
 
+#include <chrono>
 namespace Chronos{
     namespace Animation{
         class Rig{
         public:
+            void init(void* manager);
             void setTime(float time);
             int addBone(Chronos::Animation::AnimParams initalParams, int parentBoneNo);
             void removeBone(int boneNo);
@@ -37,6 +39,8 @@ namespace Chronos{
             void changeBoneParams(int boneNo, Chronos::Animation::AnimParams animParams);
             std::map<int, Chronos::Animation::AnimParams> getCurrentBoneSettings();            
             void deleteAnimation(int animNo);
+
+
             void destroy();
             int setKeyframe(int boneNo);
             void deleteKeyframe(int boneNo, int keyframeNo);
@@ -44,14 +48,16 @@ namespace Chronos{
             void update();
 
         private:
+            void* manager;
             int nextFreeBoneNo = 0;
             std::map<int, Chronos::Animation::Bone> bones;
             std::map<int, Chronos::Animation::AnimShape> animShapes;    
             Chronos::Animation::Bone* root = nullptr;
             Chronos::Manager::ShapeParams baseParams;
+            std::map<int, float> totalAnimationTime;
+            std::chrono::steady_clock::time_point currentTime = 0;
             int currentAnimation;
             int totalAnimation;
-            int currentTime;
         };
     };
 };

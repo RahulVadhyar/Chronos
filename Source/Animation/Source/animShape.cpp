@@ -34,3 +34,14 @@ void Chronos::Animation::AnimShape::setBindLocation(Chronos::Animation::Bone* bo
     bonesLocation[bone] = boneLocation;
     this->shapeLocation.push_back(shapeLocation);
 }
+
+int Chronos::Animation::AnimShape::getShapeNo(){
+    return shapeNo;
+}
+
+void Chronos::Animation::AnimShape::update(){
+    
+    for(auto& boneLocation : bonesLocation){
+
+    }
+}

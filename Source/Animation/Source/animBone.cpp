@@ -22,26 +22,9 @@ SOFTWARE.
 
 #include "stlheader.hpp"
 #include "commonStructs.hpp"
+#include "animBezierFunctions.hpp"
 #include "animParams.hpp"
 #include "animBone.hpp"
-
-Chronos::Animation::Bone::Bone(){
-    keyframes = &animations[0];
-}
-Chronos::Animation::Bone::Bone(Bone* parent, AnimParams initialParams){
-    this->parent = parent;
-    keyframes = &animations[0];
-    (*keyframes)[0] = initialParams;
-    (*keyframes)[1] = initialParams;
-}
-
-void Chronos::Animation::Bone::setKeyframe(Chronos::Animation::AnimParams params, float time){
-    (*keyframes)[time] = params;
-}
-
-void Chronos::Animation::Bone::removeKeyframe(float time){
-    keyframes->erase(keyframes->find(time));
-}
 
 void Chronos::Animation::Bone::addChildren(Bone* childBone){
     children.insert(childBone);
@@ -51,18 +34,20 @@ void Chronos::Animation::Bone::removeChildren(Bone* childBone){
     children.erase(childBone);
 }
 
-Chronos::Animation::AnimParams Chronos::Animation::Bone::getParams(){
-    return currentParams;
+void Chronos::Animation::Bone::getBoneParams(float* x, float* y, float* rotation, float* length){
+    *x = xKeyframes.currentValue;
+    *y = yKeyframes.currentValue;
+    *rotation = rotationKeyframes.currentValue;
+    *length = this->length;
 }
 
-void Chronos::Animation::Bone::setAnimation(int animNo){
-    keyframes = &animations[animNo];
-}
+void Chronos::Animation::Bone::update(float time, float x, float y, float rotation){
+    //time - between 0 and 1
+    this->xKeyframes.updateCurrentValue(time, x);
+    this->yKeyframes.updateCurrentValue(time, y);
+    this->rotationKeyframes.updateCurrentValue(time, rotation);
 
-void Chronos::Animation::Bone::updateCurrentPararms(Chronos::Animation::AnimParams params){
-    currentParams = params;
-}
-
-void Chronos::Animation::Bone::deleteAnimation(int animNo){
-    animations.erase(animations.find(animNo));
+    for(Bone* child : children){
+        child->update(time, x, y, rotation);
+    }
 }

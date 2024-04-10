@@ -51,6 +51,8 @@ Manager::Manager::Manager(Chronos::Manager::Initializer initializer)
     #endif
     animManager.init((void*)this);
 }
+
+
 void Manager::Manager::drawFrame()
 {
     engine.drawFrame();

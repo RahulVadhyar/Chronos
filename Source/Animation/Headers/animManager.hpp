@@ -30,12 +30,12 @@ namespace Chronos{
             void init(void* manager);
             void update();
             int createRig();
-            void destroy();
+            ~AnimationManager();
             void destroyRig(int rigNo);
             void setTime(int rigNo, float time);
-            void addBone(int rigNo, Chronos::Animation::AnimParams initialParams, int parentBoneNo);
+            int addBone(int rigNo, Chronos::Animation::AnimParams initialParams, int parentBoneNo);
             void removeBone(int rigNo, int boneNo);
-            void addShape(int rigNo, int boneNo);
+            void addShape(int rigNo, int shapeNo);
             void removeShape(int rigNo, int shapeNo);
             void bindShapeToBone(int rigNo, int shapeNo, int boneNo, float boneLocation, float shapeLocation);
             std::vector<int> getCurrentShapes(int rigNo);
@@ -50,7 +50,8 @@ namespace Chronos{
                         
         private:
             void* manager;
-            std::vector<Chronos::Animation::Rig> animRigs;
+            std::map<int, Chronos::Animation::Rig> animRigs;
+            int nextFreeRigNo = 0;
         };
     };
 };

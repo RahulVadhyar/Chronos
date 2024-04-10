@@ -22,10 +22,15 @@ SOFTWARE.
 
 #include "stlheader.hpp"
 #include "commonStructs.hpp"
+#include "animBezierFunctions.hpp"
 #include "animParams.hpp"
 #include "animBone.hpp"
 #include "animShape.hpp"
 #include "animRig.hpp"
+
+void Chronos::Animation::Rig::init(void* manager){
+    this->manager = manager;
+}
 
 void Chronos::Animation::Rig::setTime(float time){
     this->currentTime = time;
@@ -49,6 +54,8 @@ void Chronos::Animation::Rig::removeShape(int shapeNo){
 }
 
 void Chronos::Animation::Rig::bindShapeToBone(int shapeNo, int boneNo, float boneLocation, float shapeLocation){
+    if(this->bones.find(boneNo) == this->bones.end())
+        throw std::invalid_argument("Bone not found");
     this->animShapes[shapeNo].setBindLocation(&this->bones[boneNo], boneLocation, shapeLocation);
 }
 
@@ -86,5 +93,23 @@ std::map<int, Chronos::Animation::AnimParams> Chronos::Animation::Rig::getCurren
 void Chronos::Animation::Rig::deleteAnimation(int animNo){
     for(auto& bone : this->bones){
         bone.second.deleteAnimation(animNo);
+    }
+}
+
+void Chronos::Animation::Rig::update(){
+    if(!manager) throw std::invalid_argument("Manager not set");
+
+    //get time in the form of 0 to 1
+    auto updatedTime = std::chrono::steady_clock::now();
+    float time = std::chrono::duration_cast<std::chrono::nanoseconds>(updatedTime - currentTime).count();
+    this->currentTime = updatedTime;
+    time /= totalAnimationTime[this->currentAnimation];
+
+    //recursively update bones
+    root->update(time, this->baseParams);
+
+    //propagate bone changes to shapes
+    for(auto& shape : this->animShapes){
+        shape.second.update();
     }
 }

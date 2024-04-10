@@ -21,27 +21,24 @@ SOFTWARE.
 */
 #pragma once
 
+#include "animParams.hpp"
 namespace Chronos{
     namespace Animation{
         class Bone{
         public:
-            Bone();
-            Bone(Bone* parent, Chronos::Animation::AnimParams initialParams);
-            void setKeyframe(Chronos::Animation::AnimParams params, float time);
-            void removeKeyframe(float time);
             void addChildren(Bone* childBone);
             void removeChildren(Bone* childBone);
-            void update(float time);
-            Chronos::Animation::AnimParams getParams();
-            void setAnimation(int animNo);
-            void updateCurrentPararms(Chronos::Animation::AnimParams params);
-            void deleteAnimation(int animNo);
+            void update(float time, float x, float y, float rotation);
+            void getBoneParams(float* x, float* y, float* rotation, float* length);
         private:
-            Chronos::Animation::AnimParams currentParams;
             Bone* parent;
             std::unordered_set<Bone*> children;
-            std::map<float, Chronos::Animation::AnimParams>* keyframes;
-            std::map<int, std::map<float, Chronos::Animation::AnimParams>> animations;
+
+            float length;
+            Chronos::Animation::AnimatedValue<float> xKeyframes;
+            Chronos::Animation::AnimatedValue<float> yKeyframes;
+            Chronos::Animation::AnimatedValue<float> rotationKeyframes;
+
         };
     };
 };

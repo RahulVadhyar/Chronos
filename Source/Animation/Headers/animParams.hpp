@@ -20,15 +20,31 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 #pragma once
-
 namespace Chronos{
     namespace Animation{
-        struct AnimParams{
-            float rotation;
-            float pivot[2];
-            float length;
-            float relX;
-            float relY;
-        };
+        template<typename T>
+        struct KeyFrameParams{
+            float endTime;
+            BezierParams<T> params;
+        }
+        template<typename T>
+        struct AnimatedValue{
+            T currentValue;
+            T offsetValue;
+            std::vector<KeyFrameParams<T>> keyframes;
+            void updateCurrentValue(float time, T parentValue){
+                float scaledTime = time*keyframes.back().endTime;
+                int currentKeyframe = 0;
+                for(int i = 0; i < keyframes.size(); i++){
+                    if(keyframes[i].endTime > scaledTime){
+                        currentKeyframe = i;
+                        break;
+                    }
+                }
+                float keyframeTime = scaledTime - keyframes[currentKeyframe - 1].endTime;
+                float relativeValue = getAnimationValue(keyframeTime, keyframes[currentKeyframe].params);
+                currentValue = relativeValue + offsetValue + parentValue;
+            }
+        }
     };
 };

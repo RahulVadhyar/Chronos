@@ -19,37 +19,20 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+#include "stlheader.hpp"
+#include "animBezierFunctions.hpp"
 
-#include "chronos.hpp"
-#include "editorManager.hpp"
-
-Chronos::Editor::EditorManager editorManager;
-
-void addElements(){
-    editorManager.addElements();
+int comb(int n, int r){
+    if(r == 0 || r == n)
+        return 1;
+    return comb(n-1, r-1) + comb(n-1, r);
 }
 
-int main(){
-    Chronos::Manager::Initializer initializer;
-    initializer.WindowWidth = 800;
-    initializer.WindowHeight = 600;
-    initializer.BackgroundColor[0] = 0;
-    initializer.BackgroundColor[1] = 0;
-    initializer.BackgroundColor[2] = 0;
-    initializer.editorAddElements = addElements;
-
-    Chronos::Manager::Manager manager(initializer);
-    LOG(2, "EditorMain", "Manager created.");
-    editorManager.init(&manager);
-    LOG(3, "EditorMain", "EditorManager created.")
-
-    while (!glfwWindowShouldClose(manager.getWindow())) {
-        if (glfwGetKey(manager.getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-            glfwSetWindowShouldClose(manager.getWindow(), true);
-        }
-        manager.drawFrame();
-        LOG(4, "EditorMain", "Frame drawn.");
+template<typename T> T Chronos::Animation::getAnimationValue(float time, BezierParams<T> keyframe){
+    float point = 0;
+    for(int i = 0; i < keyframe.bezierPoints.size(); i++){
+        point += comb(keyframe.bezierPoints.size() - 1, i) * keyframe.bezierPoints[i] * pow(1 - time, keyframe.bezierPoints.size() - 1 - i) * pow(time, i);
     }
-    LOG(2, "EditorMain", "Exited rendering loop, closing program.");
-    return 0; 
+    T value = keyframe.minParam + (keyframe.maxParam - keyframe.minParam) * point;
+    return value;
 }

@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.13)
 project(Chronos VERSION 0.0.0)
 set(CMAKE_CXX_STANDARD 20)
 # set(CMAKE_BUILD_TYPE Debug)
+# set(CMAKE_CXX_FLAGS "-Wall -Wextra -O3")
 
 if(UNIX)
 option(CHRONOS_SUPPORT_WAYLAND "Build with Wayland support" ON)
@@ -275,7 +276,6 @@ else()
 target_compile_definitions(ChronosTests PUBLIC CHRONOS_ENABLE_LOGGING=0)
 message("Logging disabled (level 0)")
 endif()
-
 
 include(GoogleTest)
 gtest_discover_tests(ChronosTests)
