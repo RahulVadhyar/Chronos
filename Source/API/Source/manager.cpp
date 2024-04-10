@@ -49,7 +49,6 @@ Manager::Manager::Manager(Chronos::Manager::Initializer initializer)
     #ifdef ENABLE_EDITOR
     engine.setEditorAddElementsCallback(initializer.editorAddElements);
     #endif
-    animManager.init((void*)this);
 }
 
 

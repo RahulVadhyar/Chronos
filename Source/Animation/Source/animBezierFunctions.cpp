@@ -28,11 +28,11 @@ int comb(int n, int r){
     return comb(n-1, r-1) + comb(n-1, r);
 }
 
-template<typename T> T Chronos::Animation::getAnimationValue(float time, BezierParams<T> keyframe){
+float Chronos::Animation::getAnimationValue(int time, BezierParams keyframe){
     float point = 0;
     for(int i = 0; i < keyframe.bezierPoints.size(); i++){
         point += comb(keyframe.bezierPoints.size() - 1, i) * keyframe.bezierPoints[i] * pow(1 - time, keyframe.bezierPoints.size() - 1 - i) * pow(time, i);
     }
-    T value = keyframe.minParam + (keyframe.maxParam - keyframe.minParam) * point;
+    float value = keyframe.minParam + (keyframe.maxParam - keyframe.minParam) * point;
     return value;
 }

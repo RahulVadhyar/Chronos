@@ -48,11 +48,6 @@ SOFTWARE.
 #include "polygonManager.hpp"
 #include "engine.hpp"
 #include "engineStructs.hpp"
-#include "animParams.hpp"
-#include "animBone.hpp"
-#include "animShape.hpp"
-#include "animRig.hpp"
-#include "animManager.hpp"
 
 namespace Chronos {
 namespace Manager {
@@ -138,7 +133,6 @@ namespace Manager {
     */
     class Manager {
     public:
-        friend Chronos::Animation::AnimationManager;
         /**
         \brief Constructor for chronos. The initalizer struct with the necessary options to be passed.
 
@@ -415,75 +409,6 @@ namespace Manager {
 
         std::vector<std::array<float, 2>> getPolygonVertices(int polygonNo);
 
-        /*-------------------------------------AnimationFunctions-----------------------------------*/
-        int animCreateRig(){
-            return animManager.createRig();
-        }
-
-        void animDestroyRig(int rigNo){
-            animManager.destroyRig(rigNo);
-        }
-
-        void animSetTime(int rigNo, float time){
-            animManager.setTime(rigNo, time);
-        }
-
-        int animAddBone(int rigNo, Chronos::Animation::AnimParams initialParams, int parentBoneNo){
-            return animManager.addBone(rigNo, initialParams, parentBoneNo);
-        }
-
-        void animRemoveBone(int rigNo, int boneNo){
-            animManager.removeBone(rigNo, boneNo);
-        }
-
-        void animAddShape(int rigNo, int shapeNo){
-            animManager.addShape(rigNo, shapeNo);
-        }
-
-        void animRemoveShape(int rigNo, int shapeNo){
-            animManager.removeShape(rigNo, shapeNo);
-        }
-
-        void animBindShapeToBone(int rigNo, int shapeNo, int boneNo, float boneLocation, float shapeLocation){
-            animManager.bindShapeToBone(rigNo, shapeNo, boneNo, boneLocation, shapeLocation);
-        }
-
-        std::vector<int> animGetCurrentShapes(int rigNo){
-            return animManager.getCurrentShapes(rigNo);
-        }
-
-        void animSetAnimation(int rigNo, int animNo){
-            animManager.setAnimation(rigNo, animNo);
-        }
-
-        int animGetCurrentAnimation(int rigNo){
-            return animManager.getCurrentAnimation(rigNo);
-        }
-
-        void animChangeBoneParams(int rigNo, int boneNo, Chronos::Animation::AnimParams animParams){
-            animManager.changeBoneParams(rigNo, boneNo, animParams);
-        }
-
-        std::map<int, Chronos::Animation::AnimParams> animGetCurrentBoneSettings(int rigNo){
-            return animManager.getCurrentBoneSettings(rigNo);
-        }
-
-        void animDeleteAnimation(int rigNo, int animNo){
-            animManager.deleteAnimation(rigNo, animNo);
-        }
-
-        int animSetKeyframe(int rigNo, int boneNo){
-            return animManager.setKeyframe(rigNo, boneNo);
-        }
-
-        void animDeleteKeyframe(int rigNo, int boneNo, int keyframeNo){
-            animManager.deleteKeyframe(rigNo, boneNo, keyframeNo);
-        }
-
-        std::map<int, int> animGetCurrentShapeToBoneBindings(int rigNo){
-            return animManager.getCurrentShapeToBoneBindings(rigNo);
-        }
-
         /**
         \brief Changes the present mode of the swapchain.
 
@@ -542,8 +467,6 @@ namespace Manager {
 #endif
 
     private:
-        Chronos::Animation::AnimationManager animManager;
-
         /**
         \brief The backend Vulkan engine, used for rendering the desired shapes and text.s
         */

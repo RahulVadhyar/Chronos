@@ -20,25 +20,44 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 #pragma once
-
-#include "animParams.hpp"
 namespace Chronos{
     namespace Animation{
-        class Bone{
+        class AnimBone{
         public:
-            void addChildren(Bone* childBone);
-            void removeChildren(Bone* childBone);
-            void update(float time, float x, float y, float rotation);
-            void getBoneParams(float* x, float* y, float* rotation, float* length);
+            void init(int shapeNo, AnimBone* parent, float length);
+            void setOffsetX(float offsetX);
+            void setOffsetY(float offsetY);
+            void setOffsetRotation(float offsetRotation);
+            void setAnimNo(int animNo);
+            void setLength(float length);
+            float getLength();
+            float getAnimNo();
+            float getOffsetX();
+            float getOffsetY();
+            float getOffsetRotation();
+            void addKeyframe(Chronos::Animation::BezierParams xKeyframe, Chronos::Animation::BezierParams yKeyframe);
+            void replaceKeyframe(int keyframeNo, Chronos::Animation::BezierParams xKeyframe, Chronos::Animation::BezierParams yKeyframe);
+            std::pair<Chronos::Animation::BezierParams, Chronos::Animation::BezierParams> getKeyframe(int keyframeNo);
+            void update();
+            void addChild(AnimBone* child);
+            void removeChild(AnimBone* child);
+            void setCurrentTime(int time);
+            float getCurrentTime();
+            void updateWithTime(bool flat);
         private:
-            Bone* parent;
-            std::unordered_set<Bone*> children;
-
+            bool updateWithTimeFlag = true;
+            float x;
+            float y;
             float length;
-            Chronos::Animation::AnimatedValue<float> xKeyframes;
-            Chronos::Animation::AnimatedValue<float> yKeyframes;
-            Chronos::Animation::AnimatedValue<float> rotationKeyframes;
-
+            float offsetX;
+            float offsetY;
+            float offsetRotation;
+            int shapeNo;
+            int animNo;
+            AnimBone* parent;
+            std::map<int, Chronos::Animation::BezierParams> xKeyframes, yKeyframes;
+            std::chrono::steady_clock::time_point prevTime;
+            std::vector<AnimBone*> children;
         };
     };
 };
