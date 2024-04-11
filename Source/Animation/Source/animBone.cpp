@@ -21,7 +21,6 @@ SOFTWARE.
 */
 #include "stlheader.hpp"
 #include "animBezierFunctions.hpp"
-#include <chrono>
 #include "animBone.hpp"
 
 void Chronos::Animation::AnimBone::update(){
@@ -128,4 +127,16 @@ float Chronos::Animation::AnimBone::getCurrentTime(){
 
 void Chronos::Animation::AnimBone::updateWithTime(bool flat){
     this->updateWithTimeFlag = flat;
+}
+
+int Chronos::Animation::AnimBone::getShapeNo(){
+    return this->shapeNo;
+}
+
+float Chronos::Animation::AnimBone::getX(){
+    return this->x + this->offsetX;
+}
+
+float Chronos::Animation::AnimBone::getY(){
+    return this->y + this->offsetY;
 }

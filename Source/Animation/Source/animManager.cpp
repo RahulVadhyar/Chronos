@@ -27,18 +27,35 @@ SOFTWARE.
 #include "chronos.hpp"
 
 void Chronos::Animation::AnimationManager::update(){
+    //make this code better, it sucks
+    for(auto& rootBone: rootBones){
+        rootBone.second.update();
+    }
+    Chronos::Manager::Manager* manager = (Chronos::Manager::Manager*)this->manager;
+    std::vector<std::pair<int, Chronos::Manager::ShapeParams>> allShapeParams = manager->getShapeDetails();
     for(auto rig : bones){
         for(auto bone : rig.second){
-            bone.second.update();
+            int index = 0;
+            for(auto shape : allShapeParams){
+                if(shape.first == bone.second.getShapeNo()){
+                    break;
+                }
+                index++;
+            }
+            Chronos::Manager::ShapeParams shapeParams = allShapeParams[index].second;
+            shapeParams.x = bone.second.getX();
+            shapeParams.y = bone.second.getY();
+            shapeParams.rotation = std::atan(shapeParams.y/shapeParams.x) + bone.second.getOffsetRotation();
+            manager->updatePolygon(bone.second.getShapeNo(), shapeParams);
         }
     }
-    //TODO:update the shapes
 }
 
 std::pair<int, int> Chronos::Animation::AnimationManager::addRig(int baseShapeNo, float length){
     bones[nextFreeRigNo] = std::map<int, Chronos::Animation::AnimBone>();
     bones[nextFreeRigNo][0].init(baseShapeNo, nullptr, length);
     nextFreeBoneNos[nextFreeRigNo] = 1;
+    rootBones[nextFreeRigNo] = bones[nextFreeRigNo][0];
     return std::make_pair(nextFreeRigNo++, 0);
 }
 
@@ -120,3 +137,6 @@ void Chronos::Animation::AnimationManager::removeRig(int rigNo){
     nextFreeBoneNos.erase(rigNo);
 }
 
+void Chronos::Animation::AnimationManager::init(void* manager){
+    this->manager = manager;
+}

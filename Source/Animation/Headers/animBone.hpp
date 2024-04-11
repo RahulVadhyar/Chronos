@@ -32,6 +32,9 @@ namespace Chronos{
             void setLength(float length);
             float getLength();
             float getAnimNo();
+            int getShapeNo();
+            float getX();
+            float getY();
             float getOffsetX();
             float getOffsetY();
             float getOffsetRotation();

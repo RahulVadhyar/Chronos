@@ -47,7 +47,9 @@ namespace Chronos{
             void removeBone(int rigNo, int boneNo);
             void removeRig(int rigNo);
         private:
+            void* manager;
             std::map<int, std::map<int, Chronos::Animation::AnimBone>> bones;
+            std::map<int, Chronos::Animation::AnimBone> rootBones;
             std::map<int, int> nextFreeBoneNos;
             int nextFreeRigNo = 0;
         };
