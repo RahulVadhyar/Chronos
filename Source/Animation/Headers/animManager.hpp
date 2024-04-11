@@ -23,35 +23,6 @@ SOFTWARE.
 namespace Chronos{
     namespace Animation{
         class AnimationManager{
-        public:
-            void init(void* manager);
-            void update();
-            std::pair<int, int> addRig(int baseShapeNo, float length);
-            int addBone(int rigNo, int parentBoneNo, int shapeNo, float length);
-            void setBoneOffsetX(int rigNo, int boneNo, float offsetX);
-            void setBoneOffsetY(int rigNo, int boneNo, float offsetY);
-            void setBoneOffsetRotation(int animNo, int boneNo, float offsetRotation);
-            void setBoneAnimNo(int rigNo, int boneNo, int animNo);
-            void setBoneLength(int rigNo, int boneNo, float length);
-            float getBoneLength(int rigNo, int boneNo);
-            float getBoneAnimNo(int rigNo, int boneNo);
-            float getBoneOffsetX(int rigNo, int boneNo);
-            float getBoneOffsetY(int rigNo, int boneNo);
-            float getBoneOffsetRotation(int rigNo, int boneNo);
-            void addBoneKeyframe(int rigNo, int boneNo, Chronos::Animation::BezierParams xKeyframe, Chronos::Animation::BezierParams yKeyframe);
-            void replaceBoneKeyframe(int rigNo, int boneNo, int keyframeNo, Chronos::Animation::BezierParams xKeyframe, Chronos::Animation::BezierParams yKeyframe);
-            std::pair<Chronos::Animation::BezierParams, Chronos::Animation::BezierParams> getBoneKeyframe(int rigNo, int boneNo, int keyframeNo);
-            void setBoneCurrentTime(int rigNo, int boneNo, float time);
-            void updateBoneWithTime(int rigNo, int boneNo, bool flat);
-            float getBoneCurrentTime(int rigNo, int boneNo);
-            void removeBone(int rigNo, int boneNo);
-            void removeRig(int rigNo);
-        private:
-            void* manager;
-            std::map<int, std::map<int, Chronos::Animation::AnimBone>> bones;
-            std::map<int, Chronos::Animation::AnimBone> rootBones;
-            std::map<int, int> nextFreeBoneNos;
-            int nextFreeRigNo = 0;
         };
     };
 };
