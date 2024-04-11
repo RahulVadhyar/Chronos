@@ -1,12 +1,6 @@
 [submodule "ThirdParty/glfw"]
 	path = ThirdParty/glfw
 	url = https://github.com/glfw/glfw.git
-[submodule "ThirdParty/imgui-node-editor"]
-	path = ThirdParty/imgui-node-editor
-	url = https://github.com/thedmd/imgui-node-editor.git
-[submodule "ThirdParty/ImGuizmo"]
-	path = ThirdParty/ImGuizmo
-	url = https://github.com/CedricGuillemet/ImGuizmo.git
 [submodule "ThirdParty/doxygen-awesome-css"]
 	path = ThirdParty/doxygen-awesome-css
 	url = https://github.com/jothepro/doxygen-awesome-css.git
@@ -16,6 +10,3 @@
 [submodule "ThirdParty/earcut.hpp"]
 	path = ThirdParty/earcut.hpp
 	url = https://github.com/mapbox/earcut.hpp
-[submodule "ThirdParty/imgui_curve_editor"]
-	path = ThirdParty/imgui_curve_editor
-	url = https://github.com/RahulVadhyar/imgui_curve_editor

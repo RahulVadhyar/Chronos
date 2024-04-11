@@ -27,7 +27,10 @@ SOFTWARE.
 #include "helper.hpp"
 #include "texture.hpp"
 #define STB_IMAGE_IMPLEMENTATION
+#pragma GCC diagnostic push 
+#pragma GCC diagnostic ignored "-Wstringop-overflow"
 #include "stb_image.h"
+#pragma GCC diagnostic pop
 
 #ifdef ENABLE_EDITOR
 #include "editorHeaders.hpp"
@@ -78,7 +81,7 @@ void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandP
 {
     this->texturePath = texturePath;
     this->textureName = textureName;
-    int texWidth, texHeight, texChannels;
+    int texWidth = 0, texHeight = 0, texChannels = 0;
     this->device = device;
     VkDeviceSize imageSize;
     uint8_t* pixels;
@@ -116,12 +119,12 @@ void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandP
         &textureImageMemory, VK_SAMPLE_COUNT_1_BIT);
 
     Chronos::Engine::transitionImageLayout(
-        textureImage, VK_FORMAT_R8G8B8A8_SRGB, VK_IMAGE_LAYOUT_UNDEFINED,
+        textureImage, VK_IMAGE_LAYOUT_UNDEFINED,
         VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, commandPool, device);
     Chronos::Engine::copyBufferToImage(stagingBuffer, textureImage,
         static_cast<uint32_t>(texWidth),
         static_cast<uint32_t>(texHeight), commandPool, device);
-    Chronos::Engine::transitionImageLayout(textureImage, VK_FORMAT_R8G8B8A8_SRGB,
+    Chronos::Engine::transitionImageLayout(textureImage,
         VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
         VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL, commandPool,
         device);
@@ -160,12 +163,12 @@ void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandP
         &textureImageMemory, VK_SAMPLE_COUNT_1_BIT);
 
     Chronos::Engine::transitionImageLayout(
-        textureImage, format, VK_IMAGE_LAYOUT_UNDEFINED,
+        textureImage, VK_IMAGE_LAYOUT_UNDEFINED,
         VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, commandPool, device);
     Chronos::Engine::copyBufferToImage(stagingBuffer, textureImage,
         static_cast<uint32_t>(texWidth),
         static_cast<uint32_t>(texHeight), commandPool, device);
-    Chronos::Engine::transitionImageLayout(textureImage, format,
+    Chronos::Engine::transitionImageLayout(textureImage,
         VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
         VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL, commandPool,
         device);
@@ -175,7 +178,7 @@ void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandP
 
 }
 
-void Chronos::Engine::transitionImageLayout(VkImage image, VkFormat format,
+void Chronos::Engine::transitionImageLayout(VkImage image,
     VkImageLayout oldLayout, VkImageLayout newLayout,
     VkCommandPool commandPool, Chronos::Engine::Device device)
 {

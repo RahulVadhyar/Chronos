@@ -30,7 +30,7 @@ int comb(int n, int r){
 
 float Chronos::Animation::getAnimationValue(int time, BezierParams keyframe){
     float point = 0;
-    for(int i = 0; i < keyframe.bezierPoints.size(); i++){
+    for(int i = 0; i < static_cast<int>(keyframe.bezierPoints.size()); i++){
         point += comb(keyframe.bezierPoints.size() - 1, i) * keyframe.bezierPoints[i] * pow(1 - time, keyframe.bezierPoints.size() - 1 - i) * pow(time, i);
     }
     float value = keyframe.minParam + (keyframe.maxParam - keyframe.minParam) * point;

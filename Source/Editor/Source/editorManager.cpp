@@ -132,7 +132,7 @@ void Chronos::Editor::EditorManager::ShapeWindow(){
                         ImGui::EndCombo();
                     }
             }
-            if(!doesNameExist){           \
+            if(!doesNameExist){           
                 if(ImGui::Button("Add Shape")){
                     Chronos::Manager::PolygonType type;
                     switch(this->newShapeType){
@@ -161,7 +161,7 @@ void Chronos::Editor::EditorManager::ShapeWindow(){
             if(shapeDetails.size() == 0){
                 ImGui::Selectable("No Shapes");
             } else {
-                for(int i = 0; i < shapeDetails.size(); i++){
+                for(int i = 0; i < static_cast<int>(shapeDetails.size()); i++){
                     if(ImGui::Selectable(shapeDetails[i].second.shapeName, this->currentShapeSelection == i)){
                         this->currentShapeSelection = i;
                     }
@@ -259,7 +259,7 @@ void Chronos::Editor::EditorManager::PolygonWindow(){
             if(polygonDetails.size() == 0){
                 ImGui::Selectable("No Polygons");
             } else {
-                for(int i = 0; i < polygonDetails.size(); i++){
+                for(int i = 0; i < static_cast<int>(polygonDetails.size()); i++){
                     if(ImGui::Selectable(polygonDetails[i].second.shapeName, this->currentPolygonSelection == i)){
                         this->currentPolygonSelection = i;
                     }
@@ -324,7 +324,7 @@ void Chronos::Editor::EditorManager::TextureWindow(){
                 if(details.size() == 0){
                     ImGui::Selectable("No Textures");
                 } else {
-                    for(int i = 0; i < details.size(); i++){
+                    for(int i = 0; i < static_cast<int>(details.size()); i++){
                         if(ImGui::Selectable(details[i].textureName.c_str(), currentTextureSelection == i)){
                             currentTextureSelection = i;
                         }
@@ -402,7 +402,7 @@ void Chronos::Editor::EditorManager::TextWindow(){
             if(textDetails.size() == 0){
                 ImGui::Selectable("No Text");
             } else {
-                for(int i = 0; i < textDetails.size(); i++){
+                for(int i = 0; i < static_cast<int>(textDetails.size()); i++){
                     if(ImGui::Selectable(textDetails[i].second.text.c_str(), this->currentTextSelection == i)){
                         this->currentTextSelection = i;
                     }
@@ -543,7 +543,7 @@ void Chronos::Editor::EditorManager::PolygonDetailsWindow(){
 
             this->currentPolygonVertices = this->manager->getPolygonVertices(this->polygonDetailsShapeNo);
             ImGui::SeparatorText("Polygon Vertices");
-            for(int i = 0; i < this->currentPolygonVertices.size(); i++){
+            for(int i = 0; i < static_cast<int>(this->currentPolygonVertices.size()); i++){
                 ImGui::Text("Vertex %d", i);
                 ImGui::DragFloat(("X " + std::to_string(i + 1) + "(-1 to 1)").c_str(), &this->currentPolygonVertices[i][0], 0.01f, -1.0f, 1.0f);
                 ImGui::DragFloat(("Y " + std::to_string(i + 1) + "(-1 to 1)").c_str(), &this->currentPolygonVertices[i][1], 0.01f, -1.0f, 1.0f);

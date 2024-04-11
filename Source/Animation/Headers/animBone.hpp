@@ -23,6 +23,33 @@ SOFTWARE.
 namespace Chronos{
     namespace Animation{
         class AnimBone{
+        public:
+            void init(float relX, float relY, float length, float angle, AnimBone* parent);
+            void addChild(AnimBone* child);
+            void removeChild(AnimBone* child);
+            void setRelX(float relX);
+            void setRelY(float relY);
+            void setLength(float length);
+            void setAngle(float angle);
+            void setParent(AnimBone* parent);
+            float getRelX();
+            float getRelY();
+            float getLength();
+            float getAngle();
+            float getX();
+            float getY();
+            AnimBone* getParent();
+            std::vector<AnimBone*> getChildren();
+            void update();
+        private:
+            float relX;
+            float relY;
+            float x;
+            float y;
+            float length;
+            float angle;
+            std::vector<AnimBone*> children;
+            AnimBone* parent = nullptr;
         };
     };
 };

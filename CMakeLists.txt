@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.13)
 project(Chronos VERSION 0.0.0)
 set(CMAKE_CXX_STANDARD 20)
-# set(CMAKE_BUILD_TYPE Debug)
-# set(CMAKE_CXX_FLAGS "-Wall -Wextra -O3")
+
+
 
 if(UNIX)
 option(CHRONOS_SUPPORT_WAYLAND "Build with Wayland support" ON)
@@ -15,6 +15,13 @@ option(CHRONOS_ENABLE_BASIC_LOGGING "Enable Basic logging(level 2)" OFF)
 option(CHRONOS_ENABLE_VERBOSE_LOGGING "Enable Verbose logging(level 3)" OFF)
 option(CHRONOS_ENABLE_EXTREME_LOGGING "Enable Extreme logging(level 4)" OFF)
 option(CHRONOS_ENABLE_PROFILING "Enable profiling" OFF)
+option(CHRONOS_ENABLE_OPTIMIZATIONS "Enable compiler optimizations and enable most warnings, along with generating release binaries" OFF)
+
+if(CHRONOS_ENABLE_OPTIMIZATIONS)
+set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -Wno-overloaded-virtual -Wno-unused-parameter -Wno-vla -O3 -march=native")
+message("All optimizations and warnings are enabled. Building for release!")
+endif()
 
 if(CHRONOS_SUPPORT_WAYLAND)
 set(GLFW_BUILD_WAYLAND ON)
@@ -134,23 +141,14 @@ message("Building editor")
 set(EDITOR_DIR Source/Editor/Source)
 set(IMGUI_DIR ThirdParty/imgui) 
 set(IMGUI_BACKENDS ${IMGUI_DIR}/backends)
-set(IMGUI_GUIZMO ThirdParty/ImGuizmo)
-set(IMGUI_NODE_EDITOR_DIR ThirdParty/imgui-node-editor)
-set(IMGUI_CURVE_EDITOR_DIR ThirdParty/imgui_curve_editor)
 
 file(GLOB EDITOR ${EDITOR_DIR}/*.cpp)
 file(GLOB IMGUI ${IMGUI_DIR}/*.cpp)
-file(GLOB IM_GUIZMO_CPP ${IMGUI_GUIZMO}/*.cpp)
-file(GLOB IMGUI_NODE_EDITOR_CPP ${IMGUI_NODE_EDITOR_DIR}/*.cpp)
-file(GLOB IMGUI_CURVE_EDITOR_CPP ${IMGUI_CURVE_EDITOR_DIR}/*.cpp)
 file(GLOB EDITOR_FILES 
 ${EDITOR} 
 ${IMGUI} 
 ${IMGUI_BACKENDS}/imgui_impl_glfw.cpp 
 ${IMGUI_BACKENDS}/imgui_impl_vulkan.cpp
-${IM_GUIZMO_CPP}
-${IMGUI_NODE_EDITOR_CPP}
-${IMGUI_CURVE_EDITOR_CPP}
 )
 
 # linking
@@ -205,9 +203,6 @@ endif()
 target_include_directories(ChronosEditor PUBLIC Source/Editor/Headers)
 target_include_directories(ChronosEditor PUBLIC ${IMGUI_DIR})               
 target_include_directories(ChronosEditor PUBLIC ${IMGUI_BACKENDS})
-target_include_directories(ChronosEditor PUBLIC ${IMGUI_GUIZMO})    
-target_include_directories(ChronosEditor PUBLIC ${IMGUI_NODE_EDITOR_DIR})
-target_include_directories(ChronosEditor PUBLIC ${IMGUI_CURVE_EDITOR_DIR})
 IncludeDirectories(ChronosEditor)
 endif()
 

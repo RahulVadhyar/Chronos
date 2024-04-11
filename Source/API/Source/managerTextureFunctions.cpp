@@ -24,10 +24,8 @@ SOFTWARE.
 
 int Chronos::Manager::Manager::addTexture(std::string texturePath, std::string textureName)
 {
-    bool textureExists = false;
     for (auto& textureDetail : getTextureDetails()) {
         if (textureDetail.textureName == textureName) {
-            textureExists = true;
             break;
         }
     }

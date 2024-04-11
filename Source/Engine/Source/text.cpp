@@ -113,8 +113,6 @@ void Chronos::Engine::Text::createDescriptorSets()
         bufferInfo2.offset = 0;
         bufferInfo2.range = sizeof(UniformColorBufferObject);
 
-        VkWriteDescriptorSet descriptorWrite {};
-
         std::array<VkWriteDescriptorSet, 3> descriptorWrites {};
 
         descriptorWrites[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;

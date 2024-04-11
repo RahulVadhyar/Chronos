@@ -356,9 +356,9 @@ void Chronos::Engine::Engine::createInstance()
     createInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
     createInfo.pApplicationInfo = &appInfo;
 
-    uint32_t glfwExtensionCount = 0;
-    const char** glfwExtensions;
-    glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
+    // uint32_t glfwExtensionCount = 0;
+    // const char** glfwExtensions;
+    // glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
 
     auto extensions = getRequiredExtensions();
     createInfo.enabledExtensionCount = static_cast<uint32_t>(extensions.size());
@@ -370,7 +370,6 @@ void Chronos::Engine::Engine::createInstance()
         throw std::runtime_error("Validation layers requested, but not available");
     }
 #endif
-    VkDebugUtilsMessengerCreateInfoEXT debugCreateInfo {};
 
     createInfo.enabledLayerCount = 0;
     createInfo.pNext = nullptr;
@@ -380,6 +379,7 @@ void Chronos::Engine::Engine::createInstance()
         createInfo.ppEnabledLayerNames = validationLayers.data();
         // uncomment below if u need fine details. It just creates extra verbose
         // generally not needed
+        // VkDebugUtilsMessengerCreateInfoEXT debugCreateInfo {};
         //  populateDebugMessengerCreateInfo(debugCreateInfo);
         //  createInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT*)&debugCreateInfo;
 #endif

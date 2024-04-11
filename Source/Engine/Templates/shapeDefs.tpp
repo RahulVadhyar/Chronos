@@ -120,7 +120,6 @@ void Chronos::Engine::Shape<VertexStruct>::tempCreateDescriptorSets()
         bufferInfo.buffer = uniformBuffers[i].buffer;
         bufferInfo.offset = 0;
         bufferInfo.range = sizeof(UniformBufferObject);
-        VkWriteDescriptorSet descriptorWrite {};
 
         VkDescriptorImageInfo imageInfo {};
         imageInfo.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
@@ -264,7 +263,7 @@ Chronos::Engine::PipelineAttributes Chronos::Engine::Shape<VertexStruct>::getPip
     pipelineAttributes.bindingDescriptions[0] = bindingDescription;
 
     pipelineAttributes.attributeDescriptions.resize(attributeDescriptions.size());
-    for (int i = 0; i < attributeDescriptions.size(); i++) {
+    for (int i = 0; i < static_cast<int>(attributeDescriptions.size()); i++) {
         pipelineAttributes.attributeDescriptions[i] = attributeDescriptions[i];
     }
 

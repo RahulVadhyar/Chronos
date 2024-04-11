@@ -66,12 +66,11 @@ namespace Engine {
     - ```VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL``` to ```VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL```
 
     @param image The image to be transitioned.
-    @param format The format of the image.
     @param oldLayout The old layout of the image(```VK_IMAGE_LAYOUT_UNDEFINED```  or  ```VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL```).
     @param newLayout The new layout of the image(```VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL``` or ```VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL```).
     */
 
-    void transitionImageLayout(VkImage image, VkFormat format,
+    void transitionImageLayout(VkImage image,
         VkImageLayout oldLayout, VkImageLayout newLayout,
         VkCommandPool commandPool, Chronos::Engine::Device device);
 
