@@ -76,7 +76,7 @@ function(IncludeDirectories projectName)
     target_include_directories(${projectName} PUBLIC include)
     target_include_directories(${projectName} PUBLIC ${FONTS_DIR})
     target_include_directories(${projectName} PUBLIC ${GLFW_DIR})  
-    target_include_directories(${projectName} PUBLIC ThirdParty/earcut.hpp/include/mapbox)
+    target_include_directories(${projectName} PUBLIC ThirdParty/earcut)
     
     if(WIN32)
         target_link_libraries(${projectName} vulkan-1) 
