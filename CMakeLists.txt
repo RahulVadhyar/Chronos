@@ -15,11 +15,11 @@ option(CHRONOS_ENABLE_BASIC_LOGGING "Enable Basic logging(level 2)" OFF)
 option(CHRONOS_ENABLE_VERBOSE_LOGGING "Enable Verbose logging(level 3)" OFF)
 option(CHRONOS_ENABLE_EXTREME_LOGGING "Enable Extreme logging(level 4)" OFF)
 option(CHRONOS_ENABLE_PROFILING "Enable profiling" OFF)
-option(CHRONOS_ENABLE_OPTIMIZATIONS "Enable compiler optimizations and enable most warnings, along with generating release binaries" OFF)
+option(CHRONOS_ENABLE_OPTIMIZATIONS "Enable compiler optimizations and enable most warnings, along with generating release binaries" ON)
 
 if(CHRONOS_ENABLE_OPTIMIZATIONS)
 set(CMAKE_BUILD_TYPE Release)
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -Wno-overloaded-virtual -Wno-unused-parameter -Wno-vla -O3 -march=native")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -Wno-overloaded-virtual -Wno-unused-parameter -Wno-vla -Werror -O3 -march=native")
 message("All optimizations and warnings are enabled. Building for release!")
 endif()
 
