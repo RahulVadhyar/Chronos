@@ -446,9 +446,9 @@ $(document).ready(function(){initNavTree('engine_8cpp_source.html',''); initResi
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    createInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    createInfo.pApplicationInfo = &amp;appInfo;</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    uint32_t glfwExtensionCount = 0;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>** glfwExtensions;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    glfwExtensions = glfwGetRequiredInstanceExtensions(&amp;glfwExtensionCount);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="comment">// uint32_t glfwExtensionCount = 0;</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="comment">// const char** glfwExtensions;</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="comment">// glfwExtensions = glfwGetRequiredInstanceExtensions(&amp;glfwExtensionCount);</span></div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keyword">auto</span> extensions = <a class="code" href="namespaceChronos_1_1Engine.html#a35cd835c537872d49915832ce7979b5c">getRequiredExtensions</a>();</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    createInfo.enabledExtensionCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(extensions.size());</div>
@@ -460,16 +460,16 @@ $(document).ready(function(){initNavTree('engine_8cpp_source.html',''); initResi
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Validation layers requested, but not available&quot;</span>);</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    }</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    VkDebugUtilsMessengerCreateInfoEXT debugCreateInfo {};</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    createInfo.enabledLayerCount = 0;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    createInfo.pNext = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="preprocessor">#ifdef ENABLE_VULKAN_VALIDATION_LAYERS</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        createInfo.enabledLayerCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(validationLayers.size());</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        createInfo.ppEnabledLayerNames = validationLayers.data();</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="comment">// uncomment below if u need fine details. It just creates extra verbose</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="comment">// generally not needed</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    createInfo.enabledLayerCount = 0;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    createInfo.pNext = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="preprocessor">#ifdef ENABLE_VULKAN_VALIDATION_LAYERS</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        createInfo.enabledLayerCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(validationLayers.size());</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        createInfo.ppEnabledLayerNames = validationLayers.data();</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="comment">// uncomment below if u need fine details. It just creates extra verbose</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="comment">// generally not needed</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="comment">// VkDebugUtilsMessengerCreateInfoEXT debugCreateInfo {};</span></div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="comment">//  populateDebugMessengerCreateInfo(debugCreateInfo);</span></div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="comment">//  createInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT*)&amp;debugCreateInfo;</span></div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="preprocessor">#endif</span></div>

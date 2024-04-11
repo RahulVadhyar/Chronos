@@ -11,7 +11,7 @@
 <area shape="rect" id="node11" href="$namespaceChronos_1_1Engine.html#a7018d1eaf2dfaf4c373269fcaa344a46" title="For a given image dimensons, it creates a VkImage and VkDeviceMemory for the image." alt="" coords="1055,56,1272,83"/>
 <area shape="rect" id="node12" href="$namespaceChronos_1_1Engine.html#a34457a6d2cac8f2770ffbaf52b3b2ee3" title="Create a VkImageView for a given VkImage." alt="" coords="1039,239,1288,265"/>
 <area shape="rect" id="node13" href="$namespaceChronos_1_1Engine.html#a26311add90c663bbb6da7406c8726ae1" title="Creates a VkSampler" alt="" coords="1051,107,1275,149"/>
-<area shape="rect" id="node14" href="$namespaceChronos_1_1Engine.html#a486e04f821153409c6c7d0ab3b3e89b4" title="Transiton a VkImage from one layout to another." alt="" coords="1065,290,1262,331"/>
+<area shape="rect" id="node14" href="$namespaceChronos_1_1Engine.html#a739435df5d2955b7832d503c365e9d7c" title="Transiton a VkImage from one layout to another." alt="" coords="1065,290,1262,331"/>
 <area shape="rect" id="node7" href="$namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="1352,198,1563,239"/>
 <area shape="rect" id="node8" href="$namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c" title="Ends recording of single time command buffer and destroys it." alt="" coords="1358,277,1557,318"/>
 <area shape="rect" id="node10" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="1336,31,1579,57"/>

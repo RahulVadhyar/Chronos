@@ -222,8 +222,8 @@ $(document).ready(function(){initNavTree('editorManager_8cpp_source.html',''); i
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                        ImGui::EndCombo();</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                    }</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordflow">if</span>(!doesNameExist){           \</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                if(ImGui::Button(<span class="stringliteral">&quot;Add Shape&quot;</span>)){</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordflow">if</span>(!doesNameExist){           </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                <span class="keywordflow">if</span>(ImGui::Button(<span class="stringliteral">&quot;Add Shape&quot;</span>)){</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                    <a class="code" href="structChronos_1_1Manager_1_1PolygonType.html">Chronos::Manager::PolygonType</a> type;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                    <span class="keywordflow">switch</span>(this-&gt;newShapeType){</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                        <span class="keywordflow">case</span> 0:</div>
@@ -251,7 +251,7 @@ $(document).ready(function(){initNavTree('editorManager_8cpp_source.html',''); i
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">if</span>(shapeDetails.size() == 0){</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                ImGui::Selectable(<span class="stringliteral">&quot;No Shapes&quot;</span>);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; shapeDetails.size(); i++){</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; static_cast&lt;int&gt;(shapeDetails.size()); i++){</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                    <span class="keywordflow">if</span>(ImGui::Selectable(shapeDetails[i].second.shapeName, this-&gt;currentShapeSelection == i)){</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                        this-&gt;currentShapeSelection = i;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    }</div>
@@ -349,7 +349,7 @@ $(document).ready(function(){initNavTree('editorManager_8cpp_source.html',''); i
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keywordflow">if</span>(polygonDetails.size() == 0){</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                ImGui::Selectable(<span class="stringliteral">&quot;No Polygons&quot;</span>);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; polygonDetails.size(); i++){</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; static_cast&lt;int&gt;(polygonDetails.size()); i++){</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                    <span class="keywordflow">if</span>(ImGui::Selectable(polygonDetails[i].second.shapeName, this-&gt;currentPolygonSelection == i)){</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                        this-&gt;currentPolygonSelection = i;</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                    }</div>
@@ -414,7 +414,7 @@ $(document).ready(function(){initNavTree('editorManager_8cpp_source.html',''); i
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                <span class="keywordflow">if</span>(details.size() == 0){</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                    ImGui::Selectable(<span class="stringliteral">&quot;No Textures&quot;</span>);</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; details.size(); i++){</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; static_cast&lt;int&gt;(details.size()); i++){</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                        <span class="keywordflow">if</span>(ImGui::Selectable(details[i].textureName.c_str(), currentTextureSelection == i)){</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                            currentTextureSelection = i;</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                        }</div>
@@ -492,7 +492,7 @@ $(document).ready(function(){initNavTree('editorManager_8cpp_source.html',''); i
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            <span class="keywordflow">if</span>(textDetails.size() == 0){</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                ImGui::Selectable(<span class="stringliteral">&quot;No Text&quot;</span>);</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; textDetails.size(); i++){</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; static_cast&lt;int&gt;(textDetails.size()); i++){</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                    <span class="keywordflow">if</span>(ImGui::Selectable(textDetails[i].second.text.c_str(), this-&gt;currentTextSelection == i)){</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                        this-&gt;currentTextSelection = i;</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                    }</div>
@@ -633,7 +633,7 @@ $(document).ready(function(){initNavTree('editorManager_8cpp_source.html',''); i
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160; </div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;            this-&gt;currentPolygonVertices = this-&gt;manager-&gt;getPolygonVertices(this-&gt;polygonDetailsShapeNo);</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            ImGui::SeparatorText(<span class="stringliteral">&quot;Polygon Vertices&quot;</span>);</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; this-&gt;currentPolygonVertices.size(); i++){</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; static_cast&lt;int&gt;(this-&gt;currentPolygonVertices.size()); i++){</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                ImGui::Text(<span class="stringliteral">&quot;Vertex %d&quot;</span>, i);</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                ImGui::DragFloat((<span class="stringliteral">&quot;X &quot;</span> + std::to_string(i + 1) + <span class="stringliteral">&quot;(-1 to 1)&quot;</span>).c_str(), &amp;this-&gt;currentPolygonVertices[i][0], 0.01f, -1.0f, 1.0f);</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                ImGui::DragFloat((<span class="stringliteral">&quot;Y &quot;</span> + std::to_string(i + 1) + <span class="stringliteral">&quot;(-1 to 1)&quot;</span>).c_str(), &amp;this-&gt;currentPolygonVertices[i][1], 0.01f, -1.0f, 1.0f);</div>
