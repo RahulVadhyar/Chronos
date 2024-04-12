@@ -247,7 +247,7 @@ Additional Inherited Members</h2></td></tr>
 <p>The way the test is rendered is by creating a texture atlas. This is a texture that contains all the characters in the font. This texture is then used to render the text. The text is rendered by creating a rectangle for each character and then rendering it.</p>
 <p>This class is not meant to be directly used, but instead to be used by the <code>FontManager</code> class. That will handle the creation and destruction of the font object, along with any updates needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00070">70</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00073">73</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a408a3d40c8c05109645037eb39d096f2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a408a3d40c8c05109645037eb39d096f2">&#9670;&nbsp;</a></span>clear()</h2>
@@ -282,9 +282,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00042">device.hpp:42</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a9ec42d04a85645aaffe162580da68a29"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">Chronos::Engine::Object::device</a></div><div class="ttdeci">Chronos::Engine::Device * device</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00107">object.hpp:107</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_a2a749d64a674558d625f36ec332ab60c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#a2a749d64a674558d625f36ec332ab60c">Chronos::Engine::Text::mappedMemory</a></div><div class="ttdeci">glm::vec4 * mappedMemory</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00187">text.hpp:187</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_a364371dfb26998801863abd8e41e6630"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#a364371dfb26998801863abd8e41e6630">Chronos::Engine::Text::vertexBufferMemory</a></div><div class="ttdeci">VkDeviceMemory vertexBufferMemory</div><div class="ttdoc">The vertex buffer memory.</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00143">text.hpp:143</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_ab53476b59186ad357333df25278366b3"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#ab53476b59186ad357333df25278366b3">Chronos::Engine::Text::numLetters</a></div><div class="ttdeci">uint32_t numLetters</div><div class="ttdoc">The total number of letters to render.</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00127">text.hpp:127</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_a2a749d64a674558d625f36ec332ab60c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#a2a749d64a674558d625f36ec332ab60c">Chronos::Engine::Text::mappedMemory</a></div><div class="ttdeci">glm::vec4 * mappedMemory</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00190">text.hpp:190</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_a364371dfb26998801863abd8e41e6630"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#a364371dfb26998801863abd8e41e6630">Chronos::Engine::Text::vertexBufferMemory</a></div><div class="ttdeci">VkDeviceMemory vertexBufferMemory</div><div class="ttdoc">The vertex buffer memory.</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00146">text.hpp:146</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_ab53476b59186ad357333df25278366b3"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#ab53476b59186ad357333df25278366b3">Chronos::Engine::Text::numLetters</a></div><div class="ttdeci">uint32_t numLetters</div><div class="ttdoc">The total number of letters to render.</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00130">text.hpp:130</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -384,8 +384,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a5587465d9740b74dbece2415df63fb9f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">Chronos::Engine::Object::descriptorSets</a></div><div class="ttdeci">std::vector&lt; VkDescriptorSet &gt; descriptorSets</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00101">object.hpp:101</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a8bcbdc312c4e8afcd1eb382a530b9fd7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a8bcbdc312c4e8afcd1eb382a530b9fd7">Chronos::Engine::Object::descriptorPool</a></div><div class="ttdeci">VkDescriptorPool descriptorPool</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00113">object.hpp:113</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_aa107fe2bc0ae441c79ec522df3a8a16c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">Chronos::Engine::Object::uniformBuffers</a></div><div class="ttdeci">std::vector&lt; Chronos::Engine::UniformBuffer &gt; uniformBuffers</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00139">object.hpp:139</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_a041a7aaa6a6f1b198117b1515c231af2"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#a041a7aaa6a6f1b198117b1515c231af2">Chronos::Engine::Text::fontTexture</a></div><div class="ttdeci">Chronos::Engine::Texture fontTexture</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00147">text.hpp:147</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_a397c79280594e47a90ca7b63e1a792c0"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#a397c79280594e47a90ca7b63e1a792c0">Chronos::Engine::Text::colorBuffers</a></div><div class="ttdeci">std::vector&lt; Chronos::Engine::ColorBuffer &gt; colorBuffers</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00149">text.hpp:149</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_a041a7aaa6a6f1b198117b1515c231af2"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#a041a7aaa6a6f1b198117b1515c231af2">Chronos::Engine::Text::fontTexture</a></div><div class="ttdeci">Chronos::Engine::Texture fontTexture</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00150">text.hpp:150</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_a397c79280594e47a90ca7b63e1a792c0"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#a397c79280594e47a90ca7b63e1a792c0">Chronos::Engine::Text::colorBuffers</a></div><div class="ttdeci">std::vector&lt; Chronos::Engine::ColorBuffer &gt; colorBuffers</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00152">text.hpp:152</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_a4e9fa6072f861955b04b663d63eede66"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#a4e9fa6072f861955b04b663d63eede66">Chronos::Engine::Texture::textureImageView</a></div><div class="ttdeci">VkImageView textureImageView</div><div class="ttdoc">The image view for the texture.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8hpp_source.html#l00127">texture.hpp:127</a></div></div>
 <div class="ttc" id="avulkanHeaders_8hpp_html_a84d3ea5135a58a3d5c7d802762e320ec"><div class="ttname"><a href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a></div><div class="ttdeci">#define MAX_FRAMES_IN_FLIGHT</div><div class="ttdoc">The number of frames in flight.</div><div class="ttdef"><b>Definition:</b> <a href="vulkanHeaders_8hpp_source.html#l00052">vulkanHeaders.hpp:52</a></div></div>
 </div><!-- fragment -->
@@ -432,8 +432,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Text.html#a041a7aaa6a6f1b198117b1515c231af2">fontTexture</a>.<a class="code" href="classChronos_1_1Engine_1_1Texture.html#abea74b812d9b2dacfddfe9b4e51b1a83">destroy</a>();</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2bdcd3b34fd075835e2a395bd39b09d7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a></div><div class="ttdeci">virtual void destroy()=0</div><div class="ttdoc">Destroys the object and releases associated resources.</div><div class="ttdef"><b>Definition:</b> <a href="object_8cpp_source.html#l00195">object.cpp:195</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_abd46a598f017292933e973cc98bc0026"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#abd46a598f017292933e973cc98bc0026">Chronos::Engine::Text::vertexBuffer</a></div><div class="ttdeci">VkBuffer vertexBuffer</div><div class="ttdoc">The vertices of each character used for rendering.</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00122">text.hpp:122</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_abea74b812d9b2dacfddfe9b4e51b1a83"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#abea74b812d9b2dacfddfe9b4e51b1a83">Chronos::Engine::Texture::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">Destroy the texture assets.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8cpp_source.html#l00289">texture.cpp:289</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_abd46a598f017292933e973cc98bc0026"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#abd46a598f017292933e973cc98bc0026">Chronos::Engine::Text::vertexBuffer</a></div><div class="ttdeci">VkBuffer vertexBuffer</div><div class="ttdoc">The vertices of each character used for rendering.</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00125">text.hpp:125</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_abea74b812d9b2dacfddfe9b4e51b1a83"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#abea74b812d9b2dacfddfe9b4e51b1a83">Chronos::Engine::Texture::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">Destroy the texture assets.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8cpp_source.html#l00293">texture.cpp:293</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="object_8cpp_source.html#l00195">Chronos::Engine::Object::destroy()</a>, and <a class="el" href="vulkanHeaders_8hpp_source.html#l00052">MAX_FRAMES_IN_FLIGHT</a>.</p>
 <div class="dynheader">
@@ -652,15 +652,15 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="text_8cpp_source.html#l00034">34</a> of file <a class="el" href="text_8cpp_source.html">text.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                                                                         {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59">vertexShaderPath</a> = SPIV_SHADER_PATH<span class="stringliteral">&quot;/textVert.spv&quot;</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#ad017c20cbe79d573325a66621de9963e">fragmentShaderPath</a> = SPIV_SHADER_PATH<span class="stringliteral">&quot;/textFrag.spv&quot;</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59">vertexShaderPath</a> = <a class="code" href="vulkanHeaders_8hpp.html#abf07899ba9ff34378247ad9b2402c6b8">SPIV_SHADER_PATH</a><span class="stringliteral">&quot;/textVert.spv&quot;</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Object.html#ad017c20cbe79d573325a66621de9963e">fragmentShaderPath</a> = <a class="code" href="vulkanHeaders_8hpp.html#abf07899ba9ff34378247ad9b2402c6b8">SPIV_SHADER_PATH</a><span class="stringliteral">&quot;/textFrag.spv&quot;</span>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">//set the fontstyle</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    this-&gt;fontStyle = <a class="code" href="classChronos_1_1Engine_1_1Text.html#abfd9861e8adcb805c3607d17a63baccf">fontStyle</a>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// initalize the font</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">const</span> uint32_t fontWidth = <a class="code" href="classChronos_1_1Engine_1_1Text.html#abfd9861e8adcb805c3607d17a63baccf">fontStyle</a>.<a class="code" href="structChronos_1_1Engine_1_1FontTypes.html#a5f492e093b83e1715f2236cef3d18a3e">fontWidth</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">const</span> uint32_t fontHeight = <a class="code" href="classChronos_1_1Engine_1_1Text.html#abfd9861e8adcb805c3607d17a63baccf">fontStyle</a>.<a class="code" href="structChronos_1_1Engine_1_1FontTypes.html#a6f629a28f0f82231a33cb27770b017e8">fontHeight</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    uint32_t fontWidth = <a class="code" href="classChronos_1_1Engine_1_1Text.html#abfd9861e8adcb805c3607d17a63baccf">fontStyle</a>.<a class="code" href="structChronos_1_1Engine_1_1FontTypes.html#a5f492e093b83e1715f2236cef3d18a3e">fontWidth</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    uint32_t fontHeight = <a class="code" href="classChronos_1_1Engine_1_1Text.html#abfd9861e8adcb805c3607d17a63baccf">fontStyle</a>.<a class="code" href="structChronos_1_1Engine_1_1FontTypes.html#a6f629a28f0f82231a33cb27770b017e8">fontHeight</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Text.html#acd2e4150682410849eb6859ba84fafe4">firstChar</a> = <a class="code" href="classChronos_1_1Engine_1_1Text.html#abfd9861e8adcb805c3607d17a63baccf">fontStyle</a>.<a class="code" href="structChronos_1_1Engine_1_1FontTypes.html#a59bab0488b8871f4a9b3a4c10eaf3b55">firstChar</a>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> fontpixels[fontHeight][256];</div>
@@ -692,18 +692,19 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a7cfcd07115e8e58783c5cc40e4575bd8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">Chronos::Engine::Object::swapChain</a></div><div class="ttdeci">Chronos::Engine::SwapChain * swapChain</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00108">object.hpp:108</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_ad017c20cbe79d573325a66621de9963e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#ad017c20cbe79d573325a66621de9963e">Chronos::Engine::Object::fragmentShaderPath</a></div><div class="ttdeci">std::string fragmentShaderPath</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00106">object.hpp:106</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_af8b89f8ed5191515b60219682efba376"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">Chronos::Engine::Object::renderPass</a></div><div class="ttdeci">VkRenderPass * renderPass</div><div class="ttdef"><b>Definition:</b> <a href="object_8hpp_source.html#l00111">object.hpp:111</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_a222f04b8bbed8a06255667abcdde1ea7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#a222f04b8bbed8a06255667abcdde1ea7">Chronos::Engine::Text::maxTextLength</a></div><div class="ttdeci">uint32_t maxTextLength</div><div class="ttdoc">Maximum number of characters that can be rendered.</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00139">text.hpp:139</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_a62e3ce56ce27e806a4500fbccc4d746b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#a62e3ce56ce27e806a4500fbccc4d746b">Chronos::Engine::Text::stbFontData</a></div><div class="ttdeci">stb_fontchar stbFontData[STB_FONT_consolas_24_latin1_NUM_CHARS]</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00135">text.hpp:135</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_abfd9861e8adcb805c3607d17a63baccf"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#abfd9861e8adcb805c3607d17a63baccf">Chronos::Engine::Text::fontStyle</a></div><div class="ttdeci">FontTypes fontStyle</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00153">text.hpp:153</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_acd2e4150682410849eb6859ba84fafe4"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#acd2e4150682410849eb6859ba84fafe4">Chronos::Engine::Text::firstChar</a></div><div class="ttdeci">uint32_t firstChar</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00151">text.hpp:151</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_accfd25e3bcc5051ca1e4bf26cac71a98"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98">Chronos::Engine::Texture::create</a></div><div class="ttdeci">void create(Chronos::Engine::Device device, VkCommandPool commandPool, std::string texturePath, std::string textureName)</div><div class="ttdoc">Create the texture by loading the texture from the given path. Only supports jpg and png images.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8cpp_source.html#l00079">texture.cpp:79</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_a222f04b8bbed8a06255667abcdde1ea7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#a222f04b8bbed8a06255667abcdde1ea7">Chronos::Engine::Text::maxTextLength</a></div><div class="ttdeci">uint32_t maxTextLength</div><div class="ttdoc">Maximum number of characters that can be rendered.</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00142">text.hpp:142</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_a62e3ce56ce27e806a4500fbccc4d746b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#a62e3ce56ce27e806a4500fbccc4d746b">Chronos::Engine::Text::stbFontData</a></div><div class="ttdeci">stb_fontchar stbFontData[STB_FONT_consolas_24_latin1_NUM_CHARS]</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00138">text.hpp:138</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_abfd9861e8adcb805c3607d17a63baccf"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#abfd9861e8adcb805c3607d17a63baccf">Chronos::Engine::Text::fontStyle</a></div><div class="ttdeci">FontTypes fontStyle</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00156">text.hpp:156</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_acd2e4150682410849eb6859ba84fafe4"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#acd2e4150682410849eb6859ba84fafe4">Chronos::Engine::Text::firstChar</a></div><div class="ttdeci">uint32_t firstChar</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00154">text.hpp:154</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_accfd25e3bcc5051ca1e4bf26cac71a98"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98">Chronos::Engine::Texture::create</a></div><div class="ttdeci">void create(Chronos::Engine::Device device, VkCommandPool commandPool, std::string texturePath, std::string textureName)</div><div class="ttdoc">Create the texture by loading the texture from the given path. Only supports jpg and png images.</div><div class="ttdef"><b>Definition:</b> <a href="texture_8cpp_source.html#l00083">texture.cpp:83</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_aa86983b2d3f7d09e250b31c3209d207a"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a">Chronos::Engine::createBuffer</a></div><div class="ttdeci">void createBuffer(Chronos::Engine::Device device, VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer *buffer, VkDeviceMemory *bufferMemory)</div><div class="ttdoc">Creates a buffer of a given size, usage and properties.</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00084">helper.cpp:84</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1FontTypes_html_a59bab0488b8871f4a9b3a4c10eaf3b55"><div class="ttname"><a href="structChronos_1_1Engine_1_1FontTypes.html#a59bab0488b8871f4a9b3a4c10eaf3b55">Chronos::Engine::FontTypes::firstChar</a></div><div class="ttdeci">uint32_t firstChar</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00051">text.hpp:51</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1FontTypes_html_a5f492e093b83e1715f2236cef3d18a3e"><div class="ttname"><a href="structChronos_1_1Engine_1_1FontTypes.html#a5f492e093b83e1715f2236cef3d18a3e">Chronos::Engine::FontTypes::fontWidth</a></div><div class="ttdeci">uint32_t fontWidth</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00048">text.hpp:48</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1FontTypes_html_a6f629a28f0f82231a33cb27770b017e8"><div class="ttname"><a href="structChronos_1_1Engine_1_1FontTypes.html#a6f629a28f0f82231a33cb27770b017e8">Chronos::Engine::FontTypes::fontHeight</a></div><div class="ttdeci">uint32_t fontHeight</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00049">text.hpp:49</a></div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1FontTypes_html_a96619d6312899c97b8562e4b68458613"><div class="ttname"><a href="structChronos_1_1Engine_1_1FontTypes.html#a96619d6312899c97b8562e4b68458613">Chronos::Engine::FontTypes::getFontData</a></div><div class="ttdeci">void(* getFontData)(stb_fontchar *, unsigned char[][256], int)</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00050">text.hpp:50</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1FontTypes_html_a59bab0488b8871f4a9b3a4c10eaf3b55"><div class="ttname"><a href="structChronos_1_1Engine_1_1FontTypes.html#a59bab0488b8871f4a9b3a4c10eaf3b55">Chronos::Engine::FontTypes::firstChar</a></div><div class="ttdeci">uint32_t firstChar</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00054">text.hpp:54</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1FontTypes_html_a5f492e093b83e1715f2236cef3d18a3e"><div class="ttname"><a href="structChronos_1_1Engine_1_1FontTypes.html#a5f492e093b83e1715f2236cef3d18a3e">Chronos::Engine::FontTypes::fontWidth</a></div><div class="ttdeci">uint32_t fontWidth</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00051">text.hpp:51</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1FontTypes_html_a6f629a28f0f82231a33cb27770b017e8"><div class="ttname"><a href="structChronos_1_1Engine_1_1FontTypes.html#a6f629a28f0f82231a33cb27770b017e8">Chronos::Engine::FontTypes::fontHeight</a></div><div class="ttdeci">uint32_t fontHeight</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00052">text.hpp:52</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1FontTypes_html_a96619d6312899c97b8562e4b68458613"><div class="ttname"><a href="structChronos_1_1Engine_1_1FontTypes.html#a96619d6312899c97b8562e4b68458613">Chronos::Engine::FontTypes::getFontData</a></div><div class="ttdeci">void(* getFontData)(stb_fontchar *, unsigned char[][256], int)</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00053">text.hpp:53</a></div></div>
+<div class="ttc" id="avulkanHeaders_8hpp_html_abf07899ba9ff34378247ad9b2402c6b8"><div class="ttname"><a href="vulkanHeaders_8hpp.html#abf07899ba9ff34378247ad9b2402c6b8">SPIV_SHADER_PATH</a></div><div class="ttdeci">#define SPIV_SHADER_PATH</div><div class="ttdef"><b>Definition:</b> <a href="vulkanHeaders_8hpp_source.html#l00053">vulkanHeaders.hpp:53</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="text_8hpp_source.html#l00149">colorBuffers</a>, <a class="el" href="object_8hpp_source.html#l00109">Chronos::Engine::Object::commandPool</a>, <a class="el" href="texture_8cpp_source.html#l00079">Chronos::Engine::Texture::create()</a>, <a class="el" href="helper_8cpp_source.html#l00084">Chronos::Engine::createBuffer()</a>, <a class="el" href="object_8hpp_source.html#l00107">Chronos::Engine::Object::device</a>, <a class="el" href="text_8hpp_source.html#l00051">Chronos::Engine::FontTypes::firstChar</a>, <a class="el" href="text_8hpp_source.html#l00151">firstChar</a>, <a class="el" href="text_8hpp_source.html#l00049">Chronos::Engine::FontTypes::fontHeight</a>, <a class="el" href="text_8hpp_source.html#l00153">fontStyle</a>, <a class="el" href="text_8hpp_source.html#l00147">fontTexture</a>, <a class="el" href="text_8hpp_source.html#l00048">Chronos::Engine::FontTypes::fontWidth</a>, <a class="el" href="object_8hpp_source.html#l00106">Chronos::Engine::Object::fragmentShaderPath</a>, <a class="el" href="text_8hpp_source.html#l00050">Chronos::Engine::FontTypes::getFontData</a>, <a class="el" href="object_8cpp_source.html#l00031">Chronos::Engine::Object::init()</a>, <a class="el" href="vulkanHeaders_8hpp_source.html#l00052">MAX_FRAMES_IN_FLIGHT</a>, <a class="el" href="text_8hpp_source.html#l00139">maxTextLength</a>, <a class="el" href="object_8hpp_source.html#l00111">Chronos::Engine::Object::renderPass</a>, <a class="el" href="text_8hpp_source.html#l00135">stbFontData</a>, <a class="el" href="object_8hpp_source.html#l00108">Chronos::Engine::Object::swapChain</a>, <a class="el" href="object_8hpp_source.html#l00110">Chronos::Engine::Object::textureSampler</a>, <a class="el" href="text_8hpp_source.html#l00122">vertexBuffer</a>, <a class="el" href="text_8hpp_source.html#l00143">vertexBufferMemory</a>, and <a class="el" href="object_8hpp_source.html#l00105">Chronos::Engine::Object::vertexShaderPath</a>.</p>
+<p class="reference">References <a class="el" href="text_8hpp_source.html#l00152">colorBuffers</a>, <a class="el" href="object_8hpp_source.html#l00109">Chronos::Engine::Object::commandPool</a>, <a class="el" href="texture_8cpp_source.html#l00083">Chronos::Engine::Texture::create()</a>, <a class="el" href="helper_8cpp_source.html#l00084">Chronos::Engine::createBuffer()</a>, <a class="el" href="object_8hpp_source.html#l00107">Chronos::Engine::Object::device</a>, <a class="el" href="text_8hpp_source.html#l00054">Chronos::Engine::FontTypes::firstChar</a>, <a class="el" href="text_8hpp_source.html#l00154">firstChar</a>, <a class="el" href="text_8hpp_source.html#l00052">Chronos::Engine::FontTypes::fontHeight</a>, <a class="el" href="text_8hpp_source.html#l00156">fontStyle</a>, <a class="el" href="text_8hpp_source.html#l00150">fontTexture</a>, <a class="el" href="text_8hpp_source.html#l00051">Chronos::Engine::FontTypes::fontWidth</a>, <a class="el" href="object_8hpp_source.html#l00106">Chronos::Engine::Object::fragmentShaderPath</a>, <a class="el" href="text_8hpp_source.html#l00053">Chronos::Engine::FontTypes::getFontData</a>, <a class="el" href="object_8cpp_source.html#l00031">Chronos::Engine::Object::init()</a>, <a class="el" href="vulkanHeaders_8hpp_source.html#l00052">MAX_FRAMES_IN_FLIGHT</a>, <a class="el" href="text_8hpp_source.html#l00142">maxTextLength</a>, <a class="el" href="object_8hpp_source.html#l00111">Chronos::Engine::Object::renderPass</a>, <a class="el" href="vulkanHeaders_8hpp_source.html#l00053">SPIV_SHADER_PATH</a>, <a class="el" href="text_8hpp_source.html#l00138">stbFontData</a>, <a class="el" href="object_8hpp_source.html#l00108">Chronos::Engine::Object::swapChain</a>, <a class="el" href="object_8hpp_source.html#l00110">Chronos::Engine::Object::textureSampler</a>, <a class="el" href="text_8hpp_source.html#l00125">vertexBuffer</a>, <a class="el" href="text_8hpp_source.html#l00146">vertexBufferMemory</a>, and <a class="el" href="object_8hpp_source.html#l00105">Chronos::Engine::Object::vertexShaderPath</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -823,7 +824,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Text.html#a397c79280594e47a90ca7b63e1a792c0">colorBuffers</a>[currentFrame].update({<a class="code" href="classChronos_1_1Engine_1_1Text.html#a2daa81d445bd4c329954358df41cfb52">params</a>.<a class="code" href="structChronos_1_1Engine_1_1TextParams.html#a577c85033ab084f64c4cc2cc5b692920">color</a>[0], <a class="code" href="classChronos_1_1Engine_1_1Text.html#a2daa81d445bd4c329954358df41cfb52">params</a>.<a class="code" href="structChronos_1_1Engine_1_1TextParams.html#a577c85033ab084f64c4cc2cc5b692920">color</a>[1], <a class="code" href="classChronos_1_1Engine_1_1Text.html#a2daa81d445bd4c329954358df41cfb52">params</a>.<a class="code" href="structChronos_1_1Engine_1_1TextParams.html#a577c85033ab084f64c4cc2cc5b692920">color</a>[2]});</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_a10893a5577243552e6d64875e1167a63"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">Chronos::Engine::SwapChain::swapChainExtent</a></div><div class="ttdeci">VkExtent2D swapChainExtent</div><div class="ttdoc">Dimenisons of the current swapchain.</div><div class="ttdef"><b>Definition:</b> <a href="swapchain_8hpp_source.html#l00126">swapchain.hpp:126</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_a2daa81d445bd4c329954358df41cfb52"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#a2daa81d445bd4c329954358df41cfb52">Chronos::Engine::Text::params</a></div><div class="ttdeci">Chronos::Engine::TextParams params</div><div class="ttdoc">Various parameters of the text that are set by the user.</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00132">text.hpp:132</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_a2daa81d445bd4c329954358df41cfb52"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#a2daa81d445bd4c329954358df41cfb52">Chronos::Engine::Text::params</a></div><div class="ttdeci">Chronos::Engine::TextParams params</div><div class="ttdoc">Various parameters of the text that are set by the user.</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00135">text.hpp:135</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html_af6c9c55875f534f424a637ffb8f754f8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html#af6c9c55875f534f424a637ffb8f754f8">Chronos::Engine::Text::updateBuffer</a></div><div class="ttdeci">void updateBuffer()</div><div class="ttdoc">Updates the buffer with the new text.</div><div class="ttdef"><b>Definition:</b> <a href="text_8cpp_source.html#l00197">text.cpp:197</a></div></div>
 <div class="ttc" id="astructChronos_1_1Engine_1_1TextParams_html_a20ab8cb7e56adb78d8e8c38a0ae8ce9b"><div class="ttname"><a href="structChronos_1_1Engine_1_1TextParams.html#a20ab8cb7e56adb78d8e8c38a0ae8ce9b">Chronos::Engine::TextParams::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> <a href="engineStructs_8hpp_source.html#l00049">engineStructs.hpp:49</a></div></div>
 <div class="ttc" id="astructChronos_1_1Engine_1_1TextParams_html_a577c85033ab084f64c4cc2cc5b692920"><div class="ttname"><a href="structChronos_1_1Engine_1_1TextParams.html#a577c85033ab084f64c4cc2cc5b692920">Chronos::Engine::TextParams::color</a></div><div class="ttdeci">std::array&lt; float, 3 &gt; color</div><div class="ttdef"><b>Definition:</b> <a href="engineStructs_8hpp_source.html#l00053">engineStructs.hpp:53</a></div></div>
@@ -956,7 +957,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00149">149</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00152">152</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
 
 </div>
 </div>
@@ -980,7 +981,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00151">151</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00154">154</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
 
 </div>
 </div>
@@ -1004,7 +1005,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00153">153</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00156">156</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
 
 </div>
 </div>
@@ -1029,7 +1030,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>The font texture </p>
 
-<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00147">147</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00150">150</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
 
 </div>
 </div>
@@ -1054,7 +1055,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>The mapped memory to the vertex buffer </p>
 
-<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00187">187</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00190">190</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
 
 </div>
 </div>
@@ -1080,7 +1081,7 @@ Here is the caller graph for this function:</div>
 
 <p>Maximum number of characters that can be rendered. </p>
 
-<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00139">139</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00142">142</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
 
 </div>
 </div>
@@ -1098,7 +1099,7 @@ Here is the caller graph for this function:</div>
 
 <p>The total number of letters to render. </p>
 
-<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00127">127</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00130">130</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
 
 </div>
 </div>
@@ -1116,7 +1117,7 @@ Here is the caller graph for this function:</div>
 
 <p>Various parameters of the text that are set by the user. </p>
 
-<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00132">132</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00135">135</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
 
 </div>
 </div>
@@ -1140,7 +1141,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00135">135</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00138">138</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
 
 </div>
 </div>
@@ -1158,7 +1159,7 @@ Here is the caller graph for this function:</div>
 
 <p>The vertices of each character used for rendering. </p>
 
-<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00122">122</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00125">125</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
 
 </div>
 </div>
@@ -1184,7 +1185,7 @@ Here is the caller graph for this function:</div>
 
 <p>The vertex buffer memory. </p>
 
-<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00143">143</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="text_8hpp_source.html#l00146">146</a> of file <a class="el" href="text_8hpp_source.html">text.hpp</a>.</p>
 
 </div>
 </div>

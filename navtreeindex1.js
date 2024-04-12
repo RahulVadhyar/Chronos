@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"classChronos_1_1Engine_1_1SwapChain.html#a82c322c6832487fce59a72117f280978":[9,0,0,1,19,11],
 "classChronos_1_1Engine_1_1SwapChain.html#a8d187933ff35d9ac2c09cce5b21b411e":[9,0,0,1,19,17],
 "classChronos_1_1Engine_1_1SwapChain.html#a8f9b8463fd4e77e094d2b8d2790421d4":[9,0,0,1,19,10],
 "classChronos_1_1Engine_1_1SwapChain.html#a9a6737e3c128f8a7a8287a444879d215":[9,0,0,1,19,9],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "logging_8hpp_source.html":[10,0,2,1,0,1],
 "managerShapeFunctions_8cpp.html":[10,0,2,0,0,1],
 "managerShapeFunctions_8cpp_source.html":[10,0,2,0,0,1],
-"managerTextFunctions_8cpp.html":[10,0,2,0,0,2]
+"managerTextFunctions_8cpp.html":[10,0,2,0,0,2],
+"managerTextFunctions_8cpp_source.html":[10,0,2,0,0,2]
 };

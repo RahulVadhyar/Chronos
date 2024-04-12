@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"managerTextFunctions_8cpp_source.html":[10,0,2,0,0,2],
 "managerTextureFunctions_8cpp.html":[10,0,2,0,0,3],
 "managerTextureFunctions_8cpp_source.html":[10,0,2,0,0,3],
 "manager_8cpp.html":[10,0,2,0,0,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "texture_8cpp.html#a18372412ad2fc3ce1e3240b3cf0efe78":[10,0,2,3,1,11,0],
 "texture_8cpp_source.html":[10,0,2,3,1,11],
 "texture_8hpp.html":[10,0,2,3,0,17],
-"texture_8hpp.html#a26311add90c663bbb6da7406c8726ae1":[10,0,2,3,0,17,4]
+"texture_8hpp.html#a26311add90c663bbb6da7406c8726ae1":[10,0,2,3,0,17,4],
+"texture_8hpp.html#a34457a6d2cac8f2770ffbaf52b3b2ee3":[10,0,2,3,0,17,3]
 };

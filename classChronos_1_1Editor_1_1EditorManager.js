@@ -26,7 +26,6 @@ var classChronos_1_1Editor_1_1EditorManager =
     [ "currentShapeTextureName", "classChronos_1_1Editor_1_1EditorManager.html#aba9ae9372b05b7ecd863212f54a64372", null ],
     [ "currentShapeTextureSelection", "classChronos_1_1Editor_1_1EditorManager.html#a360d21107b799e4be20a5c67af9c248f", null ],
     [ "currentTextSelection", "classChronos_1_1Editor_1_1EditorManager.html#abfe389bf4271814c1cb0888cf680621a", null ],
-    [ "currentTextureName", "classChronos_1_1Editor_1_1EditorManager.html#a47c46a68f7b900ad569ae4fc10022889", null ],
     [ "currentTextureSelection", "classChronos_1_1Editor_1_1EditorManager.html#a12546dab53688745c57ffc3a091cd9ca", null ],
     [ "fullScreen", "classChronos_1_1Editor_1_1EditorManager.html#ae2cb9f8d94533f410c0ca288f0c222b7", null ],
     [ "isWindowFullscreen", "classChronos_1_1Editor_1_1EditorManager.html#a0a36a41cb12c5a466f4f3c121d640b3e", null ],

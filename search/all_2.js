@@ -68,10 +68,9 @@ var searchData=
   ['currentshapetexturename_84',['currentShapeTextureName',['../classChronos_1_1Editor_1_1EditorManager.html#aba9ae9372b05b7ecd863212f54a64372',1,'Chronos::Editor::EditorManager']]],
   ['currentshapetextureselection_85',['currentShapeTextureSelection',['../classChronos_1_1Editor_1_1EditorManager.html#a360d21107b799e4be20a5c67af9c248f',1,'Chronos::Editor::EditorManager']]],
   ['currenttextselection_86',['currentTextSelection',['../classChronos_1_1Editor_1_1EditorManager.html#abfe389bf4271814c1cb0888cf680621a',1,'Chronos::Editor::EditorManager']]],
-  ['currenttexturename_87',['currentTextureName',['../classChronos_1_1Editor_1_1EditorManager.html#a47c46a68f7b900ad569ae4fc10022889',1,'Chronos::Editor::EditorManager']]],
-  ['currenttextureselection_88',['currentTextureSelection',['../classChronos_1_1Editor_1_1EditorManager.html#a12546dab53688745c57ffc3a091cd9ca',1,'Chronos::Editor::EditorManager']]],
-  ['editor_89',['Editor',['../namespaceChronos_1_1Editor.html',1,'Chronos']]],
-  ['engine_90',['Engine',['../namespaceChronos_1_1Engine.html',1,'Chronos']]],
-  ['fontstructs_91',['FontStructs',['../namespaceChronos_1_1Engine_1_1FontStructs.html',1,'Chronos::Engine']]],
-  ['manager_92',['Manager',['../namespaceChronos_1_1Manager.html',1,'Chronos']]]
+  ['currenttextureselection_87',['currentTextureSelection',['../classChronos_1_1Editor_1_1EditorManager.html#a12546dab53688745c57ffc3a091cd9ca',1,'Chronos::Editor::EditorManager']]],
+  ['editor_88',['Editor',['../namespaceChronos_1_1Editor.html',1,'Chronos']]],
+  ['engine_89',['Engine',['../namespaceChronos_1_1Engine.html',1,'Chronos']]],
+  ['fontstructs_90',['FontStructs',['../namespaceChronos_1_1Engine_1_1FontStructs.html',1,'Chronos::Engine']]],
+  ['manager_91',['Manager',['../namespaceChronos_1_1Manager.html',1,'Chronos']]]
 ];
