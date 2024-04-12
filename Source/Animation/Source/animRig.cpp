@@ -124,4 +124,3 @@ std::vector<int> Chronos::Animation::AnimRig::getChildren(int boneNo){
     }
     return children;
 }
-

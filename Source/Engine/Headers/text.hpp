@@ -27,6 +27,9 @@ SOFTWARE.
 #pragma once
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wunused-function"
+#ifdef __clang__
+#pragma clang diagnostic ignored "-Weverything"
+#endif
 #include "stb_font_consolas_24_latin1.inl"
 #pragma GCC diagnostic pop
 namespace Chronos {

@@ -39,7 +39,7 @@ int main(){
     initializer.editorAddElements = addElements;
 
     Chronos::Manager::Manager manager(initializer);
-    LOG(2, "EditorMain", "Manager created.");
+    LOG(2, "EditorMain", "Manager created.")
     editorManager.init(&manager);
     LOG(3, "EditorMain", "EditorManager created.")
 
@@ -48,8 +48,8 @@ int main(){
             glfwSetWindowShouldClose(manager.getWindow(), true);
         }
         manager.drawFrame();
-        LOG(4, "EditorMain", "Frame drawn.");
+        LOG(4, "EditorMain", "Frame drawn.")
     }
-    LOG(2, "EditorMain", "Exited rendering loop, closing program.");
+    LOG(2, "EditorMain", "Exited rendering loop, closing program.")
     return 0; 
 }

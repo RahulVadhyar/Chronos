@@ -33,9 +33,9 @@ SOFTWARE.
 void Chronos::Engine::Device::init(VkInstance instance, VkSurfaceKHR surface)
 {
     pickPhysicalDevice(instance, surface);
-    LOG(3, "Device", "Physical device picked");
+    LOG(3, "Device", "Physical device picked")
     createLogicalDevice(surface);
-    LOG(3, "Device", "Logical device created");
+    LOG(3, "Device", "Logical device created")
 }
 
 void Chronos::Engine::Device::destroy() { vkDestroyDevice(device, nullptr); }
@@ -46,10 +46,10 @@ void Chronos::Engine::Device::pickPhysicalDevice(VkInstance instance, VkSurfaceK
     uint32_t deviceCount = 0;
     vkEnumeratePhysicalDevices(instance, &deviceCount, nullptr);
     if (deviceCount == 0) {
-        LOG(1, "Device", "Failed to find GPUs with Vulkan support");
+        LOG(1, "Device", "Failed to find GPUs with Vulkan support")
         throw std::runtime_error("Failed to find GPUs with Vulkan support");
     }
-    LOG(3, "Device", "Number of devices found: " + std::to_string(deviceCount));
+    LOG(3, "Device", "Number of devices found: " + std::to_string(deviceCount))
     std::vector<VkPhysicalDevice> devices(deviceCount);
     vkEnumeratePhysicalDevices(instance, &deviceCount, devices.data());
 
@@ -62,19 +62,19 @@ void Chronos::Engine::Device::pickPhysicalDevice(VkInstance instance, VkSurfaceK
         }
     }
     if (physicalDevice == VK_NULL_HANDLE) {
-        LOG(1, "Device", "Failed to find a suitable GPU");
+        LOG(1, "Device", "Failed to find a suitable GPU")
         throw std::runtime_error("Failed to find a suitable GPU");
     }
 #ifdef CHRONOS_ENABLE_LOGGING
     VkPhysicalDeviceProperties deviceProperties;
     vkGetPhysicalDeviceProperties(physicalDevice, &deviceProperties);
     LOG(3, "Device", "****PHYSICAL DEVICE INFORMATION*****")
-    LOG(3, "Device", "Physical device picked: " + std::string(deviceProperties.deviceName));
-    LOG(3, "Device", "Driver version: " + std::to_string(deviceProperties.driverVersion));
-    LOG(3, "Device", "API version: " + std::to_string(deviceProperties.apiVersion));
-    LOG(3, "Device", "Device ID: " + std::to_string(deviceProperties.deviceID));
-    LOG(3, "Device", "Vendor ID: " + std::to_string(deviceProperties.vendorID));
-    LOG(3, "Device", "MSAA samples: " + std::to_string(msaaSamples));
+    LOG(3, "Device", "Physical device picked: " + std::string(deviceProperties.deviceName))
+    LOG(3, "Device", "Driver version: " + std::to_string(deviceProperties.driverVersion))
+    LOG(3, "Device", "API version: " + std::to_string(deviceProperties.apiVersion))
+    LOG(3, "Device", "Device ID: " + std::to_string(deviceProperties.deviceID))
+    LOG(3, "Device", "Vendor ID: " + std::to_string(deviceProperties.vendorID))
+    LOG(3, "Device", "MSAA samples: " + std::to_string(msaaSamples))
 #endif
 }
 
@@ -114,11 +114,11 @@ void Chronos::Engine::Device::createLogicalDevice(VkSurfaceKHR surface)
     #endif
 
     if (vkCreateDevice(physicalDevice, &createInfo, nullptr, &device) != VK_SUCCESS) {
-        LOG(1, "Device", "Failed to create logical device");
+        LOG(1, "Device", "Failed to create logical device")
         throw std::runtime_error("Failed to create logical device");
     }
 
-    LOG(3, "Device", "Logical device created");
+    LOG(3, "Device", "Logical device created")
     // get the queue handle
     vkGetDeviceQueue(device, indices.graphicsFamily.value(), 0, &graphicsQueue);
     vkGetDeviceQueue(device, indices.presentFamily.value(), 0, &presentQueue);

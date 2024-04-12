@@ -2611,7 +2611,7 @@ static void stbi__idct_simd(stbi_uc *out, int out_stride, short data[64])
    row7 = _mm_load_si128((const __m128i *) (data + 7*8));
 
    // column pass
-   dct_pass(bias_0, 10);
+   dct_pass(bias_0, 10)
 
    {
       // 16bit 8x8 transpose pass 1
@@ -2634,7 +2634,7 @@ static void stbi__idct_simd(stbi_uc *out, int out_stride, short data[64])
    }
 
    // row pass
-   dct_pass(bias_1, 17);
+   dct_pass(bias_1, 17)
 
    {
       // pack
@@ -3225,8 +3225,8 @@ static int stbi__free_jpeg_components(stbi__jpeg *z, int ncomp, int why)
       }
       if (z->img_comp[i].raw_coeff) {
          STBI_FREE(z->img_comp[i].raw_coeff);
-         z->img_comp[i].raw_coeff = 0;
-         z->img_comp[i].coeff = 0;
+         z->img_comp[i].raw_coeff = NULL;
+         z->img_comp[i].coeff = NULL;
       }
       if (z->img_comp[i].linebuf) {
          STBI_FREE(z->img_comp[i].linebuf);
@@ -3306,8 +3306,8 @@ static int stbi__process_frame_header(stbi__jpeg *z, int scan)
       // so these muls can't overflow with 32-bit ints (which we require)
       z->img_comp[i].w2 = z->img_mcu_x * z->img_comp[i].h * 8;
       z->img_comp[i].h2 = z->img_mcu_y * z->img_comp[i].v * 8;
-      z->img_comp[i].coeff = 0;
-      z->img_comp[i].raw_coeff = 0;
+      z->img_comp[i].coeff = NULL;
+      z->img_comp[i].raw_coeff = NULL;
       z->img_comp[i].linebuf = NULL;
       z->img_comp[i].raw_data = stbi__malloc_mad2(z->img_comp[i].w2, z->img_comp[i].h2, 15);
       if (z->img_comp[i].raw_data == NULL)
@@ -6407,7 +6407,7 @@ static stbi_uc *stbi__pic_load_core(stbi__context *s,int width,int height,int *c
 
                for(x=0;x<width;++x, dest+=4)
                   if (!stbi__readval(s,packet->channel,dest))
-                     return 0;
+                     return NULL;
                break;
             }
 
@@ -6424,7 +6424,7 @@ static stbi_uc *stbi__pic_load_core(stbi__context *s,int width,int height,int *c
                      if (count > left)
                         count = (stbi_uc) left;
 
-                     if (!stbi__readval(s,packet->channel,value))  return 0;
+                     if (!stbi__readval(s,packet->channel,value))  return NULL;
 
                      for(i=0; i<count; ++i,dest+=4)
                         stbi__copyval(packet->channel,dest,value);
@@ -6450,7 +6450,7 @@ static stbi_uc *stbi__pic_load_core(stbi__context *s,int width,int height,int *c
                         return stbi__errpuc("bad file","scanline overrun");
 
                      if (!stbi__readval(s,packet->channel,value))
-                        return 0;
+                        return NULL;
 
                      for(i=0;i<count;++i, dest += 4)
                         stbi__copyval(packet->channel,dest,value);
@@ -6460,7 +6460,7 @@ static stbi_uc *stbi__pic_load_core(stbi__context *s,int width,int height,int *c
 
                      for(i=0;i<count;++i, dest+=4)
                         if (!stbi__readval(s,packet->channel,dest))
-                           return 0;
+                           return NULL;
                   }
                   left-=count;
                }
@@ -6504,7 +6504,7 @@ static void *stbi__pic_load(stbi__context *s,int *px,int *py,int *comp,int req_c
 
    if (!stbi__pic_load_core(s,x,y,comp, result)) {
       STBI_FREE(result);
-      result=0;
+      result=NULL;
    }
    *px = x;
    *py = y;
@@ -6602,7 +6602,7 @@ static int stbi__gif_header(stbi__context *s, stbi__gif *g, int *comp, int is_in
    if (g->w > STBI_MAX_DIMENSIONS) return stbi__err("too large","Very large image (corrupt?)");
    if (g->h > STBI_MAX_DIMENSIONS) return stbi__err("too large","Very large image (corrupt?)");
 
-   if (comp != 0) *comp = 4;  // can't actually tell whether it's 3 or 4 until we parse the comments
+   if (comp != NULL) *comp = 4;  // can't actually tell whether it's 3 or 4 until we parse the comments
 
    if (is_info) return 1;
 
@@ -6761,8 +6761,8 @@ static stbi_uc *stbi__gif_load_next(stbi__context *s, stbi__gif *g, int *comp, i
 
    // on first frame, any non-written pixels get the background colour (non-transparent)
    first_frame = 0;
-   if (g->out == 0) {
-      if (!stbi__gif_header(s, g, comp,0)) return 0; // stbi__g_failure_reason set by stbi__gif_header
+   if (g->out == NULL) {
+      if (!stbi__gif_header(s, g, comp,0)) return NULL; // stbi__g_failure_reason set by stbi__gif_header
       if (!stbi__mad3sizes_valid(4, g->w, g->h, 0))
          return stbi__errpuc("too large", "GIF image is too large");
       pcount = g->w * g->h;
@@ -6784,7 +6784,7 @@ static stbi_uc *stbi__gif_load_next(stbi__context *s, stbi__gif *g, int *comp, i
       dispose = (g->eflags & 0x1C) >> 2;
       pcount = g->w * g->h;
 
-      if ((dispose == 3) && (two_back == 0)) {
+      if ((dispose == 3) && (two_back == NULL)) {
          dispose = 2; // if I don't have an image to revert back to, default to the old background
       }
 
@@ -6940,9 +6940,9 @@ static void *stbi__load_gif_main(stbi__context *s, int **delays, int *x, int *y,
 {
    if (stbi__gif_test(s)) {
       int layers = 0;
-      stbi_uc *u = 0;
-      stbi_uc *out = 0;
-      stbi_uc *two_back = 0;
+      stbi_uc *u = NULL;
+      stbi_uc *out = NULL;
+      stbi_uc *two_back = NULL;
       stbi__gif g;
       int stride;
       int out_size = 0;
@@ -6953,12 +6953,12 @@ static void *stbi__load_gif_main(stbi__context *s, int **delays, int *x, int *y,
 
       memset(&g, 0, sizeof(g));
       if (delays) {
-         *delays = 0;
+         *delays = NULL;
       }
 
       do {
          u = stbi__gif_load_next(s, &g, comp, req_comp, two_back);
-         if (u == (stbi_uc *) s) u = 0;  // end of animated gif marker
+         if (u == (stbi_uc *) s) u = NULL;  // end of animated gif marker
 
          if (u) {
             *x = g.w;
@@ -7003,7 +7003,7 @@ static void *stbi__load_gif_main(stbi__context *s, int **delays, int *x, int *y,
                (*delays)[layers - 1U] = g.delay;
             }
          }
-      } while (u != 0);
+      } while (u != NULL);
 
       // free temp buffer;
       STBI_FREE(g.out);
@@ -7023,13 +7023,13 @@ static void *stbi__load_gif_main(stbi__context *s, int **delays, int *x, int *y,
 
 static void *stbi__gif_load(stbi__context *s, int *x, int *y, int *comp, int req_comp, stbi__result_info *ri)
 {
-   stbi_uc *u = 0;
+   stbi_uc *u = NULL;
    stbi__gif g;
    memset(&g, 0, sizeof(g));
    STBI_NOTUSED(ri);
 
-   u = stbi__gif_load_next(s, &g, comp, req_comp, 0);
-   if (u == (stbi_uc *) s) u = 0;  // end of animated gif marker
+   u = stbi__gif_load_next(s, &g, comp, req_comp, NULL);
+   if (u == (stbi_uc *) s) u = NULL;  // end of animated gif marker
    if (u) {
       *x = g.w;
       *y = g.h;
@@ -7486,7 +7486,7 @@ static void *stbi__pnm_load(stbi__context *s, int *x, int *y, int *comp, int req
 
    ri->bits_per_channel = stbi__pnm_info(s, (int *)&s->img_x, (int *)&s->img_y, (int *)&s->img_n);
    if (ri->bits_per_channel == 0)
-      return 0;
+      return NULL;
 
    if (s->img_y > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
    if (s->img_x > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");

@@ -15,7 +15,7 @@ namespace util {
 
 template <std::size_t I, typename T> struct nth {
     inline static typename std::tuple_element<I, T>::type
-    get(const T& t) { return std::get<I>(t); };
+    get(const T& t) { return std::get<I>(t); }
 };
 
 }
@@ -487,7 +487,7 @@ Earcut<N>::findHoleBridge(Node* hole, Node* outerNode) {
         p = p->next;
     } while (p != outerNode);
 
-    if (!m) return 0;
+    if (!m) return nullptr;
 
     // look for points inside the triangle of hole Vertex, segment intersection and endpoint;
     // if there are no points found, we have a valid connection;

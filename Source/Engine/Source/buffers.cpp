@@ -39,7 +39,7 @@ void Chronos::Engine::Buffer::create(Chronos::Engine::Device device, VkBufferUsa
 {
     this->device = device;
     Chronos::Engine::createBuffer(this->device, size, flags, properties, &buffer, &memory);
-    LOG(2, "Buffer", "Buffer [" + std::to_string((uint64_t)this->buffer) +"] created for buffer object [" + std::to_string((uint64_t)this) + "]");
+    LOG(2, "Buffer", "Buffer [" + std::to_string((uint64_t)this->buffer) +"] created for buffer object [" + std::to_string((uint64_t)this) + "]")
 }
 
 void Chronos::Engine::Buffer::copy(void* inputData, VkCommandPool commandPool)
@@ -57,14 +57,14 @@ void Chronos::Engine::Buffer::copy(void* inputData, VkCommandPool commandPool)
     Chronos::Engine::copyBuffer(device, stagingBuffer, buffer, size, commandPool);
     vkDestroyBuffer(device.device, stagingBuffer, nullptr);
     vkFreeMemory(device.device, stagingBufferMemory, nullptr);
-    LOG(3, "Buffer", "Data [" + std::to_string((uint64_t)buffer) + "] copied to device buffer [" + std::to_string((uint64_t)buffer) + "]");
+    LOG(3, "Buffer", "Data [" + std::to_string((uint64_t)buffer) + "] copied to device buffer [" + std::to_string((uint64_t)buffer) + "]")
 }
 
 void Chronos::Engine::Buffer::destroy()
 {
     vkDestroyBuffer(device.device, buffer, nullptr);
     vkFreeMemory(device.device, memory, nullptr);
-    LOG(2, "Buffer", "Buffer [" + std::to_string((uint64_t)buffer) + "] destroyed on device [" + std::to_string((uint64_t)device.device) + "]");
+    LOG(2, "Buffer", "Buffer [" + std::to_string((uint64_t)buffer) + "] destroyed on device [" + std::to_string((uint64_t)device.device) + "]")
 }
 
 void Chronos::Engine::UniformBuffer::create(Chronos::Engine::Device device)
@@ -92,7 +92,7 @@ void Chronos::Engine::UniformBuffer::update(VkExtent2D swapChainExtent, float x,
         -100.0f, 100.0f);
     ubo.proj[1][1] *= -1;
     memcpy(data, &ubo, sizeof(ubo));
-    LOG(4, "UniformBuffer", "Uniform buffer object updated for buffer [" + std::to_string((uint64_t)buffer) + "]");
+    LOG(4, "UniformBuffer", "Uniform buffer object updated for buffer [" + std::to_string((uint64_t)buffer) + "]")
 }
 
 void Chronos::Engine::ColorBuffer::create(Chronos::Engine::Device device)
@@ -101,7 +101,7 @@ void Chronos::Engine::ColorBuffer::create(Chronos::Engine::Device device)
     Buffer::create(device, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
         VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); //want to be visible to host and device
     vkMapMemory(device.device, memory, 0, size, 0, &data);
-    LOG(3, "ColorBuffer", "Color buffer object created for buffer [" + std::to_string((uint64_t)buffer) + "]");
+    LOG(3, "ColorBuffer", "Color buffer object created for buffer [" + std::to_string((uint64_t)buffer) + "]")
 }
 
 void Chronos::Engine::ColorBuffer::update(glm::vec3 color)
@@ -110,5 +110,5 @@ void Chronos::Engine::ColorBuffer::update(glm::vec3 color)
     UniformColorBufferObject ubo {};
     ubo.color = color;
     memcpy(data, &ubo, sizeof(ubo));
-    LOG(4, "ColorBuffer", "Color buffer object updated for buffer [" + std::to_string((uint64_t)buffer) + "]");
+    LOG(4, "ColorBuffer", "Color buffer object updated for buffer [" + std::to_string((uint64_t)buffer) + "]")
 }

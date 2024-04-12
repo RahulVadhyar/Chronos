@@ -27,10 +27,14 @@ SOFTWARE.
 #include "helper.hpp"
 #include "texture.hpp"
 #define STB_IMAGE_IMPLEMENTATION
+#ifndef __clang__
 #pragma GCC diagnostic push 
 #pragma GCC diagnostic ignored "-Wstringop-overflow"
+#endif
 #include "stb_image.h"
+#ifndef __clang__
 #pragma GCC diagnostic pop
+#endif
 
 #ifdef ENABLE_EDITOR
 #include "editorHeaders.hpp"

@@ -29,6 +29,18 @@ This file is used to include all the fonts in the project.
 */
 #pragma GCC diagnostic push 
 #pragma GCC diagnostic ignored "-Wunused-function"
+#ifdef __clang__
+#pragma clang diagnostic ignored "-Weverything"
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#pragma clang diagnostic ignored "-Wcomma"
+#pragma clang diagnostic ignored "-Wreserved-identifier"
+#pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
+#pragma clang diagnostic ignored "-Wmissing-variable-declarations"
+#pragma clang diagnostic ignored "-Wcomma"
+#endif
+
 #include "stb_font_arial_10_latin1.inl"
 #include "stb_font_arial_11_latin1.inl"
 #include "stb_font_arial_12_latin1.inl"

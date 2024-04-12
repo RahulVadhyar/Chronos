@@ -144,7 +144,7 @@ namespace Engine {
         void destroy() override
         {
             return tempDestroy();
-        };
+        }
 
         /**
         \brief Destroys the shape object and frees the memory for a textured object.
@@ -192,15 +192,15 @@ namespace Engine {
         void createDescriptorSets() override
         {
             return tempCreateDescriptorSets();
-        };
+        }
         std::vector<VkDescriptorType> getDescriptorTypes() override
         {
             return tempGetDescriptorTypes();
-        };
+        }
         std::vector<VkShaderStageFlagBits> getDescriptorStages() override
         {
             return tempGetDescriptorStages();
-        };
+        }
         void tempCreateDescriptorSets()
             requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
         std::vector<VkDescriptorType> tempGetDescriptorTypes()

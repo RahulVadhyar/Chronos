@@ -52,7 +52,7 @@ void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFW
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 #ifdef WIN32
     io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
-    LOG(3, "EditorRenderer", "Viewports enabled");
+    LOG(3, "EditorRenderer", "Viewports enabled")
 #endif
     ImGui::StyleColorsDark();
 
@@ -96,7 +96,7 @@ void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFW
     if (vkCreateCommandPool(device->device, &commandPoolCreateInfo, nullptr,
             &commandPool)
         != VK_SUCCESS) {
-        LOG(1, "EditorRenderer", "Could not create graphics command pool");
+        LOG(1, "EditorRenderer", "Could not create graphics command pool")
         throw std::runtime_error("Could not create graphics command pool");
     }
 
@@ -113,10 +113,10 @@ void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFW
     if (vkAllocateCommandBuffers(device->device, &allocInfo,
             commandBuffers.data())
         != VK_SUCCESS) {
-        LOG(1, "EditorRenderer", "failed to allocate command buffers!");
+        LOG(1, "EditorRenderer", "failed to allocate command buffers!")
         throw std::runtime_error("failed to allocate command buffers!");
     }
-    LOG(3, "EditorRenderer", "EditorRenderer initialized");
+    LOG(3, "EditorRenderer", "EditorRenderer initialized")
 }
 
 void Chronos::Editor::EditorRenderer::destroy()
@@ -127,7 +127,7 @@ void Chronos::Editor::EditorRenderer::destroy()
         vkDestroyFramebuffer(device->device, framebuffer, nullptr);
     vkDestroyCommandPool(device->device, commandPool, nullptr);
     vkDestroyDescriptorPool(device->device, descriptorPool, nullptr);
-    LOG(3, "EditorRenderer", "EditorRenderer destroyed");
+    LOG(3, "EditorRenderer", "EditorRenderer destroyed")
 }
 
 void Chronos::Editor::EditorRenderer::update()
@@ -137,7 +137,7 @@ void Chronos::Editor::EditorRenderer::update()
     ImGui::NewFrame();
     this->addElements();
     ImGui::Render();
-    LOG(4, "EditorRenderer", "EditorRenderer updated");
+    LOG(4, "EditorRenderer", "EditorRenderer updated")
 }
 
 void Chronos::Editor::EditorRenderer::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])
@@ -145,7 +145,7 @@ void Chronos::Editor::EditorRenderer::render(uint32_t currentFrame, uint32_t ima
     vkResetCommandBuffer(commandBuffers[currentFrame], 0);
     VkCommandBufferBeginInfo beginInfo {};
     beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
-    VkClearValue clearColor = { bgColor[0], bgColor[1], bgColor[2], 1.0f };
+    VkClearValue clearColor = {{{ bgColor[0], bgColor[1], bgColor[2], 1.0f }}};
     vkBeginCommandBuffer(commandBuffers[currentFrame], &beginInfo);
     VkRenderPassBeginInfo info = {};
     info.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
@@ -160,21 +160,21 @@ void Chronos::Editor::EditorRenderer::render(uint32_t currentFrame, uint32_t ima
         commandBuffers[currentFrame]);
     vkCmdEndRenderPass(commandBuffers[currentFrame]);
     vkEndCommandBuffer(commandBuffers[currentFrame]);
-    LOG(4, "EditorRenderer", "EditorRenderer rendered");
+    LOG(4, "EditorRenderer", "EditorRenderer rendered")
 }
 
 void Chronos::Editor::EditorRenderer::cleanup()
 {
     for (auto framebuffer : framebuffers)
         vkDestroyFramebuffer(device->device, framebuffer, nullptr);
-    LOG(3, "EditorRenderer", "EditorRenderer cleaned up");
+    LOG(3, "EditorRenderer", "EditorRenderer cleaned up")
 }
 
 void Chronos::Editor::EditorRenderer::recreate()
 {
     cleanup();
     framebuffers = Chronos::Engine::createFramebuffer(*device, *swapChain, renderPass, false);
-    LOG(3, "EditorRenderer", "EditorRenderer recreated");
+    LOG(3, "EditorRenderer", "EditorRenderer recreated")
 }
 
 void Chronos::Editor::EditorRenderer::renderAdditionalViewports(){
@@ -183,7 +183,7 @@ void Chronos::Editor::EditorRenderer::renderAdditionalViewports(){
         ImGui::UpdatePlatformWindows();
         ImGui::RenderPlatformWindowsDefault();
     }
-    LOG(4, "EditorRenderer", "Rendered additional viewports");
+    LOG(4, "EditorRenderer", "Rendered additional viewports")
 #endif
 }
 

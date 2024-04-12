@@ -34,7 +34,9 @@ SOFTWARE.
 #pragma once
 // glibc has some warnings that are not related to chronos, so lets just disable them only for them.
 #pragma GCC diagnostic push 
+#ifndef __clang__
 #pragma GCC diagnostic ignored "-Wstringop-overflow"
+#endif
 #pragma GCC diagnostic ignored "-Warray-bounds"
 #include <algorithm>
 #include <numbers>

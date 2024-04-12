@@ -94,7 +94,6 @@ namespace Chronos{
                 char newTexturePath[200];
                 char newTextureName[200];
                 int currentTextureSelection = 0;
-                char currentTextureName[200] = "Select Texture";
 
                 //Text Window
                 Chronos::Engine::TextParams newTextParams;

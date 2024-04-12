@@ -67,4 +67,3 @@ int Manager::Manager::changeBackgroundColor(float r, float g, float b)
     return 0;
 }
 };
-

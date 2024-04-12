@@ -93,4 +93,3 @@ void Chronos::Engine::PolygonManager::createRenderPass()
         VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL, true,
         false, false);
 }
-

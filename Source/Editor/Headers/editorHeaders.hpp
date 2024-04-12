@@ -28,7 +28,10 @@ SOFTWARE.
  It also contains various other plugins for ImGUI.
 */
 #pragma once
-
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Weverything"
+#endif
 #define IMGUI_DEFINE_MATH_OPERATORS
 #include "imgui.h"
 #include "imgui_internal.h"
@@ -37,3 +40,6 @@ SOFTWARE.
 #include "imstb_rectpack.h"
 #include "imstb_textedit.h"
 #include "imstb_truetype.h"
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif

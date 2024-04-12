@@ -128,4 +128,3 @@ void Chronos::Engine::ShapeManager<VertexStruct>::createRenderPass()
         VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL, true,
         std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value, false);
 }
-

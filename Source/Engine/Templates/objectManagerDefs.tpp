@@ -66,8 +66,7 @@ void Chronos::Engine::ObjectManager<Object>::render(uint32_t currentFrame, uint3
     renderPassInfo.framebuffer = framebuffers[imageIndex];
     renderPassInfo.renderArea.offset = { 0, 0 };
     renderPassInfo.renderArea.extent = swapChain->swapChainExtent;
-    VkClearValue clearColor = { bgColor[0], bgColor[1], bgColor[2],
-        1.0f }; // bg color
+    VkClearValue clearColor = {{{bgColor[0], bgColor[1], bgColor[2], 1.0f}}}; // bg color
     renderPassInfo.clearValueCount = 1;
     renderPassInfo.pClearValues = &clearColor;
 

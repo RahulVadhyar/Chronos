@@ -40,8 +40,8 @@ void Chronos::Engine::Text::init(Chronos::Engine::Device* device, VkCommandPool 
     this->fontStyle = fontStyle;
  
     // initalize the font
-    const uint32_t fontWidth = fontStyle.fontWidth;
-    const uint32_t fontHeight = fontStyle.fontHeight;
+    uint32_t fontWidth = fontStyle.fontWidth;
+    uint32_t fontHeight = fontStyle.fontHeight;
     firstChar = fontStyle.firstChar;
 
     unsigned char fontpixels[fontHeight][256];
