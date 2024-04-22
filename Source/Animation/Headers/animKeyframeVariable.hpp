@@ -24,11 +24,11 @@ namespace Chronos{
     namespace Animation{
         class KeyframeVariable{
             public:
-                void update(float dt);
+                float update(float dt);
             private:
-                float* variable;
                 std::vector<std::pair<float, float>> keyframes; // first is time, second is value
-                float currentTime;
+                float currentTime = 0;
+                int currentKeyframe = 0;
         };
     };
 };

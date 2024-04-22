@@ -21,3 +21,23 @@ SOFTWARE.
 */
 #include "stlheader.hpp"
 #include "animKeyframeVariable.hpp"
+
+inline float getBezierValue(float time, float previousValue, float nextValue, float startPoint, float endPoint){
+    float bezierValue = (1-time)*(1-time) *startPoint + 2*(1-time)*time*previousValue + time*time;
+    return startPoint + (endPoint - startPoint) * bezierValue;
+}
+
+float Chronos::Animation::KeyframeVariable::update(float dt){
+    this->currentTime += dt;
+    int nextKeyframe = (this->currentKeyframe + 1) % this->keyframes.size();
+    if(this->currentTime > this->keyframes[nextKeyframe].first){
+        this->currentKeyframe++;
+        if(this->currentKeyframe > static_cast<int>(this->keyframes.size())){
+            this->currentKeyframe = 0;
+            this->currentTime -= this->keyframes.back().first;
+        }
+        nextKeyframe = (this->currentKeyframe + 1) % this->keyframes.size();
+    }
+    float normalizedTime = (this->currentTime - this->keyframes[this->currentKeyframe].first) / (this->keyframes[nextKeyframe].first - this->keyframes[this->currentKeyframe].first);
+    return getBezierValue(normalizedTime, this->keyframes[this->currentKeyframe].second, this->keyframes[nextKeyframe].second, 0, 1);
+}
