@@ -111,20 +111,19 @@ $(document).ready(function(){initNavTree('logging_8hpp_source.html',''); initRes
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="logging_8hpp.html#aafd7ab101b22caf7ff160ea6870f9982">   24</a></span>&#160;<span class="preprocessor">#define CHRONOS_LOG_LEVEL 3</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// 0 - nothing</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// 1 - additional info on errors</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// 2 - basic info</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// 3 - verbose</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// 4 - includes frame fraw</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifdef CHRONOS_ENABLE_LOGGING</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define LOG(LEVEL, CLASS, MESSAGE) \</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">    if (LEVEL &lt;= CHRONOS_LOG_LEVEL) { \</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">        std::cout &lt;&lt; &quot;[Chronos log][&quot;</span> &lt;&lt; CLASS &quot;]: &quot; &lt;&lt; MESSAGE &lt;&lt; std::endl; \</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">   36</a></span>&#160;<span class="preprocessor">#define LOG(LEVEL, CLASS, MESSAGE)</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// 0 - nothing</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// 1 - additional info on errors</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// 2 - basic info</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// 3 - verbose</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// 4 - includes frame fraw</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#ifdef CHRONOS_ENABLE_LOGGING</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define LOG(LEVEL, CLASS, MESSAGE) \</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">    if (LEVEL &lt;= CHRONOS_ENABLE_LOGGING) { \</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">        std::cout &lt;&lt; &quot;[Chronos log][&quot;</span> &lt;&lt; CLASS &quot;]: &quot; &lt;&lt; MESSAGE &lt;&lt; std::endl; \</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">   35</a></span>&#160;<span class="preprocessor">#define LOG(LEVEL, CLASS, MESSAGE)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

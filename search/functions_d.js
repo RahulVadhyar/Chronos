@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['textdetailswindow_608',['TextDetailsWindow',['../classChronos_1_1Editor_1_1EditorManager.html#a89409609d0e5791551d576e5c3edf9bf',1,'Chronos::Editor::EditorManager']]],
-  ['texturedetailswindow_609',['TextureDetailsWindow',['../classChronos_1_1Editor_1_1EditorManager.html#ad3c043460b093328b29b6771989f9404',1,'Chronos::Editor::EditorManager']]],
-  ['texturewindow_610',['TextureWindow',['../classChronos_1_1Editor_1_1EditorManager.html#a746cb968bba01b0331909122f598e517',1,'Chronos::Editor::EditorManager']]],
-  ['textwindow_611',['TextWindow',['../classChronos_1_1Editor_1_1EditorManager.html#a0babaffbb1a34dc127ee45fc92329b18',1,'Chronos::Editor::EditorManager']]],
-  ['totalcodegenerationwindow_612',['TotalCodeGenerationWindow',['../classChronos_1_1Editor_1_1EditorManager.html#a610a100a2ca481fb0825c692905c1440',1,'Chronos::Editor::EditorManager']]],
-  ['transitionimagelayout_613',['transitionImageLayout',['../namespaceChronos_1_1Engine.html#a739435df5d2955b7832d503c365e9d7c',1,'Chronos::Engine']]],
-  ['triangle_614',['Triangle',['../classChronos_1_1Engine_1_1Triangle.html#a1f65e1a18b68bb25d851a4cab418c2ba',1,'Chronos::Engine::Triangle::Triangle() requires(std'],['../classChronos_1_1Engine_1_1Triangle.html#a1f65e1a18b68bb25d851a4cab418c2ba',1,'Chronos::Engine::Triangle::Triangle() requires(std']]]
+  ['setimguistyle_657',['setImGuiStyle',['../namespaceChronos_1_1Editor.html#a54d3b521c941f39b794afd523c33d666',1,'Chronos::Editor']]],
+  ['setpresentmode_658',['setPresentMode',['../classChronos_1_1Engine_1_1Engine.html#aa811161bd3c56252a4802ce7b5a044b5',1,'Chronos::Engine::Engine']]],
+  ['settingswindow_659',['SettingsWindow',['../classChronos_1_1Editor_1_1EditorManager.html#ab64669b8bad1e94604c8fce665910c7d',1,'Chronos::Editor::EditorManager']]],
+  ['shapedetailswindow_660',['ShapeDetailsWindow',['../classChronos_1_1Editor_1_1EditorManager.html#a4b70998992b7e7cf600eba12d0ec8a51',1,'Chronos::Editor::EditorManager']]],
+  ['shapewindow_661',['ShapeWindow',['../classChronos_1_1Editor_1_1EditorManager.html#a9f33237b2e46587e1e77b5d69aeb29a5',1,'Chronos::Editor::EditorManager']]]
 ];

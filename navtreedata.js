@@ -169,8 +169,8 @@ var NAVTREEINDEX =
 [
 "Vertex_8hpp.html",
 "classChronos_1_1Engine_1_1SwapChain.html#a8d187933ff35d9ac2c09cce5b21b411e",
-"managerTextureFunctions_8cpp.html",
-"texture_8hpp.html#a7018d1eaf2dfaf4c373269fcaa344a46"
+"helper_8hpp.html#a984181461b9c5fcc9a52c817deb01ed8",
+"structEmpty.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

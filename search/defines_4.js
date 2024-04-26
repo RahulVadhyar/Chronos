@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['log_797',['LOG',['../logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a',1,'logging.hpp']]]
+  ['max_5fframes_5fin_5fflight_852',['MAX_FRAMES_IN_FLIGHT',['../vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec',1,'vulkanHeaders.hpp']]]
 ];
