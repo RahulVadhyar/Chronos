@@ -20,34 +20,50 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 #pragma once
+#include "animKeyframeVariable.hpp"
 namespace Chronos{
     namespace Animation{
         class AnimationManager{
         public:
-            void init();
+            //applicable to all
+            void update();
+            
+            //applicable to rig
             int addRig(int x, int y);
             void removeRig(int rigNo);
-            void update();
-            void addBone(int rigNo, int parentNo);
-            void removeBone(int rigNo, int boneNo);
-            void addChild(int rigNo, int parentNo, int childNo);
-            void removeChild(int rigNo, int parentNo, int childNo);
-            void setRelX(int rigNo, int boneNo, float relX);
-            void setRelY(int rigNo, int boneNo, float relY);
-            void setLength(int rigNo, int boneNo, float length);
-            void setAngle(int rigNo, int boneNo, float angle);
-            void setParent(int rigNo, int boneNo, int parentNo);
-            float getRelX(int rigNo, int boneNo);
-            float getRelY(int rigNo, int boneNo);
-            float getLength(int rigNo, int boneNo);
-            float getAngle(int rigNo, int boneNo);
-            float getX(int rigNo, int boneNo);
-            float getY(int rigNo, int boneNo);
-            int getParent(int rigNo, int boneNo);
-            std::vector<int> getChildren(int rigNo, int boneNo);
+            void rigAddBone(int rigNo, int parentNo);
+            void rigRemoveBone(int rigNo, int boneNo);
+            void rigAddChild(int rigNo, int parentNo, int childNo);
+            void rigRemoveChild(int rigNo, int parentNo, int childNo);
+            void rigSetRelX(int rigNo, int boneNo, float relX);
+            void rigSetRelY(int rigNo, int boneNo, float relY);
+            void rigSetLength(int rigNo, int boneNo, float length);
+            void rigSetAngle(int rigNo, int boneNo, float angle);
+            void rigSetParent(int rigNo, int boneNo, int parentNo);
+            float rigGetRelX(int rigNo, int boneNo);
+            float rigGetRelY(int rigNo, int boneNo);
+            float rigGetLength(int rigNo, int boneNo);
+            float rigGetAngle(int rigNo, int boneNo);
+            float rigGetX(int rigNo, int boneNo);
+            float rigGetY(int rigNo, int boneNo);
+            int rigGetParent(int rigNo, int boneNo);
+            std::vector<int> rigGetChildren(int rigNo, int boneNo);
+
+            //applicable to keyframe
+            int addKeyframeVariable(std::vector<std::pair<float, float>> keyframes);
+            void removeKeyframeVariable(int keyframeNo);    
+            void keyframeSetTime(int keyframeNo, float time);
+            void keyframeSetKeyframe(int keyframeNo, int keyframe);
+            int keyframeGetKeyframe(int keyframeNo);
+            std::vector<std::pair<float, float>> getKeyframes(int keyframeNo);
+            float keyframeGetVariable(int keyframeNo);
+
         private:
-            std::map<int, AnimRig> rigs;
+            std::map<int, Chronos::Animation::AnimRig> rigs;
             int nextRigNo = 0;
+
+            std::map<int, Chronos::Animation::KeyframeVariable> keyframeVariables;
+            int nextKeyframeNo = 0;
         
         };
     };

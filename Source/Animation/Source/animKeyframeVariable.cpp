@@ -27,8 +27,9 @@ inline float getBezierValue(float time, float previousValue, float nextValue, fl
     return startPoint + (endPoint - startPoint) * bezierValue;
 }
 
-float Chronos::Animation::KeyframeVariable::update(float dt){
+void Chronos::Animation::KeyframeVariable::update(float dt){
     this->currentTime += dt;
+    std::cout << this->currentKeyframe << std::endl;
     int nextKeyframe = (this->currentKeyframe + 1) % this->keyframes.size();
     if(this->currentTime > this->keyframes[nextKeyframe].first){
         this->currentKeyframe++;
@@ -39,5 +40,30 @@ float Chronos::Animation::KeyframeVariable::update(float dt){
         nextKeyframe = (this->currentKeyframe + 1) % this->keyframes.size();
     }
     float normalizedTime = (this->currentTime - this->keyframes[this->currentKeyframe].first) / (this->keyframes[nextKeyframe].first - this->keyframes[this->currentKeyframe].first);
-    return getBezierValue(normalizedTime, this->keyframes[this->currentKeyframe].second, this->keyframes[nextKeyframe].second, 0, 1);
+    this->variable = getBezierValue(normalizedTime, this->keyframes[this->currentKeyframe].second, this->keyframes[nextKeyframe].second, 0, 1);
+    
+}
+
+void Chronos::Animation::KeyframeVariable::updateKeyframes(std::vector<std::pair<float, float>> keyframes){
+    this->keyframes = keyframes;
+}
+
+std::vector<std::pair<float, float>> Chronos::Animation::KeyframeVariable::getKeyframes(){
+    return this->keyframes;
+}
+
+void Chronos::Animation::KeyframeVariable::setTime(float time){
+    this->currentTime = time;
+}   
+
+void Chronos::Animation::KeyframeVariable::setKeyframe(int keyframe){
+    this->currentKeyframe = keyframe;
+}
+
+int Chronos::Animation::KeyframeVariable::getKeyframe(){
+    return this->currentKeyframe;
+}
+
+float Chronos::Animation::KeyframeVariable::getVariable(){
+    return this->variable;
 }

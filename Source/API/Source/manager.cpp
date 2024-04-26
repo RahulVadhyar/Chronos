@@ -21,7 +21,6 @@ SOFTWARE.
 */
 
 #include "chronos.hpp"
-// #include "text.hpp"
 #include "object.hpp"
 #include "getFontType.hpp"
 namespace Chronos {
@@ -53,7 +52,8 @@ Manager::Manager::Manager(Chronos::Manager::Initializer initializer)
 
 
 void Manager::Manager::drawFrame()
-{
+{   
+    animManager.update();
     engine.drawFrame();
 }
 int Manager::Manager::changeBackgroundColor(float r, float g, float b)

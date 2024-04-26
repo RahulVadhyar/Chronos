@@ -48,6 +48,10 @@ SOFTWARE.
 #include "polygonManager.hpp"
 #include "engine.hpp"
 #include "engineStructs.hpp"
+#include "animBone.hpp"
+#include "animRig.hpp"
+#include "animKeyframeVariable.hpp"
+#include "animManager.hpp"
 
 namespace Chronos {
 namespace Manager {
@@ -444,6 +448,110 @@ namespace Manager {
             engine.changeMSAA(mode);
         }
 
+        int addRig(int x, int y){
+            return animManager.addRig(x, y);
+        }
+
+        void removeRig(int rigNo){
+            animManager.removeRig(rigNo);
+        }
+
+        void rigAddBone(int rigNo, int parentNo){
+            animManager.rigAddBone(rigNo, parentNo);
+        }
+
+        void rigRemoveBone(int rigNo, int boneNo){
+            animManager.rigRemoveBone(rigNo, boneNo);
+        }
+
+        void rigAddChild(int rigNo, int parentNo, int childNo){
+            animManager.rigAddChild(rigNo, parentNo, childNo);
+        }
+
+        void rigRemoveChild(int rigNo, int parentNo, int childNo){
+            animManager.rigRemoveChild(rigNo, parentNo, childNo);
+        }
+
+        void rigSetRelX(int rigNo, int boneNo, float relX){
+            animManager.rigSetRelX(rigNo, boneNo, relX);
+        }
+
+        void rigSetRelY(int rigNo, int boneNo, float relY){
+            animManager.rigSetRelY(rigNo, boneNo, relY);
+        }
+
+        void rigSetLength(int rigNo, int boneNo, float length){
+            animManager.rigSetLength(rigNo, boneNo, length);
+        }
+
+        void rigSetAngle(int rigNo, int boneNo, float angle){
+            animManager.rigSetAngle(rigNo, boneNo, angle);
+        }
+
+        void rigSetParent(int rigNo, int boneNo, int parentNo){
+            animManager.rigSetParent(rigNo, boneNo, parentNo);
+        }
+
+        float rigGetRelX(int rigNo, int boneNo){
+            return animManager.rigGetRelX(rigNo, boneNo);
+        }
+
+        float rigGetRelY(int rigNo, int boneNo){
+            return animManager.rigGetRelY(rigNo, boneNo);
+        }
+
+        float rigGetLength(int rigNo, int boneNo){
+            return animManager.rigGetLength(rigNo, boneNo);
+        }
+
+        float rigGetAngle(int rigNo, int boneNo){
+            return animManager.rigGetAngle(rigNo, boneNo);
+        }
+
+        float rigGetX(int rigNo, int boneNo){
+            return animManager.rigGetX(rigNo, boneNo);
+        }
+
+        float rigGetY(int rigNo, int boneNo){
+            return animManager.rigGetY(rigNo, boneNo);
+        }
+
+        int rigGetParent(int rigNo, int boneNo){
+            return animManager.rigGetParent(rigNo, boneNo);
+        }
+
+        std::vector<int> rigGetChildren(int rigNo, int boneNo){
+            return animManager.rigGetChildren(rigNo, boneNo);
+        }
+
+        int addKeyframeVariable(std::vector<std::pair<float, float>> keyframes){
+            return animManager.addKeyframeVariable(keyframes);
+        }
+
+        void removeKeyframeVariable(int keyframeNo){
+            animManager.removeKeyframeVariable(keyframeNo);
+        }
+
+        void keyframeSetTime(int keyframeNo, float time){
+            animManager.keyframeSetTime(keyframeNo, time);
+        }
+
+        void keyframeSetKeyframe(int keyframeNo, int keyframe){
+            animManager.keyframeSetKeyframe(keyframeNo, keyframe);
+        }
+
+        int keyframeGetKeyframe(int keyframeNo){
+            return animManager.keyframeGetKeyframe(keyframeNo);
+        }
+
+        std::vector<std::pair<float, float>> getKeyframes(int keyframeNo){
+            return animManager.getKeyframes(keyframeNo);
+        }        
+
+        float keyframeGetVariable(int keyframeNo){
+            return animManager.keyframeGetVariable(keyframeNo);
+        }
+
 #ifdef CHRONOS_PROFILING
         float getWaitTime(){
             return engine.getWaitTime()*1e-6;
@@ -471,6 +579,8 @@ namespace Manager {
         \brief The backend Vulkan engine, used for rendering the desired shapes and text.s
         */
         Chronos::Engine::Engine engine;
+
+        Chronos::Animation::AnimationManager animManager;
     };
 };
 };

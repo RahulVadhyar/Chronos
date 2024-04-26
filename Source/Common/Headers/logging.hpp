@@ -21,7 +21,6 @@ SOFTWARE.
 */
 #pragma once
 
-#define CHRONOS_LOG_LEVEL 3
 // 0 - nothing
 // 1 - additional info on errors
 // 2 - basic info
@@ -29,7 +28,7 @@ SOFTWARE.
 // 4 - includes frame fraw
 #ifdef CHRONOS_ENABLE_LOGGING
 #define LOG(LEVEL, CLASS, MESSAGE) \
-    if (LEVEL <= CHRONOS_LOG_LEVEL) { \
+    if (LEVEL <= CHRONOS_ENABLE_LOGGING) { \
         std::cout << "[Chronos log][" << CLASS "]: " << MESSAGE << std::endl; \
     }
 #else
