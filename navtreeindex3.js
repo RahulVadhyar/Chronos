@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"structChronos_1_1Manager_1_1TextureDetails.html#aa2342b4563f84373efb7f624cb8c733b":[9,0,0,2,3,3],
+"structChronos_1_1Manager_1_1TextureDetails.html#aea27fc52150012eeeff27d4e81e10e44":[9,0,0,2,3,1],
 "structEmpty.html":[9,0,1],
 "structEmpty.html#aa2a0d8f0e9afd1284ac389b3ab582608":[9,0,1,0],
 "swapchain_8cpp.html":[10,0,2,3,1,8],

@@ -1,9 +1,11 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,530,60,557"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,595,60,622"/>
 <area shape="rect" id="node2" href="$editorMain_8cpp.html#a6a215dd7e7955739c214ee50e9b9ad87" title=" " alt="" coords="167,438,273,465"/>
-<area shape="rect" id="node19" href="$classChronos_1_1Manager_1_1Manager.html#a633479d3104552a11a4546cbb048b8f8" title="Draws the current frame to the window." alt="" coords="117,489,323,531"/>
-<area shape="rect" id="node20" href="$classChronos_1_1Manager_1_1Manager.html#a248fdc281a1b24ee47fd605ba6c7cd70" title="Gets a reference to the GLFWWindow." alt="" coords="117,555,323,596"/>
-<area shape="rect" id="node21" href="$classChronos_1_1Editor_1_1EditorManager.html#ae28f6a26ba542f66491d5326ad1c7f79" title=" " alt="" coords="108,620,332,661"/>
+<area shape="rect" id="node19" href="$classChronos_1_1Manager_1_1Manager.html#a70d885cb88ec2bf1cd12e62c5c0d4ce7" title=" " alt="" coords="117,489,323,531"/>
+<area shape="rect" id="node20" href="$classChronos_1_1Manager_1_1Manager.html#a633479d3104552a11a4546cbb048b8f8" title="Draws the current frame to the window." alt="" coords="117,555,323,596"/>
+<area shape="rect" id="node21" href="$classChronos_1_1Manager_1_1Manager.html#a248fdc281a1b24ee47fd605ba6c7cd70" title="Gets a reference to the GLFWWindow." alt="" coords="117,620,323,661"/>
+<area shape="rect" id="node22" href="$classChronos_1_1Editor_1_1EditorManager.html#ae28f6a26ba542f66491d5326ad1c7f79" title=" " alt="" coords="108,685,332,727"/>
+<area shape="rect" id="node23" href="$classChronos_1_1Manager_1_1Manager.html#ab4195e415b5ecf1d027da6d138401d20" title=" " alt="" coords="117,751,323,792"/>
 <area shape="rect" id="node3" href="$classChronos_1_1Editor_1_1EditorManager.html#a0a83d9d068c5ba9313ee98d5062b469d" title=" " alt="" coords="380,431,604,472"/>
 <area shape="rect" id="node4" href="$classChronos_1_1Editor_1_1EditorManager.html#a9af7c4fe35cefbce32f8aab29442dde8" title=" " alt="" coords="652,5,876,47"/>
 <area shape="rect" id="node5" href="$classChronos_1_1Editor_1_1EditorManager.html#a06155e374e7589b9510f6f9284047920" title=" " alt="" coords="652,71,876,112"/>

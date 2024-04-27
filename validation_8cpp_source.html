@@ -139,92 +139,96 @@ $(document).ready(function(){initNavTree('validation_8cpp_source.html',''); init
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wunused-variable&quot;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;VKAPI_ATTR VkBool32 VKAPI_CALL</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;Chronos::Engine::debugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    VkDebugUtilsMessageTypeFlagsEXT messageType,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> VkDebugUtilsMessengerCallbackDataEXT* pCallbackData,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span>* pUserData)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">    Quick reference to vulkan error handling:</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">    messageSeverity: Severity of the message</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">            VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT: Diagnostic message</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">            VK_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT: Informational message</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">    like the creation of a resource</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">            VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT: Message about</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">    behavior that is not necessarily an error, but very likely a bug in your</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">    application VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT: Message about</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">    behavior that is invalid and may cause crashes</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">    messageType: Type of the message</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">            VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT: Some event has happened</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">    that is unrelated to the specification or performance</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">            VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT: Something has happened</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">    that violates the specification or indicates a possible mistake</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">            VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT: Potential non-optimal</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">    use of Vulkan</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">    pCallbackData: Struct containing details about the message itself</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">            pMessage: The debug message as a null-terminated string</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">            pObjects: Array of Vulkan object handles related to the message</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">            objectCount: Number of objects in array</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">            pMessageIdName: Unique identifier of the message (only for</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">    VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT) messageIdNumber: Number</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">    representation of the message ID pQueueLabels: Array of VkDebugUtilsLabelEXT</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">    structs related to the objects in pObjects queueLabelCount: Number of elements</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">    in pQueueLabels pCmdBufLabels: Array of VkDebugUtilsLabelEXT structs related</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">    to the objects in pObjects cmdBufLabelCount: Number of elements in</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">    pCmdBufLabels pUserData: The pUserData value that was specified when calling</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">    vkCreateDebugUtilsMessengerEXT</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;validation layer: &quot;</span> &lt;&lt; pCallbackData-&gt;pMessage &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> VK_FALSE;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">// function to create the debug messenger</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;VkResult Chronos::Engine::CreateDebugUtilsMessengerEXT(</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    VkInstance instance, <span class="keyword">const</span> VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">const</span> VkAllocationCallbacks* pAllocator,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    VkDebugUtilsMessengerEXT* pDebugMessenger)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">auto</span> func = (PFN_vkCreateDebugUtilsMessengerEXT)vkGetInstanceProcAddr(</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        instance, <span class="stringliteral">&quot;vkCreateDebugUtilsMessengerEXT&quot;</span>);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">if</span> (func != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">return</span> func(instance, pCreateInfo, pAllocator, pDebugMessenger);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> VK_ERROR_EXTENSION_NOT_PRESENT;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">// function to destroy the debug messenger</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">void</span> Chronos::Engine::DestroyDebugUtilsMessengerEXT(VkInstance instance,</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    VkDebugUtilsMessengerEXT debugMessenger,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">const</span> VkAllocationCallbacks* pAllocator)</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">auto</span> func = (PFN_vkDestroyDebugUtilsMessengerEXT)vkGetInstanceProcAddr(</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        instance, <span class="stringliteral">&quot;vkDestroyDebugUtilsMessengerEXT&quot;</span>);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">if</span> (func != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        func(instance, debugMessenger, pAllocator);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keywordtype">void</span> Chronos::Engine::populateDebugMessengerCreateInfo(</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    VkDebugUtilsMessengerCreateInfoEXT&amp; createInfo)</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    createInfo = {};</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    createInfo.sType = VK_STRUCTURE_TYPE_DEBUG_UTILS_MESSENGER_CREATE_INFO_EXT;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">// set the severity of the messages to be sent to the callback</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    createInfo.messageSeverity = VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// set the type of messages to be sent to the callback</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    createInfo.messageType = VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// set the callback function</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    createInfo.pfnUserCallback = debugCallback;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#ifndef WIN32</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#pragma GCC diagnostic push</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wunused-variable&quot;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;VKAPI_ATTR VkBool32 VKAPI_CALL</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;Chronos::Engine::debugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    VkDebugUtilsMessageTypeFlagsEXT messageType,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> VkDebugUtilsMessengerCallbackDataEXT* pCallbackData,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span>* pUserData)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">    Quick reference to vulkan error handling:</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">    messageSeverity: Severity of the message</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">            VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT: Diagnostic message</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">            VK_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT: Informational message</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">    like the creation of a resource</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">            VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT: Message about</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">    behavior that is not necessarily an error, but very likely a bug in your</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">    application VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT: Message about</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">    behavior that is invalid and may cause crashes</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">    messageType: Type of the message</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">            VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT: Some event has happened</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">    that is unrelated to the specification or performance</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">            VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT: Something has happened</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">    that violates the specification or indicates a possible mistake</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">            VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT: Potential non-optimal</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">    use of Vulkan</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">    pCallbackData: Struct containing details about the message itself</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">            pMessage: The debug message as a null-terminated string</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">            pObjects: Array of Vulkan object handles related to the message</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">            objectCount: Number of objects in array</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">            pMessageIdName: Unique identifier of the message (only for</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">    VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT) messageIdNumber: Number</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">    representation of the message ID pQueueLabels: Array of VkDebugUtilsLabelEXT</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">    structs related to the objects in pObjects queueLabelCount: Number of elements</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">    in pQueueLabels pCmdBufLabels: Array of VkDebugUtilsLabelEXT structs related</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">    to the objects in pObjects cmdBufLabelCount: Number of elements in</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">    pCmdBufLabels pUserData: The pUserData value that was specified when calling</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">    vkCreateDebugUtilsMessengerEXT</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;validation layer: &quot;</span> &lt;&lt; pCallbackData-&gt;pMessage &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> VK_FALSE;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#ifndef WIN32</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">// function to create the debug messenger</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;VkResult Chronos::Engine::CreateDebugUtilsMessengerEXT(</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    VkInstance instance, <span class="keyword">const</span> VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">const</span> VkAllocationCallbacks* pAllocator,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    VkDebugUtilsMessengerEXT* pDebugMessenger)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">auto</span> func = (PFN_vkCreateDebugUtilsMessengerEXT)vkGetInstanceProcAddr(</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        instance, <span class="stringliteral">&quot;vkCreateDebugUtilsMessengerEXT&quot;</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">if</span> (func != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">return</span> func(instance, pCreateInfo, pAllocator, pDebugMessenger);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">return</span> VK_ERROR_EXTENSION_NOT_PRESENT;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">// function to destroy the debug messenger</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keywordtype">void</span> Chronos::Engine::DestroyDebugUtilsMessengerEXT(VkInstance instance,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    VkDebugUtilsMessengerEXT debugMessenger,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keyword">const</span> VkAllocationCallbacks* pAllocator)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">auto</span> func = (PFN_vkDestroyDebugUtilsMessengerEXT)vkGetInstanceProcAddr(</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        instance, <span class="stringliteral">&quot;vkDestroyDebugUtilsMessengerEXT&quot;</span>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span> (func != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        func(instance, debugMessenger, pAllocator);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keywordtype">void</span> Chronos::Engine::populateDebugMessengerCreateInfo(</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    VkDebugUtilsMessengerCreateInfoEXT&amp; createInfo)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    createInfo = {};</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    createInfo.sType = VK_STRUCTURE_TYPE_DEBUG_UTILS_MESSENGER_CREATE_INFO_EXT;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// set the severity of the messages to be sent to the callback</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    createInfo.messageSeverity = VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">// set the type of messages to be sent to the callback</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    createInfo.messageType = VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">// set the callback function</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    createInfo.pfnUserCallback = debugCallback;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="adevice_8hpp_html"><div class="ttname"><a href="device_8hpp.html">device.hpp</a></div><div class="ttdoc">Contains the Device class.</div></div>
 <div class="ttc" id="astlheader_8hpp_html"><div class="ttname"><a href="stlheader_8hpp.html">stlheader.hpp</a></div><div class="ttdoc">Contains all the standard library headers used in the project.</div></div>
 <div class="ttc" id="avalidation_8hpp_html"><div class="ttname"><a href="validation_8hpp.html">validation.hpp</a></div><div class="ttdoc">Contains the functions needed for initalization of vulkan validation layers.</div></div>
