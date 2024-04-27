@@ -43,12 +43,22 @@ int main(){
     editorManager.init(&manager);
     LOG(3, "EditorMain", "EditorManager created.")
 
+    std::vector<std::pair<float, float>> keyframes;
+    keyframes.push_back(std::make_pair(0, 300));
+    keyframes.push_back(std::make_pair(1.0, 500));
+    keyframes.push_back(std::make_pair(2.0, 450));
+    keyframes.push_back(std::make_pair(3.0, 300));
+
+    int keyframeNo = manager.addKeyframeVariable(keyframes);
+
     while (!glfwWindowShouldClose(manager.getWindow())) {
         if (glfwGetKey(manager.getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS) {
             glfwSetWindowShouldClose(manager.getWindow(), true);
         }
         manager.drawFrame();
         LOG(4, "EditorMain", "Frame drawn.")
+
+        LOG(3, "TEST", "Keyframe value: " + std::to_string(manager.keyframeGetVariable(keyframeNo)));
     }
     LOG(2, "EditorMain", "Exited rendering loop, closing program.")
     return 0; 

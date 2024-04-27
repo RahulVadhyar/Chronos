@@ -19,8 +19,9 @@ option(CHRONOS_ENABLE_OPTIMIZATIONS "Enable compiler optimizations and enable mo
 
 if(CHRONOS_ENABLE_OPTIMIZATIONS)
 set(CMAKE_BUILD_TYPE Release)
-# set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -Wno-overloaded-virtual -Wno-unused-parameter -Wno-vla -Werror -O3 -march=native")
+if(UNIX)
 set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -Wno-overloaded-virtual -Wno-unused-parameter -Wno-vla -Werror -O3 -march=native")
+endif()
 message("All optimizations and warnings are enabled. Building for release!")
 endif()
 

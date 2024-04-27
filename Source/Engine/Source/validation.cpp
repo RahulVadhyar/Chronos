@@ -49,8 +49,10 @@ bool Chronos::Engine::checkValidationLayerSupport()
     }
     return true;
 }
+#ifndef WIN32
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wunused-variable"
+#endif
 VKAPI_ATTR VkBool32 VKAPI_CALL
 Chronos::Engine::debugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
     VkDebugUtilsMessageTypeFlagsEXT messageType,
@@ -92,7 +94,9 @@ Chronos::Engine::debugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSev
     std::cerr << "validation layer: " << pCallbackData->pMessage << std::endl;
     return VK_FALSE;
 }
+#ifndef WIN32
 #pragma GCC diagnostic pop
+#endif
 
 // function to create the debug messenger
 VkResult Chronos::Engine::CreateDebugUtilsMessengerEXT(

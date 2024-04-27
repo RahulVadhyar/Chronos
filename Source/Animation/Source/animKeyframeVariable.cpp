@@ -29,7 +29,6 @@ inline float getBezierValue(float time, float previousValue, float nextValue, fl
 
 void Chronos::Animation::KeyframeVariable::update(float dt){
     this->currentTime += dt;
-    std::cout << this->currentKeyframe << std::endl;
     int nextKeyframe = (this->currentKeyframe + 1) % this->keyframes.size();
     if(this->currentTime > this->keyframes[nextKeyframe].first){
         this->currentKeyframe++;

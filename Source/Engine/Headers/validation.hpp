@@ -78,13 +78,17 @@ namespace Engine {
 
     @return ```VK_FALSE``` indicates that the Vulkan call that triggered validation was aborted and validation layers are not supported.
     */
+#ifndef WIN32
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wunused-variable"
+#endif
     VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
         VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
         VkDebugUtilsMessageTypeFlagsEXT messageType,
         const VkDebugUtilsMessengerCallbackDataEXT* pCallbackData, void* pUserData);
+#ifndef WIN32
 #pragma GCC diagnostic pop
+#endif
     /**
     \brief Creates the debug messenger.
     */

@@ -49,7 +49,7 @@ void Chronos::Engine::Text::init(Chronos::Engine::Device* device, VkCommandPool 
     fontStyle.getFontData(stbFontData, fontpixels, fontHeight);
 
     //create the font texture from the raw data
-    fontTexture.create(*device, commandPool, (void*)&fontpixels[0][0], static_cast<size_t>(fontWidth),
+    fontTexture.create(*device, commandPool, (void*)&(fontpixels)[0][0], static_cast<size_t>(fontWidth),
         static_cast<size_t>(fontHeight), static_cast<VkDeviceSize>(fontWidth * fontHeight), VK_FORMAT_R8_UNORM, "Text Texture");
 
     // create the vertex buffer

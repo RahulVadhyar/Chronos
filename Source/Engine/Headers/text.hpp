@@ -25,13 +25,17 @@ SOFTWARE.
  \brief Contains the class for creating a font object for rendering text along with the FontTypes struct.
 */
 #pragma once
+#ifndef WIN32
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wunused-function"
 #ifdef __clang__
 #pragma clang diagnostic ignored "-Weverything"
 #endif
+#endif
 #include "stb_font_consolas_24_latin1.inl"
+#ifndef WIN32
 #pragma GCC diagnostic pop
+#endif
 namespace Chronos {
 namespace Engine {
 
