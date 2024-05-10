@@ -21,24 +21,27 @@ SOFTWARE.
 */
 #include "stlheader.hpp"
 #include "animKeyframeVariable.hpp"
+#include "logging.hpp"
 
 inline float getBezierValue(float time, float previousValue, float nextValue, float startPoint, float endPoint){
-    float bezierValue = (1-time)*(1-time) *startPoint + 2*(1-time)*time*previousValue + time*time;
-    return startPoint + (endPoint - startPoint) * bezierValue;
+    float bezierValue = (1-time)*(1-time) *startPoint + 2*(1-time)*time*endPoint + time*time;
+    return previousValue + (nextValue - previousValue) * bezierValue;
 }
 
 void Chronos::Animation::KeyframeVariable::update(float dt){
     this->currentTime += dt;
+    if(this->currentTime >= this->keyframes.back().first){
+        this->currentKeyframe = 0;
+        this->currentTime = this->currentTime - this->keyframes.back().first*(int(this->currentTime)/int(this->keyframes.back().first));
+    }
     int nextKeyframe = (this->currentKeyframe + 1) % this->keyframes.size();
-    if(this->currentTime > this->keyframes[nextKeyframe].first){
-        this->currentKeyframe++;
-        if(this->currentKeyframe > static_cast<int>(this->keyframes.size())){
-            this->currentKeyframe = 0;
-            this->currentTime -= this->keyframes.back().first;
-        }
+    while(this->keyframes[nextKeyframe].first < this->currentTime){
+        this->currentKeyframe = nextKeyframe;
         nextKeyframe = (this->currentKeyframe + 1) % this->keyframes.size();
     }
     float normalizedTime = (this->currentTime - this->keyframes[this->currentKeyframe].first) / (this->keyframes[nextKeyframe].first - this->keyframes[this->currentKeyframe].first);
+    // if(normalizedTime < 0.0f) normalizedTime = this->keyframes.back().first + normalizedTime;
+    // LOG(3, "KeyframeVariable", "Normalized time: " + std::to_string(normalizedTime) + " Current time: " + std::to_string(this->currentTime) + " Current keyframe: " + std::to_string(this->currentKeyframe) + " Next keyframe: " + std::to_string(nextKeyframe) + " Previous value: " + std::to_string(this->keyframes[this->currentKeyframe].second) + " Next value: " + std::to_string(this->keyframes[nextKeyframe].second));
     this->variable = getBezierValue(normalizedTime, this->keyframes[this->currentKeyframe].second, this->keyframes[nextKeyframe].second, 0, 1);
     
 }
