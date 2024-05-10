@@ -40,8 +40,6 @@ void Chronos::Animation::KeyframeVariable::update(float dt){
         nextKeyframe = (this->currentKeyframe + 1) % this->keyframes.size();
     }
     float normalizedTime = (this->currentTime - this->keyframes[this->currentKeyframe].first) / (this->keyframes[nextKeyframe].first - this->keyframes[this->currentKeyframe].first);
-    // if(normalizedTime < 0.0f) normalizedTime = this->keyframes.back().first + normalizedTime;
-    // LOG(3, "KeyframeVariable", "Normalized time: " + std::to_string(normalizedTime) + " Current time: " + std::to_string(this->currentTime) + " Current keyframe: " + std::to_string(this->currentKeyframe) + " Next keyframe: " + std::to_string(nextKeyframe) + " Previous value: " + std::to_string(this->keyframes[this->currentKeyframe].second) + " Next value: " + std::to_string(this->keyframes[nextKeyframe].second));
     this->variable = getBezierValue(normalizedTime, this->keyframes[this->currentKeyframe].second, this->keyframes[nextKeyframe].second, 0, 1);
     
 }
