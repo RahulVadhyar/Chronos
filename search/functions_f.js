@@ -4,5 +4,5 @@ var searchData=
   ['updatebuffer_672',['updateBuffer',['../classChronos_1_1Engine_1_1Text.html#af6c9c55875f534f424a637ffb8f754f8',1,'Chronos::Engine::Text']]],
   ['updatepolygon_673',['updatePolygon',['../classChronos_1_1Manager_1_1Manager.html#a919b9af0bfbbd54bbc3e4cf9f482838c',1,'Chronos::Manager::Manager::updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams)'],['../classChronos_1_1Manager_1_1Manager.html#ab9cd59efce49f2936394907ab003dd7a',1,'Chronos::Manager::Manager::updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams, std::vector&lt; std::array&lt; float, 2 &gt;&gt; vertices)']]],
   ['updatetext_674',['updateText',['../classChronos_1_1Manager_1_1Manager.html#aac76a5e1948cec5d13b2bfed862540e4',1,'Chronos::Manager::Manager']]],
-  ['updatevertices_675',['updateVertices',['../classChronos_1_1Engine_1_1Polygon.html#a605e3bf3bd9c2dcf0ed97e6545e280aa',1,'Chronos::Engine::Polygon']]]
+  ['updatevertices_675',['updateVertices',['../classChronos_1_1Engine_1_1Polygon.html#aa31d024be8cfb4b79f008ca54b7e29db',1,'Chronos::Engine::Polygon']]]
 ];

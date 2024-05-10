@@ -114,35 +114,36 @@ $(document).ready(function(){initNavTree('editorCodeGenerator_8cpp_source.html',
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chronos_8hpp.html">chronos.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="editorCodeGenerator_8hpp.html">editorCodeGenerator.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespaceChronos_1_1Editor.html#a6d176de988790c248a6b6b2dce733917">   27</a></span>&#160;std::string <a class="code" href="namespaceChronos_1_1Editor.html#a6d176de988790c248a6b6b2dce733917">Chronos::Editor::generateCode</a>(<a class="code" href="classChronos_1_1Manager_1_1Manager.html">Chronos::Manager::Manager</a>* manager){</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//generate code for initalizer, textured shape, colored shape, polygons, textures</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::string code = <span class="stringliteral">&quot;&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="stringliteral">&quot;#include \&quot;chronos.hpp\&quot;\n&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="stringliteral">&quot;Chronos::Manager::Initializer initializer;\n&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="stringliteral">&quot;initializer.WindowWidth = 800;\n&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="stringliteral">&quot;initializer.WindowHeight = 600;\n&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="stringliteral">&quot;initializer.BackgroundColor[0] = 0;\n&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="stringliteral">&quot;initializer.BackgroundColor[1] = 0;\n&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="stringliteral">&quot;initializer.BackgroundColor[2] = 0;\n&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="stringliteral">&quot;Chronos::Manager::Manager manager(initializer);\n&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="stringliteral">&quot;//texture\n&quot;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="stringliteral">&quot;//textured shapes\n&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="stringliteral">&quot;//colored shapes\n&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="stringliteral">&quot;//polygons\n&quot;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="stringliteral">&quot;settings\n&quot;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="stringliteral">&quot;while (!glfwWindowShouldClose(manager.getWindow())) {\n&quot;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="stringliteral">&quot;if (glfwGetKey(manager.getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS) {\n&quot;</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="stringliteral">&quot;glfwSetWindowShouldClose(manager.getWindow(), true);\n&quot;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="stringliteral">&quot;}\n&quot;</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="stringliteral">&quot;manager.drawFrame();\n&quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="stringliteral">&quot;}\n &quot;</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> code;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespaceChronos_1_1Editor.html#a6d176de988790c248a6b6b2dce733917">   27</a></span>&#160;std::string <a class="code" href="namespaceChronos_1_1Editor.html#a6d176de988790c248a6b6b2dce733917">Chronos::Editor::generateCode</a>(<a class="code" href="classChronos_1_1Manager_1_1Manager.html">Chronos::Manager::Manager</a>* manager)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// generate code for initalizer, textured shape, colored shape, polygons, textures</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::string code = <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                       <span class="stringliteral">&quot;#include \&quot;chronos.hpp\&quot;\n&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                       <span class="stringliteral">&quot;Chronos::Manager::Initializer initializer;\n&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                       <span class="stringliteral">&quot;initializer.WindowWidth = 800;\n&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                       <span class="stringliteral">&quot;initializer.WindowHeight = 600;\n&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                       <span class="stringliteral">&quot;initializer.BackgroundColor[0] = 0;\n&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                       <span class="stringliteral">&quot;initializer.BackgroundColor[1] = 0;\n&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                       <span class="stringliteral">&quot;initializer.BackgroundColor[2] = 0;\n&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                       <span class="stringliteral">&quot;Chronos::Manager::Manager manager(initializer);\n&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                       <span class="stringliteral">&quot;//texture\n&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                       <span class="stringliteral">&quot;//textured shapes\n&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                       <span class="stringliteral">&quot;//colored shapes\n&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                       <span class="stringliteral">&quot;//polygons\n&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                       <span class="stringliteral">&quot;settings\n&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                       <span class="stringliteral">&quot;while (!glfwWindowShouldClose(manager.getWindow())) {\n&quot;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                       <span class="stringliteral">&quot;if (glfwGetKey(manager.getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS) {\n&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                       <span class="stringliteral">&quot;glfwSetWindowShouldClose(manager.getWindow(), true);\n&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                       <span class="stringliteral">&quot;}\n&quot;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                       <span class="stringliteral">&quot;manager.drawFrame();\n&quot;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                       <span class="stringliteral">&quot;}\n &quot;</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> code;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 <div class="ttc" id="achronos_8hpp_html"><div class="ttname"><a href="chronos_8hpp.html">chronos.hpp</a></div><div class="ttdoc">Main API for chronos. Any applications should include this file.</div></div>
 <div class="ttc" id="aclassChronos_1_1Manager_1_1Manager_html"><div class="ttname"><a href="classChronos_1_1Manager_1_1Manager.html">Chronos::Manager::Manager</a></div><div class="ttdoc">The main manager of chronos.</div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00138">chronos.hpp:138</a></div></div>
 <div class="ttc" id="aeditorCodeGenerator_8hpp_html"><div class="ttname"><a href="editorCodeGenerator_8hpp.html">editorCodeGenerator.hpp</a></div></div>

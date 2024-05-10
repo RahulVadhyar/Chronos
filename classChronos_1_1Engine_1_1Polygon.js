@@ -9,7 +9,7 @@ var classChronos_1_1Engine_1_1Polygon =
     [ "getPipelineAttributes", "classChronos_1_1Engine_1_1Polygon.html#a25d515ffc7c461fd8152153798a61768", null ],
     [ "init", "classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e", null ],
     [ "update", "classChronos_1_1Engine_1_1Polygon.html#ae8c5bb301d03f9d2de304cb35de9fd37", null ],
-    [ "updateVertices", "classChronos_1_1Engine_1_1Polygon.html#a605e3bf3bd9c2dcf0ed97e6545e280aa", null ],
+    [ "updateVertices", "classChronos_1_1Engine_1_1Polygon.html#aa31d024be8cfb4b79f008ca54b7e29db", null ],
     [ "copyVertices", "classChronos_1_1Engine_1_1Polygon.html#a50f9831f04fe556098cca027e8c9ba75", null ],
     [ "indexBuffers", "classChronos_1_1Engine_1_1Polygon.html#aadc28f12e9d8cb099de22138de72f625", null ],
     [ "indices", "classChronos_1_1Engine_1_1Polygon.html#a42c6e3c28c4712042169d42312445b09", null ],

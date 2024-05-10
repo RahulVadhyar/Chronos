@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"structChronos_1_1Manager_1_1TextureDetails.html#a82e3a256b07bb2aec81ad25605e13d3c":[9,0,0,2,3,4],
 "structChronos_1_1Manager_1_1TextureDetails.html#aa2342b4563f84373efb7f624cb8c733b":[9,0,0,2,3,3],
 "structChronos_1_1Manager_1_1TextureDetails.html#aea27fc52150012eeeff27d4e81e10e44":[9,0,0,2,3,1],
 "structEmpty.html":[9,0,1],

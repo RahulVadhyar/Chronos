@@ -189,7 +189,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a> = <span class="keyword">sizeof</span>(UniformColorBufferObject);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826">Buffer::create</a>(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); <span class="comment">//want to be visible to host and device</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); <span class="comment">// want to be visible to host and device</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    vkMapMemory(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>, 0, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>, 0, &amp;<a class="code" href="classChronos_1_1Engine_1_1ColorBuffer.html#a86f5651df2e38414f11598af8b194d56">data</a>);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;ColorBuffer&quot;</span>, <span class="stringliteral">&quot;Color buffer object created for buffer [&quot;</span> + std::to_string((uint64_t)<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">buffer</a>) + <span class="stringliteral">&quot;]&quot;</span>)</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
@@ -242,8 +242,8 @@ Here is the call graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="buffers_8cpp_source.html#l00107">107</a> of file <a class="el" href="buffers_8cpp_source.html">buffers.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{   </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">//copy the color to the buffer</span></div>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// copy the color to the buffer</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    UniformColorBufferObject ubo {};</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    ubo.color = color;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    memcpy(<a class="code" href="classChronos_1_1Engine_1_1ColorBuffer.html#a86f5651df2e38414f11598af8b194d56">data</a>, &amp;ubo, <span class="keyword">sizeof</span>(ubo));</div>

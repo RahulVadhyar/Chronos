@@ -26,17 +26,17 @@ var NAVTREE =
 [
   [ "Chronos", "index.html", [
     [ "Chronos(v0.0)", "index.html", [
-      [ "Cloning:", "index.html#autotoc_md96", [
-        [ "Make sure to clone this repo recursively.", "index.html#autotoc_md97", null ]
+      [ "Cloning:", "index.html#autotoc_md97", [
+        [ "Make sure to clone this repo recursively.", "index.html#autotoc_md98", null ]
       ] ],
-      [ "Table of Contents", "index.html#autotoc_md98", null ],
-      [ "What is Chronos?", "index.html#autotoc_md99", null ],
-      [ "Building Chronos", "index.html#autotoc_md100", null ],
-      [ "How To Use", "index.html#autotoc_md101", null ],
-      [ "How to file an issue", "index.html#autotoc_md102", null ],
-      [ "Libraries used", "index.html#autotoc_md103", null ],
-      [ "Contributing", "index.html#autotoc_md104", null ],
-      [ "FAQs", "index.html#autotoc_md105", null ]
+      [ "Table of Contents", "index.html#autotoc_md99", null ],
+      [ "What is Chronos?", "index.html#autotoc_md100", null ],
+      [ "Building Chronos", "index.html#autotoc_md101", null ],
+      [ "How To Use", "index.html#autotoc_md102", null ],
+      [ "How to file an issue", "index.html#autotoc_md103", null ],
+      [ "Libraries used", "index.html#autotoc_md104", null ],
+      [ "Contributing", "index.html#autotoc_md105", null ],
+      [ "FAQs", "index.html#autotoc_md106", null ]
     ] ],
     [ "API Usage", "md_docs_APIUsage.html", [
       [ "Table of Contents", "md_docs_APIUsage.html#autotoc_md1", null ],
@@ -79,61 +79,62 @@ var NAVTREE =
       [ "Building Documentation", "md_docs_build.html#autotoc_md32", null ]
     ] ],
     [ "Contributing", "md_docs_Contributing.html", [
-      [ "Table of Contents", "md_docs_Contributing.html#autotoc_md34", null ]
+      [ "Table of Contents", "md_docs_Contributing.html#autotoc_md34", null ],
+      [ "Formatting", "md_docs_Contributing.html#autotoc_md35", null ]
     ] ],
     [ "Filing Issues", "md_docs_FilingIssues.html", null ],
     [ "Libraries Used", "md_docs_LibrariesUsed.html", [
-      [ "Table of Contents", "md_docs_LibrariesUsed.html#autotoc_md37", null ],
-      [ "Introduction", "md_docs_LibrariesUsed.html#autotoc_md38", null ],
-      [ "glfw", "md_docs_LibrariesUsed.html#autotoc_md39", null ],
-      [ "stb", "md_docs_LibrariesUsed.html#autotoc_md40", null ],
-      [ "stb fonts", "md_docs_LibrariesUsed.html#autotoc_md41", null ],
-      [ "earcut.hpp", "md_docs_LibrariesUsed.html#autotoc_md42", null ],
-      [ "imgui", "md_docs_LibrariesUsed.html#autotoc_md43", null ],
-      [ "doxygen awesome css", "md_docs_LibrariesUsed.html#autotoc_md44", null ],
-      [ "imgui node editor", "md_docs_LibrariesUsed.html#autotoc_md45", null ],
-      [ "ImGuizmo", "md_docs_LibrariesUsed.html#autotoc_md46", null ]
+      [ "Table of Contents", "md_docs_LibrariesUsed.html#autotoc_md38", null ],
+      [ "Introduction", "md_docs_LibrariesUsed.html#autotoc_md39", null ],
+      [ "glfw", "md_docs_LibrariesUsed.html#autotoc_md40", null ],
+      [ "stb", "md_docs_LibrariesUsed.html#autotoc_md41", null ],
+      [ "stb fonts", "md_docs_LibrariesUsed.html#autotoc_md42", null ],
+      [ "earcut.hpp", "md_docs_LibrariesUsed.html#autotoc_md43", null ],
+      [ "imgui", "md_docs_LibrariesUsed.html#autotoc_md44", null ],
+      [ "doxygen awesome css", "md_docs_LibrariesUsed.html#autotoc_md45", null ],
+      [ "imgui node editor", "md_docs_LibrariesUsed.html#autotoc_md46", null ],
+      [ "ImGuizmo", "md_docs_LibrariesUsed.html#autotoc_md47", null ]
     ] ],
     [ "Using the editor", "md_docs_UsingEditor.html", [
-      [ "Table of Contents", "md_docs_UsingEditor.html#autotoc_md48", null ],
-      [ "Introduction", "md_docs_UsingEditor.html#autotoc_md49", null ],
-      [ "Features", "md_docs_UsingEditor.html#autotoc_md50", null ],
-      [ "Getting Started", "md_docs_UsingEditor.html#autotoc_md51", null ],
-      [ "Quick Start", "md_docs_UsingEditor.html#autotoc_md52", null ],
-      [ "More detailed Example", "md_docs_UsingEditor.html#autotoc_md53", null ],
-      [ "Components of the Editor", "md_docs_UsingEditor.html#autotoc_md54", [
-        [ "The Menu Bar", "md_docs_UsingEditor.html#autotoc_md55", null ],
-        [ "Shape Window", "md_docs_UsingEditor.html#autotoc_md56", null ],
-        [ "Shape Details Window", "md_docs_UsingEditor.html#autotoc_md57", null ],
-        [ "Polygon Window", "md_docs_UsingEditor.html#autotoc_md58", null ],
-        [ "Polygon Details Window", "md_docs_UsingEditor.html#autotoc_md59", null ],
-        [ "Texture Window", "md_docs_UsingEditor.html#autotoc_md60", null ],
-        [ "Texture Details Window", "md_docs_UsingEditor.html#autotoc_md61", null ],
-        [ "Text Window", "md_docs_UsingEditor.html#autotoc_md62", null ],
-        [ "Text Details Window", "md_docs_UsingEditor.html#autotoc_md63", null ],
-        [ "Animation Window", "md_docs_UsingEditor.html#autotoc_md64", null ],
-        [ "Settings Window", "md_docs_UsingEditor.html#autotoc_md65", null ],
-        [ "Generated Code Window", "md_docs_UsingEditor.html#autotoc_md66", null ],
-        [ "Debug Metrics Window", "md_docs_UsingEditor.html#autotoc_md67", null ],
-        [ "Debug Log window", "md_docs_UsingEditor.html#autotoc_md68", null ],
-        [ "Profiling Window", "md_docs_UsingEditor.html#autotoc_md69", null ]
+      [ "Table of Contents", "md_docs_UsingEditor.html#autotoc_md49", null ],
+      [ "Introduction", "md_docs_UsingEditor.html#autotoc_md50", null ],
+      [ "Features", "md_docs_UsingEditor.html#autotoc_md51", null ],
+      [ "Getting Started", "md_docs_UsingEditor.html#autotoc_md52", null ],
+      [ "Quick Start", "md_docs_UsingEditor.html#autotoc_md53", null ],
+      [ "More detailed Example", "md_docs_UsingEditor.html#autotoc_md54", null ],
+      [ "Components of the Editor", "md_docs_UsingEditor.html#autotoc_md55", [
+        [ "The Menu Bar", "md_docs_UsingEditor.html#autotoc_md56", null ],
+        [ "Shape Window", "md_docs_UsingEditor.html#autotoc_md57", null ],
+        [ "Shape Details Window", "md_docs_UsingEditor.html#autotoc_md58", null ],
+        [ "Polygon Window", "md_docs_UsingEditor.html#autotoc_md59", null ],
+        [ "Polygon Details Window", "md_docs_UsingEditor.html#autotoc_md60", null ],
+        [ "Texture Window", "md_docs_UsingEditor.html#autotoc_md61", null ],
+        [ "Texture Details Window", "md_docs_UsingEditor.html#autotoc_md62", null ],
+        [ "Text Window", "md_docs_UsingEditor.html#autotoc_md63", null ],
+        [ "Text Details Window", "md_docs_UsingEditor.html#autotoc_md64", null ],
+        [ "Animation Window", "md_docs_UsingEditor.html#autotoc_md65", null ],
+        [ "Settings Window", "md_docs_UsingEditor.html#autotoc_md66", null ],
+        [ "Generated Code Window", "md_docs_UsingEditor.html#autotoc_md67", null ],
+        [ "Debug Metrics Window", "md_docs_UsingEditor.html#autotoc_md68", null ],
+        [ "Debug Log window", "md_docs_UsingEditor.html#autotoc_md69", null ],
+        [ "Profiling Window", "md_docs_UsingEditor.html#autotoc_md70", null ]
       ] ]
     ] ],
     [ "How It works", "md_docs_Working.html", [
-      [ "Table of Contents", "md_docs_Working.html#autotoc_md71", null ],
-      [ "File structure", "md_docs_Working.html#autotoc_md72", null ],
-      [ "How the API works", "md_docs_Working.html#autotoc_md73", null ],
-      [ "Input and Window handling", "md_docs_Working.html#autotoc_md74", null ],
-      [ "How the <tt>engine</tt> works", "md_docs_Working.html#autotoc_md75", null ],
-      [ "Initalization", "md_docs_Working.html#autotoc_md76", null ],
-      [ "Adding textures", "md_docs_Working.html#autotoc_md77", null ],
-      [ "Rendering Shapes with Color", "md_docs_Working.html#autotoc_md78", null ],
-      [ "Rendering Shapes with Texture", "md_docs_Working.html#autotoc_md79", null ],
-      [ "Rendering arbitary polygons", "md_docs_Working.html#autotoc_md80", null ],
-      [ "Rendering Text with vulkan", "md_docs_Working.html#autotoc_md81", null ],
-      [ "The drawFrame() call", "md_docs_Working.html#autotoc_md82", null ],
-      [ "How the editor is integrated", "md_docs_Working.html#autotoc_md83", null ],
-      [ "How CMake builds Chronos", "md_docs_Working.html#autotoc_md84", null ]
+      [ "Table of Contents", "md_docs_Working.html#autotoc_md72", null ],
+      [ "File structure", "md_docs_Working.html#autotoc_md73", null ],
+      [ "How the API works", "md_docs_Working.html#autotoc_md74", null ],
+      [ "Input and Window handling", "md_docs_Working.html#autotoc_md75", null ],
+      [ "How the <tt>engine</tt> works", "md_docs_Working.html#autotoc_md76", null ],
+      [ "Initalization", "md_docs_Working.html#autotoc_md77", null ],
+      [ "Adding textures", "md_docs_Working.html#autotoc_md78", null ],
+      [ "Rendering Shapes with Color", "md_docs_Working.html#autotoc_md79", null ],
+      [ "Rendering Shapes with Texture", "md_docs_Working.html#autotoc_md80", null ],
+      [ "Rendering arbitary polygons", "md_docs_Working.html#autotoc_md81", null ],
+      [ "Rendering Text with vulkan", "md_docs_Working.html#autotoc_md82", null ],
+      [ "The drawFrame() call", "md_docs_Working.html#autotoc_md83", null ],
+      [ "How the editor is integrated", "md_docs_Working.html#autotoc_md84", null ],
+      [ "How CMake builds Chronos", "md_docs_Working.html#autotoc_md85", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -170,7 +171,7 @@ var NAVTREEINDEX =
 "Vertex_8hpp.html",
 "classChronos_1_1Engine_1_1SwapChain.html#a8d187933ff35d9ac2c09cce5b21b411e",
 "helper_8hpp.html#a984181461b9c5fcc9a52c817deb01ed8",
-"structChronos_1_1Manager_1_1TextureDetails.html#aa2342b4563f84373efb7f624cb8c733b"
+"structChronos_1_1Manager_1_1TextureDetails.html#a82e3a256b07bb2aec81ad25605e13d3c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

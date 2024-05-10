@@ -117,8 +117,8 @@ $(document).ready(function(){initNavTree('logging_8hpp_source.html',''); initRes
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// 3 - verbose</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// 4 - includes frame fraw</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#ifdef CHRONOS_ENABLE_LOGGING</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define LOG(LEVEL, CLASS, MESSAGE) \</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">    if (LEVEL &lt;= CHRONOS_ENABLE_LOGGING) { \</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define LOG(LEVEL, CLASS, MESSAGE)                                            \</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">    if (LEVEL &lt;= CHRONOS_ENABLE_LOGGING) {                                    \</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">        std::cout &lt;&lt; &quot;[Chronos log][&quot;</span> &lt;&lt; CLASS &quot;]: &quot; &lt;&lt; MESSAGE &lt;&lt; std::endl; \</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#else</span></div>

@@ -206,10 +206,10 @@ Private Member Functions</h2></td></tr>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    createInfo.enabledExtensionCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code" href="namespaceChronos_1_1Engine.html#ab7df1e3f4b276d9c7e368398da1b86ca">deviceExtensions</a>.size());</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    createInfo.ppEnabledExtensionNames = <a class="code" href="namespaceChronos_1_1Engine.html#ab7df1e3f4b276d9c7e368398da1b86ca">deviceExtensions</a>.data();</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    createInfo.enabledLayerCount = 0;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">    #ifdef ENABLE_VALIDATION_LAYERS</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#ifdef ENABLE_VALIDATION_LAYERS</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    createInfo.enabledLayerCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(validationLayers.size());</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    createInfo.ppEnabledLayerNames = validationLayers.data();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> (vkCreateDevice(<a class="code" href="classChronos_1_1Engine_1_1Device.html#a987dce654f123694a087fc8a74afdb89">physicalDevice</a>, &amp;createInfo, <span class="keyword">nullptr</span>, &amp;<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>) != VK_SUCCESS) {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Device&quot;</span>, <span class="stringliteral">&quot;Failed to create logical device&quot;</span>)</div>
