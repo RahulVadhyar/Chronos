@@ -21,7 +21,6 @@ SOFTWARE.
 */
 #include "stlheader.hpp"
 #include "animKeyframeVariable.hpp"
-#include "logging.hpp"
 
 inline float getBezierValue(float time, float previousValue, float nextValue, float startPoint, float endPoint){
     float bezierValue = (1-time)*(1-time) *startPoint + 2*(1-time)*time*endPoint + time*time;
