@@ -108,10 +108,10 @@ void Chronos::Engine::Device::createLogicalDevice(VkSurfaceKHR surface)
     createInfo.enabledExtensionCount = static_cast<uint32_t>(deviceExtensions.size());
     createInfo.ppEnabledExtensionNames = deviceExtensions.data();
     createInfo.enabledLayerCount = 0;
-    #ifdef ENABLE_VALIDATION_LAYERS
+#ifdef ENABLE_VALIDATION_LAYERS
     createInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
     createInfo.ppEnabledLayerNames = validationLayers.data();
-    #endif
+#endif
 
     if (vkCreateDevice(physicalDevice, &createInfo, nullptr, &device) != VK_SUCCESS) {
         LOG(1, "Device", "Failed to create logical device")

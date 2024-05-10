@@ -29,7 +29,7 @@ SOFTWARE.
 VkSurfaceFormatKHR Chronos::Engine::chooseSwapSurfaceFormat(
     const std::vector<VkSurfaceFormatKHR>& availableFormats)
 {
-    //try to choose SRBG format, else return the first available format
+    // try to choose SRBG format, else return the first available format
     for (const auto& availableFormat : availableFormats) {
         if (availableFormat.format == VK_FORMAT_B8G8R8A8_SRGB && availableFormat.colorSpace == VK_COLOR_SPACE_SRGB_NONLINEAR_KHR) {
             return availableFormat;
@@ -38,8 +38,6 @@ VkSurfaceFormatKHR Chronos::Engine::chooseSwapSurfaceFormat(
 
     return availableFormats[0];
 }
-
-
 
 VkExtent2D Chronos::Engine::chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities,
     GLFWwindow* window)
@@ -207,8 +205,8 @@ void Chronos::Engine::SwapChain::recreate()
 }
 
 void Chronos::Engine::SwapChain::changeMsaa()
-{   
-    //if we want to change msaa, we need to recreate the swapchain
+{
+    // if we want to change msaa, we need to recreate the swapchain
     vkDeviceWaitIdle(device->device);
     cleanup();
     create();
@@ -240,7 +238,7 @@ VkPresentModeKHR Chronos::Engine::SwapChain::chooseSwapPresentMode(
     // is commonly 							known as "triple buffering", although the existence of three
     // buffers alone does not necessarily mean that the framerate 							is unlocked.
 
-    //try to select mailbox mode, else select the default FIFO mode
+    // try to select mailbox mode, else select the default FIFO mode
     for (const auto& availablePresentMode : availablePresentModes) {
         if (availablePresentMode == this->preferredPresentMode) {
             return availablePresentMode;

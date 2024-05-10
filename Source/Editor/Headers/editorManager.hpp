@@ -22,108 +22,107 @@ SOFTWARE.
 
 #pragma once
 
-namespace Chronos{
-    namespace Editor{
-        class EditorManager{
-            public:
-                void init(Chronos::Manager::Manager* manager){
-                    this->manager = manager;
-                }
-                void addElements();
-            private:
-                Chronos::Manager::Manager* manager;
-                bool pinMenuBar = true;
-                
-                bool showShapeWindow = false;
-                bool showPolygonWindow = false;
-                bool showTextureWindow = false;
-                bool showTextWindow = false;
-                bool showAnimationWindow = false;
-                bool showSettingsWindow = false;
-                bool showGeneratedCodeWindow = false;
+namespace Chronos {
+namespace Editor {
+    class EditorManager {
+    public:
+        void init(Chronos::Manager::Manager* manager)
+        {
+            this->manager = manager;
+        }
+        void addElements();
 
-                bool showShapeDetailsWindow = false;
-                bool showPolygonDetailsWindow = false;
-                bool showTextureDetailsWindow = false;
-                bool showTextDetailsWindow = false;
+    private:
+        Chronos::Manager::Manager* manager;
+        bool pinMenuBar = true;
 
-                bool showDebugMetricsWindow = false;
-                bool showDebugLogWindow = false;
+        bool showShapeWindow = false;
+        bool showPolygonWindow = false;
+        bool showTextureWindow = false;
+        bool showTextWindow = false;
+        bool showAnimationWindow = false;
+        bool showSettingsWindow = false;
+        bool showGeneratedCodeWindow = false;
+
+        bool showShapeDetailsWindow = false;
+        bool showPolygonDetailsWindow = false;
+        bool showTextureDetailsWindow = false;
+        bool showTextDetailsWindow = false;
+
+        bool showDebugMetricsWindow = false;
+        bool showDebugLogWindow = false;
 #ifdef CHRONOS_PROFILING
-                bool showProfilingWindow = false;
+        bool showProfilingWindow = false;
 #endif
 
-                void MenuBar();
-                void ShapeWindow();
-                void PolygonWindow();
-                void TextureWindow();
-                void TextWindow();
-                void SettingsWindow();
-                void TotalCodeGenerationWindow();
+        void MenuBar();
+        void ShapeWindow();
+        void PolygonWindow();
+        void TextureWindow();
+        void TextWindow();
+        void SettingsWindow();
+        void TotalCodeGenerationWindow();
 
-                void ShapeDetailsWindow();
-                void PolygonDetailsWindow();
-                void TextureDetailsWindow();
-                void TextDetailsWindow();
+        void ShapeDetailsWindow();
+        void PolygonDetailsWindow();
+        void TextureDetailsWindow();
+        void TextDetailsWindow();
 
-                void DebugMetricsWindow();
-                void DebugLogWindow();
+        void DebugMetricsWindow();
+        void DebugLogWindow();
 #ifdef CHRONOS_PROFILING
-                void ProfilingWindow();
+        void ProfilingWindow();
 #endif
-                //Shape Window
-                Chronos::Manager::ShapeParams newShapeParams;
-                int newShapeType = 0;
-                int newShapeFill = 0;
-                int currentShapeTextureSelection = 0;
-                char currentShapeTextureName[200] = "Select Texture";
-                int currentShapeSelection = 0;
+        // Shape Window
+        Chronos::Manager::ShapeParams newShapeParams;
+        int newShapeType = 0;
+        int newShapeFill = 0;
+        int currentShapeTextureSelection = 0;
+        char currentShapeTextureName[200] = "Select Texture";
+        int currentShapeSelection = 0;
 
+        // Polygon Window
+        Chronos::Manager::ShapeParams newPolygonParams;
+        int numVertices = 4;
+        std::vector<std::array<float, 2>> polygonVertices = { { -0.5, -0.5 }, { 0.5, -0.5 }, { 0.5, 0.5 }, { -0.5, 0.5 } };
+        int currentPolygonTextureSelection = 0;
+        char currentPolygonTextureName[200] = "Select Texture";
+        int currentPolygonSelection = 0;
+        std::vector<std::array<float, 2>> currentPolygonVertices;
 
-                //Polygon Window
-                Chronos::Manager::ShapeParams newPolygonParams;
-                int numVertices = 4;
-                std::vector<std::array<float, 2>> polygonVertices = {{-0.5, -0.5}, {0.5, -0.5}, {0.5, 0.5}, {-0.5, 0.5} };
-                int currentPolygonTextureSelection = 0;
-                char currentPolygonTextureName[200] = "Select Texture";
-                int currentPolygonSelection = 0;
-                std::vector<std::array<float, 2>> currentPolygonVertices;
+        // Texture Window
+        char newTexturePath[200];
+        char newTextureName[200];
+        int currentTextureSelection = 0;
 
-                
-                //Texture Window
-                char newTexturePath[200];
-                char newTextureName[200];
-                int currentTextureSelection = 0;
+        // Text Window
+        Chronos::Engine::TextParams newTextParams;
+        std::string currentFontSelection = "consolas";
+        int currentFontSizeSelection = 6;
+        int currentTextSelection = 0;
 
-                //Text Window
-                Chronos::Engine::TextParams newTextParams;
-                std::string currentFontSelection = "consolas";
-                int currentFontSizeSelection = 6;
-                int currentTextSelection = 0;
+        // Shape details window
+        Chronos::Manager::ShapeParams shapeDetailsShapeParams;
+        int shapeDetailsShapeNo = 0;
 
-                //Shape details window
-                Chronos::Manager::ShapeParams shapeDetailsShapeParams;
-                int shapeDetailsShapeNo = 0;
+        // polygon details window
+        Chronos::Manager::ShapeParams polygonDetailsShapeParams;
+        int polygonDetailsShapeNo = 0;
 
-                //polygon details window
-                Chronos::Manager::ShapeParams polygonDetailsShapeParams;
-                int polygonDetailsShapeNo = 0;
+        // text details window
+        Chronos::Engine::TextParams textDetailsTextParams;
+        int textDetailsTextNo = 0;
 
-                //text details window
-                Chronos::Engine::TextParams textDetailsTextParams;
-                int textDetailsTextNo = 0;
+        // texture details window
+        int textureDetailsCurrentSelection = 0;
 
-                //texture details window
-                int textureDetailsCurrentSelection = 0;
-
-
-                //settings window
-                char windowTitle[200] = GAME_NAME;
-                std::string presentMode = "mailbox";
-                float bgColor[3] = {0,0,0};
-                bool fullScreen = false;
-                bool isWindowFullscreen = false;
-                std::string msaaSamples = "1";
-        };  
-    }
+        // settings window
+        char windowTitle[200] = GAME_NAME;
+        std::string presentMode = "mailbox";
+        float bgColor[3] = { 0, 0, 0 };
+        bool fullScreen = false;
+        bool isWindowFullscreen = false;
+        std::string msaaSamples = "1";
+    };
+}
 }

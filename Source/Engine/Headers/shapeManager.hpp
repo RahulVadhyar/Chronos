@@ -59,7 +59,7 @@ namespace Engine {
 
         Necessary shapeParams and texture path must be provided.
         Supported textures are .jpg and .png
-        Returns a shapeNo that references the shape for modifying and destroying t.        
+        Returns a shapeNo that references the shape for modifying and destroying t.
 
         @param shapeParams The parameters needed for the shape
         @param texture The texture to use for the shape

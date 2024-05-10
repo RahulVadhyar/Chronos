@@ -20,22 +20,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 #pragma once
-namespace Chronos{
-    namespace Animation{
-        class KeyframeVariable{
-            public:
-                void updateKeyframes(std::vector<std::pair<float, float>> keyframes);
-                std::vector<std::pair<float, float>> getKeyframes();
-                void setTime(float time);
-                void setKeyframe(int keyframe);
-                int getKeyframe();
-                void update(float dt);
-                float getVariable();
-            private:
-                float variable = 0;
-                std::vector<std::pair<float, float>> keyframes; // first is time, second is value
-                float currentTime = 0;
-                int currentKeyframe = 0;
-        };
+namespace Chronos {
+namespace Animation {
+    class KeyframeVariable {
+    public:
+        void updateKeyframes(std::vector<std::pair<float, float>> keyframes);
+        std::vector<std::pair<float, float>> getKeyframes();
+        void setTime(float time);
+        void setKeyframe(int keyframe);
+        int getKeyframe();
+        void update(float dt);
+        float getVariable();
+
+    private:
+        float variable = 0;
+        std::vector<std::pair<float, float>> keyframes; // first is time, second is value
+        float currentTime = 0;
+        int currentKeyframe = 0;
     };
+};
 };

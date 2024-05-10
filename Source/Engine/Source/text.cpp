@@ -32,13 +32,14 @@ SOFTWARE.
 #include "text.hpp"
 
 void Chronos::Engine::Text::init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
-    VkSampler textureSampler, VkRenderPass* renderPass, Chronos::Engine::FontTypes fontStyle){
-    vertexShaderPath = SPIV_SHADER_PATH"/textVert.spv";
-    fragmentShaderPath = SPIV_SHADER_PATH"/textFrag.spv";
+    VkSampler textureSampler, VkRenderPass* renderPass, Chronos::Engine::FontTypes fontStyle)
+{
+    vertexShaderPath = SPIV_SHADER_PATH "/textVert.spv";
+    fragmentShaderPath = SPIV_SHADER_PATH "/textFrag.spv";
 
-    //set the fontstyle
+    // set the fontstyle
     this->fontStyle = fontStyle;
- 
+
     // initalize the font
     uint32_t fontWidth = fontStyle.fontWidth;
     uint32_t fontHeight = fontStyle.fontHeight;
@@ -48,16 +49,15 @@ void Chronos::Engine::Text::init(Chronos::Engine::Device* device, VkCommandPool 
 
     fontStyle.getFontData(stbFontData, fontpixels, fontHeight);
 
-    //create the font texture from the raw data
+    // create the font texture from the raw data
     fontTexture.create(*device, commandPool, (void*)&(fontpixels)[0][0], static_cast<size_t>(fontWidth),
         static_cast<size_t>(fontHeight), static_cast<VkDeviceSize>(fontWidth * fontHeight), VK_FORMAT_R8_UNORM, "Text Texture");
 
     // create the vertex buffer
     VkDeviceSize bufferSize = maxTextLength * sizeof(glm::vec4);
     Chronos::Engine::createBuffer(*device, bufferSize, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT,
-        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, //want to be visible to host and device
+        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, // want to be visible to host and device
         &vertexBuffer, &vertexBufferMemory);
-
 
     // create the uniform buffers for color changing
     colorBuffers.resize(MAX_FRAMES_IN_FLIGHT);
@@ -68,11 +68,10 @@ void Chronos::Engine::Text::init(Chronos::Engine::Device* device, VkCommandPool 
     Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
 }
 
-
 std::vector<VkDescriptorType> Chronos::Engine::Text::getDescriptorTypes()
 {
     return std::vector<VkDescriptorType> { VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER,
-        VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER};
+        VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER };
 }
 
 std::vector<VkShaderStageFlagBits> Chronos::Engine::Text::getDescriptorStages()
@@ -195,8 +194,8 @@ void Chronos::Engine::Text::destroy()
 }
 
 void Chronos::Engine::Text::updateBuffer()
-{   
-    //update the vertex buffer with new text on update
+{
+    // update the vertex buffer with new text on update
     if (vkMapMemory(device->device, vertexBufferMemory, 0, VK_WHOLE_SIZE, 0,
             (void**)&mappedMemory)
         != VK_SUCCESS) {
@@ -286,5 +285,5 @@ void Chronos::Engine::Text::update(uint32_t currentFrame)
 {
     updateBuffer();
     uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x, params.y, params.rotation - 90, 1.0f, 1.0f);
-    colorBuffers[currentFrame].update({params.color[0], params.color[1], params.color[2]});
+    colorBuffers[currentFrame].update({ params.color[0], params.color[1], params.color[2] });
 }

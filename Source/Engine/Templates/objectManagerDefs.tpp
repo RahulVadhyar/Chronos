@@ -51,8 +51,8 @@ void Chronos::Engine::ObjectManager<Object>::destroy()
 template <Chronos::Engine::ObjectLike Object>
 void Chronos::Engine::ObjectManager<Object>::render(uint32_t currentFrame, uint32_t imageIndex,
     float bgColor[3])
-{   
-    //this function starts rendering. When child classes override this function, they should call this function first to start rendering
+{
+    // this function starts rendering. When child classes override this function, they should call this function first to start rendering
     vkResetCommandBuffer(commandBuffers[currentFrame], 0);
     VkCommandBufferBeginInfo beginInfo {};
     beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
@@ -66,7 +66,7 @@ void Chronos::Engine::ObjectManager<Object>::render(uint32_t currentFrame, uint3
     renderPassInfo.framebuffer = framebuffers[imageIndex];
     renderPassInfo.renderArea.offset = { 0, 0 };
     renderPassInfo.renderArea.extent = swapChain->swapChainExtent;
-    VkClearValue clearColor = {{{bgColor[0], bgColor[1], bgColor[2], 1.0f}}}; // bg color
+    VkClearValue clearColor = { { { bgColor[0], bgColor[1], bgColor[2], 1.0f } } }; // bg color
     renderPassInfo.clearValueCount = 1;
     renderPassInfo.pClearValues = &clearColor;
 
@@ -89,7 +89,7 @@ void Chronos::Engine::ObjectManager<Object>::changeMsaa()
     vkDestroyRenderPass(device->device, renderPass, nullptr);
     createRenderPass();
     recreate();
-    for(auto& objectMap : objects){
+    for (auto& objectMap : objects) {
         objectMap.second.recreateGraphicsPipeline();
     }
 }
@@ -120,34 +120,34 @@ int Chronos::Engine::ObjectManager<Object>::addObject(Object object)
 template <Chronos::Engine::ObjectLike Object>
 void Chronos::Engine::ObjectManager<Object>::remove(int objectNo)
 {
-    for(bool& flag : objectsToBeRemoved[objectNo]){
+    for (bool& flag : objectsToBeRemoved[objectNo]) {
         flag = true;
     }
     // objects[objectNo].destroy();
-    
+
     // objects.erase(objectNo);
 }
 
 template <Chronos::Engine::ObjectLike Object>
 void Chronos::Engine::ObjectManager<Object>::update(uint32_t currentFrame)
-{   
-    for(auto& objectMap : objectsToBeRemoved){
+{
+    for (auto& objectMap : objectsToBeRemoved) {
         objectMap.second[currentFrame] = false;
         bool toBeRemoved = true;
-        for(bool flag : objectMap.second){
-            if(flag){
+        for (bool flag : objectMap.second) {
+            if (flag) {
                 toBeRemoved = false;
                 break;
             }
         }
-        if(toBeRemoved){
+        if (toBeRemoved) {
             objects[objectMap.first].destroy();
             objectsToBeRemoved.erase(objectMap.first);
             objects.erase(objectMap.first);
         }
     }
     for (auto& objectMap : objects) {
-        if(objectsToBeRemoved.count(objectMap.first) == 0){
+        if (objectsToBeRemoved.count(objectMap.first) == 0) {
             objectMap.second.update(currentFrame);
         }
     }

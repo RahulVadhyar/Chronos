@@ -132,9 +132,9 @@ std::vector<const char*> Chronos::Engine::getRequiredExtensions()
     glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
     std::vector<const char*> extensions(glfwExtensions,
         glfwExtensions + glfwExtensionCount);
-    #ifdef ENABLE_VULKAN_VALIDATION_LAYERS
+#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
     extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
-    #endif
+#endif
     return extensions;
 }
 

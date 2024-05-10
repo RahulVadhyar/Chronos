@@ -20,36 +20,36 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 #pragma once
-namespace Chronos{
-    namespace Animation{
-        class AnimRig{
-        public:
-            void init(float x, float y);
-            int addBone(int parentNo);
-            void removeBone(int boneNo);
-            void update();
-            void addChild(int parentNo, int childNo);
-            void removeChild(int parentNo, int childNo);
-            void setRelX(int boneNo, float relX);
-            void setRelY(int boneNo, float relY);
-            void setLength(int boneNo, float length);
-            void setAngle(int boneNo, float angle);
-            void setParent(int boneNo, int parentNo);
-            float getRelX(int boneNo);
-            float getRelY(int boneNo);
-            float getLength(int boneNo);
-            float getAngle(int boneNo);
-            float getX(int boneNo);
-            float getY(int boneNo);
-            int getParent(int boneNo);
-            std::vector<int> getChildren(int boneNo);
-        private:
-            std::map<int, AnimBone> bones;
-            int nextBoneNo = 0;
-            AnimBone* root;
-            float x;
-            float y;
-            
-        };
+namespace Chronos {
+namespace Animation {
+    class AnimRig {
+    public:
+        void init(float x, float y);
+        int addBone(int parentNo);
+        void removeBone(int boneNo);
+        void update();
+        void addChild(int parentNo, int childNo);
+        void removeChild(int parentNo, int childNo);
+        void setRelX(int boneNo, float relX);
+        void setRelY(int boneNo, float relY);
+        void setLength(int boneNo, float length);
+        void setAngle(int boneNo, float angle);
+        void setParent(int boneNo, int parentNo);
+        float getRelX(int boneNo);
+        float getRelY(int boneNo);
+        float getLength(int boneNo);
+        float getAngle(int boneNo);
+        float getX(int boneNo);
+        float getY(int boneNo);
+        int getParent(int boneNo);
+        std::vector<int> getChildren(int boneNo);
+
+    private:
+        std::map<int, AnimBone> bones;
+        int nextBoneNo = 0;
+        AnimBone* root;
+        float x;
+        float y;
     };
+};
 };

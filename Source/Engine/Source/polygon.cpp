@@ -35,21 +35,22 @@ SOFTWARE.
 #include "earcut.hpp"
 
 void Chronos::Engine::Polygon::init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
-VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* renderPass, std::vector<std::array<float, 2>> vertices){
-    this->vertexShaderPath = SPIV_SHADER_PATH"/textureVert.spv";
-    this->fragmentShaderPath = SPIV_SHADER_PATH"/textureFrag.spv";
+    VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* renderPass, std::vector<std::array<float, 2>> vertices)
+{
+    this->vertexShaderPath = SPIV_SHADER_PATH "/textureVert.spv";
+    this->fragmentShaderPath = SPIV_SHADER_PATH "/textureFrag.spv";
     this->texture = texture;
 
-    //we copy the vertices to the vertex struct. For the texture cooring we use the same vertex coordinates, but we map them to the range [0, 1] from [-1, 1]
+    // we copy the vertices to the vertex struct. For the texture cooring we use the same vertex coordinates, but we map them to the range [0, 1] from [-1, 1]
     for (auto& vertex : vertices) {
-        TexturedVertex tv = {{vertex[0], vertex[1]}, {(vertex[0] + 1.0f)/2.0f, (vertex[1] + 1.0f)/2.0f}};
+        TexturedVertex tv = { { vertex[0], vertex[1] }, { (vertex[0] + 1.0f) / 2.0f, (vertex[1] + 1.0f) / 2.0f } };
         this->vertices.push_back(tv);
     }
 
-    //we use the earcut library to triangulate the polygon and generate the indicies
-    std::vector<uint32_t> triangleIndices = mapbox::earcut<uint32_t>(std::array<std::vector<std::array<float, 2>>, 2>{vertices, {}});
-    for (uint32_t i = 0; i < triangleIndices.size(); i++){
-        if(triangleIndices[i] >= vertices.size()){
+    // we use the earcut library to triangulate the polygon and generate the indicies
+    std::vector<uint32_t> triangleIndices = mapbox::earcut<uint32_t>(std::array<std::vector<std::array<float, 2>>, 2> { vertices, {} });
+    for (uint32_t i = 0; i < triangleIndices.size(); i++) {
+        if (triangleIndices[i] >= vertices.size()) {
             throw std::runtime_error("Index" + std::to_string(triangleIndices[i]) + " out of range");
         }
         this->indices.push_back(triangleIndices[i]);
@@ -60,79 +61,82 @@ VkSampler textureSampler, Chronos::Engine::Texture texture, VkRenderPass* render
     // create the vertex and index buffers and copy the data
 
     polygonVertexBuffers.resize(MAX_FRAMES_IN_FLIGHT);
-    for (auto& buffer : polygonVertexBuffers){
+    for (auto& buffer : polygonVertexBuffers) {
         buffer.size = sizeof(this->vertices[0]) * this->vertices.size();
         buffer.create(*device,
             VK_BUFFER_USAGE_VERTEX_BUFFER_BIT,
-            VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); //we use host visible and coherent memory to be able to map it and to edit the vertiuces
+            VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); // we use host visible and coherent memory to be able to map it and to edit the vertiuces
         copyVerticestoBuffer(buffer);
     }
     copyVertices.resize(MAX_FRAMES_IN_FLIGHT, false);
 
     indexBuffers.resize(MAX_FRAMES_IN_FLIGHT);
-    for (auto& buffer : indexBuffers){
-        buffer.size = sizeof(this->indices[0]) * (this->vertices.size() - 2); //max indices = n - 2
+    for (auto& buffer : indexBuffers) {
+        buffer.size = sizeof(this->indices[0]) * (this->vertices.size() - 2); // max indices = n - 2
         buffer.create(*device,
             VK_BUFFER_USAGE_INDEX_BUFFER_BIT,
-            VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); //inidcies will not change
+            VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); // inidcies will not change
         copyIndicestoBuffer(buffer);
     }
-    
 }
 
-void Chronos::Engine::Polygon::copyVerticestoBuffer(Chronos::Engine::Buffer vertexBuffer){
-    if(vkMapMemory(device->device, vertexBuffer.memory, 0, VK_WHOLE_SIZE, 0, &this->mappedMemory)
-        != VK_SUCCESS){
+void Chronos::Engine::Polygon::copyVerticestoBuffer(Chronos::Engine::Buffer vertexBuffer)
+{
+    if (vkMapMemory(device->device, vertexBuffer.memory, 0, VK_WHOLE_SIZE, 0, &this->mappedMemory)
+        != VK_SUCCESS) {
         throw std::runtime_error("Failed to map memory");
     }
-    if(this->mappedMemory == nullptr){
+    if (this->mappedMemory == nullptr) {
         throw std::runtime_error("Memory not mapped, current address is " + std::to_string((uint64_t)this->mappedMemory));
     }
     memcpy(this->mappedMemory, this->vertices.data(), (size_t)vertexBuffer.size);
     vkUnmapMemory(device->device, vertexBuffer.memory);
 }
 
-void Chronos::Engine::Polygon::copyIndicestoBuffer(Chronos::Engine::Buffer indexBuffer){
-    if(vkMapMemory(device->device, indexBuffer.memory, 0, VK_WHOLE_SIZE, 0, &this->mappedMemory)
-        != VK_SUCCESS){
+void Chronos::Engine::Polygon::copyIndicestoBuffer(Chronos::Engine::Buffer indexBuffer)
+{
+    if (vkMapMemory(device->device, indexBuffer.memory, 0, VK_WHOLE_SIZE, 0, &this->mappedMemory)
+        != VK_SUCCESS) {
         throw std::runtime_error("Failed to map memory");
     }
-    if(this->mappedMemory == nullptr){
+    if (this->mappedMemory == nullptr) {
         throw std::runtime_error("Memory not mapped, current address is " + std::to_string((uint64_t)this->mappedMemory));
     }
     memcpy(this->mappedMemory, this->indices.data(), (size_t)indexBuffer.size);
     vkUnmapMemory(device->device, indexBuffer.memory);
 }
 
-void Chronos::Engine::Polygon::updateVertices(std::vector<std::array<float, 2>>vertices){
-    //There are a vertex buffer, one for each frame in flight. We need to update all of them
-    //however, some of them may be in use, hence we just set bools correspoding to each buffer to true
-    //on update of the frame, we will copy the vertices to the buffer if the bool is true for that frame
+void Chronos::Engine::Polygon::updateVertices(std::vector<std::array<float, 2>> vertices)
+{
+    // There are a vertex buffer, one for each frame in flight. We need to update all of them
+    // however, some of them may be in use, hence we just set bools correspoding to each buffer to true
+    // on update of the frame, we will copy the vertices to the buffer if the bool is true for that frame
     assert(vertices.size() == this->vertices.size());
     this->vertices.clear();
     for (auto& vertex : vertices) {
-        TexturedVertex tv = {{vertex[0], vertex[1]}, {(vertex[0] + 1.0f)/2.0f, (vertex[1] + 1.0f)/2.0f}};
+        TexturedVertex tv = { { vertex[0], vertex[1] }, { (vertex[0] + 1.0f) / 2.0f, (vertex[1] + 1.0f) / 2.0f } };
         this->vertices.push_back(tv);
     }
 
-    std::vector<uint32_t> triangleIndices = mapbox::earcut<uint32_t>(std::array<std::vector<std::array<float, 2>>, 2>{vertices, {}});
+    std::vector<uint32_t> triangleIndices = mapbox::earcut<uint32_t>(std::array<std::vector<std::array<float, 2>>, 2> { vertices, {} });
     assert(triangleIndices.size() <= this->indices.size());
     this->indices.clear();
     this->indices.resize(this->vertices.size() - 2);
-    for (uint32_t i = 0; i < triangleIndices.size(); i++){
-        if(triangleIndices[i] >= vertices.size()){
+    for (uint32_t i = 0; i < triangleIndices.size(); i++) {
+        if (triangleIndices[i] >= vertices.size()) {
             throw std::runtime_error("Index" + std::to_string(triangleIndices[i]) + " out of range");
         }
         this->indices.push_back(triangleIndices[i]);
     }
 
-    for(int i = 0; i < static_cast<int>(copyVertices.size()); i++){
+    for (int i = 0; i < static_cast<int>(copyVertices.size()); i++) {
         copyVertices[i] = true;
     }
 }
 
-void Chronos::Engine::Polygon::update(uint32_t currentFrame){
-    if (copyVertices[currentFrame]){
+void Chronos::Engine::Polygon::update(uint32_t currentFrame)
+{
+    if (copyVertices[currentFrame]) {
         copyVerticestoBuffer(polygonVertexBuffers[currentFrame]);
         copyIndicestoBuffer(indexBuffers[currentFrame]);
         copyVertices[currentFrame] = false;
@@ -142,17 +146,19 @@ void Chronos::Engine::Polygon::update(uint32_t currentFrame){
         params.ySize);
 }
 
-void Chronos::Engine::Polygon::destroy(){
-    for (auto& buffer : polygonVertexBuffers){
+void Chronos::Engine::Polygon::destroy()
+{
+    for (auto& buffer : polygonVertexBuffers) {
         buffer.destroy();
     }
-    for (auto& buffer : indexBuffers){
+    for (auto& buffer : indexBuffers) {
         buffer.destroy();
     }
     Chronos::Engine::Object::destroy();
 }
 
-void Chronos::Engine::Polygon::createDescriptorSets(){
+void Chronos::Engine::Polygon::createDescriptorSets()
+{
     std::vector<VkDescriptorSetLayout> layouts(MAX_FRAMES_IN_FLIGHT,
         descriptorSetLayout);
     VkDescriptorSetAllocateInfo allocInfo {};
@@ -201,15 +207,18 @@ void Chronos::Engine::Polygon::createDescriptorSets(){
     }
 }
 
-std::vector<VkDescriptorType> Chronos::Engine::Polygon::getDescriptorTypes(){
-    return {VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER};
+std::vector<VkDescriptorType> Chronos::Engine::Polygon::getDescriptorTypes()
+{
+    return { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER };
 }
 
-std::vector<VkShaderStageFlagBits> Chronos::Engine::Polygon::getDescriptorStages(){
-    return {VK_SHADER_STAGE_VERTEX_BIT, VK_SHADER_STAGE_FRAGMENT_BIT};
+std::vector<VkShaderStageFlagBits> Chronos::Engine::Polygon::getDescriptorStages()
+{
+    return { VK_SHADER_STAGE_VERTEX_BIT, VK_SHADER_STAGE_FRAGMENT_BIT };
 }
 
-Chronos::Engine::PipelineAttributes Chronos::Engine::Polygon::getPipelineAttributes(){
+Chronos::Engine::PipelineAttributes Chronos::Engine::Polygon::getPipelineAttributes()
+{
     Chronos::Engine::PipelineAttributes pipelineAttributes;
 
     auto bindingDescription = TexturedVertex::getBindingDescription();

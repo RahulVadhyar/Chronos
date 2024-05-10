@@ -50,7 +50,7 @@ namespace Engine {
         float y = 0;
         float rotation = 0;
         float scale = 1.0f;
-        std::array<float, 3> color = {1.0f, 1.0f, 1.0f};
+        std::array<float, 3> color = { 1.0f, 1.0f, 1.0f };
     };
     /**
     \brief Uniform struct passed to shader

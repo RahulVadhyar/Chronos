@@ -40,7 +40,6 @@ More specifically it includes the following packages:
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-
 /**
 \brief The number of frames in flight.
 

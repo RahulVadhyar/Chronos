@@ -23,9 +23,9 @@ SOFTWARE.
 #include "chronos.hpp"
 
 int Chronos::Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, Chronos::Manager::PolygonType polygonType, int texture)
-{   
-    //this function is for textured triangles and rectangles only
-    //we need to add a check for the texture
+{
+    // this function is for textured triangles and rectangles only
+    // we need to add a check for the texture
     std::vector<Chronos::Manager::TextureDetails> textureDetails = getTextureDetails();
     bool textureExists = false;
     for (auto& textureDetail : textureDetails) {
@@ -38,7 +38,7 @@ int Chronos::Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapePar
         throw std::runtime_error("Texture does not exist");
     }
 
-    //check whether shape name exists
+    // check whether shape name exists
     for (auto& shape : engine.shapeManager.objects) {
         if (strcmp(shape.second.params.shapeName, shapeParams.shapeName) == 0) {
             throw std::runtime_error("Shape name already exists");
@@ -48,24 +48,24 @@ int Chronos::Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapePar
     if (polygonType.triangle) {
         shapeNo = engine.shapeManager.addTriangle(shapeParams, engine.textureManager.getTexture(texture));
     } else if (polygonType.rectangle) {
-        shapeNo =  engine.shapeManager.addRectangle(shapeParams, engine.textureManager.getTexture(texture));
+        shapeNo = engine.shapeManager.addRectangle(shapeParams, engine.textureManager.getTexture(texture));
     } else {
         throw std::runtime_error("Polygon type not supported");
     }
 
-    //we add 1 to shapeNo to know they are textured triangles or rectangles
+    // we add 1 to shapeNo to know they are textured triangles or rectangles
     shapeNo = std::stoi("1" + std::to_string(shapeNo));
     return shapeNo;
 }
 
-int Chronos::Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, int texture, 
+int Chronos::Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, int texture,
     std::vector<std::array<float, 2>> vertices)
-{   
+{
 
-    //this fucntion is for npolygons only
+    // this fucntion is for npolygons only
     int shapeNo;
 
-    //check to make sure the texture exists
+    // check to make sure the texture exists
     std::vector<Chronos::Manager::TextureDetails> textureDetails = getTextureDetails();
     bool textureExists = false;
     for (auto& textureDetail : textureDetails) {
@@ -78,7 +78,7 @@ int Chronos::Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapePar
         throw std::runtime_error("Texture does not exist");
     }
 
-    //check whether shape name exists
+    // check whether shape name exists
     for (auto& shape : engine.shapeManager.objects) {
         if (strcmp(shape.second.params.shapeName, shapeParams.shapeName) == 0) {
             throw std::runtime_error("Shape name already exists");
@@ -89,15 +89,15 @@ int Chronos::Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapePar
     }
     shapeNo = engine.polygonManager.addPolygon(shapeParams, vertices, engine.textureManager.getTexture(texture));
 
-    //we add 3 to shapeNo to know they are textured npolygons
+    // we add 3 to shapeNo to know they are textured npolygons
     shapeNo = std::stoi("3" + std::to_string(shapeNo));
     return shapeNo;
 }
 
 int Chronos::Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType)
-{   
-    //this function is for colored triangles and rectangles only
-    //check whether shape name exists
+{
+    // this function is for colored triangles and rectangles only
+    // check whether shape name exists
     for (auto& shape : engine.shapeManager.objects) {
         if (strcmp(shape.second.params.shapeName, shapeParams.shapeName) == 0) {
             throw std::runtime_error("Shape name already exists");
@@ -112,27 +112,27 @@ int Chronos::Manager::Manager::addPolygon(Chronos::Manager::ShapeParams shapePar
         throw std::runtime_error("Polygon type not supported");
     }
 
-    //we add 2 to shapeNo to know they are colored triangles or rectangles
+    // we add 2 to shapeNo to know they are colored triangles or rectangles
     shapeNo = std::stoi("2" + std::to_string(shapeNo));
 
     return shapeNo;
 }
 void Chronos::Manager::Manager::updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams)
-{   
-    if (std::to_string(shapeNo).substr(0, 1) == "1") { //textured triangles and rectangles
-        int actualShapeNo = shapeNo - 1*(10*(std::to_string(shapeNo).size() - 1));
+{
+    if (std::to_string(shapeNo).substr(0, 1) == "1") { // textured triangles and rectangles
+        int actualShapeNo = shapeNo - 1 * (10 * (std::to_string(shapeNo).size() - 1));
         if (engine.shapeManager.objects.count(actualShapeNo) == 0) {
             throw std::runtime_error("Shape does not exist");
         }
         engine.shapeManager.objects[actualShapeNo].params = shapeParams;
-    } else if (std::to_string(shapeNo).substr(0, 1) == "3") { //textured npolygons
-        int actualShapeNo = shapeNo - 3*(10*(std::to_string(shapeNo).size() - 1));
+    } else if (std::to_string(shapeNo).substr(0, 1) == "3") { // textured npolygons
+        int actualShapeNo = shapeNo - 3 * (10 * (std::to_string(shapeNo).size() - 1));
         if (engine.polygonManager.objects.count(actualShapeNo) == 0) {
             throw std::runtime_error("Shape does not exist");
         }
         engine.polygonManager.objects[actualShapeNo].params = shapeParams;
-    }  else if (std::to_string(shapeNo).substr(0, 1) == "2") { //colored triangles and rectangles
-        int actualShapeNo = shapeNo - 2*(10*(std::to_string(shapeNo).size() - 1));
+    } else if (std::to_string(shapeNo).substr(0, 1) == "2") { // colored triangles and rectangles
+        int actualShapeNo = shapeNo - 2 * (10 * (std::to_string(shapeNo).size() - 1));
         if (engine.colorShapeManager.objects.count(actualShapeNo) == 0) {
             throw std::runtime_error("Shape does not exist");
         }
@@ -143,9 +143,9 @@ void Chronos::Manager::Manager::updatePolygon(int shapeNo, Chronos::Manager::Sha
 }
 
 void Chronos::Manager::Manager::updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams, std::vector<std::array<float, 2>> vertices)
-{   
-    if (std::to_string(shapeNo).substr(0, 1) == "3") { //textured npolygons
-        int actualShapeNo = shapeNo - 3*(10*(std::to_string(shapeNo).size() - 1));
+{
+    if (std::to_string(shapeNo).substr(0, 1) == "3") { // textured npolygons
+        int actualShapeNo = shapeNo - 3 * (10 * (std::to_string(shapeNo).size() - 1));
         if (engine.polygonManager.objects.count(actualShapeNo) == 0) {
             throw std::runtime_error("Shape does not exist");
         }
@@ -156,17 +156,17 @@ void Chronos::Manager::Manager::updatePolygon(int shapeNo, Chronos::Manager::Sha
     }
 }
 
-std::vector<std::pair<int, Chronos::Manager::ShapeParams>> Chronos::Manager::Manager::getShapeDetails(){
+std::vector<std::pair<int, Chronos::Manager::ShapeParams>> Chronos::Manager::Manager::getShapeDetails()
+{
     std::vector<std::pair<int, Chronos::Manager::ShapeParams>> shapeDetails;
-    //we need both colored and textured triangles and rectangles
-    for (auto& shape : engine.shapeManager.objects)
-    {
+    // we need both colored and textured triangles and rectangles
+    for (auto& shape : engine.shapeManager.objects) {
         std::pair<int, Chronos::Manager::ShapeParams> shapeDetail;
         shapeDetail.first = std::stoi("1" + std::to_string(shape.first));
         shapeDetail.second = shape.second.params;
         shapeDetails.push_back(shapeDetail);
     }
-    for(auto& shape : engine.colorShapeManager.objects){
+    for (auto& shape : engine.colorShapeManager.objects) {
         std::pair<int, Chronos::Manager::ShapeParams> shapeDetail;
         shapeDetail.first = std::stoi("2" + std::to_string(shape.first));
         shapeDetail.second = shape.second.params;
@@ -174,12 +174,12 @@ std::vector<std::pair<int, Chronos::Manager::ShapeParams>> Chronos::Manager::Man
     }
     return shapeDetails;
 }
-std::vector<std::pair<int, Chronos::Manager::ShapeParams>> Chronos::Manager::Manager::getPolygonDetails(){
+std::vector<std::pair<int, Chronos::Manager::ShapeParams>> Chronos::Manager::Manager::getPolygonDetails()
+{
 
-    //get the details of the npolygons
+    // get the details of the npolygons
     std::vector<std::pair<int, Chronos::Manager::ShapeParams>> shapeDetails;
-    for (auto& shape : engine.polygonManager.objects)
-    {
+    for (auto& shape : engine.polygonManager.objects) {
         std::pair<int, Chronos::Manager::ShapeParams> shapeDetail;
         shapeDetail.first = std::stoi("3" + std::to_string(shape.first));
         shapeDetail.second = shape.second.params;
@@ -188,16 +188,17 @@ std::vector<std::pair<int, Chronos::Manager::ShapeParams>> Chronos::Manager::Man
     return shapeDetails;
 }
 
-std::vector<std::array<float, 2>> Chronos::Manager::Manager::getPolygonVertices(int polygonNo){
-    if (std::to_string(polygonNo).substr(0, 1) == "3") { //textured npolygons
-        int actualPolygonNo = polygonNo - 3*(10*(std::to_string(polygonNo).size() - 1));
+std::vector<std::array<float, 2>> Chronos::Manager::Manager::getPolygonVertices(int polygonNo)
+{
+    if (std::to_string(polygonNo).substr(0, 1) == "3") { // textured npolygons
+        int actualPolygonNo = polygonNo - 3 * (10 * (std::to_string(polygonNo).size() - 1));
         if (engine.polygonManager.objects.count(actualPolygonNo) == 0) {
             throw std::runtime_error("Shape does not exist");
         }
         std::vector<Chronos::Engine::TexturedVertex> texturedVertices = engine.polygonManager.objects[actualPolygonNo].vertices;
         std::vector<std::array<float, 2>> vertices;
-        for(Chronos::Engine::TexturedVertex vertex : texturedVertices){
-            vertices.push_back({vertex.pos[0], vertex.pos[1]});
+        for (Chronos::Engine::TexturedVertex vertex : texturedVertices) {
+            vertices.push_back({ vertex.pos[0], vertex.pos[1] });
         }
         return vertices;
     } else {
@@ -206,21 +207,21 @@ std::vector<std::array<float, 2>> Chronos::Manager::Manager::getPolygonVertices(
 }
 
 void Chronos::Manager::Manager::removePolygon(int shapeNo)
-{   
-    if (std::to_string(shapeNo).substr(0, 1) == "1") { //textured triangles and rectangles
-        int actualShapeNo = shapeNo - 1*(10*(std::to_string(shapeNo).size() - 1));
+{
+    if (std::to_string(shapeNo).substr(0, 1) == "1") { // textured triangles and rectangles
+        int actualShapeNo = shapeNo - 1 * (10 * (std::to_string(shapeNo).size() - 1));
         if (engine.shapeManager.objects.count(actualShapeNo) == 0) {
             throw std::runtime_error("Shape does not exist");
         }
         engine.shapeManager.remove(actualShapeNo);
-    } else if (std::to_string(shapeNo).substr(0, 1) == "2") { //colored triangles and rectangles
-        int actualShapeNo = shapeNo - 2*(10*(std::to_string(shapeNo).size() - 1));
+    } else if (std::to_string(shapeNo).substr(0, 1) == "2") { // colored triangles and rectangles
+        int actualShapeNo = shapeNo - 2 * (10 * (std::to_string(shapeNo).size() - 1));
         if (engine.colorShapeManager.objects.count(actualShapeNo) == 0) {
             throw std::runtime_error("Shape does not exist");
         }
         engine.colorShapeManager.remove(actualShapeNo);
-    } else if (std::to_string(shapeNo).substr(0, 1) == "3") { //textured npolygons
-        int actualShapeNo = shapeNo - 3*(10*(std::to_string(shapeNo).size() - 1));
+    } else if (std::to_string(shapeNo).substr(0, 1) == "3") { // textured npolygons
+        int actualShapeNo = shapeNo - 3 * (10 * (std::to_string(shapeNo).size() - 1));
         if (engine.polygonManager.objects.count(actualShapeNo) == 0) {
             throw std::runtime_error("Shape does not exist");
         }

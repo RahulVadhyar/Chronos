@@ -37,7 +37,6 @@ namespace Engine {
         "VK_LAYER_KHRONOS_validation"
     };
 
-
     /**
     \brief Checks if the validation layers are supported by the system.
     */

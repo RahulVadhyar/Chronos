@@ -24,32 +24,33 @@ SOFTWARE.
 #include "chronos.hpp"
 #include "editorCodeGenerator.hpp"
 
-std::string Chronos::Editor::generateCode(Chronos::Manager::Manager* manager){
-    //generate code for initalizer, textured shape, colored shape, polygons, textures
+std::string Chronos::Editor::generateCode(Chronos::Manager::Manager* manager)
+{
+    // generate code for initalizer, textured shape, colored shape, polygons, textures
     std::string code = ""
-    "#include \"chronos.hpp\"\n"
-    "Chronos::Manager::Initializer initializer;\n"
-    "initializer.WindowWidth = 800;\n"
-    "initializer.WindowHeight = 600;\n"
-    "initializer.BackgroundColor[0] = 0;\n"
-    "initializer.BackgroundColor[1] = 0;\n"
-    "initializer.BackgroundColor[2] = 0;\n"
+                       "#include \"chronos.hpp\"\n"
+                       "Chronos::Manager::Initializer initializer;\n"
+                       "initializer.WindowWidth = 800;\n"
+                       "initializer.WindowHeight = 600;\n"
+                       "initializer.BackgroundColor[0] = 0;\n"
+                       "initializer.BackgroundColor[1] = 0;\n"
+                       "initializer.BackgroundColor[2] = 0;\n"
 
-    "Chronos::Manager::Manager manager(initializer);\n"
-    "//texture\n"
-    "//textured shapes\n"
-    
-    "//colored shapes\n"
+                       "Chronos::Manager::Manager manager(initializer);\n"
+                       "//texture\n"
+                       "//textured shapes\n"
 
-    "//polygons\n"
+                       "//colored shapes\n"
 
-    "settings\n"
+                       "//polygons\n"
 
-    "while (!glfwWindowShouldClose(manager.getWindow())) {\n"
-        "if (glfwGetKey(manager.getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS) {\n"
-            "glfwSetWindowShouldClose(manager.getWindow(), true);\n"
-        "}\n"
-        "manager.drawFrame();\n"
-    "}\n ";
+                       "settings\n"
+
+                       "while (!glfwWindowShouldClose(manager.getWindow())) {\n"
+                       "if (glfwGetKey(manager.getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS) {\n"
+                       "glfwSetWindowShouldClose(manager.getWindow(), true);\n"
+                       "}\n"
+                       "manager.drawFrame();\n"
+                       "}\n ";
     return code;
 }

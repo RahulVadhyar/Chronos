@@ -61,7 +61,7 @@ void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFW
     poolSizes[0].descriptorCount = static_cast<uint32_t>(MAX_FRAMES_IN_FLIGHT);
 
     VkDescriptorPoolSize pool_sizes[] = {
-        { VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 100}
+        { VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 100 }
     };
     VkDescriptorPoolCreateInfo pool_info = {};
     pool_info.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
@@ -145,7 +145,7 @@ void Chronos::Editor::EditorRenderer::render(uint32_t currentFrame, uint32_t ima
     vkResetCommandBuffer(commandBuffers[currentFrame], 0);
     VkCommandBufferBeginInfo beginInfo {};
     beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
-    VkClearValue clearColor = {{{ bgColor[0], bgColor[1], bgColor[2], 1.0f }}};
+    VkClearValue clearColor = { { { bgColor[0], bgColor[1], bgColor[2], 1.0f } } };
     vkBeginCommandBuffer(commandBuffers[currentFrame], &beginInfo);
     VkRenderPassBeginInfo info = {};
     info.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
@@ -177,9 +177,10 @@ void Chronos::Editor::EditorRenderer::recreate()
     LOG(3, "EditorRenderer", "EditorRenderer recreated")
 }
 
-void Chronos::Editor::EditorRenderer::renderAdditionalViewports(){
+void Chronos::Editor::EditorRenderer::renderAdditionalViewports()
+{
 #ifdef WIN32
-    if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_ViewportsEnable){
+    if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_ViewportsEnable) {
         ImGui::UpdatePlatformWindows();
         ImGui::RenderPlatformWindowsDefault();
     }
@@ -187,12 +188,12 @@ void Chronos::Editor::EditorRenderer::renderAdditionalViewports(){
 #endif
 }
 
-void Chronos::Editor::EditorRenderer::changeMsaa(){
+void Chronos::Editor::EditorRenderer::changeMsaa()
+{
     vkDestroyRenderPass(device->device, renderPass, nullptr);
     renderPass = Chronos::Engine::createRenderPass(
         *device, *swapChain, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
         VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
         false, false, true);
     recreate();
-    
 }

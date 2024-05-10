@@ -47,8 +47,7 @@ void Chronos::Engine::TextureManager::removeTexture(int textureNo)
 
 void Chronos::Engine::TextureManager::destroy()
 {
-    for (auto& texture : textures)
-    {
+    for (auto& texture : textures) {
         texture.second.destroy();
     }
 }

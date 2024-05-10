@@ -27,8 +27,8 @@ SOFTWARE.
 // 3 - verbose
 // 4 - includes frame fraw
 #ifdef CHRONOS_ENABLE_LOGGING
-#define LOG(LEVEL, CLASS, MESSAGE) \
-    if (LEVEL <= CHRONOS_ENABLE_LOGGING) { \
+#define LOG(LEVEL, CLASS, MESSAGE)                                            \
+    if (LEVEL <= CHRONOS_ENABLE_LOGGING) {                                    \
         std::cout << "[Chronos log][" << CLASS "]: " << MESSAGE << std::endl; \
     }
 #else

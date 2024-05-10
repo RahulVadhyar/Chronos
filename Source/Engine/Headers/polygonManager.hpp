@@ -27,7 +27,6 @@ namespace Engine {
 
     class PolygonManager : public Chronos::Engine::ObjectManager<Chronos::Engine::Polygon> {
     public:
-
         int addPolygon(Chronos::Manager::ShapeParams shapeParams, std::vector<std::array<float, 2>> vertices, Chronos::Engine::Texture texture);
         /**
         \brief Records the commands needed for rendering the shapes.

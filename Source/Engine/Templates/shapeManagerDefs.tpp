@@ -41,7 +41,8 @@ void Chronos::Engine::ShapeManager<VertexStruct>::render(uint32_t currentFrame, 
 
     // render the shapes
     for (auto& shape : Chronos::Engine::ShapeManager<VertexStruct>::objects) {
-        if(this->objectsToBeRemoved.count(shape.first) > 0) continue;
+        if (this->objectsToBeRemoved.count(shape.first) > 0)
+            continue;
         vkCmdBindPipeline(Chronos::Engine::ShapeManager<VertexStruct>::commandBuffers[currentFrame],
             VK_PIPELINE_BIND_POINT_GRAPHICS, shape.second.graphicsPipeline);
         vkCmdSetViewport(Chronos::Engine::ShapeManager<VertexStruct>::commandBuffers[currentFrame], 0, 1, &viewport);
@@ -80,7 +81,7 @@ int Chronos::Engine::ShapeManager<VertexStruct>::addRectangle(Chronos::Manager::
 {
     int shapeNo = Chronos::Engine::ObjectManager<Chronos::Engine::Shape<VertexStruct>>::addObject(Rectangle<Chronos::Engine::ColorVertex>());
     Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].init(Chronos::Engine::ShapeManager<VertexStruct>::device, Chronos::Engine::ShapeManager<VertexStruct>::commandPool, Chronos::Engine::ShapeManager<VertexStruct>::swapChain, &(Chronos::Engine::ShapeManager<VertexStruct>::renderPass),
-    Chronos::Engine::ShapeManager<VertexStruct>::textureSampler);
+        Chronos::Engine::ShapeManager<VertexStruct>::textureSampler);
     Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].params = shapeParams;
     return shapeNo;
 }
@@ -103,7 +104,7 @@ int Chronos::Engine::ShapeManager<VertexStruct>::addTriangle(Chronos::Manager::S
 {
     int shapeNo = Chronos::Engine::ObjectManager<Chronos::Engine::Shape<VertexStruct>>::addObject(Triangle<Chronos::Engine::ColorVertex>());
     Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].init(Chronos::Engine::ShapeManager<VertexStruct>::device, Chronos::Engine::ShapeManager<VertexStruct>::commandPool, Chronos::Engine::ShapeManager<VertexStruct>::swapChain, &(Chronos::Engine::ShapeManager<VertexStruct>::renderPass),
-    Chronos::Engine::ShapeManager<VertexStruct>::textureSampler);
+        Chronos::Engine::ShapeManager<VertexStruct>::textureSampler);
     Chronos::Engine::ShapeManager<VertexStruct>::objects[shapeNo].params = shapeParams;
     return shapeNo;
 }

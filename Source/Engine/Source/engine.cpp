@@ -96,12 +96,12 @@ void Chronos::Engine::Engine::initWindow()
 
 void Chronos::Engine::Engine::initVulkan()
 {
-    //create the basic objects
+    // create the basic objects
     createInstance();
 
-    #ifdef ENABLE_VULKAN_VALIDATION_LAYERS
+#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
     setupDebugMessenger();
-    #endif
+#endif
     createSurface();
     device.init(instance, surface);
     LOG(3, "Engine", "Device initialized")
@@ -110,7 +110,7 @@ void Chronos::Engine::Engine::initVulkan()
     commandPool = createCommandPool(device, swapChain.surface);
     LOG(3, "Engine", "Command pool initialized")
 
-    //initalize all the managers
+    // initalize all the managers
     textureManager.init(&device, commandPool);
     LOG(3, "Engine", "Texture manager initialized")
     shapeManager.init(&device, &swapChain, commandPool);
@@ -170,13 +170,13 @@ void Chronos::Engine::Engine::cleanup()
 }
 
 void Chronos::Engine::Engine::drawFrame()
-{   
-    if(swapChain.changePresentMode){
+{
+    if (swapChain.changePresentMode) {
         changePresentMode();
         swapChain.changePresentMode = false;
         LOG(3, "Engine", "Present mode changed")
     }
-    if(this->changeMSAAFlag){
+    if (this->changeMSAAFlag) {
         vkDeviceWaitIdle(device.device);
         changeMSAASettings();
         this->changeMSAAFlag = false;
@@ -231,7 +231,7 @@ void Chronos::Engine::Engine::drawFrame()
     colorShapeManager.update(currentFrame);
     textManager.update(currentFrame);
     polygonManager.update(currentFrame);
-    
+
 #ifdef ENABLE_EDITOR
     gui.update();
 #endif
@@ -252,7 +252,6 @@ void Chronos::Engine::Engine::drawFrame()
     gui.render(currentFrame, imageIndex, bgColor);
 #endif
     LOG(4, "Engine", "Managers command buffers recorded")
-
 
     // configure the semaphores
     VkSemaphore waitSemaphores[] = { imageAvailableSemaphores[currentFrame] };
@@ -288,7 +287,7 @@ void Chronos::Engine::Engine::drawFrame()
         throw std::runtime_error("failed to submit draw command buffer!");
     }
     LOG(4, "Engine", "Command buffers submitted")
-    
+
 #ifdef ENABLE_EDITOR
     gui.renderAdditionalViewports();
 #endif
@@ -375,13 +374,13 @@ void Chronos::Engine::Engine::createInstance()
     createInfo.pNext = nullptr;
 
 #ifdef ENABLE_VULKAN_VALIDATION_LAYERS
-        createInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
-        createInfo.ppEnabledLayerNames = validationLayers.data();
-        // uncomment below if u need fine details. It just creates extra verbose
-        // generally not needed
-        // VkDebugUtilsMessengerCreateInfoEXT debugCreateInfo {};
-        //  populateDebugMessengerCreateInfo(debugCreateInfo);
-        //  createInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT*)&debugCreateInfo;
+    createInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
+    createInfo.ppEnabledLayerNames = validationLayers.data();
+    // uncomment below if u need fine details. It just creates extra verbose
+    // generally not needed
+    // VkDebugUtilsMessengerCreateInfoEXT debugCreateInfo {};
+    //  populateDebugMessengerCreateInfo(debugCreateInfo);
+    //  createInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT*)&debugCreateInfo;
 #endif
     if (vkCreateInstance(&createInfo, nullptr, &instance) != VK_SUCCESS) {
         LOG(1, "Engine", "Failed to create instance")
@@ -397,7 +396,7 @@ void Chronos::Engine::Engine::setupDebugMessenger()
     if (CreateDebugUtilsMessengerEXT(instance, &createInfo, nullptr,
             &debugMessenger)
         != VK_SUCCESS) {
-            LOG(1, "Engine", "Failed to set up debug messenger")
+        LOG(1, "Engine", "Failed to set up debug messenger")
         throw std::runtime_error("Failed to set up debug messenger");
     }
 }
@@ -446,26 +445,28 @@ void Chronos::Engine::Engine::setEditorAddElementsCallback(void (*editorAddEleme
 }
 #endif
 
-void Chronos::Engine::Engine::changePresentMode(){
+void Chronos::Engine::Engine::changePresentMode()
+{
     vkDeviceWaitIdle(device.device);
     swapChain.recreate();
     shapeManager.recreate();
     colorShapeManager.recreate();
     textManager.recreate();
     polygonManager.recreate();
-    #ifdef ENABLE_EDITOR
+#ifdef ENABLE_EDITOR
     gui.recreate();
-    #endif
+#endif
 }
 
-void Chronos::Engine::Engine::setPresentMode(std::string mode){
-    if(mode == "immediate"){
+void Chronos::Engine::Engine::setPresentMode(std::string mode)
+{
+    if (mode == "immediate") {
         this->swapChain.preferredPresentMode = VK_PRESENT_MODE_IMMEDIATE_KHR;
-    }  else if(mode == "fifo"){
+    } else if (mode == "fifo") {
         this->swapChain.preferredPresentMode = VK_PRESENT_MODE_FIFO_KHR;
-    } else if(mode == "fifo_relaxed"){
+    } else if (mode == "fifo_relaxed") {
         this->swapChain.preferredPresentMode = VK_PRESENT_MODE_FIFO_RELAXED_KHR;
-    } else if(mode == "mailbox"){
+    } else if (mode == "mailbox") {
         this->swapChain.preferredPresentMode = VK_PRESENT_MODE_MAILBOX_KHR;
     } else {
         throw std::runtime_error("Invalid present mode");
@@ -474,57 +475,60 @@ void Chronos::Engine::Engine::setPresentMode(std::string mode){
     LOG(3, "Engine", "Present mode set to " + mode)
 }
 
-std::vector<std::string> Chronos::Engine::Engine::getAvailableMSAAModes(){
+std::vector<std::string> Chronos::Engine::Engine::getAvailableMSAAModes()
+{
     VkSampleCountFlagBits maxSample = device.maxMsaaSamples;
     std::vector<std::string> modes;
-    if(VK_SAMPLE_COUNT_64_BIT <= maxSample){
+    if (VK_SAMPLE_COUNT_64_BIT <= maxSample) {
         modes.push_back("64");
     }
-    if(VK_SAMPLE_COUNT_32_BIT <= maxSample){
+    if (VK_SAMPLE_COUNT_32_BIT <= maxSample) {
         modes.push_back("32");
-}
-    if(VK_SAMPLE_COUNT_16_BIT <= maxSample){
+    }
+    if (VK_SAMPLE_COUNT_16_BIT <= maxSample) {
         modes.push_back("16");
     }
-    if(VK_SAMPLE_COUNT_8_BIT <= maxSample){
+    if (VK_SAMPLE_COUNT_8_BIT <= maxSample) {
         modes.push_back("8");
     }
-    if(VK_SAMPLE_COUNT_4_BIT <= maxSample){
+    if (VK_SAMPLE_COUNT_4_BIT <= maxSample) {
         modes.push_back("4");
     }
-    if(VK_SAMPLE_COUNT_2_BIT <= maxSample){
+    if (VK_SAMPLE_COUNT_2_BIT <= maxSample) {
         modes.push_back("2");
     }
     modes.push_back("1");
     return modes;
 }
 
-void Chronos::Engine::Engine::changeMSAA(std::string mode){
-    if(mode == "64"){
+void Chronos::Engine::Engine::changeMSAA(std::string mode)
+{
+    if (mode == "64") {
         this->newMSAAMode = VK_SAMPLE_COUNT_64_BIT;
-    } else if(mode == "32"){
+    } else if (mode == "32") {
         this->newMSAAMode = VK_SAMPLE_COUNT_32_BIT;
-    } else if(mode == "16"){
+    } else if (mode == "16") {
         this->newMSAAMode = VK_SAMPLE_COUNT_16_BIT;
-    } else if(mode == "8"){
+    } else if (mode == "8") {
         this->newMSAAMode = VK_SAMPLE_COUNT_8_BIT;
-    } else if(mode == "4"){
+    } else if (mode == "4") {
         this->newMSAAMode = VK_SAMPLE_COUNT_4_BIT;
-    } else if(mode == "2"){
+    } else if (mode == "2") {
         this->newMSAAMode = VK_SAMPLE_COUNT_2_BIT;
-    } else if(mode == "1"){
+    } else if (mode == "1") {
         this->newMSAAMode = VK_SAMPLE_COUNT_1_BIT;
     } else {
         throw std::runtime_error("Invalid MSAA mode");
     }
-    if(this->newMSAAMode > device.maxMsaaSamples){
+    if (this->newMSAAMode > device.maxMsaaSamples) {
         throw std::runtime_error("Invalid MSAA mode");
     }
     this->changeMSAAFlag = true;
     LOG(3, "Engine", "MSAA to be changed to " + mode)
 }
 
-void Chronos::Engine::Engine::changeMSAASettings(){
+void Chronos::Engine::Engine::changeMSAASettings()
+{
     device.msaaSamples = this->newMSAAMode;
     this->swapChain.changeMsaa();
     this->textManager.changeMsaa();

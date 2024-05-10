@@ -28,7 +28,7 @@ This file is used to include all the fonts in the project.
 
 */
 #ifndef WIN32
-#pragma GCC diagnostic push 
+#pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wunused-function"
 #ifdef __clang__
 #pragma clang diagnostic ignored "-Weverything"

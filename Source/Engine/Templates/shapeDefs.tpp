@@ -27,8 +27,8 @@ void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device,
     Chronos::Engine::Texture texture, VkRenderPass* renderPass)
     requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value)
 {
-    this->vertexShaderPath = SPIV_SHADER_PATH"/textureVert.spv";
-    this->fragmentShaderPath = SPIV_SHADER_PATH"/textureFrag.spv";
+    this->vertexShaderPath = SPIV_SHADER_PATH "/textureVert.spv";
+    this->fragmentShaderPath = SPIV_SHADER_PATH "/textureFrag.spv";
     this->texture = texture;
 
     Chronos::Engine::Object::init(device, commandPool, swapChain, textureSampler, renderPass);
@@ -49,12 +49,12 @@ void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device,
 
 template <Chronos::Engine::VertexLike VertexStruct>
 void Chronos::Engine::Shape<VertexStruct>::init(Chronos::Engine::Device* device, VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
-    VkRenderPass* renderPass,  VkSampler textureSampler)
+    VkRenderPass* renderPass, VkSampler textureSampler)
     requires(std::is_same<Chronos::Engine::ColorVertex, VertexStruct>::value)
 {
 
-    this->vertexShaderPath = SPIV_SHADER_PATH"/colorVert.spv";
-    this->fragmentShaderPath = SPIV_SHADER_PATH"/colorFrag.spv";
+    this->vertexShaderPath = SPIV_SHADER_PATH "/colorVert.spv";
+    this->fragmentShaderPath = SPIV_SHADER_PATH "/colorFrag.spv";
 
     colorBuffers.resize(MAX_FRAMES_IN_FLIGHT);
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {

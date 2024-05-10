@@ -28,10 +28,8 @@ SOFTWARE.
 */
 #pragma once
 
-
-
 #ifdef ENABLE_EDITOR
-//if the editor is enabled, then include the editorRenderer to get the rendering functions and classes of the editor.
+// if the editor is enabled, then include the editorRenderer to get the rendering functions and classes of the editor.
 #include "editorRenderer.hpp"
 #endif
 
@@ -115,7 +113,7 @@ namespace Engine {
         To add or remove textures, one may call the necessary methods in this class.
         */
         Chronos::Engine::TextureManager textureManager;
-        
+
         /**
         \brief Used to create and manage aribatry polygons.
 
@@ -172,7 +170,7 @@ namespace Engine {
         This tells Vulkan that the swapChain has to be recreated.
         */
         void resizeFrameBuffer();
-        
+
         /**
         \brief Changes the present mode of the swapchain.
 
@@ -189,7 +187,7 @@ namespace Engine {
         mode can be used to render frames as fast as possible while still avoiding
         tearing, resulting in fewer latency issues than standard vertical sync.This
         is commonly known as "triple buffering", although the existence of three buffers alone does not necessarily mean that the framerate
-        
+
         @param mode The mode to change to. It can be one of the following:
         - immediate
         - fifo
@@ -206,7 +204,7 @@ namespace Engine {
         This is used by ImGui to add elements to the editor.
         Since that fucntions are not part of the engine, the user has to set the callback function.
         */
-        void setEditorAddElementsCallback(void(*)());
+        void setEditorAddElementsCallback(void (*)());
 #endif
         /**
         \brief This is the destructor of the engine.
@@ -221,7 +219,6 @@ namespace Engine {
         std::vector<std::string> getAvailableMSAAModes();
 
     private:
-
         bool changeMSAAFlag = false;
         VkSampleCountFlagBits newMSAAMode;
 
@@ -376,7 +373,7 @@ namespace Engine {
         Chronos::Editor::EditorRenderer gui = Chronos::Editor::EditorRenderer();
 #endif
 #ifdef CHRONOS_PROFILING
-public:
+    public:
         /**
         \brief Displays the FPS to the console.
 
@@ -384,13 +381,12 @@ public:
         This is useful to monitor the performance of the application.
         */
         float getfps()
-        {       
-                static float prevTime = 0.0f;
-                float current_time = static_cast<float>(glfwGetTime());
-                float fps = 1.0f / (current_time - prevTime);
-                prevTime = current_time;
-                return fps;
-
+        {
+            static float prevTime = 0.0f;
+            float current_time = static_cast<float>(glfwGetTime());
+            float fps = 1.0f / (current_time - prevTime);
+            prevTime = current_time;
+            return fps;
         }
 
         float getWaitTime()
@@ -413,7 +409,8 @@ public:
         {
             return presentTime;
         }
-private:
+
+    private:
         float waitTime = 0.0f;
         float updateTime = 0.0f;
         float cpuTime = 0.0f;

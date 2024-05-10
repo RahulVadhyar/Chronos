@@ -65,7 +65,8 @@ void Chronos::Engine::TextManager::render(uint32_t currentFrame, uint32_t imageI
     scissor.offset = { 0, 0 };
     scissor.extent = swapChain->swapChainExtent;
     for (auto& object : objects) {
-        if(this->objectsToBeRemoved.count(object.first) > 0) continue;
+        if (this->objectsToBeRemoved.count(object.first) > 0)
+            continue;
         vkCmdBindPipeline(commandBuffers[currentFrame],
             VK_PIPELINE_BIND_POINT_GRAPHICS, object.second.graphicsPipeline);
         vkCmdSetViewport(commandBuffers[currentFrame], 0, 1, &viewport);

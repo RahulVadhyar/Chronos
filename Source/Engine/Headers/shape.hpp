@@ -26,7 +26,7 @@ SOFTWARE.
 */
 #pragma once
 
-//empty struct for conditional
+// empty struct for conditional
 struct Empty {
     Empty() = default;
 };
@@ -37,7 +37,7 @@ namespace Engine {
     /**
     \brief Concept that checks if the given type is a class inheriting from the ColorVertex or TexturedVertex class.
 
-    A vertex struct is different depending on whether it is a color vertex or a textured vertex. 
+    A vertex struct is different depending on whether it is a color vertex or a textured vertex.
     This concept checks if the given type is a class inheriting from the ColorVertex or TexturedVertex class.
     It is used by the shape class to render a colored vertex or a textured vertex.
 
@@ -82,7 +82,6 @@ namespace Engine {
             VkRenderPass* renderPass)
             requires(std::is_same<Chronos::Engine::TexturedVertex, VertexStruct>::value);
 
-
         /**
         \brief Initializes a colored shape object and creates the necessary objects.
 
@@ -115,7 +114,6 @@ namespace Engine {
         {
             tempUpdate(currentFrame);
         }
-
 
         /**
         \brief Implements the update function for a textured shape object.
@@ -217,7 +215,6 @@ namespace Engine {
         std::vector<VkShaderStageFlagBits> getShaderStages();
 
     private:
-
         /**
         \brief The color buffers used to store the color information of the shape.
 

@@ -33,30 +33,33 @@ SOFTWARE.
 #include "getFontType.hpp"
 #include "fontTypes.hpp"
 
-#define FILL_FONT_STRUCT_NAME(type, size) Chronos::Engine::FontStructs:: type ## _ ## size
+#define FILL_FONT_STRUCT_NAME(type, size) Chronos::Engine::FontStructs::type##_##size
 
-#define FONT_CASE(size) case size : \
-if(fontType == "arial") \
-return FILL_FONT_STRUCT_NAME(arial, size); \
-else if(fontType == "arial_bold") \
-return FILL_FONT_STRUCT_NAME(arial_bold, size); \
-else if(fontType == "consolas") \
-return FILL_FONT_STRUCT_NAME(consolas, size); \
-else if(fontType == "consolas_bold") \
-return FILL_FONT_STRUCT_NAME(consolas_bold, size); \
-else if(fontType == "courier") \
-return FILL_FONT_STRUCT_NAME(courier, size); \
-else if(fontType == "courier_bold") \
-return FILL_FONT_STRUCT_NAME(courier_bold, size); \
-else if(fontType == "times") \
-return FILL_FONT_STRUCT_NAME(times, size); \
-else if(fontType == "times_bold") \
-return FILL_FONT_STRUCT_NAME(times_bold, size); \
-else throw std::runtime_error("Font type not found"); \
-break;
+#define FONT_CASE(size)                                        \
+    case size:                                                 \
+        if (fontType == "arial")                               \
+            return FILL_FONT_STRUCT_NAME(arial, size);         \
+        else if (fontType == "arial_bold")                     \
+            return FILL_FONT_STRUCT_NAME(arial_bold, size);    \
+        else if (fontType == "consolas")                       \
+            return FILL_FONT_STRUCT_NAME(consolas, size);      \
+        else if (fontType == "consolas_bold")                  \
+            return FILL_FONT_STRUCT_NAME(consolas_bold, size); \
+        else if (fontType == "courier")                        \
+            return FILL_FONT_STRUCT_NAME(courier, size);       \
+        else if (fontType == "courier_bold")                   \
+            return FILL_FONT_STRUCT_NAME(courier_bold, size);  \
+        else if (fontType == "times")                          \
+            return FILL_FONT_STRUCT_NAME(times, size);         \
+        else if (fontType == "times_bold")                     \
+            return FILL_FONT_STRUCT_NAME(times_bold, size);    \
+        else                                                   \
+            throw std::runtime_error("Font type not found");   \
+        break;
 
-Chronos::Engine::FontTypes Chronos::Engine::getFontType(std::string fontType, int fontSize){
-    switch(fontSize){
+Chronos::Engine::FontTypes Chronos::Engine::getFontType(std::string fontType, int fontSize)
+{
+    switch (fontSize) {
         FONT_CASE(6)
         FONT_CASE(7)
         FONT_CASE(8)
@@ -102,7 +105,7 @@ Chronos::Engine::FontTypes Chronos::Engine::getFontType(std::string fontType, in
         FONT_CASE(48)
         FONT_CASE(49)
         FONT_CASE(50)
-        default:
-            throw std::runtime_error("Font size not found");
+    default:
+        throw std::runtime_error("Font size not found");
     }
 }

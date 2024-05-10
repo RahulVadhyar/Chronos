@@ -150,7 +150,6 @@ namespace Engine {
         */
         VkFormat swapChainImageFormat;
 
-
         /**
         \brief Preferred present mode for the swapchain
         */

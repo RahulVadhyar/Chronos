@@ -29,7 +29,7 @@ SOFTWARE.
 #define STB_IMAGE_IMPLEMENTATION
 #ifndef WIN32
 #ifndef __clang__
-#pragma GCC diagnostic push 
+#pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wstringop-overflow"
 #endif
 #endif
@@ -138,11 +138,11 @@ void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandP
     vkDestroyBuffer(device.device, stagingBuffer, nullptr);
     vkFreeMemory(device.device, stagingBufferMemory, nullptr);
     textureImageView = createImageView(device, VK_FORMAT_R8G8B8A8_SRGB, textureImage);
-    #ifdef ENABLE_EDITOR
+#ifdef ENABLE_EDITOR
     Chronos::Engine::createTextureSampler(device, &textureSampler);
     descriptorSet = ImGui_ImplVulkan_AddTexture(textureSampler, textureImageView,
         VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL);
-    
+
 #endif
 }
 
@@ -182,7 +182,6 @@ void Chronos::Engine::Texture::create(Chronos::Engine::Device device, VkCommandP
     vkDestroyBuffer(device.device, stagingBuffer, nullptr);
     vkFreeMemory(device.device, stagingBufferMemory, nullptr);
     textureImageView = createImageView(device, format, textureImage);
-
 }
 
 void Chronos::Engine::transitionImageLayout(VkImage image,

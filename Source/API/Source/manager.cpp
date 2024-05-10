@@ -29,9 +29,9 @@ GLFWwindow* Manager::Manager::getWindow()
     return engine.window;
 }
 Manager::Manager::Manager(Chronos::Manager::Initializer initializer)
-{   
+{
 
-    //check whether the bg color is between 0 and 1
+    // check whether the bg color is between 0 and 1
     if (initializer.BackgroundColor[0] < 0 || initializer.BackgroundColor[0] > 1 || initializer.BackgroundColor[1] < 0 || initializer.BackgroundColor[1] > 1 || initializer.BackgroundColor[2] < 0 || initializer.BackgroundColor[2] > 1) {
         throw std::runtime_error("Invalid background color");
     }
@@ -45,14 +45,13 @@ Manager::Manager::Manager(Chronos::Manager::Initializer initializer)
     engine.width = initializer.WindowWidth;
     engine.height = initializer.WindowHeight;
 
-    #ifdef ENABLE_EDITOR
+#ifdef ENABLE_EDITOR
     engine.setEditorAddElementsCallback(initializer.editorAddElements);
-    #endif
+#endif
 }
 
-
 void Manager::Manager::drawFrame()
-{   
+{
     animManager.update();
     engine.drawFrame();
 }

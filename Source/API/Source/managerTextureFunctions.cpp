@@ -36,22 +36,20 @@ void Chronos::Manager::Manager::removeTexture(int textureNo)
     engine.textureManager.removeTexture(textureNo);
 }
 
-std::vector <Chronos::Manager::TextureDetails> Chronos::Manager::Manager::getTextureDetails()
+std::vector<Chronos::Manager::TextureDetails> Chronos::Manager::Manager::getTextureDetails()
 {
     std::vector<Chronos::Manager::TextureDetails> textureDetails;
-    for (auto& texture : engine.textureManager.textures)
-    {
+    for (auto& texture : engine.textureManager.textures) {
         Chronos::Manager::TextureDetails details;
         details.textureNo = texture.first;
         details.textureName = texture.second.textureName;
         details.texturePath = texture.second.texturePath;
         details.height = texture.second.height;
         details.width = texture.second.width;
-        #ifdef ENABLE_EDITOR
+#ifdef ENABLE_EDITOR
         details.descriptorSet = texture.second.descriptorSet;
-        #endif
+#endif
         textureDetails.push_back(details);
     }
     return textureDetails;
-
 }

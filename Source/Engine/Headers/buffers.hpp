@@ -144,7 +144,7 @@ namespace Engine {
         @param device The device on which the buffer should be stored.
         */
         void create(Chronos::Engine::Device device);
-        
+
         /**
         \brief Updates the buffer with the new color.
 

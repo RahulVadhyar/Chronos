@@ -25,11 +25,13 @@ SOFTWARE.
 
 Chronos::Editor::EditorManager editorManager;
 
-void addElements(){
+void addElements()
+{
     editorManager.addElements();
 }
 
-int main(){
+int main()
+{
     Chronos::Manager::Initializer initializer;
     initializer.WindowWidth = 800;
     initializer.WindowHeight = 600;
@@ -51,5 +53,5 @@ int main(){
         LOG(4, "EditorMain", "Frame drawn.")
     }
     LOG(2, "EditorMain", "Exited rendering loop, closing program.")
-    return 0; 
+    return 0;
 }

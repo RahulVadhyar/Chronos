@@ -39,22 +39,21 @@ SOFTWARE.
 namespace Chronos {
 namespace Engine {
 
-
     /**
     \brief The parameters needed for the font style
 
     This structure contains the parameters needed for the font style.
-    
+
     @param fontWidth The width of the font texture
     @param fontHeight The height of the font texture
     @param getFontData The function to get the font data
     @param firstChar The first character in the texture
     @param numChars The number of characters in the texture
     */
-    struct FontTypes{
+    struct FontTypes {
         uint32_t fontWidth;
         uint32_t fontHeight;
-        void (*getFontData)(stb_fontchar *, unsigned char[][256],  int);
+        void (*getFontData)(stb_fontchar*, unsigned char[][256], int);
         uint32_t firstChar;
         int numChars;
     };
@@ -156,7 +155,7 @@ namespace Engine {
         std::vector<Chronos::Engine::ColorBuffer> colorBuffers;
 
         uint32_t firstChar = 'a';
-    
+
         FontTypes fontStyle;
 
         /**
@@ -187,15 +186,11 @@ namespace Engine {
         */
         void updateBuffer();
 
-
         /**
         The mapped memory to the vertex buffer
         */
         glm::vec4* mappedMemory;
-
-
     };
 
-    
 };
 };

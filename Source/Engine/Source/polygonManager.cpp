@@ -53,12 +53,13 @@ void Chronos::Engine::PolygonManager::render(uint32_t currentFrame, uint32_t ima
 
     // render the shapes
     for (auto& polygon : objects) {
-        if(this->objectsToBeRemoved.count(polygon.first) > 0) continue;
+        if (this->objectsToBeRemoved.count(polygon.first) > 0)
+            continue;
         vkCmdBindPipeline(commandBuffers[currentFrame],
             VK_PIPELINE_BIND_POINT_GRAPHICS, polygon.second.graphicsPipeline);
         vkCmdSetViewport(commandBuffers[currentFrame], 0, 1, &viewport);
         vkCmdSetScissor(commandBuffers[currentFrame], 0, 1, &scissor);
-        VkBuffer vertexBuffers[] = { polygon.second.polygonVertexBuffers[currentFrame].buffer }; //note that we have multiple vertex buffers
+        VkBuffer vertexBuffers[] = { polygon.second.polygonVertexBuffers[currentFrame].buffer }; // note that we have multiple vertex buffers
         VkDeviceSize offsets[] = { 0 };
         vkCmdBindVertexBuffers(commandBuffers[currentFrame], 0, 1, vertexBuffers,
             offsets);
@@ -74,11 +75,11 @@ void Chronos::Engine::PolygonManager::render(uint32_t currentFrame, uint32_t ima
     endRender(currentFrame);
 }
 
-int Chronos::Engine::PolygonManager::addPolygon(Chronos::Manager::ShapeParams shapeParams, std::vector<std::array<float, 2>> vertices, 
-            Chronos::Engine::Texture texture)
+int Chronos::Engine::PolygonManager::addPolygon(Chronos::Manager::ShapeParams shapeParams, std::vector<std::array<float, 2>> vertices,
+    Chronos::Engine::Texture texture)
 {
     Chronos::Engine::Polygon polygon;
-    polygon.init(device, commandPool, swapChain, textureSampler, texture, &renderPass, 
+    polygon.init(device, commandPool, swapChain, textureSampler, texture, &renderPass,
         vertices);
     int shapeNo = Chronos::Engine::ObjectManager<Chronos::Engine::Polygon>::addObject(polygon);
     objects[shapeNo].params = shapeParams;
