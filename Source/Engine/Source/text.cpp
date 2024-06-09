@@ -168,7 +168,7 @@ Chronos::Engine::PipelineAttributes Chronos::Engine::Text::getPipelineAttributes
     pipelineAttributes.attributeDescriptions[1].offset = sizeof(glm::vec2);
 
     pipelineAttributes.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_STRIP;
-    pipelineAttributes.frontFace = VK_FRONT_FACE_CLOCKWISE;
+    pipelineAttributes.frontFace = VK_FRONT_FACE_COUNTER_CLOCKWISE;
 
     pipelineAttributes.colorBlendAttachment.blendEnable = VK_TRUE;
     pipelineAttributes.colorBlendAttachment.colorWriteMask = VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT;
