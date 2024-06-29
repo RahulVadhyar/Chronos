@@ -154,7 +154,7 @@ ${IMGUI_BACKENDS}/imgui_impl_vulkan.cpp
 )
 
 # linking
-add_executable(ChronosEditor ${CHRONOS_CPP} ${EDITOR_FILES})
+add_executable(ChronosEditor ${EDITOR_FILES} ${CHRONOS_CPP})
 
 #vulkan sdk if using windows
 if(WIN32)
