@@ -35,17 +35,20 @@ void Chronos::Editor::EditorManager::addElements()
     this->PolygonWindow();
     this->TextureWindow();
     this->TextWindow();
+    this->AnimationWindow();
     this->SettingsWindow();
     this->TotalCodeGenerationWindow();
     this->ShapeDetailsWindow();
     this->PolygonDetailsWindow();
     this->TextureDetailsWindow();
     this->TextDetailsWindow();
+    this->KeyframeDetailsWindow();
     this->DebugMetricsWindow();
     this->DebugLogWindow();
 #ifdef CHRONOS_PROFILING
     this->ProfilingWindow();
 #endif
+    this->updateKeyframes();
 
     LOG(4, "Editor", "Elements added to the editor.")
 }
@@ -58,7 +61,7 @@ void Chronos::Editor::EditorManager::MenuBar()
             ImGui::MenuItem("Polygon", NULL, &this->showPolygonWindow);
             ImGui::MenuItem("Texture", NULL, &this->showTextureWindow);
             ImGui::MenuItem("Text", NULL, &this->showTextWindow);
-            // ImGui::MenuItem("Animation", NULL, &this->showAnimationWindow);
+            ImGui::MenuItem("Animation", NULL, &this->showAnimationWindow);
             ImGui::MenuItem("Settings", NULL, &this->showSettingsWindow);
             ImGui::MenuItem("Generated Code", NULL, &this->showGeneratedCodeWindow);
 #ifdef CHRONOS_PROFILING
@@ -520,10 +523,20 @@ void Chronos::Editor::EditorManager::ShapeDetailsWindow()
         } else {
             ImGui::InputText("Shape Name", this->shapeDetailsShapeParams.shapeName, 200);
             ImGui::DragFloat("X(-1 to 1)", &this->shapeDetailsShapeParams.x, 0.01f, -1.0f, 1.0f);
+            ImGui::SameLine();
+            this->keyframeCheckbox(&this->shapeDetailsShapeParams.x);
             ImGui::DragFloat("Y(-1 to 1)", &this->shapeDetailsShapeParams.y, 0.01f, -1.0f, 1.0f);
+            ImGui::SameLine();
+            this->keyframeCheckbox(&this->shapeDetailsShapeParams.y);
             ImGui::DragFloat("X Size", &this->shapeDetailsShapeParams.xSize, 0.01f, 0.0f, FLT_MAX);
+            ImGui::SameLine();
+            this->keyframeCheckbox(&this->shapeDetailsShapeParams.xSize);
             ImGui::DragFloat("Y Size", &this->shapeDetailsShapeParams.ySize, 0.01f, 0.0f, FLT_MAX);
+            ImGui::SameLine();
+            this->keyframeCheckbox(&this->shapeDetailsShapeParams.ySize);
             ImGui::DragFloat("Rotation", &this->shapeDetailsShapeParams.rotation, 0.01f, 0.0f, FLT_MAX);
+            ImGui::SameLine();
+            this->keyframeCheckbox(&this->shapeDetailsShapeParams.rotation);
             ImGui::ColorEdit3("Color", this->shapeDetailsShapeParams.color.data());
             this->manager->updatePolygon(this->shapeDetailsShapeNo, this->shapeDetailsShapeParams);
         }
@@ -645,5 +658,83 @@ void Chronos::Editor::EditorManager::TotalCodeGenerationWindow()
         std::string code = Chronos::Editor::generateCode(this->manager);
         ImGui::InputTextMultiline("Code", code.data(), code.size(), ImVec2(800, 600), ImGuiInputTextFlags_ReadOnly);
         ImGui::End();
+    }
+}
+
+void Chronos::Editor::EditorManager::AnimationWindow()
+{
+    if (this->showAnimationWindow) {
+        ImGui::Begin("Animation", &this->showAnimationWindow);
+        ImGui::SeparatorText("Animation");
+        ImGui::End();
+    }
+}
+
+void Chronos::Editor::EditorManager::KeyframeDetailsWindow()
+{
+    if(this->showKeyframeDetailsWindow) {
+        ImGui::Begin("Keyframe Details", &this->showKeyframeDetailsWindow);
+        ImGui::SeparatorText("Keyframe Details");
+        ImGui::Text("Current Value pointer: %p", (void*)this->currentKeyframeValuePointer);
+        int keyframeNo = this->getKeyframeNo(this->currentKeyframeValuePointer);
+        ImGui::Text("Keyframe Number: %d", keyframeNo);
+        ImGui::End();
+    }
+}
+
+int Chronos::Editor::EditorManager::getKeyframeNo(float* valuePointer)
+{
+    if(!valuePointer){
+        throw std::runtime_error("Value Pointer is null");
+    }
+    if(this->floatPointerToKeyframeNo.find(valuePointer) == this->floatPointerToKeyframeNo.end()) {
+        return -1;
+    } else {
+        return this->floatPointerToKeyframeNo[valuePointer];
+    }
+}
+
+bool Chronos::Editor::EditorManager::doesKeyframeExist(float* valuePointer)
+{
+    if(this->getKeyframeNo(valuePointer) == -1) 
+        return false;
+    return true;
+}
+
+void Chronos::Editor::EditorManager::keyframeCheckbox(float* valuePointer)
+{   
+    bool isAnimated = this->doesKeyframeExist(valuePointer);
+    bool currentChange = isAnimated;
+    ImGui::Checkbox("Animate", &currentChange);
+    if(currentChange != isAnimated){
+        LOG(3, "EditorManager", "Animate checkbox changed for valuePointer [" + std::to_string((long)valuePointer) + "]");
+        if(currentChange){
+            int keyframeNo = this->manager->addKeyframeVariable({{0, *valuePointer}, {100, *valuePointer}});
+            this->floatPointerToKeyframeNo[valuePointer] = keyframeNo;
+            LOG(3, "EditorManager", "Added keyframe for valuePointer [" + std::to_string((long)valuePointer) + "] with keyframeNo [" + std::to_string(keyframeNo) + "]")
+        }
+        else{
+            int keyframeNo = this->getKeyframeNo(valuePointer);
+            if(keyframeNo == -1){
+                throw std::runtime_error("Could not find keyframe number!!!");
+            }
+            this->manager->removeKeyframeVariable(keyframeNo);
+            this->floatPointerToKeyframeNo.erase(valuePointer);
+            LOG(3, "EditorManager", "Removed keyframe for valuePointer [" + std::to_string((long)valuePointer) + "] with keyframeNo [" + std::to_string(keyframeNo) + "]")
+        }
+    }
+    if(currentChange){
+        ImGui::SameLine();
+        if(ImGui::Button("Keyframe Details")){
+            this->showKeyframeDetailsWindow = true;
+            this->currentKeyframeValuePointer = valuePointer;
+        }
+    }
+}
+
+void Chronos::Editor::EditorManager::updateKeyframes(){
+    for(auto& [key, value] : this->floatPointerToKeyframeNo){
+        *key = this->manager->keyframeGetVariable(value);
+        LOG(4, "EditorManager", "Updated keyframe value for keyframeNo [" + std::to_string(value) + "] to [" + std::to_string(*key) + "]")
     }
 }

@@ -55,6 +55,7 @@ SOFTWARE.
 #include <optional>
 #include <set>
 #include <unordered_set>
+#include <unordered_map>
 #include <stdexcept>
 #include <string>
 #include <vector>

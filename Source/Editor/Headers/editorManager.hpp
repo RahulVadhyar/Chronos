@@ -48,6 +48,7 @@ namespace Editor {
         bool showPolygonDetailsWindow = false;
         bool showTextureDetailsWindow = false;
         bool showTextDetailsWindow = false;
+        bool showKeyframeDetailsWindow = false;
 
         bool showDebugMetricsWindow = false;
         bool showDebugLogWindow = false;
@@ -60,19 +61,27 @@ namespace Editor {
         void PolygonWindow();
         void TextureWindow();
         void TextWindow();
+        void AnimationWindow();
         void SettingsWindow();
         void TotalCodeGenerationWindow();
-
+        
         void ShapeDetailsWindow();
         void PolygonDetailsWindow();
         void TextureDetailsWindow();
         void TextDetailsWindow();
+        void KeyframeDetailsWindow();
 
         void DebugMetricsWindow();
         void DebugLogWindow();
 #ifdef CHRONOS_PROFILING
         void ProfilingWindow();
 #endif
+
+        int getKeyframeNo(float* valuePointer);
+        bool doesKeyframeExist(float* valuePointer);
+        void keyframeCheckbox(float* valuePointer);
+        void updateKeyframes();
+
         // Shape Window
         Chronos::Manager::ShapeParams newShapeParams;
         int newShapeType = 0;
@@ -123,6 +132,10 @@ namespace Editor {
         bool fullScreen = false;
         bool isWindowFullscreen = false;
         std::string msaaSamples = "1";
+
+        //keyframe details window
+        std::unordered_map<float*, int> floatPointerToKeyframeNo;
+        float* currentKeyframeValuePointer = nullptr;
     };
 }
 }
