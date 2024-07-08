@@ -8,8 +8,9 @@ var searchData=
   ['addrig_5',['addRig',['../classChronos_1_1Manager_1_1Manager.html#a78f43bc1b46d2c4a94e9bc810eeb0cf0',1,'Chronos::Manager::Manager']]],
   ['addtext_6',['addText',['../classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32',1,'Chronos::Manager::Manager']]],
   ['addtexture_7',['addTexture',['../classChronos_1_1Manager_1_1Manager.html#a56f536155e14387a8d8067d771497daf',1,'Chronos::Manager::Manager::addTexture()'],['../classChronos_1_1Engine_1_1TextureManager.html#a9685eb69f90e7fbf14be57610b987678',1,'Chronos::Engine::TextureManager::addTexture()']]],
-  ['animmanager_8',['animManager',['../classChronos_1_1Manager_1_1Manager.html#a0aea503d29edecc626c6a17f46b09840',1,'Chronos::Manager::Manager']]],
-  ['api_20usage_9',['API Usage',['../md_docs_APIUsage.html',1,'']]],
-  ['apiusage_2emd_10',['APIUsage.md',['../APIUsage_8md.html',1,'']]],
-  ['attributedescriptions_11',['attributeDescriptions',['../structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225',1,'Chronos::Engine::PipelineAttributes']]]
+  ['animationwindow_8',['AnimationWindow',['../classChronos_1_1Editor_1_1EditorManager.html#aa259af1ca7bc3c16a6cdff93a41f5347',1,'Chronos::Editor::EditorManager']]],
+  ['animmanager_9',['animManager',['../classChronos_1_1Manager_1_1Manager.html#a0aea503d29edecc626c6a17f46b09840',1,'Chronos::Manager::Manager']]],
+  ['api_20usage_10',['API Usage',['../md_docs_APIUsage.html',1,'']]],
+  ['apiusage_2emd_11',['APIUsage.md',['../APIUsage_8md.html',1,'']]],
+  ['attributedescriptions_12',['attributeDescriptions',['../structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225',1,'Chronos::Engine::PipelineAttributes']]]
 ];
