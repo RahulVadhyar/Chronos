@@ -25,7 +25,7 @@ message("All optimizations and warnings are enabled. Building for release!")
 endif()
 else()
 set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -Wno-overloaded-virtual -Wno-unused-parameter -Wno-vla -Werror -g")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -Wno-overloaded-virtual -Wno-unused-parameter -Wno-vla -Werror")
 message("Building for debug!")
 endif()
 
