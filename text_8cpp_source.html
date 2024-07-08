@@ -258,7 +258,7 @@ $(document).ready(function(){initNavTree('text_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225">attributeDescriptions</a>[1].offset = <span class="keyword">sizeof</span>(glm::vec2);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a14e0f95045ac8e59a01daab9fbda2b6c">topology</a> = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_STRIP;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#aeda2f1f1bedbeca2694b16154ce8bd3d">frontFace</a> = VK_FRONT_FACE_COUNTER_CLOCKWISE;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#aeda2f1f1bedbeca2694b16154ce8bd3d">frontFace</a> = VK_FRONT_FACE_CLOCKWISE;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.blendEnable = VK_TRUE;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    pipelineAttributes.<a class="code" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.colorWriteMask = VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT;</div>
@@ -374,7 +374,7 @@ $(document).ready(function(){initNavTree('text_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00284"></a><span class="lineno"><a class="line" href="classChronos_1_1Engine_1_1Text.html#a2279c3602b1705ef3fb39d2e14825177">  284</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classChronos_1_1Engine_1_1Text.html#a2279c3602b1705ef3fb39d2e14825177">Chronos::Engine::Text::update</a>(uint32_t currentFrame)</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;{</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    updateBuffer();</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    uniformBuffers[currentFrame].update(swapChain-&gt;swapChainExtent, params.x, params.y, params.rotation - 90, 1.0f, 1.0f);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    uniformBuffers[currentFrame].update(swapChain-&gt;swapChainExtent, params.x, params.y, params.rotation + 90, 1.0f, -1.0f);</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    colorBuffers[currentFrame].update({ params.color[0], params.color[1], params.color[2] });</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;}</div>
 <div class="ttc" id="abuffers_8hpp_html"><div class="ttname"><a href="buffers_8hpp.html">buffers.hpp</a></div><div class="ttdoc">Contains the Buffer and UniformBuffer class.</div></div>
