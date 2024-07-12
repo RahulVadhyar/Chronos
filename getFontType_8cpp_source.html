@@ -123,93 +123,95 @@ $(document).ready(function(){initNavTree('getFontType_8cpp_source.html',''); ini
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="getFontType_8hpp.html">getFontType.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fontTypes_8hpp.html">fontTypes.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="getFontType_8cpp.html#a9a97eb96aa332aea65efbf443c1c4557">   36</a></span>&#160;<span class="preprocessor">#define FILL_FONT_STRUCT_NAME(type, size) Chronos::Engine::FontStructs::type##_##size</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">   38</a></span>&#160;<span class="preprocessor">#define FONT_CASE(size)                                        \</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">    case size:                                                 \</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">        if (fontType == &quot;arial&quot;</span>)                               \</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            return FILL_FONT_STRUCT_NAME(arial, size);         \</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        else if (fontType == &quot;arial_bold&quot;)                     \</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            return FILL_FONT_STRUCT_NAME(arial_bold, size);    \</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        else if (fontType == &quot;consolas&quot;)                       \</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            return FILL_FONT_STRUCT_NAME(consolas, size);      \</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        else if (fontType == &quot;consolas_bold&quot;)                  \</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            return FILL_FONT_STRUCT_NAME(consolas_bold, size); \</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        else if (fontType == &quot;courier&quot;)                        \</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            return FILL_FONT_STRUCT_NAME(courier, size);       \</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        else if (fontType == &quot;courier_bold&quot;)                   \</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            return FILL_FONT_STRUCT_NAME(courier_bold, size);  \</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        else if (fontType == &quot;times&quot;)                          \</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            return FILL_FONT_STRUCT_NAME(times, size);         \</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        else if (fontType == &quot;times_bold&quot;)                     \</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            return FILL_FONT_STRUCT_NAME(times_bold, size);    \</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        else                                                   \</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            throw std::runtime_error(&quot;Font type not found&quot;);   \</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        break;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="namespaceChronos_1_1Engine.html#a0b14987fbd6059bc502391f317ddcb97">   60</a></span>&#160;<a class="code" href="structChronos_1_1Engine_1_1FontTypes.html">Chronos::Engine::FontTypes</a> <a class="code" href="namespaceChronos_1_1Engine.html#a0b14987fbd6059bc502391f317ddcb97">Chronos::Engine::getFontType</a>(std::string fontType, <span class="keywordtype">int</span> fontSize)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">switch</span> (fontSize) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(6)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(7)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(8)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(9)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(10)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(11)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(12)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(13)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(14)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(15)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(16)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(17)</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(18)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(19)</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(20)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(21)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(22)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(23)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(24)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(25)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(26)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(27)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(28)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(29)</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(30)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(31)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(32)</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(33)</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(34)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(35)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(36)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(37)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(38)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(39)</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(40)</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(41)</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(42)</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(43)</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(44)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(45)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(46)</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(47)</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(48)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(49)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(50)</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Font size not found&quot;</span>);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="getFontType_8cpp.html#a9a97eb96aa332aea65efbf443c1c4557">   36</a></span>&#160;<span class="preprocessor">#define FILL_FONT_STRUCT_NAME(type, size)                                      \</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">    Chronos::Engine::FontStructs::type##_##size</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">   39</a></span>&#160;<span class="preprocessor">#define FONT_CASE(size)                                                        \</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">    case size:                                                                 \</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">    if (fontType == &quot;arial&quot;</span>)                                               \</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        return FILL_FONT_STRUCT_NAME(arial, size);                         \</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    else if (fontType == &quot;arial_bold&quot;)                                     \</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        return FILL_FONT_STRUCT_NAME(arial_bold, size);                    \</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    else if (fontType == &quot;consolas&quot;)                                       \</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        return FILL_FONT_STRUCT_NAME(consolas, size);                      \</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    else if (fontType == &quot;consolas_bold&quot;)                                  \</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        return FILL_FONT_STRUCT_NAME(consolas_bold, size);                 \</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    else if (fontType == &quot;courier&quot;)                                        \</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        return FILL_FONT_STRUCT_NAME(courier, size);                       \</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    else if (fontType == &quot;courier_bold&quot;)                                   \</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        return FILL_FONT_STRUCT_NAME(courier_bold, size);                  \</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    else if (fontType == &quot;times&quot;)                                          \</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        return FILL_FONT_STRUCT_NAME(times, size);                         \</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    else if (fontType == &quot;times_bold&quot;)                                     \</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        return FILL_FONT_STRUCT_NAME(times_bold, size);                    \</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    else                                                                   \</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        throw std::runtime_error(&quot;Font type not found&quot;);                   \</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    break;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="namespaceChronos_1_1Engine.html#a0b14987fbd6059bc502391f317ddcb97">   61</a></span>&#160;<a class="code" href="structChronos_1_1Engine_1_1FontTypes.html">Chronos::Engine::FontTypes</a> <a class="code" href="namespaceChronos_1_1Engine.html#a0b14987fbd6059bc502391f317ddcb97">Chronos::Engine::getFontType</a>(</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::string fontType, <span class="keywordtype">int</span> fontSize)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">switch</span> (fontSize) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(6)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(7)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(8)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(9)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(10)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(11)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(12)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(13)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(14)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(15)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(16)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(17)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(18)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(19)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(20)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(21)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(22)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(23)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(24)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(25)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(26)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(27)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(28)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(29)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(30)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(31)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(32)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(33)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(34)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(35)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(36)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(37)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(38)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(39)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(40)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(41)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(42)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(43)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(44)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(45)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(46)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(47)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(48)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(49)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a>(50)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Font size not found&quot;</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
 <div class="ttc" id="abuffers_8hpp_html"><div class="ttname"><a href="buffers_8hpp.html">buffers.hpp</a></div><div class="ttdoc">Contains the Buffer and UniformBuffer class.</div></div>
 <div class="ttc" id="adevice_8hpp_html"><div class="ttname"><a href="device_8hpp.html">device.hpp</a></div><div class="ttdoc">Contains the Device class.</div></div>
 <div class="ttc" id="aengineStructs_8hpp_html"><div class="ttname"><a href="engineStructs_8hpp.html">engineStructs.hpp</a></div><div class="ttdoc">Contains ShapeParams and UniformBufferObject structs.</div></div>
 <div class="ttc" id="afontTypes_8hpp_html"><div class="ttname"><a href="fontTypes_8hpp.html">fontTypes.hpp</a></div><div class="ttdoc">Defines all thes structs for all the font types and their sizes.</div></div>
-<div class="ttc" id="agetFontType_8cpp_html_a38001e332857d8bb3809296e0b1df622"><div class="ttname"><a href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a></div><div class="ttdeci">#define FONT_CASE(size)</div><div class="ttdef"><b>Definition:</b> <a href="getFontType_8cpp_source.html#l00038">getFontType.cpp:38</a></div></div>
+<div class="ttc" id="agetFontType_8cpp_html_a38001e332857d8bb3809296e0b1df622"><div class="ttname"><a href="getFontType_8cpp.html#a38001e332857d8bb3809296e0b1df622">FONT_CASE</a></div><div class="ttdeci">#define FONT_CASE(size)</div><div class="ttdef"><b>Definition:</b> <a href="getFontType_8cpp_source.html#l00039">getFontType.cpp:39</a></div></div>
 <div class="ttc" id="agetFontType_8hpp_html"><div class="ttname"><a href="getFontType_8hpp.html">getFontType.hpp</a></div></div>
 <div class="ttc" id="ahelper_8hpp_html"><div class="ttname"><a href="helper_8hpp.html">helper.hpp</a></div><div class="ttdoc">Contains various common functions used by other classes in the Engine namespace.</div></div>
-<div class="ttc" id="anamespaceChronos_1_1Engine_html_a0b14987fbd6059bc502391f317ddcb97"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a0b14987fbd6059bc502391f317ddcb97">Chronos::Engine::getFontType</a></div><div class="ttdeci">Chronos::Engine::FontTypes getFontType(std::string fontType, int fontSize)</div><div class="ttdef"><b>Definition:</b> <a href="getFontType_8cpp_source.html#l00060">getFontType.cpp:60</a></div></div>
+<div class="ttc" id="anamespaceChronos_1_1Engine_html_a0b14987fbd6059bc502391f317ddcb97"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a0b14987fbd6059bc502391f317ddcb97">Chronos::Engine::getFontType</a></div><div class="ttdeci">Chronos::Engine::FontTypes getFontType(std::string fontType, int fontSize)</div><div class="ttdef"><b>Definition:</b> <a href="getFontType_8cpp_source.html#l00061">getFontType.cpp:61</a></div></div>
 <div class="ttc" id="aobject_8hpp_html"><div class="ttname"><a href="object_8hpp.html">object.hpp</a></div><div class="ttdoc">Contains the class for creating a generic object.</div></div>
 <div class="ttc" id="astlheader_8hpp_html"><div class="ttname"><a href="stlheader_8hpp.html">stlheader.hpp</a></div><div class="ttdoc">Contains all the standard library headers used in the project.</div></div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1FontTypes_html"><div class="ttname"><a href="structChronos_1_1Engine_1_1FontTypes.html">Chronos::Engine::FontTypes</a></div><div class="ttdoc">The parameters needed for the font style.</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00053">text.hpp:53</a></div></div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1FontTypes_html"><div class="ttname"><a href="structChronos_1_1Engine_1_1FontTypes.html">Chronos::Engine::FontTypes</a></div><div class="ttdoc">The parameters needed for the font style.</div><div class="ttdef"><b>Definition:</b> <a href="text_8hpp_source.html#l00054">text.hpp:54</a></div></div>
 <div class="ttc" id="aswapchain_8hpp_html"><div class="ttname"><a href="swapchain_8hpp.html">swapchain.hpp</a></div><div class="ttdoc">Contains the swapChain class along with all the swapChain related functions.</div></div>
 <div class="ttc" id="atext_8hpp_html"><div class="ttname"><a href="text_8hpp.html">text.hpp</a></div></div>
 <div class="ttc" id="atexture_8hpp_html"><div class="ttname"><a href="texture_8hpp.html">texture.hpp</a></div><div class="ttdoc">Contains the functions for image manipulation along with the Texture class.</div></div>

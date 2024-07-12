@@ -19,7 +19,7 @@ var searchData=
   ['color_39',['color',['../structChronos_1_1Manager_1_1ShapeParams.html#a7914ab240782e411df44a93ba7110a42',1,'Chronos::Manager::ShapeParams::color()'],['../structChronos_1_1Engine_1_1TextParams.html#a577c85033ab084f64c4cc2cc5b692920',1,'Chronos::Engine::TextParams::color()'],['../structChronos_1_1Engine_1_1UniformColorBufferObject.html#a044f3e0933c89ee41caed489b9968bc9',1,'Chronos::Engine::UniformColorBufferObject::color()']]],
   ['colorblendattachment_40',['colorBlendAttachment',['../structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513',1,'Chronos::Engine::PipelineAttributes']]],
   ['colorbuffer_41',['ColorBuffer',['../classChronos_1_1Engine_1_1ColorBuffer.html',1,'Chronos::Engine']]],
-  ['colorbuffers_42',['colorBuffers',['../classChronos_1_1Engine_1_1Shape.html#a85ea164e447eb7b6651745d7fca9bdc5',1,'Chronos::Engine::Shape::colorBuffers()'],['../classChronos_1_1Engine_1_1Text.html#a397c79280594e47a90ca7b63e1a792c0',1,'Chronos::Engine::Text::colorBuffers()']]],
+  ['colorbuffers_42',['colorBuffers',['../classChronos_1_1Engine_1_1Shape.html#a3a41e85c509e181d34236e70172a1237',1,'Chronos::Engine::Shape::colorBuffers()'],['../classChronos_1_1Engine_1_1Text.html#a397c79280594e47a90ca7b63e1a792c0',1,'Chronos::Engine::Text::colorBuffers()']]],
   ['colorimage_43',['colorImage',['../classChronos_1_1Engine_1_1SwapChain.html#a9a6737e3c128f8a7a8287a444879d215',1,'Chronos::Engine::SwapChain']]],
   ['colorimagememory_44',['colorImageMemory',['../classChronos_1_1Engine_1_1SwapChain.html#a8f9b8463fd4e77e094d2b8d2790421d4',1,'Chronos::Engine::SwapChain']]],
   ['colorimageview_45',['colorImageView',['../classChronos_1_1Engine_1_1SwapChain.html#a82c322c6832487fce59a72117f280978',1,'Chronos::Engine::SwapChain']]],

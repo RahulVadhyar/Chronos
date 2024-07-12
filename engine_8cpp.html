@@ -218,12 +218,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00050">50</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">auto</span> app = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="classChronos_1_1Engine_1_1Engine.html">Chronos::Engine::Engine</a>*<span class="keyword">&gt;</span>(glfwGetWindowUserPointer(window));</div>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">auto</span> app = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="classChronos_1_1Engine_1_1Engine.html">Chronos::Engine::Engine</a>*<span class="keyword">&gt;</span>(</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    glfwGetWindowUserPointer(window));</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    app-&gt;<a class="code" href="classChronos_1_1Engine_1_1Engine.html#a2afd596420fea9c9b273a1a600f19a92">resizeFrameBuffer</a>();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Engine&quot;</span>, <span class="stringliteral">&quot;Framebuffer resized&quot;</span>)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html">Chronos::Engine::Engine</a></div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00073">engine.hpp:73</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html">Chronos::Engine::Engine</a></div><div class="ttdef"><b>Definition:</b> <a href="engine_8hpp_source.html#l00079">engine.hpp:79</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a2afd596420fea9c9b273a1a600f19a92"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a2afd596420fea9c9b273a1a600f19a92">Chronos::Engine::Engine::resizeFrameBuffer</a></div><div class="ttdeci">void resizeFrameBuffer()</div><div class="ttdoc">Tells the engine that the window has to be resized. This is called by GLFW.</div><div class="ttdef"><b>Definition:</b> <a href="engine_8cpp_source.html#l00076">engine.cpp:76</a></div></div>
 <div class="ttc" id="alogging_8hpp_html_a5b58fc422e0e0d9227a7ef69954b689a"><div class="ttname"><a href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a></div><div class="ttdeci">#define LOG(LEVEL, CLASS, MESSAGE)</div><div class="ttdef"><b>Definition:</b> <a href="logging_8hpp_source.html#l00035">logging.hpp:35</a></div></div>
 </div><!-- fragment -->

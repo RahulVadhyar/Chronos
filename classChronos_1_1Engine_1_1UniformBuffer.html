@@ -93,13 +93,16 @@ $(document).ready(function(){initNavTree('classChronos_1_1Engine_1_1UniformBuffe
 </div><!--header-->
 <div class="contents">
 
+<p>This is a Uniform buffer for storing the uniform variables in the shaders.  
+ <a href="classChronos_1_1Engine_1_1UniformBuffer.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="buffers_8hpp_source.html">buffers.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Chronos::Engine::UniformBuffer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1UniformBuffer__inherit__graph.png" border="0" usemap="#aChronos_1_1Engine_1_1UniformBuffer_inherit__map" alt="Inheritance graph"/></div>
 <map name="aChronos_1_1Engine_1_1UniformBuffer_inherit__map" id="aChronos_1_1Engine_1_1UniformBuffer_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,193,121"/>
+<area shape="rect" title="This is a Uniform buffer for storing the uniform variables in the shaders." alt="" coords="5,80,193,121"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html" title="Used to store buffers in GPU." alt="" coords="12,5,187,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -108,7 +111,7 @@ Collaboration diagram for Chronos::Engine::UniformBuffer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChronos_1_1Engine_1_1UniformBuffer__coll__graph.png" border="0" usemap="#aChronos_1_1Engine_1_1UniformBuffer_coll__map" alt="Collaboration graph"/></div>
 <map name="aChronos_1_1Engine_1_1UniformBuffer_coll__map" id="aChronos_1_1Engine_1_1UniformBuffer_coll__map">
-<area shape="rect" title=" " alt="" coords="5,171,193,212"/>
+<area shape="rect" title="This is a Uniform buffer for storing the uniform variables in the shaders." alt="" coords="5,171,193,212"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Buffer.html" title="Used to store buffers in GPU." alt="" coords="12,95,187,121"/>
 <area shape="rect" href="classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="9,5,189,32"/>
 </map>
@@ -153,10 +156,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ad4f872dd55a1a2d78f6094bd545c9861 inherit pub_attribs_classChronos_1_1Engine_1_1Buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">\brief This is a Uniform buffer for storing the uniform variables in the shaders
-</pre><p> Currently used only for shapes properties like postition, size etc. Can be updated on the fly using the update function. </p>
+<div class="textblock"><p>This is a Uniform buffer for storing the uniform variables in the shaders. </p>
+<p>Currently used only for shapes properties like postition, size etc. Can be updated on the fly using the update function. </p>
 
-<p class="definition">Definition at line <a class="el" href="buffers_8hpp_source.html#l00095">95</a> of file <a class="el" href="buffers_8hpp_source.html">buffers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffers_8hpp_source.html#l00103">103</a> of file <a class="el" href="buffers_8hpp_source.html">buffers.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a4c14b97754025d584f9fbf73ac26d8c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4c14b97754025d584f9fbf73ac26d8c2">&#9670;&nbsp;</a></span>create()</h2>
@@ -183,21 +186,23 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="buffers_8cpp_source.html#l00070">70</a> of file <a class="el" href="buffers_8cpp_source.html">buffers.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a> = <span class="keyword">sizeof</span>(UniformBufferObject);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826">Buffer::create</a>(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); <span class="comment">// want to be visible to host and device</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    vkMapMemory(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>, 0, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>, 0, &amp;<a class="code" href="classChronos_1_1Engine_1_1UniformBuffer.html#a17fac3b8f664782a8fdbc331867391d2">data</a>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a45958dc37af9a03b85b94445f8f25e0f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">Chronos::Engine::Buffer::size</a></div><div class="ttdeci">VkDeviceSize size</div><div class="ttdoc">The size of the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00075">buffers.hpp:75</a></div></div>
+<p class="definition">Definition at line <a class="el" href="buffers_8cpp_source.html#l00083">83</a> of file <a class="el" href="buffers_8cpp_source.html">buffers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a> = <span class="keyword">sizeof</span>(UniformBufferObject);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826">Buffer::create</a>(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); <span class="comment">// want to be visible to</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                             <span class="comment">// host and device</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    vkMapMemory(<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>, 0, <a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>, 0, &amp;<a class="code" href="classChronos_1_1Engine_1_1UniformBuffer.html#a17fac3b8f664782a8fdbc331867391d2">data</a>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a45958dc37af9a03b85b94445f8f25e0f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">Chronos::Engine::Buffer::size</a></div><div class="ttdeci">VkDeviceSize size</div><div class="ttdoc">The size of the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00082">buffers.hpp:82</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_ab14754126e56811cc67254f425780826"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826">Chronos::Engine::Buffer::create</a></div><div class="ttdeci">void create(Chronos::Engine::Device device, VkBufferUsageFlags flags, VkMemoryPropertyFlags properties)</div><div class="ttdoc">This is used to initialize the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8cpp_source.html#l00037">buffers.cpp:37</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_ad4f872dd55a1a2d78f6094bd545c9861"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">Chronos::Engine::Buffer::memory</a></div><div class="ttdeci">VkDeviceMemory memory</div><div class="ttdoc">The device memory of the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00080">buffers.hpp:80</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_adb83b0443d3a24404bf414686d27f590"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">Chronos::Engine::Buffer::device</a></div><div class="ttdeci">Chronos::Engine::Device device</div><div class="ttdoc">The device on which the buffer is stored.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00086">buffers.hpp:86</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00042">device.hpp:42</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1UniformBuffer_html_a17fac3b8f664782a8fdbc331867391d2"><div class="ttname"><a href="classChronos_1_1Engine_1_1UniformBuffer.html#a17fac3b8f664782a8fdbc331867391d2">Chronos::Engine::UniformBuffer::data</a></div><div class="ttdeci">void * data</div><div class="ttdoc">Temporary storage used to store the data before copying to the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00129">buffers.hpp:129</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_ad4f872dd55a1a2d78f6094bd545c9861"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">Chronos::Engine::Buffer::memory</a></div><div class="ttdeci">VkDeviceMemory memory</div><div class="ttdoc">The device memory of the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00087">buffers.hpp:87</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_adb83b0443d3a24404bf414686d27f590"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">Chronos::Engine::Buffer::device</a></div><div class="ttdeci">Chronos::Engine::Device device</div><div class="ttdoc">The device on which the buffer is stored.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00093">buffers.hpp:93</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition:</b> <a href="device_8hpp_source.html#l00044">device.hpp:44</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1UniformBuffer_html_a17fac3b8f664782a8fdbc331867391d2"><div class="ttname"><a href="classChronos_1_1Engine_1_1UniformBuffer.html#a17fac3b8f664782a8fdbc331867391d2">Chronos::Engine::UniformBuffer::data</a></div><div class="ttdeci">void * data</div><div class="ttdoc">Temporary storage used to store the data before copying to the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00140">buffers.hpp:140</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="buffers_8cpp_source.html#l00037">Chronos::Engine::Buffer::create()</a>, and <a class="el" href="device_8hpp_source.html#l00042">Chronos::Engine::Device::device</a>.</p>
+<p class="reference">References <a class="el" href="buffers_8cpp_source.html#l00037">Chronos::Engine::Buffer::create()</a>, and <a class="el" href="device_8hpp_source.html#l00044">Chronos::Engine::Device::device</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -276,28 +281,30 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="buffers_8cpp_source.html#l00078">78</a> of file <a class="el" href="buffers_8cpp_source.html">buffers.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// This is where the shape parameters are updated</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    UniformBufferObject ubo {};</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    ubo.model = glm::translate(glm::mat4(1.0f), glm::vec3(y, -x, 0.0f));</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    ubo.model = glm::rotate(ubo.model, glm::radians(rotation),</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        glm::vec3(0.0f, 0.0f, 1.0f));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    ubo.model = glm::scale(ubo.model, glm::vec3(y_size, x_size, 1.0f));</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    ubo.view = glm::lookAt(glm::vec3(0.0f, 0.0f, 0.1f), glm::vec3(0.0f, 0.0f, 0.0f),</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        glm::vec3(1.0f, 0.0f, 0.0f));</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    ubo.proj = glm::ortho(-1.0f, 1.0f,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        -(<span class="keywordtype">float</span>)swapChainExtent.height / (<span class="keywordtype">float</span>)swapChainExtent.width,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        (<span class="keywordtype">float</span>)swapChainExtent.height / (<span class="keywordtype">float</span>)swapChainExtent.width,</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        -100.0f, 100.0f);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    ubo.proj[1][1] *= -1;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    memcpy(<a class="code" href="classChronos_1_1Engine_1_1UniformBuffer.html#a17fac3b8f664782a8fdbc331867391d2">data</a>, &amp;ubo, <span class="keyword">sizeof</span>(ubo));</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(4, <span class="stringliteral">&quot;UniformBuffer&quot;</span>, <span class="stringliteral">&quot;Uniform buffer object updated for buffer [&quot;</span> + std::to_string((uint64_t)<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">buffer</a>) + <span class="stringliteral">&quot;]&quot;</span>)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a4422d6437ce743cd0645372cfe63300e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">Chronos::Engine::Buffer::buffer</a></div><div class="ttdeci">VkBuffer buffer</div><div class="ttdoc">The buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00070">buffers.hpp:70</a></div></div>
+<p class="definition">Definition at line <a class="el" href="buffers_8cpp_source.html#l00093">93</a> of file <a class="el" href="buffers_8cpp_source.html">buffers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;{</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// This is where the shape parameters are updated</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    UniformBufferObject ubo {};</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    ubo.model = glm::translate(glm::mat4(1.0f), glm::vec3(y, -x, 0.0f));</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    ubo.model = glm::rotate(</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    ubo.model, glm::radians(rotation), glm::vec3(0.0f, 0.0f, 1.0f));</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    ubo.model = glm::scale(ubo.model, glm::vec3(y_size, x_size, 1.0f));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    ubo.view = glm::lookAt(glm::vec3(0.0f, 0.0f, 0.1f),</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 0.0f, 0.0f));</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    ubo.proj = glm::ortho(-1.0f, 1.0f,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    -(<span class="keywordtype">float</span>)swapChainExtent.height / (<span class="keywordtype">float</span>)swapChainExtent.width,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    (<span class="keywordtype">float</span>)swapChainExtent.height / (<span class="keywordtype">float</span>)swapChainExtent.width, -100.0f,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    100.0f);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    ubo.proj[1][1] *= -1;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    memcpy(<a class="code" href="classChronos_1_1Engine_1_1UniformBuffer.html#a17fac3b8f664782a8fdbc331867391d2">data</a>, &amp;ubo, <span class="keyword">sizeof</span>(ubo));</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(4, <span class="stringliteral">&quot;UniformBuffer&quot;</span>,</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="stringliteral">&quot;Uniform buffer object updated for buffer [&quot;</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        + std::to_string((uint64_t)<a class="code" href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">buffer</a>) + <span class="stringliteral">&quot;]&quot;</span>)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a4422d6437ce743cd0645372cfe63300e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">Chronos::Engine::Buffer::buffer</a></div><div class="ttdeci">VkBuffer buffer</div><div class="ttdoc">The buffer.</div><div class="ttdef"><b>Definition:</b> <a href="buffers_8hpp_source.html#l00077">buffers.hpp:77</a></div></div>
 <div class="ttc" id="alogging_8hpp_html_a5b58fc422e0e0d9227a7ef69954b689a"><div class="ttname"><a href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a></div><div class="ttdeci">#define LOG(LEVEL, CLASS, MESSAGE)</div><div class="ttdef"><b>Definition:</b> <a href="logging_8hpp_source.html#l00035">logging.hpp:35</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00035">LOG</a>, and <a class="el" href="engineStructs_8hpp_source.html#l00061">Chronos::Engine::UniformBufferObject::model</a>.</p>
+<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00035">LOG</a>, and <a class="el" href="engineStructs_8hpp_source.html#l00063">Chronos::Engine::UniformBufferObject::model</a>.</p>
 
 </div>
 </div>
@@ -324,7 +331,7 @@ Here is the call graph for this function:</div>
 
 <p>Temporary storage used to store the data before copying to the buffer. </p>
 
-<p class="definition">Definition at line <a class="el" href="buffers_8hpp_source.html#l00129">129</a> of file <a class="el" href="buffers_8hpp_source.html">buffers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buffers_8hpp_source.html#l00140">140</a> of file <a class="el" href="buffers_8hpp_source.html">buffers.hpp</a>.</p>
 
 </div>
 </div>

@@ -1,5 +1,5 @@
 <map id="Chronos::Engine::Buffer" name="Chronos::Engine::Buffer">
 <area shape="rect" id="node1" title="Used to store buffers in GPU." alt="" coords="133,5,307,32"/>
 <area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1ColorBuffer.html" title="This is a buffer for storing and updating the color of the shape." alt="" coords="5,87,213,114"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1UniformBuffer.html" title=" " alt="" coords="238,80,426,121"/>
+<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1UniformBuffer.html" title="This is a Uniform buffer for storing the uniform variables in the shaders." alt="" coords="238,80,426,121"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="Chronos::Engine::findMemoryType" name="Chronos::Engine::findMemoryType">
 <area shape="rect" id="node1" title="Finds suitable memory type for given requrements." alt="" coords="1301,166,1544,193"/>
 <area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a" title="Creates a buffer of a given size, usage and properties." alt="" coords="1037,137,1252,163"/>
-<area shape="rect" id="node11" href="$namespaceChronos_1_1Engine.html#a7018d1eaf2dfaf4c373269fcaa344a46" title="For a given image dimensons, it creates a VkImage and VkDeviceMemory for the image." alt="" coords="1036,195,1253,222"/>
+<area shape="rect" id="node11" href="$namespaceChronos_1_1Engine.html#a7018d1eaf2dfaf4c373269fcaa344a46" title="For a given image dimensons, it creates a VkImage and." alt="" coords="1036,195,1253,222"/>
 <area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="797,5,972,47"/>
 <area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826" title="This is used to initialize the buffer." alt="" coords="797,71,972,112"/>
 <area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="793,188,976,229"/>

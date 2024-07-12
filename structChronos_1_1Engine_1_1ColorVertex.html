@@ -115,7 +115,7 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This defines the position of a vertex. Used when we need a colored vertex. Does not support textures. </p>
 
-<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00036">36</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00038">38</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aef9f9754806969d46d380e143b69feaa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aef9f9754806969d46d380e143b69feaa">&#9670;&nbsp;</a></span>getAttributeDescriptions()</h2>
@@ -142,19 +142,20 @@ Public Attributes</h2></td></tr>
 
 <p>Generates the <code>VkVertexInputAttributeDescription</code> for the vertex based on pos attribute of the vertex. </p>
 
-<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00056">56</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            std::array&lt;VkVertexInputAttributeDescription, 1&gt; attributeDescriptions {};</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            attributeDescriptions[0].binding = 0;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            attributeDescriptions[0].location = 0;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            attributeDescriptions[0].format = VK_FORMAT_R32G32_SFLOAT;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            attributeDescriptions[0].offset = offsetof(ColorVertex, <a class="code" href="structChronos_1_1Engine_1_1ColorVertex.html#a6b9548882fcda4cac156fca860528efc">pos</a>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">return</span> attributeDescriptions;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
-<div class="ttc" id="astructChronos_1_1Engine_1_1ColorVertex_html_a6b9548882fcda4cac156fca860528efc"><div class="ttname"><a href="structChronos_1_1Engine_1_1ColorVertex.html#a6b9548882fcda4cac156fca860528efc">Chronos::Engine::ColorVertex::pos</a></div><div class="ttdeci">glm::vec2 pos</div><div class="ttdef"><b>Definition:</b> <a href="Vertex_8hpp_source.html#l00037">Vertex.hpp:37</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00060">60</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        std::array&lt;VkVertexInputAttributeDescription, 1&gt;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        attributeDescriptions {};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        attributeDescriptions[0].binding = 0;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        attributeDescriptions[0].location = 0;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        attributeDescriptions[0].format = VK_FORMAT_R32G32_SFLOAT;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        attributeDescriptions[0].offset = offsetof(ColorVertex, <a class="code" href="structChronos_1_1Engine_1_1ColorVertex.html#a6b9548882fcda4cac156fca860528efc">pos</a>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> attributeDescriptions;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="ttc" id="astructChronos_1_1Engine_1_1ColorVertex_html_a6b9548882fcda4cac156fca860528efc"><div class="ttname"><a href="structChronos_1_1Engine_1_1ColorVertex.html#a6b9548882fcda4cac156fca860528efc">Chronos::Engine::ColorVertex::pos</a></div><div class="ttdeci">glm::vec2 pos</div><div class="ttdef"><b>Definition:</b> <a href="Vertex_8hpp_source.html#l00039">Vertex.hpp:39</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Vertex_8hpp_source.html#l00037">pos</a>.</p>
+<p class="reference">References <a class="el" href="Vertex_8hpp_source.html#l00039">pos</a>.</p>
 
 </div>
 </div>
@@ -183,15 +184,15 @@ Public Attributes</h2></td></tr>
 
 <p>Creates a <code>VkVertexInputBindingDescription</code> for the vertex based on the size of the vertex. </p>
 
-<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00042">42</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            VkVertexInputBindingDescription bindingDescription {};</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            bindingDescription.binding = 0;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            bindingDescription.stride = <span class="keyword">sizeof</span>(ColorVertex);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            bindingDescription.inputRate = VK_VERTEX_INPUT_RATE_VERTEX;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">return</span> bindingDescription;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00045">45</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        VkVertexInputBindingDescription bindingDescription {};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        bindingDescription.binding = 0;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        bindingDescription.stride = <span class="keyword">sizeof</span>(ColorVertex);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        bindingDescription.inputRate = VK_VERTEX_INPUT_RATE_VERTEX;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> bindingDescription;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -208,7 +209,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00037">37</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vertex_8hpp_source.html#l00039">39</a> of file <a class="el" href="Vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
 </div>
 </div>

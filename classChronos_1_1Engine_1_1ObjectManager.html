@@ -188,7 +188,7 @@ class Chronos::Engine::ObjectManager&lt; Object &gt;</h3>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00051">51</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00054">54</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab41e9ab71459a6c7301cc31cff6e7ae3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab41e9ab71459a6c7301cc31cff6e7ae3">&#9670;&nbsp;</a></span>addObject()</h2>
@@ -429,8 +429,8 @@ template&lt;ObjectLike Object&gt; </div>
 <p>This function initializes the <a class="el" href="classChronos_1_1Engine_1_1ObjectManager.html" title="Manages objects within the Chronos::Engine namespace.">ObjectManager</a> with the given <a class="el" href="classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU).">Chronos::Engine::Device</a>, <a class="el" href="classChronos_1_1Engine_1_1SwapChain.html">Chronos::Engine::SwapChain</a>, and Vulkan command pool. It creates necessary Vulkan resources like render pass, framebuffers, and command buffers.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">device</td><td>Pointer to the <a class="el" href="classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU).">Chronos::Engine::Device</a> used for initialization. </td></tr>
-    <tr><td class="paramname">swapChain</td><td>Pointer to the <a class="el" href="classChronos_1_1Engine_1_1SwapChain.html">Chronos::Engine::SwapChain</a> used for initialization. </td></tr>
+    <tr><td class="paramname">device</td><td>Pointer to the <a class="el" href="classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU).">Chronos::Engine::Device</a> used for initialization.</td></tr>
+    <tr><td class="paramname">swapChain</td><td>Pointer to the <a class="el" href="classChronos_1_1Engine_1_1SwapChain.html">Chronos::Engine::SwapChain</a> used for initialization.</td></tr>
     <tr><td class="paramname">commandPool</td><td>Vulkan command pool used for initialization. </td></tr>
   </table>
   </dd>
@@ -610,7 +610,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>Vector of Vulkan command buffers. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00055">55</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00060">60</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -637,7 +637,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>Vulkan command pool used for rendering. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00159">159</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00182">182</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -664,7 +664,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>Pointer to the <a class="el" href="classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU).">Chronos::Engine::Device</a> used for rendering. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00157">157</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00176">176</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -691,7 +691,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>Vector of Vulkan framebuffers. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00162">162</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00186">186</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -710,7 +710,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>The index for the next free object. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00053">53</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00056">56</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -729,7 +729,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>A map of object indices to their corresponding objects. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00054">54</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00057">57</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -756,7 +756,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>Map of objects to be removed. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00163">163</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00188">188</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -783,7 +783,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>Vulkan render pass used for rendering. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00160">160</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00183">183</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -810,7 +810,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>Pointer to the <a class="el" href="classChronos_1_1Engine_1_1SwapChain.html">Chronos::Engine::SwapChain</a> used for rendering. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00158">158</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00179">179</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>
@@ -837,7 +837,7 @@ template&lt;ObjectLike Object&gt; </div>
 </div><div class="memdoc">
 <p>Vulkan sampler for textures. </p>
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00161">161</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objectManager_8hpp_source.html#l00184">184</a> of file <a class="el" href="objectManager_8hpp_source.html">objectManager.hpp</a>.</p>
 
 </div>
 </div>

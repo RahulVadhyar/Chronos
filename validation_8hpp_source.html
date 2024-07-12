@@ -110,42 +110,42 @@ $(document).ready(function(){initNavTree('validation_8hpp_source.html',''); init
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">SOFTWARE.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceChronos.html">Chronos</a> {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>Engine {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifdef ENABLE_VULKAN_VALIDATION_LAYERS</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> std::vector&lt;const char*&gt; validationLayers = {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="stringliteral">&quot;VK_LAYER_KHRONOS_validation&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    };</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">bool</span> checkValidationLayerSupport();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#ifndef WIN32</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wunused-variable&quot;</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        VkDebugUtilsMessageTypeFlagsEXT messageType,</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keyword">const</span> VkDebugUtilsMessengerCallbackDataEXT* pCallbackData, <span class="keywordtype">void</span>* pUserData);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#ifndef WIN32</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    VkResult CreateDebugUtilsMessengerEXT(</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        VkInstance instance, <span class="keyword">const</span> VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keyword">const</span> VkAllocationCallbacks* pAllocator,</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        VkDebugUtilsMessengerEXT* pDebugMessenger);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">void</span> DestroyDebugUtilsMessengerEXT(VkInstance instance,</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        VkDebugUtilsMessengerEXT debugMessenger,</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keyword">const</span> VkAllocationCallbacks* pAllocator);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceChronos.html">Chronos</a> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>Engine {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#ifdef ENABLE_VULKAN_VALIDATION_LAYERS</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">const</span> std::vector&lt;const char*&gt; validationLayers</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    = { <span class="stringliteral">&quot;VK_LAYER_KHRONOS_validation&quot;</span> };</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span> checkValidationLayerSupport();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#ifndef WIN32</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#pragma GCC diagnostic push</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wunused-variable&quot;</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    VkDebugUtilsMessageTypeFlagsEXT messageType,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">const</span> VkDebugUtilsMessengerCallbackDataEXT* pCallbackData,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span>* pUserData);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#ifndef WIN32</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    VkResult CreateDebugUtilsMessengerEXT(VkInstance instance,</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">const</span> VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">const</span> VkAllocationCallbacks* pAllocator,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    VkDebugUtilsMessengerEXT* pDebugMessenger);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> populateDebugMessengerCreateInfo(</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        VkDebugUtilsMessengerCreateInfoEXT&amp; createInfo);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;};</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> DestroyDebugUtilsMessengerEXT(VkInstance instance,</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    VkDebugUtilsMessengerEXT debugMessenger,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">const</span> VkAllocationCallbacks* pAllocator);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">void</span> populateDebugMessengerCreateInfo(</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    VkDebugUtilsMessengerCreateInfoEXT&amp; createInfo);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;};</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div>
 <div class="ttc" id="anamespaceChronos_html"><div class="ttname"><a href="namespaceChronos.html">Chronos</a></div><div class="ttdef"><b>Definition:</b> <a href="chronos_8hpp_source.html#l00056">chronos.hpp:56</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
