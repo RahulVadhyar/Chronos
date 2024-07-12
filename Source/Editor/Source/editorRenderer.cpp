@@ -30,7 +30,8 @@ SOFTWARE.
 #include "helper.hpp"
 #include "editorRenderer.hpp"
 
-void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFWwindow* window, Chronos::Engine::SwapChain* swapChain,
+void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device,
+    GLFWwindow* window, Chronos::Engine::SwapChain* swapChain,
     VkInstance instance, VkSurfaceKHR surface)
 {
     this->device = device;
@@ -38,11 +39,12 @@ void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFW
     this->surface = surface;
     this->window = window;
 
-    renderPass = Chronos::Engine::createRenderPass(
-        *device, *swapChain, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
-        VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
-        false, false, true);
-    framebuffers = Chronos::Engine::createFramebuffer(*device, *swapChain, renderPass, false);
+    renderPass = Chronos::Engine::createRenderPass(*device, *swapChain,
+	VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
+	VK_IMAGE_LAYOUT_PRESENT_SRC_KHR,
+	VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL, false, false, true);
+    framebuffers = Chronos::Engine::createFramebuffer(
+	*device, *swapChain, renderPass, false);
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
@@ -60,23 +62,25 @@ void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFW
     poolSizes[0].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
     poolSizes[0].descriptorCount = static_cast<uint32_t>(MAX_FRAMES_IN_FLIGHT);
 
-    VkDescriptorPoolSize pool_sizes[] = {
-        { VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 100 }
-    };
+    VkDescriptorPoolSize pool_sizes[]
+	= { { VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 100 } };
     VkDescriptorPoolCreateInfo pool_info = {};
     pool_info.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
     pool_info.flags = VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT;
     pool_info.maxSets = 100;
     pool_info.poolSizeCount = (uint32_t)IM_ARRAYSIZE(pool_sizes);
     pool_info.pPoolSizes = pool_sizes;
-    vkCreateDescriptorPool(device->device, &pool_info, nullptr, &descriptorPool);
+    vkCreateDescriptorPool(
+	device->device, &pool_info, nullptr, &descriptorPool);
 
     ImGui_ImplGlfw_InitForVulkan(window, true);
     ImGui_ImplVulkan_InitInfo init_info = {};
     init_info.Instance = instance;
     init_info.PhysicalDevice = device->physicalDevice;
     init_info.Device = device->device;
-    init_info.QueueFamily = Chronos::Engine::findQueueFamilies(device->physicalDevice, surface).graphicsFamily.value();
+    init_info.QueueFamily
+	= Chronos::Engine::findQueueFamilies(device->physicalDevice, surface)
+	      .graphicsFamily.value();
     init_info.Queue = device->graphicsQueue;
     init_info.PipelineCache = VK_NULL_HANDLE;
     init_info.DescriptorPool = descriptorPool;
@@ -90,19 +94,24 @@ void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFW
 
     VkCommandPoolCreateInfo commandPoolCreateInfo = {};
     commandPoolCreateInfo.sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
-    commandPoolCreateInfo.queueFamilyIndex = Chronos::Engine::findQueueFamilies(device->physicalDevice, surface).graphicsFamily.value();
-    commandPoolCreateInfo.flags = VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT;
+    commandPoolCreateInfo.queueFamilyIndex
+	= Chronos::Engine::findQueueFamilies(device->physicalDevice, surface)
+	      .graphicsFamily.value();
+    commandPoolCreateInfo.flags
+	= VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT;
 
-    if (vkCreateCommandPool(device->device, &commandPoolCreateInfo, nullptr,
-            &commandPool)
-        != VK_SUCCESS) {
-        LOG(1, "EditorRenderer", "Could not create graphics command pool")
-        throw std::runtime_error("Could not create graphics command pool");
+    if (vkCreateCommandPool(
+	    device->device, &commandPoolCreateInfo, nullptr, &commandPool)
+	!= VK_SUCCESS) {
+	LOG(1, "EditorRenderer", "Could not create graphics command pool")
+	throw std::runtime_error("Could not create graphics command pool");
     }
 
-    VkCommandBuffer command_buffer = Chronos::Engine::beginSingleTimeCommands(commandPool, device->device);
+    VkCommandBuffer command_buffer
+	= Chronos::Engine::beginSingleTimeCommands(commandPool, device->device);
     ImGui_ImplVulkan_CreateFontsTexture();
-    Chronos::Engine::endSingleTimeCommands(&command_buffer, *device, commandPool);
+    Chronos::Engine::endSingleTimeCommands(
+	&command_buffer, *device, commandPool);
 
     commandBuffers.resize(swapChain->swapChainImageViews.size());
     VkCommandBufferAllocateInfo allocInfo {};
@@ -110,11 +119,11 @@ void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device, GLFW
     allocInfo.commandPool = commandPool;
     allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
     allocInfo.commandBufferCount = static_cast<uint32_t>(commandBuffers.size());
-    if (vkAllocateCommandBuffers(device->device, &allocInfo,
-            commandBuffers.data())
-        != VK_SUCCESS) {
-        LOG(1, "EditorRenderer", "failed to allocate command buffers!")
-        throw std::runtime_error("failed to allocate command buffers!");
+    if (vkAllocateCommandBuffers(
+	    device->device, &allocInfo, commandBuffers.data())
+	!= VK_SUCCESS) {
+	LOG(1, "EditorRenderer", "failed to allocate command buffers!")
+	throw std::runtime_error("failed to allocate command buffers!");
     }
     LOG(3, "EditorRenderer", "EditorRenderer initialized")
 }
@@ -124,7 +133,7 @@ void Chronos::Editor::EditorRenderer::destroy()
     ImGui_ImplVulkan_Shutdown();
     vkDestroyRenderPass(device->device, renderPass, nullptr);
     for (auto framebuffer : framebuffers)
-        vkDestroyFramebuffer(device->device, framebuffer, nullptr);
+	vkDestroyFramebuffer(device->device, framebuffer, nullptr);
     vkDestroyCommandPool(device->device, commandPool, nullptr);
     vkDestroyDescriptorPool(device->device, descriptorPool, nullptr);
     LOG(3, "EditorRenderer", "EditorRenderer destroyed")
@@ -140,12 +149,14 @@ void Chronos::Editor::EditorRenderer::update()
     LOG(4, "EditorRenderer", "EditorRenderer updated")
 }
 
-void Chronos::Editor::EditorRenderer::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])
+void Chronos::Editor::EditorRenderer::render(
+    uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])
 {
     vkResetCommandBuffer(commandBuffers[currentFrame], 0);
     VkCommandBufferBeginInfo beginInfo {};
     beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
-    VkClearValue clearColor = { { { bgColor[0], bgColor[1], bgColor[2], 1.0f } } };
+    VkClearValue clearColor
+	= { { { bgColor[0], bgColor[1], bgColor[2], 1.0f } } };
     vkBeginCommandBuffer(commandBuffers[currentFrame], &beginInfo);
     VkRenderPassBeginInfo info = {};
     info.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
@@ -154,10 +165,10 @@ void Chronos::Editor::EditorRenderer::render(uint32_t currentFrame, uint32_t ima
     info.renderArea.extent = swapChain->swapChainExtent;
     info.clearValueCount = 1;
     info.pClearValues = &clearColor;
-    vkCmdBeginRenderPass(commandBuffers[currentFrame], &info,
-        VK_SUBPASS_CONTENTS_INLINE);
-    ImGui_ImplVulkan_RenderDrawData(ImGui::GetDrawData(),
-        commandBuffers[currentFrame]);
+    vkCmdBeginRenderPass(
+	commandBuffers[currentFrame], &info, VK_SUBPASS_CONTENTS_INLINE);
+    ImGui_ImplVulkan_RenderDrawData(
+	ImGui::GetDrawData(), commandBuffers[currentFrame]);
     vkCmdEndRenderPass(commandBuffers[currentFrame]);
     vkEndCommandBuffer(commandBuffers[currentFrame]);
     LOG(4, "EditorRenderer", "EditorRenderer rendered")
@@ -166,14 +177,15 @@ void Chronos::Editor::EditorRenderer::render(uint32_t currentFrame, uint32_t ima
 void Chronos::Editor::EditorRenderer::cleanup()
 {
     for (auto framebuffer : framebuffers)
-        vkDestroyFramebuffer(device->device, framebuffer, nullptr);
+	vkDestroyFramebuffer(device->device, framebuffer, nullptr);
     LOG(3, "EditorRenderer", "EditorRenderer cleaned up")
 }
 
 void Chronos::Editor::EditorRenderer::recreate()
 {
     cleanup();
-    framebuffers = Chronos::Engine::createFramebuffer(*device, *swapChain, renderPass, false);
+    framebuffers = Chronos::Engine::createFramebuffer(
+	*device, *swapChain, renderPass, false);
     LOG(3, "EditorRenderer", "EditorRenderer recreated")
 }
 
@@ -181,8 +193,8 @@ void Chronos::Editor::EditorRenderer::renderAdditionalViewports()
 {
 #ifdef WIN32
     if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_ViewportsEnable) {
-        ImGui::UpdatePlatformWindows();
-        ImGui::RenderPlatformWindowsDefault();
+	ImGui::UpdatePlatformWindows();
+	ImGui::RenderPlatformWindowsDefault();
     }
     LOG(4, "EditorRenderer", "Rendered additional viewports")
 #endif
@@ -191,9 +203,9 @@ void Chronos::Editor::EditorRenderer::renderAdditionalViewports()
 void Chronos::Editor::EditorRenderer::changeMsaa()
 {
     vkDestroyRenderPass(device->device, renderPass, nullptr);
-    renderPass = Chronos::Engine::createRenderPass(
-        *device, *swapChain, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
-        VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
-        false, false, true);
+    renderPass = Chronos::Engine::createRenderPass(*device, *swapChain,
+	VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
+	VK_IMAGE_LAYOUT_PRESENT_SRC_KHR,
+	VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL, false, false, true);
     recreate();
 }

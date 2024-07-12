@@ -25,10 +25,7 @@ SOFTWARE.
 
 Chronos::Editor::EditorManager editorManager;
 
-void addElements()
-{
-    editorManager.addElements();
-}
+void addElements() { editorManager.addElements(); }
 
 int main()
 {
@@ -51,16 +48,17 @@ int main()
     // shapeParams.ySize = 0.5f;
     // int shapeNo = manager.addPolygon(shapeParams, {false, true});
 
-    // int keyframeNo = manager.addKeyframeVariable({{0, 0}, {400, 0.1}, {800, 0.5}, {1200, 0.4}, {1600, 0.2}});
+    // int keyframeNo = manager.addKeyframeVariable({{0, 0}, {400, 0.1}, {800,
+    // 0.5}, {1200, 0.4}, {1600, 0.2}});
 
     while (!glfwWindowShouldClose(manager.getWindow())) {
-        if (glfwGetKey(manager.getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-            glfwSetWindowShouldClose(manager.getWindow(), true);
-        }
-        // shapeParams.x = manager.keyframeGetVariable(keyframeNo);
-        // manager.updatePolygon(shapeNo, shapeParams);
-        manager.drawFrame();
-        LOG(4, "EditorMain", "Frame drawn.")
+	if (glfwGetKey(manager.getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+	    glfwSetWindowShouldClose(manager.getWindow(), true);
+	}
+	// shapeParams.x = manager.keyframeGetVariable(keyframeNo);
+	// manager.updatePolygon(shapeNo, shapeParams);
+	manager.drawFrame();
+	LOG(4, "EditorMain", "Frame drawn.")
     }
     LOG(2, "EditorMain", "Exited rendering loop, closing program.")
     return 0;

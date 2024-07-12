@@ -28,8 +28,9 @@ SOFTWARE.
 #include "buffers.hpp"
 #include "object.hpp"
 
-void Chronos::Engine::Object::init(Chronos::Engine::Device* device, VkCommandPool commandPool,
-    SwapChain* swapChain, VkSampler textureSampler, VkRenderPass* renderPass)
+void Chronos::Engine::Object::init(Chronos::Engine::Device* device,
+    VkCommandPool commandPool, SwapChain* swapChain, VkSampler textureSampler,
+    VkRenderPass* renderPass)
 {
     this->device = device;
     this->swapChain = swapChain;
@@ -39,7 +40,7 @@ void Chronos::Engine::Object::init(Chronos::Engine::Device* device, VkCommandPoo
 
     uniformBuffers.resize(MAX_FRAMES_IN_FLIGHT);
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
-        uniformBuffers[i].create(*device);
+	uniformBuffers[i].create(*device);
     }
 
     createDescriptorPool();
@@ -50,43 +51,54 @@ void Chronos::Engine::Object::init(Chronos::Engine::Device* device, VkCommandPoo
 
 void Chronos::Engine::Object::createGraphicsPipeline()
 {
-    Chronos::Engine::PipelineAttributes pipelineAttributes = getPipelineAttributes();
+    Chronos::Engine::PipelineAttributes pipelineAttributes
+	= getPipelineAttributes();
 
     auto vertShaderCode = Chronos::Engine::readFile(vertexShaderPath.c_str());
     auto fragShaderCode = Chronos::Engine::readFile(fragmentShaderPath.c_str());
 
-    VkShaderModule vertShaderModule = Chronos::Engine::createShaderModule(vertShaderCode, device->device);
-    VkShaderModule fragShaderModule = Chronos::Engine::createShaderModule(fragShaderCode, device->device);
+    VkShaderModule vertShaderModule
+	= Chronos::Engine::createShaderModule(vertShaderCode, device->device);
+    VkShaderModule fragShaderModule
+	= Chronos::Engine::createShaderModule(fragShaderCode, device->device);
 
     VkPipelineShaderStageCreateInfo vertShaderStageInfo {};
-    vertShaderStageInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
+    vertShaderStageInfo.sType
+	= VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
     vertShaderStageInfo.stage = VK_SHADER_STAGE_VERTEX_BIT;
     vertShaderStageInfo.module = vertShaderModule;
-    vertShaderStageInfo.pName = "main"; // start from main(vulkan can start from elsewhere also)
+    vertShaderStageInfo.pName
+	= "main"; // start from main(vulkan can start from elsewhere also)
 
     VkPipelineShaderStageCreateInfo fragShaderStageInfo {};
-    fragShaderStageInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
+    fragShaderStageInfo.sType
+	= VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
     fragShaderStageInfo.stage = VK_SHADER_STAGE_FRAGMENT_BIT;
     fragShaderStageInfo.module = fragShaderModule;
     fragShaderStageInfo.pName = "main";
 
-    VkPipelineShaderStageCreateInfo shaderStages[] = { vertShaderStageInfo,
-        fragShaderStageInfo };
+    VkPipelineShaderStageCreateInfo shaderStages[]
+	= { vertShaderStageInfo, fragShaderStageInfo };
 
     auto bindingDescription = pipelineAttributes.bindingDescriptions;
     auto attributeDescriptions = pipelineAttributes.attributeDescriptions;
 
     VkPipelineVertexInputStateCreateInfo vertexInputInfo {};
-    vertexInputInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
-    vertexInputInfo.vertexBindingDescriptionCount = static_cast<uint32_t>(bindingDescription.size());
-    vertexInputInfo.vertexAttributeDescriptionCount = static_cast<uint32_t>(attributeDescriptions.size());
+    vertexInputInfo.sType
+	= VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
+    vertexInputInfo.vertexBindingDescriptionCount
+	= static_cast<uint32_t>(bindingDescription.size());
+    vertexInputInfo.vertexAttributeDescriptionCount
+	= static_cast<uint32_t>(attributeDescriptions.size());
     vertexInputInfo.pVertexBindingDescriptions = bindingDescription.data();
     vertexInputInfo.pVertexAttributeDescriptions = attributeDescriptions.data();
 
     VkPipelineInputAssemblyStateCreateInfo inputAssembly {};
-    inputAssembly.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
-    inputAssembly.topology = pipelineAttributes.topology; // we are using indexed rendering so
-                                                          // we need to use triangle list
+    inputAssembly.sType
+	= VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
+    inputAssembly.topology
+	= pipelineAttributes.topology; // we are using indexed rendering so
+				       // we need to use triangle list
     inputAssembly.primitiveRestartEnable = VK_FALSE;
 
     VkViewport viewport {};
@@ -109,7 +121,8 @@ void Chronos::Engine::Object::createGraphicsPipeline()
     viewportState.pScissors = &scissor;
 
     VkPipelineRasterizationStateCreateInfo rasterizer {};
-    rasterizer.sType = VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO;
+    rasterizer.sType
+	= VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO;
     rasterizer.depthClampEnable = VK_FALSE;
     rasterizer.rasterizerDiscardEnable = VK_FALSE;
     rasterizer.polygonMode = VK_POLYGON_MODE_FILL;
@@ -122,7 +135,8 @@ void Chronos::Engine::Object::createGraphicsPipeline()
     rasterizer.depthBiasSlopeFactor = 0.0f;
 
     VkPipelineMultisampleStateCreateInfo multisampling {};
-    multisampling.sType = VK_STRUCTURE_TYPE_PIPELINE_MULTISAMPLE_STATE_CREATE_INFO;
+    multisampling.sType
+	= VK_STRUCTURE_TYPE_PIPELINE_MULTISAMPLE_STATE_CREATE_INFO;
     multisampling.sampleShadingEnable = VK_FALSE;
     multisampling.rasterizationSamples = device->msaaSamples;
     multisampling.minSampleShading = 1.0f; // Optional
@@ -132,7 +146,8 @@ void Chronos::Engine::Object::createGraphicsPipeline()
     multisampling.sampleShadingEnable = VK_TRUE;
 
     VkPipelineColorBlendStateCreateInfo colorBlending {};
-    colorBlending.sType = VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO;
+    colorBlending.sType
+	= VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO;
     colorBlending.logicOpEnable = VK_FALSE;
     colorBlending.logicOp = VK_LOGIC_OP_COPY;
     colorBlending.attachmentCount = 1;
@@ -142,11 +157,12 @@ void Chronos::Engine::Object::createGraphicsPipeline()
     colorBlending.blendConstants[2] = 0.0f;
     colorBlending.blendConstants[3] = 0.0f;
 
-    std::vector<VkDynamicState> dynamicStates = { VK_DYNAMIC_STATE_VIEWPORT,
-        VK_DYNAMIC_STATE_SCISSOR };
+    std::vector<VkDynamicState> dynamicStates
+	= { VK_DYNAMIC_STATE_VIEWPORT, VK_DYNAMIC_STATE_SCISSOR };
     VkPipelineDynamicStateCreateInfo dynamicState {};
     dynamicState.sType = VK_STRUCTURE_TYPE_PIPELINE_DYNAMIC_STATE_CREATE_INFO;
-    dynamicState.dynamicStateCount = static_cast<uint32_t>(dynamicStates.size());
+    dynamicState.dynamicStateCount
+	= static_cast<uint32_t>(dynamicStates.size());
     dynamicState.pDynamicStates = dynamicStates.data();
 
     VkPipelineLayoutCreateInfo pipelineLayoutInfo {};
@@ -156,10 +172,10 @@ void Chronos::Engine::Object::createGraphicsPipeline()
     pipelineLayoutInfo.pushConstantRangeCount = 0; // Optional
     pipelineLayoutInfo.pPushConstantRanges = nullptr; // Optional
 
-    if (vkCreatePipelineLayout(device->device, &pipelineLayoutInfo, nullptr,
-            &pipelineLayout)
-        != VK_SUCCESS) {
-        throw std::runtime_error("failed to create pipeline layout!");
+    if (vkCreatePipelineLayout(
+	    device->device, &pipelineLayoutInfo, nullptr, &pipelineLayout)
+	!= VK_SUCCESS) {
+	throw std::runtime_error("failed to create pipeline layout!");
     }
 
     VkGraphicsPipelineCreateInfo pipelineInfo {};
@@ -181,10 +197,9 @@ void Chronos::Engine::Object::createGraphicsPipeline()
     pipelineInfo.basePipelineIndex = -1;
 
     if (vkCreateGraphicsPipelines(device->device, VK_NULL_HANDLE, 1,
-            &pipelineInfo, nullptr,
-            &graphicsPipeline)
-        != VK_SUCCESS) {
-        throw std::runtime_error("failed to create graphics pipeline!");
+	    &pipelineInfo, nullptr, &graphicsPipeline)
+	!= VK_SUCCESS) {
+	throw std::runtime_error("failed to create graphics pipeline!");
     }
 
     // destory the shader modules
@@ -195,7 +210,7 @@ void Chronos::Engine::Object::createGraphicsPipeline()
 void Chronos::Engine::Object::destroy()
 {
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
-        uniformBuffers[i].destroy();
+	uniformBuffers[i].destroy();
     }
     vkDestroyDescriptorPool(device->device, descriptorPool, nullptr);
     vkDestroyDescriptorSetLayout(device->device, descriptorSetLayout, nullptr);
@@ -210,18 +225,19 @@ void Chronos::Engine::Object::createDescriptorPool()
     std::vector<VkDescriptorPoolSize> poolSizes { descriptorTypes.size() };
 
     for (size_t i = 0; i < descriptorTypes.size(); i++) {
-        poolSizes[i].type = descriptorTypes[i];
-        poolSizes[i].descriptorCount = static_cast<uint32_t>(MAX_FRAMES_IN_FLIGHT);
+	poolSizes[i].type = descriptorTypes[i];
+	poolSizes[i].descriptorCount
+	    = static_cast<uint32_t>(MAX_FRAMES_IN_FLIGHT);
     }
     VkDescriptorPoolCreateInfo poolInfo {};
     poolInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
     poolInfo.poolSizeCount = static_cast<uint32_t>(poolSizes.size());
     poolInfo.pPoolSizes = poolSizes.data();
     poolInfo.maxSets = static_cast<uint32_t>(MAX_FRAMES_IN_FLIGHT);
-    if (vkCreateDescriptorPool(device->device, &poolInfo, nullptr,
-            &descriptorPool)
-        != VK_SUCCESS) {
-        throw std::runtime_error("failed to create descriptor pool!");
+    if (vkCreateDescriptorPool(
+	    device->device, &poolInfo, nullptr, &descriptorPool)
+	!= VK_SUCCESS) {
+	throw std::runtime_error("failed to create descriptor pool!");
     }
 }
 
@@ -231,27 +247,30 @@ void Chronos::Engine::Object::createDescriptorSetLayout()
     std::vector<VkShaderStageFlagBits> descriptorStages = getDescriptorStages();
 
     if (descriptorTypes.size() != descriptorStages.size()) {
-        throw std::runtime_error("descriptorTypes and descriptorStages must be the same size");
+	throw std::runtime_error(
+	    "descriptorTypes and descriptorStages must be the same size");
     }
 
-    std::vector<VkDescriptorSetLayoutBinding> bindings { descriptorTypes.size() };
+    std::vector<VkDescriptorSetLayoutBinding> bindings {
+	descriptorTypes.size()
+    };
 
     for (size_t i = 0; i < descriptorTypes.size(); i++) {
-        bindings[i].binding = i;
-        bindings[i].descriptorType = descriptorTypes[i];
-        bindings[i].descriptorCount = 1;
-        bindings[i].stageFlags = descriptorStages[i];
-        bindings[i].pImmutableSamplers = nullptr;
+	bindings[i].binding = i;
+	bindings[i].descriptorType = descriptorTypes[i];
+	bindings[i].descriptorCount = 1;
+	bindings[i].stageFlags = descriptorStages[i];
+	bindings[i].pImmutableSamplers = nullptr;
     }
 
     VkDescriptorSetLayoutCreateInfo layoutInfo {};
     layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
     layoutInfo.bindingCount = static_cast<uint32_t>(bindings.size());
     layoutInfo.pBindings = bindings.data();
-    if (vkCreateDescriptorSetLayout(device->device, &layoutInfo, nullptr,
-            &descriptorSetLayout)
-        != VK_SUCCESS) {
-        throw std::runtime_error("failed to create descriptor set layout!");
+    if (vkCreateDescriptorSetLayout(
+	    device->device, &layoutInfo, nullptr, &descriptorSetLayout)
+	!= VK_SUCCESS) {
+	throw std::runtime_error("failed to create descriptor set layout!");
     }
 }
 

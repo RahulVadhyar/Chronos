@@ -24,23 +24,24 @@ SOFTWARE.
 #include "object.hpp"
 #include "getFontType.hpp"
 namespace Chronos {
-GLFWwindow* Manager::Manager::getWindow()
-{
-    return engine.window;
-}
+GLFWwindow* Manager::Manager::getWindow() { return engine.window; }
 Manager::Manager::Manager(Chronos::Manager::Initializer initializer)
 {
 
     // check whether the bg color is between 0 and 1
-    if (initializer.BackgroundColor[0] < 0 || initializer.BackgroundColor[0] > 1 || initializer.BackgroundColor[1] < 0 || initializer.BackgroundColor[1] > 1 || initializer.BackgroundColor[2] < 0 || initializer.BackgroundColor[2] > 1) {
-        throw std::runtime_error("Invalid background color");
+    if (initializer.BackgroundColor[0] < 0 || initializer.BackgroundColor[0] > 1
+	|| initializer.BackgroundColor[1] < 0
+	|| initializer.BackgroundColor[1] > 1
+	|| initializer.BackgroundColor[2] < 0
+	|| initializer.BackgroundColor[2] > 1) {
+	throw std::runtime_error("Invalid background color");
     }
     engine.bgColor[0] = initializer.BackgroundColor[0];
     engine.bgColor[1] = initializer.BackgroundColor[1];
     engine.bgColor[2] = initializer.BackgroundColor[2];
 
     if (initializer.WindowWidth <= 0 || initializer.WindowHeight <= 0) {
-        throw std::runtime_error("Invalid window size");
+	throw std::runtime_error("Invalid window size");
     }
     engine.width = initializer.WindowWidth;
     engine.height = initializer.WindowHeight;
@@ -58,7 +59,7 @@ void Manager::Manager::drawFrame()
 int Manager::Manager::changeBackgroundColor(float r, float g, float b)
 {
     if (r < 0 || r > 1 || g < 0 || g > 1 || b < 0 || b > 1) {
-        throw std::runtime_error("Invalid background color");
+	throw std::runtime_error("Invalid background color");
     }
     engine.bgColor[0] = r;
     engine.bgColor[1] = g;

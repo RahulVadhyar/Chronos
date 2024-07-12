@@ -23,26 +23,29 @@ SOFTWARE.
 #include "chronos.hpp"
 #include "getFontType.hpp"
 
-int Chronos::Manager::Manager::addText(Chronos::Engine::TextParams params, std::string fontType, int fontSize)
+int Chronos::Manager::Manager::addText(
+    Chronos::Engine::TextParams params, std::string fontType, int fontSize)
 {
     if (params.text == "") {
-        throw std::runtime_error("Text cannot be empty");
+	throw std::runtime_error("Text cannot be empty");
     }
     // Chronos::Engine::Text font;
     Chronos::Engine::Text font;
     font.params = params;
-    Chronos::Engine::FontTypes fontStyle = Chronos::Engine::getFontType(fontType, fontSize);
+    Chronos::Engine::FontTypes fontStyle
+	= Chronos::Engine::getFontType(fontType, fontSize);
 
     return engine.textManager.addFont(font, fontStyle);
 }
 
-void Chronos::Manager::Manager::updateText(int textNo, Chronos::Engine::TextParams params)
+void Chronos::Manager::Manager::updateText(
+    int textNo, Chronos::Engine::TextParams params)
 {
     if (params.text == "") {
-        throw std::runtime_error("Text cannot be empty");
+	throw std::runtime_error("Text cannot be empty");
     }
     if (engine.textManager.objects.count(textNo) == 0) {
-        throw std::runtime_error("Text does not exist");
+	throw std::runtime_error("Text does not exist");
     }
     engine.textManager.objects[textNo].params = params;
 }
@@ -53,14 +56,15 @@ void Chronos::Manager::Manager::removeText(int textNo)
     engine.textManager.remove(textNo);
 }
 
-std::vector<std::pair<int, Chronos::Engine::TextParams>> Chronos::Manager::Manager::getTextDetails()
+std::vector<std::pair<int, Chronos::Engine::TextParams>>
+Chronos::Manager::Manager::getTextDetails()
 {
     std::vector<std::pair<int, Chronos::Engine::TextParams>> textDetails;
     for (auto& text : engine.textManager.objects) {
-        std::pair<int, Chronos::Engine::TextParams> textDetail;
-        textDetail.first = text.first;
-        textDetail.second = text.second.params;
-        textDetails.push_back(textDetail);
+	std::pair<int, Chronos::Engine::TextParams> textDetail;
+	textDetail.first = text.first;
+	textDetail.second = text.second.params;
+	textDetails.push_back(textDetail);
     }
     return textDetails;
 }

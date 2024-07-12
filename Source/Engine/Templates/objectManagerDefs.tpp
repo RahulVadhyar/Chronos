@@ -22,7 +22,8 @@ SOFTWARE.
 
 #pragma once
 template <Chronos::Engine::ObjectLike Object>
-void Chronos::Engine::ObjectManager<Object>::init(Chronos::Engine::Device* device, SwapChain* swapChain,
+void Chronos::Engine::ObjectManager<Object>::init(
+    Chronos::Engine::Device* device, SwapChain* swapChain,
     VkCommandPool commandPool)
 {
     this->device = device;
@@ -32,8 +33,10 @@ void Chronos::Engine::ObjectManager<Object>::init(Chronos::Engine::Device* devic
     Chronos::Engine::createTextureSampler(*device, &textureSampler);
 
     createRenderPass();
-    commandBuffers = Chronos::Engine::createCommandBuffer(*device, *swapChain, commandPool);
-    framebuffers = Chronos::Engine::createFramebuffer(*device, *swapChain, renderPass, true);
+    commandBuffers = Chronos::Engine::createCommandBuffer(
+	*device, *swapChain, commandPool);
+    framebuffers = Chronos::Engine::createFramebuffer(
+	*device, *swapChain, renderPass, true);
 }
 
 template <Chronos::Engine::ObjectLike Object>
@@ -42,22 +45,24 @@ void Chronos::Engine::ObjectManager<Object>::destroy()
     vkDestroySampler(device->device, textureSampler, nullptr);
     vkDestroyRenderPass(device->device, renderPass, nullptr);
     for (auto framebuffer : framebuffers)
-        vkDestroyFramebuffer(device->device, framebuffer, nullptr);
+	vkDestroyFramebuffer(device->device, framebuffer, nullptr);
     for (auto& objectMap : objects) {
-        objectMap.second.destroy();
+	objectMap.second.destroy();
     }
 }
 
 template <Chronos::Engine::ObjectLike Object>
-void Chronos::Engine::ObjectManager<Object>::render(uint32_t currentFrame, uint32_t imageIndex,
-    float bgColor[3])
+void Chronos::Engine::ObjectManager<Object>::render(
+    uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])
 {
-    // this function starts rendering. When child classes override this function, they should call this function first to start rendering
+    // this function starts rendering. When child classes override this
+    // function, they should call this function first to start rendering
     vkResetCommandBuffer(commandBuffers[currentFrame], 0);
     VkCommandBufferBeginInfo beginInfo {};
     beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
-    if (vkBeginCommandBuffer(commandBuffers[currentFrame], &beginInfo) != VK_SUCCESS) {
-        throw std::runtime_error("failed to begin recording command buffer!");
+    if (vkBeginCommandBuffer(commandBuffers[currentFrame], &beginInfo)
+	!= VK_SUCCESS) {
+	throw std::runtime_error("failed to begin recording command buffer!");
     }
 
     VkRenderPassBeginInfo renderPassInfo {};
@@ -66,12 +71,13 @@ void Chronos::Engine::ObjectManager<Object>::render(uint32_t currentFrame, uint3
     renderPassInfo.framebuffer = framebuffers[imageIndex];
     renderPassInfo.renderArea.offset = { 0, 0 };
     renderPassInfo.renderArea.extent = swapChain->swapChainExtent;
-    VkClearValue clearColor = { { { bgColor[0], bgColor[1], bgColor[2], 1.0f } } }; // bg color
+    VkClearValue clearColor
+	= { { { bgColor[0], bgColor[1], bgColor[2], 1.0f } } }; // bg color
     renderPassInfo.clearValueCount = 1;
     renderPassInfo.pClearValues = &clearColor;
 
     vkCmdBeginRenderPass(commandBuffers[currentFrame], &renderPassInfo,
-        VK_SUBPASS_CONTENTS_INLINE);
+	VK_SUBPASS_CONTENTS_INLINE);
 }
 
 template <Chronos::Engine::ObjectLike Object>
@@ -80,7 +86,7 @@ void Chronos::Engine::ObjectManager<Object>::endRender(uint32_t currentFrame)
     vkCmdEndRenderPass(commandBuffers[currentFrame]);
 
     if (vkEndCommandBuffer(commandBuffers[currentFrame]) != VK_SUCCESS) {
-        throw std::runtime_error("failed to record command buffer!");
+	throw std::runtime_error("failed to record command buffer!");
     }
 }
 template <Chronos::Engine::ObjectLike Object>
@@ -90,7 +96,7 @@ void Chronos::Engine::ObjectManager<Object>::changeMsaa()
     createRenderPass();
     recreate();
     for (auto& objectMap : objects) {
-        objectMap.second.recreateGraphicsPipeline();
+	objectMap.second.recreateGraphicsPipeline();
     }
 }
 
@@ -98,7 +104,7 @@ template <Chronos::Engine::ObjectLike Object>
 void Chronos::Engine::ObjectManager<Object>::cleanup()
 {
     for (auto framebuffer : framebuffers)
-        vkDestroyFramebuffer(device->device, framebuffer, nullptr);
+	vkDestroyFramebuffer(device->device, framebuffer, nullptr);
 }
 
 template <Chronos::Engine::ObjectLike Object>
@@ -121,7 +127,7 @@ template <Chronos::Engine::ObjectLike Object>
 void Chronos::Engine::ObjectManager<Object>::remove(int objectNo)
 {
     for (bool& flag : objectsToBeRemoved[objectNo]) {
-        flag = true;
+	flag = true;
     }
     // objects[objectNo].destroy();
 
@@ -132,23 +138,23 @@ template <Chronos::Engine::ObjectLike Object>
 void Chronos::Engine::ObjectManager<Object>::update(uint32_t currentFrame)
 {
     for (auto& objectMap : objectsToBeRemoved) {
-        objectMap.second[currentFrame] = false;
-        bool toBeRemoved = true;
-        for (bool flag : objectMap.second) {
-            if (flag) {
-                toBeRemoved = false;
-                break;
-            }
-        }
-        if (toBeRemoved) {
-            objects[objectMap.first].destroy();
-            objectsToBeRemoved.erase(objectMap.first);
-            objects.erase(objectMap.first);
-        }
+	objectMap.second[currentFrame] = false;
+	bool toBeRemoved = true;
+	for (bool flag : objectMap.second) {
+	    if (flag) {
+		toBeRemoved = false;
+		break;
+	    }
+	}
+	if (toBeRemoved) {
+	    objects[objectMap.first].destroy();
+	    objectsToBeRemoved.erase(objectMap.first);
+	    objects.erase(objectMap.first);
+	}
     }
     for (auto& objectMap : objects) {
-        if (objectsToBeRemoved.count(objectMap.first) == 0) {
-            objectMap.second.update(currentFrame);
-        }
+	if (objectsToBeRemoved.count(objectMap.first) == 0) {
+	    objectMap.second.update(currentFrame);
+	}
     }
 }

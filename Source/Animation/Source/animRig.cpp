@@ -47,10 +47,7 @@ void Chronos::Animation::AnimRig::removeBone(int boneNo)
     bones.erase(boneNo);
 }
 
-void Chronos::Animation::AnimRig::update()
-{
-    root->update();
-}
+void Chronos::Animation::AnimRig::update() { root->update(); }
 
 void Chronos::Animation::AnimRig::addChild(int parentNo, int childNo)
 {
@@ -121,12 +118,12 @@ int Chronos::Animation::AnimRig::getParent(int boneNo)
 {
     AnimBone* parent = bones[boneNo].getParent();
     if (parent == nullptr) {
-        return -1;
+	return -1;
     }
     for (auto bone : bones) {
-        if (&bone.second == parent) {
-            return bone.first;
-        }
+	if (&bone.second == parent) {
+	    return bone.first;
+	}
     }
     return -1;
 }
@@ -135,11 +132,11 @@ std::vector<int> Chronos::Animation::AnimRig::getChildren(int boneNo)
 {
     std::vector<int> children;
     for (auto child : bones[boneNo].getChildren()) {
-        for (auto bone : bones) {
-            if (&bone.second == child) {
-                children.push_back(bone.first);
-            }
-        }
+	for (auto bone : bones) {
+	    if (&bone.second == child) {
+		children.push_back(bone.first);
+	    }
+	}
     }
     return children;
 }

@@ -24,8 +24,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0);
 
 //     Chronos::Manager::ShapeParams rectangleParams;
 //     rectangleParams.x = -0.5;
@@ -35,8 +35,8 @@
 //     rectangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType rectangleType;
 //     rectangleType.rectangle = true;
-//     int rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(rectangle, 1);
+//     int rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(rectangle, 1);
 
 //     Chronos::Engine::TextParams textParams;
 //     textParams.x = 0.0f;
@@ -60,8 +60,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0);
 
 //     Chronos::Manager::ShapeParams rectangleParams;
 //     rectangleParams.x = -0.5;
@@ -71,8 +71,8 @@
 //     rectangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType rectangleType;
 //     rectangleType.rectangle = true;
-//     int rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(rectangle, 1);
+//     int rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(rectangle, 1);
 
 //     Chronos::Engine::TextParams textParams;
 //     textParams.x = 0.0f;
@@ -97,8 +97,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0);
 
 //     Chronos::Manager::ShapeParams rectangleParams;
 //     rectangleParams.x = -0.5;
@@ -108,8 +108,8 @@
 //     rectangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType rectangleType;
 //     rectangleType.rectangle = true;
-//     int rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(rectangle, 1);
+//     int rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(rectangle, 1);
 
 //     Chronos::Engine::TextParams textParams;
 //     textParams.x = 0.0f;
@@ -154,18 +154,25 @@
 // }
 
 // TEST_F(GeneralAPITest, invalidBackgroundColor){
-//     EXPECT_THROW(manager->changeBackgroundColor(-1.0f, 0.0f, 0.0f), std::runtime_error);
-//     EXPECT_THROW(manager->changeBackgroundColor(0.0f, -1.0f, 0.0f), std::runtime_error);
-//     EXPECT_THROW(manager->changeBackgroundColor(0.0f, 0.0f, -1.0f), std::runtime_error);
-//     EXPECT_THROW(manager->changeBackgroundColor(2.0f, 0.0f, 0.0f), std::runtime_error);
-//     EXPECT_THROW(manager->changeBackgroundColor(0.0f, 2.0f, 0.0f), std::runtime_error);
-//     EXPECT_THROW(manager->changeBackgroundColor(0.0f, 0.0f, 2.0f), std::runtime_error);
-//     EXPECT_THROW(manager->changeBackgroundColor(1.1f, 0.0f, 0.0f), std::runtime_error);
-//     EXPECT_THROW(manager->changeBackgroundColor(0.0f, 1.1f, 0.0f), std::runtime_error);
-//     EXPECT_THROW(manager->changeBackgroundColor(0.0f, 0.0f, 1.1f), std::runtime_error);
-//     EXPECT_THROW(manager->changeBackgroundColor(0.0f, 0.0f, -0.1f), std::runtime_error);
-//     EXPECT_THROW(manager->changeBackgroundColor(0.0f, -0.1f, 0.0f), std::runtime_error);
-//     EXPECT_THROW(manager->changeBackgroundColor(-0.1f, 0.0f, 0.0f), std::runtime_error);
+//     EXPECT_THROW(manager->changeBackgroundColor(-1.0f, 0.0f, 0.0f),
+//     std::runtime_error); EXPECT_THROW(manager->changeBackgroundColor(0.0f,
+//     -1.0f, 0.0f), std::runtime_error);
+//     EXPECT_THROW(manager->changeBackgroundColor(0.0f, 0.0f, -1.0f),
+//     std::runtime_error); EXPECT_THROW(manager->changeBackgroundColor(2.0f,
+//     0.0f, 0.0f), std::runtime_error);
+//     EXPECT_THROW(manager->changeBackgroundColor(0.0f, 2.0f, 0.0f),
+//     std::runtime_error); EXPECT_THROW(manager->changeBackgroundColor(0.0f,
+//     0.0f, 2.0f), std::runtime_error);
+//     EXPECT_THROW(manager->changeBackgroundColor(1.1f, 0.0f, 0.0f),
+//     std::runtime_error);
+//     EXPECT_THROW(manager->changeBackgroundColor(0.0f, 1.1f, 0.0f),
+//     std::runtime_error); EXPECT_THROW(manager->changeBackgroundColor(0.0f,
+//     0.0f, 1.1f), std::runtime_error);
+//     EXPECT_THROW(manager->changeBackgroundColor(0.0f, 0.0f, -0.1f),
+//     std::runtime_error); EXPECT_THROW(manager->changeBackgroundColor(0.0f,
+//     -0.1f, 0.0f), std::runtime_error);
+//     EXPECT_THROW(manager->changeBackgroundColor(-0.1f, 0.0f, 0.0f),
+//     std::runtime_error);
 // }
 
 // TEST_F(GeneralAPITest, getWindow){
@@ -174,53 +181,64 @@
 
 // TEST(InitManagerTest, invalidInit1){
 //     Chronos::Manager::Initializer initializer = {0, 0, {0, 0, 0}};
-//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer), std::runtime_error);
+//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer),
+//     std::runtime_error);
 // }
 // TEST(InitManagerTest, invalidInit2){
 //     Chronos::Manager::Initializer initializer = {0, 600, {0, 0, 0}};
-//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer), std::runtime_error);
+//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer),
+//     std::runtime_error);
 // }
 // TEST(InitManagerTest, invalidInit3){
 //     Chronos::Manager::Initializer initializer = {800, 0, {0, 0, 0}};
-//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer), std::runtime_error);
+//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer),
+//     std::runtime_error);
 // }
 
 // TEST(InitManagerTest, invalidInit4){
 //     Chronos::Manager::Initializer initializer = {800, 600, {-1, 0, 0}};
-//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer), std::runtime_error);
+//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer),
+//     std::runtime_error);
 // }
 
 // TEST(InitManagerTest, invalidInit5){
 //     Chronos::Manager::Initializer initializer = {800, 600, {0, -1, 0}};
-//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer), std::runtime_error);
+//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer),
+//     std::runtime_error);
 // }
 
 // TEST(InitManagerTest, invalidInit6){
 //     Chronos::Manager::Initializer initializer = {800, 600, {0, 0, -1}};
-//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer), std::runtime_error);
+//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer),
+//     std::runtime_error);
 // }
 
 // TEST(InitManagerTest, invalidInit7){
 //     Chronos::Manager::Initializer initializer = {800, 600, {2, 0, 0}};
-//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer), std::runtime_error);
+//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer),
+//     std::runtime_error);
 // }
 
 // TEST(InitManagerTest, invalidInit8){
 //     Chronos::Manager::Initializer initializer = {800, 600, {0, 2, 0}};
-//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer), std::runtime_error);
+//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer),
+//     std::runtime_error);
 // }
 
 // TEST(InitManagerTest, invalidInit9){
 //     Chronos::Manager::Initializer initializer = {800, 600, {0, 0, 2}};
-//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer), std::runtime_error);
+//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer),
+//     std::runtime_error);
 // }
 
 // TEST(InitManagerTest, invalidInit10){
 //     Chronos::Manager::Initializer initializer = {-1, 0, {0, 0, 0}};
-//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer), std::runtime_error);
+//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer),
+//     std::runtime_error);
 // }
 
 // TEST(InitManagerTest, invalidInit11){
 //     Chronos::Manager::Initializer initializer = {0, -1, {0, 0, 0}};
-//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer), std::runtime_error);
+//     EXPECT_THROW(Chronos::Manager::Manager manager(initializer),
+//     std::runtime_error);
 // }

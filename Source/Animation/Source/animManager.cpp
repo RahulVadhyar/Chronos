@@ -40,15 +40,20 @@ void Chronos::Animation::AnimationManager::removeRig(int rigNo)
 
 void Chronos::Animation::AnimationManager::update()
 {
-    static double currentTime = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
-    double newTime = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+    static double currentTime
+	= std::chrono::duration_cast<std::chrono::nanoseconds>(
+	    std::chrono::system_clock::now().time_since_epoch())
+	      .count();
+    double newTime = std::chrono::duration_cast<std::chrono::nanoseconds>(
+	std::chrono::system_clock::now().time_since_epoch())
+			 .count();
     double dt = (newTime - currentTime) * 1e-6;
     currentTime = newTime;
     for (auto& keyframe : keyframeVariables) {
-        keyframe.second.update(dt);
+	keyframe.second.update(dt);
     }
     for (auto& rig : rigs) {
-        rig.second.update();
+	rig.second.update();
     }
 }
 
@@ -62,37 +67,44 @@ void Chronos::Animation::AnimationManager::rigRemoveBone(int rigNo, int boneNo)
     rigs[rigNo].removeBone(boneNo);
 }
 
-void Chronos::Animation::AnimationManager::rigAddChild(int rigNo, int parentNo, int childNo)
+void Chronos::Animation::AnimationManager::rigAddChild(
+    int rigNo, int parentNo, int childNo)
 {
     rigs[rigNo].addChild(parentNo, childNo);
 }
 
-void Chronos::Animation::AnimationManager::rigRemoveChild(int rigNo, int parentNo, int childNo)
+void Chronos::Animation::AnimationManager::rigRemoveChild(
+    int rigNo, int parentNo, int childNo)
 {
     rigs[rigNo].removeChild(parentNo, childNo);
 }
 
-void Chronos::Animation::AnimationManager::rigSetRelX(int rigNo, int boneNo, float relX)
+void Chronos::Animation::AnimationManager::rigSetRelX(
+    int rigNo, int boneNo, float relX)
 {
     rigs[rigNo].setRelX(boneNo, relX);
 }
 
-void Chronos::Animation::AnimationManager::rigSetRelY(int rigNo, int boneNo, float relY)
+void Chronos::Animation::AnimationManager::rigSetRelY(
+    int rigNo, int boneNo, float relY)
 {
     rigs[rigNo].setRelY(boneNo, relY);
 }
 
-void Chronos::Animation::AnimationManager::rigSetLength(int rigNo, int boneNo, float length)
+void Chronos::Animation::AnimationManager::rigSetLength(
+    int rigNo, int boneNo, float length)
 {
     rigs[rigNo].setLength(boneNo, length);
 }
 
-void Chronos::Animation::AnimationManager::rigSetAngle(int rigNo, int boneNo, float angle)
+void Chronos::Animation::AnimationManager::rigSetAngle(
+    int rigNo, int boneNo, float angle)
 {
     rigs[rigNo].setAngle(boneNo, angle);
 }
 
-void Chronos::Animation::AnimationManager::rigSetParent(int rigNo, int boneNo, int parentNo)
+void Chronos::Animation::AnimationManager::rigSetParent(
+    int rigNo, int boneNo, int parentNo)
 {
     rigs[rigNo].setParent(boneNo, parentNo);
 }
@@ -132,29 +144,34 @@ int Chronos::Animation::AnimationManager::rigGetParent(int rigNo, int boneNo)
     return rigs[rigNo].getParent(boneNo);
 }
 
-std::vector<int> Chronos::Animation::AnimationManager::rigGetChildren(int rigNo, int boneNo)
+std::vector<int> Chronos::Animation::AnimationManager::rigGetChildren(
+    int rigNo, int boneNo)
 {
     return rigs[rigNo].getChildren(boneNo);
 }
 
-int Chronos::Animation::AnimationManager::addKeyframeVariable(std::vector<std::pair<float, float>> keyframes)
+int Chronos::Animation::AnimationManager::addKeyframeVariable(
+    std::vector<std::pair<float, float>> keyframes)
 {
     keyframeVariables[nextKeyframeNo] = KeyframeVariable();
     keyframeVariables[nextKeyframeNo].updateKeyframes(keyframes);
     return nextKeyframeNo++;
 }
 
-void Chronos::Animation::AnimationManager::removeKeyframeVariable(int keyframeNo)
+void Chronos::Animation::AnimationManager::removeKeyframeVariable(
+    int keyframeNo)
 {
     keyframeVariables.erase(keyframeNo);
 }
 
-void Chronos::Animation::AnimationManager::keyframeSetTime(int keyframeNo, float time)
+void Chronos::Animation::AnimationManager::keyframeSetTime(
+    int keyframeNo, float time)
 {
     keyframeVariables[keyframeNo].setTime(time);
 }
 
-void Chronos::Animation::AnimationManager::keyframeSetKeyframe(int keyframeNo, int keyframe)
+void Chronos::Animation::AnimationManager::keyframeSetKeyframe(
+    int keyframeNo, int keyframe)
 {
     keyframeVariables[keyframeNo].setKeyframe(keyframe);
 }
@@ -164,7 +181,8 @@ int Chronos::Animation::AnimationManager::keyframeGetKeyframe(int keyframeNo)
     return keyframeVariables[keyframeNo].getKeyframe();
 }
 
-std::vector<std::pair<float, float>> Chronos::Animation::AnimationManager::getKeyframes(int keyframeNo)
+std::vector<std::pair<float, float>>
+Chronos::Animation::AnimationManager::getKeyframes(int keyframeNo)
 {
     return keyframeVariables[keyframeNo].getKeyframes();
 }

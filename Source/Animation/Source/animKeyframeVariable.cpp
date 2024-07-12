@@ -22,9 +22,11 @@ SOFTWARE.
 #include "stlheader.hpp"
 #include "animKeyframeVariable.hpp"
 
-inline float getBezierValue(float time, float previousValue, float nextValue, float startPoint, float endPoint)
+inline float getBezierValue(float time, float previousValue, float nextValue,
+    float startPoint, float endPoint)
 {
-    float bezierValue = (1 - time) * (1 - time) * startPoint + 2 * (1 - time) * time * endPoint + time * time;
+    float bezierValue = (1 - time) * (1 - time) * startPoint
+	+ 2 * (1 - time) * time * endPoint + time * time;
     return previousValue + (nextValue - previousValue) * bezierValue;
 }
 
@@ -32,24 +34,33 @@ void Chronos::Animation::KeyframeVariable::update(float dt)
 {
     this->currentTime += dt;
     if (this->currentTime >= this->keyframes.back().first) {
-        this->currentKeyframe = 0;
-        this->currentTime = this->currentTime - this->keyframes.back().first * (int(this->currentTime) / int(this->keyframes.back().first));
+	this->currentKeyframe = 0;
+	this->currentTime = this->currentTime
+	    - this->keyframes.back().first
+		* (int(this->currentTime) / int(this->keyframes.back().first));
     }
     int nextKeyframe = (this->currentKeyframe + 1) % this->keyframes.size();
     while (this->keyframes[nextKeyframe].first < this->currentTime) {
-        this->currentKeyframe = nextKeyframe;
-        nextKeyframe = (this->currentKeyframe + 1) % this->keyframes.size();
+	this->currentKeyframe = nextKeyframe;
+	nextKeyframe = (this->currentKeyframe + 1) % this->keyframes.size();
     }
-    float normalizedTime = (this->currentTime - this->keyframes[this->currentKeyframe].first) / (this->keyframes[nextKeyframe].first - this->keyframes[this->currentKeyframe].first);
-    this->variable = getBezierValue(normalizedTime, this->keyframes[this->currentKeyframe].second, this->keyframes[nextKeyframe].second, 0, 1);
+    float normalizedTime
+	= (this->currentTime - this->keyframes[this->currentKeyframe].first)
+	/ (this->keyframes[nextKeyframe].first
+	    - this->keyframes[this->currentKeyframe].first);
+    this->variable = getBezierValue(normalizedTime,
+	this->keyframes[this->currentKeyframe].second,
+	this->keyframes[nextKeyframe].second, 0, 1);
 }
 
-void Chronos::Animation::KeyframeVariable::updateKeyframes(std::vector<std::pair<float, float>> keyframes)
+void Chronos::Animation::KeyframeVariable::updateKeyframes(
+    std::vector<std::pair<float, float>> keyframes)
 {
     this->keyframes = keyframes;
 }
 
-std::vector<std::pair<float, float>> Chronos::Animation::KeyframeVariable::getKeyframes()
+std::vector<std::pair<float, float>>
+Chronos::Animation::KeyframeVariable::getKeyframes()
 {
     return this->keyframes;
 }

@@ -47,10 +47,10 @@ SOFTWARE.
 #include "polygonManager.hpp"
 #include "engine.hpp"
 
-static void framebuffer_size_callback(GLFWwindow* window, int width,
-    int height)
+static void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
-    auto app = reinterpret_cast<Chronos::Engine::Engine*>(glfwGetWindowUserPointer(window));
+    auto app = reinterpret_cast<Chronos::Engine::Engine*>(
+	glfwGetWindowUserPointer(window));
     app->resizeFrameBuffer();
     LOG(3, "Engine", "Framebuffer resized")
 }
@@ -73,10 +73,7 @@ Chronos::Engine::Engine::~Engine()
     LOG(3, "Engine", "Engine cleaned up")
 }
 
-void Chronos::Engine::Engine::resizeFrameBuffer()
-{
-    framebufferResized = true;
-}
+void Chronos::Engine::Engine::resizeFrameBuffer() { framebufferResized = true; }
 
 void Chronos::Engine::Engine::initWindow()
 {
@@ -86,8 +83,8 @@ void Chronos::Engine::Engine::initWindow()
 
     window = glfwCreateWindow(width, height, GAME_NAME, nullptr, nullptr);
     if (window == nullptr) {
-        LOG(1, "Engine", "Failed to create GLFW window")
-        throw std::runtime_error("Failed to create GLFW window");
+	LOG(1, "Engine", "Failed to create GLFW window")
+	throw std::runtime_error("Failed to create GLFW window");
     }
     glfwMakeContextCurrent(window);
     glfwSetWindowUserPointer(window, this);
@@ -150,9 +147,9 @@ void Chronos::Engine::Engine::cleanup()
     LOG(3, "Engine", "Editor cleaned up")
 #endif
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
-        vkDestroySemaphore(device.device, renderFinishedSemaphores[i], nullptr);
-        vkDestroySemaphore(device.device, imageAvailableSemaphores[i], nullptr);
-        vkDestroyFence(device.device, inFlightFences[i], nullptr);
+	vkDestroySemaphore(device.device, renderFinishedSemaphores[i], nullptr);
+	vkDestroySemaphore(device.device, imageAvailableSemaphores[i], nullptr);
+	vkDestroyFence(device.device, inFlightFences[i], nullptr);
     }
     vkDestroyCommandPool(device.device, commandPool, nullptr);
     LOG(3, "Engine", "Command pool cleaned up")
@@ -172,56 +169,60 @@ void Chronos::Engine::Engine::cleanup()
 void Chronos::Engine::Engine::drawFrame()
 {
     if (swapChain.changePresentMode) {
-        changePresentMode();
-        swapChain.changePresentMode = false;
-        LOG(3, "Engine", "Present mode changed")
+	changePresentMode();
+	swapChain.changePresentMode = false;
+	LOG(3, "Engine", "Present mode changed")
     }
     if (this->changeMSAAFlag) {
-        vkDeviceWaitIdle(device.device);
-        changeMSAASettings();
-        this->changeMSAAFlag = false;
-        LOG(3, "Engine", "MSAA changed")
+	vkDeviceWaitIdle(device.device);
+	changeMSAASettings();
+	this->changeMSAAFlag = false;
+	LOG(3, "Engine", "MSAA changed")
     }
     // wait for the previous frame to finish
     glfwPollEvents();
 
 #ifdef CHRONOS_PROFILING
-    std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
+    std::chrono::steady_clock::time_point start
+	= std::chrono::steady_clock::now();
 #endif
 
-    vkWaitForFences(device.device, 1, &inFlightFences[currentFrame], VK_TRUE,
-        UINT64_MAX);
+    vkWaitForFences(
+	device.device, 1, &inFlightFences[currentFrame], VK_TRUE, UINT64_MAX);
 
 #ifdef CHRONOS_PROFILING
-    this->waitTime = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now() - start).count();
+    this->waitTime = std::chrono::duration_cast<std::chrono::nanoseconds>(
+	std::chrono::steady_clock::now() - start)
+			 .count();
 #endif
 
     // get the index of the next image to render to
     uint32_t imageIndex;
-    VkResult result = vkAcquireNextImageKHR(
-        device.device, swapChain.swapChain, UINT64_MAX,
-        imageAvailableSemaphores[currentFrame], VK_NULL_HANDLE, &imageIndex);
+    VkResult result = vkAcquireNextImageKHR(device.device, swapChain.swapChain,
+	UINT64_MAX, imageAvailableSemaphores[currentFrame], VK_NULL_HANDLE,
+	&imageIndex);
 
-    // if window has been minimized, then recreate the swap chain and other things
+    // if window has been minimized, then recreate the swap chain and other
+    // things
     if (result == VK_ERROR_OUT_OF_DATE_KHR) {
-        swapChain.recreate();
-        LOG(3, "Engine", "Swapchain recreated")
-        shapeManager.recreate();
-        LOG(3, "Engine", "Shape manager recreated")
-        colorShapeManager.recreate();
-        LOG(3, "Engine", "Color shape manager recreated")
-        textManager.recreate();
-        LOG(3, "Engine", "Text manager recreated")
-        polygonManager.recreate();
-        LOG(3, "Engine", "Polygon manager recreated")
+	swapChain.recreate();
+	LOG(3, "Engine", "Swapchain recreated")
+	shapeManager.recreate();
+	LOG(3, "Engine", "Shape manager recreated")
+	colorShapeManager.recreate();
+	LOG(3, "Engine", "Color shape manager recreated")
+	textManager.recreate();
+	LOG(3, "Engine", "Text manager recreated")
+	polygonManager.recreate();
+	LOG(3, "Engine", "Polygon manager recreated")
 #ifdef ENABLE_EDITOR
-        gui.recreate();
-        LOG(3, "Engine", "Editor recreated")
+	gui.recreate();
+	LOG(3, "Engine", "Editor recreated")
 #endif
-        return;
+	return;
     } else if (result != VK_SUCCESS && result != VK_SUBOPTIMAL_KHR) {
-        LOG(1, "Engine", "Failed to acquire swap chain image")
-        throw std::runtime_error("Failed to acquire swap chain image");
+	LOG(1, "Engine", "Failed to acquire swap chain image")
+	throw std::runtime_error("Failed to acquire swap chain image");
     }
 #ifdef CHRONOS_PROFILING
     auto startUpdate = std::chrono::steady_clock::now();
@@ -236,7 +237,9 @@ void Chronos::Engine::Engine::drawFrame()
     gui.update();
 #endif
 #ifdef CHRONOS_PROFILING
-    this->updateTime = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now() - startUpdate).count();
+    this->updateTime = std::chrono::duration_cast<std::chrono::nanoseconds>(
+	std::chrono::steady_clock::now() - startUpdate)
+			   .count();
 #endif
     LOG(4, "Engine", "Managers updated")
 
@@ -255,15 +258,15 @@ void Chronos::Engine::Engine::drawFrame()
 
     // configure the semaphores
     VkSemaphore waitSemaphores[] = { imageAvailableSemaphores[currentFrame] };
-    VkPipelineStageFlags waitStages[] = {
-        VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT
-    };
+    VkPipelineStageFlags waitStages[]
+	= { VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT };
     VkSemaphore signalSemaphores[] = { renderFinishedSemaphores[currentFrame] };
 
     // submit the command buffers
     std::vector<VkCommandBuffer> submitCommandBuffers;
     submitCommandBuffers.push_back(shapeManager.commandBuffers[currentFrame]);
-    submitCommandBuffers.push_back(colorShapeManager.commandBuffers[currentFrame]);
+    submitCommandBuffers.push_back(
+	colorShapeManager.commandBuffers[currentFrame]);
     submitCommandBuffers.push_back(polygonManager.commandBuffers[currentFrame]);
     submitCommandBuffers.push_back(textManager.commandBuffers[currentFrame]);
 
@@ -275,16 +278,17 @@ void Chronos::Engine::Engine::drawFrame()
     submitInfo.waitSemaphoreCount = 1;
     submitInfo.pWaitSemaphores = waitSemaphores;
     submitInfo.pWaitDstStageMask = waitStages;
-    submitInfo.commandBufferCount = static_cast<uint32_t>(submitCommandBuffers.size());
+    submitInfo.commandBufferCount
+	= static_cast<uint32_t>(submitCommandBuffers.size());
     submitInfo.pCommandBuffers = submitCommandBuffers.data();
     submitInfo.signalSemaphoreCount = 1;
     submitInfo.pSignalSemaphores = signalSemaphores;
 
-    if (vkQueueSubmit(device.graphicsQueue, 1, &submitInfo,
-            inFlightFences[currentFrame])
-        != VK_SUCCESS) {
-        LOG(1, "Engine", "Failed to submit draw command buffer")
-        throw std::runtime_error("failed to submit draw command buffer!");
+    if (vkQueueSubmit(
+	    device.graphicsQueue, 1, &submitInfo, inFlightFences[currentFrame])
+	!= VK_SUCCESS) {
+	LOG(1, "Engine", "Failed to submit draw command buffer")
+	throw std::runtime_error("failed to submit draw command buffer!");
     }
     LOG(4, "Engine", "Command buffers submitted")
 
@@ -293,7 +297,9 @@ void Chronos::Engine::Engine::drawFrame()
 #endif
 
 #ifdef CHRONOS_PROFILING
-    this->cpuTime = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now() - start).count();
+    this->cpuTime = std::chrono::duration_cast<std::chrono::nanoseconds>(
+	std::chrono::steady_clock::now() - start)
+			.count();
     auto startPresent = std::chrono::steady_clock::now();
 #endif
 
@@ -308,29 +314,34 @@ void Chronos::Engine::Engine::drawFrame()
     presentInfo.pImageIndices = &imageIndex;
     presentInfo.pResults = nullptr;
     result = vkQueuePresentKHR(device.presentQueue, &presentInfo);
-    if (result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR || framebufferResized) {
-        framebufferResized = false;
-        swapChain.recreate();
-        LOG(3, "Engine", "Swapchain recreated")
-        shapeManager.recreate();
-        LOG(3, "Engine", "Shape Manager recreated")
-        colorShapeManager.recreate();
-        LOG(3, "Engine", "Color Shape Manager recreated")
-        textManager.recreate();
-        LOG(3, "Engine", "Text Manager recreated")
-        polygonManager.recreate();
-        LOG(3, "Engine", "polygon Manager recreated")
+    if (result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR
+	|| framebufferResized) {
+	framebufferResized = false;
+	swapChain.recreate();
+	LOG(3, "Engine", "Swapchain recreated")
+	shapeManager.recreate();
+	LOG(3, "Engine", "Shape Manager recreated")
+	colorShapeManager.recreate();
+	LOG(3, "Engine", "Color Shape Manager recreated")
+	textManager.recreate();
+	LOG(3, "Engine", "Text Manager recreated")
+	polygonManager.recreate();
+	LOG(3, "Engine", "polygon Manager recreated")
 #ifdef ENABLE_EDITOR
-        gui.recreate();
-        LOG(3, "Engine", "Editor recreated")
+	gui.recreate();
+	LOG(3, "Engine", "Editor recreated")
 #endif
     } else if (result != VK_SUCCESS) {
-        LOG(1, "Engine", "Failed to present swap chain image")
-        throw std::runtime_error("Failed to present swap chain image");
+	LOG(1, "Engine", "Failed to present swap chain image")
+	throw std::runtime_error("Failed to present swap chain image");
     }
 #ifdef CHRONOS_PROFILING
-    this->presentTime = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now() - startPresent).count();
-    this->totalTime = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now() - start).count();
+    this->presentTime = std::chrono::duration_cast<std::chrono::nanoseconds>(
+	std::chrono::steady_clock::now() - startPresent)
+			    .count();
+    this->totalTime = std::chrono::duration_cast<std::chrono::nanoseconds>(
+	std::chrono::steady_clock::now() - start)
+			  .count();
 #endif
     // update the current frame
     currentFrame = (currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
@@ -342,13 +353,21 @@ void Chronos::Engine::Engine::createInstance()
     VkApplicationInfo appInfo {};
     appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
     appInfo.pApplicationName = GAME_NAME;
-    appInfo.applicationVersion = VK_MAKE_VERSION(GAME_VERSION_MAJOR, GAME_VERSION_MINOR, GAME_VERSION_PATCH);
+    appInfo.applicationVersion = VK_MAKE_VERSION(
+	GAME_VERSION_MAJOR, GAME_VERSION_MINOR, GAME_VERSION_PATCH);
     appInfo.pEngineName = "Chronos";
-    appInfo.engineVersion = VK_MAKE_VERSION(CHRONOS_VERSION_MAJOR, CHRONOS_VERSION_MINOR, CHRONOS_VERSION_PATCH);
+    appInfo.engineVersion = VK_MAKE_VERSION(
+	CHRONOS_VERSION_MAJOR, CHRONOS_VERSION_MINOR, CHRONOS_VERSION_PATCH);
     // using vulkan 1.3 as we need shader printf support
     appInfo.apiVersion = VK_API_VERSION_1_0;
-    LOG(3, "Engine", "engine version: " + std::to_string(CHRONOS_VERSION_MAJOR) + "." + std::to_string(CHRONOS_VERSION_MINOR) + "." + std::to_string(CHRONOS_VERSION_PATCH))
-    LOG(3, "Engine", "game version: " + std::to_string(GAME_VERSION_MAJOR) + "." + std::to_string(GAME_VERSION_MINOR) + "." + std::to_string(GAME_VERSION_PATCH))
+    LOG(3, "Engine",
+	"engine version: " + std::to_string(CHRONOS_VERSION_MAJOR) + "."
+	    + std::to_string(CHRONOS_VERSION_MINOR) + "."
+	    + std::to_string(CHRONOS_VERSION_PATCH))
+    LOG(3, "Engine",
+	"game version: " + std::to_string(GAME_VERSION_MAJOR) + "."
+	    + std::to_string(GAME_VERSION_MINOR) + "."
+	    + std::to_string(GAME_VERSION_PATCH))
     LOG(3, "Engine", "game name: " + std::string(GAME_NAME))
 
     VkInstanceCreateInfo createInfo {};
@@ -365,8 +384,9 @@ void Chronos::Engine::Engine::createInstance()
 
 #ifdef ENABLE_VULKAN_VALIDATION_LAYERS
     if (!checkValidationLayerSupport()) {
-        LOG(1, "Engine", "Validation layers requested, but not available")
-        throw std::runtime_error("Validation layers requested, but not available");
+	LOG(1, "Engine", "Validation layers requested, but not available")
+	throw std::runtime_error(
+	    "Validation layers requested, but not available");
     }
 #endif
 
@@ -374,17 +394,19 @@ void Chronos::Engine::Engine::createInstance()
     createInfo.pNext = nullptr;
 
 #ifdef ENABLE_VULKAN_VALIDATION_LAYERS
-    createInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
+    createInfo.enabledLayerCount
+	= static_cast<uint32_t>(validationLayers.size());
     createInfo.ppEnabledLayerNames = validationLayers.data();
     // uncomment below if u need fine details. It just creates extra verbose
     // generally not needed
     // VkDebugUtilsMessengerCreateInfoEXT debugCreateInfo {};
     //  populateDebugMessengerCreateInfo(debugCreateInfo);
-    //  createInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT*)&debugCreateInfo;
+    //  createInfo.pNext =
+    //  (VkDebugUtilsMessengerCreateInfoEXT*)&debugCreateInfo;
 #endif
     if (vkCreateInstance(&createInfo, nullptr, &instance) != VK_SUCCESS) {
-        LOG(1, "Engine", "Failed to create instance")
-        throw std::runtime_error("Failed to create instance");
+	LOG(1, "Engine", "Failed to create instance")
+	throw std::runtime_error("Failed to create instance");
     }
 }
 
@@ -393,20 +415,21 @@ void Chronos::Engine::Engine::setupDebugMessenger()
 {
     VkDebugUtilsMessengerCreateInfoEXT createInfo;
     populateDebugMessengerCreateInfo(createInfo);
-    if (CreateDebugUtilsMessengerEXT(instance, &createInfo, nullptr,
-            &debugMessenger)
-        != VK_SUCCESS) {
-        LOG(1, "Engine", "Failed to set up debug messenger")
-        throw std::runtime_error("Failed to set up debug messenger");
+    if (CreateDebugUtilsMessengerEXT(
+	    instance, &createInfo, nullptr, &debugMessenger)
+	!= VK_SUCCESS) {
+	LOG(1, "Engine", "Failed to set up debug messenger")
+	throw std::runtime_error("Failed to set up debug messenger");
     }
 }
 #endif
 
 void Chronos::Engine::Engine::createSurface()
 {
-    if (glfwCreateWindowSurface(instance, window, nullptr, &surface) != VK_SUCCESS) {
-        LOG(1, "Engine", "Failed to create window surface")
-        throw std::runtime_error("Failed to create window surface");
+    if (glfwCreateWindowSurface(instance, window, nullptr, &surface)
+	!= VK_SUCCESS) {
+	LOG(1, "Engine", "Failed to create window surface")
+	throw std::runtime_error("Failed to create window surface");
     }
 }
 
@@ -424,22 +447,26 @@ void Chronos::Engine::Engine::createSyncObjects()
     fenceInfo.flags = VK_FENCE_CREATE_SIGNALED_BIT;
 
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
-        if (vkCreateSemaphore(device.device, &semaphoreInfo, nullptr,
-                &imageAvailableSemaphores[i])
-                != VK_SUCCESS
-            || vkCreateSemaphore(device.device, &semaphoreInfo, nullptr,
-                   &renderFinishedSemaphores[i])
-                != VK_SUCCESS
-            || vkCreateFence(device.device, &fenceInfo, nullptr, &inFlightFences[i]) != VK_SUCCESS) {
-            LOG(1, "Engine", "Failed to create synchronization objects for a frame")
-            throw std::runtime_error(
-                "failed to create synchronization objects for a frame!");
-        }
+	if (vkCreateSemaphore(device.device, &semaphoreInfo, nullptr,
+		&imageAvailableSemaphores[i])
+		!= VK_SUCCESS
+	    || vkCreateSemaphore(device.device, &semaphoreInfo, nullptr,
+		   &renderFinishedSemaphores[i])
+		!= VK_SUCCESS
+	    || vkCreateFence(
+		   device.device, &fenceInfo, nullptr, &inFlightFences[i])
+		!= VK_SUCCESS) {
+	    LOG(1, "Engine",
+		"Failed to create synchronization objects for a frame")
+	    throw std::runtime_error(
+		"failed to create synchronization objects for a frame!");
+	}
     }
 }
 
 #ifdef ENABLE_EDITOR
-void Chronos::Engine::Engine::setEditorAddElementsCallback(void (*editorAddElements)())
+void Chronos::Engine::Engine::setEditorAddElementsCallback(
+    void (*editorAddElements)())
 {
     gui.addElements = editorAddElements;
 }
@@ -461,15 +488,15 @@ void Chronos::Engine::Engine::changePresentMode()
 void Chronos::Engine::Engine::setPresentMode(std::string mode)
 {
     if (mode == "immediate") {
-        this->swapChain.preferredPresentMode = VK_PRESENT_MODE_IMMEDIATE_KHR;
+	this->swapChain.preferredPresentMode = VK_PRESENT_MODE_IMMEDIATE_KHR;
     } else if (mode == "fifo") {
-        this->swapChain.preferredPresentMode = VK_PRESENT_MODE_FIFO_KHR;
+	this->swapChain.preferredPresentMode = VK_PRESENT_MODE_FIFO_KHR;
     } else if (mode == "fifo_relaxed") {
-        this->swapChain.preferredPresentMode = VK_PRESENT_MODE_FIFO_RELAXED_KHR;
+	this->swapChain.preferredPresentMode = VK_PRESENT_MODE_FIFO_RELAXED_KHR;
     } else if (mode == "mailbox") {
-        this->swapChain.preferredPresentMode = VK_PRESENT_MODE_MAILBOX_KHR;
+	this->swapChain.preferredPresentMode = VK_PRESENT_MODE_MAILBOX_KHR;
     } else {
-        throw std::runtime_error("Invalid present mode");
+	throw std::runtime_error("Invalid present mode");
     }
     this->swapChain.changePresentMode = true;
     LOG(3, "Engine", "Present mode set to " + mode)
@@ -480,22 +507,22 @@ std::vector<std::string> Chronos::Engine::Engine::getAvailableMSAAModes()
     VkSampleCountFlagBits maxSample = device.maxMsaaSamples;
     std::vector<std::string> modes;
     if (VK_SAMPLE_COUNT_64_BIT <= maxSample) {
-        modes.push_back("64");
+	modes.push_back("64");
     }
     if (VK_SAMPLE_COUNT_32_BIT <= maxSample) {
-        modes.push_back("32");
+	modes.push_back("32");
     }
     if (VK_SAMPLE_COUNT_16_BIT <= maxSample) {
-        modes.push_back("16");
+	modes.push_back("16");
     }
     if (VK_SAMPLE_COUNT_8_BIT <= maxSample) {
-        modes.push_back("8");
+	modes.push_back("8");
     }
     if (VK_SAMPLE_COUNT_4_BIT <= maxSample) {
-        modes.push_back("4");
+	modes.push_back("4");
     }
     if (VK_SAMPLE_COUNT_2_BIT <= maxSample) {
-        modes.push_back("2");
+	modes.push_back("2");
     }
     modes.push_back("1");
     return modes;
@@ -504,24 +531,24 @@ std::vector<std::string> Chronos::Engine::Engine::getAvailableMSAAModes()
 void Chronos::Engine::Engine::changeMSAA(std::string mode)
 {
     if (mode == "64") {
-        this->newMSAAMode = VK_SAMPLE_COUNT_64_BIT;
+	this->newMSAAMode = VK_SAMPLE_COUNT_64_BIT;
     } else if (mode == "32") {
-        this->newMSAAMode = VK_SAMPLE_COUNT_32_BIT;
+	this->newMSAAMode = VK_SAMPLE_COUNT_32_BIT;
     } else if (mode == "16") {
-        this->newMSAAMode = VK_SAMPLE_COUNT_16_BIT;
+	this->newMSAAMode = VK_SAMPLE_COUNT_16_BIT;
     } else if (mode == "8") {
-        this->newMSAAMode = VK_SAMPLE_COUNT_8_BIT;
+	this->newMSAAMode = VK_SAMPLE_COUNT_8_BIT;
     } else if (mode == "4") {
-        this->newMSAAMode = VK_SAMPLE_COUNT_4_BIT;
+	this->newMSAAMode = VK_SAMPLE_COUNT_4_BIT;
     } else if (mode == "2") {
-        this->newMSAAMode = VK_SAMPLE_COUNT_2_BIT;
+	this->newMSAAMode = VK_SAMPLE_COUNT_2_BIT;
     } else if (mode == "1") {
-        this->newMSAAMode = VK_SAMPLE_COUNT_1_BIT;
+	this->newMSAAMode = VK_SAMPLE_COUNT_1_BIT;
     } else {
-        throw std::runtime_error("Invalid MSAA mode");
+	throw std::runtime_error("Invalid MSAA mode");
     }
     if (this->newMSAAMode > device.maxMsaaSamples) {
-        throw std::runtime_error("Invalid MSAA mode");
+	throw std::runtime_error("Invalid MSAA mode");
     }
     this->changeMSAAFlag = true;
     LOG(3, "Engine", "MSAA to be changed to " + mode)

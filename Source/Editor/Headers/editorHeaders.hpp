@@ -24,8 +24,8 @@ SOFTWARE.
 
  \brief Contains all the editor headers.
 
- The Editor uses ImGui for the EditorRenderer. This file contains all the ImGui headers.
- It also contains various other plugins for ImGUI.
+ The Editor uses ImGui for the EditorRenderer. This file contains all the ImGui
+ headers. It also contains various other plugins for ImGUI.
 */
 #pragma once
 #ifdef __clang__

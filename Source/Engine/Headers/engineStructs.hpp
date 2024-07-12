@@ -35,7 +35,8 @@ namespace Engine {
 
     ## Note:
     In Vulkan y axis is inverted. So the y axis of the shape is inverted.
-    This means that -1 is the top of the screen and 1 is the bottom of the screen.
+    This means that -1 is the top of the screen and 1 is the bottom of the
+    screen.
 
     @param x x coordinate of the text(Range : 0 and 1).
     @param y y coordinate of the text(Range : 0 and 1).
@@ -45,22 +46,23 @@ namespace Engine {
     @param color The color of the text(Range : 0 and 1).
     */
     struct TextParams {
-        std::string text;
-        float x = 0;
-        float y = 0;
-        float rotation = 0;
-        float scale = 1.0f;
-        std::array<float, 3> color = { 1.0f, 1.0f, 1.0f };
+	std::string text;
+	float x = 0;
+	float y = 0;
+	float rotation = 0;
+	float scale = 1.0f;
+	std::array<float, 3> color = { 1.0f, 1.0f, 1.0f };
     };
     /**
     \brief Uniform struct passed to shader
 
-    This is the uniform of the shape. This is passed to the shaders for generating the vertices in the correct positons.
+    This is the uniform of the shape. This is passed to the shaders for
+    generating the vertices in the correct positons.
     */
     struct UniformBufferObject {
-        glm::mat4 model;
-        glm::mat4 view;
-        glm::mat4 proj;
+	glm::mat4 model;
+	glm::mat4 view;
+	glm::mat4 proj;
     };
 
     /**
@@ -69,7 +71,7 @@ namespace Engine {
     This is used for passing the color to the shaders. Used with colored shapes.
     */
     struct UniformColorBufferObject {
-        glm::vec3 color;
+	glm::vec3 color;
     };
 };
 };

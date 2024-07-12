@@ -24,19 +24,20 @@ namespace Chronos {
 namespace Animation {
     class KeyframeVariable {
     public:
-        void updateKeyframes(std::vector<std::pair<float, float>> keyframes);
-        std::vector<std::pair<float, float>> getKeyframes();
-        void setTime(float time);
-        void setKeyframe(int keyframe);
-        int getKeyframe();
-        void update(float dt);
-        float getVariable();
+	void updateKeyframes(std::vector<std::pair<float, float>> keyframes);
+	std::vector<std::pair<float, float>> getKeyframes();
+	void setTime(float time);
+	void setKeyframe(int keyframe);
+	int getKeyframe();
+	void update(float dt);
+	float getVariable();
 
     private:
-        float variable = 0;
-        std::vector<std::pair<float, float>> keyframes; // first is time, second is value
-        float currentTime = 0;
-        int currentKeyframe = 0;
+	float variable = 0;
+	std::vector<std::pair<float, float>>
+	    keyframes; // first is time, second is value
+	float currentTime = 0;
+	int currentKeyframe = 0;
     };
 };
 };

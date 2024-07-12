@@ -8,8 +8,11 @@
 //     bool cleanup = true;
 //     void SetUp() override{
 //         Chronos::Manager::Initializer initializer = {800, 600, {0, 0, 0}};
-//         //Due to the multiprocess nature of google tests, we cannot delete this, else tests will fail when run together.
-//         //This is a memory leak. But since these are tests, it is considered to be acceptable, since freeing this memory and will be freed on process exit/destruction
+//         //Due to the multiprocess nature of google tests, we cannot delete
+//         this, else tests will fail when run together.
+//         //This is a memory leak. But since these are tests, it is considered
+//         to be acceptable, since freeing this memory and will be freed on
+//         process exit/destruction
 //         //is not part of the tests
 //         manager = new Chronos::Manager::Manager(initializer);
 //     }
@@ -25,8 +28,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0);
 
 //     Chronos::Manager::ShapeParams rectangleParams;
 //     rectangleParams.x = -0.5;
@@ -36,8 +39,8 @@
 //     rectangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType rectangleType;
 //     rectangleType.rectangle = true;
-//     int rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(rectangle, 1);
+//     int rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(rectangle, 1);
 // }
 
 // TEST_F(ShapeAPITest, multipleShapesDifferentType){
@@ -50,8 +53,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0);
 
 //     Chronos::Manager::ShapeParams rectangleParams;
 //     rectangleParams.x = -0.5;
@@ -61,20 +64,20 @@
 //     rectangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType rectangleType;
 //     rectangleType.rectangle = true;
-//     int rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(rectangle, 1);
+//     int rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(rectangle, 1);
 
-//     rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(rectangle, 2);
+//     rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(rectangle, 2);
 
-//     rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(rectangle, 3);
+//     rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(rectangle, 3);
 
-//     triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 4);
+//     triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 4);
 
-//     triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 5);
+//     triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 5);
 // }
 
 // TEST_F(ShapeAPITest, multipleShapesSameTypeTriangle){
@@ -88,26 +91,26 @@
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
 
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0);
 
-//     triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 1);
+//     triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 1);
 
-//     triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 2);
+//     triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 2);
 
-//     triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 3);
+//     triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 3);
 
-//     triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 4);
+//     triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 4);
 
-//     triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 5);
+//     triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 5);
 
-//     triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 6);
+//     triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 6);
 // }
 // TEST_F(ShapeAPITest, multipleShapeSameTypeRectangle){
 
@@ -120,26 +123,26 @@
 //     Chronos::Manager::PolygonType rectangleType;
 //     rectangleType.rectangle = true;
 
-//     int rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(rectangle, 0);
+//     int rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(rectangle, 0);
 
-//     rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(rectangle, 1);
+//     rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(rectangle, 1);
 
-//     rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(rectangle, 2);
+//     rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(rectangle, 2);
 
-//     rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(rectangle, 3);
+//     rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(rectangle, 3);
 
-//     rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(rectangle, 4);
+//     rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(rectangle, 4);
 
-//     rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(rectangle, 5);
+//     rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(rectangle, 5);
 
-//     rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(rectangle, 6);
+//     rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(rectangle, 6);
 
 // }
 
@@ -153,7 +156,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType, "Assets/texture.jp"), std::runtime_error);
+//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jp"), std::runtime_error);
 // }
 
 // TEST_F(ShapeAPITest, incompatibleTextureType2){
@@ -166,7 +170,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType, "Assets/texture.pn"), std::runtime_error);
+//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.pn"), std::runtime_error);
 // }
 
 // TEST_F(ShapeAPITest, incompatibleTextureType3){
@@ -179,7 +184,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType, "Assets/texture.pngjp"), std::runtime_error);
+//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.pngjp"), std::runtime_error);
 // }
 
 // TEST_F(ShapeAPITest, incompatibleTextureType4){
@@ -192,7 +198,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType, "Assets/texture.pngjpg"), std::runtime_error);
+//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.pngjpg"), std::runtime_error);
 // }
 
 // TEST_F(ShapeAPITest, incompatibleTextureType5){
@@ -205,7 +212,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpgpng"), std::runtime_error);
+//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpgpng"), std::runtime_error);
 // }
 
 // TEST_F(ShapeAPITest, incompatibleTextureType6){
@@ -218,7 +226,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType, "Assets/texture.pngjpg"), std::runtime_error);
+//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.pngjpg"), std::runtime_error);
 // }
 
 // TEST_F(ShapeAPITest, incompatibleTextureType7){
@@ -231,7 +240,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType, "Assets/.pngjpg"), std::runtime_error);
+//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType,
+//     "Assets/.pngjpg"), std::runtime_error);
 // }
 
 // TEST_F(ShapeAPITest, incompatibleTextureType8){
@@ -244,7 +254,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType, "Assets/texture.pngjpg.png"), std::runtime_error);
+//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.pngjpg.png"), std::runtime_error);
 // }
 
 // TEST_F(ShapeAPITest, incompatibleTextureType9){
@@ -257,7 +268,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType, "Assets/texture"), std::runtime_error);
+//     EXPECT_THROW(manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture"), std::runtime_error);
 // }
 
 // TEST_F(ShapeAPITest, incompatibleTextureType11){
@@ -270,7 +282,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     EXPECT_ANY_THROW(manager->addPolygon(triangleParams, triangleType, nullptr));
+//     EXPECT_ANY_THROW(manager->addPolygon(triangleParams, triangleType,
+//     nullptr));
 // }
 
 // TEST_F(ShapeAPITest, multipleShapesDifferentTypeDifferentTexture){
@@ -282,8 +295,8 @@
 //     triangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0);
 
 //     Chronos::Manager::ShapeParams rectangleParams;
 //     rectangleParams.x = -0.5;
@@ -293,27 +306,29 @@
 //     rectangleParams.rotation = 0;
 //     Chronos::Manager::PolygonType rectangleType;
 //     rectangleType.rectangle = true;
-//     int rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(rectangle, 1);
+//     int rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(rectangle, 1);
 
-//     rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture2.jpg");
-//     EXPECT_EQ(rectangle, 2);
+//     rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture2.jpg"); EXPECT_EQ(rectangle, 2);
 
-//     rectangle = manager->addPolygon(rectangleParams, rectangleType, "Assets/texture3.png");
-//     EXPECT_EQ(rectangle, 3);
+//     rectangle = manager->addPolygon(rectangleParams, rectangleType,
+//     "Assets/texture3.png"); EXPECT_EQ(rectangle, 3);
 
-//     triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture2.jpg");
-//     EXPECT_EQ(triangle, 4);
+//     triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture2.jpg"); EXPECT_EQ(triangle, 4);
 
-//     triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture3.png");
-//     EXPECT_EQ(triangle, 5);
+//     triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture3.png"); EXPECT_EQ(triangle, 5);
 // }
 
 // TEST_F(ShapeAPITest, paramsIsNull){
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     Chronos::Manager::ShapeParams triangleParams = (Chronos::Manager::ShapeParams)NULL;
-//     EXPECT_EQ(manager->addPolygon((Chronos::Manager::ShapeParams)NULL, triangleType, "Assets/texture3.png"), 0);
+//     Chronos::Manager::ShapeParams triangleParams =
+//     (Chronos::Manager::ShapeParams)NULL;
+//     EXPECT_EQ(manager->addPolygon((Chronos::Manager::ShapeParams)NULL,
+//     triangleType, "Assets/texture3.png"), 0);
 // }
 
 // TEST_F(ShapeAPITest, polygonTypeIsNotSet){
@@ -324,18 +339,24 @@
 //     triangleParams.xSize = 0.5;
 //     triangleParams.ySize = 0.5;
 
-//     Chronos::Manager::PolygonType triangleType = (Chronos::Manager::PolygonType)NULL;
-//     EXPECT_THROW(manager->addPolygon(triangleParams, (Chronos::Manager::PolygonType)NULL, "Assets/texture3.png"), std::runtime_error);
+//     Chronos::Manager::PolygonType triangleType =
+//     (Chronos::Manager::PolygonType)NULL;
+//     EXPECT_THROW(manager->addPolygon(triangleParams,
+//     (Chronos::Manager::PolygonType)NULL, "Assets/texture3.png"),
+//     std::runtime_error);
 // }
 
 // TEST_F(ShapeAPITest, bothParamsAndPolygonTypeIsNotSet){
 //     cleanup = false;
-//     EXPECT_THROW(manager->addPolygon((Chronos::Manager::ShapeParams)NULL, (Chronos::Manager::PolygonType)NULL, "Assets/texture3.png"), std::runtime_error);
+//     EXPECT_THROW(manager->addPolygon((Chronos::Manager::ShapeParams)NULL,
+//     (Chronos::Manager::PolygonType)NULL, "Assets/texture3.png"),
+//     std::runtime_error);
 // }
 
 // TEST_F(ShapeAPITest, allArgsIsNullptr){
 //     cleanup = false;
-//     EXPECT_THROW(manager->addPolygon((Chronos::Manager::ShapeParams)NULL, (Chronos::Manager::PolygonType)NULL, ""), std::runtime_error);
+//     EXPECT_THROW(manager->addPolygon((Chronos::Manager::ShapeParams)NULL,
+//     (Chronos::Manager::PolygonType)NULL, ""), std::runtime_error);
 // }
 
 // TEST_F(ShapeAPITest, removeShape){
@@ -348,8 +369,8 @@
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
 
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0);
 
 //     EXPECT_NO_THROW(manager->removePolygon(triangle));
 // }
@@ -364,8 +385,8 @@
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
 
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0);
 
 //     EXPECT_THROW(manager->removePolygon(1), std::runtime_error);
 // }
@@ -380,8 +401,8 @@
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
 
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0);
 
 //     Chronos::Manager::ShapeParams triangleParams2;
 //     triangleParams2.x = 0.5;
@@ -404,8 +425,8 @@
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
 
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0);
 
 //     Chronos::Manager::ShapeParams triangleParams2;
 //     triangleParams2.x = 0.5;
@@ -432,8 +453,8 @@
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
 
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0);
 
 //     Chronos::Manager::ShapeParams triangleParams2;
 //     triangleParams2.x = 0.5;
@@ -443,8 +464,8 @@
 
 //     EXPECT_NO_THROW(manager->removePolygon(triangle));
 
-//     triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 1);
+//     triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 1);
 
 //     EXPECT_NO_THROW(manager->removePolygon(triangle));
 // }
@@ -459,8 +480,8 @@
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
 
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0);
 
 //     Chronos::Manager::ShapeParams params2;
 //     params2.x = 0.1;
@@ -483,8 +504,8 @@
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
 
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0);
 
 //     Chronos::Manager::ShapeParams params2;
 //     params2.x = 0.1;
@@ -507,8 +528,9 @@
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
 
-//     int shapeIndex = manager->addPolygon(params, triangleType, "Assets/texture.jpg");
-//     EXPECT_NO_THROW(manager->updatePolygon(shapeIndex, params));
+//     int shapeIndex = manager->addPolygon(params, triangleType,
+//     "Assets/texture.jpg"); EXPECT_NO_THROW(manager->updatePolygon(shapeIndex,
+//     params));
 
 //     Chronos::Manager::ShapeParams params2;
 //     params2.x = 0.1;
@@ -531,10 +553,12 @@
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
 
-//     int shapeIndex = manager->addPolygon(params, triangleType, "Assets/texture.jpg");
-//     EXPECT_NO_THROW(manager->updatePolygon(shapeIndex, params));
+//     int shapeIndex = manager->addPolygon(params, triangleType,
+//     "Assets/texture.jpg"); EXPECT_NO_THROW(manager->updatePolygon(shapeIndex,
+//     params));
 
-//     int shapeIndex2 = manager->addPolygon(params, triangleType, "Assets/texture.jpg");
+//     int shapeIndex2 = manager->addPolygon(params, triangleType,
+//     "Assets/texture.jpg");
 
 //     manager->removePolygon(shapeIndex);
 
@@ -544,7 +568,8 @@
 //     params2.rotation = 0.0;
 //     params2.xSize = 1.0;
 //     params2.ySize = 1.0;
-//     EXPECT_THROW(manager->updatePolygon((int)NULL, params2), std::runtime_error);
+//     EXPECT_THROW(manager->updatePolygon((int)NULL, params2),
+//     std::runtime_error);
 
 // }
 
@@ -559,8 +584,9 @@
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
 
-//     int shapeIndex = manager->addPolygon(params, triangleType, "Assets/texture.jpg");
-//     EXPECT_NO_THROW(manager->updatePolygon(shapeIndex, (Chronos::Manager::ShapeParams)NULL));
+//     int shapeIndex = manager->addPolygon(params, triangleType,
+//     "Assets/texture.jpg"); EXPECT_NO_THROW(manager->updatePolygon(shapeIndex,
+//     (Chronos::Manager::ShapeParams)NULL));
 // }
 
 // TEST_F(ShapeAPITest, updateShapeAfterRemove) {
@@ -575,8 +601,8 @@
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
 
-//     int shapeIndex = manager->addPolygon(params, triangleType, "Assets/texture.jpg");
-//     manager->removePolygon(shapeIndex);
+//     int shapeIndex = manager->addPolygon(params, triangleType,
+//     "Assets/texture.jpg"); manager->removePolygon(shapeIndex);
 
 //     Chronos::Manager::ShapeParams params2;
 //     params2.x = 0.1;
@@ -584,7 +610,8 @@
 //     params2.rotation = 0.0;
 //     params2.xSize = 1.0;
 //     params2.ySize = 1.0;
-//     EXPECT_THROW(manager->updatePolygon(shapeIndex, params), std::runtime_error);
+//     EXPECT_THROW(manager->updatePolygon(shapeIndex, params),
+//     std::runtime_error);
 // }
 
 // TEST_F(ShapeAPITest, extremeMultipleShapesSameType){
@@ -606,8 +633,8 @@
 //     triangleType.triangle = true;
 //     manager->drawFrame();
 //     for(int i = 0; i < 1000; i++){
-//         int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//         EXPECT_EQ(triangle, i);
+//         int triangle = manager->addPolygon(triangleParams, triangleType,
+//         "Assets/texture.jpg"); EXPECT_EQ(triangle, i);
 //         manager->updatePolygon(triangle, triangleParams2);
 //         if(i > 0)
 //             manager->removePolygon(triangle - 1);
@@ -635,8 +662,8 @@
 //     triangleType.triangle = true;
 //     manager->drawFrame();
 //     for(int i = 0; i < 10; i++){
-//         int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//         EXPECT_EQ(triangle, i);
+//         int triangle = manager->addPolygon(triangleParams, triangleType,
+//         "Assets/texture.jpg"); EXPECT_EQ(triangle, i);
 //         manager->updatePolygon(triangle, triangleParams2);
 //         manager->drawFrame();
 //         manager->removePolygon(triangle);
@@ -661,9 +688,8 @@
 
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
-//     manager->drawFrame();
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0); manager->drawFrame();
 //     for(int i = 0; i < 1000; i++){
 //         triangleParams2.x -= -0.2;
 //         triangleParams2.y += 0.9;
@@ -692,9 +718,8 @@
 
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
-//     manager->drawFrame();
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0); manager->drawFrame();
 //     for(int i = 0; i < 10000; i++){
 //         triangleParams2.x -= 0.1;
 //         triangleParams2.y -= 0.1;
@@ -723,9 +748,8 @@
 
 //     Chronos::Manager::PolygonType triangleType;
 //     triangleType.triangle = true;
-//     int triangle = manager->addPolygon(triangleParams, triangleType, "Assets/texture.jpg");
-//     EXPECT_EQ(triangle, 0);
-//     manager->drawFrame();
+//     int triangle = manager->addPolygon(triangleParams, triangleType,
+//     "Assets/texture.jpg"); EXPECT_EQ(triangle, 0); manager->drawFrame();
 //     for(int i = 0; i < 10000; i++){
 //         triangleParams2.x += 0.1;
 //         triangleParams2.y += 0.1;

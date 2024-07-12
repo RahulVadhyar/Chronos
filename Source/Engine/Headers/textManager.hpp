@@ -30,42 +30,48 @@ namespace Chronos {
 namespace Engine {
 
     /**
-    \brief This is the text manager for Chronos. It handles creation, modification, updating and desrtuction of text.
+    \brief This is the text manager for Chronos. It handles creation,
+    modification, updating and desrtuction of text.
     */
-    class TextManager : public Chronos::Engine::ObjectManager<Chronos::Engine::Text> {
+    class TextManager
+	: public Chronos::Engine::ObjectManager<Chronos::Engine::Text> {
     public:
-        /**
-        \brief Adds a font to the text manager.
+	/**
+	\brief Adds a font to the text manager.
 
-        @param font The font to add.
-        @param fontStyle The style of the font to add.
-        @return The index of the font that was added.
-        */
-        int addFont(Chronos::Engine::Text font, Chronos::Engine::FontTypes fontStyle);
+	@param font The font to add.
+	@param fontStyle The style of the font to add.
+	@return The index of the font that was added.
+	*/
+	int addFont(
+	    Chronos::Engine::Text font, Chronos::Engine::FontTypes fontStyle);
 
-        /**
-        \brief Records the commands needed for rendering the text.
+	/**
+	\brief Records the commands needed for rendering the text.
 
-        When this function is called, it records the commands that are needed for rendering all the text stored in this class.
+	When this function is called, it records the commands that are needed
+	for rendering all the text stored in this class.
 
-        @param currentFrame The current frame to render to.
-        @param imageIndex The index of the framebuffer associated with the current frame
-        @param bgColor The background color to use for rendering the background.
-        */
-        void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]);
+	@param currentFrame The current frame to render to.
+	@param imageIndex The index of the framebuffer associated with the
+	current frame
+	@param bgColor The background color to use for rendering the background.
+	*/
+	void render(
+	    uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]);
 
-        /**
-        \brief Removes a font from the text manager.
+	/**
+	\brief Removes a font from the text manager.
 
-        @param fontNo The index of the font to remove.
-        */
-        void remove(int fontNo);
+	@param fontNo The index of the font to remove.
+	*/
+	void remove(int fontNo);
 
     private:
-        /**
-        \brief Creates the render pass needed for rendering the text.
-        */
-        void createRenderPass();
+	/**
+	\brief Creates the render pass needed for rendering the text.
+	*/
+	void createRenderPass();
     };
 };
 };
