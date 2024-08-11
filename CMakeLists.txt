@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 project(Chronos VERSION 0.0.0)
 set(CMAKE_CXX_STANDARD 20)
-
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
 if(UNIX)
@@ -20,12 +20,12 @@ option(CHRONOS_ENABLE_OPTIMIZATIONS "Enable compiler optimizations and enable mo
 if(CHRONOS_ENABLE_OPTIMIZATIONS)
 set(CMAKE_BUILD_TYPE Release)
 if(UNIX)
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -Wno-overloaded-virtual -Wno-unused-parameter -Wno-vla -Werror -O3 -march=native")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -Wno-overloaded-virtual -Wno-unused-parameter -Wno-vla -Wno-format-truncation -Werror -O3 -march=native")
 message("All optimizations and warnings are enabled. Building for release!")
 endif()
 else()
 set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -Wno-overloaded-virtual -Wno-unused-parameter -Wno-vla -Werror")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -Wno-overloaded-virtual -Wno-unused-parameter -Wno-vla -Wno-format-truncation -Werror")
 message("Building for debug!")
 endif()
 

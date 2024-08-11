@@ -654,23 +654,23 @@ void Chronos::Editor::EditorManager::ShapeDetailsWindow()
 	    ImGui::DragFloat("X(-1 to 1)", &this->shapeDetailsShapeParams.x,
 		0.01f, -1.0f, 1.0f);
 	    ImGui::SameLine();
-	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.x);
+	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.x, "X");
 	    ImGui::DragFloat("Y(-1 to 1)", &this->shapeDetailsShapeParams.y,
 		0.01f, -1.0f, 1.0f);
 	    ImGui::SameLine();
-	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.y);
+	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.y, "Y");
 	    ImGui::DragFloat("X Size", &this->shapeDetailsShapeParams.xSize,
 		0.01f, 0.0f, FLT_MAX);
 	    ImGui::SameLine();
-	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.xSize);
+	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.xSize, "X size");
 	    ImGui::DragFloat("Y Size", &this->shapeDetailsShapeParams.ySize,
 		0.01f, 0.0f, FLT_MAX);
 	    ImGui::SameLine();
-	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.ySize);
+	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.ySize, "Y size");
 	    ImGui::DragFloat("Rotation",
 		&this->shapeDetailsShapeParams.rotation, 0.01f, 0.0f, FLT_MAX);
 	    ImGui::SameLine();
-	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.rotation);
+	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.rotation, "Rotation");
 	    ImGui::ColorEdit3(
 		"Color", this->shapeDetailsShapeParams.color.data());
 	    this->manager->updatePolygon(
@@ -878,11 +878,11 @@ bool Chronos::Editor::EditorManager::doesKeyframeExist(float* valuePointer)
     return true;
 }
 
-void Chronos::Editor::EditorManager::keyframeCheckbox(float* valuePointer)
+void Chronos::Editor::EditorManager::keyframeCheckbox(float* valuePointer, std::string name)
 {
     bool isAnimated = this->doesKeyframeExist(valuePointer);
     bool currentChange = isAnimated;
-    ImGui::Checkbox("Animate", &currentChange);
+    ImGui::Checkbox(name.c_str(), &currentChange);
     if (currentChange != isAnimated) {
 	LOG(3, "EditorManager",
 	    "Animate checkbox changed for valuePointer ["

@@ -79,7 +79,7 @@ namespace Editor {
 
 	int getKeyframeNo(float* valuePointer);
 	bool doesKeyframeExist(float* valuePointer);
-	void keyframeCheckbox(float* valuePointer);
+	void keyframeCheckbox(float* valuePointer, std::string name);
 	void updateKeyframes();
 
 	// Shape Window
