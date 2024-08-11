@@ -161,8 +161,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a10232c502a385c8bf60b16390e32c644"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a0347a50c5037a42ab500210f2189db"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Editor_1_1EditorManager.html#a8a0347a50c5037a42ab500210f2189db">doesKeyframeExist</a> (float *valuePointer)</td></tr>
 <tr class="separator:a8a0347a50c5037a42ab500210f2189db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23d89e8723218cca8e2e947a99fe718c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Editor_1_1EditorManager.html#a23d89e8723218cca8e2e947a99fe718c">keyframeCheckbox</a> (float *valuePointer)</td></tr>
-<tr class="separator:a23d89e8723218cca8e2e947a99fe718c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7327399a36cf8289842551e83d79e508"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Editor_1_1EditorManager.html#a7327399a36cf8289842551e83d79e508">keyframeCheckbox</a> (float *valuePointer, std::string name)</td></tr>
+<tr class="separator:a7327399a36cf8289842551e83d79e508"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09985e79ffab7fb8d1f6788166091d92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChronos_1_1Editor_1_1EditorManager.html#a09985e79ffab7fb8d1f6788166091d92">updateKeyframes</a> ()</td></tr>
 <tr class="separator:a09985e79ffab7fb8d1f6788166091d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -629,8 +629,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a23d89e8723218cca8e2e947a99fe718c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23d89e8723218cca8e2e947a99fe718c">&#9670;&nbsp;</a></span>keyframeCheckbox()</h2>
+<a id="a7327399a36cf8289842551e83d79e508"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7327399a36cf8289842551e83d79e508">&#9670;&nbsp;</a></span>keyframeCheckbox()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -642,8 +642,18 @@ Here is the caller graph for this function:</div>
           <td class="memname">void Chronos::Editor::EditorManager::keyframeCheckbox </td>
           <td>(</td>
           <td class="paramtype">float *&#160;</td>
-          <td class="paramname"><em>valuePointer</em></td><td>)</td>
+          <td class="paramname"><em>valuePointer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -657,7 +667,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;{</div>
 <div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;    <span class="keywordtype">bool</span> isAnimated = this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a8a0347a50c5037a42ab500210f2189db">doesKeyframeExist</a>(valuePointer);</div>
 <div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;    <span class="keywordtype">bool</span> currentChange = isAnimated;</div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;    ImGui::Checkbox(<span class="stringliteral">&quot;Animate&quot;</span>, &amp;currentChange);</div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;    ImGui::Checkbox(name.c_str(), &amp;currentChange);</div>
 <div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;    <span class="keywordflow">if</span> (currentChange != isAnimated) {</div>
 <div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;    <a class="code" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;EditorManager&quot;</span>,</div>
 <div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;        <span class="stringliteral">&quot;Animate checkbox changed for valuePointer [&quot;</span></div>
@@ -1285,23 +1295,23 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;        ImGui::DragFloat(<span class="stringliteral">&quot;X(-1 to 1)&quot;</span>, &amp;this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#ac19f647202f97d09446a1f0aaba3f57e">x</a>,</div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;        0.01f, -1.0f, 1.0f);</div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;        ImGui::SameLine();</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a23d89e8723218cca8e2e947a99fe718c">keyframeCheckbox</a>(&amp;this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#ac19f647202f97d09446a1f0aaba3f57e">x</a>);</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a7327399a36cf8289842551e83d79e508">keyframeCheckbox</a>(&amp;this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#ac19f647202f97d09446a1f0aaba3f57e">x</a>, <span class="stringliteral">&quot;X&quot;</span>);</div>
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;        ImGui::DragFloat(<span class="stringliteral">&quot;Y(-1 to 1)&quot;</span>, &amp;this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a57af8e9f2161df8083f206cfbb34502e">y</a>,</div>
 <div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;        0.01f, -1.0f, 1.0f);</div>
 <div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;        ImGui::SameLine();</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a23d89e8723218cca8e2e947a99fe718c">keyframeCheckbox</a>(&amp;this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a57af8e9f2161df8083f206cfbb34502e">y</a>);</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a7327399a36cf8289842551e83d79e508">keyframeCheckbox</a>(&amp;this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a57af8e9f2161df8083f206cfbb34502e">y</a>, <span class="stringliteral">&quot;Y&quot;</span>);</div>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;        ImGui::DragFloat(<span class="stringliteral">&quot;X Size&quot;</span>, &amp;this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a5e3bb516b908ca90775cad71d8370f03">xSize</a>,</div>
 <div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;        0.01f, 0.0f, FLT_MAX);</div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;        ImGui::SameLine();</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a23d89e8723218cca8e2e947a99fe718c">keyframeCheckbox</a>(&amp;this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a5e3bb516b908ca90775cad71d8370f03">xSize</a>);</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a7327399a36cf8289842551e83d79e508">keyframeCheckbox</a>(&amp;this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a5e3bb516b908ca90775cad71d8370f03">xSize</a>, <span class="stringliteral">&quot;X size&quot;</span>);</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        ImGui::DragFloat(<span class="stringliteral">&quot;Y Size&quot;</span>, &amp;this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a70bb93d5f5427be148c67c4811cb9b3b">ySize</a>,</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        0.01f, 0.0f, FLT_MAX);</div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;        ImGui::SameLine();</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a23d89e8723218cca8e2e947a99fe718c">keyframeCheckbox</a>(&amp;this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a70bb93d5f5427be148c67c4811cb9b3b">ySize</a>);</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a7327399a36cf8289842551e83d79e508">keyframeCheckbox</a>(&amp;this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a70bb93d5f5427be148c67c4811cb9b3b">ySize</a>, <span class="stringliteral">&quot;Y size&quot;</span>);</div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        ImGui::DragFloat(<span class="stringliteral">&quot;Rotation&quot;</span>,</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        &amp;this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a436f2ec9fd7dd6c7f535965c6f3fa6b1">rotation</a>, 0.01f, 0.0f, FLT_MAX);</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;        ImGui::SameLine();</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a23d89e8723218cca8e2e947a99fe718c">keyframeCheckbox</a>(&amp;this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a436f2ec9fd7dd6c7f535965c6f3fa6b1">rotation</a>);</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a7327399a36cf8289842551e83d79e508">keyframeCheckbox</a>(&amp;this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a436f2ec9fd7dd6c7f535965c6f3fa6b1">rotation</a>, <span class="stringliteral">&quot;Rotation&quot;</span>);</div>
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;        ImGui::ColorEdit3(</div>
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        <span class="stringliteral">&quot;Color&quot;</span>, this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">shapeDetailsShapeParams</a>.<a class="code" href="structChronos_1_1Manager_1_1ShapeParams.html#a7914ab240782e411df44a93ba7110a42">color</a>.data());</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;        this-&gt;<a class="code" href="classChronos_1_1Editor_1_1EditorManager.html#a54d3c886260f18c56d50fcff936563ef">manager</a>-&gt;<a class="code" href="classChronos_1_1Manager_1_1Manager.html#a919b9af0bfbbd54bbc3e4cf9f482838c">updatePolygon</a>(</div>
@@ -1310,7 +1320,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    ImGui::End();</div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    }</div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;}</div>
-<div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_a23d89e8723218cca8e2e947a99fe718c"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#a23d89e8723218cca8e2e947a99fe718c">Chronos::Editor::EditorManager::keyframeCheckbox</a></div><div class="ttdeci">void keyframeCheckbox(float *valuePointer)</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00881">editorManager.cpp:881</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_a7327399a36cf8289842551e83d79e508"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#a7327399a36cf8289842551e83d79e508">Chronos::Editor::EditorManager::keyframeCheckbox</a></div><div class="ttdeci">void keyframeCheckbox(float *valuePointer, std::string name)</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8cpp_source.html#l00881">editorManager.cpp:881</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_ab82143cb7df4ff9de2e1a7ce11917150"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#ab82143cb7df4ff9de2e1a7ce11917150">Chronos::Editor::EditorManager::shapeDetailsShapeParams</a></div><div class="ttdeci">Chronos::Manager::ShapeParams shapeDetailsShapeParams</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8hpp_source.html#l00115">editorManager.hpp:115</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_ad809e07637814f99995b2d075fdc8d8f"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#ad809e07637814f99995b2d075fdc8d8f">Chronos::Editor::EditorManager::shapeDetailsShapeNo</a></div><div class="ttdeci">int shapeDetailsShapeNo</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8hpp_source.html#l00116">editorManager.hpp:116</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Editor_1_1EditorManager_html_ae99ca8e8d415479d8352cbdabe7b6a95"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorManager.html#ae99ca8e8d415479d8352cbdabe7b6a95">Chronos::Editor::EditorManager::showShapeDetailsWindow</a></div><div class="ttdeci">bool showShapeDetailsWindow</div><div class="ttdef"><b>Definition:</b> <a href="editorManager_8hpp_source.html#l00047">editorManager.hpp:47</a></div></div>

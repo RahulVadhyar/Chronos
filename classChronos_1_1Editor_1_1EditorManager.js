@@ -7,7 +7,7 @@ var classChronos_1_1Editor_1_1EditorManager =
     [ "doesKeyframeExist", "classChronos_1_1Editor_1_1EditorManager.html#a8a0347a50c5037a42ab500210f2189db", null ],
     [ "getKeyframeNo", "classChronos_1_1Editor_1_1EditorManager.html#a10232c502a385c8bf60b16390e32c644", null ],
     [ "init", "classChronos_1_1Editor_1_1EditorManager.html#ae28f6a26ba542f66491d5326ad1c7f79", null ],
-    [ "keyframeCheckbox", "classChronos_1_1Editor_1_1EditorManager.html#a23d89e8723218cca8e2e947a99fe718c", null ],
+    [ "keyframeCheckbox", "classChronos_1_1Editor_1_1EditorManager.html#a7327399a36cf8289842551e83d79e508", null ],
     [ "KeyframeDetailsWindow", "classChronos_1_1Editor_1_1EditorManager.html#a64ae0f8e911e95096ec8ee6c70833ceb", null ],
     [ "MenuBar", "classChronos_1_1Editor_1_1EditorManager.html#a6bcd171159c3a8b07d319881239e2e7d", null ],
     [ "PolygonDetailsWindow", "classChronos_1_1Editor_1_1EditorManager.html#a0cdfab28dbf87e900fd1a4f2715b905e", null ],
