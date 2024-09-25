@@ -204,6 +204,8 @@ namespace Engine {
 	The mapped memory to the vertex buffer
 	*/
 	glm::vec4* mappedMemory;
+
+	unsigned char (*fontpixels)[256];
     };
 
 };

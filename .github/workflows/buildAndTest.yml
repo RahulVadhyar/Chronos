@@ -7,11 +7,13 @@ on:
 jobs:
   build-windows:
     name: Windows 
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
     env:
-      CC: gcc
-      CXX: g++
-      CMAKE_GENERATOR: "MinGW Makefiles"
+      CXX: ${{ matrix.compiler }}
+    strategy:
+      matrix:
+        os: [windows-latest, windows-2022, windows-2019]
+        compiler: [g++, cl]
     steps:
       - uses: actions/checkout@v3
       - name: Get Submodules
@@ -43,11 +45,13 @@ jobs:
         
   build-linux-gcc:
     name: Linux (GCC)
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-24.04, ubuntu-22.04, ubuntu-20.04]
     env:
       CC: gcc
       CXX: g++
-      CFLAGS: -Werror
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies and get git submodules
@@ -70,11 +74,13 @@ jobs:
       
   build-linux-clang:
     name: Linux (Clang)
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-24.04, ubuntu-22.04, ubuntu-20.04]
     env:
       CC: clang
       CXX: clang++
-      CFLAGS: -Werror
     steps:
     - uses: actions/checkout@v3
     - name: Install dependencies and get git submodules

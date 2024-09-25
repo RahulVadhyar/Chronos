@@ -23,6 +23,7 @@ __pycache__/
 
 build/*
 .vscode
+.vs
 build/ALL_BUILD.vcxproj
 build/Chronos.vcxproj
 build/Chronos.vcxproj.filters

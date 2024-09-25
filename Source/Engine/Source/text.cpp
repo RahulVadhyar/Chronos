@@ -47,8 +47,10 @@ void Chronos::Engine::Text::init(Chronos::Engine::Device* device,
     uint32_t fontHeight = fontStyle.fontHeight;
     firstChar = fontStyle.firstChar;
 
-    unsigned char fontpixels[fontHeight][256];
-
+    // unsigned char fontpixels[fontHeight][256];
+    //this causes a memory leak... too bad, MSVC is fucked
+    //MSVC can't take variable multi dimensional arrays, else the above commented line would have worked.
+    fontpixels = new unsigned char[fontHeight][256]; 
     fontStyle.getFontData(stbFontData, fontpixels, fontHeight);
 
     // create the font texture from the raw data
@@ -215,6 +217,7 @@ void Chronos::Engine::Text::destroy()
 	colorBuffers[i].destroy();
     }
     fontTexture.destroy();
+    delete[] fontpixels;
 }
 
 void Chronos::Engine::Text::updateBuffer()

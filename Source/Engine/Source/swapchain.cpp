@@ -156,7 +156,7 @@ void Chronos::Engine::SwapChain::create()
     createInfo.compositeAlpha = VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR;
     createInfo.presentMode = presentMode;
     createInfo.clipped = VK_TRUE;
-    createInfo.oldSwapchain = nullptr;
+    createInfo.oldSwapchain = NULL;
 
     if (vkCreateSwapchainKHR(device->device, &createInfo, nullptr, &swapChain)
 	!= VK_SUCCESS) {

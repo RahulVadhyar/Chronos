@@ -33,6 +33,7 @@ More specifically it includes the following packages:
 
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
+#define GLM_ENABLE_EXPERIMENTAL
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEFAULT_ALIGNED_GENTYPES
 #define GLM_ENABLE_EXPERIMENTAL
