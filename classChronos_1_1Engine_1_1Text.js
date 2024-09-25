@@ -12,6 +12,7 @@ var classChronos_1_1Engine_1_1Text =
     [ "updateBuffer", "classChronos_1_1Engine_1_1Text.html#af6c9c55875f534f424a637ffb8f754f8", null ],
     [ "colorBuffers", "classChronos_1_1Engine_1_1Text.html#a397c79280594e47a90ca7b63e1a792c0", null ],
     [ "firstChar", "classChronos_1_1Engine_1_1Text.html#acd2e4150682410849eb6859ba84fafe4", null ],
+    [ "fontpixels", "classChronos_1_1Engine_1_1Text.html#a8ca79b6af91c3bffafca742b7e394ed4", null ],
     [ "fontStyle", "classChronos_1_1Engine_1_1Text.html#abfd9861e8adcb805c3607d17a63baccf", null ],
     [ "fontTexture", "classChronos_1_1Engine_1_1Text.html#a041a7aaa6a6f1b198117b1515c231af2", null ],
     [ "mappedMemory", "classChronos_1_1Engine_1_1Text.html#a2a749d64a674558d625f36ec332ab60c", null ],
