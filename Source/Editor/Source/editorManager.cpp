@@ -886,14 +886,14 @@ void Chronos::Editor::EditorManager::keyframeCheckbox(float* valuePointer, std::
     if (currentChange != isAnimated) {
 	LOG(3, "EditorManager",
 	    "Animate checkbox changed for valuePointer ["
-		+ std::to_string((long)valuePointer) + "]");
+		+ std::to_string((long long)valuePointer) + "]");
 	if (currentChange) {
 	    int keyframeNo = this->manager->addKeyframeVariable(
 		{ { 0, *valuePointer }, { 100, *valuePointer } });
 	    this->floatPointerToKeyframeNo[valuePointer] = keyframeNo;
 	    LOG(3, "EditorManager",
 		"Added keyframe for valuePointer ["
-		    + std::to_string((long)valuePointer) + "] with keyframeNo ["
+		    + std::to_string((long long)valuePointer) + "] with keyframeNo ["
 		    + std::to_string(keyframeNo) + "]")
 	} else {
 	    int keyframeNo = this->getKeyframeNo(valuePointer);
@@ -904,7 +904,7 @@ void Chronos::Editor::EditorManager::keyframeCheckbox(float* valuePointer, std::
 	    this->floatPointerToKeyframeNo.erase(valuePointer);
 	    LOG(3, "EditorManager",
 		"Removed keyframe for valuePointer ["
-		    + std::to_string((long)valuePointer) + "] with keyframeNo ["
+		    + std::to_string((long long)valuePointer) + "] with keyframeNo ["
 		    + std::to_string(keyframeNo) + "]")
 	}
     }
