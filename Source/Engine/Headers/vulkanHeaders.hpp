@@ -50,4 +50,3 @@ each other. Hence we create multiple frames and while one is rendering, the
 other is being prepared. This ensures maximum performance.
 */
 #define MAX_FRAMES_IN_FLIGHT 2
-#define SPIV_SHADER_PATH "Shaders/"

@@ -45,6 +45,10 @@ set(GLFW_VULKAN_STATIC ON)
 
 file(GLOB SHADERS Shaders/SPIV/*.spv)
 
+set(SHADER_PATH "\"${CMAKE_CURRENT_BINARY_DIR}/Shaders/\"")
+
+message("Shader path: ${SHADER_PATH}")
+
 message("Moving shaders to build dir")
 file(COPY ${SHADERS} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Shaders)
 
@@ -142,6 +146,8 @@ target_compile_definitions(Chronos PUBLIC CHRONOS_ENABLE_LOGGING=0)
 message("Logging disabled(level 0)")
 endif()
 
+target_compile_definitions(Chronos PUBLIC SPIV_SHADER_PATH=${SHADER_PATH})
+
 if(CHRONOS_ENABLE_PROFILING)
 target_compile_definitions(Chronos PUBLIC CHRONOS_PROFILING)
 endif()
@@ -209,6 +215,8 @@ endif()
 if(CHRONOS_ENABLE_PROFILING)
 target_compile_definitions(ChronosEditor PUBLIC CHRONOS_PROFILING)
 endif()
+
+target_compile_definitions(ChronosEditor PUBLIC SPIV_SHADER_PATH=${SHADER_PATH})
 
 #header files
 target_include_directories(ChronosEditor PUBLIC Source/Editor/Headers)
@@ -282,6 +290,8 @@ else()
 target_compile_definitions(ChronosTests PUBLIC CHRONOS_ENABLE_LOGGING=0)
 message("Logging disabled (level 0)")
 endif()
+
+target_compile_definitions(ChronosTests PUBLIC SPIV_SHADER_PATH=${SHADER_PATH})
 
 include(GoogleTest)
 gtest_discover_tests(ChronosTests)

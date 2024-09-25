@@ -44,7 +44,7 @@ void Chronos::Engine::TextManager::createRenderPass()
 #else
     renderPass = Chronos::Engine::createRenderPass(*device, *swapChain,
 	VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
-	VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
+	VK_IMAGE_LAYOUT_PRESENT_SRC_KHR,
 	VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, true, false, true);
 #endif
 }

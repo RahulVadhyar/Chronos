@@ -249,8 +249,8 @@ void Chronos::Engine::Engine::drawFrame()
     // record the command buffers
     shapeManager.render(currentFrame, imageIndex, bgColor);
     colorShapeManager.render(currentFrame, imageIndex, bgColor);
-    textManager.render(currentFrame, imageIndex, bgColor);
     polygonManager.render(currentFrame, imageIndex, bgColor);
+    textManager.render(currentFrame, imageIndex, bgColor);
 #ifdef ENABLE_EDITOR
     gui.render(currentFrame, imageIndex, bgColor);
 #endif
