@@ -1,5 +1,5 @@
 add_subdirectory(Common)
-add_subdirectory(Engine)
+add_subdirectory(Rendering)
 add_subdirectory(Animation)
 add_subdirectory(API)
 
