@@ -1,4 +1,4 @@
-file(GLOB SHADERS Shaders/SPIV/*.spv)
+file(GLOB SHADERS SPIV/*.spv)
 
 set(SHADER_PATH "\"${CMAKE_CURRENT_BINARY_DIR}/Shaders/\"")
 
