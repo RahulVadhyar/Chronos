@@ -670,7 +670,7 @@ void Chronos::Editor::EditorManager::ShapeDetailsWindow()
 	    ImGui::DragFloat("Rotation",
 		&this->shapeDetailsShapeParams.rotation, 0.01f, 0.0f, FLT_MAX);
 	    ImGui::SameLine();
-	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.rotation, "Rotation");
+	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.rotation, "Rotation(degrees)");
 	    ImGui::ColorEdit3(
 		"Color", this->shapeDetailsShapeParams.color.data());
 	    this->manager->updatePolygon(
