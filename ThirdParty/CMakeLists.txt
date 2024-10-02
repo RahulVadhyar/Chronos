@@ -1,0 +1,90 @@
+#GLFW
+if(UNIX)
+    if(CHRONOS_SUPPORT_WAYLAND)
+        set(GLFW_BUILD_WAYLAND ON)
+        message("Building with Wayland support")
+    else()
+        set(GLFW_BUILD_WAYLAND OFF)
+        message("Building without Wayland support")
+    endif()
+endif()
+    
+set(X11_X11_LIB who_cares)
+set(GLFW_BUILD_EXAMPLES OFF)
+set(GLFW_BUILD_TESTS OFF)
+set(GLFW_BUILD_DOCS OFF)
+set(GLFW_INSTALL OFF)
+set(GLFW_VULKAN_STATIC ON)
+
+add_subdirectory(glfw)
+target_include_directories(Chronos PUBLIC glfw/include) 
+target_link_libraries(Chronos glfw)
+if(CHRONOS_BUILD_EDITOR)
+    target_include_directories(ChronosEditor PUBLIC glfw/include) 
+    target_link_libraries(ChronosEditor glfw)
+endif()
+
+#GLM
+add_subdirectory(glm)
+target_include_directories(Chronos PUBLIC glm)
+target_link_directories(Chronos PUBLIC glm/glm)
+if(CHRONOS_BUILD_EDITOR)
+    target_link_directories(ChronosEditor PUBLIC glm/glm)
+    target_include_directories(ChronosEditor PUBLIC glm)
+endif()
+
+#Vulkan
+if (WIN32)
+    set(VULKAN_SDK_DIR $ENV{VULKAN_SDK})        
+    message("Vulkan SDK found: ${VULKAN_SDK_DIR}")
+    
+    target_include_directories(Chronos PUBLIC ${VULKAN_SDK_DIR}/Include)    
+    target_link_directories(Chronos PUBLIC ${VULKAN_SDK_DIR}/Lib/) 
+    target_link_libraries(Chronos vulkan-1) 
+    if(CHRONOS_BUILD_EDITOR)
+        target_include_directories(ChronosEditor PUBLIC ${VULKAN_SDK_DIR}/Include)    
+        target_link_directories(ChronosEditor PUBLIC ${VULKAN_SDK_DIR}/Lib/) 
+        target_link_libraries(ChronosEditor vulkan-1) 
+    endif()
+    
+endif(WIN32) 
+
+if(UNIX)
+    target_link_libraries(Chronos vulkan)
+    if(CHRONOS_BUILD_EDITOR)
+        target_link_libraries(ChronosEditor vulkan)
+    endif()   
+endif(UNIX)
+
+if(CHRONOS_ENABLE_VULKAN_VALIDATION_LAYERS)
+    target_compile_definitions(Chronos PUBLIC ENABLE_VULKAN_VALIDATION_LAYERS)
+    if(CHRONOS_BUILD_EDITOR)
+        target_compile_definitions(ChronosEditor PUBLIC ENABLE_VULKAN_VALIDATION_LAYERS)
+    endif()
+        message("Vulkan validation layers enabled")
+endif()
+
+#imgui(only editor)
+if(CHRONOS_BUILD_EDITOR)
+    file(GLOB IMGUI_FILES imgui/*.cpp)
+    target_include_directories(ChronosEditor PUBLIC imgui)               
+    target_include_directories(ChronosEditor PUBLIC imgui/backends)
+    target_sources(ChronosEditor PRIVATE imgui/backends/imgui_impl_glfw.cpp imgui/backends/imgui_impl_vulkan.cpp ${IMGUI_FILES})
+endif()
+
+#fonts
+file(GLOB FONTS_DIR fonts/latin1/*)
+target_include_directories(Chronos PUBLIC ${FONTS_DIR})
+
+if(CHRONOS_BUILD_EDITOR)
+    target_include_directories(ChronosEditor PUBLIC ${FONTS_DIR})
+endif()
+
+#other third party libraries
+target_include_directories(Chronos PUBLIC stb)
+target_include_directories(Chronos PUBLIC earcut)
+
+if(CHRONOS_BUILD_EDITOR)
+    target_include_directories(ChronosEditor PUBLIC stb)
+    target_include_directories(ChronosEditor PUBLIC earcut)
+endif()

@@ -1,0 +1,7 @@
+file(GLOB API_FILES *.cpp)
+target_sources(Chronos PRIVATE ${API_FILES})
+target_include_directories(Chronos PUBLIC .)
+if(CHRONOS_BUILD_EDITOR)
+    target_sources(ChronosEditor PRIVATE ${API_FILES}) 
+    target_include_directories(ChronosEditor PUBLIC .)
+endif()
