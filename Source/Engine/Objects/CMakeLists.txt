@@ -1,0 +1,8 @@
+file(GLOB OBJECTS *.cpp)
+target_sources(Chronos PRIVATE ${OBJECTS})
+target_include_directories(Chronos PUBLIC .)
+if(CHRONOS_BUILD_EDITOR)
+    target_sources(ChronosEditor PRIVATE ${OBJECTS})
+    target_include_directories(ChronosEditor PUBLIC .)
+endif()
+add_subdirectory(Text)

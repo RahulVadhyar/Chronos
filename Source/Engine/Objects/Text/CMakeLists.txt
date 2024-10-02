@@ -1,0 +1,7 @@
+file(GLOB TEXT_OBJECT *.cpp)
+target_sources(Chronos PRIVATE ${TEXT_OBJECT})
+target_include_directories(Chronos PUBLIC .)
+if(CHRONOS_BUILD_EDITOR)
+    target_sources(ChronosEditor PRIVATE ${TEXT_OBJECT})
+    target_include_directories(ChronosEditor PUBLIC .)
+endif()

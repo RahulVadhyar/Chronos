@@ -14,3 +14,5 @@ if(CHRONOS_BUILD_EDITOR)
     target_include_directories(ChronosEditor PUBLIC .)
 endif()
 
+add_subdirectory(Objects)
+
