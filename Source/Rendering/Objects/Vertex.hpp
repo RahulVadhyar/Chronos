@@ -28,6 +28,7 @@ SOFTWARE.
  parameters(position, texture, color).
 */
 #pragma once
+#include "vulkanHeaders.hpp"
 namespace Chronos {
 namespace Engine {
 

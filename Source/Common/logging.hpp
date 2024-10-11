@@ -20,7 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 #pragma once
-
+#include <iostream>
 // 0 - nothing
 // 1 - additional info on errors
 // 2 - basic info

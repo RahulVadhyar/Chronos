@@ -20,14 +20,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "logging.hpp"
+#include <set>
 #include "device.hpp"
-#include "swapchain.hpp"
 #ifdef ENABLE_VULKAN_VALIDATION_LAYERS
 #include "validation.hpp"
 #endif
+#include "logging.hpp"
 #include "helper.hpp"
 
 void Chronos::Engine::Device::init(VkInstance instance, VkSurfaceKHR surface)

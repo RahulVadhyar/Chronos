@@ -26,6 +26,8 @@ SOFTWARE.
  functions.
 */
 #pragma once
+#include "vulkanHeaders.hpp"
+#include "device.hpp"
 namespace Chronos {
 namespace Engine {
 

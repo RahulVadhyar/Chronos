@@ -20,6 +20,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 #pragma once
+#include <vector>
+#include <map>
+#include "animBone.hpp"
 namespace Chronos {
 namespace Animation {
     class AnimRig {

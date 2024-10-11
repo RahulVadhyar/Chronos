@@ -21,9 +21,7 @@ SOFTWARE.
 */
 
 #ifdef ENABLE_VULKAN_VALIDATION_LAYERS
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "device.hpp"
+#include <iostream>
 #include "validation.hpp"
 
 bool Chronos::Engine::checkValidationLayerSupport()

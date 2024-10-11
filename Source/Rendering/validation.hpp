@@ -27,6 +27,7 @@ SOFTWARE.
 */
 
 #pragma once
+#include "vulkanHeaders.hpp"
 namespace Chronos {
 namespace Engine {
 #ifdef ENABLE_VULKAN_VALIDATION_LAYERS

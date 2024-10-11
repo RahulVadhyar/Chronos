@@ -20,20 +20,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "logging.hpp"
-#include "device.hpp"
-#include "swapchain.hpp"
-#include "helper.hpp"
 #include "buffers.hpp"
-#include "object.hpp"
-#include "Vertex.hpp"
+#include "helper.hpp"
 #include "engineStructs.hpp"
-#include "commonStructs.hpp"
-#include "texture.hpp"
-#include "shape.hpp"
-
+#include "logging.hpp"
 void Chronos::Engine::Buffer::create(Chronos::Engine::Device device,
     VkBufferUsageFlags flags, VkMemoryPropertyFlags properties)
 {

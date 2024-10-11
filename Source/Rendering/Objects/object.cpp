@@ -20,23 +20,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "device.hpp"
-#include "swapchain.hpp"
-#include "helper.hpp"
-#include "buffers.hpp"
 #include "object.hpp"
+#include "helper.hpp"
 
 void Chronos::Engine::Object::init(Chronos::Engine::Device* device,
     VkCommandPool commandPool, SwapChain* swapChain, VkSampler textureSampler,
-    VkRenderPass* renderPass)
+    VkRenderPass* renderPass, ObjectType objectType)
 {
     this->device = device;
     this->swapChain = swapChain;
     this->commandPool = commandPool;
     this->textureSampler = textureSampler;
     this->renderPass = renderPass;
+    this->objectType = objectType;
 
     uniformBuffers.resize(MAX_FRAMES_IN_FLIGHT);
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {

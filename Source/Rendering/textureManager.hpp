@@ -27,6 +27,8 @@ SOFTWARE.
 \brief Contains the class for managing textures in the Chronos::Engine
 namespace.
 */
+#include <map>
+#include "texture.hpp"
 namespace Chronos {
 namespace Engine {
 

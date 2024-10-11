@@ -20,11 +20,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#pragma once
-template <Chronos::Engine::ObjectLike Object>
-void Chronos::Engine::ObjectManager<Object>::init(
-    Chronos::Engine::Device* device, SwapChain* swapChain,
-    VkCommandPool commandPool)
+#include "objectManager.hpp"
+#include "helper.hpp"
+#include "texture.hpp"
+void Chronos::Engine::ObjectManager::init(Chronos::Engine::Device* device,
+    Chronos::Engine::SwapChain* swapChain, VkCommandPool commandPool)
 {
     this->device = device;
     this->swapChain = swapChain;
@@ -32,31 +32,42 @@ void Chronos::Engine::ObjectManager<Object>::init(
 
     Chronos::Engine::createTextureSampler(*device, &textureSampler);
 
-    createRenderPass();
+    this->renderPass = Chronos::Engine::createRenderPass(
+	    *this->device,
+	    *this->swapChain,
+	    VK_IMAGE_LAYOUT_UNDEFINED, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
+	    VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, true,
+	    true, false);
     commandBuffers = Chronos::Engine::createCommandBuffer(
 	*device, *swapChain, commandPool);
     framebuffers = Chronos::Engine::createFramebuffer(
 	*device, *swapChain, renderPass, true);
 }
-
-template <Chronos::Engine::ObjectLike Object>
-void Chronos::Engine::ObjectManager<Object>::destroy()
+void Chronos::Engine::ObjectManager::destroy()
 {
     vkDestroySampler(device->device, textureSampler, nullptr);
     vkDestroyRenderPass(device->device, renderPass, nullptr);
     for (auto framebuffer : framebuffers)
 	vkDestroyFramebuffer(device->device, framebuffer, nullptr);
     for (auto& objectMap : objects) {
-	objectMap.second.destroy();
+    	objectMap.second->destroy();
     }
 }
-
-template <Chronos::Engine::ObjectLike Object>
-void Chronos::Engine::ObjectManager<Object>::render(
+void Chronos::Engine::ObjectManager::render(
     uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])
-{
-    // this function starts rendering. When child classes override this
-    // function, they should call this function first to start rendering
+{	
+	VkViewport viewport {};
+    viewport.x = 0.0f;
+    viewport.y = 0.0f;
+    viewport.width = static_cast<float>(swapChain->swapChainExtent.width);
+    viewport.height = static_cast<float>(swapChain->swapChainExtent.height);
+    viewport.minDepth = 0.0f;
+    viewport.maxDepth = 1.0f;
+
+    VkRect2D scissor {};
+    scissor.offset = { 0, 0 };
+    scissor.extent = swapChain->swapChainExtent;
+
     vkResetCommandBuffer(commandBuffers[currentFrame], 0);
     VkCommandBufferBeginInfo beginInfo {};
     beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
@@ -78,64 +89,57 @@ void Chronos::Engine::ObjectManager<Object>::render(
 
     vkCmdBeginRenderPass(commandBuffers[currentFrame], &renderPassInfo,
 	VK_SUBPASS_CONTENTS_INLINE);
-}
 
-template <Chronos::Engine::ObjectLike Object>
-void Chronos::Engine::ObjectManager<Object>::endRender(uint32_t currentFrame)
-{
+    for (auto& object : this->objects) {
+	    object.second->render(currentFrame, imageIndex, bgColor);
+	}
+    
+
     vkCmdEndRenderPass(commandBuffers[currentFrame]);
 
     if (vkEndCommandBuffer(commandBuffers[currentFrame]) != VK_SUCCESS) {
 	throw std::runtime_error("failed to record command buffer!");
     }
 }
-template <Chronos::Engine::ObjectLike Object>
-void Chronos::Engine::ObjectManager<Object>::changeMsaa()
+void Chronos::Engine::ObjectManager::changeMsaa()
 {
     vkDestroyRenderPass(device->device, renderPass, nullptr);
-    createRenderPass();
+    this->renderPass = Chronos::Engine::createRenderPass(
+	    *this->device,
+	    *this->swapChain,
+	    VK_IMAGE_LAYOUT_UNDEFINED, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
+	    VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, true,
+	    true, false);
     recreate();
     for (auto& objectMap : objects) {
-	objectMap.second.recreateGraphicsPipeline();
+	objectMap.second->recreateGraphicsPipeline();
     }
 }
-
-template <Chronos::Engine::ObjectLike Object>
-void Chronos::Engine::ObjectManager<Object>::cleanup()
+void Chronos::Engine::ObjectManager::recreate()
+{
+    cleanup();
+    framebuffers = createFramebuffer(*device, *swapChain, renderPass, true);
+}
+void Chronos::Engine::ObjectManager::cleanup()
 {
     for (auto framebuffer : framebuffers)
 	vkDestroyFramebuffer(device->device, framebuffer, nullptr);
 }
 
-template <Chronos::Engine::ObjectLike Object>
-void Chronos::Engine::ObjectManager<Object>::recreate()
-{
-    cleanup();
-    framebuffers = createFramebuffer(*device, *swapChain, renderPass, true);
-}
-
-template <Chronos::Engine::ObjectLike Object>
-int Chronos::Engine::ObjectManager<Object>::addObject(Object object)
+int Chronos::Engine::ObjectManager::addObject(Object* object)
 {
     int objectNo = nextFreeObjectNo;
     nextFreeObjectNo++;
     objects[objectNo] = object;
     return objectNo;
 }
-
-template <Chronos::Engine::ObjectLike Object>
-void Chronos::Engine::ObjectManager<Object>::remove(int objectNo)
+void Chronos::Engine::ObjectManager::remove(int objectNo)
 {
     for (bool& flag : objectsToBeRemoved[objectNo]) {
 	flag = true;
     }
-    // objects[objectNo].destroy();
-
-    // objects.erase(objectNo);
 }
-
-template <Chronos::Engine::ObjectLike Object>
-void Chronos::Engine::ObjectManager<Object>::update(uint32_t currentFrame)
+void Chronos::Engine::ObjectManager::update(uint32_t currentFrame)
 {
     for (auto& objectMap : objectsToBeRemoved) {
 	objectMap.second[currentFrame] = false;
@@ -147,14 +151,25 @@ void Chronos::Engine::ObjectManager<Object>::update(uint32_t currentFrame)
 	    }
 	}
 	if (toBeRemoved) {
-	    objects[objectMap.first].destroy();
+	    objects[objectMap.first]->destroy();
 	    objectsToBeRemoved.erase(objectMap.first);
 	    objects.erase(objectMap.first);
+	    Object* object = objects[objectMap.first];
+	    switch (object->objectType) {
+	    case Chronos::Engine::ObjectType::Rectangle:
+		delete (Chronos::Engine::Rectangle*)object;
+		break;
+	    case Chronos::Engine::ObjectType::Text:
+		delete (Chronos::Engine::Text*)object;
+		break;
+	    default:
+		throw std::runtime_error("Invalid object type");
+	    }
 	}
     }
     for (auto& objectMap : objects) {
 	if (objectsToBeRemoved.count(objectMap.first) == 0) {
-	    objectMap.second.update(currentFrame);
+	    objectMap.second->update(currentFrame);
 	}
     }
 }

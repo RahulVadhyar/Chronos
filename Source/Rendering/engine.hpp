@@ -34,7 +34,9 @@ SOFTWARE.
 // rendering functions and classes of the editor.
 #include "editorRenderer.hpp"
 #endif
-
+#include "vulkanHeaders.hpp"
+#include "device.hpp"
+#include "swapchain.hpp"
 namespace Chronos {
 namespace Engine {
 

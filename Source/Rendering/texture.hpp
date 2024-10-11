@@ -26,6 +26,7 @@ SOFTWARE.
  \brief Contains the functions for image manipulation along with the Texture
  class.
 */
+#include "device.hpp"
 namespace Chronos {
 namespace Engine {
 

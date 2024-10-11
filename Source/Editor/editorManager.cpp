@@ -20,7 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "stlheader.hpp"
+
 #include "editorHeaders.hpp"
 #include "chronos.hpp"
 #include "editorManager.hpp"

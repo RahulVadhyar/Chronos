@@ -25,6 +25,8 @@ SOFTWARE.
 
  \brief Contains the [Device](#Chronos::Engine::Device) class.
 */
+
+#include "vulkanHeaders.hpp"
 namespace Chronos {
 namespace Engine {
 

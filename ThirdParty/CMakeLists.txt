@@ -80,11 +80,9 @@ if(CHRONOS_BUILD_EDITOR)
     target_include_directories(ChronosEditor PUBLIC ${FONTS_DIR})
 endif()
 
-#other third party libraries
+#stb
 target_include_directories(Chronos PUBLIC stb)
-target_include_directories(Chronos PUBLIC earcut)
 
 if(CHRONOS_BUILD_EDITOR)
     target_include_directories(ChronosEditor PUBLIC stb)
-    target_include_directories(ChronosEditor PUBLIC earcut)
 endif()

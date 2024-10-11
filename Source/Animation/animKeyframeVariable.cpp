@@ -19,7 +19,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-#include "stlheader.hpp"
+
 #include "animKeyframeVariable.hpp"
 
 inline float getBezierValue(float time, float previousValue, float nextValue,

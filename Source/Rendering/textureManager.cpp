@@ -20,10 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "stlheader.hpp"
-#include "vulkanHeaders.hpp"
-#include "device.hpp"
-#include "texture.hpp"
+
 #include "textureManager.hpp"
 
 void Chronos::Engine::TextureManager::init(

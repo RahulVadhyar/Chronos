@@ -20,32 +20,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "logging.hpp"
-#include "device.hpp"
-#include "swapchain.hpp"
-
 #ifdef ENABLE_VULKAN_VALIDATION_LAYERS
 #include "validation.hpp"
 #endif
-
-#include "engineStructs.hpp"
-#include "Vertex.hpp"
-#include "helper.hpp"
-#include "buffers.hpp"
-#include "texture.hpp"
-#include "textureManager.hpp"
-#include "object.hpp"
-#include "text.hpp"
-#include "objectManager.hpp"
-#include "textManager.hpp"
-#include "commonStructs.hpp"
-#include "shape.hpp"
-#include "polygon.hpp"
-#include "shapeManager.hpp"
-#include "polygonManager.hpp"
 #include "engine.hpp"
+#include "logging.hpp"
+#include "helper.hpp"
 
 static void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {

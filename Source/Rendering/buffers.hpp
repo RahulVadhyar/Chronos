@@ -26,6 +26,7 @@ SOFTWARE.
  \brief Contains the [Buffer](#Chronos::Engine::Buffer) and
  [UniformBuffer](#Chronos::Engine::UniformBuffer) class.
 */
+#include "device.hpp"
 namespace Chronos {
 namespace Engine {
 

@@ -25,6 +25,7 @@ SOFTWARE.
 
  \brief Contains ShapeParams and UniformBufferObject structs.
 */
+#include "vulkanHeaders.hpp"
 namespace Chronos {
 namespace Engine {
     /**

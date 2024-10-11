@@ -26,32 +26,10 @@ SOFTWARE.
  \brief Main API for chronos. Any applications should include this file.
 */
 #include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "logging.hpp"
-#include "device.hpp"
-#include "swapchain.hpp"
-#include "validation.hpp"
-#include "engineStructs.hpp"
-#include "Vertex.hpp"
-#include "helper.hpp"
-#include "buffers.hpp"
-#include "texture.hpp"
-#include "textureManager.hpp"
-#include "object.hpp"
-#include "text.hpp"
-#include "objectManager.hpp"
-#include "textManager.hpp"
 #include "commonStructs.hpp"
-#include "shape.hpp"
-#include "polygon.hpp"
-#include "shapeManager.hpp"
-#include "polygonManager.hpp"
 #include "engine.hpp"
-#include "engineStructs.hpp"
-#include "animBone.hpp"
-#include "animRig.hpp"
-#include "animKeyframeVariable.hpp"
 #include "animManager.hpp"
+#include "engineStructs.hpp"
 
 namespace Chronos {
 namespace Manager {

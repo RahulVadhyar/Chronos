@@ -21,7 +21,7 @@ SOFTWARE.
 */
 
 #include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
+
 #include "device.hpp"
 #include "swapchain.hpp"
 #include "helper.hpp"

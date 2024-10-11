@@ -25,7 +25,10 @@ SOFTWARE.
  \brief Contains the class for creating a generic object.
 */
 #pragma once
-
+#include "vulkanHeaders.hpp"
+#include "swapchain.hpp"
+#include "objectTypes.hpp"
+#include "buffers.hpp"
 namespace Chronos {
 namespace Engine {
 
@@ -96,6 +99,8 @@ namespace Engine {
 	 */
 	virtual void update(uint32_t currentFrame) = 0;
 
+    virtual void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]) = 0;
+
 	/**
 	 * \brief Destroys the object and releases associated resources.
 	 *
@@ -121,8 +126,8 @@ namespace Engine {
 	std::vector<VkDescriptorSet>
 	    descriptorSets; /**< Vulkan descriptor sets associated with the
 			       object. */
+    Chronos::Engine::ObjectType objectType; /**< Type of the object. */
 
-    protected:
     protected:
 	std::string vertexShaderPath; /**< Path to the vertex shader file. */
 	std::string

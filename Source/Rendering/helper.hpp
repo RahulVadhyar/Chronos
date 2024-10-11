@@ -27,6 +27,11 @@ SOFTWARE.
  namespace.
 
 */
+#include <optional>
+
+#include "vulkanHeaders.hpp"
+#include "device.hpp"
+#include "swapchain.hpp"
 namespace Chronos {
 namespace Engine {
 

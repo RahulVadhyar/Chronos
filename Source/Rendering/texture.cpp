@@ -20,12 +20,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "vulkanHeaders.hpp"
-#include "stlheader.hpp"
-#include "device.hpp"
-#include "swapchain.hpp"
-#include "helper.hpp"
 #include "texture.hpp"
+#include "helper.hpp"
 #define STB_IMAGE_IMPLEMENTATION
 #ifndef WIN32
 #ifndef __clang__

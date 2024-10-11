@@ -25,6 +25,7 @@ SOFTWARE.
 \file commonStructs.hpp
 \brief Header file that contains common structs used in Chronos.
 */
+#include <array>
 namespace Chronos {
 namespace Manager {
     /**
