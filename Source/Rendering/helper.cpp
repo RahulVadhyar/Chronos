@@ -22,9 +22,6 @@ SOFTWARE.
 #include <set>
 #include <fstream>
 #include "helper.hpp"
-#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
-#include "validation.hpp"
-#endif
 
 VkCommandBuffer Chronos::Engine::beginSingleTimeCommands(
     VkCommandPool commandPool, VkDevice device)

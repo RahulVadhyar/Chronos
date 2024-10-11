@@ -21,10 +21,6 @@ SOFTWARE.
 */
 
 #include <set>
-#include "device.hpp"
-#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
-#include "validation.hpp"
-#endif
 #include "logging.hpp"
 #include "helper.hpp"
 

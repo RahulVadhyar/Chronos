@@ -34,10 +34,9 @@ SOFTWARE.
 // rendering functions and classes of the editor.
 #include "editorRenderer.hpp"
 #endif
-#include "vulkanHeaders.hpp"
-#include "device.hpp"
 #include "swapchain.hpp"
 #include "objectManager.hpp"
+#include "textureManager.hpp"
 namespace Chronos {
 namespace Engine {
 
@@ -98,6 +97,14 @@ namespace Engine {
 	Engine();
 
 	Chronos::Engine::ObjectManager objectManager;
+
+	/**
+	\brief Used to create and manage textures.
+
+	To add or remove textures, one may call the necessary methods in this
+	class.
+	*/
+	Chronos::Engine::TextureManager textureManager;
 
 	/**
 	\brief This is the initial width of the window. It can be changed later

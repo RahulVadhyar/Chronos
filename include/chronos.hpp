@@ -132,7 +132,7 @@ namespace Manager {
         \brief Adds text to the window
 
         If you want to add text to the window, this function must be used.
-        It returns a textNo, that is used for updating, modifyign and removing the text instance
+        It returns an objectNo, that is used for updating, modifyign and removing the text instance
         One may select the fontType and fontSize from the available options. The fontType and fontSize must be selected from the available options.
         Font size may be from 6 to 50. The fontType may be one of the following:
         - arial
@@ -152,7 +152,7 @@ namespace Manager {
         The necessary functions must be defined in the struct. For the options, please refer to the [Text](#Chronos::Manager::Text) struct
 
         @param params The necessary parameters needed for rendering text
-        @return The textNo, for the text instance.
+        @return The objectNo, for the text instance.
         */
         int addText(Chronos::Engine::TextParams params, std::string fontType, int fontSize);
 
@@ -167,14 +167,14 @@ namespace Manager {
         A texture path must be selected.
         To add other types of shapes, such as colored , use the other overrides available.
 
-        It returns a shapeNo that can be used for modifying the shape in other functions in this class
+        It returns an objectNo that can be used for modifying the shape in other functions in this class
 
         @param shapeParams The parameters(x, y, rotation... etc) for the shape)
         @param texture The textureNo of the texture to be used
 
-        @return Returns the shapeNo that can be used for referencing this shape later.
+        @return Returns the objectNo that can be used for referencing this shape later.
         */
-        int addPolygon(Chronos::Manager::ShapeParams shapeParams,  int texture);
+        int addShape(Chronos::Manager::ShapeParams shapeParams,  int texture);
 
         /**
         \brief Adds a soild color rectangle to the window
@@ -187,13 +187,13 @@ namespace Manager {
         For options related to the shape, please refer the struct.
         To add other types of shapes, such as textured use the other overrides available.
 
-        It returns a shapeNo that can be used for modifying the shape in other functions in this class
+        It returns a objectNo that can be used for modifying the shape in other functions in this class
 
         @param shapeParams The parameters(x, y, rotation... etc) for the shape
 
-        @return Returns the shapeNo that can be used for referencing this shape later.
+        @return Returns the objectNo that can be used for referencing this shape later.
         */
-        int addPolygon(Chronos::Manager::ShapeParams shapeParams);
+        int addShape(Chronos::Manager::ShapeParams shapeParams);
 
         /**
         \brief Updates the polygon(any) with the new parameters.
@@ -205,22 +205,22 @@ namespace Manager {
         ##Note:
         If textured shape is chosen then the color field will have no effect on the shape. The texture will be always be displayed.
 
-        @param shapeNo The shapeNo reference to the shape. Generated during ```addPolygon()`` call.
+        @param objectNo The objectNo reference to the shape. Generated during ```addObject()`` call.
         @param shapeParams The updated shape parameters to update the shape with.
         */
-        void updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams);
-
+        void updateShape(int objectNo, Chronos::Manager::ShapeParams shapeParams);
+        std::vector<std::pair<int, Chronos::Manager::ShapeParams>> getShapeDetails();
         /**
         \brief Updates the text with the new parameters.
 
         After initializing the text, if you want to change the parameters of the text to new attributes,
-        using the textNo and passing the textParams, the new parameters can be propogated to the text.
+        using the objectNo and passing the textParams, the new parameters can be propogated to the text.
         The results will be displayed on the next ```drawFrame()``` call.
 
-        @param textNo The textNo reference to the text. Generated during ```addText()``` call.
+        @param textNo The objectNo reference to the text. Generated during ```addText()``` call.
         @param params The updated text parameters to update the text with.
         */
-        void updateText(int textNo, Chronos::Engine::TextParams params);
+        void updateText(int objectNo, Chronos::Engine::TextParams params);
         
         /**
         \brief Returns the details of all text defined.
@@ -228,26 +228,11 @@ namespace Manager {
         If the details of the text are needed, this function can be used to get the details of all text.
         It returns a vector of pairs, where the first element is the textNo and the second element is the textParams.
 
-        @return A vector of pairs, where the first element is the textNo and the second element is the textParams of the corresponding text.
+        @return A vector of pairs, where the first element is the objectNo and the second element is the textParams of the corresponding text.
         */
         std::vector<std::pair<int, Chronos::Engine::TextParams>> getTextDetails();
 
-        /**
-        \brief Removes the polygon from the window
-
-        By referencing the shapeNo, the manager removes and destroys the shape from the screen.
-        This applies to all types of shapes.
-
-        @param shapeNo The reference to the shape
-        */
-        void removePolygon(int shapeNo);
-
-        /**
-        \brief Removes the text from the window
-
-        By referencing the textNo, the manager removes and destroys the text from the screen.
-        */
-        void removeText(int textNo);
+        void removeObject(int objectNo);
 
         /**
         \brief Changes the background color of the window.
@@ -292,8 +277,6 @@ namespace Manager {
         @return A vector of TextureDetails, where the textureName, texturePath and textureNo are returned.
         */
         std::vector<TextureDetails> getTextureDetails();
-
-        std::vector<std::array<float, 2>> getPolygonVertices(int polygonNo);
 
         /**
         \brief Changes the present mode of the swapchain.

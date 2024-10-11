@@ -22,36 +22,36 @@ SOFTWARE.
 
 #include "chronos.hpp"
 
-// int Chronos::Manager::Manager::addTexture(
-//     std::string texturePath, std::string textureName)
-// {
-//     for (auto& textureDetail : getTextureDetails()) {
-// 	if (textureDetail.textureName == textureName) {
-// 	    break;
-// 	}
-//     }
-//     return engine.textureManager.addTexture(texturePath, textureName);
-// }
-// void Chronos::Manager::Manager::removeTexture(int textureNo)
-// {
-//     engine.textureManager.removeTexture(textureNo);
-// }
+int Chronos::Manager::Manager::addTexture(
+    std::string texturePath, std::string textureName)
+{
+    for (auto& textureDetail : getTextureDetails()) {
+	if (textureDetail.textureName == textureName) {
+	    break;
+	}
+    }
+    return engine.textureManager.addTexture(texturePath, textureName);
+}
+void Chronos::Manager::Manager::removeTexture(int textureNo)
+{
+    engine.textureManager.removeTexture(textureNo);
+}
 
-// std::vector<Chronos::Manager::TextureDetails>
-// Chronos::Manager::Manager::getTextureDetails()
-// {
-//     std::vector<Chronos::Manager::TextureDetails> textureDetails;
-//     for (auto& texture : engine.textureManager.textures) {
-// 	Chronos::Manager::TextureDetails details;
-// 	details.textureNo = texture.first;
-// 	details.textureName = texture.second.textureName;
-// 	details.texturePath = texture.second.texturePath;
-// 	details.height = texture.second.height;
-// 	details.width = texture.second.width;
-// #ifdef ENABLE_EDITOR
-// 	details.descriptorSet = texture.second.descriptorSet;
-// #endif
-// 	textureDetails.push_back(details);
-//     }
-//     return textureDetails;
-// }
+std::vector<Chronos::Manager::TextureDetails>
+Chronos::Manager::Manager::getTextureDetails()
+{
+    std::vector<Chronos::Manager::TextureDetails> textureDetails;
+    for (auto& texture : engine.textureManager.textures) {
+	Chronos::Manager::TextureDetails details;
+	details.textureNo = texture.first;
+	details.textureName = texture.second.textureName;
+	details.texturePath = texture.second.texturePath;
+	details.height = texture.second.height;
+	details.width = texture.second.width;
+#ifdef ENABLE_EDITOR
+	details.descriptorSet = texture.second.descriptorSet;
+#endif
+	textureDetails.push_back(details);
+    }
+    return textureDetails;
+}

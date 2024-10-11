@@ -89,6 +89,8 @@ void Chronos::Engine::Engine::initVulkan()
 
     // initalize the object manager
     objectManager.init(&device, &swapChain, commandPool);
+
+    textureManager.init(&device, commandPool);
     LOG(3, "Engine", "Texture manager initialized")
 
     createSyncObjects();
@@ -106,6 +108,8 @@ void Chronos::Engine::Engine::cleanup()
     LOG(3, "Engine", "Swapchain cleaned up")
     objectManager.destroy();
     LOG(3, "Engine", "Object manager cleaned up")
+    textureManager.destroy();
+    LOG(3, "Engine", "Texture manager cleaned up")
 #ifdef ENABLE_EDITOR
     gui.destroy();
     LOG(3, "Engine", "Editor cleaned up")

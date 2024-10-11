@@ -25,7 +25,6 @@ SOFTWARE.
  \brief Contains the class for creating a generic object.
 */
 #pragma once
-#include "vulkanHeaders.hpp"
 #include "swapchain.hpp"
 #include "objectTypes.hpp"
 #include "buffers.hpp"
