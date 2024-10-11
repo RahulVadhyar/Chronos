@@ -65,3 +65,8 @@ int Manager::Manager::changeBackgroundColor(float r, float g, float b)
     return 0;
 }
 };
+void Chronos::Manager::Manager::removeObject(int objectNo)
+{
+
+    engine.objectManager.remove(objectNo);
+}

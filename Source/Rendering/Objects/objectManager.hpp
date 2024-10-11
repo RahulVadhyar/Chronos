@@ -53,6 +53,8 @@ namespace Engine {
     void changeMsaa();
 	void recreate();
 	void cleanup();
+	VkRenderPass renderPass; /**< Vulkan render pass used for rendering. */
+	VkSampler textureSampler; /**< Vulkan sampler for textures. */
 
     private:
 	Chronos::Engine::Device*
@@ -63,8 +65,6 @@ namespace Engine {
 			  rendering. */
 	VkCommandPool
 	    commandPool; /**< Vulkan command pool used for rendering. */
-	VkRenderPass renderPass; /**< Vulkan render pass used for rendering. */
-	VkSampler textureSampler; /**< Vulkan sampler for textures. */
 	std::vector<VkFramebuffer>
 	    framebuffers; /**< Vector of Vulkan framebuffers. */
 	std::map<int, std::array<bool, MAX_FRAMES_IN_FLIGHT>>

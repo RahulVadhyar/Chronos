@@ -223,12 +223,6 @@ namespace Engine {
 
 	std::vector<std::string> getAvailableMSAAModes();
 
-    private:
-	bool changeMSAAFlag = false;
-	VkSampleCountFlagBits newMSAAMode;
-
-	void changeMSAASettings();
-
 	/**
 	\brief This is the object that manages the device.
 
@@ -245,7 +239,22 @@ namespace Engine {
 	This is due to the fact that swapChain needs to be constantly mananged
 	and recreated due to various conditions.
 	*/
+
 	Chronos::Engine::SwapChain swapChain = Chronos::Engine::SwapChain();
+
+	/**
+	\brief The command Pool
+
+	All command buffers are allocated from a command pool.
+	This is where the command pool is stored.
+	*/
+	VkCommandPool commandPool;
+
+    private:
+	bool changeMSAAFlag = false;
+	VkSampleCountFlagBits newMSAAMode;
+
+	void changeMSAASettings();
 
 	/**
 	\brief Does the framebuffer need to be resized?
@@ -294,13 +303,6 @@ namespace Engine {
 	*/
 	VkSurfaceKHR surface;
 
-	/**
-	\brief The command Pool
-
-	All command buffers are allocated from a command pool.
-	This is where the command pool is stored.
-	*/
-	VkCommandPool commandPool;
 
 	std::vector<VkSemaphore> imageAvailableSemaphores;
 	std::vector<VkSemaphore> renderFinishedSemaphores;

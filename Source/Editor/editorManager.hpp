@@ -37,7 +37,6 @@ namespace Editor {
 	bool pinMenuBar = true;
 
 	bool showShapeWindow = false;
-	bool showPolygonWindow = false;
 	bool showTextureWindow = false;
 	bool showTextWindow = false;
 	bool showAnimationWindow = false;
@@ -45,7 +44,6 @@ namespace Editor {
 	bool showGeneratedCodeWindow = false;
 
 	bool showShapeDetailsWindow = false;
-	bool showPolygonDetailsWindow = false;
 	bool showTextureDetailsWindow = false;
 	bool showTextDetailsWindow = false;
 	bool showKeyframeDetailsWindow = false;
@@ -58,7 +56,6 @@ namespace Editor {
 
 	void MenuBar();
 	void ShapeWindow();
-	void PolygonWindow();
 	void TextureWindow();
 	void TextWindow();
 	void AnimationWindow();
@@ -66,7 +63,6 @@ namespace Editor {
 	void TotalCodeGenerationWindow();
 
 	void ShapeDetailsWindow();
-	void PolygonDetailsWindow();
 	void TextureDetailsWindow();
 	void TextDetailsWindow();
 	void KeyframeDetailsWindow();
@@ -84,21 +80,10 @@ namespace Editor {
 
 	// Shape Window
 	Chronos::Manager::ShapeParams newShapeParams;
-	int newShapeType = 0;
 	int newShapeFill = 0;
 	int currentShapeTextureSelection = 0;
 	char currentShapeTextureName[200] = "Select Texture";
 	int currentShapeSelection = 0;
-
-	// Polygon Window
-	Chronos::Manager::ShapeParams newPolygonParams;
-	int numVertices = 4;
-	std::vector<std::array<float, 2>> polygonVertices
-	    = { { -0.5, -0.5 }, { 0.5, -0.5 }, { 0.5, 0.5 }, { -0.5, 0.5 } };
-	int currentPolygonTextureSelection = 0;
-	char currentPolygonTextureName[200] = "Select Texture";
-	int currentPolygonSelection = 0;
-	std::vector<std::array<float, 2>> currentPolygonVertices;
 
 	// Texture Window
 	char newTexturePath[200];
@@ -114,10 +99,6 @@ namespace Editor {
 	// Shape details window
 	Chronos::Manager::ShapeParams shapeDetailsShapeParams;
 	int shapeDetailsShapeNo = 0;
-
-	// polygon details window
-	Chronos::Manager::ShapeParams polygonDetailsShapeParams;
-	int polygonDetailsShapeNo = 0;
 
 	// text details window
 	Chronos::Engine::TextParams textDetailsTextParams;
