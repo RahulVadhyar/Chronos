@@ -21,6 +21,8 @@ SOFTWARE.
 */
 
 #pragma once
+#include "vulkanHeaders.hpp"
+#include "swapchain.hpp"
 namespace Chronos {
 namespace Editor {
 

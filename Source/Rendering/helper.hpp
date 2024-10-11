@@ -104,6 +104,7 @@ namespace Engine {
     @param physicalDevice The physical device to find the memory type on.
 
     @return The index of the memory type.
+    //TODO: move this to texture.cpp and make it a static inline function
     */
     uint32_t findMemoryType(uint32_t typeFilter,
 	VkMemoryPropertyFlags properties, VkPhysicalDevice physicalDevice);
@@ -149,6 +150,7 @@ namespace Engine {
 
     @return The required extensions to be enabled
     */
+    //TODO: move this to engine.cpp and make it a static inline function
     std::vector<const char*> getRequiredExtensions();
 
     /**
@@ -172,6 +174,7 @@ namespace Engine {
     @param device The physical device to check.
 
     @return Whether the physical device supports the extensions that we need.
+    //TODO: move this to device.cpp and make it a static inline function
     */
     bool checkDeviceExtensionSupport(VkPhysicalDevice device);
 
@@ -188,6 +191,7 @@ namespace Engine {
 
     @return Whether the physical device is suitable for our needs.
     */
+    //TODO: move this to device.cpp and make it a static inline function
     bool isDeviceSuitable(
 	VkPhysicalDevice physicalDevice, VkSurfaceKHR surface);
 
@@ -278,6 +282,7 @@ namespace Engine {
 
     @return The created command buffers.
     */
+    //TODO: move this to objectManager.cpp and make it a static inline function
     std::vector<VkCommandBuffer> createCommandBuffer(
 	Chronos::Engine::Device device, Chronos::Engine::SwapChain swapChain,
 	VkCommandPool commandPool);
@@ -292,6 +297,7 @@ namespace Engine {
 
     @return The contents of the shader file as ```std::vector<char>```.
     */
+    //TODO: move this to object.cpp and make it a static inline function
     std::vector<char> readFile(const std::string& filename);
 
     /**
@@ -305,6 +311,7 @@ namespace Engine {
 
     @return The created shader module.
     */
+    //TODO: move this to object.cpp and make it a static inline function
     VkShaderModule createShaderModule(
 	const std::vector<char>& code, VkDevice device);
 
@@ -318,6 +325,7 @@ namespace Engine {
     sample count for.
     @return The maxium supported MSAA sample count.
     */
+    //TODO: move this to device.cpp and make it a static inline function
     VkSampleCountFlagBits getMaxUsableSampleCount(
 	VkPhysicalDevice physicalDevice);
 

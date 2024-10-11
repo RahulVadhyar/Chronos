@@ -14,7 +14,7 @@ option(CHRONOS_ENABLE_VULKAN_VALIDATION_LAYERS "Enable Vulkan validation layers"
 option(CHRONOS_ENABLE_OPTIMIZATIONS "Enable compiler optimizations and enable most warnings, along with generating release binaries" ON)
 
 if(UNIX)
-    set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -Wno-overloaded-virtual -Wno-unused-parameter -Wno-vla -O3 -march=native")
+    set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -Wno-unused-parameter -O3 -march=native")
 endif()
 
 if(CHRONOS_ENABLE_OPTIMIZATIONS)

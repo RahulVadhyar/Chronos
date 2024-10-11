@@ -23,6 +23,9 @@ SOFTWARE.
 #include "objectManager.hpp"
 #include "helper.hpp"
 #include "texture.hpp"
+#include "ColoredRectangle.hpp"
+#include "TexturedRectangle.hpp"
+#include "text.hpp"
 void Chronos::Engine::ObjectManager::init(Chronos::Engine::Device* device,
     Chronos::Engine::SwapChain* swapChain, VkCommandPool commandPool)
 {
@@ -91,7 +94,9 @@ void Chronos::Engine::ObjectManager::render(
 	VK_SUBPASS_CONTENTS_INLINE);
 
     for (auto& object : this->objects) {
-	    object.second->render(currentFrame, imageIndex, bgColor);
+        if (this->objectsToBeRemoved.count(object.first) > 0)
+	        continue;
+	    object.second->render(currentFrame, imageIndex, bgColor, viewport, scissor, commandBuffers);
 	}
     
 
@@ -156,10 +161,13 @@ void Chronos::Engine::ObjectManager::update(uint32_t currentFrame)
 	    objects.erase(objectMap.first);
 	    Object* object = objects[objectMap.first];
 	    switch (object->objectType) {
-	    case Chronos::Engine::ObjectType::Rectangle:
-		delete (Chronos::Engine::Rectangle*)object;
+        case Chronos::Engine::ObjectType::TypeColoredRectangle:
+        delete (Chronos::Engine::ColoredRectangle*)object;
+        break;
+	    case Chronos::Engine::ObjectType::TypeTexturedRectangle:
+		delete (Chronos::Engine::TexturedRectangle*)object;
 		break;
-	    case Chronos::Engine::ObjectType::Text:
+	    case Chronos::Engine::ObjectType::TypeText:
 		delete (Chronos::Engine::Text*)object;
 		break;
 	    default:

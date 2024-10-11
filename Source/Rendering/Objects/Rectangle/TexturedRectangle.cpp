@@ -34,20 +34,20 @@ void Chronos::Engine::TexturedRectangle::init(Chronos::Engine::Device* device,
     this->texture = texture;
 
     Chronos::Engine::Object::init(
-	device, commandPool, swapChain, textureSampler, renderPass);
+	device, commandPool, swapChain, textureSampler, renderPass, Chronos::Engine::ObjectType::TypeTexturedRectangle);
 
     // create the vertex and index buffers and copy the data
     vertexBuffer.size = sizeof(vertices[0]) * vertices.size();
     vertexBuffer.create(*device,
 	VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_VERTEX_BUFFER_BIT,
 	VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    vertexBuffer.copy(vertices.data(), commandPool);
+    vertexBuffer.copy((void*)vertices.data(), commandPool);
 
     indexBuffer.size = sizeof(indices[0]) * indices.size();
     indexBuffer.create(*device,
 	VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_INDEX_BUFFER_BIT,
 	VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    indexBuffer.copy(indices.data(), commandPool);
+    indexBuffer.copy((void*)indices.data(), commandPool);
 }
 
 void Chronos::Engine::TexturedRectangle::update(uint32_t currentFrame)
@@ -161,4 +161,25 @@ Chronos::Engine::PipelineAttributes Chronos::Engine::TexturedRectangle::getPipel
 	= VK_BLEND_OP_ADD; // Optional
 
     return pipelineAttributes;
+}
+
+void Chronos::Engine::TexturedRectangle::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3], VkViewport& viewport, VkRect2D& scissor, std::vector<VkCommandBuffer>& commandBuffers){
+    
+	vkCmdBindPipeline(commandBuffers[currentFrame],
+	    VK_PIPELINE_BIND_POINT_GRAPHICS, this->graphicsPipeline);
+	vkCmdSetViewport(commandBuffers[currentFrame],
+	    0, 1, &viewport);
+	vkCmdSetScissor(commandBuffers[currentFrame],
+	    0, 1, &scissor);
+	VkBuffer vertexBuffers[] = { this->vertexBuffer.buffer };
+	VkDeviceSize offsets[] = { 0 };
+	vkCmdBindVertexBuffers(commandBuffers[currentFrame],
+	    0, 1, vertexBuffers, offsets);
+	vkCmdBindIndexBuffer(commandBuffers[currentFrame],
+	    this->indexBuffer.buffer, 0, VK_INDEX_TYPE_UINT16);
+	vkCmdBindDescriptorSets(commandBuffers[currentFrame],
+	    VK_PIPELINE_BIND_POINT_GRAPHICS, this->pipelineLayout, 0, 1,
+	    &this->descriptorSets[currentFrame], 0, nullptr);
+	vkCmdDrawIndexed(commandBuffers[currentFrame],
+	    static_cast<uint32_t>(this->indices.size()), 1, 0, 0, 0);
 }

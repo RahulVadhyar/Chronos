@@ -20,16 +20,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "vulkanHeaders.hpp"
-
-#include "device.hpp"
-#include "swapchain.hpp"
-#include "helper.hpp"
-#include "buffers.hpp"
-#include "object.hpp"
-#include "engineStructs.hpp"
-#include "texture.hpp"
-#include "text.hpp"
 #include "getFontType.hpp"
 #include "fontTypes.hpp"
 

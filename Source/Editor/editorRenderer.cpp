@@ -22,12 +22,8 @@ SOFTWARE.
 
 #include "logging.hpp"
 #include "editorHeaders.hpp"
-
-#include "vulkanHeaders.hpp"
-#include "device.hpp"
-#include "swapchain.hpp"
-#include "helper.hpp"
 #include "editorRenderer.hpp"
+#include "helper.hpp"
 
 void Chronos::Editor::EditorRenderer::init(Chronos::Engine::Device* device,
     GLFWwindow* window, Chronos::Engine::SwapChain* swapChain,

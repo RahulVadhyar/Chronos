@@ -54,8 +54,7 @@ namespace Engine {
     \brief The vertex buffer that is used to store the vertices.
     */
 	Chronos::Engine::Buffer vertexBuffer;
-	void render(
-	    uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]) override;
+	void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3], VkViewport& viewport, VkRect2D& scissor, std::vector<VkCommandBuffer>& commandBuffers) override;
 
 	    /**
 	    \brief The index buffer that is used to store the indices.

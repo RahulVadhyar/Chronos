@@ -37,6 +37,10 @@ SOFTWARE.
 #ifndef WIN32
 #pragma GCC diagnostic pop
 #endif
+
+#include "object.hpp"
+#include "texture.hpp"
+#include "engineStructs.hpp"
 namespace Chronos {
 namespace Engine {
 
@@ -102,7 +106,7 @@ namespace Engine {
 	This destroys all the vulkan related objects related to this class and
 	frees memory.
 	*/
-	void destroy();
+	void destroy() override;
 
 	/**
 	\brief Clears the text stored in the font object.
@@ -122,9 +126,7 @@ namespace Engine {
 	current frame
 	@param bgColor The background color to use for rendering the text.
 	*/
-	void render(
-	    uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]);
-
+	void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3], VkViewport& viewport, VkRect2D& scissor, std::vector<VkCommandBuffer>& commandBuffers) override;
 	/**
 	\brief Updates the attributes(like position, color, etc) of the text.
 
@@ -132,7 +134,7 @@ namespace Engine {
 	by the ```FontManager``` class. It does this by updating the uniform
 	buffer.
 	*/
-	void update(uint32_t currentFrame);
+	void update(uint32_t currentFrame) override;
 
 	/**
 	\brief The vertices of each character used for rendering
@@ -177,23 +179,23 @@ namespace Engine {
 	the text. The descriptor sets contain information about the texture
 	sampler and the uniform buffer.
 	*/
-	void createDescriptorSets();
+	void createDescriptorSets() override;
 
 	/**
 	\brief Gets the descriptor types needed for rendering the text.
 	*/
-	std::vector<VkDescriptorType> getDescriptorTypes();
+	std::vector<VkDescriptorType> getDescriptorTypes() override;
 
 	/**
 	\brief Gets the descriptor stages in which the descriptor sets are used.
 	*/
-	std::vector<VkShaderStageFlagBits> getDescriptorStages();
+	std::vector<VkShaderStageFlagBits> getDescriptorStages() override;
 
 	/**
 	\brief Returns the pipeline attributes that are set for the graphics
 	pipeline.
 	*/
-	PipelineAttributes getPipelineAttributes();
+	PipelineAttributes getPipelineAttributes() override;
 
 	/**
 	\brief Updates the buffer with the new text.

@@ -37,6 +37,7 @@ SOFTWARE.
 #include "vulkanHeaders.hpp"
 #include "device.hpp"
 #include "swapchain.hpp"
+#include "objectManager.hpp"
 namespace Chronos {
 namespace Engine {
 
@@ -96,48 +97,7 @@ namespace Engine {
 	*/
 	Engine();
 
-	/**
-	\brief Main function that is used to add, update and remove text to the
-	engine.
-
-	To render text to the window, one may call the necessary methods in this
-	class.
-	*/
-	Chronos::Engine::TextManager textManager;
-
-	/**
-	\brief This is the main function that is used to add, remove and modify
-	textured shapes(rectangles or triangles) to the engine.
-
-	To render shapes to the window, one may call the necessary methods in
-	this class.
-	*/
-	Chronos::Engine::ShapeManager<TexturedVertex> shapeManager;
-
-	/**
-	\brief This is the main function that is used to add, remove and modify
-	colored shapes(rectangles or triangles) to the engine.
-
-	To render shapes to the window, one may call the necessary methods in
-	this class.
-	*/
-	Chronos::Engine::ShapeManager<ColorVertex> colorShapeManager;
-
-	/**
-	\brief Used to create and manage textures.
-
-	To add or remove textures, one may call the necessary methods in this
-	class.
-	*/
-	Chronos::Engine::TextureManager textureManager;
-
-	/**
-	\brief Used to create and manage aribatry polygons.
-
-	To add or remove polygons, one may call the necessary methods in this
-	class.
-	*/
-	Chronos::Engine::PolygonManager polygonManager;
+	Chronos::Engine::ObjectManager objectManager;
 
 	/**
 	\brief This is the initial width of the window. It can be changed later

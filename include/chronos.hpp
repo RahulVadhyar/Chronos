@@ -67,21 +67,6 @@ namespace Manager {
         float scale = 1.0;
         std::string text = "";
     };
-    /**
-    \brief Selects the polygon type to be used.
-
-    ### Note:
-
-    Only one one of these parameters are to be set to true, leave the others to false
-
-    @param triangle Triangle shape
-    @param rectangle Rectangle shape
-    @param npolygon Custom polygon shape using user defined vertices. This can be defined during creation of the polygon.
-    */
-    struct PolygonType {
-        bool triangle = false;
-        bool rectangle = false;
-    };
 
     /**
     \brief Holds some details about the texture. 
@@ -172,73 +157,43 @@ namespace Manager {
         int addText(Chronos::Engine::TextParams params, std::string fontType, int fontSize);
 
         /**
-        \brief Adds a textured shape(triangle or rectangle) to the window
+        \brief Adds a textured rectangle to the window
 
-        Use this to add a shape(triangle or rectangle) to the window.
+        Use this to add a shape rectangle to the window.
         Please note that this function only supports textured shapes. 
 
         Options for the shape are defined in the [ShapeParams](#Chronos::Manager::ShapeParams) struct.
         The color field in the struct is not used, It can be skipped. The texture field must be set to the textureNo of the texture to be used.
-        For options related to the shape, please refer the struct.
-        In order to choose between triangle and rectangle, the option must be set in ```polygonType```.
-        Do not select npolygon, as it is not supported in this function.
         A texture path must be selected.
-        To add other types of shapes, such as colored or npolygon, use the other overrides available.
+        To add other types of shapes, such as colored , use the other overrides available.
 
         It returns a shapeNo that can be used for modifying the shape in other functions in this class
 
-        @param shapeParams The parameters(x, y, rotation... etc) for the shape
-        @param polygonType The type of shape(triangle or rectangle)
+        @param shapeParams The parameters(x, y, rotation... etc) for the shape)
         @param texture The textureNo of the texture to be used
 
         @return Returns the shapeNo that can be used for referencing this shape later.
         */
-        int addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType, int texture);
+        int addPolygon(Chronos::Manager::ShapeParams shapeParams,  int texture);
 
         /**
-        \brief Adds a soild color shape(triangle or rectangle) to the window
+        \brief Adds a soild color rectangle to the window
 
-        Use this to add a shape(triangle or rectangle) to the window.
+        Use this to add a shape rectangle to the window.
         Please note that this function only supports solid color shapes. 
 
         Options for the shape are defined in the [ShapeParams](#Chronos::Manager::ShapeParams) struct.
         The color field in the struct must be filled.
         For options related to the shape, please refer the struct.
-        In order to choose between triangle and rectangle, the option must be set in ```polygonType```.
-        Do not select npolygon, as it is not supported in this function.
-        To add other types of shapes, such as textured or npolygon, use the other overrides available.
+        To add other types of shapes, such as textured use the other overrides available.
 
         It returns a shapeNo that can be used for modifying the shape in other functions in this class
 
         @param shapeParams The parameters(x, y, rotation... etc) for the shape
-        @param polygonType The type of shape(triangle or rectangle)
 
         @return Returns the shapeNo that can be used for referencing this shape later.
         */
-        int addPolygon(Chronos::Manager::ShapeParams shapeParams, PolygonType polygonType);
-
-        /**
-        \brief Adds a custom textured polygon with arbitary vertices to the window
-
-        Use this to add a custom polygon to the window.
-        Please note that this function only supports textured shapes. 
-
-        Options for the shape are defined in the [ShapeParams](#Chronos::Manager::ShapeParams) struct.
-        The color field in the struct is not used, It can be skipped. The texture field must be set to the textureNo of the texture to be used.
-        For options related to the shape, please refer the struct.
-        A texture path must be selected.
-        To add other types of shapes, such as colored or npolygon, use the other overrides available.
-        The vertices must be defined in the vertices vector. The vertices must be defined in the order of the polygon. The first vertex is the starting point of the polygon.
-        The number of vertices shall be fixed. However their values may be changed using the updatePolygon function.
-
-        It returns a shapeNo that can be used for modifying the shape in other functions in this class
-
-        @param shapeParams The parameters(x, y, rotation... etc) for the shape
-        @param texture The textureNo of the texture to be used
-
-        @return Returns the shapeNo that can be used for referencing this shape later.
-        */
-        int addPolygon(Chronos::Manager::ShapeParams shapeParams, int texture, std::vector<std::array<float, 2>> vertices);
+        int addPolygon(Chronos::Manager::ShapeParams shapeParams);
 
         /**
         \brief Updates the polygon(any) with the new parameters.
@@ -250,61 +205,10 @@ namespace Manager {
         ##Note:
         If textured shape is chosen then the color field will have no effect on the shape. The texture will be always be displayed.
 
-        ##Note:
-        This function cannot update the vertices of npolygon. To update the vertices of npolygon, use the other override.
-
         @param shapeNo The shapeNo reference to the shape. Generated during ```addPolygon()`` call.
         @param shapeParams The updated shape parameters to update the shape with.
         */
         void updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams);
-
-        /**
-        \brief Updates the polygon(npolygon) with the new parameters.
-
-        After initializing the shape, if you want to change the parameters of the shape to new attributes,
-        using the shapeNo and passing the shapeParams, the new parameters can be propogated to the shape.
-
-        The vertices can also be updated. Please note that the number of vertices must remain the same. However their values may be changed.
-
-        The results will be displayed on the next ```drawFrame()``` call.
-        ##Note:
-        Yhe color field will have no effect on the shape. The texture will be always be displayed.
-
-        ##Note:
-        This function can be only used with npolygon shape. For rectangle or triangle, use the other override.
-
-        ##Note:
-        The number of vertices must remain the same. However their values may be changed.
-
-        @param shapeNo The shapeNo reference to the shape. Generated during ```addPolygon()`` call.
-        @param shapeParams The updated shape parameters to update the shape with.
-        @param vertices The updated vertices of the polygon.
-        */
-        void updatePolygon(int shapeNo, Chronos::Manager::ShapeParams shapeParams, std::vector<std::array<float, 2>> vertices);
-
-        /**
-        \brief Returns the details of all npolygon shapes defined.
-
-        If the details of the npolygon shapes are needed, this function can be used to get the details of all npolygon shapes.
-        It returns a vector of pairs, where the first element is the shapeNo and the second element is the shapeParams.
-
-        @return A vector of pairs, where the first element is the shapeNo and the second element is the shapeParams of the corresponding polygon.
-        */
-        std::vector<std::pair<int, Chronos::Manager::ShapeParams>> getPolygonDetails();
-
-        /**
-        \brief Returns the details of all shapes(triangle or rectangle) defined.
-
-        If the details of the shapes(triangle or rectangle) are needed, this function can be used to get the details of all shapes.
-        It returns a vector of pairs, where the first element is the shapeNo and the second element is the shapeParams.
-
-        ##Note: This function does not return the details of npolygon shapes. For npolygon shapes, use the other override.
-        
-        ##Note: This will return both textured and colored shapes.
-
-        @return A vector of pairs, where the first element is the shapeNo and the second element is the shapeParams of the corresponding polygon.
-        */
-        std::vector<std::pair<int, Chronos::Manager::ShapeParams>> getShapeDetails();
 
         /**
         \brief Updates the text with the new parameters.

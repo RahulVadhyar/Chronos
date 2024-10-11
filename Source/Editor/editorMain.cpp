@@ -20,9 +20,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "chronos.hpp"
-#include "editorManager.hpp"
 
+#include "editorManager.hpp"
+#include "logging.hpp"
 Chronos::Editor::EditorManager editorManager;
 
 void addElements() { editorManager.addElements(); }

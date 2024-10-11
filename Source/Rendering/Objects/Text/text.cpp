@@ -20,16 +20,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "vulkanHeaders.hpp"
 
-#include "device.hpp"
-#include "swapchain.hpp"
-#include "helper.hpp"
-#include "buffers.hpp"
-#include "object.hpp"
-#include "engineStructs.hpp"
-#include "texture.hpp"
 #include "text.hpp"
+#include "helper.hpp"
 
 void Chronos::Engine::Text::init(Chronos::Engine::Device* device,
     VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
@@ -73,9 +66,8 @@ void Chronos::Engine::Text::init(Chronos::Engine::Device* device,
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
 	colorBuffers[i].create(*device);
     }
-
     Chronos::Engine::Object::init(
-	device, commandPool, swapChain, textureSampler, renderPass);
+	device, commandPool, swapChain, textureSampler, renderPass, Chronos::Engine::ObjectType::TypeText);
 }
 
 std::vector<VkDescriptorType> Chronos::Engine::Text::getDescriptorTypes()
@@ -315,4 +307,23 @@ void Chronos::Engine::Text::update(uint32_t currentFrame)
 	params.y, params.rotation + 90, 1.0f, -1.0f);
     colorBuffers[currentFrame].update(
 	{ params.color[0], params.color[1], params.color[2] });
+}
+
+void Chronos::Engine::Text::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3], VkViewport& viewport, VkRect2D& scissor, std::vector<VkCommandBuffer>& commandBuffers){
+    vkCmdBindPipeline(commandBuffers[currentFrame],
+	    VK_PIPELINE_BIND_POINT_GRAPHICS, this->graphicsPipeline);
+	vkCmdSetViewport(commandBuffers[currentFrame], 0, 1, &viewport);
+	vkCmdSetScissor(commandBuffers[currentFrame], 0, 1, &scissor);
+	VkBuffer vertexBuffers[] = { this->vertexBuffer };
+	VkDeviceSize offsets[] = { 0 };
+	vkCmdBindVertexBuffers(
+	    commandBuffers[currentFrame], 0, 1, vertexBuffers, offsets);
+	vkCmdBindVertexBuffers(
+	    commandBuffers[currentFrame], 1, 1, vertexBuffers, offsets);
+	vkCmdBindDescriptorSets(commandBuffers[currentFrame],
+	    VK_PIPELINE_BIND_POINT_GRAPHICS, this->pipelineLayout, 0, 1,
+	    &this->descriptorSets[currentFrame], 0, nullptr);
+	for (uint32_t j = 0; j < this->numLetters; j++) {
+	    vkCmdDraw(commandBuffers[currentFrame], 4, 1, j * 4, 0);
+	}
 }

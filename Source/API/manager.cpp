@@ -21,8 +21,6 @@ SOFTWARE.
 */
 
 #include "chronos.hpp"
-#include "object.hpp"
-#include "getFontType.hpp"
 namespace Chronos {
 GLFWwindow* Manager::Manager::getWindow() { return engine.window; }
 Manager::Manager::Manager(Chronos::Manager::Initializer initializer)

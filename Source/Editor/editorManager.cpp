@@ -22,9 +22,9 @@ SOFTWARE.
 
 
 #include "editorHeaders.hpp"
-#include "chronos.hpp"
 #include "editorManager.hpp"
 #include "editorTheme.hpp"
+#include "logging.hpp"
 #include "editorCodeGenerator.hpp"
 
 void Chronos::Editor::EditorManager::addElements()
@@ -89,271 +89,139 @@ void Chronos::Editor::EditorManager::MenuBar()
 
 void Chronos::Editor::EditorManager::ShapeWindow()
 {
-    if (this->showShapeWindow) {
-	ImGui::Begin("Shape", &this->showShapeWindow);
-	bool doesNameExist = false;
-	ImGui::SeparatorText("Shape Name");
-	ImGui::InputText("Shape Name", this->newShapeParams.shapeName, 200);
-	std::vector<std::pair<int, Chronos::Manager::ShapeParams>>
-	    nameShapeDetails = this->manager->getShapeDetails();
-	for (std::pair<int, Chronos::Manager::ShapeParams> shapeDetail :
-	    nameShapeDetails) {
-	    if (!strcmp(this->newShapeParams.shapeName,
-		    shapeDetail.second.shapeName)) {
-		ImGui::Text("Name Already Exists");
-		doesNameExist = true;
-		break;
-	    }
-	}
-	ImGui::SeparatorText("Type");
-	ImGui::RadioButton("Triangle", &this->newShapeType, 0);
-	ImGui::RadioButton("Rectangle", &this->newShapeType, 1);
-	ImGui::SeparatorText("Fill");
-	ImGui::RadioButton("Color", &this->newShapeFill, 0);
-	ImGui::RadioButton("Texture", &this->newShapeFill, 1);
-	ImGui::SeparatorText("Properties");
-	ImGui::DragFloat(
-	    "X(-1 to 1)", &this->newShapeParams.x, 0.01f, -1.0f, 1.0f);
-	ImGui::DragFloat(
-	    "Y(-1 to 1)", &this->newShapeParams.y, 0.01f, -1.0f, 1.0f);
-	ImGui::DragFloat(
-	    "X Size", &this->newShapeParams.xSize, 0.01f, 0.0f, FLT_MAX);
-	ImGui::DragFloat(
-	    "Y Size", &this->newShapeParams.ySize, 0.01f, 0.0f, FLT_MAX);
-	ImGui::DragFloat(
-	    "Rotation", &this->newShapeParams.rotation, 0.01f, 0.0f, FLT_MAX);
-	switch (this->newShapeFill) {
-	case 0:
-	    ImGui::ColorEdit3("Color", this->newShapeParams.color.data());
-	    break;
-	case 1:
-	    if (ImGui::BeginCombo("Select Texture", currentShapeTextureName)) {
-		std::vector<Chronos::Manager::TextureDetails> details
-		    = this->manager->getTextureDetails();
-		if (details.size() == 0) {
-		    ImGui::Selectable("No Textures");
-		} else {
-		    for (Chronos::Manager::TextureDetails textureDetail :
-			details) {
-			bool isSelected = currentShapeTextureSelection
-			    == textureDetail.textureNo;
-			if (ImGui::Selectable(textureDetail.textureName.c_str(),
-				isSelected)) {
-			    currentShapeTextureSelection
-				= textureDetail.textureNo;
-			    strcpy(currentShapeTextureName,
-				textureDetail.textureName.c_str());
-			    LOG(1, "Editor",
-				"Texture selected for shapeNo ["
-				    + std::to_string(
-					currentShapeTextureSelection)
-				    + "], textureName ["
-				    + currentShapeTextureName + "]")
-			}
-			if (isSelected) {
-			    ImGui::SetItemDefaultFocus();
-			}
-		    }
-		}
-		ImGui::EndCombo();
-	    }
-	}
-	if (!doesNameExist) {
-	    if (ImGui::Button("Add Shape")) {
-		Chronos::Manager::PolygonType type;
-		switch (this->newShapeType) {
-		case 0:
-		    type.triangle = true;
-		    break;
-		case 1:
-		    type.rectangle = true;
-		    break;
-		}
-		switch (this->newShapeFill) {
-		case 0:
-		    this->manager->addPolygon(this->newShapeParams, type);
-		    LOG(1, "Editor",
-			"Colored shape added with shapeName ["
-			    + std::string(this->newShapeParams.shapeName) + "]")
-		    break;
-		case 1:
-		    this->manager->addPolygon(this->newShapeParams, type,
-			this->currentShapeTextureSelection);
-		    LOG(1, "Editor",
-			"Textured shape added with shapeName ["
-			    + std::string(this->newShapeParams.shapeName) + "]")
-		    break;
-		}
-	    }
-	}
-	ImGui::SeparatorText("Current Shapes");
-	if (ImGui::BeginListBox("Shapes")) {
-	    std::vector<std::pair<int, Chronos::Manager::ShapeParams>>
-		shapeDetails = this->manager->getShapeDetails();
-	    if (shapeDetails.size() == 0) {
-		ImGui::Selectable("No Shapes");
-	    } else {
-		for (int i = 0; i < static_cast<int>(shapeDetails.size());
-		     i++) {
-		    if (ImGui::Selectable(shapeDetails[i].second.shapeName,
-			    this->currentShapeSelection == i)) {
-			this->currentShapeSelection = i;
-		    }
-		}
-	    }
-	    ImGui::EndListBox();
-	    if (shapeDetails.size() > 0) {
-		ImGui::Text("Selected Shape: %d",
-		    shapeDetails[currentShapeSelection].first);
-		if (ImGui::Button("Edit Shape")) {
-		    this->showShapeDetailsWindow = true;
-		    this->shapeDetailsShapeNo
-			= shapeDetails[currentShapeSelection].first;
-		    this->shapeDetailsShapeParams
-			= shapeDetails[currentShapeSelection].second;
-		}
-		ImGui::SameLine();
-		if (ImGui::Button("Remove Shape")) {
-		    this->manager->removePolygon(
-			shapeDetails[currentShapeSelection].first);
-		}
-	    }
-	}
+    // if (this->showShapeWindow) {
+	// ImGui::Begin("Shape", &this->showShapeWindow);
+	// bool doesNameExist = false;
+	// ImGui::SeparatorText("Shape Name");
+	// ImGui::InputText("Shape Name", this->newShapeParams.shapeName, 200);
+	// std::vector<std::pair<int, Chronos::Manager::ShapeParams>>
+	//     nameShapeDetails = this->manager->getShapeDetails();
+	// for (std::pair<int, Chronos::Manager::ShapeParams> shapeDetail :
+	//     nameShapeDetails) {
+	//     if (!strcmp(this->newShapeParams.shapeName,
+	// 	    shapeDetail.second.shapeName)) {
+	// 	ImGui::Text("Name Already Exists");
+	// 	doesNameExist = true;
+	// 	break;
+	//     }
+	// }
+	// ImGui::SeparatorText("Type");
+	// ImGui::RadioButton("Triangle", &this->newShapeType, 0);
+	// ImGui::RadioButton("Rectangle", &this->newShapeType, 1);
+	// ImGui::SeparatorText("Fill");
+	// ImGui::RadioButton("Color", &this->newShapeFill, 0);
+	// ImGui::RadioButton("Texture", &this->newShapeFill, 1);
+	// ImGui::SeparatorText("Properties");
+	// ImGui::DragFloat(
+	//     "X(-1 to 1)", &this->newShapeParams.x, 0.01f, -1.0f, 1.0f);
+	// ImGui::DragFloat(
+	//     "Y(-1 to 1)", &this->newShapeParams.y, 0.01f, -1.0f, 1.0f);
+	// ImGui::DragFloat(
+	//     "X Size", &this->newShapeParams.xSize, 0.01f, 0.0f, FLT_MAX);
+	// ImGui::DragFloat(
+	//     "Y Size", &this->newShapeParams.ySize, 0.01f, 0.0f, FLT_MAX);
+	// ImGui::DragFloat(
+	//     "Rotation", &this->newShapeParams.rotation, 0.01f, 0.0f, FLT_MAX);
+	// switch (this->newShapeFill) {
+	// case 0:
+	//     ImGui::ColorEdit3("Color", this->newShapeParams.color.data());
+	//     break;
+	// case 1:
+	//     if (ImGui::BeginCombo("Select Texture", currentShapeTextureName)) {
+	// 	std::vector<Chronos::Manager::TextureDetails> details
+	// 	    = this->manager->getTextureDetails();
+	// 	if (details.size() == 0) {
+	// 	    ImGui::Selectable("No Textures");
+	// 	} else {
+	// 	    for (Chronos::Manager::TextureDetails textureDetail :
+	// 		details) {
+	// 		bool isSelected = currentShapeTextureSelection
+	// 		    == textureDetail.textureNo;
+	// 		if (ImGui::Selectable(textureDetail.textureName.c_str(),
+	// 			isSelected)) {
+	// 		    currentShapeTextureSelection
+	// 			= textureDetail.textureNo;
+	// 		    strcpy(currentShapeTextureName,
+	// 			textureDetail.textureName.c_str());
+	// 		    LOG(1, "Editor",
+	// 			"Texture selected for shapeNo ["
+	// 			    + std::to_string(
+	// 				currentShapeTextureSelection)
+	// 			    + "], textureName ["
+	// 			    + currentShapeTextureName + "]")
+	// 		}
+	// 		if (isSelected) {
+	// 		    ImGui::SetItemDefaultFocus();
+	// 		}
+	// 	    }
+	// 	}
+	// 	ImGui::EndCombo();
+	//     }
+	// }
+	// if (!doesNameExist) {
+	//     if (ImGui::Button("Add Shape")) {
+	// 	Chronos::Manager::PolygonType type;
+	// 	switch (this->newShapeType) {
+	// 	case 0:
+	// 	    type.triangle = true;
+	// 	    break;
+	// 	case 1:
+	// 	    type.rectangle = true;
+	// 	    break;
+	// 	}
+	// 	switch (this->newShapeFill) {
+	// 	case 0:
+	// 	    this->manager->addPolygon(this->newShapeParams, type);
+	// 	    LOG(1, "Editor",
+	// 		"Colored shape added with shapeName ["
+	// 		    + std::string(this->newShapeParams.shapeName) + "]")
+	// 	    break;
+	// 	case 1:
+	// 	    this->manager->addPolygon(this->newShapeParams, type,
+	// 		this->currentShapeTextureSelection);
+	// 	    LOG(1, "Editor",
+	// 		"Textured shape added with shapeName ["
+	// 		    + std::string(this->newShapeParams.shapeName) + "]")
+	// 	    break;
+	// 	}
+	//     }
+	// }
+	// ImGui::SeparatorText("Current Shapes");
+	// if (ImGui::BeginListBox("Shapes")) {
+	//     std::vector<std::pair<int, Chronos::Manager::ShapeParams>>
+	// 	shapeDetails = this->manager->getShapeDetails();
+	//     if (shapeDetails.size() == 0) {
+	// 	ImGui::Selectable("No Shapes");
+	//     } else {
+	// 	for (int i = 0; i < static_cast<int>(shapeDetails.size());
+	// 	     i++) {
+	// 	    if (ImGui::Selectable(shapeDetails[i].second.shapeName,
+	// 		    this->currentShapeSelection == i)) {
+	// 		this->currentShapeSelection = i;
+	// 	    }
+	// 	}
+	//     }
+	//     ImGui::EndListBox();
+	//     if (shapeDetails.size() > 0) {
+	// 	ImGui::Text("Selected Shape: %d",
+	// 	    shapeDetails[currentShapeSelection].first);
+	// 	if (ImGui::Button("Edit Shape")) {
+	// 	    this->showShapeDetailsWindow = true;
+	// 	    this->shapeDetailsShapeNo
+	// 		= shapeDetails[currentShapeSelection].first;
+	// 	    this->shapeDetailsShapeParams
+	// 		= shapeDetails[currentShapeSelection].second;
+	// 	}
+	// 	ImGui::SameLine();
+	// 	if (ImGui::Button("Remove Shape")) {
+	// 	    this->manager->removePolygon(
+	// 		shapeDetails[currentShapeSelection].first);
+	// 	}
+	//     }
+	// }
 
-	ImGui::End();
-    }
-}
-
-void Chronos::Editor::EditorManager::PolygonWindow()
-{
-    if (this->showPolygonWindow) {
-	bool doesPolygonExist = false;
-	ImGui::Begin("Polygon", &this->showPolygonWindow);
-	ImGui::SeparatorText("Add Polygon");
-	ImGui::SeparatorText("Polygon Name");
-	ImGui::InputText("Polygon Name", this->newPolygonParams.shapeName, 200);
-	std::vector<std::pair<int, Chronos::Manager::ShapeParams>>
-	    namePolygonDetails = this->manager->getPolygonDetails();
-	for (std::pair<int, Chronos::Manager::ShapeParams> polygonDetail :
-	    namePolygonDetails) {
-	    if (!strcmp(this->newPolygonParams.shapeName,
-		    polygonDetail.second.shapeName)) {
-		ImGui::Text("Name Already Exists");
-		doesPolygonExist = true;
-		break;
-	    }
-	}
-	ImGui::SeparatorText("Properties");
-	ImGui::DragFloat(
-	    "X(-1 to 1)", &this->newPolygonParams.x, 0.01f, -1.0f, 1.0f);
-	ImGui::DragFloat(
-	    "Y(-1 to 1)", &this->newPolygonParams.y, 0.01f, -1.0f, 1.0f);
-	ImGui::DragFloat(
-	    "X Size", &this->newPolygonParams.xSize, 0.01f, 0.0f, FLT_MAX);
-	ImGui::DragFloat(
-	    "Y Size", &this->newPolygonParams.ySize, 0.01f, 0.0f, FLT_MAX);
-	ImGui::DragFloat(
-	    "Rotation", &this->newPolygonParams.rotation, 0.01f, 0.0f, FLT_MAX);
-	if (ImGui::BeginCombo("Select Texture", currentPolygonTextureName)) {
-	    std::vector<Chronos::Manager::TextureDetails> details
-		= this->manager->getTextureDetails();
-	    if (details.size() == 0) {
-		ImGui::Selectable("No Textures");
-	    } else {
-		for (Chronos::Manager::TextureDetails textureDetail : details) {
-		    bool isSelected = currentPolygonTextureSelection
-			== textureDetail.textureNo;
-		    if (ImGui::Selectable(
-			    textureDetail.textureName.c_str(), isSelected)) {
-			currentPolygonTextureSelection
-			    = textureDetail.textureNo;
-			strcpy(currentPolygonTextureName,
-			    textureDetail.textureName.c_str());
-		    }
-		    if (isSelected) {
-			ImGui::SetItemDefaultFocus();
-		    }
-		}
-	    }
-	    ImGui::EndCombo();
-	}
-	ImGui::SeparatorText("Vertices");
-	ImGui::Text("Number of Vertices %d", this->numVertices);
-	if (ImGui::Button("Add Vertices")) {
-	    this->numVertices++;
-	    this->polygonVertices.push_back({ 0.0f, 0.0f });
-	    LOG(1, "Editor", "Vertex added to polygon")
-	}
-	ImGui::SameLine();
-	if (ImGui::Button("Remove Vertices")) {
-	    if (this->numVertices > 3) {
-		this->numVertices--;
-		this->polygonVertices.pop_back();
-		LOG(1, "Editor", "Vertex removed from polygon")
-	    }
-	}
-	for (int i = 0; i < this->numVertices; i++) {
-	    ImGui::Text("Vertex %d", i);
-	    ImGui::DragFloat(
-		("coord X " + std::to_string(i + 1) + "(-1 to 1)").c_str(),
-		&this->polygonVertices[i][0], 0.01f, -1.0f, 1.0f);
-	    ImGui::DragFloat(
-		("coord Y " + std::to_string(i + 1) + "(-1 to 1)").c_str(),
-		&this->polygonVertices[i][1], 0.01f, -1.0f, 1.0f);
-	}
-
-	if (!doesPolygonExist) {
-	    if (ImGui::Button("Add Shape")) {
-		this->manager->addPolygon(this->newShapeParams,
-		    this->currentPolygonTextureSelection,
-		    this->polygonVertices);
-		LOG(1, "Editor",
-		    "Polygon added with shapeName ["
-			+ std::string(this->newShapeParams.shapeName) + "]")
-	    }
-	}
-	ImGui::SeparatorText("Current Shapes");
-	if (ImGui::BeginListBox("Shapes")) {
-	    std::vector<std::pair<int, Chronos::Manager::ShapeParams>>
-		polygonDetails = this->manager->getPolygonDetails();
-	    if (polygonDetails.size() == 0) {
-		ImGui::Selectable("No Polygons");
-	    } else {
-		for (int i = 0; i < static_cast<int>(polygonDetails.size());
-		     i++) {
-		    if (ImGui::Selectable(polygonDetails[i].second.shapeName,
-			    this->currentPolygonSelection == i)) {
-			this->currentPolygonSelection = i;
-		    }
-		}
-	    }
-	    ImGui::EndListBox();
-	    if (polygonDetails.size() > 0) {
-		if (ImGui::Button("Edit Polygon")) {
-		    this->showPolygonDetailsWindow = true;
-		    this->polygonDetailsShapeNo
-			= polygonDetails[currentPolygonSelection].first;
-		    this->polygonDetailsShapeParams
-			= polygonDetails[currentPolygonSelection].second;
-		    LOG(1, "Editor",
-			"Polygon selected for editing with shapeNo ["
-			    + std::to_string(this->polygonDetailsShapeNo) + "]")
-		}
-
-		ImGui::SameLine();
-		if (ImGui::Button("Remove Polygon")) {
-		    this->manager->removePolygon(
-			polygonDetails[currentPolygonSelection].first);
-		    LOG(1, "Editor",
-			"Polygon removed with shapeNo ["
-			    + std::to_string(
-				polygonDetails[currentPolygonSelection].first)
-			    + "]")
-		}
-	    }
-	}
-	ImGui::End();
-    }
+	// ImGui::End();
+    // }
 }
 
 void Chronos::Editor::EditorManager::TextureWindow()
@@ -643,86 +511,41 @@ void Chronos::Editor::EditorManager::SettingsWindow()
 
 void Chronos::Editor::EditorManager::ShapeDetailsWindow()
 {
-    if (this->showShapeDetailsWindow) {
-	ImGui::Begin("Shape Details", &this->showShapeDetailsWindow);
-	ImGui::SeparatorText("Shape Details");
-	if (this->manager->getShapeDetails().size() == 0) {
-	    ImGui::Text("No Shapes");
-	} else {
-	    ImGui::InputText(
-		"Shape Name", this->shapeDetailsShapeParams.shapeName, 200);
-	    ImGui::DragFloat("X(-1 to 1)", &this->shapeDetailsShapeParams.x,
-		0.01f, -1.0f, 1.0f);
-	    ImGui::SameLine();
-	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.x, "X");
-	    ImGui::DragFloat("Y(-1 to 1)", &this->shapeDetailsShapeParams.y,
-		0.01f, -1.0f, 1.0f);
-	    ImGui::SameLine();
-	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.y, "Y");
-	    ImGui::DragFloat("X Size", &this->shapeDetailsShapeParams.xSize,
-		0.01f, 0.0f, FLT_MAX);
-	    ImGui::SameLine();
-	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.xSize, "X size");
-	    ImGui::DragFloat("Y Size", &this->shapeDetailsShapeParams.ySize,
-		0.01f, 0.0f, FLT_MAX);
-	    ImGui::SameLine();
-	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.ySize, "Y size");
-	    ImGui::DragFloat("Rotation",
-		&this->shapeDetailsShapeParams.rotation, 0.01f, 0.0f, FLT_MAX);
-	    ImGui::SameLine();
-	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.rotation, "Rotation(degrees)");
-	    ImGui::ColorEdit3(
-		"Color", this->shapeDetailsShapeParams.color.data());
-	    this->manager->updatePolygon(
-		this->shapeDetailsShapeNo, this->shapeDetailsShapeParams);
-	}
-	ImGui::End();
-    }
-}
-
-void Chronos::Editor::EditorManager::PolygonDetailsWindow()
-{
-    if (this->showPolygonDetailsWindow) {
-	ImGui::Begin("Polygon Details", &this->showPolygonDetailsWindow);
-	ImGui::SeparatorText("Polygon Details");
-	std::vector<std::pair<int, Chronos::Manager::ShapeParams>>
-	    polygonDetails = this->manager->getPolygonDetails();
-	if (polygonDetails.size() == 0) {
-	    ImGui::Text("No Polygons");
-	} else {
-	    ImGui::InputText(
-		"Polygon Name", this->polygonDetailsShapeParams.shapeName, 200);
-	    ImGui::DragFloat("X(-1 to 1)", &this->polygonDetailsShapeParams.x,
-		0.01f, -1.0f, 1.0f);
-	    ImGui::DragFloat("Y(-1 to 1)", &this->polygonDetailsShapeParams.y,
-		0.01f, -1.0f, 1.0f);
-	    ImGui::DragFloat("X Size", &this->polygonDetailsShapeParams.xSize,
-		0.01f, 0.0f, FLT_MAX);
-	    ImGui::DragFloat("Y Size", &this->polygonDetailsShapeParams.ySize,
-		0.01f, 0.0f, FLT_MAX);
-	    ImGui::DragFloat("Rotation",
-		&this->polygonDetailsShapeParams.rotation, 0.01f, 0.0f,
-		FLT_MAX);
-
-	    this->currentPolygonVertices = this->manager->getPolygonVertices(
-		this->polygonDetailsShapeNo);
-	    ImGui::SeparatorText("Polygon Vertices");
-	    for (int i = 0;
-		 i < static_cast<int>(this->currentPolygonVertices.size());
-		 i++) {
-		ImGui::Text("Vertex %d", i);
-		ImGui::DragFloat(
-		    ("X " + std::to_string(i + 1) + "(-1 to 1)").c_str(),
-		    &this->currentPolygonVertices[i][0], 0.01f, -1.0f, 1.0f);
-		ImGui::DragFloat(
-		    ("Y " + std::to_string(i + 1) + "(-1 to 1)").c_str(),
-		    &this->currentPolygonVertices[i][1], 0.01f, -1.0f, 1.0f);
-	    }
-	    this->manager->updatePolygon(this->polygonDetailsShapeNo,
-		this->polygonDetailsShapeParams, this->currentPolygonVertices);
-	}
-	ImGui::End();
-    }
+    // if (this->showShapeDetailsWindow) {
+	// ImGui::Begin("Shape Details", &this->showShapeDetailsWindow);
+	// ImGui::SeparatorText("Shape Details");
+	// if (this->manager->getShapeDetails().size() == 0) {
+	//     ImGui::Text("No Shapes");
+	// } else {
+	//     ImGui::InputText(
+	// 	"Shape Name", this->shapeDetailsShapeParams.shapeName, 200);
+	//     ImGui::DragFloat("X(-1 to 1)", &this->shapeDetailsShapeParams.x,
+	// 	0.01f, -1.0f, 1.0f);
+	//     ImGui::SameLine();
+	//     this->keyframeCheckbox(&this->shapeDetailsShapeParams.x, "X");
+	//     ImGui::DragFloat("Y(-1 to 1)", &this->shapeDetailsShapeParams.y,
+	// 	0.01f, -1.0f, 1.0f);
+	//     ImGui::SameLine();
+	//     this->keyframeCheckbox(&this->shapeDetailsShapeParams.y, "Y");
+	//     ImGui::DragFloat("X Size", &this->shapeDetailsShapeParams.xSize,
+	// 	0.01f, 0.0f, FLT_MAX);
+	//     ImGui::SameLine();
+	//     this->keyframeCheckbox(&this->shapeDetailsShapeParams.xSize, "X size");
+	//     ImGui::DragFloat("Y Size", &this->shapeDetailsShapeParams.ySize,
+	// 	0.01f, 0.0f, FLT_MAX);
+	//     ImGui::SameLine();
+	//     this->keyframeCheckbox(&this->shapeDetailsShapeParams.ySize, "Y size");
+	//     ImGui::DragFloat("Rotation",
+	// 	&this->shapeDetailsShapeParams.rotation, 0.01f, 0.0f, FLT_MAX);
+	//     ImGui::SameLine();
+	//     this->keyframeCheckbox(&this->shapeDetailsShapeParams.rotation, "Rotation(degrees)");
+	//     ImGui::ColorEdit3(
+	// 	"Color", this->shapeDetailsShapeParams.color.data());
+	//     this->manager->updatePolygon(
+	// 	this->shapeDetailsShapeNo, this->shapeDetailsShapeParams);
+	// }
+	// ImGui::End();
+    // }
 }
 
 void Chronos::Editor::EditorManager::TextureDetailsWindow()

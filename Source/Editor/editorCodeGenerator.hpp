@@ -21,7 +21,7 @@ SOFTWARE.
 */
 
 #pragma once
-
+#include "chronos.hpp"
 namespace Chronos {
 namespace Editor {
     std::string generateCode(Chronos::Manager::Manager* manager);

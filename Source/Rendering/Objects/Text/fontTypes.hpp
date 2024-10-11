@@ -42,6 +42,7 @@ The font types are:
 */
 #pragma once
 #include "multiFontInclude.hpp"
+#include "text.hpp"
 
 #define FONT_STRUCT(type, size)                                                \
     FontTypes type##_##size                                                    \

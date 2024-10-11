@@ -87,17 +87,9 @@ void Chronos::Engine::Engine::initVulkan()
     commandPool = createCommandPool(device, swapChain.surface);
     LOG(3, "Engine", "Command pool initialized")
 
-    // initalize all the managers
-    textureManager.init(&device, commandPool);
+    // initalize the object manager
+    objectManager.init(&device, &swapChain, commandPool);
     LOG(3, "Engine", "Texture manager initialized")
-    shapeManager.init(&device, &swapChain, commandPool);
-    LOG(3, "Engine", "Shape manager initialized")
-    colorShapeManager.init(&device, &swapChain, commandPool);
-    LOG(3, "Engine", "Color shape manager initialized")
-    polygonManager.init(&device, &swapChain, commandPool);
-    LOG(3, "Engine", "Polygon manager initialized")
-    textManager.init(&device, &swapChain, commandPool);
-    LOG(3, "Engine", "Text manager initialized")
 
     createSyncObjects();
 
@@ -112,16 +104,8 @@ void Chronos::Engine::Engine::cleanup()
     // after we are done, we need to cleanup all the resources we created
     swapChain.cleanup();
     LOG(3, "Engine", "Swapchain cleaned up")
-    shapeManager.destroy();
-    LOG(3, "Engine", "Shape manager cleaned up")
-    colorShapeManager.destroy();
-    LOG(3, "Engine", "Color shape manager cleaned up")
-    textManager.destroy();
-    LOG(3, "Engine", "Text manager cleaned up")
-    polygonManager.destroy();
-    LOG(3, "Engine", "Polygon manager cleaned up")
-    textureManager.destroy();
-    LOG(3, "Engine", "Texture manager cleaned up")
+    objectManager.destroy();
+    LOG(3, "Engine", "Object manager cleaned up")
 #ifdef ENABLE_EDITOR
     gui.destroy();
     LOG(3, "Engine", "Editor cleaned up")
@@ -187,14 +171,8 @@ void Chronos::Engine::Engine::drawFrame()
     if (result == VK_ERROR_OUT_OF_DATE_KHR) {
 	swapChain.recreate();
 	LOG(3, "Engine", "Swapchain recreated")
-	shapeManager.recreate();
-	LOG(3, "Engine", "Shape manager recreated")
-	colorShapeManager.recreate();
-	LOG(3, "Engine", "Color shape manager recreated")
-	textManager.recreate();
-	LOG(3, "Engine", "Text manager recreated")
-	polygonManager.recreate();
-	LOG(3, "Engine", "Polygon manager recreated")
+	objectManager.recreate();
+	LOG(3, "Engine", "Object manager recreated")
 #ifdef ENABLE_EDITOR
 	gui.recreate();
 	LOG(3, "Engine", "Editor recreated")
@@ -208,10 +186,7 @@ void Chronos::Engine::Engine::drawFrame()
     auto startUpdate = std::chrono::steady_clock::now();
 #endif
     // update the shapes and text
-    shapeManager.update(currentFrame);
-    colorShapeManager.update(currentFrame);
-    textManager.update(currentFrame);
-    polygonManager.update(currentFrame);
+    objectManager.update(currentFrame);
 
 #ifdef ENABLE_EDITOR
     gui.update();
@@ -227,10 +202,7 @@ void Chronos::Engine::Engine::drawFrame()
     vkResetFences(device.device, 1, &inFlightFences[currentFrame]);
 
     // record the command buffers
-    shapeManager.render(currentFrame, imageIndex, bgColor);
-    colorShapeManager.render(currentFrame, imageIndex, bgColor);
-    polygonManager.render(currentFrame, imageIndex, bgColor);
-    textManager.render(currentFrame, imageIndex, bgColor);
+    objectManager.render(currentFrame, imageIndex, bgColor);
 #ifdef ENABLE_EDITOR
     gui.render(currentFrame, imageIndex, bgColor);
 #endif
@@ -243,12 +215,7 @@ void Chronos::Engine::Engine::drawFrame()
     VkSemaphore signalSemaphores[] = { renderFinishedSemaphores[currentFrame] };
 
     // submit the command buffers
-    std::vector<VkCommandBuffer> submitCommandBuffers;
-    submitCommandBuffers.push_back(shapeManager.commandBuffers[currentFrame]);
-    submitCommandBuffers.push_back(
-	colorShapeManager.commandBuffers[currentFrame]);
-    submitCommandBuffers.push_back(polygonManager.commandBuffers[currentFrame]);
-    submitCommandBuffers.push_back(textManager.commandBuffers[currentFrame]);
+    std::vector<VkCommandBuffer> submitCommandBuffers = {objectManager.commandBuffers[currentFrame]};
 
 #ifdef ENABLE_EDITOR
     submitCommandBuffers.push_back(gui.commandBuffers[currentFrame]);
@@ -299,14 +266,8 @@ void Chronos::Engine::Engine::drawFrame()
 	framebufferResized = false;
 	swapChain.recreate();
 	LOG(3, "Engine", "Swapchain recreated")
-	shapeManager.recreate();
-	LOG(3, "Engine", "Shape Manager recreated")
-	colorShapeManager.recreate();
-	LOG(3, "Engine", "Color Shape Manager recreated")
-	textManager.recreate();
-	LOG(3, "Engine", "Text Manager recreated")
-	polygonManager.recreate();
-	LOG(3, "Engine", "polygon Manager recreated")
+	objectManager.recreate();
+	LOG(3, "Engine", "Object Manager recreated")
 #ifdef ENABLE_EDITOR
 	gui.recreate();
 	LOG(3, "Engine", "Editor recreated")
@@ -456,10 +417,7 @@ void Chronos::Engine::Engine::changePresentMode()
 {
     vkDeviceWaitIdle(device.device);
     swapChain.recreate();
-    shapeManager.recreate();
-    colorShapeManager.recreate();
-    textManager.recreate();
-    polygonManager.recreate();
+    objectManager.recreate();
 #ifdef ENABLE_EDITOR
     gui.recreate();
 #endif
@@ -538,10 +496,7 @@ void Chronos::Engine::Engine::changeMSAASettings()
 {
     device.msaaSamples = this->newMSAAMode;
     this->swapChain.changeMsaa();
-    this->textManager.changeMsaa();
-    this->shapeManager.changeMsaa();
-    this->colorShapeManager.changeMsaa();
-    this->polygonManager.changeMsaa();
+    this->objectManager.changeMsaa();
 #ifdef ENABLE_EDITOR
     this->gui.changeMsaa();
 #endif
