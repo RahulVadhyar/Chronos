@@ -424,8 +424,7 @@ void Chronos::Engine::Engine::createSyncObjects()
 	    || vkCreateFence(
 		   device.device, &fenceInfo, nullptr, &inFlightFences[i])
 		!= VK_SUCCESS) {
-	    LOG(1,
-		"Failed to create synchronization objects for a frame")
+	    LOG(1, "Failed to create synchronization objects for a frame")
 	    throw std::runtime_error(
 		"failed to create synchronization objects for a frame!");
 	}

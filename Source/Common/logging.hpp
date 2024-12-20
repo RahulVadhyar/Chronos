@@ -30,17 +30,18 @@ SOFTWARE.
 // 2 - basic info
 // 3 - verbose
 // 4 - includes frame fraw
-static inline std::string getFileName(const std::string &path)
+static inline std::string getFileName(const std::string& path)
 {
     std::filesystem::path p(path);
     return p.filename().string();
 }
 
-
 static inline std::string getTimestamp()
 {
     auto now = std::chrono::system_clock::now();
-    auto now_ns = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+    auto now_ns = std::chrono::duration_cast<std::chrono::milliseconds>(
+	now.time_since_epoch())
+		      .count();
     std::ostringstream oss;
     oss << now_ns;
     return oss.str();
@@ -50,9 +51,10 @@ static inline std::string getTimestamp()
 #define S1(x) #x
 #define S2(x) S1(x)
 #define LOCATION __FILE__ ":" S2(__LINE__)
-#define LOG(LEVEL, MESSAGE)                                             \
+#define LOG(LEVEL, MESSAGE)                                                    \
     if (LEVEL <= CHRONOS_ENABLE_LOGGING) {                                     \
-	std::cout << "[Chronos][" << getFileName(LOCATION) << "]" << "[" << getTimestamp() <<  "]" <<": " << MESSAGE << std::endl;  \
+	std::cout << "[Chronos][" << getFileName(LOCATION) << "]" << "["       \
+		  << getTimestamp() << "]" << ": " << MESSAGE << std::endl;    \
     }
 #else
 #define LOG(LEVEL, MESSAGE)

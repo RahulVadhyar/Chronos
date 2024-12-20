@@ -171,13 +171,11 @@ void Chronos::Engine::Device::pickPhysicalDevice(
     LOG(3, "****PHYSICAL DEVICE INFORMATION*****")
     LOG(3,
 	"Physical device picked: " + std::string(deviceProperties.deviceName))
-    LOG(3,
-	"Driver version: " + std::to_string(deviceProperties.driverVersion))
-    LOG(3,
-	"API version: " + std::to_string(deviceProperties.apiVersion))
-    LOG(3,  "Device ID: " + std::to_string(deviceProperties.deviceID))
-    LOG(3,  "Vendor ID: " + std::to_string(deviceProperties.vendorID))
-    LOG(3,  "MSAA samples: " + std::to_string(msaaSamples))
+    LOG(3, "Driver version: " + std::to_string(deviceProperties.driverVersion))
+    LOG(3, "API version: " + std::to_string(deviceProperties.apiVersion))
+    LOG(3, "Device ID: " + std::to_string(deviceProperties.deviceID))
+    LOG(3, "Vendor ID: " + std::to_string(deviceProperties.vendorID))
+    LOG(3, "MSAA samples: " + std::to_string(msaaSamples))
 #endif
 }
 
@@ -225,7 +223,7 @@ void Chronos::Engine::Device::createLogicalDevice(VkSurfaceKHR surface)
 	throw std::runtime_error("Failed to create logical device");
     }
 
-    LOG(3,"Logical device created")
+    LOG(3, "Logical device created")
     // get the queue handle
     vkGetDeviceQueue(device, indices.graphicsFamily.value(), 0, &graphicsQueue);
     vkGetDeviceQueue(device, indices.presentFamily.value(), 0, &presentQueue);

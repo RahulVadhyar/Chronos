@@ -311,38 +311,32 @@ void Chronos::Editor::EditorManager::TextWindow()
 	    if (ImGui::Selectable(
 		    "consolas", this->currentFontSelection == "consolas")) {
 		this->currentFontSelection = "consolas";
-		LOG(1,
-		    "Font selected [" + this->currentFontSelection + "]")
+		LOG(1, "Font selected [" + this->currentFontSelection + "]")
 	    }
 	    if (ImGui::Selectable("consolas_bold",
 		    this->currentFontSelection == "consolas_bold")) {
 		this->currentFontSelection = "consolas_bold";
-		LOG(1,
-		    "Font selected [" + this->currentFontSelection + "]")
+		LOG(1, "Font selected [" + this->currentFontSelection + "]")
 	    }
 	    if (ImGui::Selectable(
 		    "arial", this->currentFontSelection == "arial")) {
 		this->currentFontSelection = "arial";
-		LOG(1,
-		    "Font selected [" + this->currentFontSelection + "]")
+		LOG(1, "Font selected [" + this->currentFontSelection + "]")
 	    }
 	    if (ImGui::Selectable(
 		    "arial_bold", this->currentFontSelection == "arial_bold")) {
 		this->currentFontSelection = "arial_bold";
-		LOG(1,
-		    "Font selected [" + this->currentFontSelection + "]")
+		LOG(1, "Font selected [" + this->currentFontSelection + "]")
 	    }
 	    if (ImGui::Selectable(
 		    "times", this->currentFontSelection == "times")) {
 		this->currentFontSelection = "times";
-		LOG(1,
-		    "Font selected [" + this->currentFontSelection + "]")
+		LOG(1, "Font selected [" + this->currentFontSelection + "]")
 	    }
 	    if (ImGui::Selectable(
 		    "times_bold", this->currentFontSelection == "times_bold")) {
 		this->currentFontSelection = "times_bold";
-		LOG(1,
-		    "Font selected [" + this->currentFontSelection + "]")
+		LOG(1, "Font selected [" + this->currentFontSelection + "]")
 	    }
 	    ImGui::EndCombo();
 	}
@@ -387,7 +381,7 @@ void Chronos::Editor::EditorManager::TextWindow()
 		if (ImGui::Button("Remove Text")) {
 		    this->manager->removeObject(
 			textDetails[currentTextSelection].first);
-		    LOG(1, 
+		    LOG(1,
 			"Text removed with textNo ["
 			    + std::to_string(
 				textDetails[currentTextSelection].first)
@@ -425,7 +419,7 @@ void Chronos::Editor::EditorManager::SettingsWindow()
 	    glfwSetWindowMonitor(window, glfwGetPrimaryMonitor(), 0, 0,
 		mode->width, mode->height, mode->refreshRate);
 	    this->isWindowFullscreen = true;
-	    LOG(1,"Window set to fullscreen")
+	    LOG(1, "Window set to fullscreen")
 	} else if (!this->fullScreen && this->isWindowFullscreen) {
 	    GLFWwindow* window = this->manager->getWindow();
 	    glfwSetWindowMonitor(window, nullptr, 0, 0, 800, 600, 0);
@@ -453,8 +447,7 @@ void Chronos::Editor::EditorManager::SettingsWindow()
 	}
 	if (ImGui::Button("Update Present Mode")) {
 	    this->manager->changePresentMode(this->presentMode);
-	    LOG(1, 
-		"Present mode updated to [" + this->presentMode + "]")
+	    LOG(1, "Present mode updated to [" + this->presentMode + "]")
 	}
 
 	ImGui::SeparatorText("MSAA Samples");
@@ -467,8 +460,7 @@ void Chronos::Editor::EditorManager::SettingsWindow()
 	}
 	if (ImGui::Button("Update MSAA Samples")) {
 	    this->manager->changeMSAA(this->msaaSamples);
-	    LOG(1,
-		"MSAA Samples updated to [" + this->msaaSamples + "]")
+	    LOG(1, "MSAA Samples updated to [" + this->msaaSamples + "]")
 	}
 
 	ImGui::SeparatorText("Background Color");
@@ -712,7 +704,7 @@ void Chronos::Editor::EditorManager::keyframeCheckbox(
 	    }
 	    this->manager->removeKeyframeVariable(keyframeNo);
 	    this->floatPointerToKeyframeNo.erase(valuePointer);
-	    LOG(3, 
+	    LOG(3,
 		"Removed keyframe for valuePointer ["
 		    + std::to_string((long long)valuePointer)
 		    + "] with keyframeNo [" + std::to_string(keyframeNo) + "]")

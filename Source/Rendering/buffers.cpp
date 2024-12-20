@@ -54,7 +54,7 @@ void Chronos::Engine::Buffer::copy(void* inputData, VkCommandPool commandPool)
 	device, stagingBuffer, buffer, size, commandPool);
     vkDestroyBuffer(device.device, stagingBuffer, nullptr);
     vkFreeMemory(device.device, stagingBufferMemory, nullptr);
-    LOG(3, 
+    LOG(3,
 	"Data [" + std::to_string((uint64_t)buffer)
 	    + "] copied to device buffer [" + std::to_string((uint64_t)buffer)
 	    + "]")
@@ -64,7 +64,7 @@ void Chronos::Engine::Buffer::destroy()
 {
     vkDestroyBuffer(device.device, buffer, nullptr);
     vkFreeMemory(device.device, memory, nullptr);
-    LOG(2, 
+    LOG(2,
 	"Buffer [" + std::to_string((uint64_t)buffer)
 	    + "] destroyed on device ["
 	    + std::to_string((uint64_t)device.device) + "]")
