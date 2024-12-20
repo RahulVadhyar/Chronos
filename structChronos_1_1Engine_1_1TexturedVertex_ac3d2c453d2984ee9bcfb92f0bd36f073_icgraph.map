@@ -1,0 +1,5 @@
+<map id="Chronos::Engine::TexturedVertex::getAttributeDescriptions" name="Chronos::Engine::TexturedVertex::getAttributeDescriptions">
+<area shape="rect" id="Node000001" title="Generates the VkVertexInputAttributeDescription for the vertex based on attributes(pos,..." alt="" coords="285,5,516,45"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1TexturedRectangle.html#ac7fda869c06fcbd01764de6484fb7deb" title=" " alt="" coords="5,5,237,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="272,28,237,28,237,23,272,23"/>
+</map>

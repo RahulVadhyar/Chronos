@@ -1,4 +1,5 @@
 <map id="Chronos::Editor::EditorManager::TotalCodeGenerationWindow" name="Chronos::Editor::EditorManager::TotalCodeGenerationWindow">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,229,47"/>
-<area shape="rect" id="node2" href="$namespaceChronos_1_1Editor.html#a6d176de988790c248a6b6b2dce733917" title=" " alt="" coords="277,13,497,39"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,229,45"/>
+<area shape="rect" id="Node000002" href="$namespaceChronos_1_1Editor.html#a6d176de988790c248a6b6b2dce733917" title=" " alt="" coords="277,13,497,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,23,263,23,263,28,230,28"/>
 </map>

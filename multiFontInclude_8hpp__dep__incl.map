@@ -1,5 +1,7 @@
-<map id="Source/Engine/Headers/multiFontInclude.hpp" name="Source/Engine/Headers/multiFontInclude.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,177,47"/>
-<area shape="rect" id="node2" href="$fontTypes_8hpp.html" title="Defines all thes structs for all the font types and their sizes." alt="" coords="5,95,177,136"/>
-<area shape="rect" id="node3" href="$getFontType_8cpp.html" title=" " alt="" coords="10,184,173,225"/>
+<map id="Source/Rendering/Objects/Text/multiFontInclude.hpp" name="Source/Rendering/Objects/Text/multiFontInclude.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,200,45"/>
+<area shape="rect" id="Node000002" href="$fontTypes_8hpp.html" title="Defines all thes structs for all the font types and their sizes." alt="" coords="8,93,197,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,59,105,93,100,93,100,59"/>
+<area shape="rect" id="Node000003" href="$getFontType_8cpp.html" title=" " alt="" coords="8,181,197,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="105,147,105,181,100,181,100,147"/>
 </map>

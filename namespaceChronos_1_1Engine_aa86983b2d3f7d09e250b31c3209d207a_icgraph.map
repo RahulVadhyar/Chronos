@@ -1,11 +1,30 @@
 <map id="Chronos::Engine::createBuffer" name="Chronos::Engine::createBuffer">
-<area shape="rect" id="node1" title="Creates a buffer of a given size, usage and properties." alt="" coords="1012,111,1227,138"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="785,5,960,47"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826" title="This is used to initialize the buffer." alt="" coords="785,71,960,112"/>
-<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="781,136,964,177"/>
-<area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="548,165,711,207"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1UniformBuffer.html#a4c14b97754025d584f9fbf73ac26d8c2" title="Creates the buffer and maps the memory." alt="" coords="535,20,723,61"/>
-<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1ColorBuffer.html#a315b2e206d85861cf5f6b99ac0a35aed" title="Creates the buffer and maps the memory." alt="" coords="525,85,733,127"/>
-<area shape="rect" id="node8" href="$classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="259,165,477,207"/>
-<area shape="rect" id="node9" href="$classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32" title="Adds text to the window." alt="" coords="5,165,211,207"/>
+<area shape="rect" id="Node000001" title="Creates a buffer of a given size, usage and properties." alt="" coords="745,207,960,233"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d" title="Copies the data to the buffer." alt="" coords="519,69,693,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="822,201,765,163,696,124,669,112,671,107,699,119,768,158,825,197"/>
+<area shape="rect" id="Node000007" href="$classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826" title="This is used to initialize the buffer." alt="" coords="519,133,693,173"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="791,206,680,176,682,171,792,201"/>
+<area shape="rect" id="Node000010" href="$classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="515,200,697,240"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="732,223,698,223,698,217,732,217"/>
+<area shape="rect" id="Node000011" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="281,261,444,301"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="785,238,698,255,564,270,444,280,444,274,564,265,697,249,784,233"/>
+<area shape="rect" id="Node000013" href="$classChronos_1_1Engine_1_1Texture.html#a1616c3aa51be3139d2edfa5ac5e1bdc1" title="Create the texture by loading the texture from the given raw data." alt="" coords="515,315,697,355"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="816,241,698,298,656,317,654,312,696,294,813,236"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Engine_1_1TexturedRectangle.html#a397eb23ee83b9fbc6b0fbf5a89bd2114" title=" " alt="" coords="267,69,458,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="505,92,458,92,458,87,505,87"/>
+<area shape="rect" id="Node000005" href="$classChronos_1_1Engine_1_1ColoredRectangle.html#a17bf527c6f63feec36996d10cb9afbab" title=" " alt="" coords="270,5,455,45"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="515,68,439,48,440,43,517,63"/>
+<area shape="rect" id="Node000004" href="$classChronos_1_1Manager_1_1Manager.html#a3134f2a38f825a58b71f270bce2a0b20" title="Adds a textured rectangle to the window." alt="" coords="5,69,211,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="254,92,211,92,211,87,254,87"/>
+<area shape="rect" id="Node000006" href="$classChronos_1_1Manager_1_1Manager.html#af0a5e7e2f2509f471495e72c861c9d48" title="Adds a soild color rectangle to the window." alt="" coords="5,5,211,45"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="256,28,211,28,211,23,256,23"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="515,132,439,112,440,107,517,127"/>
+<area shape="poly" id="edge10_Node000007_Node000005" title=" " alt="" coords="521,129,513,123,497,107,488,90,480,75,465,59,445,48,447,43,468,55,485,71,493,88,501,104,516,119,524,124"/>
+<area shape="rect" id="Node000008" href="$classChronos_1_1Engine_1_1UniformBuffer.html#a4c14b97754025d584f9fbf73ac26d8c2" title="Creates the buffer and maps the memory." alt="" coords="269,197,457,237"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="517,179,440,200,439,195,515,174"/>
+<area shape="rect" id="Node000009" href="$classChronos_1_1Engine_1_1ColorBuffer.html#a315b2e206d85861cf5f6b99ac0a35aed" title="Creates the buffer and maps the memory." alt="" coords="259,133,467,173"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="505,156,467,156,467,151,505,151"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="513,246,443,264,442,259,512,241"/>
+<area shape="rect" id="Node000012" href="$classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32" title="Adds text to the window." alt="" coords="5,261,211,301"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="267,284,211,284,211,279,267,279"/>
 </map>

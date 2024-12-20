@@ -1,0 +1,7 @@
+<map id="Chronos::Engine::TexturedRectangle::getPipelineAttributes" name="Chronos::Engine::TexturedRectangle::getPipelineAttributes">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,37,237,77"/>
+<area shape="rect" id="Node000002" href="$structChronos_1_1Engine_1_1TexturedVertex.html#ac3d2c453d2984ee9bcfb92f0bd36f073" title="Generates the VkVertexInputAttributeDescription for the vertex based on attributes(pos,..." alt="" coords="285,5,516,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,41,272,37,272,43,238,47"/>
+<area shape="rect" id="Node000003" href="$structChronos_1_1Engine_1_1TexturedVertex.html#a1af5a2440cc959788e2b44e5266884d8" title="Creates a VkVertexInputBindingDescription for the vertex based on the size of the vertex." alt="" coords="293,69,509,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="238,68,279,73,278,78,237,73"/>
+</map>

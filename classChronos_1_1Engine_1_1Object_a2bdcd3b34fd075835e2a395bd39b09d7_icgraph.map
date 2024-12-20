@@ -1,5 +1,11 @@
 <map id="Chronos::Engine::Object::destroy" name="Chronos::Engine::Object::destroy">
-<area shape="rect" id="node1" title="Destroys the object and releases associated resources." alt="" coords="240,39,417,80"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Text.html#a5b951ee13c422d24a63fa551ecb1014c" title="Destroys the font object and frees the memory." alt="" coords="17,5,180,47"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Polygon.html#a0e3324494b8538884a071b8d588ed05e" title="Destroys the polygon object." alt="" coords="5,71,192,112"/>
+<area shape="rect" id="Node000001" title="Destroys the object and releases associated resources." alt="" coords="288,101,465,141"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1ColoredRectangle.html#afa95ba724976d9898444ca728f1a8950" title="Destroys the object and releases associated resources." alt="" coords="30,5,215,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="324,98,239,60,203,48,205,43,241,55,326,93"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Engine_1_1TexturedRectangle.html#a1c6d951b437bb00766d822ea342a17c5" title="Destroys the object and releases associated resources." alt="" coords="27,69,218,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="274,111,218,104,218,99,275,106"/>
+<area shape="rect" id="Node000004" href="$classChronos_1_1Engine_1_1Text.html#a0112a7add65c6455fe4258e683c65c11" title="Destroys the font object and frees the memory." alt="" coords="41,133,204,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="275,137,204,146,204,140,274,132"/>
+<area shape="rect" id="Node000005" href="$classChronos_1_1Engine_1_1ObjectManager.html#adee50706b6a218b0ded75d91c98f5289" title=" " alt="" coords="5,197,240,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="326,150,241,188,205,200,203,195,239,183,324,145"/>
 </map>

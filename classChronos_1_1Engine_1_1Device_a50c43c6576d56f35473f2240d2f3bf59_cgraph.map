@@ -1,9 +1,16 @@
 <map id="Chronos::Engine::Device::pickPhysicalDevice" name="Chronos::Engine::Device::pickPhysicalDevice">
-<area shape="rect" id="node1" title="This is the function that picks the best device based on the requirements and features that we requir..." alt="" coords="5,68,185,109"/>
-<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a7eb1b7f1844da31f8c3dd350c04f3812" title="Gets the maxmimum supported MSAA sample count." alt="" coords="233,35,463,76"/>
-<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a5d1bdae6108eaaf072fe2619be7123d8" title="Checks if the physical device that we provide it is suitable for our needs." alt="" coords="253,100,443,141"/>
-<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a984181461b9c5fcc9a52c817deb01ed8" title="Checks if the physical device that we provide it supports the extestions we need. This is used to che..." alt="" coords="511,5,729,47"/>
-<area shape="rect" id="node5" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="519,71,721,112"/>
-<area shape="rect" id="node6" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="777,100,997,141"/>
-<area shape="rect" id="node7" href="$namespaceChronos_1_1Engine.html#a76f8a7e2a71632ea17aacab0fb642fba" title="For a given swapchain mode, it gets the capabilites, formats and present modes." alt="" coords="517,188,723,229"/>
+<area shape="rect" id="Node000001" title="This is the function that picks the best device based on the requirements and features that we requir..." alt="" coords="5,61,185,101"/>
+<area shape="rect" id="Node000002" href="$device_8cpp.html#a9e3260fe93033edb2c6860770f67007b" title="Gets the maxmimum supported MSAA sample count." alt="" coords="233,43,436,68"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,69,220,65,220,70,186,74"/>
+<area shape="rect" id="Node000003" href="$device_8cpp.html#a6fb853f36e09aa82c9304572c1ce6680" title="Checks if the physical device that we provide it is suitable for our needs." alt="" coords="269,92,400,117"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,87,256,94,255,99,185,92"/>
+<area shape="rect" id="Node000004" href="$device_8cpp.html#aacd08f5c1846257e384e3e45cccfa09f" title="Checks if the physical device that we provide it supports the extestions we need. This is used to che..." alt="" coords="484,5,703,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="399,90,435,77,458,59,468,50,483,41,505,32,507,37,485,46,471,54,462,63,437,82,401,95"/>
+<area shape="rect" id="Node000005" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="493,55,694,95"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="400,95,479,86,479,91,401,100"/>
+<area shape="rect" id="Node000006" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="751,85,971,125"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="400,103,484,105,703,105,737,104,737,110,703,110,484,110,400,109"/>
+<area shape="rect" id="Node000007" href="$namespaceChronos_1_1Engine.html#a76f8a7e2a71632ea17aacab0fb642fba" title="For a given swapchain mode, it gets the capabilites, formats and present modes." alt="" coords="490,170,697,210"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="375,115,520,163,518,168,373,120"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="695,84,737,88,737,94,694,89"/>
 </map>

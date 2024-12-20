@@ -1,8 +1,13 @@
 <map id="Chronos::Engine::Buffer::copy" name="Chronos::Engine::Buffer::copy">
-<area shape="rect" id="node1" title="Copies the data to the buffer." alt="" coords="5,100,180,141"/>
-<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675" title="Copies data from one buffer to another." alt="" coords="233,78,438,105"/>
-<area shape="rect" id="node5" href="$namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a" title="Creates a buffer of a given size, usage and properties." alt="" coords="228,133,443,159"/>
-<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="507,5,717,47"/>
-<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c" title="Ends recording of single time command buffer and destroys it." alt="" coords="513,71,711,112"/>
-<area shape="rect" id="node6" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="491,137,733,163"/>
+<area shape="rect" id="Node000001" title="Copies the data to the buffer." alt="" coords="5,99,180,139"/>
+<area shape="rect" id="Node000002" href="$namespaceChronos_1_1Engine.html#add086c77dfa54dbe0c1aedd43fcf8675" title="Copies data from one buffer to another." alt="" coords="233,77,438,102"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,105,219,101,219,106,181,111"/>
+<area shape="rect" id="Node000005" href="$namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a" title="Creates a buffer of a given size, usage and properties." alt="" coords="228,130,443,155"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="181,125,215,128,214,133,180,130"/>
+<area shape="rect" id="Node000003" href="$namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="507,5,717,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="391,74,511,46,512,51,392,79"/>
+<area shape="rect" id="Node000004" href="$namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c" title="Ends recording of single time command buffer and destroys it." alt="" coords="513,69,711,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="438,87,499,87,499,92,438,92"/>
+<area shape="rect" id="Node000006" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="491,134,733,159"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="443,142,477,142,477,147,443,147"/>
 </map>

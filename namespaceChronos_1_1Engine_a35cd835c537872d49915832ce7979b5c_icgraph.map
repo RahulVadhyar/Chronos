@@ -1,4 +1,0 @@
-<map id="Chronos::Engine::getRequiredExtensions" name="Chronos::Engine::getRequiredExtensions">
-<area shape="rect" id="node1" title="Gets the required extensions to be enabled." alt="" coords="232,5,447,47"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Engine.html#a4be8d1abd5f346749a04f0c82510965a" title="Creates a vulkan instance." alt="" coords="5,5,184,47"/>
-</map>

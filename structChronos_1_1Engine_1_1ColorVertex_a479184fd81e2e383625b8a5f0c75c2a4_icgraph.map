@@ -1,0 +1,5 @@
+<map id="Chronos::Engine::ColorVertex::getAttributeDescriptions" name="Chronos::Engine::ColorVertex::getAttributeDescriptions">
+<area shape="rect" id="Node000001" title="Generates the VkVertexInputAttributeDescription for the vertex based on pos attribute of the vertex." alt="" coords="285,5,496,45"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1ColoredRectangle.html#a68a81189199bd34052a33618db7f6a76" title=" " alt="" coords="5,5,237,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="271,28,237,28,237,23,271,23"/>
+</map>

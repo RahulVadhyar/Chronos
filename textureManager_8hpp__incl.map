@@ -1,0 +1,21 @@
+<map id="Source/Rendering/textureManager.hpp" name="Source/Rendering/textureManager.hpp">
+<area shape="rect" id="Node000001" title="Contains the class for managing textures in the Chronos::Engine namespace." alt="" coords="209,5,395,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="227,93,278,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="292,47,269,83,265,80,288,44"/>
+<area shape="rect" id="Node000003" href="$texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="303,93,400,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="316,44,339,80,335,83,312,47"/>
+<area shape="rect" id="Node000004" href="$device_8hpp.html" title="Contains the Device class." alt="" coords="305,167,398,192"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="354,119,354,153,349,153,349,119"/>
+<area shape="rect" id="Node000005" href="$vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="278,240,425,265"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="354,192,354,226,349,226,349,192"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,313,116,339"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="305,268,121,313,120,307,304,263"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="140,313,240,339"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="326,268,230,310,228,305,324,263"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="264,313,439,339"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="354,266,354,300,349,300,349,266"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="463,313,567,339"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="379,263,477,305,475,310,377,268"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="592,313,809,339"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="408,263,632,308,630,313,407,268"/>
+</map>

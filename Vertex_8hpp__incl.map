@@ -1,0 +1,15 @@
+<map id="Source/Rendering/Objects/Vertex.hpp" name="Source/Rendering/Objects/Vertex.hpp">
+<area shape="rect" id="Node000001" title="This file includes the structure of a vertex." alt="" coords="257,5,446,45"/>
+<area shape="rect" id="Node000002" href="$vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="278,93,425,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="354,46,354,79,349,79,349,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,116,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="305,121,121,166,120,161,304,116"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="140,167,240,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="326,121,230,163,228,159,324,116"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="264,167,439,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="354,119,354,153,349,153,349,119"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="463,167,567,192"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="379,116,477,159,475,164,377,121"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="592,167,809,192"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="408,116,632,161,630,167,407,121"/>
+</map>

@@ -1,17 +1,18 @@
 var searchData=
 [
-  ['imageavailablesemaphores_189',['imageAvailableSemaphores',['../classChronos_1_1Engine_1_1Engine.html#a0ef741eacc3bb47a8dcd4aab0b530c2e',1,'Chronos::Engine::Engine']]],
-  ['imgui_5fdefine_5fmath_5foperators_190',['IMGUI_DEFINE_MATH_OPERATORS',['../editorHeaders_8hpp.html#adf4d73301961430d50d7edd96f92ce38',1,'editorHeaders.hpp']]],
-  ['indexbuffer_191',['indexBuffer',['../classChronos_1_1Engine_1_1Shape.html#aec5b864443b585a866abbafd0b2da6b4',1,'Chronos::Engine::Shape']]],
-  ['indexbuffers_192',['indexBuffers',['../classChronos_1_1Engine_1_1Polygon.html#aadc28f12e9d8cb099de22138de72f625',1,'Chronos::Engine::Polygon']]],
-  ['indices_193',['indices',['../classChronos_1_1Engine_1_1Polygon.html#a42c6e3c28c4712042169d42312445b09',1,'Chronos::Engine::Polygon::indices()'],['../classChronos_1_1Engine_1_1Shape.html#ad8ca995c2bc957c325661aed8a3a855c',1,'Chronos::Engine::Shape::indices()']]],
-  ['inflightfences_194',['inFlightFences',['../classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5',1,'Chronos::Engine::Engine']]],
-  ['init_195',['init',['../classChronos_1_1Engine_1_1ObjectManager.html#a0ba9500496ff88214ea2343c48c477cc',1,'Chronos::Engine::ObjectManager::init()'],['../classChronos_1_1Engine_1_1TextureManager.html#a70c1b42ec1ab0e2858dbe29229578f2e',1,'Chronos::Engine::TextureManager::init()'],['../classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420',1,'Chronos::Engine::Text::init()'],['../classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe',1,'Chronos::Engine::SwapChain::init()'],['../classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e',1,'Chronos::Engine::Polygon::init()'],['../classChronos_1_1Engine_1_1Object.html#a2ff58729143a63b536fcd06e890b514e',1,'Chronos::Engine::Object::init()'],['../classChronos_1_1Engine_1_1Device.html#a66e307ea98c1eb761c90b4acd9c3752a',1,'Chronos::Engine::Device::init()'],['../classChronos_1_1Editor_1_1EditorRenderer.html#ab6b8e3b3ca6428b4ddc27df62584ecf5',1,'Chronos::Editor::EditorRenderer::init()'],['../classChronos_1_1Editor_1_1EditorManager.html#ae28f6a26ba542f66491d5326ad1c7f79',1,'Chronos::Editor::EditorManager::init()']]],
-  ['initializer_196',['Initializer',['../structChronos_1_1Manager_1_1Initializer.html',1,'Chronos::Manager']]],
-  ['initvulkan_197',['initVulkan',['../classChronos_1_1Engine_1_1Engine.html#a087a97e8ab427e73745b6fe7bb449340',1,'Chronos::Engine::Engine']]],
-  ['initwindow_198',['initWindow',['../classChronos_1_1Engine_1_1Engine.html#a3be23c5c76ba6d586a0fb29433f37771',1,'Chronos::Engine::Engine']]],
-  ['instance_199',['instance',['../classChronos_1_1Engine_1_1Engine.html#a14231fd3132dee3c7c675b8d1bfd10b9',1,'Chronos::Engine::Engine']]],
-  ['iscomplete_200',['isComplete',['../structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f',1,'Chronos::Engine::QueueFamilyIndices']]],
-  ['isdevicesuitable_201',['isDeviceSuitable',['../namespaceChronos_1_1Engine.html#a5d1bdae6108eaaf072fe2619be7123d8',1,'Chronos::Engine']]],
-  ['iswindowfullscreen_202',['isWindowFullscreen',['../classChronos_1_1Editor_1_1EditorManager.html#a0a36a41cb12c5a466f4f3c121d640b3e',1,'Chronos::Editor::EditorManager']]]
+  ['handling_0',['Input and Window handling',['../md_docs_2Working.html#autotoc_md75',1,'']]],
+  ['height_1',['height',['../structChronos_1_1Manager_1_1TextureDetails.html#a31ecddfb74850b47f59beac60f327fdc',1,'Chronos::Manager::TextureDetails::height'],['../classChronos_1_1Engine_1_1Engine.html#a73a8aefde9c16bbe8b4bbd770cba5981',1,'Chronos::Engine::Engine::height'],['../classChronos_1_1Engine_1_1Texture.html#a018e6a6312544cbe2e850f773df7ebc9',1,'Chronos::Engine::Texture::height']]],
+  ['helper_2ecpp_2',['helper.cpp',['../helper_8cpp.html',1,'']]],
+  ['helper_2ehpp_3',['helper.hpp',['../helper_8hpp.html',1,'']]],
+  ['how_20cmake_20builds_20chronos_4',['How CMake builds Chronos',['../md_docs_2Working.html#autotoc_md85',1,'']]],
+  ['how_20it_20works_5',['How It works',['../md_docs_2Working.html',1,'']]],
+  ['how_20the_20api_20works_6',['How the API works',['../md_docs_2Working.html#autotoc_md74',1,'']]],
+  ['how_20the_20editor_20is_20integrated_7',['How the editor is integrated',['../md_docs_2Working.html#autotoc_md84',1,'']]],
+  ['how_20the_20tt_20engine_20tt_20works_8',['How the &lt;tt&gt;engine&lt;/tt&gt; works',['../md_docs_2Working.html#autotoc_md76',1,'']]],
+  ['how_20to_20file_20an_20issue_9',['How to file an issue',['../index.html#autotoc_md96',1,'']]],
+  ['how_20to_20get_20started_10',['How to get Started',['../md_docs_2APIUsage.html#autotoc_md3',1,'']]],
+  ['how_20to_20profile_11',['How to profile',['../md_docs_2APIUsage.html#autotoc_md7',1,'']]],
+  ['how_20to_20use_12',['How To Use',['../index.html#autotoc_md95',1,'']]],
+  ['how_20to_20use_20editor_20for_20development_13',['How to use editor for development',['../md_docs_2APIUsage.html#autotoc_md8',1,'']]],
+  ['hpp_14',['earcut.hpp',['../md_docs_2LibrariesUsed.html#autotoc_md43',1,'']]]
 ];

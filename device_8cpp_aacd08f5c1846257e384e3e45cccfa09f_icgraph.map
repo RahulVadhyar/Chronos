@@ -1,0 +1,9 @@
+<map id="checkDeviceExtensionSupport" name="checkDeviceExtensionSupport">
+<area shape="rect" id="Node000001" title="Checks if the physical device that we provide it supports the extestions we need. This is used to che..." alt="" coords="640,13,859,38"/>
+<area shape="rect" id="Node000002" href="$device_8cpp.html#a6fb853f36e09aa82c9304572c1ce6680" title="Checks if the physical device that we provide it is suitable for our needs." alt="" coords="461,13,592,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="627,28,592,28,592,23,627,23"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Engine_1_1Device.html#a50c43c6576d56f35473f2240d2f3bf59" title="This is the function that picks the best device based on the requirements and features that we requir..." alt="" coords="233,5,413,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="448,28,413,28,413,23,448,23"/>
+<area shape="rect" id="Node000004" href="$classChronos_1_1Engine_1_1Device.html#a66e307ea98c1eb761c90b4acd9c3752a" title="This is the function that initializes the devices and queues." alt="" coords="5,5,185,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="219,28,185,28,185,23,219,23"/>
+</map>

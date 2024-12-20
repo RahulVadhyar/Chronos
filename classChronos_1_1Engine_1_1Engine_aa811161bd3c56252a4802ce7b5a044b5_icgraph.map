@@ -1,4 +1,5 @@
 <map id="Chronos::Engine::Engine::setPresentMode" name="Chronos::Engine::Engine::setPresentMode">
-<area shape="rect" id="node1" title="Changes the present mode of the swapchain." alt="" coords="259,5,437,47"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Manager_1_1Manager.html#a771cc5ec3e2e0827454ba27fcc8343b0" title="Changes the present mode of the swapchain." alt="" coords="5,5,211,47"/>
+<area shape="rect" id="Node000001" title="Changes the present mode of the swapchain." alt="" coords="259,5,437,45"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Manager_1_1Manager.html#a771cc5ec3e2e0827454ba27fcc8343b0" title="Changes the present mode of the swapchain." alt="" coords="5,5,211,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,28,211,28,211,23,245,23"/>
 </map>

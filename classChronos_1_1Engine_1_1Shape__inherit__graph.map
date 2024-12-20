@@ -1,6 +1,0 @@
-<map id="Chronos::Engine::Shape&lt; VertexStruct &gt;" name="Chronos::Engine::Shape&lt; VertexStruct &gt;">
-<area shape="rect" id="node1" title="Class for creating a shape(triangle, rectangle, etc.)." alt="" coords="231,39,405,80"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Rectangle.html" title="Class for creating a rectangle." alt="" coords="453,5,653,47"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Triangle.html" title="Class for creating a triangle." alt="" coords="460,71,647,112"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects." alt="" coords="5,46,183,73"/>
-</map>

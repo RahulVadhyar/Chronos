@@ -1,0 +1,11 @@
+<map id="Chronos::Engine::Buffer::copy" name="Chronos::Engine::Buffer::copy">
+<area shape="rect" id="Node000001" title="Copies the data to the buffer." alt="" coords="497,37,672,77"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1TexturedRectangle.html#a397eb23ee83b9fbc6b0fbf5a89bd2114" title=" " alt="" coords="259,5,449,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="484,46,449,41,450,36,484,41"/>
+<area shape="rect" id="Node000004" href="$classChronos_1_1Engine_1_1ColoredRectangle.html#a17bf527c6f63feec36996d10cb9afbab" title=" " alt="" coords="261,69,447,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="484,74,447,79,447,74,484,69"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Manager_1_1Manager.html#a3134f2a38f825a58b71f270bce2a0b20" title="Adds a textured rectangle to the window." alt="" coords="5,5,211,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="245,28,211,28,211,23,245,23"/>
+<area shape="rect" id="Node000005" href="$classChronos_1_1Manager_1_1Manager.html#af0a5e7e2f2509f471495e72c861c9d48" title="Adds a soild color rectangle to the window." alt="" coords="5,69,211,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="247,92,211,92,211,87,247,87"/>
+</map>

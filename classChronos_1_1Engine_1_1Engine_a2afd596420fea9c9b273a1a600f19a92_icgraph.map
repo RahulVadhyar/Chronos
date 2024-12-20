@@ -1,6 +1,9 @@
 <map id="Chronos::Engine::Engine::resizeFrameBuffer" name="Chronos::Engine::Engine::resizeFrameBuffer">
-<area shape="rect" id="node1" title="Tells the engine that the window has to be resized. This is called by GLFW." alt="" coords="700,5,879,47"/>
-<area shape="rect" id="node2" href="$engine_8cpp.html#ad93fffd8512961d3c6e7fc0bf9cec3e1" title=" " alt="" coords="459,13,652,39"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Engine.html#a3be23c5c76ba6d586a0fb29433f37771" title="This function initializes the GLFW window." alt="" coords="232,5,411,47"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Engine.html#a66c6b72176c3e93affdb0018eb137801" title="Initlizes the engine." alt="" coords="5,5,184,47"/>
+<area shape="rect" id="Node000001" title="Tells the engine that the window has to be resized. This is called by GLFW." alt="" coords="700,5,879,45"/>
+<area shape="rect" id="Node000002" href="$engine_8cpp.html#ad93fffd8512961d3c6e7fc0bf9cec3e1" title=" " alt="" coords="459,13,652,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="686,28,652,28,652,23,686,23"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Engine_1_1Engine.html#a3be23c5c76ba6d586a0fb29433f37771" title="This function initializes the GLFW window." alt="" coords="232,5,411,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="445,28,411,28,411,23,445,23"/>
+<area shape="rect" id="Node000004" href="$classChronos_1_1Engine_1_1Engine.html#a66c6b72176c3e93affdb0018eb137801" title="Initlizes the engine." alt="" coords="5,5,184,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="218,28,184,28,184,23,218,23"/>
 </map>

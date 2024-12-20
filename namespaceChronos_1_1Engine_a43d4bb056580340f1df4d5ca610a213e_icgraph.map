@@ -1,5 +1,11 @@
 <map id="Chronos::Engine::createFramebuffer" name="Chronos::Engine::createFramebuffer">
-<area shape="rect" id="node1" title="Creates a set of framebuffers for use." alt="" coords="280,46,535,73"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Editor_1_1EditorRenderer.html#ab6b8e3b3ca6428b4ddc27df62584ecf5" title=" " alt="" coords="5,5,232,47"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Editor_1_1EditorRenderer.html#a6224de7dd3e126522b93c2f86298e070" title=" " alt="" coords="5,71,232,112"/>
+<area shape="rect" id="Node000001" title="Creates a set of framebuffers for use." alt="" coords="288,109,543,134"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1ObjectManager.html#aac938f6819d7beccf4040ee28fc96acf" title=" " alt="" coords="5,5,240,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="368,106,239,60,200,48,201,43,241,55,370,101"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Editor_1_1EditorRenderer.html#ab6b8e3b3ca6428b4ddc27df62584ecf5" title=" " alt="" coords="9,69,236,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="285,110,236,104,236,99,286,104"/>
+<area shape="rect" id="Node000004" href="$classChronos_1_1Editor_1_1EditorRenderer.html#a6224de7dd3e126522b93c2f86298e070" title=" " alt="" coords="9,133,236,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="286,138,236,144,236,138,285,133"/>
+<area shape="rect" id="Node000005" href="$classChronos_1_1Engine_1_1ObjectManager.html#a1982ee4c7a784a7c0bc390567137a882" title=" " alt="" coords="5,197,240,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="370,142,241,188,201,200,200,195,239,183,368,137"/>
 </map>

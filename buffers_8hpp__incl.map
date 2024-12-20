@@ -1,0 +1,17 @@
+<map id="Source/Rendering/buffers.hpp" name="Source/Rendering/buffers.hpp">
+<area shape="rect" id="Node000001" title="Contains the Buffer and UniformBuffer class." alt="" coords="245,5,458,31"/>
+<area shape="rect" id="Node000002" href="$device_8hpp.html" title="Contains the Device class." alt="" coords="305,79,398,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="354,31,354,65,349,65,349,31"/>
+<area shape="rect" id="Node000003" href="$vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="278,152,425,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="354,104,354,138,349,138,349,104"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,225,116,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="305,180,121,225,120,219,304,175"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="140,225,240,251"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="326,180,230,222,228,217,324,175"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="264,225,439,251"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="354,178,354,212,349,212,349,178"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="463,225,567,251"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="379,175,477,217,475,222,377,180"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="592,225,809,251"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="408,175,632,220,630,225,407,180"/>
+</map>

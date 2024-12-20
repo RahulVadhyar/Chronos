@@ -1,7 +1,0 @@
-<map id="Chronos::Engine::isDeviceSuitable" name="Chronos::Engine::isDeviceSuitable">
-<area shape="rect" id="node1" title="Checks if the physical device that we provide it is suitable for our needs." alt="" coords="5,100,196,141"/>
-<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a984181461b9c5fcc9a52c817deb01ed8" title="Checks if the physical device that we provide it supports the extestions we need. This is used to che..." alt="" coords="244,5,463,47"/>
-<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="253,71,454,112"/>
-<area shape="rect" id="node4" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="511,100,731,141"/>
-<area shape="rect" id="node5" href="$namespaceChronos_1_1Engine.html#a76f8a7e2a71632ea17aacab0fb642fba" title="For a given swapchain mode, it gets the capabilites, formats and present modes." alt="" coords="250,188,457,229"/>
-</map>

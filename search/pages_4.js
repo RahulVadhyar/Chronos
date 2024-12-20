@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['how_20it_20works_880',['How It works',['../md_docs_Working.html',1,'']]]
+  ['editor_0',['Using the editor',['../md_docs_2UsingEditor.html',1,'']]]
 ];

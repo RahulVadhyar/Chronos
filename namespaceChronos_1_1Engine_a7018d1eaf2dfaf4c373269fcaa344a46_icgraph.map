@@ -1,9 +1,15 @@
 <map id="Chronos::Engine::createImage" name="Chronos::Engine::createImage">
-<area shape="rect" id="node1" title="For a given image dimensons, it creates a VkImage and." alt="" coords="1035,46,1252,73"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="792,5,975,47"/>
-<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e" title="Creates the color images along with the associated objects." alt="" coords="780,71,987,112"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="547,5,710,47"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="259,5,477,47"/>
-<area shape="rect" id="node5" href="$classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32" title="Adds text to the window." alt="" coords="5,5,211,47"/>
-<area shape="rect" id="node7" href="$classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe" title="Initilize the swapchain." alt="" coords="525,71,732,112"/>
+<area shape="rect" id="Node000001" title="For a given image dimensons, it creates a VkImage and." alt="" coords="768,77,985,102"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1Texture.html#accfd25e3bcc5051ca1e4bf26cac71a98" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="525,5,708,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="810,76,698,48,699,43,811,71"/>
+<area shape="rect" id="Node000005" href="$classChronos_1_1Engine_1_1Texture.html#a1616c3aa51be3139d2edfa5ac5e1bdc1" title="Create the texture by loading the texture from the given raw data." alt="" coords="525,69,708,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="754,92,708,92,708,87,754,87"/>
+<area shape="rect" id="Node000006" href="$classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e" title="Creates the color images along with the associated objects." alt="" coords="513,133,720,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="811,108,699,136,698,131,810,103"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="281,5,443,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="511,28,443,28,443,23,511,23"/>
+<area shape="rect" id="Node000004" href="$classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32" title="Adds text to the window." alt="" coords="5,5,211,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="267,28,211,28,211,23,267,23"/>
+<area shape="rect" id="Node000007" href="$classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe" title="Initilize the swapchain." alt="" coords="259,133,465,173"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="500,156,466,156,466,151,500,151"/>
 </map>

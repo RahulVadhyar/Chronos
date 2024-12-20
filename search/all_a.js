@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['libraries_20used_209',['Libraries Used',['../md_docs_LibrariesUsed.html',1,'']]],
-  ['librariesused_2emd_210',['LibrariesUsed.md',['../LibrariesUsed_8md.html',1,'']]],
-  ['log_211',['LOG',['../logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a',1,'logging.hpp']]],
-  ['logging_2ehpp_212',['logging.hpp',['../logging_8hpp.html',1,'']]]
+  ['jpg_20files_20are_20supported_0',['Note: Only png and jpg files are supported.',['../classChronos_1_1Manager_1_1Manager.html#autotoc_md88',1,'']]]
 ];

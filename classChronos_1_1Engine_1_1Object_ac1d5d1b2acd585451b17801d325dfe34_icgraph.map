@@ -1,0 +1,15 @@
+<map id="Chronos::Engine::Object::init" name="Chronos::Engine::Object::init">
+<area shape="rect" id="Node000001" title="Initializes the object." alt="" coords="497,69,675,109"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1TexturedRectangle.html#a397eb23ee83b9fbc6b0fbf5a89bd2114" title=" " alt="" coords="259,5,449,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="499,68,426,48,428,43,500,63"/>
+<area shape="rect" id="Node000004" href="$classChronos_1_1Engine_1_1ColoredRectangle.html#a17bf527c6f63feec36996d10cb9afbab" title=" " alt="" coords="261,69,447,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="484,92,447,92,447,87,484,87"/>
+<area shape="rect" id="Node000006" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="273,133,435,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="500,116,428,136,426,131,499,110"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Manager_1_1Manager.html#a3134f2a38f825a58b71f270bce2a0b20" title="Adds a textured rectangle to the window." alt="" coords="5,5,211,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="245,28,211,28,211,23,245,23"/>
+<area shape="rect" id="Node000005" href="$classChronos_1_1Manager_1_1Manager.html#af0a5e7e2f2509f471495e72c861c9d48" title="Adds a soild color rectangle to the window." alt="" coords="5,69,211,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="247,92,211,92,211,87,247,87"/>
+<area shape="rect" id="Node000007" href="$classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32" title="Adds text to the window." alt="" coords="5,133,211,173"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="259,156,211,156,211,151,259,151"/>
+</map>

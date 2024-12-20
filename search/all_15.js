@@ -1,9 +1,19 @@
 var searchData=
 [
-  ['width_427',['width',['../structChronos_1_1Manager_1_1TextureDetails.html#a82e3a256b07bb2aec81ad25605e13d3c',1,'Chronos::Manager::TextureDetails::width()'],['../classChronos_1_1Engine_1_1Engine.html#ae79484eb3130b4251c2fc43179fac68c',1,'Chronos::Engine::Engine::width()'],['../classChronos_1_1Engine_1_1Texture.html#abb16361208c9467e809f4986e56c5304',1,'Chronos::Engine::Texture::width()']]],
-  ['window_428',['window',['../classChronos_1_1Editor_1_1EditorRenderer.html#adde0f6b4557e706d7dbf4c3b7ecc099e',1,'Chronos::Editor::EditorRenderer::window()'],['../classChronos_1_1Engine_1_1Engine.html#a489c5250f3c8e92c72e3c2240586e642',1,'Chronos::Engine::Engine::window()'],['../classChronos_1_1Engine_1_1SwapChain.html#ab319157d8020fdce9f8f4d5640be3786',1,'Chronos::Engine::SwapChain::window()']]],
-  ['windowheight_429',['WindowHeight',['../structChronos_1_1Manager_1_1Initializer.html#a5b4aae219fd3a1074b7fc164a5eb084e',1,'Chronos::Manager::Initializer']]],
-  ['windowtitle_430',['windowTitle',['../classChronos_1_1Editor_1_1EditorManager.html#aa6cc989e6fb30ee8270253b625f66c2c',1,'Chronos::Editor::EditorManager']]],
-  ['windowwidth_431',['WindowWidth',['../structChronos_1_1Manager_1_1Initializer.html#a6e5b05085029f176abc15e6338217dbc',1,'Chronos::Manager::Initializer']]],
-  ['working_2emd_432',['Working.md',['../Working_8md.html',1,'']]]
+  ['uniformbuffer_0',['UniformBuffer',['../classChronos_1_1Engine_1_1UniformBuffer.html',1,'Chronos::Engine']]],
+  ['uniformbufferobject_1',['UniformBufferObject',['../structChronos_1_1Engine_1_1UniformBufferObject.html',1,'Chronos::Engine']]],
+  ['uniformbuffers_2',['uniformBuffers',['../classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c',1,'Chronos::Engine::Object']]],
+  ['uniformcolorbufferobject_3',['UniformColorBufferObject',['../structChronos_1_1Engine_1_1UniformColorBufferObject.html',1,'Chronos::Engine']]],
+  ['unix_20like_20systems_4',['For Linux and Unix Like Systems',['../md_docs_2build.html#autotoc_md16',1,'']]],
+  ['update_5',['update',['../classChronos_1_1Engine_1_1Text.html#a5a7f87b29653fa68cbb58624c4d88865',1,'Chronos::Engine::Text::update()'],['../classChronos_1_1Engine_1_1TexturedRectangle.html#a17c34ee1915a4afb82fba373b5d45916',1,'Chronos::Engine::TexturedRectangle::update()'],['../classChronos_1_1Engine_1_1ColoredRectangle.html#aa7d475a4c33cc6de6bd77aae260d859f',1,'Chronos::Engine::ColoredRectangle::update()'],['../classChronos_1_1Engine_1_1ObjectManager.html#adee50706b6a218b0ded75d91c98f5289',1,'Chronos::Engine::ObjectManager::update()'],['../classChronos_1_1Engine_1_1Object.html#aa32fe5592512c1fa8534aed8cb2797ef',1,'Chronos::Engine::Object::update()'],['../classChronos_1_1Engine_1_1ColorBuffer.html#a280ddeb2524307345682f309a6687b92',1,'Chronos::Engine::ColorBuffer::update()'],['../classChronos_1_1Engine_1_1UniformBuffer.html#a48ca4058bc14c74797334acde22d83f7',1,'Chronos::Engine::UniformBuffer::update()'],['../classChronos_1_1Editor_1_1EditorRenderer.html#afa6b345a8d8d825f5ced32bf2ce0b281',1,'Chronos::Editor::EditorRenderer::update()']]],
+  ['updatebuffer_6',['updateBuffer',['../classChronos_1_1Engine_1_1Text.html#af6c9c55875f534f424a637ffb8f754f8',1,'Chronos::Engine::Text']]],
+  ['updatekeyframes_7',['updateKeyframes',['../classChronos_1_1Editor_1_1EditorManager.html#a09985e79ffab7fb8d1f6788166091d92',1,'Chronos::Editor::EditorManager']]],
+  ['updateshape_8',['updateShape',['../classChronos_1_1Manager_1_1Manager.html#a1f9b5c17b08013b614620d960c371b06',1,'Chronos::Manager::Manager']]],
+  ['updatetext_9',['updateText',['../classChronos_1_1Manager_1_1Manager.html#a1af86b0db6b4dbb5ee71b7bcc02d1b54',1,'Chronos::Manager::Manager']]],
+  ['usage_10',['API Usage',['../md_docs_2APIUsage.html',1,'']]],
+  ['use_11',['How To Use',['../index.html#autotoc_md95',1,'']]],
+  ['use_20editor_20for_20development_12',['How to use editor for development',['../md_docs_2APIUsage.html#autotoc_md8',1,'']]],
+  ['used_13',['used',['../md_docs_2LibrariesUsed.html',1,'Libraries Used'],['../index.html#autotoc_md97',1,'Libraries used']]],
+  ['using_20the_20editor_14',['Using the editor',['../md_docs_2UsingEditor.html',1,'']]],
+  ['usingeditor_2emd_15',['UsingEditor.md',['../UsingEditor_8md.html',1,'']]]
 ];

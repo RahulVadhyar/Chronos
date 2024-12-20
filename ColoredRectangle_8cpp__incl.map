@@ -1,0 +1,38 @@
+<map id="Source/Rendering/Objects/Rectangle/ColoredRectangle.cpp" name="Source/Rendering/Objects/Rectangle/ColoredRectangle.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="426,5,663,45"/>
+<area shape="rect" id="Node000002" href="$ColoredRectangle_8hpp.html" title="Contains the class for creating a rectangle filled with texture." alt="" coords="402,93,567,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="532,47,504,84,500,81,528,44"/>
+<area shape="rect" id="Node000017" href="$engineStructs_8hpp.html" title="Contains ShapeParams and UniformBufferObject structs." alt="" coords="561,313,699,339"/>
+<area shape="poly" id="edge18_Node000001_Node000017" title=" " alt="" coords="563,44,602,96,621,130,635,166,642,202,643,239,637,300,632,300,638,238,637,203,630,167,616,132,598,99,559,47"/>
+<area shape="rect" id="Node000003" href="$object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="234,167,325,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="453,121,326,165,325,160,451,116"/>
+<area shape="rect" id="Node000014" href="$Vertex_8hpp.html" title="This file includes the structure of a vertex." alt="" coords="401,313,493,339"/>
+<area shape="poly" id="edge14_Node000002_Node000014" title=" " alt="" coords="480,120,469,142,459,167,449,239,449,300,443,300,444,239,454,166,464,140,475,118"/>
+<area shape="rect" id="Node000015" href="$commonStructs_8hpp.html" title="Header file that contains common structs used in Chronos." alt="" coords="469,167,621,192"/>
+<area shape="poly" id="edge16_Node000002_Node000015" title=" " alt="" coords="497,117,528,154,524,158,493,121"/>
+<area shape="rect" id="Node000004" href="$swapchain_8hpp.html" title="Contains the swapChain class along with all the swapChain related functions." alt="" coords="5,240,124,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="246,195,113,238,112,233,244,189"/>
+<area shape="rect" id="Node000012" href="$objectTypes_8hpp.html" title=" " alt="" coords="148,240,275,265"/>
+<area shape="poly" id="edge11_Node000003_Node000012" title=" " alt="" coords="270,194,234,232,230,228,266,190"/>
+<area shape="rect" id="Node000013" href="$buffers_8hpp.html" title="Contains the Buffer and UniformBuffer class." alt="" coords="299,240,393,265"/>
+<area shape="poly" id="edge12_Node000003_Node000013" title=" " alt="" coords="292,191,328,228,324,232,288,194"/>
+<area shape="rect" id="Node000005" href="$device_8hpp.html" title="Contains the Device class." alt="" coords="283,313,377,339"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="108,263,274,307,273,312,107,268"/>
+<area shape="rect" id="Node000006" href="$vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="374,387,521,412"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="350,336,418,377,415,382,347,341"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="101,460,212,485"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="401,415,217,459,216,454,400,409"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="236,460,336,485"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="422,414,326,457,324,452,420,410"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="360,460,535,485"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="450,412,450,446,445,446,445,412"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="559,460,663,485"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="475,410,573,452,571,457,473,414"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="688,460,905,485"/>
+<area shape="poly" id="edge10_Node000006_Node000011" title=" " alt="" coords="504,409,728,455,726,460,503,415"/>
+<area shape="poly" id="edge13_Node000013_Node000005" title=" " alt="" coords="346,266,338,301,333,300,341,265"/>
+<area shape="poly" id="edge15_Node000014_Node000006" title=" " alt="" coords="450,339,450,373,445,373,445,339"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="517,240,573,265"/>
+<area shape="poly" id="edge17_Node000015_Node000016" title=" " alt="" coords="547,192,547,226,542,226,542,192"/>
+<area shape="poly" id="edge19_Node000017_Node000006" title=" " alt="" coords="602,341,491,384,489,379,600,336"/>
+</map>

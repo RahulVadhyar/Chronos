@@ -1,4 +1,5 @@
 <map id="Chronos::Engine::getFontType" name="Chronos::Engine::getFontType">
-<area shape="rect" id="node1" title=" " alt="" coords="259,13,473,39"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32" title="Adds text to the window." alt="" coords="5,5,211,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="259,13,473,38"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32" title="Adds text to the window." alt="" coords="5,5,211,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,28,211,28,211,23,245,23"/>
 </map>

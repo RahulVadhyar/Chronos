@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['build_20instructions_876',['Build Instructions',['../md_docs_build.html',1,'']]]
+  ['api_20usage_0',['API Usage',['../md_docs_2APIUsage.html',1,'']]]
 ];

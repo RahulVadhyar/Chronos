@@ -1,5 +1,0 @@
-<map id="Chronos::Manager::Manager::addPolygon" name="Chronos::Manager::Manager::addPolygon">
-<area shape="rect" id="node1" title="Adds a textured shape(triangle or rectangle) to the window." alt="" coords="5,39,211,80"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1TextureManager.html#a7e9cdd7e6b0020c9475aad5513e15e46" title="Gets the texture from the texture manager." alt="" coords="270,5,453,47"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Manager_1_1Manager.html#af60e123e44b2f72401e278a7fc0947fe" title="Returns the details of all textures defined." alt="" coords="259,71,464,112"/>
-</map>

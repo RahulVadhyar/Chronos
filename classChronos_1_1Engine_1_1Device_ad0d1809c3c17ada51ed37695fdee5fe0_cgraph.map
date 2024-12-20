@@ -1,5 +1,7 @@
 <map id="Chronos::Engine::Device::createLogicalDevice" name="Chronos::Engine::Device::createLogicalDevice">
-<area shape="rect" id="node1" title="This creates the logical device." alt="" coords="5,5,185,47"/>
-<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="233,5,435,47"/>
-<area shape="rect" id="node3" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="483,5,703,47"/>
+<area shape="rect" id="Node000001" title="This creates the logical device." alt="" coords="5,5,185,45"/>
+<area shape="rect" id="Node000002" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="233,5,435,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,23,220,23,220,28,186,28"/>
+<area shape="rect" id="Node000003" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="483,5,703,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="435,23,469,23,469,28,435,28"/>
 </map>

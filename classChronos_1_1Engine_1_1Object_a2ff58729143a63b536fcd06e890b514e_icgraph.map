@@ -1,8 +1,0 @@
-<map id="Chronos::Engine::Object::init" name="Chronos::Engine::Object::init">
-<area shape="rect" id="node1" title="Initializes the object." alt="" coords="760,39,937,80"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Polygon.html#a1adbc891708ff947404aa55cd51b577e" title="Initializes the polygon object." alt="" coords="525,5,712,47"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="537,71,700,112"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1PolygonManager.html#a5735e1120cb83960e28b7bf489ee1ae0" title=" " alt="" coords="275,5,461,47"/>
-<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="259,71,477,112"/>
-<area shape="rect" id="node6" href="$classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32" title="Adds text to the window." alt="" coords="5,71,211,112"/>
-</map>

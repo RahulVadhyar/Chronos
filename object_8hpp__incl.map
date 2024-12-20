@@ -1,0 +1,24 @@
+<map id="Source/Rendering/Objects/object.hpp" name="Source/Rendering/Objects/object.hpp">
+<area shape="rect" id="Node000001" title="Contains the class for creating a generic object." alt="" coords="263,5,453,45"/>
+<area shape="rect" id="Node000002" href="$swapchain_8hpp.html" title="Contains the swapChain class along with all the swapChain related functions." alt="" coords="152,93,271,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="324,48,246,89,244,84,322,43"/>
+<area shape="rect" id="Node000010" href="$objectTypes_8hpp.html" title=" " alt="" coords="295,93,421,119"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="361,46,361,79,355,79,355,46"/>
+<area shape="rect" id="Node000011" href="$buffers_8hpp.html" title="Contains the Buffer and UniformBuffer class." alt="" coords="445,93,540,119"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="392,43,462,84,460,89,389,48"/>
+<area shape="rect" id="Node000003" href="$device_8hpp.html" title="Contains the Device class." alt="" coords="305,167,398,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="235,116,318,158,315,163,233,121"/>
+<area shape="rect" id="Node000004" href="$vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="278,240,425,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="354,192,354,226,349,226,349,192"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,313,116,339"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="305,268,121,313,120,307,304,263"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="140,313,240,339"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="326,268,230,310,228,305,324,263"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="264,313,439,339"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="354,266,354,300,349,300,349,266"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="463,313,567,339"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="379,263,477,305,475,310,377,268"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="592,313,809,339"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="408,263,632,308,630,313,407,268"/>
+<area shape="poly" id="edge11_Node000011_Node000003" title=" " alt="" coords="471,121,388,163,385,158,469,116"/>
+</map>

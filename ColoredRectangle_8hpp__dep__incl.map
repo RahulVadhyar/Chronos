@@ -1,0 +1,9 @@
+<map id="Source/Rendering/Objects/Rectangle/ColoredRectangle.hpp" name="Source/Rendering/Objects/Rectangle/ColoredRectangle.hpp">
+<area shape="rect" id="Node000001" title="Contains the class for creating a rectangle filled with texture." alt="" coords="311,5,550,45"/>
+<area shape="rect" id="Node000002" href="$managerShapeFunctions_8cpp.html" title=" " alt="" coords="5,101,288,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="356,52,185,103,184,98,355,47"/>
+<area shape="rect" id="Node000003" href="$ColoredRectangle_8cpp.html" title=" " alt="" coords="312,93,549,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="433,59,433,93,428,93,428,59"/>
+<area shape="rect" id="Node000004" href="$objectManager_8cpp.html" title=" " alt="" coords="573,93,763,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="497,48,617,91,615,96,495,53"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Chronos::Engine::TextureManager::removeTexture" name="Chronos::Engine::TextureManager::removeTexture">
+<area shape="rect" id="Node000001" title="Removes a texture from the texture manager." alt="" coords="5,5,191,45"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1Device.html#a2c581e7cb6a00ef53003a9b8913e5396" title="This is the function that destroys the device." alt="" coords="239,5,419,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,23,225,23,225,28,191,28"/>
+</map>

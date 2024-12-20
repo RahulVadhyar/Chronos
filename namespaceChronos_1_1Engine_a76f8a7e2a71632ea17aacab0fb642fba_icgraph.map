@@ -1,8 +1,27 @@
 <map id="Chronos::Engine::querySwapChainSupport" name="Chronos::Engine::querySwapChainSupport">
-<area shape="rect" id="node1" title="For a given swapchain mode, it gets the capabilites, formats and present modes." alt="" coords="743,39,949,80"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5" title="Creates the swapchain image resources and chooses the optimal settings for given hardware." alt="" coords="488,5,695,47"/>
-<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a5d1bdae6108eaaf072fe2619be7123d8" title="Checks if the physical device that we provide it is suitable for our needs." alt="" coords="496,71,687,112"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe" title="Initilize the swapchain." alt="" coords="233,5,440,47"/>
-<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1Device.html#a50c43c6576d56f35473f2240d2f3bf59" title="This is the function that picks the best device based on the requirements and features that we requir..." alt="" coords="247,71,427,112"/>
-<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1Device.html#a66e307ea98c1eb761c90b4acd9c3752a" title="This is the function that initializes the devices and queues." alt="" coords="5,71,185,112"/>
+<area shape="rect" id="Node000001" title="For a given swapchain mode, it gets the capabilites, formats and present modes." alt="" coords="1007,165,1213,205"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5" title="Creates the swapchain image resources and chooses the optimal settings for given hardware." alt="" coords="752,133,959,173"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="993,173,959,169,959,164,994,168"/>
+<area shape="rect" id="Node000011" href="$device_8cpp.html#a6fb853f36e09aa82c9304572c1ce6680" title="Checks if the physical device that we provide it is suitable for our needs." alt="" coords="790,201,921,226"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="994,201,921,209,921,204,993,196"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Engine_1_1Object.html#ac1d5d1b2acd585451b17801d325dfe34" title="Initializes the object." alt="" coords="512,69,689,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="761,132,680,112,681,107,762,127"/>
+<area shape="rect" id="Node000010" href="$classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe" title="Initilize the swapchain." alt="" coords="497,133,704,173"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="739,156,704,156,704,151,739,151"/>
+<area shape="rect" id="Node000004" href="$classChronos_1_1Engine_1_1TexturedRectangle.html#a397eb23ee83b9fbc6b0fbf5a89bd2114" title=" " alt="" coords="259,5,449,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="509,68,431,48,432,43,510,63"/>
+<area shape="rect" id="Node000006" href="$classChronos_1_1Engine_1_1ColoredRectangle.html#a17bf527c6f63feec36996d10cb9afbab" title=" " alt="" coords="261,69,447,109"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="498,92,447,92,447,87,498,87"/>
+<area shape="rect" id="Node000008" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="273,133,435,173"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="510,115,432,136,431,131,509,110"/>
+<area shape="rect" id="Node000005" href="$classChronos_1_1Manager_1_1Manager.html#a3134f2a38f825a58b71f270bce2a0b20" title="Adds a textured rectangle to the window." alt="" coords="5,5,211,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="245,28,211,28,211,23,245,23"/>
+<area shape="rect" id="Node000007" href="$classChronos_1_1Manager_1_1Manager.html#af0a5e7e2f2509f471495e72c861c9d48" title="Adds a soild color rectangle to the window." alt="" coords="5,69,211,109"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="247,92,211,92,211,87,247,87"/>
+<area shape="rect" id="Node000009" href="$classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32" title="Adds text to the window." alt="" coords="5,133,211,173"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="259,156,211,156,211,151,259,151"/>
+<area shape="rect" id="Node000012" href="$classChronos_1_1Engine_1_1Device.html#a50c43c6576d56f35473f2240d2f3bf59" title="This is the function that picks the best device based on the requirements and features that we requir..." alt="" coords="511,197,691,237"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="776,217,691,219,691,213,776,212"/>
+<area shape="rect" id="Node000013" href="$classChronos_1_1Engine_1_1Device.html#a66e307ea98c1eb761c90b4acd9c3752a" title="This is the function that initializes the devices and queues." alt="" coords="264,197,444,237"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="497,220,444,220,444,215,497,215"/>
 </map>

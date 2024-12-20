@@ -1,5 +1,7 @@
 <map id="Chronos::Engine::UniformBuffer" name="Chronos::Engine::UniformBuffer">
-<area shape="rect" id="node1" title="This is a Uniform buffer for storing the uniform variables in the shaders." alt="" coords="5,171,193,212"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Buffer.html" title="Used to store buffers in GPU." alt="" coords="12,95,187,121"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="9,5,189,32"/>
+<area shape="rect" id="Node000001" title="This is a Uniform buffer for storing the uniform variables in the shaders." alt="" coords="5,168,193,208"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1Buffer.html" title="Used to store buffers in GPU." alt="" coords="12,93,187,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,132,102,168,97,168,97,132"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="9,5,189,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="102,45,102,93,97,93,97,45"/>
 </map>

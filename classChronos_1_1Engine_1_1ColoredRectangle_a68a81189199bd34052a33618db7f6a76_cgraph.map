@@ -1,0 +1,7 @@
+<map id="Chronos::Engine::ColoredRectangle::getPipelineAttributes" name="Chronos::Engine::ColoredRectangle::getPipelineAttributes">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,37,237,77"/>
+<area shape="rect" id="Node000002" href="$structChronos_1_1Engine_1_1ColorVertex.html#a479184fd81e2e383625b8a5f0c75c2a4" title="Generates the VkVertexInputAttributeDescription for the vertex based on pos attribute of the vertex." alt="" coords="285,5,496,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,41,272,37,272,42,238,46"/>
+<area shape="rect" id="Node000003" href="$structChronos_1_1Engine_1_1ColorVertex.html#a277ad5b19e98cccc2a7af28cad3ea5cd" title="Creates a VkVertexInputBindingDescription for the vertex based on the size of the vertex." alt="" coords="285,69,496,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="238,68,272,73,272,78,237,74"/>
+</map>

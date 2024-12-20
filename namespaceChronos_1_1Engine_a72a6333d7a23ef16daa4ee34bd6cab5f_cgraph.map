@@ -1,5 +1,7 @@
 <map id="Chronos::Engine::copyBufferToImage" name="Chronos::Engine::copyBufferToImage">
-<area shape="rect" id="node1" title="Copy data from a buffer to an image." alt="" coords="5,39,211,80"/>
-<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="259,5,469,47"/>
-<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c" title="Ends recording of single time command buffer and destroys it." alt="" coords="265,71,463,112"/>
+<area shape="rect" id="Node000001" title="Copy data from a buffer to an image." alt="" coords="5,37,211,77"/>
+<area shape="rect" id="Node000002" href="$namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="259,5,469,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,42,245,38,246,43,211,47"/>
+<area shape="rect" id="Node000003" href="$namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c" title="Ends recording of single time command buffer and destroys it." alt="" coords="265,69,463,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,68,251,73,251,78,211,73"/>
 </map>

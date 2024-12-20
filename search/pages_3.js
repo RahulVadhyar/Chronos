@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['filing_20issues_879',['Filing Issues',['../md_docs_FilingIssues.html',1,'']]]
+  ['chronos_20v0_200_0',['Chronos(v0.0)',['../index.html',1,'']]],
+  ['contributing_1',['Contributing',['../md_docs_2Contributing.html',1,'']]]
 ];

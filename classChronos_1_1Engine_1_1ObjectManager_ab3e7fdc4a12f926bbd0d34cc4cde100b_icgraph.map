@@ -1,5 +1,0 @@
-<map id="Chronos::Engine::ObjectManager::render" name="Chronos::Engine::ObjectManager::render">
-<area shape="rect" id="node1" title="Renders the objects managed by the ObjectManager." alt="" coords="272,39,507,80"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1PolygonManager.html#a5d0881f297bd7a22252ab2ad2de3ebf7" title="Records the commands needed for rendering the shapes." alt="" coords="21,5,208,47"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1TextManager.html#a394c61ace78db87785baae88de717191" title="Records the commands needed for rendering the text." alt="" coords="5,71,224,112"/>
-</map>

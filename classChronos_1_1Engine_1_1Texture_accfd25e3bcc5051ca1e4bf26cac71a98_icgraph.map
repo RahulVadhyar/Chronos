@@ -1,6 +1,7 @@
 <map id="Chronos::Engine::Texture::create" name="Chronos::Engine::Texture::create">
-<area shape="rect" id="node1" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="736,5,919,47"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="525,5,688,47"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1TextManager.html#aeb7f185a51c653701d1547ac3a16ae1a" title="Adds a font to the text manager." alt="" coords="259,5,477,47"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32" title="Adds text to the window." alt="" coords="5,5,211,47"/>
+<area shape="rect" id="Node000001" title="Create the texture by loading the texture from the given path. Only supports jpg and png images." alt="" coords="469,5,652,45"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1Text.html#a5ee38d9059877491919c5186a7b46420" title="Initializes the font object and creates the necessary objects." alt="" coords="259,5,421,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="455,28,422,28,422,23,455,23"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Manager_1_1Manager.html#a010c08c8c1f1a72d209384fa9147cb32" title="Adds text to the window." alt="" coords="5,5,211,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="245,28,211,28,211,23,245,23"/>
 </map>

@@ -1,26 +1,105 @@
-<map id="Source/Engine/Headers/device.hpp" name="Source/Engine/Headers/device.hpp">
-<area shape="rect" id="node1" title="Contains the Device class." alt="" coords="2130,5,2302,47"/>
-<area shape="rect" id="node2" href="$chronos_8hpp.html" title="Main API for chronos. Any applications should include this file." alt="" coords="844,102,996,129"/>
-<area shape="rect" id="node11" href="$editorRenderer_8cpp.html" title=" " alt="" coords="1021,95,1177,136"/>
-<area shape="rect" id="node12" href="$buffers_8cpp.html" title=" " alt="" coords="1201,95,1364,136"/>
-<area shape="rect" id="node13" href="$device_8cpp.html" title=" " alt="" coords="1388,95,1551,136"/>
-<area shape="rect" id="node14" href="$engine_8cpp.html" title=" " alt="" coords="1575,95,1737,136"/>
-<area shape="rect" id="node15" href="$getFontType_8cpp.html" title=" " alt="" coords="1761,95,1924,136"/>
-<area shape="rect" id="node16" href="$helper_8cpp.html" title=" " alt="" coords="1948,95,2111,136"/>
-<area shape="rect" id="node17" href="$object_8cpp.html" title=" " alt="" coords="2135,95,2297,136"/>
-<area shape="rect" id="node18" href="$polygon_8cpp.html" title=" " alt="" coords="2321,95,2484,136"/>
-<area shape="rect" id="node19" href="$polygonManager_8cpp.html" title=" " alt="" coords="2508,95,2671,136"/>
-<area shape="rect" id="node20" href="$swapchain_8cpp.html" title=" " alt="" coords="2695,95,2857,136"/>
-<area shape="rect" id="node21" href="$text_8cpp.html" title=" " alt="" coords="2881,95,3044,136"/>
-<area shape="rect" id="node22" href="$textManager_8cpp.html" title=" " alt="" coords="3068,95,3231,136"/>
-<area shape="rect" id="node23" href="$texture_8cpp.html" title=" " alt="" coords="3255,95,3417,136"/>
-<area shape="rect" id="node24" href="$textureManager_8cpp.html" title=" " alt="" coords="3441,95,3604,136"/>
-<area shape="rect" id="node3" href="$manager_8cpp.html" title=" " alt="" coords="5,191,232,218"/>
-<area shape="rect" id="node4" href="$managerAnimationFunctions_8cpp.html" title=" " alt="" coords="257,184,458,225"/>
-<area shape="rect" id="node5" href="$managerShapeFunctions_8cpp.html" title=" " alt="" coords="482,184,683,225"/>
-<area shape="rect" id="node6" href="$managerTextFunctions_8cpp.html" title=" " alt="" coords="707,184,909,225"/>
-<area shape="rect" id="node7" href="$managerTextureFunctions_8cpp.html" title=" " alt="" coords="933,184,1134,225"/>
-<area shape="rect" id="node8" href="$editorCodeGenerator_8cpp.html" title=" " alt="" coords="1158,184,1346,225"/>
-<area shape="rect" id="node9" href="$editorMain_8cpp.html" title=" " alt="" coords="1370,184,1526,225"/>
-<area shape="rect" id="node10" href="$editorManager_8cpp.html" title=" " alt="" coords="1550,184,1706,225"/>
+<map id="Source/Rendering/device.hpp" name="Source/Rendering/device.hpp">
+<area shape="rect" id="Node000001" title="Contains the Device class." alt="" coords="1449,5,1660,31"/>
+<area shape="rect" id="Node000002" href="$buffers_8hpp.html" title="Contains the Buffer and UniformBuffer class." alt="" coords="1304,79,1517,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1521,39,1435,81,1433,76,1518,34"/>
+<area shape="rect" id="Node000030" href="$swapchain_8hpp.html" title="Contains the swapChain class along with all the swapChain related functions." alt="" coords="2228,79,2465,104"/>
+<area shape="poly" id="edge38_Node000001_Node000030" title=" " alt="" coords="1674,27,2228,77,2227,82,1674,33"/>
+<area shape="rect" id="Node000038" href="$texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="1233,159,1447,185"/>
+<area shape="poly" id="edge55_Node000001_Node000038" title=" " alt="" coords="1556,45,1549,76,1531,106,1507,126,1480,142,1422,162,1421,157,1478,137,1504,122,1527,102,1544,74,1551,44"/>
+<area shape="rect" id="Node000003" href="$object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="741,152,931,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1314,108,932,160,931,155,1313,103"/>
+<area shape="rect" id="Node000029" href="$buffers_8cpp.html" title=" " alt="" coords="1957,247,2169,273"/>
+<area shape="poly" id="edge37_Node000002_Node000029" title=" " alt="" coords="1469,105,2019,245,2017,250,1468,110"/>
+<area shape="rect" id="Node000004" href="$ColoredRectangle_8hpp.html" title="Contains the class for creating a rectangle filled with texture." alt="" coords="23,240,262,280"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="728,188,275,243,262,244,262,239,274,237,727,183"/>
+<area shape="rect" id="Node000008" href="$TexturedRectangle_8hpp.html" title="Contains the class for creating a rectangle filled with texture." alt="" coords="714,240,958,280"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="839,206,839,240,833,240,833,206"/>
+<area shape="rect" id="Node000010" href="$text_8hpp.html" title=" " alt="" coords="500,240,689,280"/>
+<area shape="poly" id="edge11_Node000003_Node000010" title=" " alt="" coords="771,199,648,242,647,237,769,194"/>
+<area shape="rect" id="Node000016" href="$object_8cpp.html" title=" " alt="" coords="287,240,476,280"/>
+<area shape="poly" id="edge19_Node000003_Node000016" title=" " alt="" coords="728,196,477,243,476,238,727,191"/>
+<area shape="rect" id="Node000017" href="$objectManager_8hpp.html" title="Defines the ObjectManager class for managing objects in the Chronos::Engine namespace." alt="" coords="983,240,1172,280"/>
+<area shape="poly" id="edge20_Node000003_Node000017" title=" " alt="" coords="903,194,1025,237,1024,242,901,199"/>
+<area shape="rect" id="Node000005" href="$managerShapeFunctions_8cpp.html" title=" " alt="" coords="616,511,899,537"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="78,288,46,304,20,323,13,334,9,344,9,355,15,366,32,383,54,398,112,425,185,449,269,468,450,496,616,512,616,517,449,501,268,473,184,454,110,430,51,403,28,387,11,370,4,356,3,343,8,331,17,320,43,300,75,283"/>
+<area shape="rect" id="Node000006" href="$ColoredRectangle_8cpp.html" title=" " alt="" coords="25,328,263,368"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="146,294,146,328,141,328,141,294"/>
+<area shape="rect" id="Node000007" href="$objectManager_8cpp.html" title=" " alt="" coords="1031,328,1220,368"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="276,277,471,294,624,303,775,310,968,325,1031,332,1030,337,968,331,775,316,624,308,471,300,275,283"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="920,283,948,302,970,327,977,348,970,369,953,397,932,421,883,462,832,493,789,514,786,509,830,488,880,458,929,417,949,393,966,367,972,348,966,329,944,306,917,288"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="913,281,1063,325,1061,331,912,286"/>
+<area shape="rect" id="Node000009" href="$TexturedRectangle_8cpp.html" title=" " alt="" coords="713,328,956,368"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="838,294,838,328,832,328,833,294"/>
+<area shape="poly" id="edge18_Node000010_Node000007" title=" " alt="" coords="703,278,1031,330,1030,335,702,283"/>
+<area shape="rect" id="Node000011" href="$fontTypes_8hpp.html" title="Defines all thes structs for all the font types and their sizes." alt="" coords="287,328,476,368"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="536,288,429,330,427,326,534,283"/>
+<area shape="rect" id="Node000013" href="$getFontType_8hpp.html" title=" " alt="" coords="500,328,689,368"/>
+<area shape="poly" id="edge14_Node000010_Node000013" title=" " alt="" coords="597,294,597,328,592,328,592,294"/>
+<area shape="rect" id="Node000015" href="$text_8cpp.html" title=" " alt="" coords="1456,328,1645,368"/>
+<area shape="poly" id="edge17_Node000010_Node000015" title=" " alt="" coords="703,277,912,296,1075,301,1238,307,1444,325,1456,327,1456,332,1444,331,1238,312,1075,307,912,301,703,283"/>
+<area shape="rect" id="Node000012" href="$getFontType_8cpp.html" title=" " alt="" coords="393,416,583,456"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="417,375,466,414,463,418,414,379"/>
+<area shape="poly" id="edge16_Node000013_Node000012" title=" " alt="" coords="562,379,513,418,510,414,559,375"/>
+<area shape="rect" id="Node000014" href="$managerTextFunctions_8cpp.html" title=" " alt="" coords="923,511,1192,537"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="659,370,1028,509,1026,514,657,375"/>
+<area shape="poly" id="edge21_Node000017_Node000007" title=" " alt="" coords="1097,291,1117,326,1112,329,1092,293"/>
+<area shape="rect" id="Node000018" href="$engine_8hpp.html" title="Contains the Engine class." alt="" coords="1670,335,1882,361"/>
+<area shape="poly" id="edge22_Node000017_Node000018" title=" " alt="" coords="1186,272,1235,277,1446,300,1658,325,1707,333,1707,338,1657,331,1446,305,1234,283,1186,277"/>
+<area shape="rect" id="Node000019" href="$engine_8cpp.html" title=" " alt="" coords="2155,423,2365,449"/>
+<area shape="poly" id="edge23_Node000018_Node000019" title=" " alt="" coords="1855,361,2196,421,2195,426,1854,366"/>
+<area shape="rect" id="Node000020" href="$chronos_8hpp.html" title="Main API for chronos. Any applications should include this file." alt="" coords="1696,423,1848,449"/>
+<area shape="poly" id="edge24_Node000018_Node000020" title=" " alt="" coords="1777,375,1775,423,1770,423,1772,374"/>
+<area shape="poly" id="edge27_Node000020_Node000005" title=" " alt="" coords="1682,446,1343,469,911,507,846,514,845,509,910,501,1343,464,1682,440"/>
+<area shape="poly" id="edge28_Node000020_Node000014" title=" " alt="" coords="1682,450,1204,507,1146,514,1145,509,1204,501,1682,445"/>
+<area shape="rect" id="Node000021" href="$manager_8cpp.html" title=" " alt="" coords="1683,511,1861,537"/>
+<area shape="poly" id="edge25_Node000020_Node000021" title=" " alt="" coords="1775,463,1775,511,1769,511,1769,463"/>
+<area shape="rect" id="Node000022" href="$managerAnimationFunctions_8cpp.html" title=" " alt="" coords="1886,504,2106,544"/>
+<area shape="poly" id="edge26_Node000020_Node000022" title=" " alt="" coords="1816,451,1948,501,1946,506,1814,456"/>
+<area shape="rect" id="Node000023" href="$managerTextureFunctions_8cpp.html" title=" " alt="" coords="2130,504,2331,544"/>
+<area shape="poly" id="edge29_Node000020_Node000023" title=" " alt="" coords="1847,449,2131,501,2130,507,1846,454"/>
+<area shape="rect" id="Node000024" href="$editorCodeGenerator_8cpp.html" title=" " alt="" coords="1993,592,2175,632"/>
+<area shape="poly" id="edge30_Node000020_Node000024" title=" " alt="" coords="1862,439,1998,447,2149,460,2277,478,2322,489,2346,502,2359,525,2356,545,2341,561,2317,575,2250,594,2176,606,2175,600,2249,589,2315,570,2338,557,2352,542,2354,526,2342,506,2320,494,2276,483,2148,465,1997,452,1862,444"/>
+<area shape="rect" id="Node000025" href="$editorCodeGenerator_8hpp.html" title=" " alt="" coords="1475,504,1658,544"/>
+<area shape="poly" id="edge31_Node000020_Node000025" title=" " alt="" coords="1733,456,1613,506,1611,501,1731,452"/>
+<area shape="rect" id="Node000027" href="$editorManager_8hpp.html" title=" " alt="" coords="1216,511,1451,537"/>
+<area shape="poly" id="edge34_Node000020_Node000027" title=" " alt="" coords="1700,454,1392,514,1391,509,1699,449"/>
+<area shape="poly" id="edge32_Node000025_Node000024" title=" " alt="" coords="1672,542,1993,594,1992,599,1671,547"/>
+<area shape="rect" id="Node000026" href="$editorManager_8cpp.html" title=" " alt="" coords="1450,599,1683,625"/>
+<area shape="poly" id="edge33_Node000025_Node000026" title=" " alt="" coords="1569,558,1569,599,1564,599,1564,558"/>
+<area shape="poly" id="edge36_Node000027_Node000026" title=" " alt="" coords="1379,539,1536,597,1534,602,1377,544"/>
+<area shape="rect" id="Node000028" href="$editorMain_8cpp.html" title=" " alt="" coords="1217,599,1426,625"/>
+<area shape="poly" id="edge35_Node000027_Node000028" title=" " alt="" coords="1333,550,1326,599,1320,598,1327,550"/>
+<area shape="poly" id="edge41_Node000030_Node000003" title=" " alt="" coords="2214,102,931,168,931,163,2214,97"/>
+<area shape="poly" id="edge43_Node000030_Node000018" title=" " alt="" coords="2479,93,2609,98,2749,108,2876,125,2927,136,2966,150,3015,175,3055,206,3069,224,3075,242,3072,262,3059,282,3042,290,3008,297,2899,310,2568,329,2187,341,1882,348,1882,342,2187,336,2567,324,2899,305,3007,292,3040,285,3056,278,3067,260,3070,243,3064,226,3051,210,3012,179,2964,154,2926,141,2875,130,2749,114,2609,103,2479,98"/>
+<area shape="rect" id="Node000031" href="$editorRenderer_8hpp.html" title=" " alt="" coords="2717,159,2953,185"/>
+<area shape="poly" id="edge39_Node000030_Node000031" title=" " alt="" coords="2432,104,2764,157,2763,162,2431,109"/>
+<area shape="rect" id="Node000033" href="$device_8cpp.html" title=" " alt="" coords="2576,247,2787,273"/>
+<area shape="poly" id="edge42_Node000030_Node000033" title=" " alt="" coords="2383,108,2659,245,2657,250,2381,113"/>
+<area shape="rect" id="Node000034" href="$helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="2243,159,2451,185"/>
+<area shape="poly" id="edge44_Node000030_Node000034" title=" " alt="" coords="2349,118,2349,159,2344,159,2344,118"/>
+<area shape="rect" id="Node000036" href="$swapchain_8cpp.html" title=" " alt="" coords="1697,247,1933,273"/>
+<area shape="poly" id="edge54_Node000030_Node000036" title=" " alt="" coords="2298,111,1852,250,1850,245,2297,106"/>
+<area shape="rect" id="Node000032" href="$editorRenderer_8cpp.html" title=" " alt="" coords="2811,247,3045,273"/>
+<area shape="poly" id="edge40_Node000031_Node000032" title=" " alt="" coords="2859,192,2917,245,2913,249,2856,196"/>
+<area shape="poly" id="edge47_Node000034_Node000007" title=" " alt="" coords="2314,194,2234,242,2210,264,2199,274,2182,282,2141,295,2093,305,1980,318,1850,324,1712,326,1442,324,1326,325,1234,331,1220,332,1220,327,1233,325,1326,320,1442,318,1712,320,1850,319,1979,313,2092,300,2140,290,2180,278,2196,270,2206,260,2230,238,2312,189"/>
+<area shape="poly" id="edge46_Node000034_Node000015" title=" " alt="" coords="2390,188,2425,206,2456,228,2467,241,2473,254,2473,268,2465,282,2446,294,2415,303,2324,316,2205,324,2071,327,1813,328,1659,331,1646,332,1645,327,1658,325,1813,323,2071,322,2205,318,2323,311,2414,298,2443,289,2461,278,2468,267,2468,255,2463,244,2453,232,2422,210,2388,193"/>
+<area shape="poly" id="edge50_Node000034_Node000019" title=" " alt="" coords="2415,187,2455,207,2473,221,2488,239,2495,260,2488,281,2470,309,2447,334,2395,375,2341,406,2295,426,2293,421,2339,401,2392,371,2444,330,2465,306,2483,279,2489,260,2483,241,2469,225,2453,211,2413,191"/>
+<area shape="poly" id="edge48_Node000034_Node000029" title=" " alt="" coords="2296,191,2102,250,2100,245,2295,186"/>
+<area shape="poly" id="edge45_Node000034_Node000032" title=" " alt="" coords="2438,184,2851,245,2850,250,2438,189"/>
+<area shape="poly" id="edge49_Node000034_Node000033" title=" " alt="" coords="2405,185,2637,245,2636,250,2404,191"/>
+<area shape="rect" id="Node000035" href="$helper_8cpp.html" title=" " alt="" coords="2243,247,2450,273"/>
+<area shape="poly" id="edge51_Node000034_Node000035" title=" " alt="" coords="2349,199,2349,247,2344,247,2344,199"/>
+<area shape="poly" id="edge52_Node000034_Node000036" title=" " alt="" coords="2262,190,1886,250,1885,245,2261,184"/>
+<area shape="rect" id="Node000037" href="$texture_8cpp.html" title=" " alt="" coords="1458,247,1673,273"/>
+<area shape="poly" id="edge53_Node000034_Node000037" title=" " alt="" coords="2229,186,1979,210,1686,243,1635,250,1634,245,1685,237,1978,204,2229,181"/>
+<area shape="poly" id="edge58_Node000038_Node000007" title=" " alt="" coords="1309,194,1236,242,1185,288,1144,330,1141,326,1181,284,1233,238,1306,189"/>
+<area shape="poly" id="edge56_Node000038_Node000008" title=" " alt="" coords="1260,190,947,243,946,237,1259,184"/>
+<area shape="poly" id="edge57_Node000038_Node000010" title=" " alt="" coords="1219,186,980,209,702,243,690,244,689,239,701,237,979,204,1219,181"/>
+<area shape="poly" id="edge59_Node000038_Node000036" title=" " alt="" coords="1417,185,1752,245,1751,250,1416,190"/>
+<area shape="poly" id="edge60_Node000038_Node000037" title=" " alt="" coords="1384,187,1536,245,1534,250,1382,192"/>
+<area shape="rect" id="Node000039" href="$textureManager_8hpp.html" title="Contains the class for managing textures in the Chronos::Engine namespace." alt="" coords="1247,240,1433,280"/>
+<area shape="poly" id="edge61_Node000038_Node000039" title=" " alt="" coords="1343,198,1343,240,1337,240,1337,198"/>
+<area shape="poly" id="edge62_Node000039_Node000018" title=" " alt="" coords="1448,280,1719,333,1718,338,1446,285"/>
+<area shape="rect" id="Node000040" href="$textureManager_8cpp.html" title=" " alt="" coords="1245,328,1432,368"/>
+<area shape="poly" id="edge63_Node000039_Node000040" title=" " alt="" coords="1342,294,1342,328,1336,328,1337,294"/>
 </map>

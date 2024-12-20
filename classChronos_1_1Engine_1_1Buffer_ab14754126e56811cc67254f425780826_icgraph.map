@@ -1,5 +1,15 @@
 <map id="Chronos::Engine::Buffer::create" name="Chronos::Engine::Buffer::create">
-<area shape="rect" id="node1" title="This is used to initialize the buffer." alt="" coords="261,39,436,80"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1UniformBuffer.html#a4c14b97754025d584f9fbf73ac26d8c2" title="Creates the buffer and maps the memory." alt="" coords="15,5,203,47"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1ColorBuffer.html#a315b2e206d85861cf5f6b99ac0a35aed" title="Creates the buffer and maps the memory." alt="" coords="5,71,213,112"/>
+<area shape="rect" id="Node000001" title="This is used to initialize the buffer." alt="" coords="515,101,689,141"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1UniformBuffer.html#a4c14b97754025d584f9fbf73ac26d8c2" title="Creates the buffer and maps the memory." alt="" coords="269,5,457,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="549,97,466,60,433,48,434,43,468,55,551,93"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Engine_1_1ColorBuffer.html#a315b2e206d85861cf5f6b99ac0a35aed" title="Creates the buffer and maps the memory." alt="" coords="259,69,467,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="501,110,467,106,467,101,501,105"/>
+<area shape="rect" id="Node000004" href="$classChronos_1_1Engine_1_1TexturedRectangle.html#a397eb23ee83b9fbc6b0fbf5a89bd2114" title=" " alt="" coords="267,133,458,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="501,137,458,143,458,138,501,132"/>
+<area shape="rect" id="Node000006" href="$classChronos_1_1Engine_1_1ColoredRectangle.html#a17bf527c6f63feec36996d10cb9afbab" title=" " alt="" coords="270,197,455,237"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="551,150,468,188,434,200,433,195,466,183,549,145"/>
+<area shape="rect" id="Node000005" href="$classChronos_1_1Manager_1_1Manager.html#a3134f2a38f825a58b71f270bce2a0b20" title="Adds a textured rectangle to the window." alt="" coords="5,133,211,173"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="254,156,211,156,211,151,254,151"/>
+<area shape="rect" id="Node000007" href="$classChronos_1_1Manager_1_1Manager.html#af0a5e7e2f2509f471495e72c861c9d48" title="Adds a soild color rectangle to the window." alt="" coords="5,197,211,237"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="256,220,211,220,211,215,256,215"/>
 </map>

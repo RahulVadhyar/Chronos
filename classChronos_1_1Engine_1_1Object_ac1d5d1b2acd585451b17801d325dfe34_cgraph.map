@@ -1,0 +1,27 @@
+<map id="Chronos::Engine::Object::init" name="Chronos::Engine::Object::init">
+<area shape="rect" id="Node000001" title="Initializes the object." alt="" coords="5,229,183,269"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5" title="Creates the swapchain image resources and chooses the optimal settings for given hardware." alt="" coords="231,101,437,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,227,167,189,229,151,245,144,247,149,232,156,170,193,120,231"/>
+<area shape="rect" id="Node000008" href="$classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e" title="Creates the Vulkan descriptor pool for the object." alt="" coords="245,165,423,205"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="169,227,245,206,246,211,170,232"/>
+<area shape="rect" id="Node000009" href="$classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e" title="Creates the Vulkan descriptor set layout for the object." alt="" coords="233,229,435,269"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="183,247,219,247,219,252,183,252"/>
+<area shape="rect" id="Node000010" href="$classChronos_1_1Engine_1_1Object.html#adf7e359418ad5653b9590645282aee1e" title=" " alt="" coords="245,293,423,333"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="170,267,246,287,245,292,169,272"/>
+<area shape="rect" id="Node000011" href="$classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c" title="Creates the graphics pipeline for the object." alt="" coords="244,357,424,397"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="120,267,170,305,232,343,247,350,245,355,229,348,167,310,117,272"/>
+<area shape="rect" id="Node000003" href="$namespaceChronos_1_1Engine.html#a4cb0fad8419ed33393b0aaceb3153543" title="Gets the maximum extent of the swapchain images(framebuffer size)." alt="" coords="485,5,701,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="378,99,484,55,507,47,509,52,486,60,380,104"/>
+<area shape="rect" id="Node000004" href="$namespaceChronos_1_1Engine.html#a52bd349b91415659b6681f47145ed328" title="Chooses the best present mode among the supported modes." alt="" coords="485,69,701,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="437,106,471,102,472,107,438,111"/>
+<area shape="rect" id="Node000005" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="493,133,694,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="438,131,479,137,478,142,437,137"/>
+<area shape="rect" id="Node000007" href="$namespaceChronos_1_1Engine.html#a76f8a7e2a71632ea17aacab0fb642fba" title="For a given swapchain mode, it gets the capabilites, formats and present modes." alt="" coords="490,197,697,237"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="409,139,439,151,463,167,487,183,503,190,501,195,484,188,460,172,436,156,407,144"/>
+<area shape="rect" id="Node000006" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="749,133,969,173"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="694,151,735,151,735,156,694,156"/>
+<area shape="rect" id="Node000012" href="$object_8cpp.html#a54d2453269b93bb4f6b3d2b2241fbe00" title="Creates a shader module from given shader(SPIV) code." alt="" coords="515,339,671,365"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="424,366,502,358,502,364,424,371"/>
+<area shape="rect" id="Node000013" href="$object_8cpp.html#ad49fb97692b341e968ab8e27444c9a91" title="Returns the content of a shader file." alt="" coords="556,389,631,414"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="424,383,542,394,542,399,424,388"/>
+</map>

@@ -1,5 +1,7 @@
 <map id="Chronos::Engine::createCommandPool" name="Chronos::Engine::createCommandPool">
-<area shape="rect" id="node1" title="Creates a command pool for a given device and surface." alt="" coords="5,13,276,39"/>
-<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="324,5,525,47"/>
-<area shape="rect" id="node3" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="573,5,793,47"/>
+<area shape="rect" id="Node000001" title="Creates a command pool for a given device and surface." alt="" coords="5,13,276,38"/>
+<area shape="rect" id="Node000002" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="324,5,525,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="276,23,310,23,310,28,276,28"/>
+<area shape="rect" id="Node000003" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="573,5,793,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="525,23,560,23,560,28,525,28"/>
 </map>

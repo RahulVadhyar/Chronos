@@ -1,14 +1,26 @@
 <map id="Chronos::Engine::SwapChain::init" name="Chronos::Engine::SwapChain::init">
-<area shape="rect" id="node1" title="Initilize the swapchain." alt="" coords="5,256,212,297"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5" title="Creates the swapchain image resources and chooses the optimal settings for given hardware." alt="" coords="260,136,467,177"/>
-<area shape="rect" id="node8" href="$classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e" title="Creates the color images along with the associated objects." alt="" coords="260,256,467,297"/>
-<area shape="rect" id="node12" href="$classChronos_1_1Engine_1_1SwapChain.html#a0155650381f813352c42eb2cf2e30e84" title="Creates the image views of the swapchain images." alt="" coords="260,321,467,363"/>
-<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a4cb0fad8419ed33393b0aaceb3153543" title="Gets the maximum extent of the swapchain images(framebuffer size)." alt="" coords="531,5,747,47"/>
-<area shape="rect" id="node4" href="$namespaceChronos_1_1Engine.html#a52bd349b91415659b6681f47145ed328" title="Chooses the best present mode among the supported modes." alt="" coords="531,71,747,112"/>
-<area shape="rect" id="node5" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="539,136,740,177"/>
-<area shape="rect" id="node7" href="$namespaceChronos_1_1Engine.html#a76f8a7e2a71632ea17aacab0fb642fba" title="For a given swapchain mode, it gets the capabilites, formats and present modes." alt="" coords="536,201,743,243"/>
-<area shape="rect" id="node6" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="823,136,1043,177"/>
-<area shape="rect" id="node9" href="$namespaceChronos_1_1Engine.html#a7018d1eaf2dfaf4c373269fcaa344a46" title="For a given image dimensons, it creates a VkImage and." alt="" coords="531,267,748,294"/>
-<area shape="rect" id="node11" href="$namespaceChronos_1_1Engine.html#a34457a6d2cac8f2770ffbaf52b3b2ee3" title="Create a VkImageView for a given VkImage." alt="" coords="515,322,764,349"/>
-<area shape="rect" id="node10" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="812,267,1055,294"/>
+<area shape="rect" id="Node000001" title="Initilize the swapchain." alt="" coords="5,251,212,291"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5" title="Creates the swapchain image resources and chooses the optimal settings for given hardware." alt="" coords="260,133,467,173"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,248,305,177,307,182,154,253"/>
+<area shape="rect" id="Node000008" href="$classChronos_1_1Engine_1_1SwapChain.html#acf48b60cc2e62c1a57a7d9ccec26a40e" title="Creates the color images along with the associated objects." alt="" coords="260,251,467,291"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="212,268,246,268,246,273,212,273"/>
+<area shape="rect" id="Node000012" href="$classChronos_1_1Engine_1_1SwapChain.html#a0155650381f813352c42eb2cf2e30e84" title="Creates the image views of the swapchain images." alt="" coords="260,315,467,355"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="190,288,271,309,269,314,188,293"/>
+<area shape="rect" id="Node000003" href="$namespaceChronos_1_1Engine.html#a4cb0fad8419ed33393b0aaceb3153543" title="Gets the maximum extent of the swapchain images(framebuffer size)." alt="" coords="531,5,747,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="389,131,444,93,514,55,533,47,535,52,516,60,447,97,392,135"/>
+<area shape="rect" id="Node000004" href="$namespaceChronos_1_1Engine.html#a52bd349b91415659b6681f47145ed328" title="Chooses the best present mode among the supported modes." alt="" coords="531,69,747,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="450,131,539,110,540,115,451,136"/>
+<area shape="rect" id="Node000005" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="539,133,740,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="467,151,524,151,524,156,467,156"/>
+<area shape="rect" id="Node000007" href="$namespaceChronos_1_1Engine.html#a76f8a7e2a71632ea17aacab0fb642fba" title="For a given swapchain mode, it gets the capabilites, formats and present modes." alt="" coords="536,197,743,237"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="451,171,540,192,539,197,450,176"/>
+<area shape="rect" id="Node000006" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="823,133,1043,173"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="740,151,810,151,810,156,740,156"/>
+<area shape="rect" id="Node000009" href="$namespaceChronos_1_1Engine.html#a7018d1eaf2dfaf4c373269fcaa344a46" title="For a given image dimensons, it creates a VkImage and." alt="" coords="531,262,748,287"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="467,269,517,270,517,276,467,275"/>
+<area shape="rect" id="Node000011" href="$namespaceChronos_1_1Engine.html#a34457a6d2cac8f2770ffbaf52b3b2ee3" title="Create a VkImageView for a given VkImage." alt="" coords="515,315,764,341"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="461,288,565,310,564,315,460,293"/>
+<area shape="rect" id="Node000010" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="812,262,1055,287"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="748,272,798,272,798,277,748,277"/>
+<area shape="poly" id="edge12_Node000012_Node000011" title=" " alt="" coords="467,330,501,329,501,334,467,335"/>
 </map>

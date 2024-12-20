@@ -1,0 +1,18 @@
+<map id="Chronos::Engine::TexturedRectangle" name="Chronos::Engine::TexturedRectangle">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1056,121,1247,161"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1Object.html" title="Abstract class for creating and managing generic graphical objects." alt="" coords="748,38,925,63"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="940,60,1033,81,1077,99,1117,119,1114,124,1075,104,1031,87,938,65"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="5,69,185,94"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="143,62,208,42,281,28,397,18,488,17,695,31,748,36,747,41,694,36,488,22,397,23,282,33,209,48,144,67"/>
+<area shape="rect" id="Node000004" href="$classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="281,43,488,69"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="199,70,281,62,281,68,199,75"/>
+<area shape="rect" id="Node000005" href="$classChronos_1_1Engine_1_1Texture.html" title="This class holds the Vulkan data and objects needed for a texture." alt="" coords="512,93,695,118"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="199,89,209,89,512,101,512,106,209,95,199,94"/>
+<area shape="rect" id="Node000007" href="$classChronos_1_1Engine_1_1Buffer.html" title="Used to store buffers in GPU." alt="" coords="516,154,691,179"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="146,96,210,113,372,141,516,157,516,162,371,146,209,119,145,101"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="502,52,748,49,748,54,502,57"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="709,110,1056,132,1056,138,708,115"/>
+<area shape="rect" id="Node000006" href="$structChronos_1_1Manager_1_1ShapeParams.html" title="Parameters for creating a shape(any)" alt="" coords="719,229,955,254"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="968,227,1031,211,1081,187,1122,159,1125,164,1083,191,1033,216,969,233"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="704,165,824,164,955,159,1056,150,1056,155,955,164,824,169,704,170"/>
+</map>

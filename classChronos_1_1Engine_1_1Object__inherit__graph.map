@@ -1,8 +1,9 @@
 <map id="Chronos::Engine::Object" name="Chronos::Engine::Object">
-<area shape="rect" id="node1" title="Abstract class for creating and managing generic graphical objects." alt="" coords="5,64,183,91"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Polygon.html" title="A class to represent a polygon object." alt="" coords="231,5,417,32"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1Shape.html" title="Class for creating a shape(triangle, rectangle, etc.)." alt="" coords="237,57,411,98"/>
-<area shape="rect" id="node6" href="$classChronos_1_1Engine_1_1Text.html" title="Class for creating a text object for rendering text." alt="" coords="243,123,405,149"/>
-<area shape="rect" id="node4" href="$classChronos_1_1Engine_1_1Rectangle.html" title="Class for creating a rectangle." alt="" coords="465,23,665,65"/>
-<area shape="rect" id="node5" href="$classChronos_1_1Engine_1_1Triangle.html" title="Class for creating a triangle." alt="" coords="472,89,659,130"/>
+<area shape="rect" id="Node000001" title="Abstract class for creating and managing generic graphical objects." alt="" coords="5,70,183,95"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1ColoredRectangle.html" title=" " alt="" coords="233,5,419,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,64,244,43,245,48,160,69"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Engine_1_1Text.html" title="Class for creating a text object for rendering text." alt="" coords="245,70,407,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,80,244,80,244,85,196,85"/>
+<area shape="rect" id="Node000004" href="$classChronos_1_1Engine_1_1TexturedRectangle.html" title=" " alt="" coords="231,120,421,160"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="160,96,245,117,244,123,159,101"/>
 </map>

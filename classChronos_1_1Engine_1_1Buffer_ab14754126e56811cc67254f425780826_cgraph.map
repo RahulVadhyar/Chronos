@@ -1,5 +1,7 @@
 <map id="Chronos::Engine::Buffer::create" name="Chronos::Engine::Buffer::create">
-<area shape="rect" id="node1" title="This is used to initialize the buffer." alt="" coords="5,5,180,47"/>
-<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a" title="Creates a buffer of a given size, usage and properties." alt="" coords="228,13,443,39"/>
-<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="491,13,733,39"/>
+<area shape="rect" id="Node000001" title="This is used to initialize the buffer." alt="" coords="5,5,180,45"/>
+<area shape="rect" id="Node000002" href="$namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a" title="Creates a buffer of a given size, usage and properties." alt="" coords="228,13,443,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,23,214,23,214,28,180,28"/>
+<area shape="rect" id="Node000003" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="491,13,733,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="443,23,477,23,477,28,443,28"/>
 </map>

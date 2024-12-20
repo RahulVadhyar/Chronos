@@ -1,4 +1,5 @@
 <map id="Chronos::Engine::Device::pickPhysicalDevice" name="Chronos::Engine::Device::pickPhysicalDevice">
-<area shape="rect" id="node1" title="This is the function that picks the best device based on the requirements and features that we requir..." alt="" coords="233,5,413,47"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Device.html#a66e307ea98c1eb761c90b4acd9c3752a" title="This is the function that initializes the devices and queues." alt="" coords="5,5,185,47"/>
+<area shape="rect" id="Node000001" title="This is the function that picks the best device based on the requirements and features that we requir..." alt="" coords="233,5,413,45"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1Device.html#a66e307ea98c1eb761c90b4acd9c3752a" title="This is the function that initializes the devices and queues." alt="" coords="5,5,185,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,28,185,28,185,23,219,23"/>
 </map>

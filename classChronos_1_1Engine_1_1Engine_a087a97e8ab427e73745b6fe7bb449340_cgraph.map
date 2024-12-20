@@ -1,6 +1,9 @@
 <map id="Chronos::Engine::Engine::initVulkan" name="Chronos::Engine::Engine::initVulkan">
-<area shape="rect" id="node1" title="The complicated process of initalizing the vulkan API is done here." alt="" coords="5,5,184,47"/>
-<area shape="rect" id="node2" href="$namespaceChronos_1_1Engine.html#ae9065643643c464231ba47b6ed3f8a8a" title="Creates a command pool for a given device and surface." alt="" coords="232,13,503,39"/>
-<area shape="rect" id="node3" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="551,5,752,47"/>
-<area shape="rect" id="node4" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="800,5,1020,47"/>
+<area shape="rect" id="Node000001" title="The complicated process of initalizing the vulkan API is done here." alt="" coords="5,5,184,45"/>
+<area shape="rect" id="Node000002" href="$namespaceChronos_1_1Engine.html#ae9065643643c464231ba47b6ed3f8a8a" title="Creates a command pool for a given device and surface." alt="" coords="232,13,503,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,23,218,23,218,28,184,28"/>
+<area shape="rect" id="Node000003" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="551,5,752,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="503,23,537,23,537,28,503,28"/>
+<area shape="rect" id="Node000004" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="800,5,1020,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="752,23,786,23,786,28,752,28"/>
 </map>

@@ -1,4 +1,5 @@
 var dir_573d75420a9527d403ae2af0f90fb3b6 =
 [
-    [ "Headers", "dir_aca4f86c9b81175be7fd0c87cdbb2b97.html", "dir_aca4f86c9b81175be7fd0c87cdbb2b97" ]
+    [ "commonStructs.hpp", "commonStructs_8hpp.html", "commonStructs_8hpp" ],
+    [ "logging.hpp", "logging_8hpp.html", "logging_8hpp" ]
 ];

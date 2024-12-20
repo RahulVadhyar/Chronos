@@ -1,5 +1,8 @@
 <map id="Chronos::Engine::Object" name="Chronos::Engine::Object">
-<area shape="rect" id="node1" title="Abstract class for creating and managing generic graphical objects." alt="" coords="7,184,184,211"/>
-<area shape="rect" id="node2" href="$classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="5,5,185,32"/>
-<area shape="rect" id="node3" href="$classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="147,95,353,121"/>
+<area shape="rect" id="Node000001" title="Abstract class for creating and managing generic graphical objects." alt="" coords="7,181,184,207"/>
+<area shape="rect" id="Node000002" href="$classChronos_1_1Engine_1_1Device.html" title="This initializes, manages and destroys the logical and physical devices(GPU)." alt="" coords="5,5,185,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,45,89,80,89,119,96,181,91,181,83,119,84,79,88,44"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Engine_1_1SwapChain.html" title=" " alt="" coords="147,93,353,119"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="129,35,230,91,228,95,127,40"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,128,118,183,115,179,216,123"/>
 </map>
