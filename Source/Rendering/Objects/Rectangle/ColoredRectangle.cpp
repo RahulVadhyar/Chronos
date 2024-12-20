@@ -24,8 +24,7 @@ SOFTWARE.
 #include "engineStructs.hpp"
 void Chronos::Engine::ColoredRectangle::init(Chronos::Engine::Device* device,
     VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
-    VkSampler textureSampler,
-    VkRenderPass* renderPass)
+    VkSampler textureSampler, VkRenderPass* renderPass)
 {
     this->vertexShaderPath = SPIV_SHADER_PATH "/colorVert.spv";
     this->fragmentShaderPath = SPIV_SHADER_PATH "/colorFrag.spv";
@@ -35,8 +34,9 @@ void Chronos::Engine::ColoredRectangle::init(Chronos::Engine::Device* device,
 	colorBuffers[i].create(*device);
     }
 
-    Chronos::Engine::Object::init(
-	device, commandPool, swapChain, textureSampler, renderPass, Chronos::Engine::ObjectType::TypeColoredRectangle);
+    Chronos::Engine::Object::init(device, commandPool, swapChain,
+	textureSampler, renderPass,
+	Chronos::Engine::ObjectType::TypeColoredRectangle);
 
     // create the vertex and index buffers and copy the data
     vertexBuffer.size = sizeof(vertices[0]) * vertices.size();
@@ -55,7 +55,7 @@ void Chronos::Engine::ColoredRectangle::init(Chronos::Engine::Device* device,
 void Chronos::Engine::ColoredRectangle::update(uint32_t currentFrame)
 {
     uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x,
-    params.y, params.rotation, params.xSize, params.ySize);
+	params.y, params.rotation, params.xSize, params.ySize);
     colorBuffers[currentFrame].update(
 	{ params.color[0], params.color[1], params.color[2] });
 }
@@ -120,19 +120,22 @@ void Chronos::Engine::ColoredRectangle::createDescriptorSets()
     }
 }
 
-std::vector<VkDescriptorType> Chronos::Engine::ColoredRectangle::getDescriptorTypes()
+std::vector<VkDescriptorType>
+Chronos::Engine::ColoredRectangle::getDescriptorTypes()
 {
     return std::vector<VkDescriptorType> { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER,
 	VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER };
 }
 
-std::vector<VkShaderStageFlagBits> Chronos::Engine::ColoredRectangle::getDescriptorStages()
+std::vector<VkShaderStageFlagBits>
+Chronos::Engine::ColoredRectangle::getDescriptorStages()
 {
     return std::vector<VkShaderStageFlagBits> { VK_SHADER_STAGE_VERTEX_BIT,
-    VK_SHADER_STAGE_FRAGMENT_BIT };
-}   
+	VK_SHADER_STAGE_FRAGMENT_BIT };
+}
 
-Chronos::Engine::PipelineAttributes Chronos::Engine::ColoredRectangle::getPipelineAttributes()
+Chronos::Engine::PipelineAttributes
+Chronos::Engine::ColoredRectangle::getPipelineAttributes()
 {
     Chronos::Engine::PipelineAttributes pipelineAttributes;
 
@@ -171,23 +174,24 @@ Chronos::Engine::PipelineAttributes Chronos::Engine::ColoredRectangle::getPipeli
     return pipelineAttributes;
 }
 
-void Chronos::Engine::ColoredRectangle::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3], VkViewport& viewport, VkRect2D& scissor, std::vector<VkCommandBuffer>& commandBuffers){
-    
-	vkCmdBindPipeline(commandBuffers[currentFrame],
-	    VK_PIPELINE_BIND_POINT_GRAPHICS, this->graphicsPipeline);
-	vkCmdSetViewport(commandBuffers[currentFrame],
-	    0, 1, &viewport);
-	vkCmdSetScissor(commandBuffers[currentFrame],
-	    0, 1, &scissor);
-	VkBuffer vertexBuffers[] = { this->vertexBuffer.buffer };
-	VkDeviceSize offsets[] = { 0 };
-	vkCmdBindVertexBuffers(commandBuffers[currentFrame],
-	    0, 1, vertexBuffers, offsets);
-	vkCmdBindIndexBuffer(commandBuffers[currentFrame],
-	    this->indexBuffer.buffer, 0, VK_INDEX_TYPE_UINT16);
-	vkCmdBindDescriptorSets(commandBuffers[currentFrame],
-	    VK_PIPELINE_BIND_POINT_GRAPHICS, this->pipelineLayout, 0, 1,
-	    &this->descriptorSets[currentFrame], 0, nullptr);
-	vkCmdDrawIndexed(commandBuffers[currentFrame],
-	    static_cast<uint32_t>(this->indices.size()), 1, 0, 0, 0);
+void Chronos::Engine::ColoredRectangle::render(uint32_t currentFrame,
+    uint32_t imageIndex, float bgColor[3], VkViewport& viewport,
+    VkRect2D& scissor, std::vector<VkCommandBuffer>& commandBuffers)
+{
+
+    vkCmdBindPipeline(commandBuffers[currentFrame],
+	VK_PIPELINE_BIND_POINT_GRAPHICS, this->graphicsPipeline);
+    vkCmdSetViewport(commandBuffers[currentFrame], 0, 1, &viewport);
+    vkCmdSetScissor(commandBuffers[currentFrame], 0, 1, &scissor);
+    VkBuffer vertexBuffers[] = { this->vertexBuffer.buffer };
+    VkDeviceSize offsets[] = { 0 };
+    vkCmdBindVertexBuffers(
+	commandBuffers[currentFrame], 0, 1, vertexBuffers, offsets);
+    vkCmdBindIndexBuffer(commandBuffers[currentFrame], this->indexBuffer.buffer,
+	0, VK_INDEX_TYPE_UINT16);
+    vkCmdBindDescriptorSets(commandBuffers[currentFrame],
+	VK_PIPELINE_BIND_POINT_GRAPHICS, this->pipelineLayout, 0, 1,
+	&this->descriptorSets[currentFrame], 0, nullptr);
+    vkCmdDrawIndexed(commandBuffers[currentFrame],
+	static_cast<uint32_t>(this->indices.size()), 1, 0, 0, 0);
 }

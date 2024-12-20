@@ -45,12 +45,12 @@ namespace Engine {
 
 	int addObject(Object* object);
 	void remove(int objectNo);
-	
-    void update(uint32_t currentFrame);
+
+	void update(uint32_t currentFrame);
 	void render(
 	    uint32_t currentFrame, uint32_t imageIndex, float bgColor[3]);
-	
-    void changeMsaa();
+
+	void changeMsaa();
 	void recreate();
 	void cleanup();
 	VkRenderPass renderPass; /**< Vulkan render pass used for rendering. */

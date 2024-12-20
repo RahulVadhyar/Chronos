@@ -126,7 +126,9 @@ namespace Engine {
 	current frame
 	@param bgColor The background color to use for rendering the text.
 	*/
-	void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3], VkViewport& viewport, VkRect2D& scissor, std::vector<VkCommandBuffer>& commandBuffers) override;
+	void render(uint32_t currentFrame, uint32_t imageIndex,
+	    float bgColor[3], VkViewport& viewport, VkRect2D& scissor,
+	    std::vector<VkCommandBuffer>& commandBuffers) override;
 	/**
 	\brief Updates the attributes(like position, color, etc) of the text.
 

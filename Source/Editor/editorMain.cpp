@@ -20,7 +20,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-
 #include "editorManager.hpp"
 #include "logging.hpp"
 Chronos::Editor::EditorManager editorManager;
@@ -38,9 +37,9 @@ int main()
     initializer.editorAddElements = addElements;
 
     Chronos::Manager::Manager manager(initializer);
-    LOG(2, "EditorMain", "Manager created.")
+    LOG(2, "Manager created.")
     editorManager.init(&manager);
-    LOG(3, "EditorMain", "EditorManager created.")
+    LOG(3, "EditorManager created.")
 
     // Chronos::Manager::ShapeParams shapeParams;
     // shapeParams.color = {1.0f, 1.0f, 1.0f};
@@ -58,8 +57,8 @@ int main()
 	// shapeParams.x = manager.keyframeGetVariable(keyframeNo);
 	// manager.updatePolygon(shapeNo, shapeParams);
 	manager.drawFrame();
-	LOG(4, "EditorMain", "Frame drawn.")
+	LOG(4, "Frame drawn.")
     }
-    LOG(2, "EditorMain", "Exited rendering loop, closing program.")
+    LOG(2, "Exited rendering loop, closing program.")
     return 0;
 }

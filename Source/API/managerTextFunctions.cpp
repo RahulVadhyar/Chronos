@@ -31,8 +31,11 @@ int Chronos::Manager::Manager::addText(
     }
     Chronos::Engine::Text* text = new Chronos::Engine::Text();
     text->params = params;
-    Chronos::Engine::FontTypes fontStyle = Chronos::Engine::getFontType(fontType, fontSize);
-    text->init(&this->engine.device, this->engine.commandPool, &(this->engine.swapChain), this->engine.objectManager.textureSampler, &this->engine.objectManager.renderPass, fontStyle);
+    Chronos::Engine::FontTypes fontStyle
+	= Chronos::Engine::getFontType(fontType, fontSize);
+    text->init(&this->engine.device, this->engine.commandPool,
+	&(this->engine.swapChain), this->engine.objectManager.textureSampler,
+	&this->engine.objectManager.renderPass, fontStyle);
 
     return engine.objectManager.addObject(text);
 }
@@ -46,22 +49,22 @@ void Chronos::Manager::Manager::updateText(
     if (engine.objectManager.objects.count(objectNo) == 0) {
 	throw std::runtime_error("Text does not exist");
     }
-    if(engine.objectManager.objects[objectNo]->objectType != Chronos::Engine::ObjectType::TypeText) {
-    throw std::runtime_error("Object is not a text object");    
+    if (engine.objectManager.objects[objectNo]->objectType
+	!= Chronos::Engine::ObjectType::TypeText) {
+	throw std::runtime_error("Object is not a text object");
     }
-    ((Chronos::Engine::Text*)engine.objectManager.objects[objectNo])->params = params;
+    ((Chronos::Engine::Text*)engine.objectManager.objects[objectNo])->params
+	= params;
 }
-
-
 
 std::vector<std::pair<int, Chronos::Engine::TextParams>>
 Chronos::Manager::Manager::getTextDetails()
 {
     std::vector<std::pair<int, Chronos::Engine::TextParams>> textDetails;
     for (auto& text : engine.objectManager.objects) {
-        if(text.second->objectType != Chronos::Engine::ObjectType::TypeText) {
-            continue;
-        }
+	if (text.second->objectType != Chronos::Engine::ObjectType::TypeText) {
+	    continue;
+	}
 	std::pair<int, Chronos::Engine::TextParams> textDetail;
 	textDetail.first = text.first;
 	textDetail.second = ((Chronos::Engine::Text*)text.second)->params;

@@ -35,12 +35,10 @@ void Chronos::Engine::ObjectManager::init(Chronos::Engine::Device* device,
 
     Chronos::Engine::createTextureSampler(*device, &textureSampler);
 
-    this->renderPass = Chronos::Engine::createRenderPass(
-	    *this->device,
-	    *this->swapChain,
+    this->renderPass
+	= Chronos::Engine::createRenderPass(*this->device, *this->swapChain,
 	    VK_IMAGE_LAYOUT_UNDEFINED, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
-	    VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, true,
-	    true, false);
+	    VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, true, true, false);
     commandBuffers = Chronos::Engine::createCommandBuffer(
 	*device, *swapChain, commandPool);
     framebuffers = Chronos::Engine::createFramebuffer(
@@ -53,13 +51,13 @@ void Chronos::Engine::ObjectManager::destroy()
     for (auto framebuffer : framebuffers)
 	vkDestroyFramebuffer(device->device, framebuffer, nullptr);
     for (auto& objectMap : objects) {
-    	objectMap.second->destroy();
+	objectMap.second->destroy();
     }
 }
 void Chronos::Engine::ObjectManager::render(
     uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])
-{	
-	VkViewport viewport {};
+{
+    VkViewport viewport {};
     viewport.x = 0.0f;
     viewport.y = 0.0f;
     viewport.width = static_cast<float>(swapChain->swapChainExtent.width);
@@ -94,11 +92,11 @@ void Chronos::Engine::ObjectManager::render(
 	VK_SUBPASS_CONTENTS_INLINE);
 
     for (auto& object : this->objects) {
-        if (this->objectsToBeRemoved.count(object.first) > 0)
-	        continue;
-	    object.second->render(currentFrame, imageIndex, bgColor, viewport, scissor, commandBuffers);
-	}
-    
+	if (this->objectsToBeRemoved.count(object.first) > 0)
+	    continue;
+	object.second->render(currentFrame, imageIndex, bgColor, viewport,
+	    scissor, commandBuffers);
+    }
 
     vkCmdEndRenderPass(commandBuffers[currentFrame]);
 
@@ -109,12 +107,10 @@ void Chronos::Engine::ObjectManager::render(
 void Chronos::Engine::ObjectManager::changeMsaa()
 {
     vkDestroyRenderPass(device->device, renderPass, nullptr);
-    this->renderPass = Chronos::Engine::createRenderPass(
-	    *this->device,
-	    *this->swapChain,
+    this->renderPass
+	= Chronos::Engine::createRenderPass(*this->device, *this->swapChain,
 	    VK_IMAGE_LAYOUT_UNDEFINED, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
-	    VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, true,
-	    true, false);
+	    VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, true, true, false);
     recreate();
     for (auto& objectMap : objects) {
 	objectMap.second->recreateGraphicsPipeline();
@@ -161,9 +157,9 @@ void Chronos::Engine::ObjectManager::update(uint32_t currentFrame)
 	    objects.erase(objectMap.first);
 	    Object* object = objects[objectMap.first];
 	    switch (object->objectType) {
-        case Chronos::Engine::ObjectType::TypeColoredRectangle:
-        delete (Chronos::Engine::ColoredRectangle*)object;
-        break;
+	    case Chronos::Engine::ObjectType::TypeColoredRectangle:
+		delete (Chronos::Engine::ColoredRectangle*)object;
+		break;
 	    case Chronos::Engine::ObjectType::TypeTexturedRectangle:
 		delete (Chronos::Engine::TexturedRectangle*)object;
 		break;

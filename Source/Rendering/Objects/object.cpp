@@ -48,7 +48,6 @@ static inline std::vector<char> readFile(const std::string& filename)
     return buffer;
 }
 
-
 /**
     \brief Creates a shader module from given shader(SPIV) code.
 
@@ -74,7 +73,6 @@ static inline VkShaderModule createShaderModule(
     }
     return shaderModule;
 }
-
 
 void Chronos::Engine::Object::init(Chronos::Engine::Device* device,
     VkCommandPool commandPool, SwapChain* swapChain, VkSampler textureSampler,

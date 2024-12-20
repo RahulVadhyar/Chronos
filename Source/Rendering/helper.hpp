@@ -216,19 +216,19 @@ namespace Engine {
     std::vector<VkFramebuffer> createFramebuffer(Chronos::Engine::Device device,
 	Chronos::Engine::SwapChain swapChain, VkRenderPass renderPass,
 	bool msaa);
-/**
-    \brief Creates a set of command buffers for use.
+    /**
+	\brief Creates a set of command buffers for use.
 
-    This creates the command buffers for a given swap chain on a given command
-    pool. It creates as many command buffers as there are images in the swap
-    chain.
+	This creates the command buffers for a given swap chain on a given
+       command pool. It creates as many command buffers as there are images in
+       the swap chain.
 
-    @param device The device that has the command pool.
-    @param swapChain The swap chain to create the command buffers for.
-    @param commandPool The command pool to create the command buffers on.
+	@param device The device that has the command pool.
+	@param swapChain The swap chain to create the command buffers for.
+	@param commandPool The command pool to create the command buffers on.
 
-    @return The created command buffers.
-*/
+	@return The created command buffers.
+    */
     std::vector<VkCommandBuffer> createCommandBuffer(
 	Chronos::Engine::Device device, Chronos::Engine::SwapChain swapChain,
 	VkCommandPool commandPool);

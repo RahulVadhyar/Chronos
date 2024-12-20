@@ -38,15 +38,15 @@ namespace Engine {
 	    Chronos::Engine::Texture texture, VkRenderPass* renderPass);
 	void update(uint32_t currentFrame) override;
 	void destroy() override;
-	const std::vector<uint16_t> indices = std::vector<uint16_t> { 0, 1, 2, 2, 3, 0 };
+	const std::vector<uint16_t> indices
+	    = std::vector<uint16_t> { 0, 1, 2, 2, 3, 0 };
 
 	const std::vector<TexturedVertex> vertices
-	    = std::vector<TexturedVertex> {
-		{ { -0.5f, -0.5f }, { 1.0f, 0.0f } },
-		{ { 0.5f, -0.5f }, { 0.0f, 0.0f } },
-		{ { 0.5f, 0.5f }, { 0.0f, 1.0f } },
-		{ { -0.5f, 0.5f }, { 1.0f, 1.0f } }
-	    };
+	    = std::vector<TexturedVertex> { { { -0.5f, -0.5f },
+						{ 1.0f, 0.0f } },
+		  { { 0.5f, -0.5f }, { 0.0f, 0.0f } },
+		  { { 0.5f, 0.5f }, { 0.0f, 1.0f } },
+		  { { -0.5f, 0.5f }, { 1.0f, 1.0f } } };
 
 	Chronos::Engine::Texture texture;
 	Chronos::Manager::ShapeParams params;
@@ -54,12 +54,14 @@ namespace Engine {
     \brief The vertex buffer that is used to store the vertices.
     */
 	Chronos::Engine::Buffer vertexBuffer;
-	void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3], VkViewport& viewport, VkRect2D& scissor, std::vector<VkCommandBuffer>& commandBuffers) override;
+	void render(uint32_t currentFrame, uint32_t imageIndex,
+	    float bgColor[3], VkViewport& viewport, VkRect2D& scissor,
+	    std::vector<VkCommandBuffer>& commandBuffers) override;
 
-	    /**
-	    \brief The index buffer that is used to store the indices.
-	    */
-	    Chronos::Engine::Buffer indexBuffer;
+	/**
+	\brief The index buffer that is used to store the indices.
+	*/
+	Chronos::Engine::Buffer indexBuffer;
 
     private:
 	void createDescriptorSets() override;

@@ -20,7 +20,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-
 #include "TexturedRectangle.hpp"
 #include "engineStructs.hpp"
 
@@ -33,8 +32,9 @@ void Chronos::Engine::TexturedRectangle::init(Chronos::Engine::Device* device,
     this->fragmentShaderPath = SPIV_SHADER_PATH "/textureFrag.spv";
     this->texture = texture;
 
-    Chronos::Engine::Object::init(
-	device, commandPool, swapChain, textureSampler, renderPass, Chronos::Engine::ObjectType::TypeTexturedRectangle);
+    Chronos::Engine::Object::init(device, commandPool, swapChain,
+	textureSampler, renderPass,
+	Chronos::Engine::ObjectType::TypeTexturedRectangle);
 
     // create the vertex and index buffers and copy the data
     vertexBuffer.size = sizeof(vertices[0]) * vertices.size();
@@ -53,7 +53,7 @@ void Chronos::Engine::TexturedRectangle::init(Chronos::Engine::Device* device,
 void Chronos::Engine::TexturedRectangle::update(uint32_t currentFrame)
 {
     uniformBuffers[currentFrame].update(swapChain->swapChainExtent, params.x,
-    params.y, params.rotation, params.xSize, params.ySize);
+	params.y, params.rotation, params.xSize, params.ySize);
 }
 
 void Chronos::Engine::TexturedRectangle::destroy()
@@ -66,7 +66,7 @@ void Chronos::Engine::TexturedRectangle::destroy()
 void Chronos::Engine::TexturedRectangle::createDescriptorSets()
 {
     std::vector<VkDescriptorSetLayout> layouts(
-    MAX_FRAMES_IN_FLIGHT, descriptorSetLayout);
+	MAX_FRAMES_IN_FLIGHT, descriptorSetLayout);
     VkDescriptorSetAllocateInfo allocInfo {};
     allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
     allocInfo.descriptorPool = descriptorPool;
@@ -74,57 +74,61 @@ void Chronos::Engine::TexturedRectangle::createDescriptorSets()
     allocInfo.pSetLayouts = layouts.data();
     descriptorSets.resize(MAX_FRAMES_IN_FLIGHT);
     if (vkAllocateDescriptorSets(
-        device->device, &allocInfo, descriptorSets.data())
-    != VK_SUCCESS) {
-    throw std::runtime_error("failed to allocate descriptor sets!");
+	    device->device, &allocInfo, descriptorSets.data())
+	!= VK_SUCCESS) {
+	throw std::runtime_error("failed to allocate descriptor sets!");
     }
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
-    VkDescriptorBufferInfo bufferInfo {};
-    bufferInfo.buffer = uniformBuffers[i].buffer;
-    bufferInfo.offset = 0;
-    bufferInfo.range = sizeof(UniformBufferObject);
+	VkDescriptorBufferInfo bufferInfo {};
+	bufferInfo.buffer = uniformBuffers[i].buffer;
+	bufferInfo.offset = 0;
+	bufferInfo.range = sizeof(UniformBufferObject);
 
-    VkDescriptorImageInfo imageInfo {};
-    imageInfo.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
-    imageInfo.imageView = texture.textureImageView;
-    imageInfo.sampler = textureSampler;
+	VkDescriptorImageInfo imageInfo {};
+	imageInfo.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+	imageInfo.imageView = texture.textureImageView;
+	imageInfo.sampler = textureSampler;
 
-    std::array<VkWriteDescriptorSet, 2> descriptorWrites {};
-    descriptorWrites[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-    descriptorWrites[0].dstSet = descriptorSets[i];
-    descriptorWrites[0].dstBinding = 0;
-    descriptorWrites[0].dstArrayElement = 0;
-    descriptorWrites[0].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
-    descriptorWrites[0].descriptorCount = 1;
-    descriptorWrites[0].pBufferInfo = &bufferInfo;
+	std::array<VkWriteDescriptorSet, 2> descriptorWrites {};
+	descriptorWrites[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+	descriptorWrites[0].dstSet = descriptorSets[i];
+	descriptorWrites[0].dstBinding = 0;
+	descriptorWrites[0].dstArrayElement = 0;
+	descriptorWrites[0].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+	descriptorWrites[0].descriptorCount = 1;
+	descriptorWrites[0].pBufferInfo = &bufferInfo;
 
-    descriptorWrites[1].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-    descriptorWrites[1].dstSet = descriptorSets[i];
-    descriptorWrites[1].dstBinding = 1;
-    descriptorWrites[1].dstArrayElement = 0;
-    descriptorWrites[1].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-    descriptorWrites[1].descriptorCount = 1;
-    descriptorWrites[1].pImageInfo = &imageInfo;
+	descriptorWrites[1].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+	descriptorWrites[1].dstSet = descriptorSets[i];
+	descriptorWrites[1].dstBinding = 1;
+	descriptorWrites[1].dstArrayElement = 0;
+	descriptorWrites[1].descriptorType
+	    = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+	descriptorWrites[1].descriptorCount = 1;
+	descriptorWrites[1].pImageInfo = &imageInfo;
 
-    vkUpdateDescriptorSets(device->device,
-        static_cast<uint32_t>(descriptorWrites.size()),
-        descriptorWrites.data(), 0, nullptr);
+	vkUpdateDescriptorSets(device->device,
+	    static_cast<uint32_t>(descriptorWrites.size()),
+	    descriptorWrites.data(), 0, nullptr);
     }
 }
 
-std::vector<VkDescriptorType> Chronos::Engine::TexturedRectangle::getDescriptorTypes()
+std::vector<VkDescriptorType>
+Chronos::Engine::TexturedRectangle::getDescriptorTypes()
 {
     return std::vector<VkDescriptorType> { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER,
-    VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER };
+	VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER };
 }
 
-std::vector<VkShaderStageFlagBits> Chronos::Engine::TexturedRectangle::getDescriptorStages()
+std::vector<VkShaderStageFlagBits>
+Chronos::Engine::TexturedRectangle::getDescriptorStages()
 {
     return std::vector<VkShaderStageFlagBits> { VK_SHADER_STAGE_VERTEX_BIT,
-    VK_SHADER_STAGE_FRAGMENT_BIT };
-}   
+	VK_SHADER_STAGE_FRAGMENT_BIT };
+}
 
-Chronos::Engine::PipelineAttributes Chronos::Engine::TexturedRectangle::getPipelineAttributes()
+Chronos::Engine::PipelineAttributes
+Chronos::Engine::TexturedRectangle::getPipelineAttributes()
 {
     Chronos::Engine::PipelineAttributes pipelineAttributes;
 
@@ -163,23 +167,24 @@ Chronos::Engine::PipelineAttributes Chronos::Engine::TexturedRectangle::getPipel
     return pipelineAttributes;
 }
 
-void Chronos::Engine::TexturedRectangle::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3], VkViewport& viewport, VkRect2D& scissor, std::vector<VkCommandBuffer>& commandBuffers){
-    
-	vkCmdBindPipeline(commandBuffers[currentFrame],
-	    VK_PIPELINE_BIND_POINT_GRAPHICS, this->graphicsPipeline);
-	vkCmdSetViewport(commandBuffers[currentFrame],
-	    0, 1, &viewport);
-	vkCmdSetScissor(commandBuffers[currentFrame],
-	    0, 1, &scissor);
-	VkBuffer vertexBuffers[] = { this->vertexBuffer.buffer };
-	VkDeviceSize offsets[] = { 0 };
-	vkCmdBindVertexBuffers(commandBuffers[currentFrame],
-	    0, 1, vertexBuffers, offsets);
-	vkCmdBindIndexBuffer(commandBuffers[currentFrame],
-	    this->indexBuffer.buffer, 0, VK_INDEX_TYPE_UINT16);
-	vkCmdBindDescriptorSets(commandBuffers[currentFrame],
-	    VK_PIPELINE_BIND_POINT_GRAPHICS, this->pipelineLayout, 0, 1,
-	    &this->descriptorSets[currentFrame], 0, nullptr);
-	vkCmdDrawIndexed(commandBuffers[currentFrame],
-	    static_cast<uint32_t>(this->indices.size()), 1, 0, 0, 0);
+void Chronos::Engine::TexturedRectangle::render(uint32_t currentFrame,
+    uint32_t imageIndex, float bgColor[3], VkViewport& viewport,
+    VkRect2D& scissor, std::vector<VkCommandBuffer>& commandBuffers)
+{
+
+    vkCmdBindPipeline(commandBuffers[currentFrame],
+	VK_PIPELINE_BIND_POINT_GRAPHICS, this->graphicsPipeline);
+    vkCmdSetViewport(commandBuffers[currentFrame], 0, 1, &viewport);
+    vkCmdSetScissor(commandBuffers[currentFrame], 0, 1, &scissor);
+    VkBuffer vertexBuffers[] = { this->vertexBuffer.buffer };
+    VkDeviceSize offsets[] = { 0 };
+    vkCmdBindVertexBuffers(
+	commandBuffers[currentFrame], 0, 1, vertexBuffers, offsets);
+    vkCmdBindIndexBuffer(commandBuffers[currentFrame], this->indexBuffer.buffer,
+	0, VK_INDEX_TYPE_UINT16);
+    vkCmdBindDescriptorSets(commandBuffers[currentFrame],
+	VK_PIPELINE_BIND_POINT_GRAPHICS, this->pipelineLayout, 0, 1,
+	&this->descriptorSets[currentFrame], 0, nullptr);
+    vkCmdDrawIndexed(commandBuffers[currentFrame],
+	static_cast<uint32_t>(this->indices.size()), 1, 0, 0, 0);
 }

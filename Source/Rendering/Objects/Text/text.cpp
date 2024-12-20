@@ -20,7 +20,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-
 #include "text.hpp"
 #include "helper.hpp"
 
@@ -41,9 +40,10 @@ void Chronos::Engine::Text::init(Chronos::Engine::Device* device,
     firstChar = fontStyle.firstChar;
 
     // unsigned char fontpixels[fontHeight][256];
-    //this causes a memory leak... too bad, MSVC is fucked
-    //MSVC can't take variable multi dimensional arrays, else the above commented line would have worked.
-    fontpixels = new unsigned char[fontHeight][256]; 
+    // this causes a memory leak... too bad, MSVC is fucked
+    // MSVC can't take variable multi dimensional arrays, else the above
+    // commented line would have worked.
+    fontpixels = new unsigned char[fontHeight][256];
     fontStyle.getFontData(stbFontData, fontpixels, fontHeight);
 
     // create the font texture from the raw data
@@ -66,8 +66,8 @@ void Chronos::Engine::Text::init(Chronos::Engine::Device* device,
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
 	colorBuffers[i].create(*device);
     }
-    Chronos::Engine::Object::init(
-	device, commandPool, swapChain, textureSampler, renderPass, Chronos::Engine::ObjectType::TypeText);
+    Chronos::Engine::Object::init(device, commandPool, swapChain,
+	textureSampler, renderPass, Chronos::Engine::ObjectType::TypeText);
 }
 
 std::vector<VkDescriptorType> Chronos::Engine::Text::getDescriptorTypes()
@@ -309,21 +309,24 @@ void Chronos::Engine::Text::update(uint32_t currentFrame)
 	{ params.color[0], params.color[1], params.color[2] });
 }
 
-void Chronos::Engine::Text::render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3], VkViewport& viewport, VkRect2D& scissor, std::vector<VkCommandBuffer>& commandBuffers){
+void Chronos::Engine::Text::render(uint32_t currentFrame, uint32_t imageIndex,
+    float bgColor[3], VkViewport& viewport, VkRect2D& scissor,
+    std::vector<VkCommandBuffer>& commandBuffers)
+{
     vkCmdBindPipeline(commandBuffers[currentFrame],
-	    VK_PIPELINE_BIND_POINT_GRAPHICS, this->graphicsPipeline);
-	vkCmdSetViewport(commandBuffers[currentFrame], 0, 1, &viewport);
-	vkCmdSetScissor(commandBuffers[currentFrame], 0, 1, &scissor);
-	VkBuffer vertexBuffers[] = { this->vertexBuffer };
-	VkDeviceSize offsets[] = { 0 };
-	vkCmdBindVertexBuffers(
-	    commandBuffers[currentFrame], 0, 1, vertexBuffers, offsets);
-	vkCmdBindVertexBuffers(
-	    commandBuffers[currentFrame], 1, 1, vertexBuffers, offsets);
-	vkCmdBindDescriptorSets(commandBuffers[currentFrame],
-	    VK_PIPELINE_BIND_POINT_GRAPHICS, this->pipelineLayout, 0, 1,
-	    &this->descriptorSets[currentFrame], 0, nullptr);
-	for (uint32_t j = 0; j < this->numLetters; j++) {
-	    vkCmdDraw(commandBuffers[currentFrame], 4, 1, j * 4, 0);
-	}
+	VK_PIPELINE_BIND_POINT_GRAPHICS, this->graphicsPipeline);
+    vkCmdSetViewport(commandBuffers[currentFrame], 0, 1, &viewport);
+    vkCmdSetScissor(commandBuffers[currentFrame], 0, 1, &scissor);
+    VkBuffer vertexBuffers[] = { this->vertexBuffer };
+    VkDeviceSize offsets[] = { 0 };
+    vkCmdBindVertexBuffers(
+	commandBuffers[currentFrame], 0, 1, vertexBuffers, offsets);
+    vkCmdBindVertexBuffers(
+	commandBuffers[currentFrame], 1, 1, vertexBuffers, offsets);
+    vkCmdBindDescriptorSets(commandBuffers[currentFrame],
+	VK_PIPELINE_BIND_POINT_GRAPHICS, this->pipelineLayout, 0, 1,
+	&this->descriptorSets[currentFrame], 0, nullptr);
+    for (uint32_t j = 0; j < this->numLetters; j++) {
+	vkCmdDraw(commandBuffers[currentFrame], 4, 1, j * 4, 0);
+    }
 }

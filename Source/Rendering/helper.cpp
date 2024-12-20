@@ -305,9 +305,9 @@ std::vector<VkFramebuffer> Chronos::Engine::createFramebuffer(
     return framebuffers;
 }
 
-    std::vector<VkCommandBuffer> Chronos::Engine::createCommandBuffer(
-	Chronos::Engine::Device device, Chronos::Engine::SwapChain swapChain,
-	VkCommandPool commandPool)
+std::vector<VkCommandBuffer> Chronos::Engine::createCommandBuffer(
+    Chronos::Engine::Device device, Chronos::Engine::SwapChain swapChain,
+    VkCommandPool commandPool)
 {
     std::vector<VkCommandBuffer> commandBuffers;
     commandBuffers.resize(swapChain.swapChainImageViews.size());
@@ -323,4 +323,3 @@ std::vector<VkFramebuffer> Chronos::Engine::createFramebuffer(
     }
     return commandBuffers;
 }
-

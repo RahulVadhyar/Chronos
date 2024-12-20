@@ -82,9 +82,9 @@ namespace Engine {
 	 * \param renderPass Vulkan render pass that is used for rendering
 	 * object in question.
 	 */
-	void init(Chronos::Engine::Device* device,
-	    VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
-	    VkSampler textureSampler, VkRenderPass* renderPass, ObjectType objectType);
+	void init(Chronos::Engine::Device* device, VkCommandPool commandPool,
+	    Chronos::Engine::SwapChain* swapChain, VkSampler textureSampler,
+	    VkRenderPass* renderPass, ObjectType objectType);
 
 	/**
 	 * \brief Updates the object for the current frame.
@@ -98,7 +98,10 @@ namespace Engine {
 	 */
 	virtual void update(uint32_t currentFrame) = 0;
 
-    virtual void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3], VkViewport& viewport, VkRect2D& scissor, std::vector<VkCommandBuffer>& commandBuffers) = 0;
+	virtual void render(uint32_t currentFrame, uint32_t imageIndex,
+	    float bgColor[3], VkViewport& viewport, VkRect2D& scissor,
+	    std::vector<VkCommandBuffer>& commandBuffers)
+	    = 0;
 
 	/**
 	 * \brief Destroys the object and releases associated resources.
@@ -125,7 +128,7 @@ namespace Engine {
 	std::vector<VkDescriptorSet>
 	    descriptorSets; /**< Vulkan descriptor sets associated with the
 			       object. */
-    Chronos::Engine::ObjectType objectType; /**< Type of the object. */
+	Chronos::Engine::ObjectType objectType; /**< Type of the object. */
 
     protected:
 	std::string vertexShaderPath; /**< Path to the vertex shader file. */

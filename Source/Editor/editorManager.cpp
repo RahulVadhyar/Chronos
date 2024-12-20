@@ -20,7 +20,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-
 #include "editorHeaders.hpp"
 #include "editorManager.hpp"
 #include "editorTheme.hpp"
@@ -48,7 +47,7 @@ void Chronos::Editor::EditorManager::addElements()
 #endif
     this->updateKeyframes();
 
-    LOG(4, "Editor", "Elements added to the editor.")
+    LOG(4, "Elements added to the editor.")
 }
 
 void Chronos::Editor::EditorManager::MenuBar()
@@ -136,7 +135,7 @@ void Chronos::Editor::EditorManager::ShapeWindow()
 				= textureDetail.textureNo;
 			    strcpy(currentShapeTextureName,
 				textureDetail.textureName.c_str());
-			    LOG(1, "Editor",
+			    LOG(1,
 				"Texture selected for shapeNo ["
 				    + std::to_string(
 					currentShapeTextureSelection)
@@ -156,14 +155,14 @@ void Chronos::Editor::EditorManager::ShapeWindow()
 		switch (this->newShapeFill) {
 		case 0:
 		    this->manager->addShape(this->newShapeParams);
-		    LOG(1, "Editor",
+		    LOG(1,
 			"Colored shape added with shapeName ["
 			    + std::string(this->newShapeParams.shapeName) + "]")
 		    break;
 		case 1:
 		    this->manager->addShape(this->newShapeParams,
 			this->currentShapeTextureSelection);
-		    LOG(1, "Editor",
+		    LOG(1,
 			"Textured shape added with shapeName ["
 			    + std::string(this->newShapeParams.shapeName) + "]")
 		    break;
@@ -178,7 +177,7 @@ void Chronos::Editor::EditorManager::ShapeWindow()
 		ImGui::Selectable("No Shapes");
 	    } else {
 		for (int i = 0; i < static_cast<int>(shapeDetails.size());
-		     i++) {
+		    i++) {
 		    if (ImGui::Selectable(shapeDetails[i].second.shapeName,
 			    this->currentShapeSelection == i)) {
 			this->currentShapeSelection = i;
@@ -244,7 +243,7 @@ void Chronos::Editor::EditorManager::TextureWindow()
 		this->manager->addTexture(
 		    this->newTexturePath, this->newTextureName);
 		this->newTexturePath[0] = '\0';
-		LOG(1, "Editor",
+		LOG(1,
 		    "Texture added with textureName ["
 			+ std::string(this->newTextureName)
 			+ "] and texturePath [" + this->newTexturePath + "]")
@@ -270,7 +269,7 @@ void Chronos::Editor::EditorManager::TextureWindow()
 	    if (ImGui::Button("Remove Texture")) {
 		this->manager->removeTexture(
 		    details[currentTextureSelection].textureNo);
-		LOG(1, "Editor",
+		LOG(1,
 		    "Texture removed with textureNo ["
 			+ std::to_string(
 			    details[currentTextureSelection].textureNo)
@@ -279,7 +278,7 @@ void Chronos::Editor::EditorManager::TextureWindow()
 	    ImGui::SameLine();
 	    if (ImGui::Button("View Texture Details")) {
 		this->showTextureDetailsWindow = true;
-		LOG(1, "Editor",
+		LOG(1,
 		    "Texture selected for editing with textureNo ["
 			+ std::to_string(this->textureDetailsCurrentSelection)
 			+ "]")
@@ -312,37 +311,37 @@ void Chronos::Editor::EditorManager::TextWindow()
 	    if (ImGui::Selectable(
 		    "consolas", this->currentFontSelection == "consolas")) {
 		this->currentFontSelection = "consolas";
-		LOG(1, "Editor",
+		LOG(1,
 		    "Font selected [" + this->currentFontSelection + "]")
 	    }
 	    if (ImGui::Selectable("consolas_bold",
 		    this->currentFontSelection == "consolas_bold")) {
 		this->currentFontSelection = "consolas_bold";
-		LOG(1, "Editor",
+		LOG(1,
 		    "Font selected [" + this->currentFontSelection + "]")
 	    }
 	    if (ImGui::Selectable(
 		    "arial", this->currentFontSelection == "arial")) {
 		this->currentFontSelection = "arial";
-		LOG(1, "Editor",
+		LOG(1,
 		    "Font selected [" + this->currentFontSelection + "]")
 	    }
 	    if (ImGui::Selectable(
 		    "arial_bold", this->currentFontSelection == "arial_bold")) {
 		this->currentFontSelection = "arial_bold";
-		LOG(1, "Editor",
+		LOG(1,
 		    "Font selected [" + this->currentFontSelection + "]")
 	    }
 	    if (ImGui::Selectable(
 		    "times", this->currentFontSelection == "times")) {
 		this->currentFontSelection = "times";
-		LOG(1, "Editor",
+		LOG(1,
 		    "Font selected [" + this->currentFontSelection + "]")
 	    }
 	    if (ImGui::Selectable(
 		    "times_bold", this->currentFontSelection == "times_bold")) {
 		this->currentFontSelection = "times_bold";
-		LOG(1, "Editor",
+		LOG(1,
 		    "Font selected [" + this->currentFontSelection + "]")
 	    }
 	    ImGui::EndCombo();
@@ -354,7 +353,7 @@ void Chronos::Editor::EditorManager::TextWindow()
 	    if (ImGui::Button("Add Text")) {
 		this->manager->addText(this->newTextParams,
 		    this->currentFontSelection, this->currentFontSizeSelection);
-		LOG(1, "Editor",
+		LOG(1,
 		    "Text added with text [" + this->newTextParams.text + "]")
 	    }
 	}
@@ -380,7 +379,7 @@ void Chronos::Editor::EditorManager::TextWindow()
 			= textDetails[currentTextSelection].first;
 		    this->textDetailsTextParams
 			= textDetails[currentTextSelection].second;
-		    LOG(1, "Editor",
+		    LOG(1,
 			"Text selected for editing with textNo ["
 			    + std::to_string(this->textDetailsTextNo) + "]")
 		}
@@ -388,7 +387,7 @@ void Chronos::Editor::EditorManager::TextWindow()
 		if (ImGui::Button("Remove Text")) {
 		    this->manager->removeObject(
 			textDetails[currentTextSelection].first);
-		    LOG(1, "Editor",
+		    LOG(1, 
 			"Text removed with textNo ["
 			    + std::to_string(
 				textDetails[currentTextSelection].first)
@@ -415,7 +414,7 @@ void Chronos::Editor::EditorManager::SettingsWindow()
 	ImGui::InputText("Window Title", this->windowTitle, 200);
 	if (ImGui::Button("Update Window Title")) {
 	    glfwSetWindowTitle(this->manager->getWindow(), this->windowTitle);
-	    LOG(1, "Editor",
+	    LOG(1,
 		"Window title updated to [" + std::string(this->windowTitle)
 		    + "]")
 	}
@@ -426,12 +425,12 @@ void Chronos::Editor::EditorManager::SettingsWindow()
 	    glfwSetWindowMonitor(window, glfwGetPrimaryMonitor(), 0, 0,
 		mode->width, mode->height, mode->refreshRate);
 	    this->isWindowFullscreen = true;
-	    LOG(1, "Editor", "Window set to fullscreen")
+	    LOG(1,"Window set to fullscreen")
 	} else if (!this->fullScreen && this->isWindowFullscreen) {
 	    GLFWwindow* window = this->manager->getWindow();
 	    glfwSetWindowMonitor(window, nullptr, 0, 0, 800, 600, 0);
 	    this->isWindowFullscreen = false;
-	    LOG(1, "Editor", "Window set to windowed mode")
+	    LOG(1, "Window set to windowed mode")
 	}
 
 	ImGui::SeparatorText("Present Mode");
@@ -454,7 +453,7 @@ void Chronos::Editor::EditorManager::SettingsWindow()
 	}
 	if (ImGui::Button("Update Present Mode")) {
 	    this->manager->changePresentMode(this->presentMode);
-	    LOG(1, "Editor",
+	    LOG(1, 
 		"Present mode updated to [" + this->presentMode + "]")
 	}
 
@@ -468,7 +467,7 @@ void Chronos::Editor::EditorManager::SettingsWindow()
 	}
 	if (ImGui::Button("Update MSAA Samples")) {
 	    this->manager->changeMSAA(this->msaaSamples);
-	    LOG(1, "Editor",
+	    LOG(1,
 		"MSAA Samples updated to [" + this->msaaSamples + "]")
 	}
 
@@ -477,7 +476,7 @@ void Chronos::Editor::EditorManager::SettingsWindow()
 	if (ImGui::Button("Update Background Color")) {
 	    this->manager->changeBackgroundColor(
 		this->bgColor[0], this->bgColor[1], this->bgColor[2]);
-	    LOG(1, "Editor",
+	    LOG(1,
 		"Background color updated to ["
 		    + std::to_string(this->bgColor[0]) + ", "
 		    + std::to_string(this->bgColor[1]) + ", "
@@ -514,15 +513,18 @@ void Chronos::Editor::EditorManager::ShapeDetailsWindow()
 	    ImGui::DragFloat("X Size", &this->shapeDetailsShapeParams.xSize,
 		0.01f, 0.0f, FLT_MAX);
 	    ImGui::SameLine();
-	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.xSize, "X size");
+	    this->keyframeCheckbox(
+		&this->shapeDetailsShapeParams.xSize, "X size");
 	    ImGui::DragFloat("Y Size", &this->shapeDetailsShapeParams.ySize,
 		0.01f, 0.0f, FLT_MAX);
 	    ImGui::SameLine();
-	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.ySize, "Y size");
+	    this->keyframeCheckbox(
+		&this->shapeDetailsShapeParams.ySize, "Y size");
 	    ImGui::DragFloat("Rotation",
 		&this->shapeDetailsShapeParams.rotation, 0.01f, 0.0f, FLT_MAX);
 	    ImGui::SameLine();
-	    this->keyframeCheckbox(&this->shapeDetailsShapeParams.rotation, "Rotation(degrees)");
+	    this->keyframeCheckbox(
+		&this->shapeDetailsShapeParams.rotation, "Rotation(degrees)");
 	    ImGui::ColorEdit3(
 		"Color", this->shapeDetailsShapeParams.color.data());
 	    this->manager->updateShape(
@@ -685,23 +687,24 @@ bool Chronos::Editor::EditorManager::doesKeyframeExist(float* valuePointer)
     return true;
 }
 
-void Chronos::Editor::EditorManager::keyframeCheckbox(float* valuePointer, std::string name)
+void Chronos::Editor::EditorManager::keyframeCheckbox(
+    float* valuePointer, std::string name)
 {
     bool isAnimated = this->doesKeyframeExist(valuePointer);
     bool currentChange = isAnimated;
     ImGui::Checkbox(name.c_str(), &currentChange);
     if (currentChange != isAnimated) {
-	LOG(3, "EditorManager",
+	LOG(3,
 	    "Animate checkbox changed for valuePointer ["
 		+ std::to_string((long long)valuePointer) + "]");
 	if (currentChange) {
 	    int keyframeNo = this->manager->addKeyframeVariable(
 		{ { 0, *valuePointer }, { 100, *valuePointer } });
 	    this->floatPointerToKeyframeNo[valuePointer] = keyframeNo;
-	    LOG(3, "EditorManager",
+	    LOG(3,
 		"Added keyframe for valuePointer ["
-		    + std::to_string((long long)valuePointer) + "] with keyframeNo ["
-		    + std::to_string(keyframeNo) + "]")
+		    + std::to_string((long long)valuePointer)
+		    + "] with keyframeNo [" + std::to_string(keyframeNo) + "]")
 	} else {
 	    int keyframeNo = this->getKeyframeNo(valuePointer);
 	    if (keyframeNo == -1) {
@@ -709,10 +712,10 @@ void Chronos::Editor::EditorManager::keyframeCheckbox(float* valuePointer, std::
 	    }
 	    this->manager->removeKeyframeVariable(keyframeNo);
 	    this->floatPointerToKeyframeNo.erase(valuePointer);
-	    LOG(3, "EditorManager",
+	    LOG(3, 
 		"Removed keyframe for valuePointer ["
-		    + std::to_string((long long)valuePointer) + "] with keyframeNo ["
-		    + std::to_string(keyframeNo) + "]")
+		    + std::to_string((long long)valuePointer)
+		    + "] with keyframeNo [" + std::to_string(keyframeNo) + "]")
 	}
     }
     if (currentChange) {
@@ -728,7 +731,7 @@ void Chronos::Editor::EditorManager::updateKeyframes()
 {
     for (auto& [key, value] : this->floatPointerToKeyframeNo) {
 	*key = this->manager->keyframeGetVariable(value);
-	LOG(4, "EditorManager",
+	LOG(4,
 	    "Updated keyframe value for keyframeNo [" + std::to_string(value)
 		+ "] to [" + std::to_string(*key) + "]")
     }
