@@ -4,10 +4,10 @@ include(FetchContent)
 if(UNIX)
     if(CHRONOS_SUPPORT_WAYLAND)
         set(GLFW_BUILD_WAYLAND ON)
-        message("Building with Wayland support")
+        message(STATUS "Building with Wayland support")
     else()
         set(GLFW_BUILD_WAYLAND OFF)
-        message("Building without Wayland support")
+        message(STATUS "Building without Wayland support")
     endif()
 endif()
     
@@ -51,7 +51,7 @@ endif()
 #Vulkan
 if (WIN32)
     set(VULKAN_SDK_DIR $ENV{VULKAN_SDK})        
-    message("Vulkan SDK found: ${VULKAN_SDK_DIR}")
+    message(STATUS "Vulkan SDK found: ${VULKAN_SDK_DIR}")
     
     target_include_directories(Chronos PUBLIC ${VULKAN_SDK_DIR}/Include)    
     target_link_directories(Chronos PUBLIC ${VULKAN_SDK_DIR}/Lib/) 
@@ -76,12 +76,11 @@ if(CHRONOS_ENABLE_VULKAN_VALIDATION_LAYERS)
     if(CHRONOS_BUILD_EDITOR)
         target_compile_definitions(ChronosEditor PUBLIC ENABLE_VULKAN_VALIDATION_LAYERS)
     endif()
-        message("Vulkan validation layers enabled")
+        message(STATUS "Vulkan validation layers enabled")
 endif()
 
 #imgui(only editor)
 if(CHRONOS_BUILD_EDITOR)
-    include(ExternalProject)
     FetchContent_Declare(
         imgui
         GIT_REPOSITORY https://github.com/ocornut/imgui.git

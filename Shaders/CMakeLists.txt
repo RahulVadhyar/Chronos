@@ -24,7 +24,7 @@ file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/shaders_spv)
 
 foreach(SHADER_SOURCE IN LISTS SHADER_SOURCE_FILES)
     get_filename_component(SHADER_NAME ${SHADER_SOURCE} NAME_WE)
-    message("Found shader source: ${SHADER_NAME}")
+    message(STATUS "Found shader source: ${SHADER_NAME}")
     set(SPIV_OUTPUT "${CMAKE_BINARY_DIR}/shaders_spv/${SHADER_NAME}.spv")
     set(HEADER_OUTPUT "${CMAKE_BINARY_DIR}/shaders_header/shaders/${SHADER_NAME}.hpp")
     add_custom_command(
