@@ -5,7 +5,7 @@ var searchData=
   ['librariesused_2emd_2',['LibrariesUsed.md',['../LibrariesUsed_8md.html',1,'']]],
   ['like_20systems_3',['For Linux and Unix Like Systems',['../md_docs_2build.html#autotoc_md16',1,'']]],
   ['linux_20and_20unix_20like_20systems_4',['For Linux and Unix Like Systems',['../md_docs_2build.html#autotoc_md16',1,'']]],
-  ['log_5',['LOG',['../logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a',1,'logging.hpp']]],
+  ['log_5',['LOG',['../logging_8hpp.html#a8774bb0a65165799e6ceafa939745478',1,'logging.hpp']]],
   ['log_20window_6',['Debug Log window',['../md_docs_2UsingEditor.html#autotoc_md69',1,'']]],
   ['logging_7',['Logging',['../md_docs_2build.html#autotoc_md25',1,'']]],
   ['logging_2ehpp_8',['logging.hpp',['../logging_8hpp.html',1,'']]]

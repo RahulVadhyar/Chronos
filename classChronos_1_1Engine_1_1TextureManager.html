@@ -190,12 +190,12 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The texutreNoof the texture that was added. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="textureManager_8cpp_source.html#l00033">33</a> of file <a class="el" href="textureManager_8cpp_source.html">textureManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>{</div>
-<div class="line"><span class="lineno">   36</span>    <span class="keywordtype">int</span> textureNo = <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#a4d43f6b45726e2301c15cc77597da349">nextFreeTextureNo</a>++;</div>
-<div class="line"><span class="lineno">   37</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#ae70e30de5fae62d902b53b64b6038a47">textures</a>[textureNo].create(*<a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#af6d3e4cf9ceb803a955f235953ec85ae">device</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#a4aba7438aa2d1ede1009c116596f8444">commandPool</a>, texturePath, textureName);</div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">return</span> textureNo;</div>
-<div class="line"><span class="lineno">   39</span>}</div>
+<p class="definition">Definition at line <a class="el" href="textureManager_8cpp_source.html#l00032">32</a> of file <a class="el" href="textureManager_8cpp_source.html">textureManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordtype">int</span> textureNo = <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#a4d43f6b45726e2301c15cc77597da349">nextFreeTextureNo</a>++;</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#ae70e30de5fae62d902b53b64b6038a47">textures</a>[textureNo].create(*<a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#af6d3e4cf9ceb803a955f235953ec85ae">device</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#a4aba7438aa2d1ede1009c116596f8444">commandPool</a>, texturePath, textureName);</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span> textureNo;</div>
+<div class="line"><span class="lineno">   38</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TextureManager_html_a4aba7438aa2d1ede1009c116596f8444"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextureManager.html#a4aba7438aa2d1ede1009c116596f8444">Chronos::Engine::TextureManager::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdef"><b>Definition</b> <a href="textureManager_8hpp_source.html#l00092">textureManager.hpp:92</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TextureManager_html_a4d43f6b45726e2301c15cc77597da349"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextureManager.html#a4d43f6b45726e2301c15cc77597da349">Chronos::Engine::TextureManager::nextFreeTextureNo</a></div><div class="ttdeci">int nextFreeTextureNo</div><div class="ttdef"><b>Definition</b> <a href="textureManager_8hpp_source.html#l00048">textureManager.hpp:48</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TextureManager_html_ae70e30de5fae62d902b53b64b6038a47"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextureManager.html#ae70e30de5fae62d902b53b64b6038a47">Chronos::Engine::TextureManager::textures</a></div><div class="ttdeci">std::map&lt; int, Chronos::Engine::Texture &gt; textures</div><div class="ttdoc">The textures that are managed by this class. They are mapped via texture nos.</div><div class="ttdef"><b>Definition</b> <a href="textureManager_8hpp_source.html#l00047">textureManager.hpp:47</a></div></div>
@@ -230,12 +230,12 @@ Here is the caller graph for this function:</div>
 
 <p>Destroys the texture manager. </p>
 
-<p class="definition">Definition at line <a class="el" href="textureManager_8cpp_source.html#l00047">47</a> of file <a class="el" href="textureManager_8cpp_source.html">textureManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
-<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; texture : <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#ae70e30de5fae62d902b53b64b6038a47">textures</a>) {</div>
-<div class="line"><span class="lineno">   50</span>    texture.second.destroy();</div>
-<div class="line"><span class="lineno">   51</span>    }</div>
-<div class="line"><span class="lineno">   52</span>}</div>
+<p class="definition">Definition at line <a class="el" href="textureManager_8cpp_source.html#l00046">46</a> of file <a class="el" href="textureManager_8cpp_source.html">textureManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; texture : <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#ae70e30de5fae62d902b53b64b6038a47">textures</a>) {</div>
+<div class="line"><span class="lineno">   49</span>    texture.second.destroy();</div>
+<div class="line"><span class="lineno">   50</span>    }</div>
+<div class="line"><span class="lineno">   51</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -264,10 +264,10 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The texture that was requested. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="textureManager_8cpp_source.html#l00054">54</a> of file <a class="el" href="textureManager_8cpp_source.html">textureManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#ae70e30de5fae62d902b53b64b6038a47">textures</a>[textureNo];</div>
-<div class="line"><span class="lineno">   58</span>}</div>
+<p class="definition">Definition at line <a class="el" href="textureManager_8cpp_source.html#l00053">53</a> of file <a class="el" href="textureManager_8cpp_source.html">textureManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>{</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#ae70e30de5fae62d902b53b64b6038a47">textures</a>[textureNo];</div>
+<div class="line"><span class="lineno">   57</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -306,11 +306,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="textureManager_8cpp_source.html#l00026">26</a> of file <a class="el" href="textureManager_8cpp_source.html">textureManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>{</div>
-<div class="line"><span class="lineno">   29</span>    this-&gt;device = <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#af6d3e4cf9ceb803a955f235953ec85ae">device</a>;</div>
-<div class="line"><span class="lineno">   30</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#a4aba7438aa2d1ede1009c116596f8444">commandPool</a> = <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#a4aba7438aa2d1ede1009c116596f8444">commandPool</a>;</div>
-<div class="line"><span class="lineno">   31</span>}</div>
+<p class="definition">Definition at line <a class="el" href="textureManager_8cpp_source.html#l00025">25</a> of file <a class="el" href="textureManager_8cpp_source.html">textureManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
+<div class="line"><span class="lineno">   28</span>    this-&gt;device = <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#af6d3e4cf9ceb803a955f235953ec85ae">device</a>;</div>
+<div class="line"><span class="lineno">   29</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#a4aba7438aa2d1ede1009c116596f8444">commandPool</a> = <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#a4aba7438aa2d1ede1009c116596f8444">commandPool</a>;</div>
+<div class="line"><span class="lineno">   30</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="textureManager_8hpp_source.html#l00092">commandPool</a>, and <a class="el" href="textureManager_8hpp_source.html#l00091">device</a>.</p>
 
@@ -340,11 +340,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="textureManager_8cpp_source.html#l00041">41</a> of file <a class="el" href="textureManager_8cpp_source.html">textureManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>{</div>
-<div class="line"><span class="lineno">   43</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#ae70e30de5fae62d902b53b64b6038a47">textures</a>[textureNo].destroy();</div>
-<div class="line"><span class="lineno">   44</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#ae70e30de5fae62d902b53b64b6038a47">textures</a>.erase(textureNo);</div>
-<div class="line"><span class="lineno">   45</span>}</div>
+<p class="definition">Definition at line <a class="el" href="textureManager_8cpp_source.html#l00040">40</a> of file <a class="el" href="textureManager_8cpp_source.html">textureManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>{</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#ae70e30de5fae62d902b53b64b6038a47">textures</a>[textureNo].destroy();</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1TextureManager.html#ae70e30de5fae62d902b53b64b6038a47">textures</a>.erase(textureNo);</div>
+<div class="line"><span class="lineno">   44</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="device_8cpp_source.html#l00036">Chronos::Engine::Device::destroy()</a>.</p>
 <div class="dynheader">

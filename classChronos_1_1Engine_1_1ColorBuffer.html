@@ -202,7 +202,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">  110</span>        | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); <span class="comment">// want to be visible to</span></div>
 <div class="line"><span class="lineno">  111</span>                             <span class="comment">// host and device</span></div>
 <div class="line"><span class="lineno">  112</span>    vkMapMemory(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">device</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1Buffer.html#ad4f872dd55a1a2d78f6094bd545c9861">memory</a>, 0, <a class="code hl_variable" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a>, 0, &amp;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ColorBuffer.html#a86f5651df2e38414f11598af8b194d56">data</a>);</div>
-<div class="line"><span class="lineno">  113</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;ColorBuffer&quot;</span>,</div>
+<div class="line"><span class="lineno">  113</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3,</div>
 <div class="line"><span class="lineno">  114</span>    <span class="stringliteral">&quot;Color buffer object created for buffer [&quot;</span></div>
 <div class="line"><span class="lineno">  115</span>        + std::to_string((uint64_t)<a class="code hl_variable" href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">buffer</a>) + <span class="stringliteral">&quot;]&quot;</span>)</div>
 <div class="line"><span class="lineno">  116</span>}</div>
@@ -213,9 +213,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_adb83b0443d3a24404bf414686d27f590"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#adb83b0443d3a24404bf414686d27f590">Chronos::Engine::Buffer::device</a></div><div class="ttdeci">Chronos::Engine::Device device</div><div class="ttdoc">The device on which the buffer is stored.</div><div class="ttdef"><b>Definition</b> <a href="buffers_8hpp_source.html#l00094">buffers.hpp:94</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ColorBuffer_html_a86f5651df2e38414f11598af8b194d56"><div class="ttname"><a href="classChronos_1_1Engine_1_1ColorBuffer.html#a86f5651df2e38414f11598af8b194d56">Chronos::Engine::ColorBuffer::data</a></div><div class="ttdeci">void * data</div><div class="ttdef"><b>Definition</b> <a href="buffers_8hpp_source.html#l00169">buffers.hpp:169</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition</b> <a href="device_8hpp_source.html#l00052">device.hpp:52</a></div></div>
-<div class="ttc" id="alogging_8hpp_html_a5b58fc422e0e0d9227a7ef69954b689a"><div class="ttname"><a href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a></div><div class="ttdeci">#define LOG(LEVEL, CLASS, MESSAGE)</div><div class="ttdef"><b>Definition</b> <a href="logging_8hpp_source.html#l00035">logging.hpp:35</a></div></div>
+<div class="ttc" id="alogging_8hpp_html_a8774bb0a65165799e6ceafa939745478"><div class="ttname"><a href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a></div><div class="ttdeci">#define LOG(LEVEL, MESSAGE)</div><div class="ttdef"><b>Definition</b> <a href="logging_8hpp_source.html#l00058">logging.hpp:58</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="buffers_8cpp_source.html#l00027">Chronos::Engine::Buffer::create()</a>, <a class="el" href="device_8hpp_source.html#l00052">Chronos::Engine::Device::device</a>, and <a class="el" href="logging_8hpp_source.html#l00035">LOG</a>.</p>
+<p class="reference">References <a class="el" href="buffers_8cpp_source.html#l00027">Chronos::Engine::Buffer::create()</a>, <a class="el" href="device_8hpp_source.html#l00052">Chronos::Engine::Device::device</a>, and <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -263,12 +263,12 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  121</span>    UniformColorBufferObject ubo {};</div>
 <div class="line"><span class="lineno">  122</span>    ubo.color = color;</div>
 <div class="line"><span class="lineno">  123</span>    memcpy(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ColorBuffer.html#a86f5651df2e38414f11598af8b194d56">data</a>, &amp;ubo, <span class="keyword">sizeof</span>(ubo));</div>
-<div class="line"><span class="lineno">  124</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(4, <span class="stringliteral">&quot;ColorBuffer&quot;</span>,</div>
+<div class="line"><span class="lineno">  124</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(4,</div>
 <div class="line"><span class="lineno">  125</span>    <span class="stringliteral">&quot;Color buffer object updated for buffer [&quot;</span></div>
 <div class="line"><span class="lineno">  126</span>        + std::to_string((uint64_t)<a class="code hl_variable" href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">buffer</a>) + <span class="stringliteral">&quot;]&quot;</span>)</div>
 <div class="line"><span class="lineno">  127</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="engineStructs_8hpp_source.html#l00075">Chronos::Engine::UniformColorBufferObject::color</a>, and <a class="el" href="logging_8hpp_source.html#l00035">LOG</a>.</p>
+<p class="reference">References <a class="el" href="engineStructs_8hpp_source.html#l00075">Chronos::Engine::UniformColorBufferObject::color</a>, and <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>.</p>
 
 </div>
 </div>

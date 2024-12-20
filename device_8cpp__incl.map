@@ -1,30 +1,38 @@
 <map id="Source/Rendering/device.cpp" name="Source/Rendering/device.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="87,5,298,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="18,79,61,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,33,74,77,72,72,167,28"/>
-<area shape="rect" id="Node000003" href="$logging_8hpp.html" title=" " alt="" coords="85,79,183,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="185,33,154,70,150,67,181,29"/>
-<area shape="rect" id="Node000005" href="$helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="207,79,298,104"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="205,29,236,66,232,70,201,33"/>
-<area shape="rect" id="Node000007" href="$swapchain_8hpp.html" title="Contains the swapChain class along with all the swapChain related functions." alt="" coords="292,152,411,177"/>
-<area shape="poly" id="edge14_Node000001_Node000007" title=" " alt="" coords="230,28,272,47,312,77,333,107,346,137,342,139,328,109,308,81,269,52,228,33"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="89,152,169,177"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="136,105,133,139,128,138,130,104"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="193,152,267,177"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="251,105,240,140,235,138,246,104"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="270,102,326,142,323,146,267,106"/>
-<area shape="rect" id="Node000008" href="$device_8hpp.html" title="Contains the Device class." alt="" coords="305,225,398,251"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="354,178,354,212,349,212,349,178"/>
-<area shape="rect" id="Node000009" href="$vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="278,299,425,324"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="354,251,354,285,349,285,349,251"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="5,372,116,397"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="305,327,121,371,120,366,304,321"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="140,372,240,397"/>
-<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="326,326,230,369,228,364,324,322"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="264,372,439,397"/>
-<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="354,324,354,358,349,358,349,324"/>
-<area shape="rect" id="Node000013" title=" " alt="" coords="463,372,567,397"/>
-<area shape="poly" id="edge12_Node000009_Node000013" title=" " alt="" coords="379,322,477,364,475,369,377,326"/>
-<area shape="rect" id="Node000014" title=" " alt="" coords="592,372,809,397"/>
-<area shape="poly" id="edge13_Node000009_Node000014" title=" " alt="" coords="408,321,632,367,630,372,407,327"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="345,5,556,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="236,79,279,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="421,33,292,80,291,75,419,28"/>
+<area shape="rect" id="Node000003" href="$logging_8hpp.html" title=" " alt="" coords="303,79,401,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="436,33,381,73,378,68,433,29"/>
+<area shape="rect" id="Node000009" href="$helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="504,79,595,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="468,29,524,68,521,73,465,33"/>
+<area shape="rect" id="Node000011" href="$swapchain_8hpp.html" title="Contains the swapChain class along with all the swapChain related functions." alt="" coords="611,152,730,177"/>
+<area shape="poly" id="edge18_Node000001_Node000011" title=" " alt="" coords="502,28,555,47,608,77,638,107,660,139,656,142,634,110,605,81,553,52,500,33"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,152,85,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="303,107,99,154,98,148,302,101"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="109,152,200,177"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="321,107,201,150,199,145,319,102"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="224,152,291,177"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="338,106,285,146,282,141,335,102"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="315,152,389,177"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="355,104,355,138,349,138,349,104"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="413,152,488,177"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="369,102,425,142,422,146,366,106"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="512,152,587,177"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="552,104,552,138,547,138,547,104"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="570,102,641,143,638,147,567,106"/>
+<area shape="rect" id="Node000012" href="$device_8hpp.html" title="Contains the Device class." alt="" coords="624,225,717,251"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="673,178,673,212,668,212,668,178"/>
+<area shape="rect" id="Node000013" href="$vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="597,299,744,324"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="673,251,673,285,668,285,668,251"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="325,372,435,397"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="625,327,441,371,439,366,623,321"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="459,372,559,397"/>
+<area shape="poly" id="edge14_Node000013_Node000015" title=" " alt="" coords="646,326,549,369,547,364,644,322"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="583,372,758,397"/>
+<area shape="poly" id="edge15_Node000013_Node000016" title=" " alt="" coords="673,324,673,358,668,358,668,324"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="783,372,887,397"/>
+<area shape="poly" id="edge16_Node000013_Node000017" title=" " alt="" coords="698,322,797,364,794,369,696,326"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="911,372,1129,397"/>
+<area shape="poly" id="edge17_Node000013_Node000018" title=" " alt="" coords="727,321,951,367,950,372,726,327"/>
 </map>

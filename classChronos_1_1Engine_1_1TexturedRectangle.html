@@ -294,22 +294,23 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">  102</span>    descriptorWrites[1].dstSet = <a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">descriptorSets</a>[i];</div>
 <div class="line"><span class="lineno">  103</span>    descriptorWrites[1].dstBinding = 1;</div>
 <div class="line"><span class="lineno">  104</span>    descriptorWrites[1].dstArrayElement = 0;</div>
-<div class="line"><span class="lineno">  105</span>    descriptorWrites[1].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;</div>
-<div class="line"><span class="lineno">  106</span>    descriptorWrites[1].descriptorCount = 1;</div>
-<div class="line"><span class="lineno">  107</span>    descriptorWrites[1].pImageInfo = &amp;imageInfo;</div>
-<div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>    vkUpdateDescriptorSets(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>,</div>
-<div class="line"><span class="lineno">  110</span>        <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(descriptorWrites.size()),</div>
-<div class="line"><span class="lineno">  111</span>        descriptorWrites.data(), 0, <span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">  112</span>    }</div>
-<div class="line"><span class="lineno">  113</span>}</div>
+<div class="line"><span class="lineno">  105</span>    descriptorWrites[1].descriptorType</div>
+<div class="line"><span class="lineno">  106</span>        = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;</div>
+<div class="line"><span class="lineno">  107</span>    descriptorWrites[1].descriptorCount = 1;</div>
+<div class="line"><span class="lineno">  108</span>    descriptorWrites[1].pImageInfo = &amp;imageInfo;</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    vkUpdateDescriptorSets(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>,</div>
+<div class="line"><span class="lineno">  111</span>        <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(descriptorWrites.size()),</div>
+<div class="line"><span class="lineno">  112</span>        descriptorWrites.data(), 0, <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  113</span>    }</div>
+<div class="line"><span class="lineno">  114</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition</b> <a href="device_8hpp_source.html#l00052">device.hpp:52</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a004f17b08fbd33cbcab795376a9ef8a1"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a004f17b08fbd33cbcab795376a9ef8a1">Chronos::Engine::Object::descriptorSetLayout</a></div><div class="ttdeci">VkDescriptorSetLayout descriptorSetLayout</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00143">object.hpp:143</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a203a494524c8c74d52e5d692a2845f8b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">Chronos::Engine::Object::textureSampler</a></div><div class="ttdeci">VkSampler textureSampler</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00139">object.hpp:139</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a5587465d9740b74dbece2415df63fb9f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">Chronos::Engine::Object::descriptorSets</a></div><div class="ttdeci">std::vector&lt; VkDescriptorSet &gt; descriptorSets</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00126">object.hpp:126</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a8bcbdc312c4e8afcd1eb382a530b9fd7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a8bcbdc312c4e8afcd1eb382a530b9fd7">Chronos::Engine::Object::descriptorPool</a></div><div class="ttdeci">VkDescriptorPool descriptorPool</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00146">object.hpp:146</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a9ec42d04a85645aaffe162580da68a29"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">Chronos::Engine::Object::device</a></div><div class="ttdeci">Chronos::Engine::Device * device</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00134">object.hpp:134</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_aa107fe2bc0ae441c79ec522df3a8a16c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">Chronos::Engine::Object::uniformBuffers</a></div><div class="ttdeci">std::vector&lt; Chronos::Engine::UniformBuffer &gt; uniformBuffers</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00177">object.hpp:177</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a004f17b08fbd33cbcab795376a9ef8a1"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a004f17b08fbd33cbcab795376a9ef8a1">Chronos::Engine::Object::descriptorSetLayout</a></div><div class="ttdeci">VkDescriptorSetLayout descriptorSetLayout</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00146">object.hpp:146</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a203a494524c8c74d52e5d692a2845f8b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">Chronos::Engine::Object::textureSampler</a></div><div class="ttdeci">VkSampler textureSampler</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00142">object.hpp:142</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a5587465d9740b74dbece2415df63fb9f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">Chronos::Engine::Object::descriptorSets</a></div><div class="ttdeci">std::vector&lt; VkDescriptorSet &gt; descriptorSets</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00129">object.hpp:129</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a8bcbdc312c4e8afcd1eb382a530b9fd7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a8bcbdc312c4e8afcd1eb382a530b9fd7">Chronos::Engine::Object::descriptorPool</a></div><div class="ttdeci">VkDescriptorPool descriptorPool</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00149">object.hpp:149</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a9ec42d04a85645aaffe162580da68a29"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">Chronos::Engine::Object::device</a></div><div class="ttdeci">Chronos::Engine::Device * device</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00137">object.hpp:137</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_aa107fe2bc0ae441c79ec522df3a8a16c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c">Chronos::Engine::Object::uniformBuffers</a></div><div class="ttdeci">std::vector&lt; Chronos::Engine::UniformBuffer &gt; uniformBuffers</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00180">object.hpp:180</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Texture_html_a4e9fa6072f861955b04b663d63eede66"><div class="ttname"><a href="classChronos_1_1Engine_1_1Texture.html#a4e9fa6072f861955b04b663d63eede66">Chronos::Engine::Texture::textureImageView</a></div><div class="ttdeci">VkImageView textureImageView</div><div class="ttdoc">The image view for the texture.</div><div class="ttdef"><b>Definition</b> <a href="texture_8hpp_source.html#l00149">texture.hpp:149</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TexturedRectangle_html_af7d6cbbb26193aa91f71e200eec6feda"><div class="ttname"><a href="classChronos_1_1Engine_1_1TexturedRectangle.html#af7d6cbbb26193aa91f71e200eec6feda">Chronos::Engine::TexturedRectangle::texture</a></div><div class="ttdeci">Chronos::Engine::Texture texture</div><div class="ttdef"><b>Definition</b> <a href="TexturedRectangle_8hpp_source.html#l00051">TexturedRectangle.hpp:51</a></div></div>
 <div class="ttc" id="avulkanHeaders_8hpp_html_a84d3ea5135a58a3d5c7d802762e320ec"><div class="ttname"><a href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a></div><div class="ttdeci">#define MAX_FRAMES_IN_FLIGHT</div><div class="ttdoc">The number of frames in flight.</div><div class="ttdef"><b>Definition</b> <a href="vulkanHeaders_8hpp_source.html#l00053">vulkanHeaders.hpp:53</a></div></div>
@@ -353,11 +354,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   63</span>    <a class="code hl_function" href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a>();</div>
 <div class="line"><span class="lineno">   64</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a96c16eb443ecac4400e67d6172effff1"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a96c16eb443ecac4400e67d6172effff1">Chronos::Engine::Buffer::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">Destroys the buffer and frees the memory.</div><div class="ttdef"><b>Definition</b> <a href="buffers_8cpp_source.html#l00063">buffers.cpp:63</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2bdcd3b34fd075835e2a395bd39b09d7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a></div><div class="ttdeci">virtual void destroy()=0</div><div class="ttdoc">Destroys the object and releases associated resources.</div><div class="ttdef"><b>Definition</b> <a href="object_8cpp_source.html#l00259">object.cpp:259</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1TexturedRectangle_html_a24e56fd86d40e7644bcc7096e661377e"><div class="ttname"><a href="classChronos_1_1Engine_1_1TexturedRectangle.html#a24e56fd86d40e7644bcc7096e661377e">Chronos::Engine::TexturedRectangle::indexBuffer</a></div><div class="ttdeci">Chronos::Engine::Buffer indexBuffer</div><div class="ttdoc">The index buffer that is used to store the indices.</div><div class="ttdef"><b>Definition</b> <a href="TexturedRectangle_8hpp_source.html#l00062">TexturedRectangle.hpp:62</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a2bdcd3b34fd075835e2a395bd39b09d7"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a2bdcd3b34fd075835e2a395bd39b09d7">Chronos::Engine::Object::destroy</a></div><div class="ttdeci">virtual void destroy()=0</div><div class="ttdoc">Destroys the object and releases associated resources.</div><div class="ttdef"><b>Definition</b> <a href="object_8cpp_source.html#l00257">object.cpp:257</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1TexturedRectangle_html_a24e56fd86d40e7644bcc7096e661377e"><div class="ttname"><a href="classChronos_1_1Engine_1_1TexturedRectangle.html#a24e56fd86d40e7644bcc7096e661377e">Chronos::Engine::TexturedRectangle::indexBuffer</a></div><div class="ttdeci">Chronos::Engine::Buffer indexBuffer</div><div class="ttdoc">The index buffer that is used to store the indices.</div><div class="ttdef"><b>Definition</b> <a href="TexturedRectangle_8hpp_source.html#l00064">TexturedRectangle.hpp:64</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TexturedRectangle_html_aff5e45957eb9c639955a97f988c80a52"><div class="ttname"><a href="classChronos_1_1Engine_1_1TexturedRectangle.html#aff5e45957eb9c639955a97f988c80a52">Chronos::Engine::TexturedRectangle::vertexBuffer</a></div><div class="ttdeci">Chronos::Engine::Buffer vertexBuffer</div><div class="ttdoc">The vertex buffer that is used to store the vertices.</div><div class="ttdef"><b>Definition</b> <a href="TexturedRectangle_8hpp_source.html#l00056">TexturedRectangle.hpp:56</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="object_8cpp_source.html#l00259">Chronos::Engine::Object::destroy()</a>.</p>
+<p class="reference">References <a class="el" href="object_8cpp_source.html#l00257">Chronos::Engine::Object::destroy()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -396,11 +397,11 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a989be2cd2d6c67578f47f78afc5bc486">Chronos::Engine::Object</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TexturedRectangle_8cpp_source.html#l00121">121</a> of file <a class="el" href="TexturedRectangle_8cpp_source.html">TexturedRectangle.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  122</span>{</div>
-<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">return</span> std::vector&lt;VkShaderStageFlagBits&gt; { VK_SHADER_STAGE_VERTEX_BIT,</div>
-<div class="line"><span class="lineno">  124</span>    VK_SHADER_STAGE_FRAGMENT_BIT };</div>
-<div class="line"><span class="lineno">  125</span>}   </div>
+<p class="definition">Definition at line <a class="el" href="TexturedRectangle_8cpp_source.html#l00124">124</a> of file <a class="el" href="TexturedRectangle_8cpp_source.html">TexturedRectangle.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>{</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> std::vector&lt;VkShaderStageFlagBits&gt; { VK_SHADER_STAGE_VERTEX_BIT,</div>
+<div class="line"><span class="lineno">  127</span>    VK_SHADER_STAGE_FRAGMENT_BIT };</div>
+<div class="line"><span class="lineno">  128</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -429,11 +430,11 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a20a22d0788ce9979113f7cf5299eda94">Chronos::Engine::Object</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TexturedRectangle_8cpp_source.html#l00115">115</a> of file <a class="el" href="TexturedRectangle_8cpp_source.html">TexturedRectangle.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  116</span>{</div>
-<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">return</span> std::vector&lt;VkDescriptorType&gt; { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER,</div>
-<div class="line"><span class="lineno">  118</span>    VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER };</div>
-<div class="line"><span class="lineno">  119</span>}</div>
+<p class="definition">Definition at line <a class="el" href="TexturedRectangle_8cpp_source.html#l00117">117</a> of file <a class="el" href="TexturedRectangle_8cpp_source.html">TexturedRectangle.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>{</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">return</span> std::vector&lt;VkDescriptorType&gt; { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER,</div>
+<div class="line"><span class="lineno">  120</span>    VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER };</div>
+<div class="line"><span class="lineno">  121</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -462,44 +463,44 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a329ee54c7e407fe640b7cf858b26b65d">Chronos::Engine::Object</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TexturedRectangle_8cpp_source.html#l00127">127</a> of file <a class="el" href="TexturedRectangle_8cpp_source.html">TexturedRectangle.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  128</span>{</div>
-<div class="line"><span class="lineno">  129</span>    <a class="code hl_struct" href="structChronos_1_1Engine_1_1PipelineAttributes.html">Chronos::Engine::PipelineAttributes</a> pipelineAttributes;</div>
-<div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span>    <span class="keyword">auto</span> bindingDescription = <a class="code hl_function" href="structChronos_1_1Engine_1_1TexturedVertex.html#a1af5a2440cc959788e2b44e5266884d8">TexturedVertex::getBindingDescription</a>();</div>
-<div class="line"><span class="lineno">  132</span>    <span class="keyword">auto</span> attributeDescriptions = <a class="code hl_function" href="structChronos_1_1Engine_1_1TexturedVertex.html#ac3d2c453d2984ee9bcfb92f0bd36f073">TexturedVertex::getAttributeDescriptions</a>();</div>
-<div class="line"><span class="lineno">  133</span> </div>
-<div class="line"><span class="lineno">  134</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a6449ea448af9b4ce79281ff243f9b1cd">bindingDescriptions</a>.resize(1);</div>
-<div class="line"><span class="lineno">  135</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a6449ea448af9b4ce79281ff243f9b1cd">bindingDescriptions</a>[0] = bindingDescription;</div>
-<div class="line"><span class="lineno">  136</span> </div>
-<div class="line"><span class="lineno">  137</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225">attributeDescriptions</a>.resize(</div>
-<div class="line"><span class="lineno">  138</span>    attributeDescriptions.size());</div>
-<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; static_cast&lt;int&gt;(attributeDescriptions.size()); i++) {</div>
-<div class="line"><span class="lineno">  140</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225">attributeDescriptions</a>[i] = attributeDescriptions[i];</div>
-<div class="line"><span class="lineno">  141</span>    }</div>
-<div class="line"><span class="lineno">  142</span> </div>
-<div class="line"><span class="lineno">  143</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a14e0f95045ac8e59a01daab9fbda2b6c">topology</a> = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;</div>
-<div class="line"><span class="lineno">  144</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#aeda2f1f1bedbeca2694b16154ce8bd3d">frontFace</a> = VK_FRONT_FACE_COUNTER_CLOCKWISE;</div>
-<div class="line"><span class="lineno">  145</span> </div>
-<div class="line"><span class="lineno">  146</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.colorWriteMask</div>
-<div class="line"><span class="lineno">  147</span>    = VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT</div>
-<div class="line"><span class="lineno">  148</span>    | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT;</div>
-<div class="line"><span class="lineno">  149</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.blendEnable = VK_FALSE;</div>
-<div class="line"><span class="lineno">  150</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.srcColorBlendFactor</div>
-<div class="line"><span class="lineno">  151</span>    = VK_BLEND_FACTOR_ONE;</div>
-<div class="line"><span class="lineno">  152</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.dstColorBlendFactor</div>
-<div class="line"><span class="lineno">  153</span>    = VK_BLEND_FACTOR_ZERO; <span class="comment">// Optional</span></div>
-<div class="line"><span class="lineno">  154</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.colorBlendOp</div>
-<div class="line"><span class="lineno">  155</span>    = VK_BLEND_OP_ADD; <span class="comment">// Optional</span></div>
-<div class="line"><span class="lineno">  156</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.srcAlphaBlendFactor</div>
-<div class="line"><span class="lineno">  157</span>    = VK_BLEND_FACTOR_ONE; <span class="comment">// Optional</span></div>
-<div class="line"><span class="lineno">  158</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.dstAlphaBlendFactor</div>
-<div class="line"><span class="lineno">  159</span>    = VK_BLEND_FACTOR_ZERO; <span class="comment">// Optional</span></div>
-<div class="line"><span class="lineno">  160</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.alphaBlendOp</div>
-<div class="line"><span class="lineno">  161</span>    = VK_BLEND_OP_ADD; <span class="comment">// Optional</span></div>
-<div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">return</span> pipelineAttributes;</div>
-<div class="line"><span class="lineno">  164</span>}</div>
+<p class="definition">Definition at line <a class="el" href="TexturedRectangle_8cpp_source.html#l00131">131</a> of file <a class="el" href="TexturedRectangle_8cpp_source.html">TexturedRectangle.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>{</div>
+<div class="line"><span class="lineno">  133</span>    <a class="code hl_struct" href="structChronos_1_1Engine_1_1PipelineAttributes.html">Chronos::Engine::PipelineAttributes</a> pipelineAttributes;</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>    <span class="keyword">auto</span> bindingDescription = <a class="code hl_function" href="structChronos_1_1Engine_1_1TexturedVertex.html#a1af5a2440cc959788e2b44e5266884d8">TexturedVertex::getBindingDescription</a>();</div>
+<div class="line"><span class="lineno">  136</span>    <span class="keyword">auto</span> attributeDescriptions = <a class="code hl_function" href="structChronos_1_1Engine_1_1TexturedVertex.html#ac3d2c453d2984ee9bcfb92f0bd36f073">TexturedVertex::getAttributeDescriptions</a>();</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a6449ea448af9b4ce79281ff243f9b1cd">bindingDescriptions</a>.resize(1);</div>
+<div class="line"><span class="lineno">  139</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a6449ea448af9b4ce79281ff243f9b1cd">bindingDescriptions</a>[0] = bindingDescription;</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225">attributeDescriptions</a>.resize(</div>
+<div class="line"><span class="lineno">  142</span>    attributeDescriptions.size());</div>
+<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; static_cast&lt;int&gt;(attributeDescriptions.size()); i++) {</div>
+<div class="line"><span class="lineno">  144</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a81aa188b04f6c9af8ea5321e22ebf225">attributeDescriptions</a>[i] = attributeDescriptions[i];</div>
+<div class="line"><span class="lineno">  145</span>    }</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a14e0f95045ac8e59a01daab9fbda2b6c">topology</a> = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;</div>
+<div class="line"><span class="lineno">  148</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#aeda2f1f1bedbeca2694b16154ce8bd3d">frontFace</a> = VK_FRONT_FACE_COUNTER_CLOCKWISE;</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.colorWriteMask</div>
+<div class="line"><span class="lineno">  151</span>    = VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT</div>
+<div class="line"><span class="lineno">  152</span>    | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT;</div>
+<div class="line"><span class="lineno">  153</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.blendEnable = VK_FALSE;</div>
+<div class="line"><span class="lineno">  154</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.srcColorBlendFactor</div>
+<div class="line"><span class="lineno">  155</span>    = VK_BLEND_FACTOR_ONE;</div>
+<div class="line"><span class="lineno">  156</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.dstColorBlendFactor</div>
+<div class="line"><span class="lineno">  157</span>    = VK_BLEND_FACTOR_ZERO; <span class="comment">// Optional</span></div>
+<div class="line"><span class="lineno">  158</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.colorBlendOp</div>
+<div class="line"><span class="lineno">  159</span>    = VK_BLEND_OP_ADD; <span class="comment">// Optional</span></div>
+<div class="line"><span class="lineno">  160</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.srcAlphaBlendFactor</div>
+<div class="line"><span class="lineno">  161</span>    = VK_BLEND_FACTOR_ONE; <span class="comment">// Optional</span></div>
+<div class="line"><span class="lineno">  162</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.dstAlphaBlendFactor</div>
+<div class="line"><span class="lineno">  163</span>    = VK_BLEND_FACTOR_ZERO; <span class="comment">// Optional</span></div>
+<div class="line"><span class="lineno">  164</span>    pipelineAttributes.<a class="code hl_variable" href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">colorBlendAttachment</a>.alphaBlendOp</div>
+<div class="line"><span class="lineno">  165</span>    = VK_BLEND_OP_ADD; <span class="comment">// Optional</span></div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">return</span> pipelineAttributes;</div>
+<div class="line"><span class="lineno">  168</span>}</div>
 <div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html">Chronos::Engine::PipelineAttributes</a></div><div class="ttdoc">Structure defining attributes required for creating a graphics pipeline.</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00043">object.hpp:43</a></div></div>
 <div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a14e0f95045ac8e59a01daab9fbda2b6c"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a14e0f95045ac8e59a01daab9fbda2b6c">Chronos::Engine::PipelineAttributes::topology</a></div><div class="ttdeci">VkPrimitiveTopology topology</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00049">object.hpp:49</a></div></div>
 <div class="ttc" id="astructChronos_1_1Engine_1_1PipelineAttributes_html_a41fb73c4ce11e598e3bc04701dcf7513"><div class="ttname"><a href="structChronos_1_1Engine_1_1PipelineAttributes.html#a41fb73c4ce11e598e3bc04701dcf7513">Chronos::Engine::PipelineAttributes::colorBlendAttachment</a></div><div class="ttdeci">VkPipelineColorBlendAttachmentState colorBlendAttachment</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00053">object.hpp:53</a></div></div>
@@ -575,14 +576,15 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TexturedRectangle_8cpp_source.html#l00027">27</a> of file <a class="el" href="TexturedRectangle_8cpp_source.html">TexturedRectangle.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
-<div class="line"><span class="lineno">   32</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59">vertexShaderPath</a> = SPIV_SHADER_PATH <span class="stringliteral">&quot;/textureVert.spv&quot;</span>;</div>
-<div class="line"><span class="lineno">   33</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#ad017c20cbe79d573325a66621de9963e">fragmentShaderPath</a> = SPIV_SHADER_PATH <span class="stringliteral">&quot;/textureFrag.spv&quot;</span>;</div>
-<div class="line"><span class="lineno">   34</span>    this-&gt;texture = <a class="code hl_variable" href="classChronos_1_1Engine_1_1TexturedRectangle.html#af7d6cbbb26193aa91f71e200eec6feda">texture</a>;</div>
-<div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>    <a class="code hl_function" href="classChronos_1_1Engine_1_1Object.html#ac1d5d1b2acd585451b17801d325dfe34">Chronos::Engine::Object::init</a>(</div>
-<div class="line"><span class="lineno">   37</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">commandPool</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">swapChain</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">textureSampler</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">renderPass</a>, <a class="code hl_enumvalue" href="namespaceChronos_1_1Engine.html#a7d4073485bcee3ca7017acdde4bcd34caeaf4ec891899154ed542266937824ec0">Chronos::Engine::ObjectType::TypeTexturedRectangle</a>);</div>
+<p class="definition">Definition at line <a class="el" href="TexturedRectangle_8cpp_source.html#l00026">26</a> of file <a class="el" href="TexturedRectangle_8cpp_source.html">TexturedRectangle.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59">vertexShaderPath</a> = SPIV_SHADER_PATH <span class="stringliteral">&quot;/textureVert.spv&quot;</span>;</div>
+<div class="line"><span class="lineno">   32</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#ad017c20cbe79d573325a66621de9963e">fragmentShaderPath</a> = SPIV_SHADER_PATH <span class="stringliteral">&quot;/textureFrag.spv&quot;</span>;</div>
+<div class="line"><span class="lineno">   33</span>    this-&gt;texture = <a class="code hl_variable" href="classChronos_1_1Engine_1_1TexturedRectangle.html#af7d6cbbb26193aa91f71e200eec6feda">texture</a>;</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_function" href="classChronos_1_1Engine_1_1Object.html#ac1d5d1b2acd585451b17801d325dfe34">Chronos::Engine::Object::init</a>(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29">device</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">commandPool</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">swapChain</a>,</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b">textureSampler</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">renderPass</a>,</div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_enumvalue" href="namespaceChronos_1_1Engine.html#a7d4073485bcee3ca7017acdde4bcd34caeaf4ec891899154ed542266937824ec0">Chronos::Engine::ObjectType::TypeTexturedRectangle</a>);</div>
 <div class="line"><span class="lineno">   38</span> </div>
 <div class="line"><span class="lineno">   39</span>    <span class="comment">// create the vertex and index buffers and copy the data</span></div>
 <div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1TexturedRectangle.html#aff5e45957eb9c639955a97f988c80a52">vertexBuffer</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">size</a> = <span class="keyword">sizeof</span>(<a class="code hl_variable" href="classChronos_1_1Engine_1_1TexturedRectangle.html#a94906e9fa0587d891704315b6feda1be">vertices</a>[0]) * <a class="code hl_variable" href="classChronos_1_1Engine_1_1TexturedRectangle.html#a94906e9fa0587d891704315b6feda1be">vertices</a>.size();</div>
@@ -600,17 +602,17 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a45958dc37af9a03b85b94445f8f25e0f"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a45958dc37af9a03b85b94445f8f25e0f">Chronos::Engine::Buffer::size</a></div><div class="ttdeci">VkDeviceSize size</div><div class="ttdoc">The size of the buffer.</div><div class="ttdef"><b>Definition</b> <a href="buffers_8hpp_source.html#l00083">buffers.hpp:83</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_aa7fa451f423cc9c6f53219258bb8a33d"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#aa7fa451f423cc9c6f53219258bb8a33d">Chronos::Engine::Buffer::copy</a></div><div class="ttdeci">void copy(void *data, VkCommandPool commandPool)</div><div class="ttdoc">Copies the data to the buffer.</div><div class="ttdef"><b>Definition</b> <a href="buffers_8cpp_source.html#l00039">buffers.cpp:39</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_ab14754126e56811cc67254f425780826"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#ab14754126e56811cc67254f425780826">Chronos::Engine::Buffer::create</a></div><div class="ttdeci">void create(Chronos::Engine::Device device, VkBufferUsageFlags flags, VkMemoryPropertyFlags properties)</div><div class="ttdoc">This is used to initialize the buffer.</div><div class="ttdef"><b>Definition</b> <a href="buffers_8cpp_source.html#l00027">buffers.cpp:27</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a300ba4549a4e0119cf2fcf0fad24569b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">Chronos::Engine::Object::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00137">object.hpp:137</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a6323a6f9a4c9fefff3d27c34f51f2f59"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59">Chronos::Engine::Object::vertexShaderPath</a></div><div class="ttdeci">std::string vertexShaderPath</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00131">object.hpp:131</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a7cfcd07115e8e58783c5cc40e4575bd8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">Chronos::Engine::Object::swapChain</a></div><div class="ttdeci">Chronos::Engine::SwapChain * swapChain</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00135">object.hpp:135</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_ac1d5d1b2acd585451b17801d325dfe34"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#ac1d5d1b2acd585451b17801d325dfe34">Chronos::Engine::Object::init</a></div><div class="ttdeci">void init(Chronos::Engine::Device *device, VkCommandPool commandPool, Chronos::Engine::SwapChain *swapChain, VkSampler textureSampler, VkRenderPass *renderPass, ObjectType objectType)</div><div class="ttdoc">Initializes the object.</div><div class="ttdef"><b>Definition</b> <a href="object_8cpp_source.html#l00079">object.cpp:79</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_ad017c20cbe79d573325a66621de9963e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#ad017c20cbe79d573325a66621de9963e">Chronos::Engine::Object::fragmentShaderPath</a></div><div class="ttdeci">std::string fragmentShaderPath</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00133">object.hpp:133</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_af8b89f8ed5191515b60219682efba376"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">Chronos::Engine::Object::renderPass</a></div><div class="ttdeci">VkRenderPass * renderPass</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00141">object.hpp:141</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1TexturedRectangle_html_a64b0cdbb51e9d47b646f95bc46e84459"><div class="ttname"><a href="classChronos_1_1Engine_1_1TexturedRectangle.html#a64b0cdbb51e9d47b646f95bc46e84459">Chronos::Engine::TexturedRectangle::indices</a></div><div class="ttdeci">const std::vector&lt; uint16_t &gt; indices</div><div class="ttdef"><b>Definition</b> <a href="TexturedRectangle_8hpp_source.html#l00041">TexturedRectangle.hpp:41</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1TexturedRectangle_html_a94906e9fa0587d891704315b6feda1be"><div class="ttname"><a href="classChronos_1_1Engine_1_1TexturedRectangle.html#a94906e9fa0587d891704315b6feda1be">Chronos::Engine::TexturedRectangle::vertices</a></div><div class="ttdeci">const std::vector&lt; TexturedVertex &gt; vertices</div><div class="ttdef"><b>Definition</b> <a href="TexturedRectangle_8hpp_source.html#l00043">TexturedRectangle.hpp:44</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a300ba4549a4e0119cf2fcf0fad24569b"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a300ba4549a4e0119cf2fcf0fad24569b">Chronos::Engine::Object::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00140">object.hpp:140</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a6323a6f9a4c9fefff3d27c34f51f2f59"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59">Chronos::Engine::Object::vertexShaderPath</a></div><div class="ttdeci">std::string vertexShaderPath</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00134">object.hpp:134</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_a7cfcd07115e8e58783c5cc40e4575bd8"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8">Chronos::Engine::Object::swapChain</a></div><div class="ttdeci">Chronos::Engine::SwapChain * swapChain</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00138">object.hpp:138</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_ac1d5d1b2acd585451b17801d325dfe34"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#ac1d5d1b2acd585451b17801d325dfe34">Chronos::Engine::Object::init</a></div><div class="ttdeci">void init(Chronos::Engine::Device *device, VkCommandPool commandPool, Chronos::Engine::SwapChain *swapChain, VkSampler textureSampler, VkRenderPass *renderPass, ObjectType objectType)</div><div class="ttdoc">Initializes the object.</div><div class="ttdef"><b>Definition</b> <a href="object_8cpp_source.html#l00077">object.cpp:77</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_ad017c20cbe79d573325a66621de9963e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#ad017c20cbe79d573325a66621de9963e">Chronos::Engine::Object::fragmentShaderPath</a></div><div class="ttdeci">std::string fragmentShaderPath</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00136">object.hpp:136</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_af8b89f8ed5191515b60219682efba376"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#af8b89f8ed5191515b60219682efba376">Chronos::Engine::Object::renderPass</a></div><div class="ttdeci">VkRenderPass * renderPass</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00144">object.hpp:144</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1TexturedRectangle_html_a64b0cdbb51e9d47b646f95bc46e84459"><div class="ttname"><a href="classChronos_1_1Engine_1_1TexturedRectangle.html#a64b0cdbb51e9d47b646f95bc46e84459">Chronos::Engine::TexturedRectangle::indices</a></div><div class="ttdeci">const std::vector&lt; uint16_t &gt; indices</div><div class="ttdef"><b>Definition</b> <a href="TexturedRectangle_8hpp_source.html#l00041">TexturedRectangle.hpp:42</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1TexturedRectangle_html_a94906e9fa0587d891704315b6feda1be"><div class="ttname"><a href="classChronos_1_1Engine_1_1TexturedRectangle.html#a94906e9fa0587d891704315b6feda1be">Chronos::Engine::TexturedRectangle::vertices</a></div><div class="ttdeci">const std::vector&lt; TexturedVertex &gt; vertices</div><div class="ttdef"><b>Definition</b> <a href="TexturedRectangle_8hpp_source.html#l00044">TexturedRectangle.hpp:45</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_a7d4073485bcee3ca7017acdde4bcd34caeaf4ec891899154ed542266937824ec0"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a7d4073485bcee3ca7017acdde4bcd34caeaf4ec891899154ed542266937824ec0">Chronos::Engine::TypeTexturedRectangle</a></div><div class="ttdeci">@ TypeTexturedRectangle</div><div class="ttdef"><b>Definition</b> <a href="objectTypes_8hpp_source.html#l00004">objectTypes.hpp:4</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="object_8hpp_source.html#l00137">Chronos::Engine::Object::commandPool</a>, <a class="el" href="buffers_8cpp_source.html#l00039">Chronos::Engine::Buffer::copy()</a>, <a class="el" href="buffers_8cpp_source.html#l00027">Chronos::Engine::Buffer::create()</a>, <a class="el" href="object_8hpp_source.html#l00134">Chronos::Engine::Object::device</a>, <a class="el" href="object_8hpp_source.html#l00133">Chronos::Engine::Object::fragmentShaderPath</a>, <a class="el" href="TexturedRectangle_8hpp_source.html#l00062">indexBuffer</a>, <a class="el" href="TexturedRectangle_8hpp_source.html#l00041">indices</a>, <a class="el" href="object_8cpp_source.html#l00079">Chronos::Engine::Object::init()</a>, <a class="el" href="object_8hpp_source.html#l00141">Chronos::Engine::Object::renderPass</a>, <a class="el" href="buffers_8hpp_source.html#l00083">Chronos::Engine::Buffer::size</a>, <a class="el" href="object_8hpp_source.html#l00135">Chronos::Engine::Object::swapChain</a>, <a class="el" href="TexturedRectangle_8hpp_source.html#l00051">texture</a>, <a class="el" href="object_8hpp_source.html#l00139">Chronos::Engine::Object::textureSampler</a>, <a class="el" href="objectTypes_8hpp_source.html#l00004">Chronos::Engine::TypeTexturedRectangle</a>, <a class="el" href="TexturedRectangle_8hpp_source.html#l00056">vertexBuffer</a>, <a class="el" href="object_8hpp_source.html#l00131">Chronos::Engine::Object::vertexShaderPath</a>, and <a class="el" href="TexturedRectangle_8hpp_source.html#l00044">vertices</a>.</p>
+<p class="reference">References <a class="el" href="object_8hpp_source.html#l00140">Chronos::Engine::Object::commandPool</a>, <a class="el" href="buffers_8cpp_source.html#l00039">Chronos::Engine::Buffer::copy()</a>, <a class="el" href="buffers_8cpp_source.html#l00027">Chronos::Engine::Buffer::create()</a>, <a class="el" href="object_8hpp_source.html#l00137">Chronos::Engine::Object::device</a>, <a class="el" href="object_8hpp_source.html#l00136">Chronos::Engine::Object::fragmentShaderPath</a>, <a class="el" href="TexturedRectangle_8hpp_source.html#l00064">indexBuffer</a>, <a class="el" href="TexturedRectangle_8hpp_source.html#l00042">indices</a>, <a class="el" href="object_8cpp_source.html#l00077">Chronos::Engine::Object::init()</a>, <a class="el" href="object_8hpp_source.html#l00144">Chronos::Engine::Object::renderPass</a>, <a class="el" href="buffers_8hpp_source.html#l00083">Chronos::Engine::Buffer::size</a>, <a class="el" href="object_8hpp_source.html#l00138">Chronos::Engine::Object::swapChain</a>, <a class="el" href="TexturedRectangle_8hpp_source.html#l00051">texture</a>, <a class="el" href="object_8hpp_source.html#l00142">Chronos::Engine::Object::textureSampler</a>, <a class="el" href="objectTypes_8hpp_source.html#l00004">Chronos::Engine::TypeTexturedRectangle</a>, <a class="el" href="TexturedRectangle_8hpp_source.html#l00056">vertexBuffer</a>, <a class="el" href="object_8hpp_source.html#l00134">Chronos::Engine::Object::vertexShaderPath</a>, and <a class="el" href="TexturedRectangle_8hpp_source.html#l00045">vertices</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -733,30 +735,28 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="classChronos_1_1Engine_1_1Object.html#a1bf48c4182e86c53c3a88f15617db738">Chronos::Engine::Object</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TexturedRectangle_8cpp_source.html#l00166">166</a> of file <a class="el" href="TexturedRectangle_8cpp_source.html">TexturedRectangle.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  166</span>                                                                                                                                                                                            {</div>
-<div class="line"><span class="lineno">  167</span>    </div>
-<div class="line"><span class="lineno">  168</span>    vkCmdBindPipeline(commandBuffers[currentFrame],</div>
-<div class="line"><span class="lineno">  169</span>        VK_PIPELINE_BIND_POINT_GRAPHICS, this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#adb6e0cf994046b58b10f95d59eeef3c3">graphicsPipeline</a>);</div>
-<div class="line"><span class="lineno">  170</span>    vkCmdSetViewport(commandBuffers[currentFrame],</div>
-<div class="line"><span class="lineno">  171</span>        0, 1, &amp;viewport);</div>
-<div class="line"><span class="lineno">  172</span>    vkCmdSetScissor(commandBuffers[currentFrame],</div>
-<div class="line"><span class="lineno">  173</span>        0, 1, &amp;scissor);</div>
-<div class="line"><span class="lineno">  174</span>    VkBuffer vertexBuffers[] = { this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1TexturedRectangle.html#aff5e45957eb9c639955a97f988c80a52">vertexBuffer</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">buffer</a> };</div>
-<div class="line"><span class="lineno">  175</span>    VkDeviceSize offsets[] = { 0 };</div>
-<div class="line"><span class="lineno">  176</span>    vkCmdBindVertexBuffers(commandBuffers[currentFrame],</div>
-<div class="line"><span class="lineno">  177</span>        0, 1, vertexBuffers, offsets);</div>
-<div class="line"><span class="lineno">  178</span>    vkCmdBindIndexBuffer(commandBuffers[currentFrame],</div>
-<div class="line"><span class="lineno">  179</span>        this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1TexturedRectangle.html#a24e56fd86d40e7644bcc7096e661377e">indexBuffer</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">buffer</a>, 0, VK_INDEX_TYPE_UINT16);</div>
-<div class="line"><span class="lineno">  180</span>    vkCmdBindDescriptorSets(commandBuffers[currentFrame],</div>
-<div class="line"><span class="lineno">  181</span>        VK_PIPELINE_BIND_POINT_GRAPHICS, this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#ae279ed95c87e90803fd28f7f935b0ab4">pipelineLayout</a>, 0, 1,</div>
-<div class="line"><span class="lineno">  182</span>        &amp;this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">descriptorSets</a>[currentFrame], 0, <span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">  183</span>    vkCmdDrawIndexed(commandBuffers[currentFrame],</div>
-<div class="line"><span class="lineno">  184</span>        <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1TexturedRectangle.html#a64b0cdbb51e9d47b646f95bc46e84459">indices</a>.size()), 1, 0, 0, 0);</div>
-<div class="line"><span class="lineno">  185</span>}</div>
+<p class="definition">Definition at line <a class="el" href="TexturedRectangle_8cpp_source.html#l00170">170</a> of file <a class="el" href="TexturedRectangle_8cpp_source.html">TexturedRectangle.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  173</span>{</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>    vkCmdBindPipeline(commandBuffers[currentFrame],</div>
+<div class="line"><span class="lineno">  176</span>    VK_PIPELINE_BIND_POINT_GRAPHICS, this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#adb6e0cf994046b58b10f95d59eeef3c3">graphicsPipeline</a>);</div>
+<div class="line"><span class="lineno">  177</span>    vkCmdSetViewport(commandBuffers[currentFrame], 0, 1, &amp;viewport);</div>
+<div class="line"><span class="lineno">  178</span>    vkCmdSetScissor(commandBuffers[currentFrame], 0, 1, &amp;scissor);</div>
+<div class="line"><span class="lineno">  179</span>    VkBuffer vertexBuffers[] = { this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1TexturedRectangle.html#aff5e45957eb9c639955a97f988c80a52">vertexBuffer</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">buffer</a> };</div>
+<div class="line"><span class="lineno">  180</span>    VkDeviceSize offsets[] = { 0 };</div>
+<div class="line"><span class="lineno">  181</span>    vkCmdBindVertexBuffers(</div>
+<div class="line"><span class="lineno">  182</span>    commandBuffers[currentFrame], 0, 1, vertexBuffers, offsets);</div>
+<div class="line"><span class="lineno">  183</span>    vkCmdBindIndexBuffer(commandBuffers[currentFrame], this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1TexturedRectangle.html#a24e56fd86d40e7644bcc7096e661377e">indexBuffer</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">buffer</a>,</div>
+<div class="line"><span class="lineno">  184</span>    0, VK_INDEX_TYPE_UINT16);</div>
+<div class="line"><span class="lineno">  185</span>    vkCmdBindDescriptorSets(commandBuffers[currentFrame],</div>
+<div class="line"><span class="lineno">  186</span>    VK_PIPELINE_BIND_POINT_GRAPHICS, this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#ae279ed95c87e90803fd28f7f935b0ab4">pipelineLayout</a>, 0, 1,</div>
+<div class="line"><span class="lineno">  187</span>    &amp;this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f">descriptorSets</a>[currentFrame], 0, <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  188</span>    vkCmdDrawIndexed(commandBuffers[currentFrame],</div>
+<div class="line"><span class="lineno">  189</span>    <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1TexturedRectangle.html#a64b0cdbb51e9d47b646f95bc46e84459">indices</a>.size()), 1, 0, 0, 0);</div>
+<div class="line"><span class="lineno">  190</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Buffer_html_a4422d6437ce743cd0645372cfe63300e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Buffer.html#a4422d6437ce743cd0645372cfe63300e">Chronos::Engine::Buffer::buffer</a></div><div class="ttdeci">VkBuffer buffer</div><div class="ttdoc">The buffer.</div><div class="ttdef"><b>Definition</b> <a href="buffers_8hpp_source.html#l00078">buffers.hpp:78</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_adb6e0cf994046b58b10f95d59eeef3c3"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#adb6e0cf994046b58b10f95d59eeef3c3">Chronos::Engine::Object::graphicsPipeline</a></div><div class="ttdeci">VkPipeline graphicsPipeline</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00121">object.hpp:121</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_ae279ed95c87e90803fd28f7f935b0ab4"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#ae279ed95c87e90803fd28f7f935b0ab4">Chronos::Engine::Object::pipelineLayout</a></div><div class="ttdeci">VkPipelineLayout pipelineLayout</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00124">object.hpp:124</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_adb6e0cf994046b58b10f95d59eeef3c3"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#adb6e0cf994046b58b10f95d59eeef3c3">Chronos::Engine::Object::graphicsPipeline</a></div><div class="ttdeci">VkPipeline graphicsPipeline</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00124">object.hpp:124</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Object_html_ae279ed95c87e90803fd28f7f935b0ab4"><div class="ttname"><a href="classChronos_1_1Engine_1_1Object.html#ae279ed95c87e90803fd28f7f935b0ab4">Chronos::Engine::Object::pipelineLayout</a></div><div class="ttdeci">VkPipelineLayout pipelineLayout</div><div class="ttdef"><b>Definition</b> <a href="object_8hpp_source.html#l00127">object.hpp:127</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -825,7 +825,7 @@ Here is the caller graph for this function:</div>
 
 <p>The index buffer that is used to store the indices. </p>
 
-<p class="definition">Definition at line <a class="el" href="TexturedRectangle_8hpp_source.html#l00062">62</a> of file <a class="el" href="TexturedRectangle_8hpp_source.html">TexturedRectangle.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TexturedRectangle_8hpp_source.html#l00064">64</a> of file <a class="el" href="TexturedRectangle_8hpp_source.html">TexturedRectangle.hpp</a>.</p>
 
 </div>
 </div>
@@ -842,7 +842,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="TexturedRectangle_8hpp_source.html#l00041">41</a> of file <a class="el" href="TexturedRectangle_8hpp_source.html">TexturedRectangle.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span>{ 0, 1, 2, 2, 3, 0 };</div>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>{ 0, 1, 2, 2, 3, 0 };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -907,20 +907,18 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= std::vector&lt;TexturedVertex&gt; {</div>
-<div class="line">        { { -0.5f, -0.5f }, { 1.0f, 0.0f } },</div>
-<div class="line">        { { 0.5f, -0.5f }, { 0.0f, 0.0f } },</div>
-<div class="line">        { { 0.5f, 0.5f }, { 0.0f, 1.0f } },</div>
-<div class="line">        { { -0.5f, 0.5f }, { 1.0f, 1.0f } }</div>
-<div class="line">        }</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= std::vector&lt;TexturedVertex&gt; { { { -0.5f, -0.5f },</div>
+<div class="line">                        { 1.0f, 0.0f } },</div>
+<div class="line">          { { 0.5f, -0.5f }, { 0.0f, 0.0f } },</div>
+<div class="line">          { { 0.5f, 0.5f }, { 0.0f, 1.0f } },</div>
+<div class="line">          { { -0.5f, 0.5f }, { 1.0f, 1.0f } } }</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="TexturedRectangle_8hpp_source.html#l00043">43</a> of file <a class="el" href="TexturedRectangle_8hpp_source.html">TexturedRectangle.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>                                    {</div>
-<div class="line"><span class="lineno">   45</span>        { { -0.5f, -0.5f }, { 1.0f, 0.0f } },</div>
-<div class="line"><span class="lineno">   46</span>        { { 0.5f, -0.5f }, { 0.0f, 0.0f } },</div>
-<div class="line"><span class="lineno">   47</span>        { { 0.5f, 0.5f }, { 0.0f, 1.0f } },</div>
-<div class="line"><span class="lineno">   48</span>        { { -0.5f, 0.5f }, { 1.0f, 1.0f } }</div>
-<div class="line"><span class="lineno">   49</span>        };</div>
+<p class="definition">Definition at line <a class="el" href="TexturedRectangle_8hpp_source.html#l00044">44</a> of file <a class="el" href="TexturedRectangle_8hpp_source.html">TexturedRectangle.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>                                    { { { -0.5f, -0.5f },</div>
+<div class="line"><span class="lineno">   46</span>                        { 1.0f, 0.0f } },</div>
+<div class="line"><span class="lineno">   47</span>          { { 0.5f, -0.5f }, { 0.0f, 0.0f } },</div>
+<div class="line"><span class="lineno">   48</span>          { { 0.5f, 0.5f }, { 0.0f, 1.0f } },</div>
+<div class="line"><span class="lineno">   49</span>          { { -0.5f, 0.5f }, { 1.0f, 1.0f } } };</div>
 </div><!-- fragment -->
 </div>
 </div>

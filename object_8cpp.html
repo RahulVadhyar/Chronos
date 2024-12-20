@@ -189,19 +189,19 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The created shader module. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="object_8cpp_source.html#l00063">63</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>{</div>
-<div class="line"><span class="lineno">   66</span>    VkShaderModuleCreateInfo createInfo {};</div>
-<div class="line"><span class="lineno">   67</span>    createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;</div>
-<div class="line"><span class="lineno">   68</span>    createInfo.codeSize = code.size();</div>
-<div class="line"><span class="lineno">   69</span>    createInfo.pCode = <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>uint32_t*<span class="keyword">&gt;</span>(code.data());</div>
-<div class="line"><span class="lineno">   70</span>    VkShaderModule shaderModule;</div>
-<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span> (vkCreateShaderModule(device, &amp;createInfo, <span class="keyword">nullptr</span>, &amp;shaderModule)</div>
-<div class="line"><span class="lineno">   72</span>    != VK_SUCCESS) {</div>
-<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to create shader module&quot;</span>);</div>
-<div class="line"><span class="lineno">   74</span>    }</div>
-<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">return</span> shaderModule;</div>
-<div class="line"><span class="lineno">   76</span>}</div>
+<p class="definition">Definition at line <a class="el" href="object_8cpp_source.html#l00062">62</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{</div>
+<div class="line"><span class="lineno">   65</span>    VkShaderModuleCreateInfo createInfo {};</div>
+<div class="line"><span class="lineno">   66</span>    createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;</div>
+<div class="line"><span class="lineno">   67</span>    createInfo.codeSize = code.size();</div>
+<div class="line"><span class="lineno">   68</span>    createInfo.pCode = <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>uint32_t*<span class="keyword">&gt;</span>(code.data());</div>
+<div class="line"><span class="lineno">   69</span>    VkShaderModule shaderModule;</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">if</span> (vkCreateShaderModule(device, &amp;createInfo, <span class="keyword">nullptr</span>, &amp;shaderModule)</div>
+<div class="line"><span class="lineno">   71</span>    != VK_SUCCESS) {</div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to create shader module&quot;</span>);</div>
+<div class="line"><span class="lineno">   73</span>    }</div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">return</span> shaderModule;</div>
+<div class="line"><span class="lineno">   75</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

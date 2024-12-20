@@ -1,11 +1,11 @@
 <map id="Source/Editor/editorMain.cpp" name="Source/Editor/editorMain.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="235,5,444,31"/>
-<area shape="rect" id="Node000002" href="$editorManager_8hpp.html" title=" " alt="" coords="195,79,339,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="329,33,291,71,287,67,326,29"/>
-<area shape="rect" id="Node000024" href="$logging_8hpp.html" title=" " alt="" coords="363,79,462,104"/>
-<area shape="poly" id="edge29_Node000001_Node000024" title=" " alt="" coords="353,29,393,67,389,71,350,33"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="325,5,535,31"/>
+<area shape="rect" id="Node000002" href="$editorManager_8hpp.html" title=" " alt="" coords="286,79,430,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="420,33,381,71,378,67,416,29"/>
+<area shape="rect" id="Node000024" href="$logging_8hpp.html" title=" " alt="" coords="493,79,591,104"/>
+<area shape="poly" id="edge29_Node000001_Node000024" title=" " alt="" coords="450,28,513,69,511,73,447,33"/>
 <area shape="rect" id="Node000003" href="$chronos_8hpp.html" title="Main API for chronos. Any applications should include this file." alt="" coords="217,152,318,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="270,104,270,138,265,138,265,104"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="345,106,295,145,292,141,342,102"/>
 <area shape="rect" id="Node000004" href="$vulkanHeaders_8hpp.html" title="Contains the common headers for the vulkan API." alt="" coords="319,592,466,617"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="217,168,172,171,123,181,75,198,53,211,33,227,18,246,11,264,9,310,9,459,11,470,17,481,39,502,73,521,116,538,214,567,310,587,309,592,213,572,114,543,71,526,36,506,12,484,6,472,3,460,3,310,6,263,13,243,30,223,50,207,73,194,122,175,172,166,216,162"/>
 <area shape="rect" id="Node000010" href="$commonStructs_8hpp.html" title="Header file that contains common structs used in Chronos." alt="" coords="43,225,195,251"/>
@@ -50,8 +50,16 @@
 <area shape="poly" id="edge23_Node000020_Node000016" title=" " alt="" coords="422,326,380,364,376,361,419,322"/>
 <area shape="rect" id="Node000021" href="$texture_8hpp.html" title="Contains the functions for image manipulation along with the Texture class." alt="" coords="409,372,507,397"/>
 <area shape="poly" id="edge24_Node000020_Node000021" title=" " alt="" coords="439,323,452,358,447,360,434,325"/>
-<area shape="poly" id="edge25_Node000021_Node000014" title=" " alt="" coords="463,397,464,432,461,452,455,472,441,494,422,512,419,508,436,491,450,470,456,451,459,431,457,398"/>
+<area shape="poly" id="edge25_Node000021_Node000014" title=" " alt="" coords="462,398,463,432,460,452,454,472,440,494,422,512,418,508,435,491,449,470,455,451,458,431,457,398"/>
 <area shape="poly" id="edge28_Node000023_Node000004" title=" " alt="" coords="517,546,430,588,428,584,515,542"/>
-<area shape="rect" id="Node000025" title=" " alt="" coords="373,152,453,177"/>
-<area shape="poly" id="edge30_Node000024_Node000025" title=" " alt="" coords="415,104,415,138,410,138,410,104"/>
+<area shape="rect" id="Node000025" title=" " alt="" coords="342,152,422,177"/>
+<area shape="poly" id="edge30_Node000024_Node000025" title=" " alt="" coords="517,106,422,149,420,144,515,102"/>
+<area shape="rect" id="Node000026" title=" " alt="" coords="446,152,537,177"/>
+<area shape="poly" id="edge31_Node000024_Node000026" title=" " alt="" coords="536,106,510,142,505,139,532,103"/>
+<area shape="rect" id="Node000027" title=" " alt="" coords="561,152,627,177"/>
+<area shape="poly" id="edge32_Node000024_Node000027" title=" " alt="" coords="553,103,580,139,575,142,549,106"/>
+<area shape="rect" id="Node000028" title=" " alt="" coords="651,152,726,177"/>
+<area shape="poly" id="edge33_Node000024_Node000028" title=" " alt="" coords="567,102,654,144,652,148,565,106"/>
+<area shape="rect" id="Node000029" title=" " alt="" coords="750,152,825,177"/>
+<area shape="poly" id="edge34_Node000024_Node000029" title=" " alt="" coords="582,101,737,146,736,151,581,107"/>
 </map>

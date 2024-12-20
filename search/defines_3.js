@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['log_0',['LOG',['../logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a',1,'logging.hpp']]]
+  ['log_0',['LOG',['../logging_8hpp.html#a8774bb0a65165799e6ceafa939745478',1,'logging.hpp']]]
 ];

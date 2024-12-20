@@ -73,7 +73,9 @@ var NAVTREEINDEX3 =
 "index.html#autotoc_md98":[0,7],
 "index.html#autotoc_md99":[0,8],
 "logging_8hpp.html":[10,0,2,1,1],
-"logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a":[10,0,2,1,1,0],
+"logging_8hpp.html#a7d15000aa125a59b41ba4535ae41ada7":[10,0,2,1,1,1],
+"logging_8hpp.html#a8774bb0a65165799e6ceafa939745478":[10,0,2,1,1,0],
+"logging_8hpp.html#aa6480a6ae39ffa2e683bde4a32374cd3":[10,0,2,1,1,2],
 "logging_8hpp_source.html":[10,0,2,1,1],
 "managerAnimationFunctions_8cpp.html":[10,0,2,0,1],
 "managerAnimationFunctions_8cpp_source.html":[10,0,2,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "structChronos_1_1Engine_1_1FontTypes.html#a96619d6312899c97b8562e4b68458613":[8,0,0,1,7,3],
 "structChronos_1_1Engine_1_1FontTypes.html#aa52a34737a2a284e59475fadc1fac1f5":[8,0,0,1,7,4],
 "structChronos_1_1Engine_1_1FontTypes.html#aa52a34737a2a284e59475fadc1fac1f5":[9,0,0,1,6,4],
-"structChronos_1_1Engine_1_1PipelineAttributes.html":[8,0,0,1,10],
-"structChronos_1_1Engine_1_1PipelineAttributes.html":[9,0,0,1,9],
-"structChronos_1_1Engine_1_1PipelineAttributes.html#a14e0f95045ac8e59a01daab9fbda2b6c":[9,0,0,1,9,4]
+"structChronos_1_1Engine_1_1PipelineAttributes.html":[8,0,0,1,10]
 };

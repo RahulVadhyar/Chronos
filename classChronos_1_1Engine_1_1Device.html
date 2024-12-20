@@ -182,64 +182,64 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="device_8cpp_source.html#l00186">186</a> of file <a class="el" href="device_8cpp_source.html">device.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  187</span>{</div>
-<div class="line"><span class="lineno">  188</span>    QueueFamilyIndices indices = <a class="code hl_function" href="namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357">findQueueFamilies</a>(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a987dce654f123694a087fc8a74afdb89">physicalDevice</a>, surface);</div>
-<div class="line"><span class="lineno">  189</span> </div>
-<div class="line"><span class="lineno">  190</span>    std::vector&lt;VkDeviceQueueCreateInfo&gt; queueCreateInfos;</div>
-<div class="line"><span class="lineno">  191</span>    std::set&lt;uint32_t&gt; uniqueQueueFamilies</div>
-<div class="line"><span class="lineno">  192</span>    = { indices.graphicsFamily.value(), indices.presentFamily.value() };</div>
-<div class="line"><span class="lineno">  193</span> </div>
-<div class="line"><span class="lineno">  194</span>    <span class="keywordtype">float</span> queuePriority = 1.0f;</div>
-<div class="line"><span class="lineno">  195</span>    <span class="keywordflow">for</span> (uint32_t queueFamily : uniqueQueueFamilies) {</div>
-<div class="line"><span class="lineno">  196</span>    VkDeviceQueueCreateInfo queueCreateInfo {};</div>
-<div class="line"><span class="lineno">  197</span>    queueCreateInfo.sType = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;</div>
-<div class="line"><span class="lineno">  198</span>    queueCreateInfo.queueFamilyIndex = queueFamily;</div>
-<div class="line"><span class="lineno">  199</span>    queueCreateInfo.queueCount = 1;</div>
-<div class="line"><span class="lineno">  200</span>    queueCreateInfo.pQueuePriorities = &amp;queuePriority;</div>
-<div class="line"><span class="lineno">  201</span>    queueCreateInfos.push_back(queueCreateInfo);</div>
-<div class="line"><span class="lineno">  202</span>    }</div>
-<div class="line"><span class="lineno">  203</span> </div>
-<div class="line"><span class="lineno">  204</span>    VkPhysicalDeviceFeatures deviceFeatures {};</div>
-<div class="line"><span class="lineno">  205</span>    deviceFeatures.samplerAnisotropy = VK_TRUE;</div>
-<div class="line"><span class="lineno">  206</span>    deviceFeatures.sampleRateShading = VK_TRUE;</div>
-<div class="line"><span class="lineno">  207</span> </div>
-<div class="line"><span class="lineno">  208</span>    VkDeviceCreateInfo createInfo {};</div>
-<div class="line"><span class="lineno">  209</span>    createInfo.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;</div>
-<div class="line"><span class="lineno">  210</span>    createInfo.pQueueCreateInfos = queueCreateInfos.data();</div>
-<div class="line"><span class="lineno">  211</span>    createInfo.queueCreateInfoCount</div>
-<div class="line"><span class="lineno">  212</span>    = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(queueCreateInfos.size());</div>
-<div class="line"><span class="lineno">  213</span>    createInfo.pEnabledFeatures = &amp;deviceFeatures;</div>
-<div class="line"><span class="lineno">  214</span>    createInfo.enabledExtensionCount</div>
-<div class="line"><span class="lineno">  215</span>    = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="namespaceChronos_1_1Engine.html#ab7df1e3f4b276d9c7e368398da1b86ca">deviceExtensions</a>.size());</div>
-<div class="line"><span class="lineno">  216</span>    createInfo.ppEnabledExtensionNames = <a class="code hl_variable" href="namespaceChronos_1_1Engine.html#ab7df1e3f4b276d9c7e368398da1b86ca">deviceExtensions</a>.data();</div>
-<div class="line"><span class="lineno">  217</span>    createInfo.enabledLayerCount = 0;</div>
-<div class="line"><span class="lineno">  218</span><span class="preprocessor">#ifdef ENABLE_VALIDATION_LAYERS</span></div>
-<div class="line"><span class="lineno">  219</span>    createInfo.enabledLayerCount</div>
-<div class="line"><span class="lineno">  220</span>    = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(validationLayers.size());</div>
-<div class="line"><span class="lineno">  221</span>    createInfo.ppEnabledLayerNames = validationLayers.data();</div>
-<div class="line"><span class="lineno">  222</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  223</span> </div>
-<div class="line"><span class="lineno">  224</span>    <span class="keywordflow">if</span> (vkCreateDevice(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a987dce654f123694a087fc8a74afdb89">physicalDevice</a>, &amp;createInfo, <span class="keyword">nullptr</span>, &amp;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>)</div>
-<div class="line"><span class="lineno">  225</span>    != VK_SUCCESS) {</div>
-<div class="line"><span class="lineno">  226</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Device&quot;</span>, <span class="stringliteral">&quot;Failed to create logical device&quot;</span>)</div>
-<div class="line"><span class="lineno">  227</span>    throw std::runtime_error(&quot;Failed to create logical <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>&quot;);</div>
-<div class="line"><span class="lineno">  228</span>    }</div>
-<div class="line"><span class="lineno">  229</span> </div>
-<div class="line"><span class="lineno">  230</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, &quot;Device&quot;, &quot;Logical <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a> created&quot;)</div>
-<div class="line"><span class="lineno">  231</span>    <span class="comment">// get the queue handle</span></div>
-<div class="line"><span class="lineno">  232</span>    vkGetDeviceQueue(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, indices.graphicsFamily.value(), 0, &amp;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#ac2609e8515d57e873e3da13599452cf9">graphicsQueue</a>);</div>
-<div class="line"><span class="lineno">  233</span>    vkGetDeviceQueue(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, indices.presentFamily.value(), 0, &amp;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a671f38eeab8280bd4b878bc9c04544a2">presentQueue</a>);</div>
-<div class="line"><span class="lineno">  234</span>}</div>
+<p class="definition">Definition at line <a class="el" href="device_8cpp_source.html#l00184">184</a> of file <a class="el" href="device_8cpp_source.html">device.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  185</span>{</div>
+<div class="line"><span class="lineno">  186</span>    QueueFamilyIndices indices = <a class="code hl_function" href="namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357">findQueueFamilies</a>(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a987dce654f123694a087fc8a74afdb89">physicalDevice</a>, surface);</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>    std::vector&lt;VkDeviceQueueCreateInfo&gt; queueCreateInfos;</div>
+<div class="line"><span class="lineno">  189</span>    std::set&lt;uint32_t&gt; uniqueQueueFamilies</div>
+<div class="line"><span class="lineno">  190</span>    = { indices.graphicsFamily.value(), indices.presentFamily.value() };</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordtype">float</span> queuePriority = 1.0f;</div>
+<div class="line"><span class="lineno">  193</span>    <span class="keywordflow">for</span> (uint32_t queueFamily : uniqueQueueFamilies) {</div>
+<div class="line"><span class="lineno">  194</span>    VkDeviceQueueCreateInfo queueCreateInfo {};</div>
+<div class="line"><span class="lineno">  195</span>    queueCreateInfo.sType = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;</div>
+<div class="line"><span class="lineno">  196</span>    queueCreateInfo.queueFamilyIndex = queueFamily;</div>
+<div class="line"><span class="lineno">  197</span>    queueCreateInfo.queueCount = 1;</div>
+<div class="line"><span class="lineno">  198</span>    queueCreateInfo.pQueuePriorities = &amp;queuePriority;</div>
+<div class="line"><span class="lineno">  199</span>    queueCreateInfos.push_back(queueCreateInfo);</div>
+<div class="line"><span class="lineno">  200</span>    }</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>    VkPhysicalDeviceFeatures deviceFeatures {};</div>
+<div class="line"><span class="lineno">  203</span>    deviceFeatures.samplerAnisotropy = VK_TRUE;</div>
+<div class="line"><span class="lineno">  204</span>    deviceFeatures.sampleRateShading = VK_TRUE;</div>
+<div class="line"><span class="lineno">  205</span> </div>
+<div class="line"><span class="lineno">  206</span>    VkDeviceCreateInfo createInfo {};</div>
+<div class="line"><span class="lineno">  207</span>    createInfo.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;</div>
+<div class="line"><span class="lineno">  208</span>    createInfo.pQueueCreateInfos = queueCreateInfos.data();</div>
+<div class="line"><span class="lineno">  209</span>    createInfo.queueCreateInfoCount</div>
+<div class="line"><span class="lineno">  210</span>    = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(queueCreateInfos.size());</div>
+<div class="line"><span class="lineno">  211</span>    createInfo.pEnabledFeatures = &amp;deviceFeatures;</div>
+<div class="line"><span class="lineno">  212</span>    createInfo.enabledExtensionCount</div>
+<div class="line"><span class="lineno">  213</span>    = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="namespaceChronos_1_1Engine.html#ab7df1e3f4b276d9c7e368398da1b86ca">deviceExtensions</a>.size());</div>
+<div class="line"><span class="lineno">  214</span>    createInfo.ppEnabledExtensionNames = <a class="code hl_variable" href="namespaceChronos_1_1Engine.html#ab7df1e3f4b276d9c7e368398da1b86ca">deviceExtensions</a>.data();</div>
+<div class="line"><span class="lineno">  215</span>    createInfo.enabledLayerCount = 0;</div>
+<div class="line"><span class="lineno">  216</span><span class="preprocessor">#ifdef ENABLE_VALIDATION_LAYERS</span></div>
+<div class="line"><span class="lineno">  217</span>    createInfo.enabledLayerCount</div>
+<div class="line"><span class="lineno">  218</span>    = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(validationLayers.size());</div>
+<div class="line"><span class="lineno">  219</span>    createInfo.ppEnabledLayerNames = validationLayers.data();</div>
+<div class="line"><span class="lineno">  220</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordflow">if</span> (vkCreateDevice(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a987dce654f123694a087fc8a74afdb89">physicalDevice</a>, &amp;createInfo, <span class="keyword">nullptr</span>, &amp;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>)</div>
+<div class="line"><span class="lineno">  223</span>    != VK_SUCCESS) {</div>
+<div class="line"><span class="lineno">  224</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(1, <span class="stringliteral">&quot;Failed to create logical device&quot;</span>)</div>
+<div class="line"><span class="lineno">  225</span>    throw std::runtime_error(&quot;Failed to create logical <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>&quot;);</div>
+<div class="line"><span class="lineno">  226</span>    }</div>
+<div class="line"><span class="lineno">  227</span> </div>
+<div class="line"><span class="lineno">  228</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3,&quot;Logical <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a> created&quot;)</div>
+<div class="line"><span class="lineno">  229</span>    <span class="comment">// get the queue handle</span></div>
+<div class="line"><span class="lineno">  230</span>    vkGetDeviceQueue(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, indices.graphicsFamily.value(), 0, &amp;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#ac2609e8515d57e873e3da13599452cf9">graphicsQueue</a>);</div>
+<div class="line"><span class="lineno">  231</span>    vkGetDeviceQueue(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, indices.presentFamily.value(), 0, &amp;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a671f38eeab8280bd4b878bc9c04544a2">presentQueue</a>);</div>
+<div class="line"><span class="lineno">  232</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition</b> <a href="device_8hpp_source.html#l00052">device.hpp:52</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a671f38eeab8280bd4b878bc9c04544a2"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a671f38eeab8280bd4b878bc9c04544a2">Chronos::Engine::Device::presentQueue</a></div><div class="ttdeci">VkQueue presentQueue</div><div class="ttdoc">This is the queue that is used for presentation of the rendered frames.</div><div class="ttdef"><b>Definition</b> <a href="device_8hpp_source.html#l00071">device.hpp:71</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a987dce654f123694a087fc8a74afdb89"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a987dce654f123694a087fc8a74afdb89">Chronos::Engine::Device::physicalDevice</a></div><div class="ttdeci">VkPhysicalDevice physicalDevice</div><div class="ttdoc">This is the physical device that is used by Vulkan.</div><div class="ttdef"><b>Definition</b> <a href="device_8hpp_source.html#l00060">device.hpp:60</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_ac2609e8515d57e873e3da13599452cf9"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#ac2609e8515d57e873e3da13599452cf9">Chronos::Engine::Device::graphicsQueue</a></div><div class="ttdeci">VkQueue graphicsQueue</div><div class="ttdoc">This is the queue that is used for graphics rendering.</div><div class="ttdef"><b>Definition</b> <a href="device_8hpp_source.html#l00065">device.hpp:65</a></div></div>
-<div class="ttc" id="alogging_8hpp_html_a5b58fc422e0e0d9227a7ef69954b689a"><div class="ttname"><a href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a></div><div class="ttdeci">#define LOG(LEVEL, CLASS, MESSAGE)</div><div class="ttdef"><b>Definition</b> <a href="logging_8hpp_source.html#l00035">logging.hpp:35</a></div></div>
+<div class="ttc" id="alogging_8hpp_html_a8774bb0a65165799e6ceafa939745478"><div class="ttname"><a href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a></div><div class="ttdeci">#define LOG(LEVEL, MESSAGE)</div><div class="ttdef"><b>Definition</b> <a href="logging_8hpp_source.html#l00058">logging.hpp:58</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_a8cdc4cba55ceff22fd5b05b159cbc357"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357">Chronos::Engine::findQueueFamilies</a></div><div class="ttdeci">QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device, VkSurfaceKHR surface)</div><div class="ttdoc">Gets the indices of the needed queue families.</div><div class="ttdef"><b>Definition</b> <a href="helper_8cpp_source.html#l00126">helper.cpp:126</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_ab7df1e3f4b276d9c7e368398da1b86ca"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#ab7df1e3f4b276d9c7e368398da1b86ca">Chronos::Engine::deviceExtensions</a></div><div class="ttdeci">const std::vector&lt; const char * &gt; deviceExtensions</div><div class="ttdoc">THis contain the device extensions that are needed to be enabled in vulkan.</div><div class="ttdef"><b>Definition</b> <a href="device_8hpp_source.html#l00036">device.hpp:37</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="device_8hpp_source.html#l00037">Chronos::Engine::deviceExtensions</a>, <a class="el" href="helper_8cpp_source.html#l00126">Chronos::Engine::findQueueFamilies()</a>, <a class="el" href="helper_8hpp_source.html#l00045">Chronos::Engine::QueueFamilyIndices::graphicsFamily</a>, <a class="el" href="logging_8hpp_source.html#l00035">LOG</a>, and <a class="el" href="helper_8hpp_source.html#l00046">Chronos::Engine::QueueFamilyIndices::presentFamily</a>.</p>
+<p class="reference">References <a class="el" href="device_8hpp_source.html#l00037">Chronos::Engine::deviceExtensions</a>, <a class="el" href="helper_8cpp_source.html#l00126">Chronos::Engine::findQueueFamilies()</a>, <a class="el" href="helper_8hpp_source.html#l00045">Chronos::Engine::QueueFamilyIndices::graphicsFamily</a>, <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>, and <a class="el" href="helper_8hpp_source.html#l00046">Chronos::Engine::QueueFamilyIndices::presentFamily</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -337,14 +337,14 @@ Here is the caller graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="device_8cpp_source.html#l00028">28</a> of file <a class="el" href="device_8cpp_source.html">device.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   29</span>{</div>
 <div class="line"><span class="lineno">   30</span>    <a class="code hl_function" href="classChronos_1_1Engine_1_1Device.html#a50c43c6576d56f35473f2240d2f3bf59">pickPhysicalDevice</a>(instance, surface);</div>
-<div class="line"><span class="lineno">   31</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Device&quot;</span>, <span class="stringliteral">&quot;Physical device picked&quot;</span>)</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3, <span class="stringliteral">&quot;Physical device picked&quot;</span>)</div>
 <div class="line"><span class="lineno">   32</span>    <a class="code hl_function" href="classChronos_1_1Engine_1_1Device.html#ad0d1809c3c17ada51ed37695fdee5fe0">createLogicalDevice</a>(surface);</div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, &quot;Device&quot;, &quot;Logical <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a> created&quot;)</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3, &quot;Logical <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a> created&quot;)</div>
 <div class="line"><span class="lineno">   34</span>}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a50c43c6576d56f35473f2240d2f3bf59"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a50c43c6576d56f35473f2240d2f3bf59">Chronos::Engine::Device::pickPhysicalDevice</a></div><div class="ttdeci">void pickPhysicalDevice(VkInstance instance, VkSurfaceKHR surface)</div><div class="ttdoc">This is the function that picks the best device based on the requirements and features that we requir...</div><div class="ttdef"><b>Definition</b> <a href="device_8cpp_source.html#l00144">device.cpp:144</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_ad0d1809c3c17ada51ed37695fdee5fe0"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#ad0d1809c3c17ada51ed37695fdee5fe0">Chronos::Engine::Device::createLogicalDevice</a></div><div class="ttdeci">void createLogicalDevice(VkSurfaceKHR surface)</div><div class="ttdoc">This creates the logical device.</div><div class="ttdef"><b>Definition</b> <a href="device_8cpp_source.html#l00186">device.cpp:186</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a50c43c6576d56f35473f2240d2f3bf59"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a50c43c6576d56f35473f2240d2f3bf59">Chronos::Engine::Device::pickPhysicalDevice</a></div><div class="ttdeci">void pickPhysicalDevice(VkInstance instance, VkSurfaceKHR surface)</div><div class="ttdoc">This is the function that picks the best device based on the requirements and features that we requir...</div><div class="ttdef"><b>Definition</b> <a href="device_8cpp_source.html#l00142">device.cpp:142</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_ad0d1809c3c17ada51ed37695fdee5fe0"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#ad0d1809c3c17ada51ed37695fdee5fe0">Chronos::Engine::Device::createLogicalDevice</a></div><div class="ttdeci">void createLogicalDevice(VkSurfaceKHR surface)</div><div class="ttdoc">This creates the logical device.</div><div class="ttdef"><b>Definition</b> <a href="device_8cpp_source.html#l00184">device.cpp:184</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="device_8cpp_source.html#l00186">createLogicalDevice()</a>, <a class="el" href="logging_8hpp_source.html#l00035">LOG</a>, and <a class="el" href="device_8cpp_source.html#l00144">pickPhysicalDevice()</a>.</p>
+<p class="reference">References <a class="el" href="device_8cpp_source.html#l00184">createLogicalDevice()</a>, <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>, and <a class="el" href="device_8cpp_source.html#l00142">pickPhysicalDevice()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -418,52 +418,52 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="device_8cpp_source.html#l00144">144</a> of file <a class="el" href="device_8cpp_source.html">device.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  146</span>{</div>
-<div class="line"><span class="lineno">  147</span>    <span class="comment">// get the number of devices</span></div>
-<div class="line"><span class="lineno">  148</span>    uint32_t deviceCount = 0;</div>
-<div class="line"><span class="lineno">  149</span>    vkEnumeratePhysicalDevices(instance, &amp;deviceCount, <span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">if</span> (deviceCount == 0) {</div>
-<div class="line"><span class="lineno">  151</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Device&quot;</span>, <span class="stringliteral">&quot;Failed to find GPUs with Vulkan support&quot;</span>)</div>
-<div class="line"><span class="lineno">  152</span>    throw std::runtime_error(&quot;Failed to find GPUs with Vulkan support&quot;);</div>
-<div class="line"><span class="lineno">  153</span>    }</div>
-<div class="line"><span class="lineno">  154</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, &quot;Device&quot;, &quot;Number of devices found: &quot; + std::to_string(deviceCount))</div>
-<div class="line"><span class="lineno">  155</span>    std::vector&lt;VkPhysicalDevice&gt; devices(deviceCount);</div>
-<div class="line"><span class="lineno">  156</span>    vkEnumeratePhysicalDevices(instance, &amp;deviceCount, devices.data());</div>
-<div class="line"><span class="lineno">  157</span> </div>
-<div class="line"><span class="lineno">  158</span>    <span class="comment">// check if the device is suitable</span></div>
-<div class="line"><span class="lineno">  159</span>    for (const auto&amp; <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a> : devices) {</div>
-<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="device_8cpp.html#a6fb853f36e09aa82c9304572c1ce6680">isDeviceSuitable</a>(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, surface)) {</div>
-<div class="line"><span class="lineno">  161</span>        <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a987dce654f123694a087fc8a74afdb89">physicalDevice</a> = <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>;</div>
-<div class="line"><span class="lineno">  162</span>        <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a18bf509379c7fa5e2bb2195332dab902">maxMsaaSamples</a> = <a class="code hl_function" href="device_8cpp.html#a9e3260fe93033edb2c6860770f67007b">getMaxUsableSampleCount</a>(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>);</div>
-<div class="line"><span class="lineno">  163</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  164</span>    }</div>
-<div class="line"><span class="lineno">  165</span>    }</div>
-<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a987dce654f123694a087fc8a74afdb89">physicalDevice</a> == VK_NULL_HANDLE) {</div>
-<div class="line"><span class="lineno">  167</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(1, <span class="stringliteral">&quot;Device&quot;</span>, <span class="stringliteral">&quot;Failed to find a suitable GPU&quot;</span>)</div>
-<div class="line"><span class="lineno">  168</span>    throw std::runtime_error(&quot;Failed to find a suitable GPU&quot;);</div>
-<div class="line"><span class="lineno">  169</span>    }</div>
-<div class="line"><span class="lineno">  170</span><span class="preprocessor">#ifdef CHRONOS_ENABLE_LOGGING</span></div>
-<div class="line"><span class="lineno">  171</span>    VkPhysicalDeviceProperties deviceProperties;</div>
-<div class="line"><span class="lineno">  172</span>    vkGetPhysicalDeviceProperties(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a987dce654f123694a087fc8a74afdb89">physicalDevice</a>, &amp;deviceProperties);</div>
-<div class="line"><span class="lineno">  173</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, <span class="stringliteral">&quot;Device&quot;</span>, <span class="stringliteral">&quot;****PHYSICAL DEVICE INFORMATION*****&quot;</span>)</div>
-<div class="line"><span class="lineno">  174</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, &quot;Device&quot;,</div>
-<div class="line"><span class="lineno">  175</span>    &quot;Physical <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a> picked: &quot; + std::<span class="keywordtype">string</span>(deviceProperties.deviceName))</div>
-<div class="line"><span class="lineno">  176</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, &quot;Device&quot;,</div>
-<div class="line"><span class="lineno">  177</span>    &quot;Driver version: &quot; + std::to_string(deviceProperties.driverVersion))</div>
-<div class="line"><span class="lineno">  178</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, &quot;Device&quot;,</div>
-<div class="line"><span class="lineno">  179</span>    &quot;API version: &quot; + std::to_string(deviceProperties.apiVersion))</div>
-<div class="line"><span class="lineno">  180</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, &quot;Device&quot;, &quot;Device ID: &quot; + std::to_string(deviceProperties.deviceID))</div>
-<div class="line"><span class="lineno">  181</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, &quot;Device&quot;, &quot;Vendor ID: &quot; + std::to_string(deviceProperties.vendorID))</div>
-<div class="line"><span class="lineno">  182</span>    <a class="code hl_define" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(3, &quot;Device&quot;, &quot;MSAA samples: &quot; + std::to_string(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a98ab680304c67713f698d714aa4be474">msaaSamples</a>))</div>
-<div class="line"><span class="lineno">  183</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  184</span>}</div>
+<p class="definition">Definition at line <a class="el" href="device_8cpp_source.html#l00142">142</a> of file <a class="el" href="device_8cpp_source.html">device.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  144</span>{</div>
+<div class="line"><span class="lineno">  145</span>    <span class="comment">// get the number of devices</span></div>
+<div class="line"><span class="lineno">  146</span>    uint32_t deviceCount = 0;</div>
+<div class="line"><span class="lineno">  147</span>    vkEnumeratePhysicalDevices(instance, &amp;deviceCount, <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">if</span> (deviceCount == 0) {</div>
+<div class="line"><span class="lineno">  149</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(1, <span class="stringliteral">&quot;Failed to find GPUs with Vulkan support&quot;</span>)</div>
+<div class="line"><span class="lineno">  150</span>    throw std::runtime_error(&quot;Failed to find GPUs with Vulkan support&quot;);</div>
+<div class="line"><span class="lineno">  151</span>    }</div>
+<div class="line"><span class="lineno">  152</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3, &quot;Number of devices found: &quot; + std::to_string(deviceCount))</div>
+<div class="line"><span class="lineno">  153</span>    std::vector&lt;VkPhysicalDevice&gt; devices(deviceCount);</div>
+<div class="line"><span class="lineno">  154</span>    vkEnumeratePhysicalDevices(instance, &amp;deviceCount, devices.data());</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>    <span class="comment">// check if the device is suitable</span></div>
+<div class="line"><span class="lineno">  157</span>    for (const auto&amp; <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a> : devices) {</div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="device_8cpp.html#a6fb853f36e09aa82c9304572c1ce6680">isDeviceSuitable</a>(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, surface)) {</div>
+<div class="line"><span class="lineno">  159</span>        <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a987dce654f123694a087fc8a74afdb89">physicalDevice</a> = <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>;</div>
+<div class="line"><span class="lineno">  160</span>        <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a18bf509379c7fa5e2bb2195332dab902">maxMsaaSamples</a> = <a class="code hl_function" href="device_8cpp.html#a9e3260fe93033edb2c6860770f67007b">getMaxUsableSampleCount</a>(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>);</div>
+<div class="line"><span class="lineno">  161</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  162</span>    }</div>
+<div class="line"><span class="lineno">  163</span>    }</div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a987dce654f123694a087fc8a74afdb89">physicalDevice</a> == VK_NULL_HANDLE) {</div>
+<div class="line"><span class="lineno">  165</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(1, <span class="stringliteral">&quot;Failed to find a suitable GPU&quot;</span>)</div>
+<div class="line"><span class="lineno">  166</span>    throw std::runtime_error(&quot;Failed to find a suitable GPU&quot;);</div>
+<div class="line"><span class="lineno">  167</span>    }</div>
+<div class="line"><span class="lineno">  168</span><span class="preprocessor">#ifdef CHRONOS_ENABLE_LOGGING</span></div>
+<div class="line"><span class="lineno">  169</span>    VkPhysicalDeviceProperties deviceProperties;</div>
+<div class="line"><span class="lineno">  170</span>    vkGetPhysicalDeviceProperties(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a987dce654f123694a087fc8a74afdb89">physicalDevice</a>, &amp;deviceProperties);</div>
+<div class="line"><span class="lineno">  171</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3, <span class="stringliteral">&quot;****PHYSICAL DEVICE INFORMATION*****&quot;</span>)</div>
+<div class="line"><span class="lineno">  172</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3,</div>
+<div class="line"><span class="lineno">  173</span>    &quot;Physical <a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a> picked: &quot; + std::<span class="keywordtype">string</span>(deviceProperties.deviceName))</div>
+<div class="line"><span class="lineno">  174</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3,</div>
+<div class="line"><span class="lineno">  175</span>    &quot;Driver version: &quot; + std::to_string(deviceProperties.driverVersion))</div>
+<div class="line"><span class="lineno">  176</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3,</div>
+<div class="line"><span class="lineno">  177</span>    &quot;API version: &quot; + std::to_string(deviceProperties.apiVersion))</div>
+<div class="line"><span class="lineno">  178</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3,  &quot;Device ID: &quot; + std::to_string(deviceProperties.deviceID))</div>
+<div class="line"><span class="lineno">  179</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3,  &quot;Vendor ID: &quot; + std::to_string(deviceProperties.vendorID))</div>
+<div class="line"><span class="lineno">  180</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3,  &quot;MSAA samples: &quot; + std::to_string(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a98ab680304c67713f698d714aa4be474">msaaSamples</a>))</div>
+<div class="line"><span class="lineno">  181</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  182</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a18bf509379c7fa5e2bb2195332dab902"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a18bf509379c7fa5e2bb2195332dab902">Chronos::Engine::Device::maxMsaaSamples</a></div><div class="ttdeci">VkSampleCountFlagBits maxMsaaSamples</div><div class="ttdef"><b>Definition</b> <a href="device_8hpp_source.html#l00082">device.hpp:82</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a98ab680304c67713f698d714aa4be474"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a98ab680304c67713f698d714aa4be474">Chronos::Engine::Device::msaaSamples</a></div><div class="ttdeci">VkSampleCountFlagBits msaaSamples</div><div class="ttdoc">This sets the MSAA samples count.</div><div class="ttdef"><b>Definition</b> <a href="device_8hpp_source.html#l00080">device.hpp:80</a></div></div>
 <div class="ttc" id="adevice_8cpp_html_a6fb853f36e09aa82c9304572c1ce6680"><div class="ttname"><a href="device_8cpp.html#a6fb853f36e09aa82c9304572c1ce6680">isDeviceSuitable</a></div><div class="ttdeci">static bool isDeviceSuitable(VkPhysicalDevice device, VkSurfaceKHR surface)</div><div class="ttdoc">Checks if the physical device that we provide it is suitable for our needs.</div><div class="ttdef"><b>Definition</b> <a href="device_8cpp_source.html#l00081">device.cpp:81</a></div></div>
-<div class="ttc" id="adevice_8cpp_html_a9e3260fe93033edb2c6860770f67007b"><div class="ttname"><a href="device_8cpp.html#a9e3260fe93033edb2c6860770f67007b">getMaxUsableSampleCount</a></div><div class="ttdeci">VkSampleCountFlagBits getMaxUsableSampleCount(VkPhysicalDevice physicalDevice)</div><div class="ttdoc">Gets the maxmimum supported MSAA sample count.</div><div class="ttdef"><b>Definition</b> <a href="device_8cpp_source.html#l00114">device.cpp:114</a></div></div>
+<div class="ttc" id="adevice_8cpp_html_a9e3260fe93033edb2c6860770f67007b"><div class="ttname"><a href="device_8cpp.html#a9e3260fe93033edb2c6860770f67007b">getMaxUsableSampleCount</a></div><div class="ttdeci">VkSampleCountFlagBits getMaxUsableSampleCount(VkPhysicalDevice physicalDevice)</div><div class="ttdoc">Gets the maxmimum supported MSAA sample count.</div><div class="ttdef"><b>Definition</b> <a href="device_8cpp_source.html#l00113">device.cpp:113</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="device_8cpp_source.html#l00114">getMaxUsableSampleCount()</a>, <a class="el" href="device_8cpp_source.html#l00081">isDeviceSuitable()</a>, and <a class="el" href="logging_8hpp_source.html#l00035">LOG</a>.</p>
+<p class="reference">References <a class="el" href="device_8cpp_source.html#l00113">getMaxUsableSampleCount()</a>, <a class="el" href="device_8cpp_source.html#l00081">isDeviceSuitable()</a>, and <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

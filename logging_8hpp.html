@@ -92,19 +92,32 @@ $(document).ready(function(){initNavTree('logging_8hpp.html',''); initResizable(
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">logging.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;filesystem&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for logging.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="logging_8hpp__incl.png" border="0" usemap="#aSource_2Common_2logging_8hpp" alt=""/></div>
 <map name="aSource_2Common_2logging_8hpp" id="aSource_2Common_2logging_8hpp">
-<area shape="rect" title=" " alt="" coords="5,5,215,31"/>
-<area shape="rect" title=" " alt="" coords="70,79,150,104"/>
-<area shape="poly" title=" " alt="" coords="113,31,113,65,107,65,107,31"/>
+<area shape="rect" title=" " alt="" coords="153,5,362,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,85,104"/>
+<area shape="poly" title=" " alt="" coords="224,33,93,77,92,72,222,28"/>
+<area shape="rect" title=" " alt="" coords="109,79,200,104"/>
+<area shape="poly" title=" " alt="" coords="242,33,184,73,181,68,239,28"/>
+<area shape="rect" title=" " alt="" coords="224,79,291,104"/>
+<area shape="poly" title=" " alt="" coords="260,31,260,65,255,65,255,31"/>
+<area shape="rect" title=" " alt="" coords="315,79,389,104"/>
+<area shape="poly" title=" " alt="" coords="274,29,327,68,324,72,271,33"/>
+<area shape="rect" title=" " alt="" coords="413,79,488,104"/>
+<area shape="poly" title=" " alt="" coords="289,28,407,71,406,76,287,33"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -132,12 +145,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a5b58fc422e0e0d9227a7ef69954b689a" id="r_a5b58fc422e0e0d9227a7ef69954b689a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logging_8hpp.html#a5b58fc422e0e0d9227a7ef69954b689a">LOG</a>(LEVEL,  CLASS,  MESSAGE)</td></tr>
-<tr class="separator:a5b58fc422e0e0d9227a7ef69954b689a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8774bb0a65165799e6ceafa939745478" id="r_a8774bb0a65165799e6ceafa939745478"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(LEVEL,  MESSAGE)</td></tr>
+<tr class="separator:a8774bb0a65165799e6ceafa939745478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a7d15000aa125a59b41ba4535ae41ada7" id="r_a7d15000aa125a59b41ba4535ae41ada7"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logging_8hpp.html#a7d15000aa125a59b41ba4535ae41ada7">getFileName</a> (const std::string &amp;path)</td></tr>
+<tr class="separator:a7d15000aa125a59b41ba4535ae41ada7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6480a6ae39ffa2e683bde4a32374cd3" id="r_aa6480a6ae39ffa2e683bde4a32374cd3"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logging_8hpp.html#aa6480a6ae39ffa2e683bde4a32374cd3">getTimestamp</a> ()</td></tr>
+<tr class="separator:aa6480a6ae39ffa2e683bde4a32374cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a5b58fc422e0e0d9227a7ef69954b689a" name="a5b58fc422e0e0d9227a7ef69954b689a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b58fc422e0e0d9227a7ef69954b689a">&#9670;&#160;</a></span>LOG</h2>
+<a id="a8774bb0a65165799e6ceafa939745478" name="a8774bb0a65165799e6ceafa939745478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8774bb0a65165799e6ceafa939745478">&#9670;&#160;</a></span>LOG</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -147,12 +167,6 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">LEVEL, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">CLASS, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -168,8 +182,75 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="logging_8hpp_source.html#l00035">35</a> of file <a class="el" href="logging_8hpp_source.html">logging.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logging_8hpp_source.html#l00058">58</a> of file <a class="el" href="logging_8hpp_source.html">logging.hpp</a>.</p>
 
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a7d15000aa125a59b41ba4535ae41ada7" name="a7d15000aa125a59b41ba4535ae41ada7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d15000aa125a59b41ba4535ae41ada7">&#9670;&#160;</a></span>getFileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string getFileName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="logging_8hpp_source.html#l00033">33</a> of file <a class="el" href="logging_8hpp_source.html">logging.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{</div>
+<div class="line"><span class="lineno">   35</span>    std::filesystem::path p(path);</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> p.filename().string();</div>
+<div class="line"><span class="lineno">   37</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa6480a6ae39ffa2e683bde4a32374cd3" name="aa6480a6ae39ffa2e683bde4a32374cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6480a6ae39ffa2e683bde4a32374cd3">&#9670;&#160;</a></span>getTimestamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string getTimestamp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="logging_8hpp_source.html#l00040">40</a> of file <a class="el" href="logging_8hpp_source.html">logging.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>{</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keyword">auto</span> now = std::chrono::system_clock::now();</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keyword">auto</span> now_ns = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(now.time_since_epoch()).count();</div>
+<div class="line"><span class="lineno">   44</span>    std::ostringstream oss;</div>
+<div class="line"><span class="lineno">   45</span>    oss &lt;&lt; now_ns;</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">return</span> oss.str();</div>
+<div class="line"><span class="lineno">   47</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

@@ -182,13 +182,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00134">134</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  135</span>{</div>
-<div class="line"><span class="lineno">  136</span>    <span class="keywordtype">int</span> objectNo = <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#accb5133190e568c2e710efed3dea6017">nextFreeObjectNo</a>;</div>
-<div class="line"><span class="lineno">  137</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#accb5133190e568c2e710efed3dea6017">nextFreeObjectNo</a>++;</div>
-<div class="line"><span class="lineno">  138</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>[objectNo] = object;</div>
-<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">return</span> objectNo;</div>
-<div class="line"><span class="lineno">  140</span>}</div>
+<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00130">130</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  131</span>{</div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordtype">int</span> objectNo = <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#accb5133190e568c2e710efed3dea6017">nextFreeObjectNo</a>;</div>
+<div class="line"><span class="lineno">  133</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#accb5133190e568c2e710efed3dea6017">nextFreeObjectNo</a>++;</div>
+<div class="line"><span class="lineno">  134</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>[objectNo] = object;</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> objectNo;</div>
+<div class="line"><span class="lineno">  136</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a5c60ee3b180633f885c113ca3dd5dab6"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">Chronos::Engine::ObjectManager::objects</a></div><div class="ttdeci">std::map&lt; int, Object * &gt; objects</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8hpp_source.html#l00037">objectManager.hpp:37</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_accb5133190e568c2e710efed3dea6017"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#accb5133190e568c2e710efed3dea6017">Chronos::Engine::ObjectManager::nextFreeObjectNo</a></div><div class="ttdeci">int nextFreeObjectNo</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8hpp_source.html#l00039">objectManager.hpp:39</a></div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -221,22 +221,20 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00109">109</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  110</span>{</div>
-<div class="line"><span class="lineno">  111</span>    vkDestroyRenderPass(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a984adee69802691090e42b09e2324f2b">renderPass</a>, <span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">  112</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a984adee69802691090e42b09e2324f2b">renderPass</a> = <a class="code hl_function" href="namespaceChronos_1_1Engine.html#a5a92fce581e2787c3c67df6bc4e3f108">Chronos::Engine::createRenderPass</a>(</div>
-<div class="line"><span class="lineno">  113</span>        *this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>,</div>
-<div class="line"><span class="lineno">  114</span>        *this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>,</div>
-<div class="line"><span class="lineno">  115</span>        VK_IMAGE_LAYOUT_UNDEFINED, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,</div>
-<div class="line"><span class="lineno">  116</span>        VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, <span class="keyword">true</span>,</div>
-<div class="line"><span class="lineno">  117</span>        <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  118</span>    <a class="code hl_function" href="classChronos_1_1Engine_1_1ObjectManager.html#a1982ee4c7a784a7c0bc390567137a882">recreate</a>();</div>
-<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; objectMap : <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>) {</div>
-<div class="line"><span class="lineno">  120</span>    objectMap.second-&gt;recreateGraphicsPipeline();</div>
-<div class="line"><span class="lineno">  121</span>    }</div>
-<div class="line"><span class="lineno">  122</span>}</div>
+<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00107">107</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>{</div>
+<div class="line"><span class="lineno">  109</span>    vkDestroyRenderPass(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a984adee69802691090e42b09e2324f2b">renderPass</a>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  110</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a984adee69802691090e42b09e2324f2b">renderPass</a></div>
+<div class="line"><span class="lineno">  111</span>    = <a class="code hl_function" href="namespaceChronos_1_1Engine.html#a5a92fce581e2787c3c67df6bc4e3f108">Chronos::Engine::createRenderPass</a>(*this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>, *this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>,</div>
+<div class="line"><span class="lineno">  112</span>        VK_IMAGE_LAYOUT_UNDEFINED, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,</div>
+<div class="line"><span class="lineno">  113</span>        VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  114</span>    <a class="code hl_function" href="classChronos_1_1Engine_1_1ObjectManager.html#a1982ee4c7a784a7c0bc390567137a882">recreate</a>();</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; objectMap : <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>) {</div>
+<div class="line"><span class="lineno">  116</span>    objectMap.second-&gt;recreateGraphicsPipeline();</div>
+<div class="line"><span class="lineno">  117</span>    }</div>
+<div class="line"><span class="lineno">  118</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a1925017e78d1bc388bfed72bc6c0c7ec"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">Chronos::Engine::Device::device</a></div><div class="ttdeci">VkDevice device</div><div class="ttdoc">This is the logical device that is used by Vulkan.</div><div class="ttdef"><b>Definition</b> <a href="device_8hpp_source.html#l00052">device.hpp:52</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a1982ee4c7a784a7c0bc390567137a882"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a1982ee4c7a784a7c0bc390567137a882">Chronos::Engine::ObjectManager::recreate</a></div><div class="ttdeci">void recreate()</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8cpp_source.html#l00123">objectManager.cpp:123</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a1982ee4c7a784a7c0bc390567137a882"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a1982ee4c7a784a7c0bc390567137a882">Chronos::Engine::ObjectManager::recreate</a></div><div class="ttdeci">void recreate()</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8cpp_source.html#l00119">objectManager.cpp:119</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a9486fbc34353f4d30cd0df2e53c7216d"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">Chronos::Engine::ObjectManager::device</a></div><div class="ttdeci">Chronos::Engine::Device * device</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8hpp_source.html#l00061">objectManager.hpp:61</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a984adee69802691090e42b09e2324f2b"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a984adee69802691090e42b09e2324f2b">Chronos::Engine::ObjectManager::renderPass</a></div><div class="ttdeci">VkRenderPass renderPass</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8hpp_source.html#l00056">objectManager.hpp:56</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_ad4299a798ea6a9f732cfe7d037718377"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">Chronos::Engine::ObjectManager::swapChain</a></div><div class="ttdeci">Chronos::Engine::SwapChain * swapChain</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8hpp_source.html#l00064">objectManager.hpp:64</a></div></div>
@@ -271,11 +269,11 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00128">128</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  129</span>{</div>
-<div class="line"><span class="lineno">  130</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> framebuffer : <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ac9291c4a0e961bccb7f04265b3f4d70d">framebuffers</a>)</div>
-<div class="line"><span class="lineno">  131</span>    vkDestroyFramebuffer(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>, framebuffer, nullptr);</div>
-<div class="line"><span class="lineno">  132</span>}</div>
+<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00124">124</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>{</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> framebuffer : <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ac9291c4a0e961bccb7f04265b3f4d70d">framebuffers</a>)</div>
+<div class="line"><span class="lineno">  127</span>    vkDestroyFramebuffer(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>, framebuffer, nullptr);</div>
+<div class="line"><span class="lineno">  128</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_ac9291c4a0e961bccb7f04265b3f4d70d"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#ac9291c4a0e961bccb7f04265b3f4d70d">Chronos::Engine::ObjectManager::framebuffers</a></div><div class="ttdeci">std::vector&lt; VkFramebuffer &gt; framebuffers</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8hpp_source.html#l00069">objectManager.hpp:69</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -295,16 +293,16 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00049">49</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>{</div>
-<div class="line"><span class="lineno">   51</span>    vkDestroySampler(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a1a8fde16434b8764a2e23bcb74d5f6b6">textureSampler</a>, <span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">   52</span>    vkDestroyRenderPass(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a984adee69802691090e42b09e2324f2b">renderPass</a>, <span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> framebuffer : <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ac9291c4a0e961bccb7f04265b3f4d70d">framebuffers</a>)</div>
-<div class="line"><span class="lineno">   54</span>    vkDestroyFramebuffer(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>, framebuffer, nullptr);</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; objectMap : <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>) {</div>
-<div class="line"><span class="lineno">   56</span>        objectMap.second-&gt;destroy();</div>
-<div class="line"><span class="lineno">   57</span>    }</div>
-<div class="line"><span class="lineno">   58</span>}</div>
+<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00047">47</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
+<div class="line"><span class="lineno">   49</span>    vkDestroySampler(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a1a8fde16434b8764a2e23bcb74d5f6b6">textureSampler</a>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">   50</span>    vkDestroyRenderPass(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a984adee69802691090e42b09e2324f2b">renderPass</a>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> framebuffer : <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ac9291c4a0e961bccb7f04265b3f4d70d">framebuffers</a>)</div>
+<div class="line"><span class="lineno">   52</span>    vkDestroyFramebuffer(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>, framebuffer, nullptr);</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; objectMap : <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>) {</div>
+<div class="line"><span class="lineno">   54</span>    objectMap.second-&gt;destroy();</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+<div class="line"><span class="lineno">   56</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a1a8fde16434b8764a2e23bcb74d5f6b6"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a1a8fde16434b8764a2e23bcb74d5f6b6">Chronos::Engine::ObjectManager::textureSampler</a></div><div class="ttdeci">VkSampler textureSampler</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8hpp_source.html#l00057">objectManager.hpp:57</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -349,17 +347,15 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   35</span> </div>
 <div class="line"><span class="lineno">   36</span>    <a class="code hl_function" href="namespaceChronos_1_1Engine.html#a26311add90c663bbb6da7406c8726ae1">Chronos::Engine::createTextureSampler</a>(*device, &amp;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a1a8fde16434b8764a2e23bcb74d5f6b6">textureSampler</a>);</div>
 <div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a984adee69802691090e42b09e2324f2b">renderPass</a> = <a class="code hl_function" href="namespaceChronos_1_1Engine.html#a5a92fce581e2787c3c67df6bc4e3f108">Chronos::Engine::createRenderPass</a>(</div>
-<div class="line"><span class="lineno">   39</span>        *this-&gt;device,</div>
-<div class="line"><span class="lineno">   40</span>        *this-&gt;swapChain,</div>
-<div class="line"><span class="lineno">   41</span>        VK_IMAGE_LAYOUT_UNDEFINED, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,</div>
-<div class="line"><span class="lineno">   42</span>        VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, <span class="keyword">true</span>,</div>
-<div class="line"><span class="lineno">   43</span>        <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">   44</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">commandBuffers</a> = <a class="code hl_function" href="namespaceChronos_1_1Engine.html#a518ca04e28b0aa0558dd8b8f1e51449d">Chronos::Engine::createCommandBuffer</a>(</div>
-<div class="line"><span class="lineno">   45</span>    *<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>, *<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a0304d7866fb1bd78a80bc8bbd1e4fc41">commandPool</a>);</div>
-<div class="line"><span class="lineno">   46</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ac9291c4a0e961bccb7f04265b3f4d70d">framebuffers</a> = <a class="code hl_function" href="namespaceChronos_1_1Engine.html#a43d4bb056580340f1df4d5ca610a213e">Chronos::Engine::createFramebuffer</a>(</div>
-<div class="line"><span class="lineno">   47</span>    *<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>, *<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a984adee69802691090e42b09e2324f2b">renderPass</a>, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   48</span>}</div>
+<div class="line"><span class="lineno">   38</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a984adee69802691090e42b09e2324f2b">renderPass</a></div>
+<div class="line"><span class="lineno">   39</span>    = <a class="code hl_function" href="namespaceChronos_1_1Engine.html#a5a92fce581e2787c3c67df6bc4e3f108">Chronos::Engine::createRenderPass</a>(*this-&gt;device, *this-&gt;swapChain,</div>
+<div class="line"><span class="lineno">   40</span>        VK_IMAGE_LAYOUT_UNDEFINED, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,</div>
+<div class="line"><span class="lineno">   41</span>        VK_IMAGE_LAYOUT_PRESENT_SRC_KHR, <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">commandBuffers</a> = <a class="code hl_function" href="namespaceChronos_1_1Engine.html#a518ca04e28b0aa0558dd8b8f1e51449d">Chronos::Engine::createCommandBuffer</a>(</div>
+<div class="line"><span class="lineno">   43</span>    *<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>, *<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a0304d7866fb1bd78a80bc8bbd1e4fc41">commandPool</a>);</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ac9291c4a0e961bccb7f04265b3f4d70d">framebuffers</a> = <a class="code hl_function" href="namespaceChronos_1_1Engine.html#a43d4bb056580340f1df4d5ca610a213e">Chronos::Engine::createFramebuffer</a>(</div>
+<div class="line"><span class="lineno">   45</span>    *<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>, *<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a984adee69802691090e42b09e2324f2b">renderPass</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   46</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a0304d7866fb1bd78a80bc8bbd1e4fc41"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a0304d7866fb1bd78a80bc8bbd1e4fc41">Chronos::Engine::ObjectManager::commandPool</a></div><div class="ttdeci">VkCommandPool commandPool</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8hpp_source.html#l00067">objectManager.hpp:67</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_aa02b9dc18adf8604b529d21835cac900"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">Chronos::Engine::ObjectManager::commandBuffers</a></div><div class="ttdeci">std::vector&lt; VkCommandBuffer &gt; commandBuffers</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8hpp_source.html#l00041">objectManager.hpp:41</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_a26311add90c663bbb6da7406c8726ae1"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a26311add90c663bbb6da7406c8726ae1">Chronos::Engine::createTextureSampler</a></div><div class="ttdeci">void createTextureSampler(Chronos::Engine::Device device, VkSampler *textureSampler)</div><div class="ttdoc">Creates a VkSampler</div><div class="ttdef"><b>Definition</b> <a href="texture_8cpp_source.html#l00278">texture.cpp:278</a></div></div>
@@ -401,12 +397,12 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00123">123</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  124</span>{</div>
-<div class="line"><span class="lineno">  125</span>    <a class="code hl_function" href="classChronos_1_1Engine_1_1ObjectManager.html#a7fe8a0bf7fe28897cbbed06905972a45">cleanup</a>();</div>
-<div class="line"><span class="lineno">  126</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ac9291c4a0e961bccb7f04265b3f4d70d">framebuffers</a> = <a class="code hl_function" href="namespaceChronos_1_1Engine.html#a43d4bb056580340f1df4d5ca610a213e">createFramebuffer</a>(*<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>, *<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a984adee69802691090e42b09e2324f2b">renderPass</a>, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  127</span>}</div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a7fe8a0bf7fe28897cbbed06905972a45"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a7fe8a0bf7fe28897cbbed06905972a45">Chronos::Engine::ObjectManager::cleanup</a></div><div class="ttdeci">void cleanup()</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8cpp_source.html#l00128">objectManager.cpp:128</a></div></div>
+<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00119">119</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>{</div>
+<div class="line"><span class="lineno">  121</span>    <a class="code hl_function" href="classChronos_1_1Engine_1_1ObjectManager.html#a7fe8a0bf7fe28897cbbed06905972a45">cleanup</a>();</div>
+<div class="line"><span class="lineno">  122</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ac9291c4a0e961bccb7f04265b3f4d70d">framebuffers</a> = <a class="code hl_function" href="namespaceChronos_1_1Engine.html#a43d4bb056580340f1df4d5ca610a213e">createFramebuffer</a>(*<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9486fbc34353f4d30cd0df2e53c7216d">device</a>, *<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>, <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a984adee69802691090e42b09e2324f2b">renderPass</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  123</span>}</div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a7fe8a0bf7fe28897cbbed06905972a45"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a7fe8a0bf7fe28897cbbed06905972a45">Chronos::Engine::ObjectManager::cleanup</a></div><div class="ttdeci">void cleanup()</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8cpp_source.html#l00124">objectManager.cpp:124</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="helper_8cpp_source.html#l00276">Chronos::Engine::createFramebuffer()</a>.</p>
 <div class="dynheader">
@@ -438,12 +434,12 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00141">141</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  142</span>{</div>
-<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">for</span> (<span class="keywordtype">bool</span>&amp; flag : <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9f08e1945a1451ff147c7dcbeee3e5ff">objectsToBeRemoved</a>[objectNo]) {</div>
-<div class="line"><span class="lineno">  144</span>    flag = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  145</span>    }</div>
-<div class="line"><span class="lineno">  146</span>}</div>
+<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00137">137</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>{</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">for</span> (<span class="keywordtype">bool</span>&amp; flag : <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9f08e1945a1451ff147c7dcbeee3e5ff">objectsToBeRemoved</a>[objectNo]) {</div>
+<div class="line"><span class="lineno">  140</span>    flag = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  141</span>    }</div>
+<div class="line"><span class="lineno">  142</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a9f08e1945a1451ff147c7dcbeee3e5ff"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a9f08e1945a1451ff147c7dcbeee3e5ff">Chronos::Engine::ObjectManager::objectsToBeRemoved</a></div><div class="ttdeci">std::map&lt; int, std::array&lt; bool, MAX_FRAMES_IN_FLIGHT &gt; &gt; objectsToBeRemoved</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8hpp_source.html#l00071">objectManager.hpp:71</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -480,55 +476,55 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00059">59</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>{   </div>
-<div class="line"><span class="lineno">   62</span>    VkViewport viewport {};</div>
-<div class="line"><span class="lineno">   63</span>    viewport.x = 0.0f;</div>
-<div class="line"><span class="lineno">   64</span>    viewport.y = 0.0f;</div>
-<div class="line"><span class="lineno">   65</span>    viewport.width = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">swapChainExtent</a>.width);</div>
-<div class="line"><span class="lineno">   66</span>    viewport.height = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">swapChainExtent</a>.height);</div>
-<div class="line"><span class="lineno">   67</span>    viewport.minDepth = 0.0f;</div>
-<div class="line"><span class="lineno">   68</span>    viewport.maxDepth = 1.0f;</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>    VkRect2D scissor {};</div>
-<div class="line"><span class="lineno">   71</span>    scissor.offset = { 0, 0 };</div>
-<div class="line"><span class="lineno">   72</span>    scissor.extent = <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">swapChainExtent</a>;</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>    vkResetCommandBuffer(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">commandBuffers</a>[currentFrame], 0);</div>
-<div class="line"><span class="lineno">   75</span>    VkCommandBufferBeginInfo beginInfo {};</div>
-<div class="line"><span class="lineno">   76</span>    beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;</div>
-<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">if</span> (vkBeginCommandBuffer(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">commandBuffers</a>[currentFrame], &amp;beginInfo)</div>
-<div class="line"><span class="lineno">   78</span>    != VK_SUCCESS) {</div>
-<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to begin recording command buffer!&quot;</span>);</div>
-<div class="line"><span class="lineno">   80</span>    }</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>    VkRenderPassBeginInfo renderPassInfo {};</div>
-<div class="line"><span class="lineno">   83</span>    renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;</div>
-<div class="line"><span class="lineno">   84</span>    renderPassInfo.renderPass = <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a984adee69802691090e42b09e2324f2b">renderPass</a>;</div>
-<div class="line"><span class="lineno">   85</span>    renderPassInfo.framebuffer = <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ac9291c4a0e961bccb7f04265b3f4d70d">framebuffers</a>[imageIndex];</div>
-<div class="line"><span class="lineno">   86</span>    renderPassInfo.renderArea.offset = { 0, 0 };</div>
-<div class="line"><span class="lineno">   87</span>    renderPassInfo.renderArea.extent = <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">swapChainExtent</a>;</div>
-<div class="line"><span class="lineno">   88</span>    VkClearValue clearColor</div>
-<div class="line"><span class="lineno">   89</span>    = { { { bgColor[0], bgColor[1], bgColor[2], 1.0f } } }; <span class="comment">// bg color</span></div>
-<div class="line"><span class="lineno">   90</span>    renderPassInfo.clearValueCount = 1;</div>
-<div class="line"><span class="lineno">   91</span>    renderPassInfo.pClearValues = &amp;clearColor;</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>    vkCmdBeginRenderPass(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">commandBuffers</a>[currentFrame], &amp;renderPassInfo,</div>
-<div class="line"><span class="lineno">   94</span>    VK_SUBPASS_CONTENTS_INLINE);</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>) {</div>
-<div class="line"><span class="lineno">   97</span>        <span class="keywordflow">if</span> (this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9f08e1945a1451ff147c7dcbeee3e5ff">objectsToBeRemoved</a>.count(<span class="keywordtype">object</span>.first) &gt; 0)</div>
-<div class="line"><span class="lineno">   98</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   99</span>        <span class="keywordtype">object</span>.second-&gt;render(currentFrame, imageIndex, bgColor, viewport, scissor, <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">commandBuffers</a>);</div>
-<div class="line"><span class="lineno">  100</span>    }</div>
-<div class="line"><span class="lineno">  101</span>    </div>
+<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00057">57</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{</div>
+<div class="line"><span class="lineno">   60</span>    VkViewport viewport {};</div>
+<div class="line"><span class="lineno">   61</span>    viewport.x = 0.0f;</div>
+<div class="line"><span class="lineno">   62</span>    viewport.y = 0.0f;</div>
+<div class="line"><span class="lineno">   63</span>    viewport.width = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">swapChainExtent</a>.width);</div>
+<div class="line"><span class="lineno">   64</span>    viewport.height = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">swapChainExtent</a>.height);</div>
+<div class="line"><span class="lineno">   65</span>    viewport.minDepth = 0.0f;</div>
+<div class="line"><span class="lineno">   66</span>    viewport.maxDepth = 1.0f;</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    VkRect2D scissor {};</div>
+<div class="line"><span class="lineno">   69</span>    scissor.offset = { 0, 0 };</div>
+<div class="line"><span class="lineno">   70</span>    scissor.extent = <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">swapChainExtent</a>;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    vkResetCommandBuffer(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">commandBuffers</a>[currentFrame], 0);</div>
+<div class="line"><span class="lineno">   73</span>    VkCommandBufferBeginInfo beginInfo {};</div>
+<div class="line"><span class="lineno">   74</span>    beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">if</span> (vkBeginCommandBuffer(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">commandBuffers</a>[currentFrame], &amp;beginInfo)</div>
+<div class="line"><span class="lineno">   76</span>    != VK_SUCCESS) {</div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to begin recording command buffer!&quot;</span>);</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    VkRenderPassBeginInfo renderPassInfo {};</div>
+<div class="line"><span class="lineno">   81</span>    renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;</div>
+<div class="line"><span class="lineno">   82</span>    renderPassInfo.renderPass = <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a984adee69802691090e42b09e2324f2b">renderPass</a>;</div>
+<div class="line"><span class="lineno">   83</span>    renderPassInfo.framebuffer = <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ac9291c4a0e961bccb7f04265b3f4d70d">framebuffers</a>[imageIndex];</div>
+<div class="line"><span class="lineno">   84</span>    renderPassInfo.renderArea.offset = { 0, 0 };</div>
+<div class="line"><span class="lineno">   85</span>    renderPassInfo.renderArea.extent = <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#ad4299a798ea6a9f732cfe7d037718377">swapChain</a>-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">swapChainExtent</a>;</div>
+<div class="line"><span class="lineno">   86</span>    VkClearValue clearColor</div>
+<div class="line"><span class="lineno">   87</span>    = { { { bgColor[0], bgColor[1], bgColor[2], 1.0f } } }; <span class="comment">// bg color</span></div>
+<div class="line"><span class="lineno">   88</span>    renderPassInfo.clearValueCount = 1;</div>
+<div class="line"><span class="lineno">   89</span>    renderPassInfo.pClearValues = &amp;clearColor;</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    vkCmdBeginRenderPass(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">commandBuffers</a>[currentFrame], &amp;renderPassInfo,</div>
+<div class="line"><span class="lineno">   92</span>    VK_SUBPASS_CONTENTS_INLINE);</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>) {</div>
+<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">if</span> (this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9f08e1945a1451ff147c7dcbeee3e5ff">objectsToBeRemoved</a>.count(<span class="keywordtype">object</span>.first) &gt; 0)</div>
+<div class="line"><span class="lineno">   96</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordtype">object</span>.second-&gt;render(currentFrame, imageIndex, bgColor, viewport,</div>
+<div class="line"><span class="lineno">   98</span>        scissor, <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">commandBuffers</a>);</div>
+<div class="line"><span class="lineno">   99</span>    }</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    vkCmdEndRenderPass(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">commandBuffers</a>[currentFrame]);</div>
 <div class="line"><span class="lineno">  102</span> </div>
-<div class="line"><span class="lineno">  103</span>    vkCmdEndRenderPass(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">commandBuffers</a>[currentFrame]);</div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">if</span> (vkEndCommandBuffer(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">commandBuffers</a>[currentFrame]) != VK_SUCCESS) {</div>
-<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to record command buffer!&quot;</span>);</div>
-<div class="line"><span class="lineno">  107</span>    }</div>
-<div class="line"><span class="lineno">  108</span>}</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span> (vkEndCommandBuffer(<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">commandBuffers</a>[currentFrame]) != VK_SUCCESS) {</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;failed to record command buffer!&quot;</span>);</div>
+<div class="line"><span class="lineno">  105</span>    }</div>
+<div class="line"><span class="lineno">  106</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_a10893a5577243552e6d64875e1167a63"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#a10893a5577243552e6d64875e1167a63">Chronos::Engine::SwapChain::swapChainExtent</a></div><div class="ttdeci">VkExtent2D swapChainExtent</div><div class="ttdoc">Dimenisons of the current swapchain.</div><div class="ttdef"><b>Definition</b> <a href="swapchain_8hpp_source.html#l00143">swapchain.hpp:143</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -549,43 +545,43 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00147">147</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  148</span>{</div>
-<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; objectMap : <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9f08e1945a1451ff147c7dcbeee3e5ff">objectsToBeRemoved</a>) {</div>
-<div class="line"><span class="lineno">  150</span>    objectMap.second[currentFrame] = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  151</span>    <span class="keywordtype">bool</span> toBeRemoved = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">for</span> (<span class="keywordtype">bool</span> flag : objectMap.second) {</div>
-<div class="line"><span class="lineno">  153</span>        <span class="keywordflow">if</span> (flag) {</div>
-<div class="line"><span class="lineno">  154</span>        toBeRemoved = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  155</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  156</span>        }</div>
-<div class="line"><span class="lineno">  157</span>    }</div>
-<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span> (toBeRemoved) {</div>
-<div class="line"><span class="lineno">  159</span>        <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>[objectMap.first]-&gt;destroy();</div>
-<div class="line"><span class="lineno">  160</span>        <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9f08e1945a1451ff147c7dcbeee3e5ff">objectsToBeRemoved</a>.erase(objectMap.first);</div>
-<div class="line"><span class="lineno">  161</span>        <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>.erase(objectMap.first);</div>
-<div class="line"><span class="lineno">  162</span>        Object* <span class="keywordtype">object</span> = <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>[objectMap.first];</div>
-<div class="line"><span class="lineno">  163</span>        <span class="keywordflow">switch</span> (object-&gt;objectType) {</div>
-<div class="line"><span class="lineno">  164</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceChronos_1_1Engine.html#a7d4073485bcee3ca7017acdde4bcd34caa0f0d4866c5893a6615d782d1eb06e81">Chronos::Engine::ObjectType::TypeColoredRectangle</a>:</div>
-<div class="line"><span class="lineno">  165</span>        <span class="keyword">delete</span> (<a class="code hl_class" href="classChronos_1_1Engine_1_1ColoredRectangle.html">Chronos::Engine::ColoredRectangle</a>*)<span class="keywordtype">object</span>;</div>
-<div class="line"><span class="lineno">  166</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceChronos_1_1Engine.html#a7d4073485bcee3ca7017acdde4bcd34caeaf4ec891899154ed542266937824ec0">Chronos::Engine::ObjectType::TypeTexturedRectangle</a>:</div>
-<div class="line"><span class="lineno">  168</span>        <span class="keyword">delete</span> (<a class="code hl_class" href="classChronos_1_1Engine_1_1TexturedRectangle.html">Chronos::Engine::TexturedRectangle</a>*)<span class="keywordtype">object</span>;</div>
-<div class="line"><span class="lineno">  169</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  170</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceChronos_1_1Engine.html#a7d4073485bcee3ca7017acdde4bcd34ca8a6b0fa7ef65137633409b930b3e0d62">Chronos::Engine::ObjectType::TypeText</a>:</div>
-<div class="line"><span class="lineno">  171</span>        <span class="keyword">delete</span> (<a class="code hl_class" href="classChronos_1_1Engine_1_1Text.html">Chronos::Engine::Text</a>*)<span class="keywordtype">object</span>;</div>
-<div class="line"><span class="lineno">  172</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  173</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  174</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid object type&quot;</span>);</div>
-<div class="line"><span class="lineno">  175</span>        }</div>
-<div class="line"><span class="lineno">  176</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="objectManager_8cpp_source.html#l00143">143</a> of file <a class="el" href="objectManager_8cpp_source.html">objectManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  144</span>{</div>
+<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; objectMap : <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9f08e1945a1451ff147c7dcbeee3e5ff">objectsToBeRemoved</a>) {</div>
+<div class="line"><span class="lineno">  146</span>    objectMap.second[currentFrame] = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  147</span>    <span class="keywordtype">bool</span> toBeRemoved = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">for</span> (<span class="keywordtype">bool</span> flag : objectMap.second) {</div>
+<div class="line"><span class="lineno">  149</span>        <span class="keywordflow">if</span> (flag) {</div>
+<div class="line"><span class="lineno">  150</span>        toBeRemoved = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  152</span>        }</div>
+<div class="line"><span class="lineno">  153</span>    }</div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">if</span> (toBeRemoved) {</div>
+<div class="line"><span class="lineno">  155</span>        <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>[objectMap.first]-&gt;destroy();</div>
+<div class="line"><span class="lineno">  156</span>        <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9f08e1945a1451ff147c7dcbeee3e5ff">objectsToBeRemoved</a>.erase(objectMap.first);</div>
+<div class="line"><span class="lineno">  157</span>        <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>.erase(objectMap.first);</div>
+<div class="line"><span class="lineno">  158</span>        Object* <span class="keywordtype">object</span> = <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>[objectMap.first];</div>
+<div class="line"><span class="lineno">  159</span>        <span class="keywordflow">switch</span> (object-&gt;objectType) {</div>
+<div class="line"><span class="lineno">  160</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceChronos_1_1Engine.html#a7d4073485bcee3ca7017acdde4bcd34caa0f0d4866c5893a6615d782d1eb06e81">Chronos::Engine::ObjectType::TypeColoredRectangle</a>:</div>
+<div class="line"><span class="lineno">  161</span>        <span class="keyword">delete</span> (<a class="code hl_class" href="classChronos_1_1Engine_1_1ColoredRectangle.html">Chronos::Engine::ColoredRectangle</a>*)<span class="keywordtype">object</span>;</div>
+<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  163</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceChronos_1_1Engine.html#a7d4073485bcee3ca7017acdde4bcd34caeaf4ec891899154ed542266937824ec0">Chronos::Engine::ObjectType::TypeTexturedRectangle</a>:</div>
+<div class="line"><span class="lineno">  164</span>        <span class="keyword">delete</span> (<a class="code hl_class" href="classChronos_1_1Engine_1_1TexturedRectangle.html">Chronos::Engine::TexturedRectangle</a>*)<span class="keywordtype">object</span>;</div>
+<div class="line"><span class="lineno">  165</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  166</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceChronos_1_1Engine.html#a7d4073485bcee3ca7017acdde4bcd34ca8a6b0fa7ef65137633409b930b3e0d62">Chronos::Engine::ObjectType::TypeText</a>:</div>
+<div class="line"><span class="lineno">  167</span>        <span class="keyword">delete</span> (<a class="code hl_class" href="classChronos_1_1Engine_1_1Text.html">Chronos::Engine::Text</a>*)<span class="keywordtype">object</span>;</div>
+<div class="line"><span class="lineno">  168</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  169</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  170</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid object type&quot;</span>);</div>
+<div class="line"><span class="lineno">  171</span>        }</div>
+<div class="line"><span class="lineno">  172</span>    }</div>
+<div class="line"><span class="lineno">  173</span>    }</div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; objectMap : <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>) {</div>
+<div class="line"><span class="lineno">  175</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9f08e1945a1451ff147c7dcbeee3e5ff">objectsToBeRemoved</a>.count(objectMap.first) == 0) {</div>
+<div class="line"><span class="lineno">  176</span>        objectMap.second-&gt;update(currentFrame);</div>
 <div class="line"><span class="lineno">  177</span>    }</div>
-<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; objectMap : <a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a5c60ee3b180633f885c113ca3dd5dab6">objects</a>) {</div>
-<div class="line"><span class="lineno">  179</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classChronos_1_1Engine_1_1ObjectManager.html#a9f08e1945a1451ff147c7dcbeee3e5ff">objectsToBeRemoved</a>.count(objectMap.first) == 0) {</div>
-<div class="line"><span class="lineno">  180</span>        objectMap.second-&gt;update(currentFrame);</div>
-<div class="line"><span class="lineno">  181</span>    }</div>
-<div class="line"><span class="lineno">  182</span>    }</div>
-<div class="line"><span class="lineno">  183</span>}</div>
+<div class="line"><span class="lineno">  178</span>    }</div>
+<div class="line"><span class="lineno">  179</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ColoredRectangle_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1ColoredRectangle.html">Chronos::Engine::ColoredRectangle</a></div><div class="ttdef"><b>Definition</b> <a href="ColoredRectangle_8hpp_source.html#l00033">ColoredRectangle.hpp:33</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Text_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1Text.html">Chronos::Engine::Text</a></div><div class="ttdoc">Class for creating a text object for rendering text.</div><div class="ttdef"><b>Definition</b> <a href="text_8hpp_source.html#l00086">text.hpp:86</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TexturedRectangle_html"><div class="ttname"><a href="classChronos_1_1Engine_1_1TexturedRectangle.html">Chronos::Engine::TexturedRectangle</a></div><div class="ttdef"><b>Definition</b> <a href="TexturedRectangle_8hpp_source.html#l00034">TexturedRectangle.hpp:34</a></div></div>
@@ -593,7 +589,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_a7d4073485bcee3ca7017acdde4bcd34caa0f0d4866c5893a6615d782d1eb06e81"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a7d4073485bcee3ca7017acdde4bcd34caa0f0d4866c5893a6615d782d1eb06e81">Chronos::Engine::TypeColoredRectangle</a></div><div class="ttdeci">@ TypeColoredRectangle</div><div class="ttdef"><b>Definition</b> <a href="objectTypes_8hpp_source.html#l00004">objectTypes.hpp:4</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_a7d4073485bcee3ca7017acdde4bcd34caeaf4ec891899154ed542266937824ec0"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#a7d4073485bcee3ca7017acdde4bcd34caeaf4ec891899154ed542266937824ec0">Chronos::Engine::TypeTexturedRectangle</a></div><div class="ttdeci">@ TypeTexturedRectangle</div><div class="ttdef"><b>Definition</b> <a href="objectTypes_8hpp_source.html#l00004">objectTypes.hpp:4</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="object_8cpp_source.html#l00259">Chronos::Engine::Object::destroy()</a>, <a class="el" href="object_8hpp_source.html#l00128">Chronos::Engine::Object::objectType</a>, <a class="el" href="objectTypes_8hpp_source.html#l00004">Chronos::Engine::TypeColoredRectangle</a>, <a class="el" href="objectTypes_8hpp_source.html#l00004">Chronos::Engine::TypeText</a>, and <a class="el" href="objectTypes_8hpp_source.html#l00004">Chronos::Engine::TypeTexturedRectangle</a>.</p>
+<p class="reference">References <a class="el" href="object_8cpp_source.html#l00257">Chronos::Engine::Object::destroy()</a>, <a class="el" href="object_8hpp_source.html#l00131">Chronos::Engine::Object::objectType</a>, <a class="el" href="objectTypes_8hpp_source.html#l00004">Chronos::Engine::TypeColoredRectangle</a>, <a class="el" href="objectTypes_8hpp_source.html#l00004">Chronos::Engine::TypeText</a>, and <a class="el" href="objectTypes_8hpp_source.html#l00004">Chronos::Engine::TypeTexturedRectangle</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
