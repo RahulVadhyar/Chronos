@@ -1,9 +1,13 @@
 <map id="Source/Rendering/Objects/Text/text.cpp" name="Source/Rendering/Objects/Text/text.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="418,5,607,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="611,5,801,45"/>
 <area shape="rect" id="Node000002" href="$text_8hpp.html" title=" " alt="" coords="392,93,468,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="494,47,454,86,450,82,491,44"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="641,48,482,93,481,88,639,43"/>
 <area shape="rect" id="Node000017" href="$helper_8hpp.html" title="Contains various common functions used by other classes in the Engine namespace." alt="" coords="587,93,678,119"/>
-<area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="543,43,605,84,602,88,540,48"/>
+<area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="690,47,655,85,651,81,686,44"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="702,93,859,119"/>
+<area shape="poly" id="edge22_Node000001_Node000019" title=" " alt="" coords="726,44,762,81,758,85,722,47"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="884,93,1043,119"/>
+<area shape="poly" id="edge23_Node000001_Node000020" title=" " alt="" coords="768,43,914,87,912,92,767,48"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="230,167,393,207"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="414,121,353,161,350,157,411,117"/>
 <area shape="rect" id="Node000004" href="$object_8hpp.html" title="Contains the class for creating a generic object." alt="" coords="477,174,567,199"/>

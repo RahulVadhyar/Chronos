@@ -1,7 +1,7 @@
 var searchData=
 [
   ['main_0',['main',['../editorMain_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'editorMain.cpp']]],
-  ['manager_1',['manager',['../classChronos_1_1Manager_1_1Manager.html#a0a100e214d7647f355e7c313b23674c2',1,'Chronos::Manager::Manager::Manager()'],['../classChronos_1_1Editor_1_1EditorManager.html#a54d3c886260f18c56d50fcff936563ef',1,'Chronos::Editor::EditorManager::manager'],['../classChronos_1_1Manager_1_1Manager.html',1,'Chronos::Manager::Manager']]],
+  ['manager_1',['manager',['../classChronos_1_1Editor_1_1EditorManager.html#a54d3c886260f18c56d50fcff936563ef',1,'Chronos::Editor::EditorManager::manager'],['../classChronos_1_1Manager_1_1Manager.html#a0a100e214d7647f355e7c313b23674c2',1,'Chronos::Manager::Manager::Manager()'],['../classChronos_1_1Manager_1_1Manager.html',1,'Chronos::Manager::Manager']]],
   ['manager_2ecpp_2',['manager.cpp',['../manager_8cpp.html',1,'']]],
   ['manageranimationfunctions_2ecpp_3',['managerAnimationFunctions.cpp',['../managerAnimationFunctions_8cpp.html',1,'']]],
   ['managershapefunctions_2ecpp_4',['managerShapeFunctions.cpp',['../managerShapeFunctions_8cpp.html',1,'']]],

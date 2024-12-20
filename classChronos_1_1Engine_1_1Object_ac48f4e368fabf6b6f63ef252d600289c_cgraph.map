@@ -1,7 +1,5 @@
 <map id="Chronos::Engine::Object::createGraphicsPipeline" name="Chronos::Engine::Object::createGraphicsPipeline">
-<area shape="rect" id="Node000001" title="Creates the graphics pipeline for the object." alt="" coords="5,23,185,63"/>
-<area shape="rect" id="Node000002" href="$object_8cpp.html#a54d2453269b93bb4f6b3d2b2241fbe00" title="Creates a shader module from given shader(SPIV) code." alt="" coords="233,5,389,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,30,219,26,220,31,186,35"/>
-<area shape="rect" id="Node000003" href="$object_8cpp.html#ad49fb97692b341e968ab8e27444c9a91" title="Returns the content of a shader file." alt="" coords="274,55,349,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,51,260,59,260,64,186,56"/>
+<area shape="rect" id="Node000001" title="Creates the graphics pipeline for the object." alt="" coords="5,5,185,45"/>
+<area shape="rect" id="Node000002" href="$object_8cpp.html#a99c5dd503c969373b41866802c7026b9" title="Creates a shader module from given shader(SPIV) code." alt="" coords="233,13,389,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,23,220,23,220,28,186,28"/>
 </map>

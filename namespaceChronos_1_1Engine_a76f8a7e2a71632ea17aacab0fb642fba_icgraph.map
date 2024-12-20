@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="993,173,959,169,959,164,994,168"/>
 <area shape="rect" id="Node000011" href="$device_8cpp.html#a6fb853f36e09aa82c9304572c1ce6680" title="Checks if the physical device that we provide it is suitable for our needs." alt="" coords="790,201,921,226"/>
 <area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="994,201,921,209,921,204,993,196"/>
-<area shape="rect" id="Node000003" href="$classChronos_1_1Engine_1_1Object.html#ac1d5d1b2acd585451b17801d325dfe34" title="Initializes the object." alt="" coords="512,69,689,109"/>
+<area shape="rect" id="Node000003" href="$classChronos_1_1Engine_1_1Object.html#adf724fad351bcc3750ab2529b30e15c8" title="Initializes the object." alt="" coords="512,69,689,109"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="761,132,680,112,681,107,762,127"/>
 <area shape="rect" id="Node000010" href="$classChronos_1_1Engine_1_1SwapChain.html#ace1a08ad6430f336d2560ad737e60fbe" title="Initilize the swapchain." alt="" coords="497,133,704,173"/>
 <area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="739,156,704,156,704,151,739,151"/>

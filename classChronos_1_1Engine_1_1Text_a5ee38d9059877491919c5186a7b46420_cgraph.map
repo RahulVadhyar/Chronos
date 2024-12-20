@@ -4,10 +4,10 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,288,251,228,254,233,130,293"/>
 <area shape="rect" id="Node000006" href="$namespaceChronos_1_1Engine.html#aa86983b2d3f7d09e250b31c3209d207a" title="Creates a buffer of a given size, usage and properties." alt="" coords="464,298,679,323"/>
 <area shape="poly" id="edge14_Node000001_Node000006" title=" " alt="" coords="168,308,450,308,450,313,168,313"/>
-<area shape="rect" id="Node000012" href="$classChronos_1_1Engine_1_1Object.html#ac1d5d1b2acd585451b17801d325dfe34" title="Initializes the object." alt="" coords="219,444,396,484"/>
+<area shape="rect" id="Node000012" href="$classChronos_1_1Engine_1_1Object.html#adf724fad351bcc3750ab2529b30e15c8" title="Initializes the object." alt="" coords="219,444,396,484"/>
 <area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="118,329,268,434,265,438,115,333"/>
-<area shape="rect" id="Node000003" href="$namespaceChronos_1_1Engine.html#a72a6333d7a23ef16daa4ee34bd6cab5f" title="Copy data from a buffer to an image." alt="" coords="469,120,674,160"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="390,181,475,161,476,166,391,187"/>
+<area shape="rect" id="Node000003" href="$namespaceChronos_1_1Engine.html#a72a6333d7a23ef16daa4ee34bd6cab5f" title="Copy data from a buffer to an image." alt="" coords="469,5,674,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="320,182,370,119,405,84,445,55,458,48,460,53,448,60,409,88,374,123,324,185"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="338,222,388,253,448,283,476,292,475,297,446,288,385,258,335,226"/>
 <area shape="rect" id="Node000008" href="$namespaceChronos_1_1Engine.html#a7018d1eaf2dfaf4c373269fcaa344a46" title="For a given image dimensons, it creates a VkImage and." alt="" coords="463,249,680,274"/>
 <area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="394,221,447,233,494,243,493,248,446,239,393,227"/>
@@ -15,39 +15,37 @@
 <area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="330,182,381,143,412,122,446,106,471,96,473,101,448,110,415,127,384,147,333,186"/>
 <area shape="rect" id="Node000010" href="$namespaceChronos_1_1Engine.html#a26311add90c663bbb6da7406c8726ae1" title="Creates a VkSampler" alt="" coords="459,184,683,224"/>
 <area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="399,201,445,201,445,207,399,207"/>
-<area shape="rect" id="Node000011" href="$namespaceChronos_1_1Engine.html#a739435df5d2955b7832d503c365e9d7c" title="Transiton a VkImage from one layout to another." alt="" coords="473,5,670,45"/>
-<area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="320,182,370,119,405,84,445,55,459,48,461,53,448,60,409,88,374,123,324,185"/>
-<area shape="rect" id="Node000004" href="$namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="760,19,971,59"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="652,117,695,104,805,62,807,67,697,109,653,122"/>
-<area shape="rect" id="Node000005" href="$namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c" title="Ends recording of single time command buffer and destroys it." alt="" coords="766,108,965,148"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="674,133,752,130,752,135,674,138"/>
-<area shape="rect" id="Node000007" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="744,273,987,298"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="678,299,730,294,730,300,679,304"/>
-<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="681,268,730,272,730,277,680,273"/>
-<area shape="poly" id="edge12_Node000011_Node000004" title=" " alt="" coords="670,27,746,31,746,36,670,32"/>
-<area shape="poly" id="edge13_Node000011_Node000005" title=" " alt="" coords="658,43,697,55,810,100,808,105,695,60,656,48"/>
-<area shape="rect" id="Node000013" href="$classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5" title="Creates the swapchain image resources and chooses the optimal settings for given hardware." alt="" coords="468,568,675,608"/>
-<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="352,482,516,559,514,564,350,487"/>
-<area shape="rect" id="Node000019" href="$classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e" title="Creates the Vulkan descriptor pool for the object." alt="" coords="483,632,660,672"/>
-<area shape="poly" id="edge22_Node000012_Node000019" title=" " alt="" coords="323,483,372,550,407,587,448,618,471,629,468,634,445,622,404,591,368,553,319,486"/>
+<area shape="rect" id="Node000011" href="$namespaceChronos_1_1Engine.html#a739435df5d2955b7832d503c365e9d7c" title="Transiton a VkImage from one layout to another." alt="" coords="473,120,670,160"/>
+<area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="390,181,475,161,476,166,391,187"/>
+<area shape="rect" id="Node000004" href="$namespaceChronos_1_1Engine.html#a33f2c14ca3b08b5bf667d0f7554da733" title="Begins recording of a command buffer that will be used once." alt="" coords="760,108,971,148"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="658,43,697,55,810,100,808,105,695,60,656,48"/>
+<area shape="rect" id="Node000005" href="$namespaceChronos_1_1Engine.html#a55354e8eeaccc5c3ab2b2636cb7ad56c" title="Ends recording of single time command buffer and destroys it." alt="" coords="766,19,965,59"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="674,27,752,31,752,36,674,33"/>
+<area shape="rect" id="Node000007" href="$namespaceChronos_1_1Engine.html#a5b28d7b096de879c3de46fb93f79e1c3" title="Finds suitable memory type for given requrements." alt="" coords="744,274,987,299"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="678,299,730,295,730,300,679,305"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="681,268,730,272,730,278,680,273"/>
+<area shape="poly" id="edge12_Node000011_Node000004" title=" " alt="" coords="670,133,746,130,746,136,670,139"/>
+<area shape="poly" id="edge13_Node000011_Node000005" title=" " alt="" coords="652,117,695,104,805,62,807,67,697,109,653,122"/>
+<area shape="rect" id="Node000013" href="$classChronos_1_1Engine_1_1SwapChain.html#a6759fda6e7fa2e260bf0bd439760c2d5" title="Creates the swapchain image resources and chooses the optimal settings for given hardware." alt="" coords="468,540,675,580"/>
+<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="348,482,448,526,472,534,470,539,446,530,346,487"/>
+<area shape="rect" id="Node000019" href="$classChronos_1_1Engine_1_1Object.html#a18de9cac248202e004fd97a6628ed14e" title="Creates the Vulkan descriptor pool for the object." alt="" coords="483,604,660,644"/>
+<area shape="poly" id="edge22_Node000012_Node000019" title=" " alt="" coords="327,482,377,536,411,565,448,590,471,600,469,605,445,594,408,569,373,540,323,486"/>
 <area shape="rect" id="Node000020" href="$classChronos_1_1Engine_1_1Object.html#abd29a485b52b9004557055f1fe64049e" title="Creates the Vulkan descriptor set layout for the object." alt="" coords="470,348,673,388"/>
 <area shape="poly" id="edge23_Node000012_Node000020" title=" " alt="" coords="346,441,446,398,470,389,472,394,448,402,348,446"/>
 <area shape="rect" id="Node000021" href="$classChronos_1_1Engine_1_1Object.html#adf7e359418ad5653b9590645282aee1e" title=" " alt="" coords="483,412,660,452"/>
 <area shape="poly" id="edge24_Node000012_Node000021" title=" " alt="" coords="396,451,468,442,469,447,396,456"/>
 <area shape="rect" id="Node000022" href="$classChronos_1_1Engine_1_1Object.html#ac48f4e368fabf6b6f63ef252d600289c" title="Creates the graphics pipeline for the object." alt="" coords="481,476,661,516"/>
 <area shape="poly" id="edge25_Node000012_Node000022" title=" " alt="" coords="396,472,468,481,467,486,396,477"/>
-<area shape="rect" id="Node000014" href="$namespaceChronos_1_1Engine.html#a4cb0fad8419ed33393b0aaceb3153543" title="Gets the maximum extent of the swapchain images(framebuffer size)." alt="" coords="757,583,973,623"/>
-<area shape="poly" id="edge17_Node000013_Node000014" title=" " alt="" coords="675,590,744,594,744,599,675,596"/>
-<area shape="rect" id="Node000015" href="$namespaceChronos_1_1Engine.html#a52bd349b91415659b6681f47145ed328" title="Chooses the best present mode among the supported modes." alt="" coords="757,647,973,687"/>
-<area shape="poly" id="edge18_Node000013_Node000015" title=" " alt="" coords="653,606,697,617,745,632,775,640,773,646,743,637,695,623,652,611"/>
-<area shape="rect" id="Node000016" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="765,711,966,751"/>
-<area shape="poly" id="edge19_Node000013_Node000016" title=" " alt="" coords="677,605,698,618,715,638,723,658,730,678,746,697,753,702,750,706,742,701,725,681,718,660,710,640,694,622,674,610"/>
-<area shape="rect" id="Node000018" href="$namespaceChronos_1_1Engine.html#a76f8a7e2a71632ea17aacab0fb642fba" title="For a given swapchain mode, it gets the capabilites, formats and present modes." alt="" coords="762,519,969,559"/>
-<area shape="poly" id="edge21_Node000013_Node000018" title=" " alt="" coords="675,568,748,556,749,561,675,573"/>
-<area shape="rect" id="Node000017" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="1035,711,1255,751"/>
-<area shape="poly" id="edge20_Node000016_Node000017" title=" " alt="" coords="966,728,1021,728,1021,733,966,733"/>
-<area shape="rect" id="Node000023" href="$object_8cpp.html#a54d2453269b93bb4f6b3d2b2241fbe00" title="Creates a shader module from given shader(SPIV) code." alt="" coords="787,469,943,494"/>
-<area shape="poly" id="edge26_Node000022_Node000023" title=" " alt="" coords="662,489,773,483,774,489,662,494"/>
-<area shape="rect" id="Node000024" href="$object_8cpp.html#ad49fb97692b341e968ab8e27444c9a91" title="Returns the content of a shader file." alt="" coords="828,419,903,445"/>
-<area shape="poly" id="edge27_Node000022_Node000024" title=" " alt="" coords="656,473,743,453,814,439,815,444,745,459,657,479"/>
+<area shape="rect" id="Node000014" href="$namespaceChronos_1_1Engine.html#a4cb0fad8419ed33393b0aaceb3153543" title="Gets the maximum extent of the swapchain images(framebuffer size)." alt="" coords="757,668,973,708"/>
+<area shape="poly" id="edge17_Node000013_Node000014" title=" " alt="" coords="675,578,698,590,714,606,722,623,730,639,746,654,755,660,753,664,742,658,726,642,718,625,710,609,694,594,673,583"/>
+<area shape="rect" id="Node000015" href="$namespaceChronos_1_1Engine.html#a52bd349b91415659b6681f47145ed328" title="Chooses the best present mode among the supported modes." alt="" coords="757,476,973,516"/>
+<area shape="poly" id="edge18_Node000013_Node000015" title=" " alt="" coords="663,537,759,516,760,522,665,543"/>
+<area shape="rect" id="Node000016" href="$namespaceChronos_1_1Engine.html#a8cdc4cba55ceff22fd5b05b159cbc357" title="Gets the indices of the needed queue families." alt="" coords="765,540,966,580"/>
+<area shape="poly" id="edge19_Node000013_Node000016" title=" " alt="" coords="675,557,751,557,751,563,675,563"/>
+<area shape="rect" id="Node000018" href="$namespaceChronos_1_1Engine.html#a76f8a7e2a71632ea17aacab0fb642fba" title="For a given swapchain mode, it gets the capabilites, formats and present modes." alt="" coords="762,604,969,644"/>
+<area shape="poly" id="edge21_Node000013_Node000018" title=" " alt="" coords="665,577,760,598,759,604,663,583"/>
+<area shape="rect" id="Node000017" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="1035,540,1255,580"/>
+<area shape="poly" id="edge20_Node000016_Node000017" title=" " alt="" coords="966,557,1021,557,1021,563,966,563"/>
+<area shape="rect" id="Node000023" href="$object_8cpp.html#a99c5dd503c969373b41866802c7026b9" title="Creates a shader module from given shader(SPIV) code." alt="" coords="787,426,943,451"/>
+<area shape="poly" id="edge26_Node000022_Node000023" title=" " alt="" coords="661,476,786,451,787,457,662,481"/>
 </map>

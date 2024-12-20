@@ -20,8 +20,6 @@
 <area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="409,139,439,151,463,167,487,183,503,190,501,195,484,188,460,172,436,156,407,144"/>
 <area shape="rect" id="Node000006" href="$structChronos_1_1Engine_1_1QueueFamilyIndices.html#a27b63b37618b1dec22f58d79807e124f" title=" " alt="" coords="749,133,969,173"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="694,151,735,151,735,156,694,156"/>
-<area shape="rect" id="Node000012" href="$object_8cpp.html#a54d2453269b93bb4f6b3d2b2241fbe00" title="Creates a shader module from given shader(SPIV) code." alt="" coords="515,339,671,365"/>
-<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="424,366,502,358,502,364,424,371"/>
-<area shape="rect" id="Node000013" href="$object_8cpp.html#ad49fb97692b341e968ab8e27444c9a91" title="Returns the content of a shader file." alt="" coords="556,389,631,414"/>
-<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="424,383,542,394,542,399,424,388"/>
+<area shape="rect" id="Node000012" href="$object_8cpp.html#a99c5dd503c969373b41866802c7026b9" title="Creates a shader module from given shader(SPIV) code." alt="" coords="515,365,671,390"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="424,375,502,375,502,380,424,380"/>
 </map>

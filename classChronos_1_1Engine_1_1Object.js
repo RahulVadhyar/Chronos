@@ -8,7 +8,7 @@ var classChronos_1_1Engine_1_1Object =
     [ "getDescriptorStages", "classChronos_1_1Engine_1_1Object.html#a989be2cd2d6c67578f47f78afc5bc486", null ],
     [ "getDescriptorTypes", "classChronos_1_1Engine_1_1Object.html#a20a22d0788ce9979113f7cf5299eda94", null ],
     [ "getPipelineAttributes", "classChronos_1_1Engine_1_1Object.html#a329ee54c7e407fe640b7cf858b26b65d", null ],
-    [ "init", "classChronos_1_1Engine_1_1Object.html#ac1d5d1b2acd585451b17801d325dfe34", null ],
+    [ "init", "classChronos_1_1Engine_1_1Object.html#adf724fad351bcc3750ab2529b30e15c8", null ],
     [ "recreateGraphicsPipeline", "classChronos_1_1Engine_1_1Object.html#a8e1df40f2eb42af5d40225bd9583f3ce", null ],
     [ "render", "classChronos_1_1Engine_1_1Object.html#a1bf48c4182e86c53c3a88f15617db738", null ],
     [ "update", "classChronos_1_1Engine_1_1Object.html#aa32fe5592512c1fa8534aed8cb2797ef", null ],
@@ -17,7 +17,8 @@ var classChronos_1_1Engine_1_1Object =
     [ "descriptorSetLayout", "classChronos_1_1Engine_1_1Object.html#a004f17b08fbd33cbcab795376a9ef8a1", null ],
     [ "descriptorSets", "classChronos_1_1Engine_1_1Object.html#a5587465d9740b74dbece2415df63fb9f", null ],
     [ "device", "classChronos_1_1Engine_1_1Object.html#a9ec42d04a85645aaffe162580da68a29", null ],
-    [ "fragmentShaderPath", "classChronos_1_1Engine_1_1Object.html#ad017c20cbe79d573325a66621de9963e", null ],
+    [ "fragShaderCode", "classChronos_1_1Engine_1_1Object.html#afd6814ddde97f2acbff6006f269de2df", null ],
+    [ "fragShaderCodeSize", "classChronos_1_1Engine_1_1Object.html#af4ec76d01caecc3f643e9822a0408001", null ],
     [ "graphicsPipeline", "classChronos_1_1Engine_1_1Object.html#adb6e0cf994046b58b10f95d59eeef3c3", null ],
     [ "objectType", "classChronos_1_1Engine_1_1Object.html#aa7c0a291b77f5a01e6071dafccf17408", null ],
     [ "pipelineLayout", "classChronos_1_1Engine_1_1Object.html#ae279ed95c87e90803fd28f7f935b0ab4", null ],
@@ -25,5 +26,6 @@ var classChronos_1_1Engine_1_1Object =
     [ "swapChain", "classChronos_1_1Engine_1_1Object.html#a7cfcd07115e8e58783c5cc40e4575bd8", null ],
     [ "textureSampler", "classChronos_1_1Engine_1_1Object.html#a203a494524c8c74d52e5d692a2845f8b", null ],
     [ "uniformBuffers", "classChronos_1_1Engine_1_1Object.html#aa107fe2bc0ae441c79ec522df3a8a16c", null ],
-    [ "vertexShaderPath", "classChronos_1_1Engine_1_1Object.html#a6323a6f9a4c9fefff3d27c34f51f2f59", null ]
+    [ "vertShaderCode", "classChronos_1_1Engine_1_1Object.html#a9872b20c0b4990ec60cb7877008c65f0", null ],
+    [ "vertShaderCodeSize", "classChronos_1_1Engine_1_1Object.html#a45f69dec3d662ee9285f8dff329d3d8c", null ]
 ];
