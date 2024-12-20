@@ -1,4 +1,6 @@
 #GLFW
+include(FetchContent)
+
 if(UNIX)
     if(CHRONOS_SUPPORT_WAYLAND)
         set(GLFW_BUILD_WAYLAND ON)
@@ -16,21 +18,34 @@ set(GLFW_BUILD_DOCS OFF)
 set(GLFW_INSTALL OFF)
 set(GLFW_VULKAN_STATIC ON)
 
-add_subdirectory(glfw)
-target_include_directories(Chronos PUBLIC glfw/include) 
+FetchContent_Declare(
+    glfw
+    GIT_REPOSITORY https://github.com/glfw/glfw.git
+    GIT_TAG master
+    GIT_SHALLOW TRUE
+    GIT_PROGRESS TRUE
+)
+FetchContent_MakeAvailable(glfw)
+
+# target_include_directories(Chronos PUBLIC glfw/include) 
 target_link_libraries(Chronos glfw)
 if(CHRONOS_BUILD_EDITOR)
-    target_include_directories(ChronosEditor PUBLIC glfw/include) 
+    # target_include_directories(ChronosEditor PUBLIC glfw/include) 
     target_link_libraries(ChronosEditor glfw)
 endif()
 
 #GLM
-add_subdirectory(glm)
-target_include_directories(Chronos PUBLIC glm)
+FetchContent_Declare(
+    glm
+    GIT_REPOSITORY https://github.com/icaven/glm.git
+    GIT_TAG master
+    GIT_SHALLOW TRUE
+    GIT_PROGRESS TRUE
+)
+FetchContent_MakeAvailable(glm)
 target_link_directories(Chronos PUBLIC glm/glm)
 if(CHRONOS_BUILD_EDITOR)
     target_link_directories(ChronosEditor PUBLIC glm/glm)
-    target_include_directories(ChronosEditor PUBLIC glm)
 endif()
 
 #Vulkan
