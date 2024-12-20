@@ -290,9 +290,9 @@ please see the GLFW documentation.
 <div class="ttc" id="aclassChronos_1_1Editor_1_1EditorRenderer_html"><div class="ttname"><a href="classChronos_1_1Editor_1_1EditorRenderer.html">Chronos::Editor::EditorRenderer</a></div><div class="ttdef"><b>Definition</b> <a href="editorRenderer_8hpp_source.html#l00028">editorRenderer.hpp:28</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a087a97e8ab427e73745b6fe7bb449340"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a087a97e8ab427e73745b6fe7bb449340">Chronos::Engine::Engine::initVulkan</a></div><div class="ttdeci">void initVulkan()</div><div class="ttdoc">The complicated process of initalizing the vulkan API is done here.</div><div class="ttdef"><b>Definition</b> <a href="engine_8cpp_source.html#l00074">engine.cpp:74</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a3be23c5c76ba6d586a0fb29433f37771"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a3be23c5c76ba6d586a0fb29433f37771">Chronos::Engine::Engine::initWindow</a></div><div class="ttdeci">void initWindow()</div><div class="ttdoc">This function initializes the GLFW window.</div><div class="ttdef"><b>Definition</b> <a href="engine_8cpp_source.html#l00058">engine.cpp:58</a></div></div>
-<div class="ttc" id="alogging_8hpp_html_a8774bb0a65165799e6ceafa939745478"><div class="ttname"><a href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a></div><div class="ttdeci">#define LOG(LEVEL, MESSAGE)</div><div class="ttdef"><b>Definition</b> <a href="logging_8hpp_source.html#l00058">logging.hpp:58</a></div></div>
+<div class="ttc" id="alogging_8hpp_html_a8774bb0a65165799e6ceafa939745478"><div class="ttname"><a href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a></div><div class="ttdeci">#define LOG(LEVEL, MESSAGE)</div><div class="ttdef"><b>Definition</b> <a href="logging_8hpp_source.html#l00060">logging.hpp:60</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="engine_8cpp_source.html#l00074">initVulkan()</a>, <a class="el" href="engine_8cpp_source.html#l00058">initWindow()</a>, and <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>.</p>
+<p class="reference">References <a class="el" href="engine_8cpp_source.html#l00074">initVulkan()</a>, <a class="el" href="engine_8cpp_source.html#l00058">initWindow()</a>, and <a class="el" href="logging_8hpp_source.html#l00060">LOG</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -346,7 +346,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a006da4ea696843d084076e82ef16a147"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">Chronos::Engine::Engine::device</a></div><div class="ttdeci">Chronos::Engine::Device device</div><div class="ttdoc">This is the object that manages the device.</div><div class="ttdef"><b>Definition</b> <a href="engine_8hpp_source.html#l00233">engine.hpp:233</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a3f1da8f7cab1fcd9f9c3b6ea565252a3"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a3f1da8f7cab1fcd9f9c3b6ea565252a3">Chronos::Engine::Engine::cleanup</a></div><div class="ttdeci">void cleanup()</div><div class="ttdoc">Cleans up vulkan objects.</div><div class="ttdef"><b>Definition</b> <a href="engine_8cpp_source.html#l00104">engine.cpp:104</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>.</p>
+<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00060">LOG</a>.</p>
 
 </div>
 </div>
@@ -367,36 +367,36 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00496">496</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  497</span>{</div>
-<div class="line"><span class="lineno">  498</span>    <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;64&quot;</span>) {</div>
-<div class="line"><span class="lineno">  499</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> = VK_SAMPLE_COUNT_64_BIT;</div>
-<div class="line"><span class="lineno">  500</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;32&quot;</span>) {</div>
-<div class="line"><span class="lineno">  501</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> = VK_SAMPLE_COUNT_32_BIT;</div>
-<div class="line"><span class="lineno">  502</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;16&quot;</span>) {</div>
-<div class="line"><span class="lineno">  503</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> = VK_SAMPLE_COUNT_16_BIT;</div>
-<div class="line"><span class="lineno">  504</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;8&quot;</span>) {</div>
-<div class="line"><span class="lineno">  505</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> = VK_SAMPLE_COUNT_8_BIT;</div>
-<div class="line"><span class="lineno">  506</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;4&quot;</span>) {</div>
-<div class="line"><span class="lineno">  507</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> = VK_SAMPLE_COUNT_4_BIT;</div>
-<div class="line"><span class="lineno">  508</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;2&quot;</span>) {</div>
-<div class="line"><span class="lineno">  509</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> = VK_SAMPLE_COUNT_2_BIT;</div>
-<div class="line"><span class="lineno">  510</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;1&quot;</span>) {</div>
-<div class="line"><span class="lineno">  511</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> = VK_SAMPLE_COUNT_1_BIT;</div>
-<div class="line"><span class="lineno">  512</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  513</span>    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid MSAA mode&quot;</span>);</div>
-<div class="line"><span class="lineno">  514</span>    }</div>
-<div class="line"><span class="lineno">  515</span>    <span class="keywordflow">if</span> (this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> &gt; <a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a18bf509379c7fa5e2bb2195332dab902">maxMsaaSamples</a>) {</div>
-<div class="line"><span class="lineno">  516</span>    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid MSAA mode&quot;</span>);</div>
-<div class="line"><span class="lineno">  517</span>    }</div>
-<div class="line"><span class="lineno">  518</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a7b79d4a6b8c28f2d40696e412b5c41f4">changeMSAAFlag</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  519</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3, <span class="stringliteral">&quot;MSAA to be changed to &quot;</span> + mode)</div>
-<div class="line"><span class="lineno">  520</span>}</div>
+<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00495">495</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  496</span>{</div>
+<div class="line"><span class="lineno">  497</span>    <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;64&quot;</span>) {</div>
+<div class="line"><span class="lineno">  498</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> = VK_SAMPLE_COUNT_64_BIT;</div>
+<div class="line"><span class="lineno">  499</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;32&quot;</span>) {</div>
+<div class="line"><span class="lineno">  500</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> = VK_SAMPLE_COUNT_32_BIT;</div>
+<div class="line"><span class="lineno">  501</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;16&quot;</span>) {</div>
+<div class="line"><span class="lineno">  502</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> = VK_SAMPLE_COUNT_16_BIT;</div>
+<div class="line"><span class="lineno">  503</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;8&quot;</span>) {</div>
+<div class="line"><span class="lineno">  504</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> = VK_SAMPLE_COUNT_8_BIT;</div>
+<div class="line"><span class="lineno">  505</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;4&quot;</span>) {</div>
+<div class="line"><span class="lineno">  506</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> = VK_SAMPLE_COUNT_4_BIT;</div>
+<div class="line"><span class="lineno">  507</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;2&quot;</span>) {</div>
+<div class="line"><span class="lineno">  508</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> = VK_SAMPLE_COUNT_2_BIT;</div>
+<div class="line"><span class="lineno">  509</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;1&quot;</span>) {</div>
+<div class="line"><span class="lineno">  510</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> = VK_SAMPLE_COUNT_1_BIT;</div>
+<div class="line"><span class="lineno">  511</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  512</span>    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid MSAA mode&quot;</span>);</div>
+<div class="line"><span class="lineno">  513</span>    }</div>
+<div class="line"><span class="lineno">  514</span>    <span class="keywordflow">if</span> (this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a> &gt; <a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a18bf509379c7fa5e2bb2195332dab902">maxMsaaSamples</a>) {</div>
+<div class="line"><span class="lineno">  515</span>    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid MSAA mode&quot;</span>);</div>
+<div class="line"><span class="lineno">  516</span>    }</div>
+<div class="line"><span class="lineno">  517</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a7b79d4a6b8c28f2d40696e412b5c41f4">changeMSAAFlag</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  518</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3, <span class="stringliteral">&quot;MSAA to be changed to &quot;</span> + mode)</div>
+<div class="line"><span class="lineno">  519</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a18bf509379c7fa5e2bb2195332dab902"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a18bf509379c7fa5e2bb2195332dab902">Chronos::Engine::Device::maxMsaaSamples</a></div><div class="ttdeci">VkSampleCountFlagBits maxMsaaSamples</div><div class="ttdef"><b>Definition</b> <a href="device_8hpp_source.html#l00082">device.hpp:82</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a7b79d4a6b8c28f2d40696e412b5c41f4"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a7b79d4a6b8c28f2d40696e412b5c41f4">Chronos::Engine::Engine::changeMSAAFlag</a></div><div class="ttdeci">bool changeMSAAFlag</div><div class="ttdef"><b>Definition</b> <a href="engine_8hpp_source.html#l00254">engine.hpp:254</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a849cd4e9cb90fbaede3bab6f415e9644"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">Chronos::Engine::Engine::newMSAAMode</a></div><div class="ttdeci">VkSampleCountFlagBits newMSAAMode</div><div class="ttdef"><b>Definition</b> <a href="engine_8hpp_source.html#l00255">engine.hpp:255</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>.</p>
+<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00060">LOG</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -433,23 +433,23 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00522">522</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  523</span>{</div>
-<div class="line"><span class="lineno">  524</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a98ab680304c67713f698d714aa4be474">msaaSamples</a> = this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a>;</div>
-<div class="line"><span class="lineno">  525</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code hl_function" href="classChronos_1_1Engine_1_1SwapChain.html#af75e48c888e43f5dfc7b73590b984d01">changeMsaa</a>();</div>
-<div class="line"><span class="lineno">  526</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a3e24583669d42f6980c059cfa0c23891">objectManager</a>.<a class="code hl_function" href="classChronos_1_1Engine_1_1ObjectManager.html#a6e194b26d3eb6a4db379e24b1502fc75">changeMsaa</a>();</div>
-<div class="line"><span class="lineno">  527</span><span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
-<div class="line"><span class="lineno">  528</span>    this-&gt;gui.changeMsaa();</div>
-<div class="line"><span class="lineno">  529</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  530</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3, <span class="stringliteral">&quot;MSAA changed to &quot;</span> + std::to_string(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a98ab680304c67713f698d714aa4be474">msaaSamples</a>))</div>
-<div class="line"><span class="lineno">  531</span>}</div>
+<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00521">521</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  522</span>{</div>
+<div class="line"><span class="lineno">  523</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a98ab680304c67713f698d714aa4be474">msaaSamples</a> = this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a849cd4e9cb90fbaede3bab6f415e9644">newMSAAMode</a>;</div>
+<div class="line"><span class="lineno">  524</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code hl_function" href="classChronos_1_1Engine_1_1SwapChain.html#af75e48c888e43f5dfc7b73590b984d01">changeMsaa</a>();</div>
+<div class="line"><span class="lineno">  525</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a3e24583669d42f6980c059cfa0c23891">objectManager</a>.<a class="code hl_function" href="classChronos_1_1Engine_1_1ObjectManager.html#a6e194b26d3eb6a4db379e24b1502fc75">changeMsaa</a>();</div>
+<div class="line"><span class="lineno">  526</span><span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
+<div class="line"><span class="lineno">  527</span>    this-&gt;gui.changeMsaa();</div>
+<div class="line"><span class="lineno">  528</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  529</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3, <span class="stringliteral">&quot;MSAA changed to &quot;</span> + std::to_string(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a98ab680304c67713f698d714aa4be474">msaaSamples</a>))</div>
+<div class="line"><span class="lineno">  530</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_a98ab680304c67713f698d714aa4be474"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#a98ab680304c67713f698d714aa4be474">Chronos::Engine::Device::msaaSamples</a></div><div class="ttdeci">VkSampleCountFlagBits msaaSamples</div><div class="ttdoc">This sets the MSAA samples count.</div><div class="ttdef"><b>Definition</b> <a href="device_8hpp_source.html#l00080">device.hpp:80</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a3e24583669d42f6980c059cfa0c23891"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a3e24583669d42f6980c059cfa0c23891">Chronos::Engine::Engine::objectManager</a></div><div class="ttdeci">Chronos::Engine::ObjectManager objectManager</div><div class="ttdef"><b>Definition</b> <a href="engine_8hpp_source.html#l00099">engine.hpp:99</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_af877a78d497b0d86b4254960fcf84f1a"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">Chronos::Engine::Engine::swapChain</a></div><div class="ttdeci">Chronos::Engine::SwapChain swapChain</div><div class="ttdoc">This is the object that manages the swapchain.</div><div class="ttdef"><b>Definition</b> <a href="engine_8hpp_source.html#l00243">engine.hpp:243</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a6e194b26d3eb6a4db379e24b1502fc75"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a6e194b26d3eb6a4db379e24b1502fc75">Chronos::Engine::ObjectManager::changeMsaa</a></div><div class="ttdeci">void changeMsaa()</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8cpp_source.html#l00107">objectManager.cpp:107</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_af75e48c888e43f5dfc7b73590b984d01"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#af75e48c888e43f5dfc7b73590b984d01">Chronos::Engine::SwapChain::changeMsaa</a></div><div class="ttdeci">void changeMsaa()</div><div class="ttdoc">Changes the MSAA count of the swapchain images.</div><div class="ttdef"><b>Definition</b> <a href="swapchain_8cpp_source.html#l00223">swapchain.cpp:223</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>.</p>
+<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00060">LOG</a>.</p>
 
 </div>
 </div>
@@ -476,15 +476,15 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00443">443</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  444</span>{</div>
-<div class="line"><span class="lineno">  445</span>    vkDeviceWaitIdle(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>);</div>
-<div class="line"><span class="lineno">  446</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code hl_function" href="classChronos_1_1Engine_1_1SwapChain.html#ab62945a629a540f51adf21f82780fd7c">recreate</a>();</div>
-<div class="line"><span class="lineno">  447</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a3e24583669d42f6980c059cfa0c23891">objectManager</a>.<a class="code hl_function" href="classChronos_1_1Engine_1_1ObjectManager.html#a1982ee4c7a784a7c0bc390567137a882">recreate</a>();</div>
-<div class="line"><span class="lineno">  448</span><span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
-<div class="line"><span class="lineno">  449</span>    gui.recreate();</div>
-<div class="line"><span class="lineno">  450</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  451</span>}</div>
+<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00442">442</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  443</span>{</div>
+<div class="line"><span class="lineno">  444</span>    vkDeviceWaitIdle(<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>);</div>
+<div class="line"><span class="lineno">  445</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code hl_function" href="classChronos_1_1Engine_1_1SwapChain.html#ab62945a629a540f51adf21f82780fd7c">recreate</a>();</div>
+<div class="line"><span class="lineno">  446</span>    <a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a3e24583669d42f6980c059cfa0c23891">objectManager</a>.<a class="code hl_function" href="classChronos_1_1Engine_1_1ObjectManager.html#a1982ee4c7a784a7c0bc390567137a882">recreate</a>();</div>
+<div class="line"><span class="lineno">  447</span><span class="preprocessor">#ifdef ENABLE_EDITOR</span></div>
+<div class="line"><span class="lineno">  448</span>    gui.recreate();</div>
+<div class="line"><span class="lineno">  449</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  450</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a1982ee4c7a784a7c0bc390567137a882"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a1982ee4c7a784a7c0bc390567137a882">Chronos::Engine::ObjectManager::recreate</a></div><div class="ttdeci">void recreate()</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8cpp_source.html#l00119">objectManager.cpp:119</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_ab62945a629a540f51adf21f82780fd7c"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#ab62945a629a540f51adf21f82780fd7c">Chronos::Engine::SwapChain::recreate</a></div><div class="ttdeci">void recreate()</div><div class="ttdoc">When the swapchain is rendered invalid, recreate it.</div><div class="ttdef"><b>Definition</b> <a href="swapchain_8cpp_source.html#l00206">swapchain.cpp:206</a></div></div>
 </div><!-- fragment -->
@@ -569,7 +569,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TextureManager_html_a3c81f8bca94b1cac2d763adb36cdc84d"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextureManager.html#a3c81f8bca94b1cac2d763adb36cdc84d">Chronos::Engine::TextureManager::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">Destroys the texture manager.</div><div class="ttdef"><b>Definition</b> <a href="textureManager_8cpp_source.html#l00046">textureManager.cpp:46</a></div></div>
 <div class="ttc" id="avulkanHeaders_8hpp_html_a84d3ea5135a58a3d5c7d802762e320ec"><div class="ttname"><a href="vulkanHeaders_8hpp.html#a84d3ea5135a58a3d5c7d802762e320ec">MAX_FRAMES_IN_FLIGHT</a></div><div class="ttdeci">#define MAX_FRAMES_IN_FLIGHT</div><div class="ttdoc">The number of frames in flight.</div><div class="ttdef"><b>Definition</b> <a href="vulkanHeaders_8hpp_source.html#l00053">vulkanHeaders.hpp:53</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>, and <a class="el" href="vulkanHeaders_8hpp_source.html#l00053">MAX_FRAMES_IN_FLIGHT</a>.</p>
+<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00060">LOG</a>, and <a class="el" href="vulkanHeaders_8hpp_source.html#l00053">MAX_FRAMES_IN_FLIGHT</a>.</p>
 
 </div>
 </div>
@@ -662,7 +662,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  379</span>}</div>
 <div class="ttc" id="aengine_8cpp_html_aafbf89f103414a7a5c9105707935555f"><div class="ttname"><a href="engine_8cpp.html#aafbf89f103414a7a5c9105707935555f">getRequiredExtensions</a></div><div class="ttdeci">static std::vector&lt; const char * &gt; getRequiredExtensions()</div><div class="ttdoc">Gets the required extensions to be enabled.</div><div class="ttdef"><b>Definition</b> <a href="engine_8cpp_source.html#l00305">engine.cpp:305</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="engine_8cpp_source.html#l00305">getRequiredExtensions()</a>, and <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>.</p>
+<p class="reference">References <a class="el" href="engine_8cpp_source.html#l00305">getRequiredExtensions()</a>, and <a class="el" href="logging_8hpp_source.html#l00060">LOG</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -710,7 +710,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  401</span>    }</div>
 <div class="line"><span class="lineno">  402</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>.</p>
+<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00060">LOG</a>.</p>
 
 </div>
 </div>
@@ -768,15 +768,14 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  424</span>        || vkCreateFence(</div>
 <div class="line"><span class="lineno">  425</span>           <a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a1925017e78d1bc388bfed72bc6c0c7ec">device</a>, &amp;fenceInfo, <span class="keyword">nullptr</span>, &amp;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a2d8968ac621e29f56e7955d9ee320fb5">inFlightFences</a>[i])</div>
 <div class="line"><span class="lineno">  426</span>        != VK_SUCCESS) {</div>
-<div class="line"><span class="lineno">  427</span>        <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(1,</div>
-<div class="line"><span class="lineno">  428</span>        <span class="stringliteral">&quot;Failed to create synchronization objects for a frame&quot;</span>)</div>
-<div class="line"><span class="lineno">  429</span>        throw std::runtime_error(</div>
-<div class="line"><span class="lineno">  430</span>        &quot;failed to create synchronization objects for a frame!&quot;);</div>
+<div class="line"><span class="lineno">  427</span>        <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(1, <span class="stringliteral">&quot;Failed to create synchronization objects for a frame&quot;</span>)</div>
+<div class="line"><span class="lineno">  428</span>        throw std::runtime_error(</div>
+<div class="line"><span class="lineno">  429</span>        &quot;failed to create synchronization objects for a frame!&quot;);</div>
+<div class="line"><span class="lineno">  430</span>    }</div>
 <div class="line"><span class="lineno">  431</span>    }</div>
-<div class="line"><span class="lineno">  432</span>    }</div>
-<div class="line"><span class="lineno">  433</span>}</div>
+<div class="line"><span class="lineno">  432</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>, and <a class="el" href="vulkanHeaders_8hpp_source.html#l00053">MAX_FRAMES_IN_FLIGHT</a>.</p>
+<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00060">LOG</a>, and <a class="el" href="vulkanHeaders_8hpp_source.html#l00053">MAX_FRAMES_IN_FLIGHT</a>.</p>
 
 </div>
 </div>
@@ -972,16 +971,16 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Device_html_ac2609e8515d57e873e3da13599452cf9"><div class="ttname"><a href="classChronos_1_1Engine_1_1Device.html#ac2609e8515d57e873e3da13599452cf9">Chronos::Engine::Device::graphicsQueue</a></div><div class="ttdeci">VkQueue graphicsQueue</div><div class="ttdoc">This is the queue that is used for graphics rendering.</div><div class="ttdef"><b>Definition</b> <a href="device_8hpp_source.html#l00065">device.hpp:65</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a00087dabb9938a55399e2c8b58ba7f7c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a00087dabb9938a55399e2c8b58ba7f7c">Chronos::Engine::Engine::currentFrame</a></div><div class="ttdeci">uint32_t currentFrame</div><div class="ttdoc">The current frame to be rendered to.</div><div class="ttdef"><b>Definition</b> <a href="engine_8hpp_source.html#l00276">engine.hpp:276</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a50165316b5c0c709684961a5ca60011e"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a50165316b5c0c709684961a5ca60011e">Chronos::Engine::Engine::bgColor</a></div><div class="ttdeci">float bgColor[3]</div><div class="ttdoc">This is the background color of the window.</div><div class="ttdef"><b>Definition</b> <a href="engine_8hpp_source.html#l00132">engine.hpp:132</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a714fe1fc9a59f266c8cbf213c96b0c18"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a714fe1fc9a59f266c8cbf213c96b0c18">Chronos::Engine::Engine::changeMSAASettings</a></div><div class="ttdeci">void changeMSAASettings()</div><div class="ttdef"><b>Definition</b> <a href="engine_8cpp_source.html#l00522">engine.cpp:522</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_a714fe1fc9a59f266c8cbf213c96b0c18"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#a714fe1fc9a59f266c8cbf213c96b0c18">Chronos::Engine::Engine::changeMSAASettings</a></div><div class="ttdeci">void changeMSAASettings()</div><div class="ttdef"><b>Definition</b> <a href="engine_8cpp_source.html#l00521">engine.cpp:521</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ab7bdcb4c424429687b9a6b27a852a7d3"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ab7bdcb4c424429687b9a6b27a852a7d3">Chronos::Engine::Engine::framebufferResized</a></div><div class="ttdeci">bool framebufferResized</div><div class="ttdoc">Does the framebuffer need to be resized?</div><div class="ttdef"><b>Definition</b> <a href="engine_8hpp_source.html#l00268">engine.hpp:268</a></div></div>
-<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_af4f93a5928076463872d2ab6fcfb7e29"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#af4f93a5928076463872d2ab6fcfb7e29">Chronos::Engine::Engine::changePresentMode</a></div><div class="ttdeci">void changePresentMode()</div><div class="ttdef"><b>Definition</b> <a href="engine_8cpp_source.html#l00443">engine.cpp:443</a></div></div>
+<div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_af4f93a5928076463872d2ab6fcfb7e29"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#af4f93a5928076463872d2ab6fcfb7e29">Chronos::Engine::Engine::changePresentMode</a></div><div class="ttdeci">void changePresentMode()</div><div class="ttdef"><b>Definition</b> <a href="engine_8cpp_source.html#l00442">engine.cpp:442</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_a6e08896abf9ea2b975bd3e8352138089"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#a6e08896abf9ea2b975bd3e8352138089">Chronos::Engine::ObjectManager::render</a></div><div class="ttdeci">void render(uint32_t currentFrame, uint32_t imageIndex, float bgColor[3])</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8cpp_source.html#l00057">objectManager.cpp:57</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_aa02b9dc18adf8604b529d21835cac900"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#aa02b9dc18adf8604b529d21835cac900">Chronos::Engine::ObjectManager::commandBuffers</a></div><div class="ttdeci">std::vector&lt; VkCommandBuffer &gt; commandBuffers</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8hpp_source.html#l00041">objectManager.hpp:41</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1ObjectManager_html_adee50706b6a218b0ded75d91c98f5289"><div class="ttname"><a href="classChronos_1_1Engine_1_1ObjectManager.html#adee50706b6a218b0ded75d91c98f5289">Chronos::Engine::ObjectManager::update</a></div><div class="ttdeci">void update(uint32_t currentFrame)</div><div class="ttdef"><b>Definition</b> <a href="objectManager_8cpp_source.html#l00143">objectManager.cpp:143</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_a24ae3a2025905fa8a724855c121fcda6"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#a24ae3a2025905fa8a724855c121fcda6">Chronos::Engine::SwapChain::changePresentMode</a></div><div class="ttdeci">bool changePresentMode</div><div class="ttdef"><b>Definition</b> <a href="swapchain_8hpp_source.html#l00175">swapchain.hpp:175</a></div></div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_ab50ec3eb6293b1e2d52553ed5eeb7ec6"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#ab50ec3eb6293b1e2d52553ed5eeb7ec6">Chronos::Engine::SwapChain::swapChain</a></div><div class="ttdeci">VkSwapchainKHR swapChain</div><div class="ttdoc">Vulkan swapchain object.</div><div class="ttdef"><b>Definition</b> <a href="swapchain_8hpp_source.html#l00148">swapchain.hpp:148</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>, and <a class="el" href="vulkanHeaders_8hpp_source.html#l00053">MAX_FRAMES_IN_FLIGHT</a>.</p>
+<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00060">LOG</a>, and <a class="el" href="vulkanHeaders_8hpp_source.html#l00053">MAX_FRAMES_IN_FLIGHT</a>.</p>
 
 </div>
 </div>
@@ -1000,31 +999,31 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00470">470</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  471</span>{</div>
-<div class="line"><span class="lineno">  472</span>    VkSampleCountFlagBits maxSample = <a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a18bf509379c7fa5e2bb2195332dab902">maxMsaaSamples</a>;</div>
-<div class="line"><span class="lineno">  473</span>    std::vector&lt;std::string&gt; modes;</div>
-<div class="line"><span class="lineno">  474</span>    <span class="keywordflow">if</span> (VK_SAMPLE_COUNT_64_BIT &lt;= maxSample) {</div>
-<div class="line"><span class="lineno">  475</span>    modes.push_back(<span class="stringliteral">&quot;64&quot;</span>);</div>
-<div class="line"><span class="lineno">  476</span>    }</div>
-<div class="line"><span class="lineno">  477</span>    <span class="keywordflow">if</span> (VK_SAMPLE_COUNT_32_BIT &lt;= maxSample) {</div>
-<div class="line"><span class="lineno">  478</span>    modes.push_back(<span class="stringliteral">&quot;32&quot;</span>);</div>
-<div class="line"><span class="lineno">  479</span>    }</div>
-<div class="line"><span class="lineno">  480</span>    <span class="keywordflow">if</span> (VK_SAMPLE_COUNT_16_BIT &lt;= maxSample) {</div>
-<div class="line"><span class="lineno">  481</span>    modes.push_back(<span class="stringliteral">&quot;16&quot;</span>);</div>
-<div class="line"><span class="lineno">  482</span>    }</div>
-<div class="line"><span class="lineno">  483</span>    <span class="keywordflow">if</span> (VK_SAMPLE_COUNT_8_BIT &lt;= maxSample) {</div>
-<div class="line"><span class="lineno">  484</span>    modes.push_back(<span class="stringliteral">&quot;8&quot;</span>);</div>
-<div class="line"><span class="lineno">  485</span>    }</div>
-<div class="line"><span class="lineno">  486</span>    <span class="keywordflow">if</span> (VK_SAMPLE_COUNT_4_BIT &lt;= maxSample) {</div>
-<div class="line"><span class="lineno">  487</span>    modes.push_back(<span class="stringliteral">&quot;4&quot;</span>);</div>
-<div class="line"><span class="lineno">  488</span>    }</div>
-<div class="line"><span class="lineno">  489</span>    <span class="keywordflow">if</span> (VK_SAMPLE_COUNT_2_BIT &lt;= maxSample) {</div>
-<div class="line"><span class="lineno">  490</span>    modes.push_back(<span class="stringliteral">&quot;2&quot;</span>);</div>
-<div class="line"><span class="lineno">  491</span>    }</div>
-<div class="line"><span class="lineno">  492</span>    modes.push_back(<span class="stringliteral">&quot;1&quot;</span>);</div>
-<div class="line"><span class="lineno">  493</span>    <span class="keywordflow">return</span> modes;</div>
-<div class="line"><span class="lineno">  494</span>}</div>
+<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00469">469</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  470</span>{</div>
+<div class="line"><span class="lineno">  471</span>    VkSampleCountFlagBits maxSample = <a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#a006da4ea696843d084076e82ef16a147">device</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1Device.html#a18bf509379c7fa5e2bb2195332dab902">maxMsaaSamples</a>;</div>
+<div class="line"><span class="lineno">  472</span>    std::vector&lt;std::string&gt; modes;</div>
+<div class="line"><span class="lineno">  473</span>    <span class="keywordflow">if</span> (VK_SAMPLE_COUNT_64_BIT &lt;= maxSample) {</div>
+<div class="line"><span class="lineno">  474</span>    modes.push_back(<span class="stringliteral">&quot;64&quot;</span>);</div>
+<div class="line"><span class="lineno">  475</span>    }</div>
+<div class="line"><span class="lineno">  476</span>    <span class="keywordflow">if</span> (VK_SAMPLE_COUNT_32_BIT &lt;= maxSample) {</div>
+<div class="line"><span class="lineno">  477</span>    modes.push_back(<span class="stringliteral">&quot;32&quot;</span>);</div>
+<div class="line"><span class="lineno">  478</span>    }</div>
+<div class="line"><span class="lineno">  479</span>    <span class="keywordflow">if</span> (VK_SAMPLE_COUNT_16_BIT &lt;= maxSample) {</div>
+<div class="line"><span class="lineno">  480</span>    modes.push_back(<span class="stringliteral">&quot;16&quot;</span>);</div>
+<div class="line"><span class="lineno">  481</span>    }</div>
+<div class="line"><span class="lineno">  482</span>    <span class="keywordflow">if</span> (VK_SAMPLE_COUNT_8_BIT &lt;= maxSample) {</div>
+<div class="line"><span class="lineno">  483</span>    modes.push_back(<span class="stringliteral">&quot;8&quot;</span>);</div>
+<div class="line"><span class="lineno">  484</span>    }</div>
+<div class="line"><span class="lineno">  485</span>    <span class="keywordflow">if</span> (VK_SAMPLE_COUNT_4_BIT &lt;= maxSample) {</div>
+<div class="line"><span class="lineno">  486</span>    modes.push_back(<span class="stringliteral">&quot;4&quot;</span>);</div>
+<div class="line"><span class="lineno">  487</span>    }</div>
+<div class="line"><span class="lineno">  488</span>    <span class="keywordflow">if</span> (VK_SAMPLE_COUNT_2_BIT &lt;= maxSample) {</div>
+<div class="line"><span class="lineno">  489</span>    modes.push_back(<span class="stringliteral">&quot;2&quot;</span>);</div>
+<div class="line"><span class="lineno">  490</span>    }</div>
+<div class="line"><span class="lineno">  491</span>    modes.push_back(<span class="stringliteral">&quot;1&quot;</span>);</div>
+<div class="line"><span class="lineno">  492</span>    <span class="keywordflow">return</span> modes;</div>
+<div class="line"><span class="lineno">  493</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1109,7 +1108,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1TextureManager_html_a70c1b42ec1ab0e2858dbe29229578f2e"><div class="ttname"><a href="classChronos_1_1Engine_1_1TextureManager.html#a70c1b42ec1ab0e2858dbe29229578f2e">Chronos::Engine::TextureManager::init</a></div><div class="ttdeci">void init(Chronos::Engine::Device *device, VkCommandPool commandPool)</div><div class="ttdoc">Initializes the texture manager.</div><div class="ttdef"><b>Definition</b> <a href="textureManager_8cpp_source.html#l00025">textureManager.cpp:25</a></div></div>
 <div class="ttc" id="anamespaceChronos_1_1Engine_html_ae9065643643c464231ba47b6ed3f8a8a"><div class="ttname"><a href="namespaceChronos_1_1Engine.html#ae9065643643c464231ba47b6ed3f8a8a">Chronos::Engine::createCommandPool</a></div><div class="ttdeci">VkCommandPool createCommandPool(Chronos::Engine::Device device, VkSurfaceKHR surface)</div><div class="ttdoc">Creates a command pool for a given device and surface.</div><div class="ttdef"><b>Definition</b> <a href="helper_8cpp_source.html#l00157">helper.cpp:157</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="helper_8cpp_source.html#l00157">Chronos::Engine::createCommandPool()</a>, and <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>.</p>
+<p class="reference">References <a class="el" href="helper_8cpp_source.html#l00157">Chronos::Engine::createCommandPool()</a>, and <a class="el" href="logging_8hpp_source.html#l00060">LOG</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1182,7 +1181,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1Engine_html_ae79484eb3130b4251c2fc43179fac68c"><div class="ttname"><a href="classChronos_1_1Engine_1_1Engine.html#ae79484eb3130b4251c2fc43179fac68c">Chronos::Engine::Engine::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">This is the initial width of the window. It can be changed later just by changing this directly.</div><div class="ttdef"><b>Definition</b> <a href="engine_8hpp_source.html#l00113">engine.hpp:113</a></div></div>
 <div class="ttc" id="aengine_8cpp_html_ad93fffd8512961d3c6e7fc0bf9cec3e1"><div class="ttname"><a href="engine_8cpp.html#ad93fffd8512961d3c6e7fc0bf9cec3e1">framebuffer_size_callback</a></div><div class="ttdeci">static void framebuffer_size_callback(GLFWwindow *window, int width, int height)</div><div class="ttdef"><b>Definition</b> <a href="engine_8cpp_source.html#l00030">engine.cpp:30</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="engine_8cpp_source.html#l00030">framebuffer_size_callback()</a>, and <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>.</p>
+<p class="reference">References <a class="el" href="engine_8cpp_source.html#l00030">framebuffer_size_callback()</a>, and <a class="el" href="logging_8hpp_source.html#l00060">LOG</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1281,25 +1280,25 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00453">453</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  454</span>{</div>
-<div class="line"><span class="lineno">  455</span>    <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;immediate&quot;</span>) {</div>
-<div class="line"><span class="lineno">  456</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_IMMEDIATE_KHR;</div>
-<div class="line"><span class="lineno">  457</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;fifo&quot;</span>) {</div>
-<div class="line"><span class="lineno">  458</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_FIFO_KHR;</div>
-<div class="line"><span class="lineno">  459</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;fifo_relaxed&quot;</span>) {</div>
-<div class="line"><span class="lineno">  460</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_FIFO_RELAXED_KHR;</div>
-<div class="line"><span class="lineno">  461</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;mailbox&quot;</span>) {</div>
-<div class="line"><span class="lineno">  462</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_MAILBOX_KHR;</div>
-<div class="line"><span class="lineno">  463</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  464</span>    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid present mode&quot;</span>);</div>
-<div class="line"><span class="lineno">  465</span>    }</div>
-<div class="line"><span class="lineno">  466</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a24ae3a2025905fa8a724855c121fcda6">changePresentMode</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  467</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3, <span class="stringliteral">&quot;Present mode set to &quot;</span> + mode)</div>
-<div class="line"><span class="lineno">  468</span>}</div>
+<p class="definition">Definition at line <a class="el" href="engine_8cpp_source.html#l00452">452</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  453</span>{</div>
+<div class="line"><span class="lineno">  454</span>    <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;immediate&quot;</span>) {</div>
+<div class="line"><span class="lineno">  455</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_IMMEDIATE_KHR;</div>
+<div class="line"><span class="lineno">  456</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;fifo&quot;</span>) {</div>
+<div class="line"><span class="lineno">  457</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_FIFO_KHR;</div>
+<div class="line"><span class="lineno">  458</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;fifo_relaxed&quot;</span>) {</div>
+<div class="line"><span class="lineno">  459</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_FIFO_RELAXED_KHR;</div>
+<div class="line"><span class="lineno">  460</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <span class="stringliteral">&quot;mailbox&quot;</span>) {</div>
+<div class="line"><span class="lineno">  461</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">preferredPresentMode</a> = VK_PRESENT_MODE_MAILBOX_KHR;</div>
+<div class="line"><span class="lineno">  462</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  463</span>    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid present mode&quot;</span>);</div>
+<div class="line"><span class="lineno">  464</span>    }</div>
+<div class="line"><span class="lineno">  465</span>    this-&gt;<a class="code hl_variable" href="classChronos_1_1Engine_1_1Engine.html#af877a78d497b0d86b4254960fcf84f1a">swapChain</a>.<a class="code hl_variable" href="classChronos_1_1Engine_1_1SwapChain.html#a24ae3a2025905fa8a724855c121fcda6">changePresentMode</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  466</span>    <a class="code hl_define" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">LOG</a>(3, <span class="stringliteral">&quot;Present mode set to &quot;</span> + mode)</div>
+<div class="line"><span class="lineno">  467</span>}</div>
 <div class="ttc" id="aclassChronos_1_1Engine_1_1SwapChain_html_a5e8b76c0a36ee9b9a7031961c55107eb"><div class="ttname"><a href="classChronos_1_1Engine_1_1SwapChain.html#a5e8b76c0a36ee9b9a7031961c55107eb">Chronos::Engine::SwapChain::preferredPresentMode</a></div><div class="ttdeci">VkPresentModeKHR preferredPresentMode</div><div class="ttdoc">Preferred present mode for the swapchain.</div><div class="ttdef"><b>Definition</b> <a href="swapchain_8hpp_source.html#l00173">swapchain.hpp:173</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00058">LOG</a>.</p>
+<p class="reference">References <a class="el" href="logging_8hpp_source.html#l00060">LOG</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

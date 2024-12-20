@@ -132,38 +132,40 @@ $(document).ready(function(){initNavTree('logging_8hpp_source.html',''); initRes
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">// 3 - verbose</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">// 4 - includes frame fraw</span></div>
 <div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="logging_8hpp.html#a7d15000aa125a59b41ba4535ae41ada7">   33</a></span><span class="keyword">static</span> <span class="keyword">inline</span> std::string <a class="code hl_function" href="logging_8hpp.html#a7d15000aa125a59b41ba4535ae41ada7">getFileName</a>(<span class="keyword">const</span> std::string &amp;path)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="logging_8hpp.html#a7d15000aa125a59b41ba4535ae41ada7">   33</a></span><span class="keyword">static</span> <span class="keyword">inline</span> std::string <a class="code hl_function" href="logging_8hpp.html#a7d15000aa125a59b41ba4535ae41ada7">getFileName</a>(<span class="keyword">const</span> std::string&amp; path)</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    std::filesystem::path p(path);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> p.filename().string();</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
 </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="logging_8hpp.html#aa6480a6ae39ffa2e683bde4a32374cd3">   40</a></span><span class="keyword">static</span> <span class="keyword">inline</span> std::string <a class="code hl_function" href="logging_8hpp.html#aa6480a6ae39ffa2e683bde4a32374cd3">getTimestamp</a>()</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>{</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">auto</span> now = std::chrono::system_clock::now();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">auto</span> now_ns = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(now.time_since_epoch()).count();</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    std::ostringstream oss;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    oss &lt;&lt; now_ns;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> oss.str();</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="logging_8hpp.html#aa6480a6ae39ffa2e683bde4a32374cd3">   39</a></span><span class="keyword">static</span> <span class="keyword">inline</span> std::string <a class="code hl_function" href="logging_8hpp.html#aa6480a6ae39ffa2e683bde4a32374cd3">getTimestamp</a>()</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">auto</span> now = std::chrono::system_clock::now();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">auto</span> now_ns = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    now.time_since_epoch())</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>              .count();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    std::ostringstream oss;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    oss &lt;&lt; now_ns;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">return</span> oss.str();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
 </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#ifdef CHRONOS_ENABLE_LOGGING</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#define S1(x) #x</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define S2(x) S1(x)</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#define LOCATION __FILE__ &quot;:&quot; S2(__LINE__)</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#define LOG(LEVEL, MESSAGE)                                             \</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">    if (LEVEL &lt;= CHRONOS_ENABLE_LOGGING) {                                     \</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">    std::cout &lt;&lt; &quot;[Chronos][&quot; &lt;&lt; getFileName(LOCATION) &lt;&lt; &quot;]&quot; &lt;&lt; &quot;[&quot; &lt;&lt; getTimestamp() &lt;&lt;  &quot;]&quot; &lt;&lt;&quot;: &quot; &lt;&lt; MESSAGE &lt;&lt; std::endl;  \</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">    }</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">   58</a></span><span class="preprocessor">#define LOG(LEVEL, MESSAGE)</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#ifdef CHRONOS_ENABLE_LOGGING</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define S1(x) #x</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#define S2(x) S1(x)</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#define LOCATION __FILE__ &quot;:&quot; S2(__LINE__)</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#define LOG(LEVEL, MESSAGE)                                                    \</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">    if (LEVEL &lt;= CHRONOS_ENABLE_LOGGING) {                                     \</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">    std::cout &lt;&lt; &quot;[Chronos][&quot; &lt;&lt; getFileName(LOCATION) &lt;&lt; &quot;]&quot; &lt;&lt; &quot;[&quot;       \</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">          &lt;&lt; getTimestamp() &lt;&lt; &quot;]&quot; &lt;&lt; &quot;: &quot; &lt;&lt; MESSAGE &lt;&lt; std::endl;    \</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">    }</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="logging_8hpp.html#a8774bb0a65165799e6ceafa939745478">   60</a></span><span class="preprocessor">#define LOG(LEVEL, MESSAGE)</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="alogging_8hpp_html_a7d15000aa125a59b41ba4535ae41ada7"><div class="ttname"><a href="logging_8hpp.html#a7d15000aa125a59b41ba4535ae41ada7">getFileName</a></div><div class="ttdeci">static std::string getFileName(const std::string &amp;path)</div><div class="ttdef"><b>Definition</b> <a href="logging_8hpp_source.html#l00033">logging.hpp:33</a></div></div>
-<div class="ttc" id="alogging_8hpp_html_aa6480a6ae39ffa2e683bde4a32374cd3"><div class="ttname"><a href="logging_8hpp.html#aa6480a6ae39ffa2e683bde4a32374cd3">getTimestamp</a></div><div class="ttdeci">static std::string getTimestamp()</div><div class="ttdef"><b>Definition</b> <a href="logging_8hpp_source.html#l00040">logging.hpp:40</a></div></div>
+<div class="ttc" id="alogging_8hpp_html_aa6480a6ae39ffa2e683bde4a32374cd3"><div class="ttname"><a href="logging_8hpp.html#aa6480a6ae39ffa2e683bde4a32374cd3">getTimestamp</a></div><div class="ttdeci">static std::string getTimestamp()</div><div class="ttdef"><b>Definition</b> <a href="logging_8hpp_source.html#l00039">logging.hpp:39</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

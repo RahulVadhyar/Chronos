@@ -182,7 +182,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="logging_8hpp_source.html#l00058">58</a> of file <a class="el" href="logging_8hpp_source.html">logging.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logging_8hpp_source.html#l00060">60</a> of file <a class="el" href="logging_8hpp_source.html">logging.hpp</a>.</p>
 
 </div>
 </div>
@@ -242,14 +242,16 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="logging_8hpp_source.html#l00040">40</a> of file <a class="el" href="logging_8hpp_source.html">logging.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span>{</div>
-<div class="line"><span class="lineno">   42</span>    <span class="keyword">auto</span> now = std::chrono::system_clock::now();</div>
-<div class="line"><span class="lineno">   43</span>    <span class="keyword">auto</span> now_ns = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(now.time_since_epoch()).count();</div>
-<div class="line"><span class="lineno">   44</span>    std::ostringstream oss;</div>
-<div class="line"><span class="lineno">   45</span>    oss &lt;&lt; now_ns;</div>
-<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">return</span> oss.str();</div>
-<div class="line"><span class="lineno">   47</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logging_8hpp_source.html#l00039">39</a> of file <a class="el" href="logging_8hpp_source.html">logging.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keyword">auto</span> now = std::chrono::system_clock::now();</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keyword">auto</span> now_ns = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</div>
+<div class="line"><span class="lineno">   43</span>    now.time_since_epoch())</div>
+<div class="line"><span class="lineno">   44</span>              .count();</div>
+<div class="line"><span class="lineno">   45</span>    std::ostringstream oss;</div>
+<div class="line"><span class="lineno">   46</span>    oss &lt;&lt; now_ns;</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> oss.str();</div>
+<div class="line"><span class="lineno">   48</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
