@@ -22,19 +22,20 @@ SOFTWARE.
 
 #include "TexturedRectangle.hpp"
 #include "engineStructs.hpp"
+#include "shaders/textureVert.hpp"
+#include "shaders/textureFrag.hpp"
 
 void Chronos::Engine::TexturedRectangle::init(Chronos::Engine::Device* device,
     VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
     VkSampler textureSampler, Chronos::Engine::Texture texture,
     VkRenderPass* renderPass)
 {
-    this->vertexShaderPath = SPIV_SHADER_PATH "/textureVert.spv";
-    this->fragmentShaderPath = SPIV_SHADER_PATH "/textureFrag.spv";
     this->texture = texture;
 
     Chronos::Engine::Object::init(device, commandPool, swapChain,
 	textureSampler, renderPass,
-	Chronos::Engine::ObjectType::TypeTexturedRectangle);
+	Chronos::Engine::ObjectType::TypeTexturedRectangle, textureVert_spv, textureVert_spv_len, 
+    textureFrag_spv, textureFrag_spv_len);
 
     // create the vertex and index buffers and copy the data
     vertexBuffer.size = sizeof(vertices[0]) * vertices.size();

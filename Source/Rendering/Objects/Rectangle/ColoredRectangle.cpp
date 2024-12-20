@@ -22,12 +22,12 @@ SOFTWARE.
 
 #include "ColoredRectangle.hpp"
 #include "engineStructs.hpp"
+#include "shaders/colorVert.hpp"
+#include "shaders/colorFrag.hpp"
 void Chronos::Engine::ColoredRectangle::init(Chronos::Engine::Device* device,
     VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
     VkSampler textureSampler, VkRenderPass* renderPass)
 {
-    this->vertexShaderPath = SPIV_SHADER_PATH "/colorVert.spv";
-    this->fragmentShaderPath = SPIV_SHADER_PATH "/colorFrag.spv";
 
     colorBuffers.resize(MAX_FRAMES_IN_FLIGHT);
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
@@ -36,7 +36,8 @@ void Chronos::Engine::ColoredRectangle::init(Chronos::Engine::Device* device,
 
     Chronos::Engine::Object::init(device, commandPool, swapChain,
 	textureSampler, renderPass,
-	Chronos::Engine::ObjectType::TypeColoredRectangle);
+	Chronos::Engine::ObjectType::TypeColoredRectangle,
+    colorVert_spv, colorVert_spv_len, colorFrag_spv, colorFrag_spv_len);
 
     // create the vertex and index buffers and copy the data
     vertexBuffer.size = sizeof(vertices[0]) * vertices.size();

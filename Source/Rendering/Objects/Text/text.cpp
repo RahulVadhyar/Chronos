@@ -22,14 +22,14 @@ SOFTWARE.
 
 #include "text.hpp"
 #include "helper.hpp"
+#include "shaders/textVert.hpp"
+#include "shaders/textFrag.hpp"
 
 void Chronos::Engine::Text::init(Chronos::Engine::Device* device,
     VkCommandPool commandPool, Chronos::Engine::SwapChain* swapChain,
     VkSampler textureSampler, VkRenderPass* renderPass,
     Chronos::Engine::FontTypes fontStyle)
 {
-    vertexShaderPath = SPIV_SHADER_PATH "/textVert.spv";
-    fragmentShaderPath = SPIV_SHADER_PATH "/textFrag.spv";
 
     // set the fontstyle
     this->fontStyle = fontStyle;
@@ -72,7 +72,9 @@ void Chronos::Engine::Text::init(Chronos::Engine::Device* device,
 	colorBuffers[i].create(*device);
     }
     Chronos::Engine::Object::init(device, commandPool, swapChain,
-	textureSampler, renderPass, Chronos::Engine::ObjectType::TypeText);
+	textureSampler, renderPass, Chronos::Engine::ObjectType::TypeText,
+    textVert_spv, textVert_spv_len,
+     textFrag_spv, textFrag_spv_len);
 }
 
 std::vector<VkDescriptorType> Chronos::Engine::Text::getDescriptorTypes()

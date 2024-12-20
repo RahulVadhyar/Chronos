@@ -80,11 +80,17 @@ namespace Engine {
 	 * \param swapChain Swap chain used by the object.
 	 * \param textureSampler Vulkan texture sampler used by the object.
 	 * \param renderPass Vulkan render pass that is used for rendering
+	 * \param objectType Type of the object.
+	 * \param vertShaderCode Vertex shader code in binary format.
+	 * \param vertShaderCodeSize Size of the vertex shader code.
+	 * \param fragShaderCode Fragment shader code in binary format.
+	 * \param fragShaderCodeSize Size of the fragment shader code.
 	 * object in question.
 	 */
-	void init(Chronos::Engine::Device* device, VkCommandPool commandPool,
-	    Chronos::Engine::SwapChain* swapChain, VkSampler textureSampler,
-	    VkRenderPass* renderPass, ObjectType objectType);
+	void init(Chronos::Engine::Device* device,
+    VkCommandPool commandPool, SwapChain* swapChain, VkSampler textureSampler,
+    VkRenderPass* renderPass, ObjectType objectType, unsigned char* vertShaderCode, 
+    int vertShaderCodeSize, unsigned char* fragShaderCode, int fragShaderCodeSize);
 
 	/**
 	 * \brief Updates the object for the current frame.
@@ -131,9 +137,6 @@ namespace Engine {
 	Chronos::Engine::ObjectType objectType; /**< Type of the object. */
 
     protected:
-	std::string vertexShaderPath; /**< Path to the vertex shader file. */
-	std::string
-	    fragmentShaderPath; /**< Path to the fragment shader file. */
 	Chronos::Engine::Device* device; /**< Device to render to. */
 	Chronos::Engine::SwapChain* swapChain; /**< Swapchain to present to. */
 	VkCommandPool
@@ -178,6 +181,11 @@ namespace Engine {
 	virtual PipelineAttributes getPipelineAttributes() = 0;
 	std::vector<Chronos::Engine::UniformBuffer>
 	    uniformBuffers; /**< uniform buffers associated with the object. */
+	private:
+	unsigned char* vertShaderCode; /**< Vertex shader code. */
+	int vertShaderCodeSize; /**< Size of the vertex shader code. */
+	unsigned char* fragShaderCode; /**< Fragment shader code. */
+	int fragShaderCodeSize; /**< Size of the fragment shader code. */
     };
 };
 };

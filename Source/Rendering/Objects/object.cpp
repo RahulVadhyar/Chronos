@@ -24,31 +24,6 @@ SOFTWARE.
 #include <fstream>
 
 /**
-    \brief Returns the content of a shader file.
-
-    This reads SPIV-V shader files and returns the contents of the file as a
-    vector of chars. This is used to create shader modules.
-
-    @param filename The filename of the shader file.
-
-    @return The contents of the shader file as ```std::vector<char>```.
-*/
-static inline std::vector<char> readFile(const std::string& filename)
-{
-    // reads file. Used to read shaders
-    std::ifstream file(filename, std::ios::ate | std::ios::binary);
-    if (!file.is_open()) {
-	throw std::runtime_error("Failed to open file: " + filename);
-    }
-    size_t fileSize = (size_t)file.tellg();
-    std::vector<char> buffer(fileSize);
-    file.seekg(0);
-    file.read(buffer.data(), fileSize);
-    file.close();
-    return buffer;
-}
-
-/**
     \brief Creates a shader module from given shader(SPIV) code.
 
     In order to get ``std::vector<char>& code`` from a shader file, ``use
@@ -59,13 +34,14 @@ static inline std::vector<char> readFile(const std::string& filename)
 
     @return The created shader module.
 */
+
 static inline VkShaderModule createShaderModule(
-    const std::vector<char>& code, VkDevice device)
+    unsigned char* code, int code_size, VkDevice device)
 {
     VkShaderModuleCreateInfo createInfo {};
     createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
-    createInfo.codeSize = code.size();
-    createInfo.pCode = reinterpret_cast<const uint32_t*>(code.data());
+    createInfo.codeSize = code_size;
+    createInfo.pCode = reinterpret_cast<const uint32_t*>(code);
     VkShaderModule shaderModule;
     if (vkCreateShaderModule(device, &createInfo, nullptr, &shaderModule)
 	!= VK_SUCCESS) {
@@ -76,7 +52,8 @@ static inline VkShaderModule createShaderModule(
 
 void Chronos::Engine::Object::init(Chronos::Engine::Device* device,
     VkCommandPool commandPool, SwapChain* swapChain, VkSampler textureSampler,
-    VkRenderPass* renderPass, ObjectType objectType)
+    VkRenderPass* renderPass, ObjectType objectType, unsigned char* vertShaderCode, 
+    int vertShaderCodeSize, unsigned char* fragShaderCode, int fragShaderCodeSize)
 {
     this->device = device;
     this->swapChain = swapChain;
@@ -84,6 +61,10 @@ void Chronos::Engine::Object::init(Chronos::Engine::Device* device,
     this->textureSampler = textureSampler;
     this->renderPass = renderPass;
     this->objectType = objectType;
+    this->vertShaderCode = vertShaderCode;
+    this->vertShaderCodeSize = vertShaderCodeSize;
+    this->fragShaderCode = fragShaderCode;
+    this->fragShaderCodeSize = fragShaderCodeSize;
 
     uniformBuffers.resize(MAX_FRAMES_IN_FLIGHT);
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
@@ -101,13 +82,10 @@ void Chronos::Engine::Object::createGraphicsPipeline()
     Chronos::Engine::PipelineAttributes pipelineAttributes
 	= getPipelineAttributes();
 
-    auto vertShaderCode = readFile(vertexShaderPath.c_str());
-    auto fragShaderCode = readFile(fragmentShaderPath.c_str());
-
     VkShaderModule vertShaderModule
-	= createShaderModule(vertShaderCode, device->device);
+	= createShaderModule(this->vertShaderCode, this->vertShaderCodeSize,  device->device);
     VkShaderModule fragShaderModule
-	= createShaderModule(fragShaderCode, device->device);
+	= createShaderModule(this->fragShaderCode, this->fragShaderCodeSize, device->device);
 
     VkPipelineShaderStageCreateInfo vertShaderStageInfo {};
     vertShaderStageInfo.sType
