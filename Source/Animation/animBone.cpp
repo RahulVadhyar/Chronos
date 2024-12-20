@@ -23,6 +23,7 @@ SOFTWARE.
 #include "animBone.hpp"
 #include <algorithm>
 #include <cmath>
+#include <numbers>
 
 void Chronos::Animation::AnimBone::update()
 {
