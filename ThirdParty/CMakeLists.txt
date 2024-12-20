@@ -81,10 +81,17 @@ endif()
 
 #imgui(only editor)
 if(CHRONOS_BUILD_EDITOR)
-    file(GLOB IMGUI_FILES imgui/*.cpp)
-    target_include_directories(ChronosEditor PUBLIC imgui)               
-    target_include_directories(ChronosEditor PUBLIC imgui/backends)
-    target_sources(ChronosEditor PRIVATE imgui/backends/imgui_impl_glfw.cpp imgui/backends/imgui_impl_vulkan.cpp ${IMGUI_FILES})
+    include(ExternalProject)
+    FetchContent_Declare(
+        imgui
+        GIT_REPOSITORY https://github.com/ocornut/imgui.git
+        GIT_TAG docking
+    )
+    FetchContent_MakeAvailable(imgui)
+    file(GLOB IMGUI_FILES ${imgui_SOURCE_DIR}/*.cpp)
+    target_include_directories(ChronosEditor PUBLIC ${imgui_SOURCE_DIR})               
+    target_include_directories(ChronosEditor PUBLIC ${imgui_SOURCE_DIR}/backends)
+    target_sources(ChronosEditor PRIVATE ${imgui_SOURCE_DIR}/backends/imgui_impl_glfw.cpp ${imgui_SOURCE_DIR}/backends/imgui_impl_vulkan.cpp ${IMGUI_FILES})
 endif()
 
 #fonts

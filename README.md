@@ -10,14 +10,6 @@ including simple 2D game development. It comes with an editor for fast prototypi
 
 **Please Note** : This project is currently under development and is not stable yet. All features are not final.
 
-## Cloning:
-### Make sure to clone this repo recursively. ###
-
-There are other submodule dependencies that need to be cloned to compile this.
-```bash
-git clone --recursive https://github.com/RahulVadhyar/Chronos.git
-```
-
 ## Table of Contents
 + [What is Chronos?](#what-is-chronos)
 + [Building Chronos](#building-chronos)

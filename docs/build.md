@@ -4,7 +4,6 @@
 
 ## Table of Contents
 
-+ [Cloning](#cloning)
 + [Dependencies](#dependencies)
     + [For Windows](#for-windows)
     + [For Linux and Unix-Like Systems](#for-linux-and-unix-like-systems)
@@ -12,13 +11,6 @@
 + [Build Commands](#build-commands)
 + [Compiling Shaders](#compiling-shaders)
 + [Building Documentation](#building-documentation)
-
-## Cloning ##
-### Make sure to clone this repo recursively. ###
-
-```bash
-git clone --recursive https://github.com/RahulVadhyar/Chronos.git
-```
 
 There are other submodule dependencies that need to be cloned to compile this.
 
