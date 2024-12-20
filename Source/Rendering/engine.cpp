@@ -293,6 +293,28 @@ void Chronos::Engine::Engine::drawFrame()
     LOG(4, "Engine", "Current frame is " + std::to_string(currentFrame))
 }
 
+/**
+    \brief Gets the required extensions to be enabled
+
+    The required extensions to be enabled include the GLFW extensions for
+    graphics and presentation. Vulkan validation layers are also enabled.
+
+    @return The required extensions to be enabled
+*/
+static inline std::vector<const char*> getRequiredExtensions()
+{
+    // here we set the needed extensions. For now it is only debug layer
+    uint32_t glfwExtensionCount = 0;
+    const char** glfwExtensions;
+    glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
+    std::vector<const char*> extensions(
+	glfwExtensions, glfwExtensions + glfwExtensionCount);
+#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
+    extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
+#endif
+    return extensions;
+}
+
 void Chronos::Engine::Engine::createInstance()
 {
     VkApplicationInfo appInfo {};

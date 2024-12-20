@@ -19,8 +19,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-#include <set>
-#include <fstream>
 #include "helper.hpp"
 
 VkCommandBuffer Chronos::Engine::beginSingleTimeCommands(
@@ -125,20 +123,6 @@ void Chronos::Engine::copyBuffer(Chronos::Engine::Device device,
     Chronos::Engine::endSingleTimeCommands(&commandBuffer, device, commandPool);
 }
 
-std::vector<const char*> Chronos::Engine::getRequiredExtensions()
-{
-    // here we set the needed extensions. For now it is only debug layer
-    uint32_t glfwExtensionCount = 0;
-    const char** glfwExtensions;
-    glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
-    std::vector<const char*> extensions(
-	glfwExtensions, glfwExtensions + glfwExtensionCount);
-#ifdef ENABLE_VULKAN_VALIDATION_LAYERS
-    extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
-#endif
-    return extensions;
-}
-
 Chronos::Engine::QueueFamilyIndices Chronos::Engine::findQueueFamilies(
     VkPhysicalDevice device, VkSurfaceKHR surface)
 {
@@ -168,107 +152,6 @@ Chronos::Engine::QueueFamilyIndices Chronos::Engine::findQueueFamilies(
 	i++;
     }
     return indices;
-}
-
-bool Chronos::Engine::checkDeviceExtensionSupport(VkPhysicalDevice device)
-{
-    uint32_t extensionCount;
-    vkEnumerateDeviceExtensionProperties(
-	device, nullptr, &extensionCount, nullptr);
-
-    std::vector<VkExtensionProperties> availableExtensions(extensionCount);
-    vkEnumerateDeviceExtensionProperties(
-	device, nullptr, &extensionCount, availableExtensions.data());
-
-    std::set<std::string> requiredExtensions(
-	deviceExtensions.begin(), deviceExtensions.end());
-
-    for (const auto& extension : availableExtensions) {
-	requiredExtensions.erase(extension.extensionName);
-    }
-
-    return requiredExtensions.empty();
-}
-bool Chronos::Engine::isDeviceSuitable(
-    VkPhysicalDevice device, VkSurfaceKHR surface)
-{
-    // check if the device has the required queue families
-    Chronos::Engine::QueueFamilyIndices indices
-	= Chronos::Engine::findQueueFamilies(device, surface);
-    bool extensionsSupported
-	= Chronos::Engine::checkDeviceExtensionSupport(device);
-
-    bool swapChainAdequate = false;
-    if (extensionsSupported) {
-	SwapChainSupportDetails swapChainSupport
-	    = Chronos::Engine::querySwapChainSupport(device, surface);
-	swapChainAdequate = !swapChainSupport.formats.empty()
-	    && !swapChainSupport.presentModes.empty();
-    }
-
-    VkPhysicalDeviceFeatures supportedFeatures;
-    vkGetPhysicalDeviceFeatures(device, &supportedFeatures);
-    return indices.isComplete() && extensionsSupported && swapChainAdequate
-	&& supportedFeatures.samplerAnisotropy;
-}
-std::vector<char> Chronos::Engine::readFile(const std::string& filename)
-{
-    // reads file. Used to read shaders
-    std::ifstream file(filename, std::ios::ate | std::ios::binary);
-    if (!file.is_open()) {
-	throw std::runtime_error("Failed to open file: " + filename);
-    }
-    size_t fileSize = (size_t)file.tellg();
-    std::vector<char> buffer(fileSize);
-    file.seekg(0);
-    file.read(buffer.data(), fileSize);
-    file.close();
-    return buffer;
-}
-
-VkShaderModule Chronos::Engine::createShaderModule(
-    const std::vector<char>& code, VkDevice device)
-{
-    VkShaderModuleCreateInfo createInfo {};
-    createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
-    createInfo.codeSize = code.size();
-    createInfo.pCode = reinterpret_cast<const uint32_t*>(code.data());
-    VkShaderModule shaderModule;
-    if (vkCreateShaderModule(device, &createInfo, nullptr, &shaderModule)
-	!= VK_SUCCESS) {
-	throw std::runtime_error("Failed to create shader module");
-    }
-    return shaderModule;
-}
-
-VkSampleCountFlagBits Chronos::Engine::getMaxUsableSampleCount(
-    VkPhysicalDevice physicalDevice)
-{
-    // used to get max MSAA count
-    VkPhysicalDeviceProperties physicalDeviceProperties;
-    vkGetPhysicalDeviceProperties(physicalDevice, &physicalDeviceProperties);
-
-    VkSampleCountFlags counts
-	= physicalDeviceProperties.limits.framebufferColorSampleCounts;
-    if (counts & VK_SAMPLE_COUNT_64_BIT) {
-	return VK_SAMPLE_COUNT_64_BIT;
-    }
-    if (counts & VK_SAMPLE_COUNT_32_BIT) {
-	return VK_SAMPLE_COUNT_32_BIT;
-    }
-    if (counts & VK_SAMPLE_COUNT_16_BIT) {
-	return VK_SAMPLE_COUNT_16_BIT;
-    }
-    if (counts & VK_SAMPLE_COUNT_8_BIT) {
-	return VK_SAMPLE_COUNT_8_BIT;
-    }
-    if (counts & VK_SAMPLE_COUNT_4_BIT) {
-	return VK_SAMPLE_COUNT_4_BIT;
-    }
-    if (counts & VK_SAMPLE_COUNT_2_BIT) {
-	return VK_SAMPLE_COUNT_2_BIT;
-    }
-    return VK_SAMPLE_COUNT_1_BIT;
 }
 
 VkCommandPool Chronos::Engine::createCommandPool(
@@ -422,9 +305,9 @@ std::vector<VkFramebuffer> Chronos::Engine::createFramebuffer(
     return framebuffers;
 }
 
-std::vector<VkCommandBuffer> Chronos::Engine::createCommandBuffer(
-    Chronos::Engine::Device device, SwapChain swapChain,
-    VkCommandPool commandPool)
+    std::vector<VkCommandBuffer> Chronos::Engine::createCommandBuffer(
+	Chronos::Engine::Device device, Chronos::Engine::SwapChain swapChain,
+	VkCommandPool commandPool)
 {
     std::vector<VkCommandBuffer> commandBuffers;
     commandBuffers.resize(swapChain.swapChainImageViews.size());
@@ -440,3 +323,4 @@ std::vector<VkCommandBuffer> Chronos::Engine::createCommandBuffer(
     }
     return commandBuffers;
 }
+

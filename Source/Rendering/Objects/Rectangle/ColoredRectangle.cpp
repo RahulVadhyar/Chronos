@@ -27,8 +27,8 @@ void Chronos::Engine::ColoredRectangle::init(Chronos::Engine::Device* device,
     VkSampler textureSampler,
     VkRenderPass* renderPass)
 {
-    this->vertexShaderPath = SPIV_SHADER_PATH "/textureVert.spv";
-    this->fragmentShaderPath = SPIV_SHADER_PATH "/textureFrag.spv";
+    this->vertexShaderPath = SPIV_SHADER_PATH "/colorVert.spv";
+    this->fragmentShaderPath = SPIV_SHADER_PATH "/colorFrag.spv";
 
     colorBuffers.resize(MAX_FRAMES_IN_FLIGHT);
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {

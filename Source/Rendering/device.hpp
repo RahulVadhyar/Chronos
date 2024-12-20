@@ -29,6 +29,12 @@ SOFTWARE.
 #include "vulkanHeaders.hpp"
 namespace Chronos {
 namespace Engine {
+	/**
+    \brief THis contain the device extensions that are needed to be enabled in
+    vulkan.
+    */
+    const std::vector<const char*> deviceExtensions
+	= { VK_KHR_SWAPCHAIN_EXTENSION_NAME };
 
     /**
     \brief This initializes, manages and destroys the logical and physical

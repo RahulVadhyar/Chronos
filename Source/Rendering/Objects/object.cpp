@@ -21,7 +21,60 @@ SOFTWARE.
 */
 
 #include "object.hpp"
-#include "helper.hpp"
+#include <fstream>
+
+/**
+    \brief Returns the content of a shader file.
+
+    This reads SPIV-V shader files and returns the contents of the file as a
+    vector of chars. This is used to create shader modules.
+
+    @param filename The filename of the shader file.
+
+    @return The contents of the shader file as ```std::vector<char>```.
+*/
+static inline std::vector<char> readFile(const std::string& filename)
+{
+    // reads file. Used to read shaders
+    std::ifstream file(filename, std::ios::ate | std::ios::binary);
+    if (!file.is_open()) {
+	throw std::runtime_error("Failed to open file: " + filename);
+    }
+    size_t fileSize = (size_t)file.tellg();
+    std::vector<char> buffer(fileSize);
+    file.seekg(0);
+    file.read(buffer.data(), fileSize);
+    file.close();
+    return buffer;
+}
+
+
+/**
+    \brief Creates a shader module from given shader(SPIV) code.
+
+    In order to get ``std::vector<char>& code`` from a shader file, ``use
+    readFile`` function.
+
+    @param code The SPIV code to create the shader module from.
+    @param device The device to create the shader module on.
+
+    @return The created shader module.
+*/
+static inline VkShaderModule createShaderModule(
+    const std::vector<char>& code, VkDevice device)
+{
+    VkShaderModuleCreateInfo createInfo {};
+    createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+    createInfo.codeSize = code.size();
+    createInfo.pCode = reinterpret_cast<const uint32_t*>(code.data());
+    VkShaderModule shaderModule;
+    if (vkCreateShaderModule(device, &createInfo, nullptr, &shaderModule)
+	!= VK_SUCCESS) {
+	throw std::runtime_error("Failed to create shader module");
+    }
+    return shaderModule;
+}
+
 
 void Chronos::Engine::Object::init(Chronos::Engine::Device* device,
     VkCommandPool commandPool, SwapChain* swapChain, VkSampler textureSampler,
@@ -50,13 +103,13 @@ void Chronos::Engine::Object::createGraphicsPipeline()
     Chronos::Engine::PipelineAttributes pipelineAttributes
 	= getPipelineAttributes();
 
-    auto vertShaderCode = Chronos::Engine::readFile(vertexShaderPath.c_str());
-    auto fragShaderCode = Chronos::Engine::readFile(fragmentShaderPath.c_str());
+    auto vertShaderCode = readFile(vertexShaderPath.c_str());
+    auto fragShaderCode = readFile(fragmentShaderPath.c_str());
 
     VkShaderModule vertShaderModule
-	= Chronos::Engine::createShaderModule(vertShaderCode, device->device);
+	= createShaderModule(vertShaderCode, device->device);
     VkShaderModule fragShaderModule
-	= Chronos::Engine::createShaderModule(fragShaderCode, device->device);
+	= createShaderModule(fragShaderCode, device->device);
 
     VkPipelineShaderStageCreateInfo vertShaderStageInfo {};
     vertShaderStageInfo.sType

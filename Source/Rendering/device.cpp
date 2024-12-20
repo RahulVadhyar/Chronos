@@ -23,6 +23,7 @@ SOFTWARE.
 #include <set>
 #include "logging.hpp"
 #include "helper.hpp"
+#include "swapchain.hpp"
 
 void Chronos::Engine::Device::init(VkInstance instance, VkSurfaceKHR surface)
 {
@@ -33,6 +34,112 @@ void Chronos::Engine::Device::init(VkInstance instance, VkSurfaceKHR surface)
 }
 
 void Chronos::Engine::Device::destroy() { vkDestroyDevice(device, nullptr); }
+
+
+/**
+    \brief Checks if the physical device that we provide it supports the
+    extestions we need. This is used to check if the physical device that we
+    provide it supports the extensions that we need.
+
+    @param device The physical device to check.
+
+    @return Whether the physical device supports the extensions that we need.
+*/
+static inline bool checkDeviceExtensionSupport(VkPhysicalDevice device)
+{
+    uint32_t extensionCount;
+    vkEnumerateDeviceExtensionProperties(
+	device, nullptr, &extensionCount, nullptr);
+
+    std::vector<VkExtensionProperties> availableExtensions(extensionCount);
+    vkEnumerateDeviceExtensionProperties(
+	device, nullptr, &extensionCount, availableExtensions.data());
+
+    std::set<std::string> requiredExtensions(
+	Chronos::Engine::deviceExtensions.begin(), Chronos::Engine::deviceExtensions.end());
+
+    for (const auto& extension : availableExtensions) {
+	requiredExtensions.erase(extension.extensionName);
+    }
+
+    return requiredExtensions.empty();
+}
+
+/**
+    \brief Checks if the physical device that we provide it is suitable for our
+    needs.
+
+    For a physical device to be suitable, it must support the extensions that we
+    need, and it must be capable of rendering to the surface that we provide it
+    along with rendering the frames.
+
+    @param physicalDevice The physical device to check.
+    @param surface The surface to which we are rendering.
+
+    @return Whether the physical device is suitable for our needs.
+*/
+static inline bool isDeviceSuitable(
+    VkPhysicalDevice device, VkSurfaceKHR surface)
+{
+    // check if the device has the required queue families
+    Chronos::Engine::QueueFamilyIndices indices
+	= Chronos::Engine::findQueueFamilies(device, surface);
+    bool extensionsSupported
+	= checkDeviceExtensionSupport(device);
+
+    bool swapChainAdequate = false;
+    if (extensionsSupported) {
+	Chronos::Engine::SwapChainSupportDetails swapChainSupport
+	    = Chronos::Engine::querySwapChainSupport(device, surface);
+	swapChainAdequate = !swapChainSupport.formats.empty()
+	    && !swapChainSupport.presentModes.empty();
+    }
+
+    VkPhysicalDeviceFeatures supportedFeatures;
+    vkGetPhysicalDeviceFeatures(device, &supportedFeatures);
+    return indices.isComplete() && extensionsSupported && swapChainAdequate
+	&& supportedFeatures.samplerAnisotropy;
+}
+
+/**
+    \brief Gets the maxmimum supported MSAA sample count
+
+    This gets the maximum supported MSAA sample count for the physical device
+    that we provide it.
+
+    @param physicalDevice The physical device to get the maxium supported MSAA
+    sample count for.
+    @return The maxium supported MSAA sample count.
+*/
+    VkSampleCountFlagBits getMaxUsableSampleCount(
+	VkPhysicalDevice physicalDevice)
+{
+    // used to get max MSAA count
+    VkPhysicalDeviceProperties physicalDeviceProperties;
+    vkGetPhysicalDeviceProperties(physicalDevice, &physicalDeviceProperties);
+
+    VkSampleCountFlags counts
+	= physicalDeviceProperties.limits.framebufferColorSampleCounts;
+    if (counts & VK_SAMPLE_COUNT_64_BIT) {
+	return VK_SAMPLE_COUNT_64_BIT;
+    }
+    if (counts & VK_SAMPLE_COUNT_32_BIT) {
+	return VK_SAMPLE_COUNT_32_BIT;
+    }
+    if (counts & VK_SAMPLE_COUNT_16_BIT) {
+	return VK_SAMPLE_COUNT_16_BIT;
+    }
+    if (counts & VK_SAMPLE_COUNT_8_BIT) {
+	return VK_SAMPLE_COUNT_8_BIT;
+    }
+    if (counts & VK_SAMPLE_COUNT_4_BIT) {
+	return VK_SAMPLE_COUNT_4_BIT;
+    }
+    if (counts & VK_SAMPLE_COUNT_2_BIT) {
+	return VK_SAMPLE_COUNT_2_BIT;
+    }
+    return VK_SAMPLE_COUNT_1_BIT;
+}
 
 void Chronos::Engine::Device::pickPhysicalDevice(
     VkInstance instance, VkSurfaceKHR surface)

@@ -51,14 +51,6 @@ namespace Engine {
     };
 
     /**
-    \brief THis contain the device extensions that are needed to be enabled in
-    vulkan.
-
-    */
-    const std::vector<const char*> deviceExtensions
-	= { VK_KHR_SWAPCHAIN_EXTENSION_NAME };
-
-    /**
     \brief Begins recording of a command buffer that will be used once.
 
     This is used to create a temporary commandBuffer for single use and starts
@@ -101,7 +93,6 @@ namespace Engine {
     @param physicalDevice The physical device to find the memory type on.
 
     @return The index of the memory type.
-    //TODO: move this to texture.cpp and make it a static inline function
     */
     uint32_t findMemoryType(uint32_t typeFilter,
 	VkMemoryPropertyFlags properties, VkPhysicalDevice physicalDevice);
@@ -140,17 +131,6 @@ namespace Engine {
 	VkBuffer dstBuffer, VkDeviceSize size, VkCommandPool commandPool);
 
     /**
-    \brief Gets the required extensions to be enabled
-
-    The required extensions to be enabled include the GLFW extensions for
-    graphics and presentation. Vulkan validation layers are also enabled.
-
-    @return The required extensions to be enabled
-    */
-    //TODO: move this to engine.cpp and make it a static inline function
-    std::vector<const char*> getRequiredExtensions();
-
-    /**
     \brief Gets the indices of the needed queue families
 
     It finds the required graphics and presentation queue families on the
@@ -162,35 +142,6 @@ namespace Engine {
     */
     QueueFamilyIndices findQueueFamilies(
 	VkPhysicalDevice device, VkSurfaceKHR surface);
-
-    /**
-    \brief Checks if the physical device that we provide it supports the
-    extestions we need. This is used to check if the physical device that we
-    provide it supports the extensions that we need.
-
-    @param device The physical device to check.
-
-    @return Whether the physical device supports the extensions that we need.
-    //TODO: move this to device.cpp and make it a static inline function
-    */
-    bool checkDeviceExtensionSupport(VkPhysicalDevice device);
-
-    /**
-    \brief Checks if the physical device that we provide it is suitable for our
-    needs.
-
-    For a physical device to be suitable, it must support the extensions that we
-    need, and it must be capable of rendering to the surface that we provide it
-    along with rendering the frames.
-
-    @param physicalDevice The physical device to check.
-    @param surface The surface to which we are rendering.
-
-    @return Whether the physical device is suitable for our needs.
-    */
-    //TODO: move this to device.cpp and make it a static inline function
-    bool isDeviceSuitable(
-	VkPhysicalDevice physicalDevice, VkSurfaceKHR surface);
 
     /**
     \brief Creates a command pool for a given device and surface.
@@ -265,8 +216,7 @@ namespace Engine {
     std::vector<VkFramebuffer> createFramebuffer(Chronos::Engine::Device device,
 	Chronos::Engine::SwapChain swapChain, VkRenderPass renderPass,
 	bool msaa);
-
-    /**
+/**
     \brief Creates a set of command buffers for use.
 
     This creates the command buffers for a given swap chain on a given command
@@ -278,53 +228,9 @@ namespace Engine {
     @param commandPool The command pool to create the command buffers on.
 
     @return The created command buffers.
-    */
-    //TODO: move this to objectManager.cpp and make it a static inline function
+*/
     std::vector<VkCommandBuffer> createCommandBuffer(
 	Chronos::Engine::Device device, Chronos::Engine::SwapChain swapChain,
 	VkCommandPool commandPool);
-
-    /**
-    \brief Returns the content of a shader file.
-
-    This reads SPIV-V shader files and returns the contents of the file as a
-    vector of chars. This is used to create shader modules.
-
-    @param filename The filename of the shader file.
-
-    @return The contents of the shader file as ```std::vector<char>```.
-    */
-    //TODO: move this to object.cpp and make it a static inline function
-    std::vector<char> readFile(const std::string& filename);
-
-    /**
-    \brief Creates a shader module from given shader(SPIV) code.
-
-    In order to get ``std::vector<char>& code`` from a shader file, ``use
-    readFile`` function.
-
-    @param code The SPIV code to create the shader module from.
-    @param device The device to create the shader module on.
-
-    @return The created shader module.
-    */
-    //TODO: move this to object.cpp and make it a static inline function
-    VkShaderModule createShaderModule(
-	const std::vector<char>& code, VkDevice device);
-
-    /**
-    \brief Gets the maxmimum supported MSAA sample count
-
-    This gets the maximum supported MSAA sample count for the physical device
-    that we provide it.
-
-    @param physicalDevice The physical device to get the maxium supported MSAA
-    sample count for.
-    @return The maxium supported MSAA sample count.
-    */
-    //TODO: move this to device.cpp and make it a static inline function
-    VkSampleCountFlagBits getMaxUsableSampleCount(
-	VkPhysicalDevice physicalDevice);
-
 };
 };
