@@ -148,7 +148,7 @@ For Linux and Unix Like Systems</h2>
 <p>This project uses GLM, GLFW, Vulkan Validation Layers. However we compile GLFW from source(its one of the submodules ;) )It also compiles GLFW from source(it is included as submodule) so we need its dependencies</p>
 <ul>
 <li><p class="startli"><b>For Fedora, RHEL, CentOS and similar distributions:</b></p>
-<p class="startli">Run the following terminal commands: </p><div class="fragment"><div class="line">sudo dnf install glm-devel vulkan-validation-layers cmake gcc</div>
+<p class="startli">Run the following terminal commands: </p><div class="fragment"><div class="line">sudo dnf install glm-devel vulkan-validation-layers cmake gcc freetype-devel</div>
 <div class="line">sudo dnf builddep glfw glfw-devel</div>
 </div><!-- fragment --><p class="startli">We install all the dependencies that are needed by GLFW using the builddep command above.</p>
 <p class="startli">Optional: Install ninja-build and configure using ninja for faster build times.</p>
