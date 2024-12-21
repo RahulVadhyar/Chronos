@@ -31,7 +31,7 @@ This project uses GLM, GLFW, Vulkan Validation Layers. However we compile GLFW f
 
   Run the following terminal commands:
   ```bash
-  sudo dnf install glm-devel vulkan-validation-layers cmake gcc
+  sudo dnf install glm-devel vulkan-validation-layers cmake gcc freetype-devel
   sudo dnf builddep glfw glfw-devel
   ```
 

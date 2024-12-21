@@ -27,10 +27,8 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(glfw)
 
-# target_include_directories(Chronos PUBLIC glfw/include) 
 target_link_libraries(Chronos glfw)
 if(CHRONOS_BUILD_EDITOR)
-    # target_include_directories(ChronosEditor PUBLIC glfw/include) 
     target_link_libraries(ChronosEditor glfw)
 endif()
 
@@ -106,4 +104,13 @@ target_include_directories(Chronos PUBLIC stb)
 
 if(CHRONOS_BUILD_EDITOR)
     target_include_directories(ChronosEditor PUBLIC stb)
+endif()
+
+#freetype
+find_package(Freetype REQUIRED)
+target_include_directories(Chronos PUBLIC ${FREETYPE_INCLUDE_DIRS})
+target_link_libraries(Chronos ${FREETYPE_LIBRARIES})
+if(CHRONOS_BUILD_EDITOR)
+    target_include_directories(ChronosEditor PUBLIC ${FREETYPE_INCLUDE_DIRS})
+    target_link_libraries(ChronosEditor ${FREETYPE_LIBRARIES})
 endif()
