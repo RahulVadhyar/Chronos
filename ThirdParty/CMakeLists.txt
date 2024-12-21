@@ -107,10 +107,15 @@ if(CHRONOS_BUILD_EDITOR)
 endif()
 
 #freetype
-find_package(Freetype REQUIRED)
-target_include_directories(Chronos PUBLIC ${FREETYPE_INCLUDE_DIRS})
-target_link_libraries(Chronos ${FREETYPE_LIBRARIES})
+FetchContent_Declare(
+    freetype
+    GIT_REPOSITORY https://gitlab.freedesktop.org/freetype/freetype.git
+    GIT_TAG VER-2-13-3
+    GIT_SHALLOW TRUE
+    GIT_PROGRESS TRUE
+)
+FetchContent_MakeAvailable(freetype)
+target_link_libraries(Chronos freetype)
 if(CHRONOS_BUILD_EDITOR)
-    target_include_directories(ChronosEditor PUBLIC ${FREETYPE_INCLUDE_DIRS})
-    target_link_libraries(ChronosEditor ${FREETYPE_LIBRARIES})
+    target_link_libraries(ChronosEditor freetype)
 endif()
